@@ -37,7 +37,7 @@ const ClientLogo = ({ src, alt }) => (
     sx={{
       width: { xs: 160, sm: 220, md: 280, lg: 320 },
       height: { xs: 160, sm: 220, md: 280, lg: 320 },
-      bgcolor: "#161616",
+      bgcolor: "#262626",
       borderRadius: '12px',
       display: "flex",
       justifyContent: "center",
@@ -80,7 +80,7 @@ const Clients = () => {
       { x: 0 },
       {
         x: -row1SingleWidth,
-        duration: 10, // Adjust speed here
+        duration: 30, // Adjust speed here
         ease: "none",
         repeat: -1,
         modifiers: {
@@ -98,7 +98,7 @@ const Clients = () => {
       { x: -row2SingleWidth },
       {
         x: 0,
-        duration: 10, // Adjust speed here
+        duration: 30, // Adjust speed here
         ease: "none",
         repeat: -1,
         modifiers: {

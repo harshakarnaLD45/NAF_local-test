@@ -145,10 +145,6 @@ const Footer = () => {
             >
               <Box
                 sx={{
-                  width: { xs: 80, md: 120 },
-                  height: { xs: 80, md: 120 },
-                  borderRadius: "120px",
-                  border: "1.5px solid #7FEE64",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",

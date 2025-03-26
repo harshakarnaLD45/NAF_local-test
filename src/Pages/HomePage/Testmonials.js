@@ -108,7 +108,7 @@ const Testimonials = () => {
     }}>
       <Box
         sx={{
-          bgcolor: "#0F0F0F",
+          bgcolor: "#262626",
           py: 0,
           position: "relative",
           px: "2rem",

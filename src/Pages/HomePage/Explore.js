@@ -177,7 +177,9 @@ function Explore() {
               Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.
             </Typography>
           </Box>
-          <AnimateButton />
+          <Box sx={{ alignSelf: 'flex-end'}}>
+            <AnimateButton />
+          </Box>
         </Box>
 
         <Box sx={{ paddingLeft: isDragging ? 0 : '2rem' }}>

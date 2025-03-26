@@ -1,46 +1,53 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ArrowIcon } from '../CustomIcons';
 
 function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
     const [position, setPosition] = useState({ x: 0, y: 0, active: false });
-    const [showArrow, setShowArrow] = useState(false);
     const buttonRef = useRef(null);
 
-    const handleMouseMove = (e) => {
-        const button = buttonRef.current.getBoundingClientRect();
-        const x = e.clientX - (button.left + button.width / 2);
-        const y = e.clientY - (button.top + button.height / 2);
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            if (!buttonRef.current) return;
 
-        const distance = Math.sqrt(x ** 2 + y ** 2);
+            const button = buttonRef.current.getBoundingClientRect();
+            const x = e.clientX - (button.left + button.width / 2);
+            const y = e.clientY - (button.top + button.height / 2);
 
-        // Expanded detection radius (starts animation early)
-        if (distance < 100) {
-            setPosition({ x, y, active: true });
-            setShowArrow(true);
-        } else {
+            const distance = Math.sqrt(x ** 2 + y ** 2);
+
+            if (distance < 200) {
+                const strength = Math.max(0.3, 1 - distance / 200);
+                setPosition({
+                    x: x * strength * 0.4,
+                    y: y * strength * 0.4,
+                    active: true
+                });
+            } else {
+                setPosition({ x: 0, y: 0, active: false });
+            }
+        };
+
+        const handleMouseLeave = () => {
             setPosition({ x: 0, y: 0, active: false });
-            setShowArrow(false);
-        }
-    };
+        };
 
-    const handleMouseLeave = () => {
-        setPosition({ x: 0, y: 0, active: false });
-        setShowArrow(false);
-    };
+        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []);
 
     return (
-        <div
-            className="detection-area"
-            style={styles.detectionArea}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-        >
-            {/* Animated Circle Below Button */}
+        <div className="detection-area" style={styles.detectionArea}>
+            {/* Outer Circle Slightly Outside */}
             {position.active && (
                 <div
                     style={{
-                        ...styles.animatedCircle,
-                        transform: `translate(${position.x}px, ${position.y}px)`,
+                        ...styles.outerCircle,
+                        transform: `translate(${position.x * 2.3}px, ${position.y * 2.3}px)`,
                         opacity: 1,
                     }}
                 />
@@ -50,13 +57,15 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
             <div
                 ref={buttonRef}
                 className="animate-button"
-                style={styles.button}
+                style={{
+                    ...styles.button,
+                    backgroundColor: position.active ? '#161616' : 'transparent',
+                    transform: `translate(${position.x}px, ${position.y}px)`,
+                    transition: 'transform 0.3s ease-out',
+                }}
             >
-                {/* <div style={styles.defaultContent}>
-                    {showArrow ? '→' : 'Learn More'}
-                </div> */}
                 <div style={styles.defaultContent}>
-                    {showArrow ? (
+                    {position.active ? (
                         <ArrowIcon />
                     ) : (
                         <div style={styles.splitText}>
@@ -73,8 +82,6 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
 const styles = {
     detectionArea: {
         position: 'relative',
-        width: '180px',
-        height: '180px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -99,7 +106,6 @@ const styles = {
         zIndex: 3,
         fontSize: '20px',
         color: '#00FF00',
-        transition: 'opacity 0.3s ease-out',
         width: '80%',
         textAlign: 'center',
     },
@@ -118,9 +124,9 @@ const styles = {
         paddingRight: '10px',
         color: '#FCFCFC',
     },
-    animatedCircle: {
+    outerCircle: {
         position: 'absolute',
-        width: '120px',
+        width: '120px',  // Same size as main button
         height: '120px',
         borderRadius: '50%',
         border: '1.5px solid #7FEE64',
@@ -129,9 +135,9 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         transformOrigin: 'center',
-        transition: 'transform 0.2s ease-in-out, opacity 0.2s ease-in-out',
+        transform: 'scale(1)',
+        transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
         zIndex: 1,
-        marginTop: '20px',
     },
 };
 

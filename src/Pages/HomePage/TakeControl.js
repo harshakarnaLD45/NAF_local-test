@@ -9,7 +9,7 @@ const TakeControl = () => {
       <Box
         sx={{
           position: 'relative',
-          background: '#161616',
+          background: '#262626',
           padding: { xs: '40px 15px', sm: '50px 20px', md: '90px 50px 50px' },
           paddingBottom: { xs: '2rem', md: '3rem' },
           display: 'flex',
@@ -68,7 +68,7 @@ const TakeControl = () => {
           <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4' }}>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography>
-
+          <Box sx={{ mt: 3 }}></Box>
           <AnimateButton />
         </Box>
 

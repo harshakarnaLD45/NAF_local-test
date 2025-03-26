@@ -247,7 +247,7 @@ const NafParagrap = () => {
           results.
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6, mt: 3 }}>
         <AnimateButton text1='VIEW' text2='MORE' />
       </Box>
 

@@ -1,0 +1,57 @@
+.herotitle{
+    font-family: TrapSemiBold !important;
+    font-style: normal !important;
+font-weight: 600 !important;
+line-height: 120% !important; /* 80.4px */
+letter-spacing: -0.84px !important;
+}
+.herosubtitle{
+    font-family: SatoshiRegular !important;
+  font-style: normal !important;
+font-weight: 400 !important;
+line-height: 150% !important; /* 33px */
+}
+.Marquetitle{
+    font-family: TrapSemiBold !important;
+    font-style: normal !important;
+font-weight: 600 !important;
+line-height: 120% !important; /* 80.4px */
+letter-spacing: -0.54px !important;
+}
+
+.maintenancehead{
+    font-family: TrapSemiBold !important;
+    font-style: normal !important;
+font-weight: 600 !important;
+line-height: 120% !important; /* 80.4px */
+letter-spacing: -0.67px !important;
+}
+.maintenancebody{
+    font-family: SatoshiRegular !important;
+    font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 150% !important; /* 33px */
+}
+.servicetitle{
+    font-family: SatoshiMedium !important;
+    font-style: normal !important;
+font-weight: 500 !important;
+line-height: 150% !important; /* 42px */
+}
+.labelvalue{
+    font-family: SatoshiRegular !important;
+    font-style: normal !important;
+  line-height: 150% !important; /* 33px */
+}
+.pricetext{
+    font-family: SatoshiRegular !important;
+    font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 150% !important; /* 33px */
+}
+.machinebuttons{
+    font-family: SatoshiRegular !important;
+    font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 150% !important; /* 33px */
+}

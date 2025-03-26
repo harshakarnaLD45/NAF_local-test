@@ -13,20 +13,19 @@ function NoiseEffect() {
 
         let ripples = [];
 
-        // Generate noise dynamically
         const drawNoise = () => {
             const noiseImageData = ctx.createImageData(canvas.width, canvas.height);
             const buffer = new Uint32Array(noiseImageData.data.buffer);
 
             for (let i = 0; i < buffer.length; i++) {
-                const value = Math.random() * 255;
-                buffer[i] = (255 << 24) | (value << 16) | (value << 8) | value; // Grayscale noise
+                const value = Math.random() * 100; // Lower noise intensity
+                buffer[i] = (100 << 24) | (value << 16) | (value << 8) | value;
             }
 
             ctx.putImageData(noiseImageData, 0, 0);
+            ctx.globalAlpha = 0.08; // Softer noise visibility
         };
 
-        // Add ripple waves
         const createRipple = (x, y) => {
             ripples.push({ x, y, radius: 0, alpha: 1 });
         };
@@ -37,19 +36,19 @@ function NoiseEffect() {
 
         document.addEventListener('mousemove', handleMouseMove);
 
-        // Draw ripples
         const drawRipples = () => {
-            drawNoise(); // Continuous noise effect
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawNoise(); // Background noise layer
 
             for (let i = ripples.length - 1; i >= 0; i--) {
                 const ripple = ripples[i];
-                ripple.radius += 2;
+                ripple.radius += 3;
                 ripple.alpha -= 0.01;
 
                 ctx.beginPath();
-                ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
+                ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 3);
                 ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.alpha * 0.1})`;
-                ctx.lineWidth = 8;
+                ctx.lineWidth = 35;
                 ctx.stroke();
                 ctx.closePath();
 
@@ -63,21 +62,19 @@ function NoiseEffect() {
 
         drawRipples();
 
-        // Resize listener
         const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         };
         window.addEventListener('resize', handleResize);
 
-        // Cleanup
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    
+
     return <canvas ref={canvasRef} className="ripple-overlay" />;
 }
 
-export default NoiseEffect
+export default NoiseEffect;

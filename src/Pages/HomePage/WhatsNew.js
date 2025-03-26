@@ -96,12 +96,12 @@ const WhatsNew = () => {
   return (
     <Box sx={{ position: "relative" }} className='section-container'>
       {/* Title Section */}
-      <Box className='explore-container'>
+      <Box className='explore-container' sx={{ mb: 3 }}>
         <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography>
         <Box>
-          <AnimateButton />
+          <AnimateButton text1="VIEW" text2="MORE" />
         </Box>
       </Box>
 
