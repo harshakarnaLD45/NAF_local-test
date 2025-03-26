@@ -1,0 +1,206 @@
+import { Box, Grid, Paper, Typography } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import image from '../../assets/Vector (3).png';
+
+const testimonialDataColumn1 = [
+  {
+    text: "We were impressed by [Your Company Name]'s expertise in cloud-based solutions. Their team helped us migrate our infrastructure to the cloud seamlessly, improving security and reducing our IT costs significantly.",
+    author: "David Lee, CIO, Gamma Industries.",
+  },
+  {
+    text: "Working with NAF Germany was a game-changer for our business. Their UI/UX designs are not only aesthetically pleasing but also incredibly user-friendly, resulting in a significant increase in customer engagement.",
+    author: "John Smith, CEO, Acme Corp",
+  },
+  {
+    text: "NAF Germany's end-to-end development services were exceptional. They delivered a high-quality software solution ahead of schedule and within budget. Their team was professional, responsive, and a pleasure to work with.",
+    author: "Jane Doe, CTO, Beta Solutions",
+  },
+  {
+    text: "Our restaurant's inventory management has never been so efficient! [Your Company Name]'s software has dramatically reduced food waste and improved our bottom line. We highly recommend their services.",
+    author: "Jane Doe, CTO, Beta Solutions",
+  },
+];
+
+const testimonialDataColumn2 = [
+  {
+    text: "We were impressed by [Your Company Name]'s expertise in cloud-based solutions. Their team helped us migrate our infrastructure to the cloud seamlessly, improving security and reducing our IT costs significantly.",
+    author: "David Lee, CIO, Gamma Industries.",
+  },
+  {
+    text: "Working with NAF Germany was a game-changer for our business. Their UI/UX designs are not only aesthetically pleasing but also incredibly user-friendly, resulting in a significant increase in customer engagement.",
+    author: "John Smith, CEO, Acme Corp",
+  },
+  {
+    text: "NAF Germany's end-to-end development services were exceptional. They delivered a high-quality software solution ahead of schedule and within budget. Their team was professional, responsive, and a pleasure to work with.",
+    author: "Jane Doe, CTO, Beta Solutions",
+  },
+  {
+    text: "Our restaurant's inventory management has never been so efficient! [Your Company Name]'s software has dramatically reduced food waste and improved our bottom line. We highly recommend their services.",
+    author: "Jane Doe, CTO, Beta Solutions",
+  },
+];
+
+const TestimonialCard = ({ text, author }) => (
+  <Paper
+    elevation={0}
+    sx={{
+      bgcolor: "#262626",
+      borderRadius: 2,
+      p: 2.5,
+      display: "flex",
+      flexDirection: "column",
+      gap: 1,
+      mb: 3,
+      height: "auto",
+    }}
+  >
+    <Typography variant="body1" color="#C2C2C4" className="bodyRegularText4">
+      {text}
+    </Typography>
+    <Typography
+      className="bodyMediumText3"
+      variant="body2"
+      color="#C2C2C4"
+      align="right"
+    >
+      {author}
+    </Typography>
+  </Paper>
+);
+
+const Testimonials = () => {
+  const column1Ref = useRef(null);
+  const column2Ref = useRef(null);
+
+  useEffect(() => {
+    const scrollSpeed = 1; // Adjust this value to change scroll speed
+    let animationFrameId;
+
+    const scrollColumns = () => {
+      if (column1Ref.current && column2Ref.current) {
+        // Column 1 scrolls up
+        column1Ref.current.scrollTop += scrollSpeed;
+        if (column1Ref.current.scrollTop >= column1Ref.current.scrollHeight - column1Ref.current.clientHeight) {
+          column1Ref.current.scrollTop = 0;
+        }
+
+        // Column 2 scrolls down
+        column2Ref.current.scrollTop -= scrollSpeed;
+        if (column2Ref.current.scrollTop <= 0) {
+          column2Ref.current.scrollTop = column2Ref.current.scrollHeight - column2Ref.current.clientHeight;
+        }
+      }
+      animationFrameId = requestAnimationFrame(scrollColumns);
+    };
+
+    animationFrameId = requestAnimationFrame(scrollColumns);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, []);
+
+
+  const extendedColumn1 = [...testimonialDataColumn1, ...testimonialDataColumn1];
+  const extendedColumn2 = [...testimonialDataColumn2, ...testimonialDataColumn2];
+
+  return (
+    <Box sx={{
+      paddingX: '2rem', paddingTop: '10rem',
+    }}>
+      <Box
+        sx={{
+          bgcolor: "#0F0F0F",
+          py: 0,
+          position: "relative",
+          px: "2rem",
+        }}
+      >
+        <Grid container alignItems="center">
+          {/* Left Section */}
+          <Grid item xs={12} md={5} className="left-section">
+            <Box
+              className='left-sections'
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: { xs: "center", md: "flex-start" },
+                gap: 10,
+                height: "100%",
+                justifyContent: "space-between",
+                paddingRight: '2rem',
+                paddingTop: '6rem',
+              }}
+            >
+              <Typography
+                className="headings-h2"
+                variant="h2"
+                color="#FCFCFC"
+              >
+                What's Our Clients Are Saying
+              </Typography>
+              <Box
+                component="img"
+                src={image}
+                alt="Vector"
+              />
+            </Box>
+          </Grid>
+
+
+          <Grid item xs={12} md={7}  >
+            <Grid container
+              spacing={3} className="testimonial-columns"
+            >
+              {/* Column 1 - Scrolls Up */}
+              <Grid item xs={12} sm={6} sx={{ paddingTop: '0px' }}>
+                <Box
+                  ref={column1Ref} className="column-container"
+                  sx={{
+                    height: '600px',
+                    overflow: 'hidden',
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+
+                  }}
+                >
+                  {extendedColumn1.map((item, index) => (
+                    <TestimonialCard
+                      key={`col1-${index}`}
+                      text={item.text}
+                      author={item.author}
+                    />
+                  ))}
+                </Box>
+              </Grid>
+
+              {/* Column 2 - Scrolls Down */}
+              <Grid item xs={12} sm={6}>
+                <Box
+                  ref={column2Ref}
+                  sx={{
+                    height: '600px',
+                    overflow: 'hidden',
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  {extendedColumn2.map((item, index) => (
+                    <TestimonialCard
+
+                      key={`col2-${index}`}
+                      text={item.text}
+                      author={item.author}
+                    />
+                  ))}
+                </Box>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
+};
+
+export default Testimonials;

@@ -1,0 +1,10 @@
+.footer-container{
+    margin-top: 200px;
+}
+
+@media (min-width: 1916px) {
+    .footerBottomhead {
+        bottom: -200px !important;
+        font-size: 170px !important;
+    }
+}

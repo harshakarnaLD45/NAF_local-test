@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './Pages/HomePage/HomePage';
+import Header from './Componenets/HeaderComponent/Header';
+import Footer from './Componenets/FooterComponent/Footer';
+import NoiseEffect from './Componenets/NoiseEffect/NoiseEffect';
+import './i18n'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <NoiseEffect />
+        <Routes>
+          <Route path='/' Component={HomePage} />
+          <Route path='home' Component={HomePage} />
+          <Route path='*' Component={HomePage} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,0 +1,276 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84vh;
+  padding: 0px 50px;
+}
+
+.main-sub-container1 {
+  width: 50%;
+}
+
+.main-sub-container2 {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  width: 50%;
+}
+
+.explore-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.explore-container .main-sub-container1:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.whatnew-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large Screens (Desktops) */
+@media (max-width: 1440px) {
+
+  .main-sub-container1,
+  .main-sub-container2 {
+    width: 48%;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 30px;
+  }
+
+  .main-sub-container1,
+  .main-sub-container2 {
+    width: 100%;
+  }
+
+  .main-sub-container2 {
+    gap: 24px;
+  }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0px 20px;
+  }
+
+  .main-sub-container2 {
+    gap: 16px;
+    flex-direction: column;
+  }
+}
+
+/* Extra Small Screens (Very Small Devices) */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 0px 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** old code **/
+
+
+@media (max-width: 600px) {
+  .blog-image {
+    max-width: 100%;
+    left: 5%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .blog-image {
+    max-width: 280px;
+    left: 10%;
+  }
+}
+
+@media (min-width: 961px) {
+  .blog-image {
+    max-width: 300px;
+    left: 10%;
+  }
+}
+
+@media (min-width: 1541px) {
+  .blog-image {
+    max-width: 420px !important;
+    left: 11% !important;
+  }
+}
+
+@media (min-width: 2135px) {
+  .blog-image {
+    max-width: 420px !important;
+    left: 20% !important;
+  }
+}
+
+
+
+
+
+@media (min-width: 1650px) {
+  .carddata {
+    width: 700px !important;
+    height: 600px !important;
+  }
+
+  .cardimage {
+    height: 500px !important
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.css-1qw2a80-MuiGrid-root>.MuiGrid-item {
+  padding-top: 16px !important;
+
+}
+
+/* .blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 16/15;
+} */
+
+@media (max-width: 600px) {
+  .blog-image {
+    max-width: 100%;
+    left: 5%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .blog-image {
+    max-width: 280px;
+    left: 10%;
+  }
+}
+
+@media (min-width: 961px) {
+  .blog-image {
+    max-width: 300px;
+    left: 10%;
+  }
+}
+
+@media (min-width: 1541px) {
+  .blog-image {
+    max-width: 420px !important;
+    left: 11% !important;
+  }
+}
+
+@media (min-width: 2135px) {
+  .blog-image {
+    max-width: 420px !important;
+    left: 20% !important;
+  }
+}
+
+
+@media (min-width: 2170px) {
+
+  .left-sections {
+    padding-top: 9rem !important;
+  }
+
+}
+
+
+@media (min-width: 1650px) {
+  .carddata {
+    /* width:700px !important; */
+    /* height: 600px!important; */
+  }
+
+  .cardtexts {}
+
+  /* .smallImage{
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .smallimgesthree{
+    bottom: -120px !important;
+    width: 250px !important;
+    height: 250px !important;
+  } */
+  .explore {
+    width: 1567px !important;
+  }
+
+  .exploretext {
+    width: 967px !important;
+  }
+
+  .videobox {
+    /* width: 99% !important; */
+  }
+
+  .cardimage {
+    /* height:500px !important */
+  }
+
+  .clientText {
+    max-width: 740px !important;
+  }
+
+  .footerBottomhead {
+    /* font-size: 170px !important; */
+  }
+}
+
+@media (max-width: 1650px) {
+  .carddata {
+    width: 400px !important;
+    height: 550px !important;
+  }
+
+  .cardimage {
+    height: 365px !important;
+    padding-top: 2rem !important;
+  }
+}
