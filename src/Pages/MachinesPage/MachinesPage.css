@@ -1,57 +1,66 @@
-.herotitle{
-    font-family: TrapSemiBold !important;
-    font-style: normal !important;
-font-weight: 600 !important;
-line-height: 120% !important; /* 80.4px */
-letter-spacing: -0.84px !important;
-}
-.herosubtitle{
-    font-family: SatoshiRegular !important;
-  font-style: normal !important;
-font-weight: 400 !important;
-line-height: 150% !important; /* 33px */
-}
-.Marquetitle{
-    font-family: TrapSemiBold !important;
-    font-style: normal !important;
-font-weight: 600 !important;
-line-height: 120% !important; /* 80.4px */
-letter-spacing: -0.54px !important;
+.machines-container {
+  padding: 0px 50px;
 }
 
-.maintenancehead{
-    font-family: TrapSemiBold !important;
-    font-style: normal !important;
-font-weight: 600 !important;
-line-height: 120% !important; /* 80.4px */
-letter-spacing: -0.67px !important;
+@media (max-width: 1024px) {
+  .machines-container {
+    padding: 0px 30px;
+  }
 }
-.maintenancebody{
-    font-family: SatoshiRegular !important;
-    font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 150% !important; /* 33px */
+
+@media (max-width: 900px) {
+  .animate-button {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .maintenance-containers {
+    height: 180vh !important;
+  }
 }
-.servicetitle{
-    font-family: SatoshiMedium !important;
-    font-style: normal !important;
-font-weight: 500 !important;
-line-height: 150% !important; /* 42px */
+
+@media (max-width: 768px) {
+  .machines-container {
+    padding: 0px 20px;
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .maruecontainer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
 }
-.labelvalue{
-    font-family: SatoshiRegular !important;
-    font-style: normal !important;
-  line-height: 150% !important; /* 33px */
+
+@media (max-width: 767px) {
+  .maintenance-containers {
+    height: 250vh !important;
+  }
 }
-.pricetext{
-    font-family: SatoshiRegular !important;
-    font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 150% !important; /* 33px */
-}
-.machinebuttons{
-    font-family: SatoshiRegular !important;
-    font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 150% !important; /* 33px */
+
+@media (max-width: 480px) {
+  .machines-container {
+    padding: 0px 15px;
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .animate-button {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .machinelabels {
+    padding: 20px 15px !important;
+  }
+
+  .herotitle {
+    font-size: 34px !important;
+    letter-spacing: -0.34px !important;
+  }
+
+  .maruecontainer {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
 }

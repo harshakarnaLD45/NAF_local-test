@@ -13,11 +13,12 @@ const MarqTextScroll = () => {
       <>
         <Typography
           variant="h3"
-          className="Marquetitle"
+          className="Marquetitle headings-h3"
           sx={{
             color: "#9D9EA1",
             whiteSpace: "nowrap",
-            fontSize: "54px",
+            // fontSize: "54px",
+            textTransform: 'uppercase'
           }}
         >
           {marqueeText}
@@ -27,9 +28,9 @@ const MarqTextScroll = () => {
           src={starImage}
           alt="Star"
           sx={{
-            width: "50px",
-            height: "50px",
-            mx: "70px",
+            width: { xs: "30px", sm: "40px", md: "50px" }, // Adjust width for different breakpoints
+            height: { xs: "30px", sm: "40px", md: "50px" }, // Adjust height for different breakpoints
+            mx: { xs: "20px", sm: "50px", md: "70px" }, // Adjust horizontal margin for responsiveness
             objectFit: "contain",
             aspectRatio: "1/1",
           }}
@@ -39,6 +40,7 @@ const MarqTextScroll = () => {
 
   return (
     <Box
+      className="maruecontainer  "
       sx={{
         position: "relative",
         width: "100%",

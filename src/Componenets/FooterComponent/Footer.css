@@ -1,4 +1,4 @@
-.footer-container{
+/* .footer-container{
     margin-top: 200px;
 }
 
@@ -6,5 +6,200 @@
     .footerBottomhead {
         bottom: -200px !important;
         font-size: 170px !important;
+    }
+} */
+
+
+.footer-container {
+    margin-top: 200px;
+    /* max-height: 85vh !important; */
+}
+
+
+.mobile-contact {
+    display: none !important;
+}
+
+@media (max-width: 2720px) {
+    .footerBottomhead {
+        bottom: -60px !important;
+        /* font-size: clamp(80px, 8.5vw, 185px) !important; */
+ 
+        padding: 0 10px;
+    }
+}
+@media (max-width: 1920px) {
+    .footerBottomhead {
+        bottom: -75px !important;
+        font-size: clamp(80px, 8.5vw, 165px) !important;
+        /* Adjust dynamically */
+        /* padding: 0 10px; */
+    }
+
+    .footerBottom-div {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .footer-orange-ball {
+        width: 860px !important;
+        height: 850px !important;
+    }
+
+    .footerhead {
+        margin-bottom: 40px !important;
+    }
+}
+@media (max-width: 1440px) {
+    .footerBottomhead {
+        bottom: -60px !important;
+        font-size: clamp(80px, 8.5vw, 165px) !important;
+     
+    }}
+    @media (max-width: 1024px) {
+        .footerBottomhead {
+            bottom: -42px !important;
+            font-size: clamp(80px, 8.5vw, 165px) !important;
+        }
+    .footer-policy-div{
+        position: relative !important;
+        bottom: 5px !important; 
+    }
+    
+    }
+
+@media (max-width: 900px) {
+    .btn-contact-sec {
+        /* margin-bottom: 100px !important; */
+    }
+
+    .webite-contact {
+        display: none !important;
+    }
+.footercontact{
+    position: relative;
+    bottom: -10px;
+}
+    .mobile-contact {
+        display: block !important;
+        /* padding-top: 200px; */
+    }
+
+    .btn-social-icon {
+        height: 270px;
+        justify-content: space-between !important;
+        margin-bottom: 150px !important;
+    }
+
+    .footercontactdown,
+    .mobile-contact,
+    .info-stack,
+    .footercontact {
+        text-align: left !important;
+        align-self: baseline !important;
+
+    }
+
+    .br-footer {
+        display: none;
+    }
+
+    .footer-orange-ball {
+        width: 582px !important;
+        height: 567px !important;
+        top: 22% !important;
+    }
+
+    .social-icon-sec {
+        bottom: -100px !important;
+        gap: 58px !important;
+        /* margin-top: 300px !important; */
+    }
+
+    .social-icon {
+        width: 40px !important;
+        ;
+        height: 40px !important;
+        ;
+    }
+
+    .footer-policy-div {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+
+    .footerBottomhead {
+        width: 100% !important;
+        bottom: -85px !important;
+        font-size: clamp(31px, 8.5vw, 165px) !important;
+        /* Adjust dynamically */
+        padding: 0 0px;
+    }
+
+}
+
+@media (max-width: 770px) {
+    .btn-spac-left{
+        margin-left: 10px !important;
+     }
+    .btn-spac-right{
+        margin-right: 5px !important;
+     }
+
+}
+@media (max-width: 600px) {
+    .footerBottomhead {
+      
+        bottom: -55px !important;
+        font-size: clamp(28px, 8.5vw, 165px) !important;
+    
+    }
+}
+@media (max-width: 480px) {
+    .footer-orange-ball {
+        width: 382px !important;
+        height: 367px !important;
+        top: 17% !important;
+    }
+
+    .social-icon {
+        width: 25.926px  !important; 
+        height: 25.926px !important; 
+        aspect-ratio: 25.93/25.93;
+    }
+    .social-icon-sec {
+        bottom: 20px !important;
+        gap: 37px !important;
+        /* margin-top: 300px !important; */
+    }
+    .btn-social-icon {
+        /* height: 270px;
+        justify-content: space-between !important; */
+        margin-bottom: 50px !important;
+    }
+    .footerBottomhead {
+      
+        bottom: -50px !important;
+        font-size: clamp(31px, 8.5vw, 165px) !important;
+    
+    }
+    .footer-policy-div {
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        position: relative !important;
+        bottom: 7px !important;
+        gap: 10px !important;
+    }
+    .footer-main-div{
+        padding-left:  14px !important ; 
+        padding-right: 14px !important ; 
+    }
+}
+@media (max-width: 380px) {
+    .footerBottomhead {
+      
+        bottom: -47px !important;
+        font-size: clamp(24px, 8.5vw, 165px) !important;
+    
     }
 }

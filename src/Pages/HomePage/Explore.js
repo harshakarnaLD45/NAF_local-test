@@ -182,7 +182,7 @@ function Explore() {
           </Box>
         </Box>
 
-        <Box sx={{ paddingLeft: isDragging ? 0 : '2rem' }}>
+        <Box sx={{ paddingLeft: isDragging ? 0 : '50px' }}>
           <Box
             ref={cardsContainerRef}
             sx={{
@@ -305,7 +305,7 @@ function Explore() {
                 >
                   <Typography
                     variant="h6"
-                    className='machinetitle'
+                    className=' bodyMediumText1'
                     sx={{
                       color: '#1A1A1A',
                       fontSize: { xs: '20px', sm: '24px', md: '28px' },

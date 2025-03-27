@@ -6,12 +6,10 @@ import Twitter from '../../assets/Social Icons (1).png';
 import Instagram from '../../assets/Social Icons (2).png';
 import LinkedIn from '../../assets/Social Icons (3).png';
 import YouTube from '../../assets/Social Icons (4).png';
-import { useTranslation } from 'react-i18next';
 import AnimateButton from "../CommonComponents/AnimateButton";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
 
   const socialIcons = [
     { src: Facebook, name: "Facebook", url: "https://www.facebook.com/yourcompany" },
@@ -28,24 +26,24 @@ const Footer = () => {
           bgcolor: "#FA7854",
           overflow: "hidden",
           position: "relative",
-          pt: { xs: 4, sm: 6, md: 10 },
-          pb: { xs: 4, sm: 6, md: 10 },
+          pt: { xs: 4, sm: 6, md: 10},
+          pb: { xs: 4, sm: 6, md: 0},
         }}
       >
         <Box sx={{ position: "relative" }}>
-          <Box
+          <Box className="footer-orange-ball"
             sx={{
               width: {
                 xs: "300px",
                 sm: "500px",
                 md: "700px",
-                lg: "857.333px"
+                lg: "700.333px"
               },
               height: {
                 xs: "300px",
                 sm: "500px",
                 md: "700px",
-                lg: "856px"
+                lg: "700px"
               },
               bgcolor: "#F84311",
               borderRadius: "857.333px",
@@ -58,7 +56,7 @@ const Footer = () => {
           />
 
           <Typography
-            className="headings-h2"
+            className="headings-h2 footerhead "
             variant="h2"
             align="center"
             sx={{
@@ -73,7 +71,7 @@ const Footer = () => {
             Got a project? Want to collaborate?
           </Typography>
 
-          <Box
+          <Box  className="footer-main-div"
             sx={{
               display: "grid",
               gridTemplateColumns: {
@@ -88,62 +86,62 @@ const Footer = () => {
               gap: { xs: 4, md: 0 },
             }}
           >
-            <Stack spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
+            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
               <Typography
-                className="footercontact"
+                className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
-                {t('Home.footerContact')}
+                Contact
               </Typography>
               <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
                 <Typography
-                  className="footercontactdown footerpadding"
+                  className="footercontactdown footerpadding bodyMediumText2"
                   sx={{
                     color: "#1A1A1A",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                > {t('Home.footerinfomail')}
+                > info@naf-halsbach.de
 
                 </Typography>
                 <Typography
-                  className="footercontactdown footerpadding"
+                  className="footercontactdown footerpadding bodyMediumText2"
                   sx={{
                     color: "#1A1A1A",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                >{t('Home.footerinfonumber')}
+                >0152 – 28387141 (Odette Lamkhizni)
 
                 </Typography>
                 <Typography
-                  className="footercontactdown footerpadding"
+                  className="footercontactdown footerpadding bodyMediumText2"
                   sx={{
                     color: "#1A1A1A",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                >{t('Home.footerinfonumber2')}
+                >0162 – 1638005  (Technischer Support 24/7)
 
                 </Typography>
               </Stack>
             </Stack>
 
-            <Box
+            <Box className="btn-social-icon"
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'space-between',
                 alignItems: 'center',
 
-                gap: { xs: 2, md: 30 },
+                // gap: { xs: 2, md: 15 },
                 flexWrap: 'wrap',
                 paddingBottom: '0rem'
                 // mt: { xs: 0, md: "200px" },
                 // order: { xs: -1, md: 0 }
               }}
             >
-              <Box
+              <Box className="btn-contact-sec"
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -156,8 +154,11 @@ const Footer = () => {
               >
                 <AnimateButton text1='GET IN' text2='TOUCH' />
               </Box>
-
-              <Box sx={{ display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center' }}>
+              <Box className="social-icon-sec" sx={{
+                position: 'relative',
+                bottom: '-50px',
+                
+                display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center' }}>
                 {socialIcons.map((social, index) => (
                   <a
                     key={index}
@@ -165,7 +166,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Box
+                    <Box className="social-icon"
                       component="img"
                       src={social.src}
                       alt={social.name}
@@ -182,34 +183,77 @@ const Footer = () => {
                   </a>
                 ))}</Box>
 
+
+             
+
             </Box>
+            <Stack className="mobile-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
+              <Typography
+                className="footercontact bodyRegularText4"
+                sx={{ color: "#444444" }}
+              >
+                Contact
+              </Typography>
+              <Stack className="info-stack" spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
+                <Typography
+                  className="footercontactdown footerpadding bodyMediumText2"
+                  sx={{
+                    color: "#1A1A1A",
+                    fontSize: { xs: "18px", md: "22px" },
+                    textAlign: { xs: "center", md: "left" }
+                  }}
+                > info@naf-halsbach.de
+
+                </Typography>
+                <Typography
+                  className="footercontactdown footerpadding bodyMediumText2"
+                  sx={{
+                    color: "#1A1A1A",
+                    fontSize: { xs: "18px", md: "22px" },
+                    textAlign: { xs: "center", md: "left" }
+                  }}
+                >0152 – 28387141 (Odette Lamkhizni)
+
+                </Typography>
+                <Typography
+                  className="footercontactdown footerpadding bodyMediumText2"
+                  sx={{
+                    color: "#1A1A1A",
+                    fontSize: { xs: "18px", md: "22px" },
+                    textAlign: { xs: "center", md: "left" }
+                  }}
+                >0162 – 1638005  (Technischer Support 24/7)
+
+                </Typography>
+              </Stack>
+            </Stack>
 
             <Stack spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-end" }}>
               <Typography
-                className="footercontact"
+                className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
                 Address
               </Typography>
-              <Stack spacing={3} alignItems={{ xs: "center", md: "flex-end" }}>
+              <Stack className="info-stack" spacing={3} alignItems={{ xs: "center", md: "flex-end" }}>
                 <Typography
-                  className="footercontactdown footerright"
+                  className="footercontactdown footerright bodyMediumText2"
                   sx={{
                     color: "#1A1A1A",
-                    textAlign: { xs: "center", md: "right" },
+                    textAlign: { xs: "left", md: "right" },
                     fontSize: { xs: "18px", md: "22px" }
                   }}
                 >
-                  Obere Straße 3, 09599 Freiberg, OT <br /> Halsbach
+                  Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
               </Stack>
-              <Box sx={{ mt: { xs: 2, md: 2 } }}>
+              <Box className="info-stack"  sx={{ mt: { xs: 2,  } }}>
                 <Typography
-                  className="footercontact"
+                  className="footercontact bodyRegularText4 "
                   sx={{
                     color: "#444444",
                     textAlign: { xs: "center", md: "right" },
-                    mt: { xs: 2, md: 4 }
+                    mt: { xs: 1, md: 2 }
                   }}
                 >
                   Automaten Standorte:
@@ -220,45 +264,45 @@ const Footer = () => {
                   sx={{ mt: 2 }}
                 >
                   <Typography
-                    className="footercontactdown footerright"
+                    className="footercontactdown footerright bodyMediumText2"
                     sx={{
                       color: "#1A1A1A",
                       textAlign: { xs: "center", md: "right" },
                       fontSize: { xs: "18px", md: "22px" }
                     }}
                   >
-                    DBI Foyer Freiberg, Halsbrückerstrasse <br /> 34, 09599 Freiberg
+                    DBI Foyer Freiberg, Halsbrückerstrasse <br className="br-footer"  /> 34, 09599 Freiberg
                   </Typography>
                   <Typography
-                    className="footercontactdown footerright"
+                    className="footercontactdown footerright bodyMediumText2"
                     sx={{
                       color: "#1A1A1A",
                       textAlign: { xs: "center", md: "right" },
                       fontSize: { xs: "18px", md: "22px" }
                     }}
                   >
-                    Landratsamt Mittweida Haus A, Am <br /> Landratsamt 3, 09648 Mittweida
+                    Landratsamt Mittweida Haus A, Am <br  className="br-footer" /> Landratsamt 3, 09648 Mittweida
                   </Typography>
                 </Stack>
               </Box>
             </Stack>
           </Box>
-
-          <Box
+        
+          <Box className="footer-policy-div"
             sx={{
               display: "flex",
               flexDirection: { xs: "column", md: "row" },
               justifyContent: "space-between",
               position: "relative",
+              bottom: "-35px",
               zIndex: 1,
               px: { xs: 2, md: "2rem" },
               gap: { xs: 2, md: 0 },
-              paddingBottom: '2rem',
+              // paddingBottom: '2rem',
               paddingTop: '0rem'
-            }}
-          >
+            }}>
             <Typography
-              className="footercontact"
+              className="footercontact bodyRegularText4"
               sx={{
                 color: "#1A1A1A",
                 fontSize: { xs: "14px", md: "17px" },
@@ -268,7 +312,7 @@ const Footer = () => {
               © Copyright {currentYear}. All rights reserved.
             </Typography>
             <Typography
-              className="footercontact"
+              className="footercontact bodyRegularText4"
               sx={{
                 color: "#1A1A1A",
                 fontSize: { xs: "14px", md: "17px" },
@@ -278,23 +322,25 @@ const Footer = () => {
               Terms and Conditions
             </Typography>
           </Box>
+        {/* <Box className="footerBottom-div px-4"> */}
 
           <Typography
             variant="h1"
-            className="footerBottomhead"
+            className="footerBottomhead letworktogether"
             sx={{
               color: "#FCFCFC",
               fontSize: { xs: "40px", sm: "80px", md: "100px", lg: "130px" },
-              position: "absolute",
-              bottom: { xs: -20, sm: -40, md: -50, lg: -150 },
+              position: "relative",
+              bottom: { xs: -20, sm: -40, md: -40, },
               textAlign: "center",
               zIndex: 0,
               whiteSpace: "nowrap",
               width: "100%",
             }}
-          >
+            >
             LET'S WORK TOGETHER
           </Typography>
+            {/* </Box> */}
         </Box>
       </Box>
     </Box>

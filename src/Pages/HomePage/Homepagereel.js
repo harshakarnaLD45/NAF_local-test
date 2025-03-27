@@ -35,9 +35,9 @@ const Homepagereel = () => {
       .to(videoContainer, {
         // width: "95%",
         width: () => {
-          if (window.innerWidth < 1650) return '95%';
+          if (window.innerWidth < 1650) return '93%';
 
-          return '97.5%';
+          return '96%';
         },
         borderRadius: "10px",
         marginLeft: "auto",
@@ -71,10 +71,10 @@ const Homepagereel = () => {
         sx={{
           height: "auto",
           overflow: "hidden",
-          borderRadius: "10px",
-          width: "95%",
+          borderRadius: "24px",
+          width: "93%",
           "@media (min-width: 1650px)": {
-            width: "97.5%",
+            width: "96%",
           },
           marginLeft: "auto",
           marginRight: "auto",

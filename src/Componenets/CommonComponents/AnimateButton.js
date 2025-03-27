@@ -69,8 +69,8 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
                         <ArrowIcon />
                     ) : (
                         <div style={styles.splitText}>
-                            <div className='bodyRegularText1' style={styles.leftText}>{text1}</div>
-                            <div className='bodyRegularText1' style={styles.rightText}>{text2}</div>
+                            <div className='bodyRegularText1 btn-spac-left' style={styles.leftText}>{text1}</div>
+                            <div className='bodyRegularText1 btn-spac-right' style={styles.rightText}>{text2}</div>
                         </div>
                     )}
                 </div>
