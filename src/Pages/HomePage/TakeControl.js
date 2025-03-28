@@ -5,17 +5,19 @@ import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 
 const TakeControl = () => {
   return (
-    <Box className='section-container'>
+    <Box className='section-container  '>
       <Box
+      className="control-section"
         sx={{
           position: 'relative',
           background: '#262626',
-          padding: { xs: '40px 15px', sm: '50px 20px', md: '90px 50px 50px' },
+         
           paddingBottom: { xs: '2rem', md: '3rem' },
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
+          flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', },
           gap: { xs: '30px', md: '50px' },
           overflow: 'hidden',
+          borderRadius:'24px',
           '&:before': {
             content: '""',
             position: 'absolute',
@@ -34,10 +36,13 @@ const TakeControl = () => {
         {/* Left Section */}
         <Box
           sx={{
-            width: { xs: '100%', md: '70%' },
+            // width: { xs: '100%', md: '70%' },
+            width: { xs: "100%", sm: "70%", md:  "70%", lg: "70%" },
             display: 'flex',
             flexDirection: 'column',
+
             pt: { xs: '2%', md: '5%' },
+            padding: { xs: '40px 15px', sm: '50px 20px', md: '90px 50px 50px' },
             alignItems: 'flex-start',
             zIndex: 1,
           }}
@@ -52,7 +57,7 @@ const TakeControl = () => {
                     listStyleType: 'disc',
                     display: 'list-item',
                     color: '#C2C2C4',
-                    fontSize: { xs: '14px', sm: '16px', md: '17px', xxl: '25px' },
+                    // fontSize: { xs: '14px', sm: '16px', md: '17px', xxl: '25px' },
                     fontWeight: 400,
                     lineHeight: '150%',
                   },
@@ -65,7 +70,7 @@ const TakeControl = () => {
             Take Control of Your Vending Network
           </Typography>
 
-          <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4' }}>
+          <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4',paddingRight:'2rem' }}>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography>
           <Box sx={{ mt: 3 }}></Box>
@@ -75,7 +80,7 @@ const TakeControl = () => {
         {/* Right Section */}
         <Box
           sx={{
-            width: { xs: '100%', md: '70%' },
+            width: { xs: "100%", sm: "100%", md:  "100%", lg: "70%" },
             height: { xs: '100%', md: '100%' },
             display: 'flex',
             justifyContent: 'center',
@@ -88,7 +93,7 @@ const TakeControl = () => {
             src={Browser}
             alt="Dashboard Preview"
             sx={{
-              width: { xs: '100%', sm: '90%', md: '100%' },
+              width: {  xs: "100%", sm: "100%", md:  "100%", md: '100%' },
               height: { xs: 'auto', md: '600px' },
               objectFit: 'contain',
             }}

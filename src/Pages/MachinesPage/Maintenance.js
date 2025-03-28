@@ -26,14 +26,19 @@ const maintenanceServices = [
 ];
 
 const Maintenance = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const sectionRef = useRef(null);
+
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false); // New state to track animation status
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        setIsCollapsed(entry.isIntersecting);
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsCollapsed(true); // Trigger animation only once
+          setHasAnimated(true); // Prevent further animations
+        }
       },
       {
         threshold: 0.3,
@@ -49,11 +54,10 @@ const Maintenance = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [hasAnimated]); // Dependency on `hasAnimated`
 
   return (
     <Box
-      ref={sectionRef}
       className="section-container"
       sx={{
         display: "flex",
@@ -73,14 +77,14 @@ const Maintenance = () => {
         sx={{
           position: "relative",
           width: "100%",
-          maxWidth: { xs: "100%", md: "1639px" },
+          // maxWidth: { xs: "100%", md: "1639px" },
           height: { md: "605px" },
           mt: { xs: -1, md: -3 },
         }}
       >
         <Typography
           variant="h2"
-          className="maintenancehead headings-h2"
+          className="headings-h2"
           sx={{
             position: "absolute",
             width: { xs: "100%", sm: "90%", md: "851px" },
@@ -96,7 +100,7 @@ const Maintenance = () => {
 
         <Typography
           variant="body1"
-          className="maintenancebodys bodyRegularText3"
+          className="bodyRegularText3"
           sx={{
             position: "absolute",
             width: { xs: "100%", sm: "90%", md: "837px" },
@@ -111,12 +115,11 @@ const Maintenance = () => {
         </Typography>
 
         <Box
-          className="animatedmaintenceimage"
           sx={{
             position: "absolute",
             width: { xs: "100px", sm: "100px", md: "120px" },
             height: { xs: "100px", sm: "100px", md: "120px" },
-            top: { xs: "333px", md: "333px" },
+            top: { xs: "275px", md: "333px" },
             bottom: { xs: "20px", md: "auto" },
             left: "50%",
             transform: "translateX(-50%)",
@@ -127,11 +130,12 @@ const Maintenance = () => {
         </Box>
 
         <Box
+          ref={sectionRef}
           sx={{
             position: "absolute",
             width: "100%",
             maxWidth: { xs: "100%", md: isCollapsed ? "auto" : "1200px" },
-            top: { xs: "500px", sm: "500px", md: isCollapsed ? "500px" : "100px" },
+            top: { xs: "450px", sm: "500px", md: isCollapsed ? "500px" : "100px" },
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
@@ -144,15 +148,14 @@ const Maintenance = () => {
           {maintenanceServices.map((service, index) => (
             <Card
               key={index}
-              className="maintenance-card"
               sx={{
                 position: { xs: "relative", md: isCollapsed ? "relative" : "absolute" },
                 width: {
-                  xs: isCollapsed ? "90%" : "440px",
-                  sm: isCollapsed ? "80%" : "440px",
-                  md: isCollapsed ? "23%" : "440px",
+                  xs: isCollapsed ? "95%" : "440px",
+                  sm: isCollapsed ? "48%" : "440px",
+                  md: isCollapsed ? "24%" : "440px",
                 },
-                maxWidth: { xs: "350px", md: "440px" },
+                // maxWidth: { xs: "350px", md: "440px" },
                 height: { xs: "300px", sm: "350px", md: "426px" },
                 top: { xs: "auto", md: isCollapsed ? "auto" : service.position.top },
                 left: { xs: "auto", md: isCollapsed ? "auto" : service.position.left },
@@ -185,7 +188,7 @@ const Maintenance = () => {
                   <Typography
                     key={lineIndex}
                     variant="body1"
-                    className="servicetitle bodyMediumText2"
+                    className="bodyMediumText2"
                     sx={{ color: "#FCFCFC" }}
                   >
                     {line}

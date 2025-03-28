@@ -69,6 +69,7 @@ const Header = () => {
       />
 
       <Box
+        className='menu-mobile-sec'
         sx={{
           position: 'absolute',
           left: '50%',
@@ -77,14 +78,17 @@ const Header = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-
         }}
       >
         {!anchorEl && (
           <Box
             sx={{
               backgroundColor: '#7FEE64',
-              borderRadius: '0 0 24px 24px',
+              borderRadius: {
+                xs: '0px 0px 16px 16px',
+                sm: '0px 0px 20px 20px',
+                md: '0px 0px 24px 24px',
+              },
               padding: { xs: '6px 12px', sm: '10px 16px', md: '14px 24px' },
               display: 'flex',
               alignItems: 'center',
@@ -109,7 +113,7 @@ const Header = () => {
 
         {anchorEl && (
           <Box className="menu-container" ref={menuRef}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, sm: 2, md: 3 } }}>
               {[
                 { label: 'Home', path: '/' },
                 { label: 'Machine', path: '/machine' },

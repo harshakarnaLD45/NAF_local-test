@@ -32,11 +32,14 @@ const ArrowButton = () => {
 
   return (
     <button
+    className='arrowbutton'
       style={buttonStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
       
-      <svg style={{ 
+      <svg 
+      className='arrowsvg'
+      style={{ 
         ...iconStyle,
         transform: isHovered ? 'rotate(45deg)' : 'rotate(0deg)',
 

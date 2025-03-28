@@ -6,8 +6,11 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
     const buttonRef = useRef(null);
 
     useEffect(() => {
+        // Function to determine if hover effect should be enabled
+        const isHoverEnabled = () => window.innerWidth >= 1025;
+
         const handleMouseMove = (e) => {
-            if (!buttonRef.current) return;
+            if (!buttonRef.current || !isHoverEnabled()) return;
 
             const button = buttonRef.current.getBoundingClientRect();
             const x = e.clientX - (button.left + button.width / 2);
@@ -20,7 +23,7 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
                 setPosition({
                     x: x * strength * 0.4,
                     y: y * strength * 0.4,
-                    active: true
+                    active: true,
                 });
             } else {
                 setPosition({ x: 0, y: 0, active: false });
@@ -28,20 +31,40 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
         };
 
         const handleMouseLeave = () => {
+            if (!isHoverEnabled()) return;
             setPosition({ x: 0, y: 0, active: false });
         };
 
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('mouseleave', handleMouseLeave);
+        // Add event listeners only if hover is enabled
+        if (isHoverEnabled()) {
+            window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('mouseleave', handleMouseLeave);
+        }
 
+        // Handle resize to enable/disable hover effect dynamically
+        const handleResize = () => {
+            if (isHoverEnabled()) {
+                window.addEventListener('mousemove', handleMouseMove);
+                window.addEventListener('mouseleave', handleMouseLeave);
+            } else {
+                window.removeEventListener('mousemove', handleMouseMove);
+                window.removeEventListener('mouseleave', handleMouseLeave);
+                setPosition({ x: 0, y: 0, active: false }); // Reset position on small screens
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('mouseleave', handleMouseLeave);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     return (
-        <div className="detection-area" style={styles.detectionArea}>
+        <div className="detection-area animate-buttons" style={styles.detectionArea}>
             {/* Outer Circle Slightly Outside */}
             {position.active && (
                 <div
@@ -69,8 +92,12 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
                         <ArrowIcon />
                     ) : (
                         <div style={styles.splitText}>
-                            <div className='bodyRegularText1 btn-spac-left' style={styles.leftText}>{text1}</div>
-                            <div className='bodyRegularText1 btn-spac-right' style={styles.rightText}>{text2}</div>
+                            <div className="bodyRegularText1 btn-spac-left" style={styles.leftText}>
+                                {text1}
+                            </div>
+                            <div className="bodyRegularText1 btn-spac-right" style={styles.rightText}>
+                                {text2}
+                            </div>
                         </div>
                     )}
                 </div>
@@ -126,7 +153,7 @@ const styles = {
     },
     outerCircle: {
         position: 'absolute',
-        width: '120px',  // Same size as main button
+        width: '120px', // Same size as main button
         height: '120px',
         borderRadius: '50%',
         border: '1.5px solid #7FEE64',

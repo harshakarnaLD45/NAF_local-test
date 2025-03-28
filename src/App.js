@@ -6,6 +6,7 @@ import Footer from './Componenets/FooterComponent/Footer';
 import NoiseEffect from './Componenets/NoiseEffect/NoiseEffect';
 import './i18n'; 
 import MachinesPage from './Pages/MachinesPage/MachinesPage';
+import software from './Pages/software/software';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' Component={HomePage} />
           <Route path='home' Component={HomePage} />
           <Route path='machine' Component={MachinesPage} />
+           <Route path='software' Component={software} />
           <Route path='*' Component={HomePage} />
         </Routes>
         <Footer />

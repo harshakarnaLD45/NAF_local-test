@@ -44,7 +44,7 @@ const TestimonialCard = ({ text, author }) => (
   <Paper
     elevation={0}
     sx={{
-      bgcolor: "#262626",
+      bgcolor: "#161616",
       borderRadius: 2,
       p: 2.5,
       display: "flex",
@@ -73,7 +73,7 @@ const Testimonials = () => {
   const column2Ref = useRef(null);
 
   useEffect(() => {
-    const scrollSpeed = 1; // Adjust this value to change scroll speed
+    const scrollSpeed = 1;
     let animationFrameId;
 
     const scrollColumns = () => {
@@ -104,14 +104,17 @@ const Testimonials = () => {
 
   return (
     <Box sx={{
-      paddingX: '2rem', paddingTop: '10rem',
-    }}>
+      // paddingX: '2rem', paddingTop: '10rem', 
+    }}
+      className='section-container'
+    >
       <Box
         sx={{
           bgcolor: "#262626",
           py: 0,
           position: "relative",
           px: "2rem",
+          borderRadius: '24px',
         }}
       >
         <Grid container alignItems="center">
@@ -122,12 +125,13 @@ const Testimonials = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: { xs: "center", md: "flex-start" },
-                gap: 10,
+                alignItems: { xs: "flex-start", md: "flex-start" },
+                gap: { xs: 5, md: 10 },
                 height: "100%",
                 justifyContent: "space-between",
                 paddingRight: '2rem',
                 paddingTop: '6rem',
+                paddingBottom: { xs: "3rem", md: "0rem" }
               }}
             >
               <Typography
@@ -137,10 +141,44 @@ const Testimonials = () => {
               >
                 What's Our Clients Are Saying
               </Typography>
-              <Box
+              {/* <Box className="testmonialimage"
                 component="img"
                 src={image}
                 alt="Vector"
+                sx={{width:'377px',height:'308px'}}
+              /> */}
+
+              <Box
+                className="testmonialimage"
+                component="img"
+                src={image}
+                alt="Vector"
+                sx={{
+                  width: '377px',
+                  height: '308px',
+                  maxWidth: '100%',
+                  objectFit: 'contain',
+                  display: 'block',
+                  textAlign: 'left',
+
+                  '@media (max-width: 1200px)': {
+                    width: '320px',
+                    height: '261px',
+                  },
+                  '@media (max-width: 900px)': {
+                    width: '249px',
+                    height: '204px',
+                    // paddingLeft:'0rem'
+                  },
+                  '@media (max-width: 600px)': {
+                    width: '249px',
+                    height: '204px',
+                  },
+                  '@media (max-width: 480px)': {
+                    width: '119px',
+                    height: '98px',
+                  }
+                }}
               />
             </Box>
           </Grid>
@@ -174,7 +212,12 @@ const Testimonials = () => {
               </Grid>
 
               {/* Column 2 - Scrolls Down */}
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6}
+                sx={{
+                  paddingTop: '0px',
+                  display: { xs: 'none', sm: 'block' }, // Hide below 600px
+                }}
+              >
                 <Box
                   ref={column2Ref}
                   sx={{

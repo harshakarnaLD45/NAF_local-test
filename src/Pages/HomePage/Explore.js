@@ -67,57 +67,64 @@ function Explore() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const cards = cardsContainerRef.current.children;
+    // Check if screen width is greater than 1024px
+    const isLargeScreen = window.matchMedia('(min-width: 1025px)').matches;
 
-    gsap.fromTo(
-      cards,
-      { y: 100, opacity: 1 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.8,
-        duration: 2,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: cardsContainerRef.current,
-          start: 'top 80%',
-          end: 'bottom 90%',
-          scrub: true,
-          once: false,
-        },
-      }
-    );
+    if (isLargeScreen) {
+      const cards = cardsContainerRef.current.children;
 
-    cardRefs.current.forEach((card) => {
-      if (!card) return;
+      gsap.fromTo(
+        cards,
+        { y: 100, opacity: 1 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.8,
+          duration: 2,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardsContainerRef.current,
+            start: 'top 80%',
+            end: 'bottom 90%',
+            scrub: true,
+            once: false,
+          },
+        }
+      );
 
-      const smallImages = card.querySelectorAll('.smallImage');
-      const image1 = smallImages[0];
-      const image2 = smallImages[1];
-      const image3 = smallImages[2];
+      cardRefs.current.forEach((card) => {
+        if (!card) return;
 
-      const tl = gsap.timeline({ paused: true });
+        const smallImages = card.querySelectorAll('.smallImage');
+        const image1 = smallImages[0];
+        const image2 = smallImages[1];
+        const image3 = smallImages[2];
 
-      tl
-        .fromTo(image1,
-          { y: 200, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
-        )
-        .fromTo(image2,
-          { x: -150, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3'
-        )
-        .fromTo(image3,
-          { x: 100, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3'
-        );
+        const tl = gsap.timeline({ paused: true });
 
-      card.addEventListener('mouseenter', () => tl.play());
-      card.addEventListener('mouseleave', () => tl.reverse());
-    });
+        tl
+          .fromTo(image1,
+            { y: 200, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }
+          )
+          .fromTo(image2,
+            { x: -150, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3'
+          )
+          .fromTo(image3,
+            { x: 100, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3'
+          );
+
+        card.addEventListener('mouseenter', () => tl.play());
+        card.addEventListener('mouseleave', () => tl.reverse());
+      });
+    }
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      if (isLargeScreen) {
+        ScrollTrigger.getAll().forEach((st) => st.kill());
+      }
     };
   }, []);
 
@@ -137,9 +144,9 @@ function Explore() {
 
   const handleMouseMove = (e) => {
     if (!isDragging) return;
-    e.preventDefault(); // Prevents text selection or other default behavior
+    e.preventDefault();
     const x = e.pageX - cardsContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Horizontal movement only
+    const walk = (x - startX) * 2;
     cardsContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -151,9 +158,9 @@ function Explore() {
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
-    e.preventDefault(); // Prevents vertical scrolling on touch devices
+    e.preventDefault();
     const x = e.touches[0].pageX - cardsContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Horizontal movement only
+    const walk = (x - startX) * 2;
     cardsContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -170,25 +177,34 @@ function Explore() {
       <Box>
         <Box className='explore-container section-container'>
           <Box>
-            <Typography variant='h2' className='headings-h2 main-sub-container1' sx={{ color: '#FCFCFC' }}>
+            <Typography variant='h2' className='headings-h2 main-sub-container1 main-sub-containerss' sx={{ color: '#FCFCFC' }}>
               Explore Our Vending Machines
             </Typography>
-            <Typography variant="body1" className='bodyRegularText3 main-sub-container1' sx={{ color: '#C2C2C4' }}>
+            <Typography variant="body1" className='bodyRegularText3 main-sub-container1 main-sub-containerss' sx={{ color: '#C2C2C4' }}>
               Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.
             </Typography>
           </Box>
-          <Box sx={{ alignSelf: 'flex-end'}}>
+          <Box sx={{ alignSelf: 'flex-end' }} className="explorebutton">
             <AnimateButton />
           </Box>
         </Box>
 
-        <Box sx={{ paddingLeft: isDragging ? 0 : '50px' }}>
+        <Box
+          sx={{
+            paddingLeft: isDragging ? 0 : {
+              xs: '15px',
+              sm: '20px',
+              md: '30px',
+              lg: '50px',
+            },
+          }}
+        >
           <Box
             ref={cardsContainerRef}
             sx={{
               display: 'flex',
               overflowX: 'auto',
-              overflowY: 'hidden', // Prevent vertical scrolling
+              overflowY: 'hidden',
               scrollSnapType: 'x mandatory',
               WebkitOverflowScrolling: 'touch',
               scrollbarWidth: 'none',
@@ -226,7 +242,7 @@ function Explore() {
                   overflow: 'hidden',
                   transition: 'all 0.3s ease-in-out',
                   '&:hover .cardimage': {
-                    transform: 'scale(1.15)',
+                    transform: { xs: 'none', lg: 'scale(1.15)' }, // Hover scale only above 1024px
                   },
                 }}
               >
@@ -252,6 +268,7 @@ function Explore() {
                       left: 0,
                       right: 0,
                       bottom: 0,
+
                     }}
                   >
                     <CardMedia
@@ -280,7 +297,7 @@ function Explore() {
                       }}
                     />
                     <CardMedia
-                      className="smallImage  "
+                      className="smallImage"
                       component="img"
                       image={machine.smallImages[2]}
                       sx={{

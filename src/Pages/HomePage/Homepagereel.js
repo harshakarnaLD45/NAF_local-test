@@ -11,47 +11,47 @@ const Homepagereel = () => {
   useEffect(() => {
     const videoContainer = videoContainerRef.current;
 
-    // GSAP animation with timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: videoContainer,
-        start: () => `top ${window.innerWidth < 1650 ? '50%' : '50%'}`,
-        end: "bottom 20%",
-        scrub: 1,
-      }
-    });
-
-
-    tl.to(videoContainer, {
-      width: "100vw",
-      borderRadius: "0px",
-      marginLeft: 0,
-      marginRight: 0,
-      position: "relative",
-      left: "50%",
-      xPercent: -50,
-      ease: "power2.inOut",
-    })
-      .to(videoContainer, {
-        // width: "95%",
-        width: () => {
-          if (window.innerWidth < 1650) return '93%';
-
-          return '96%';
-        },
-        borderRadius: "10px",
-        marginLeft: "auto",
-        marginRight: "auto",
-        left: 0,
-        xPercent: 0,
-        ease: "power2.inOut",
+    // Check if screen width is greater than 1024px
+    if (window.innerWidth > 1024) {
+      // GSAP animation with timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: videoContainer,
+          start: () => `top ${window.innerWidth < 1650 ? '50%' : '50%'}`,
+          end: "bottom 20%",
+          scrub: 1,
+        }
       });
 
+      tl.to(videoContainer, {
+        width: "100vw",
+        borderRadius: "0px",
+        marginLeft: 0,
+        marginRight: 0,
+        position: "relative",
+        left: "50%",
+        xPercent: -50,
+        ease: "power2.inOut",
+      })
+        .to(videoContainer, {
+          width: () => {
+            if (window.innerWidth < 1650) return '93%';
+            return '96%';
+          },
+          borderRadius: "10px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 0,
+          xPercent: 0,
+          ease: "power2.inOut",
+        });
 
-    return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+      // Cleanup function
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    }
   }, []);
 
   return (
@@ -72,9 +72,17 @@ const Homepagereel = () => {
           height: "auto",
           overflow: "hidden",
           borderRadius: "24px",
+          "@media (max-width: 1024px)": {
+            borderRadius: "9.495px",
+          },
+        
           width: "93%",
           "@media (min-width: 1650px)": {
             width: "96%",
+          },
+          "@media (max-width: 480px)": {
+            borderRadius: "0px",
+            width: "100%",
           },
           marginLeft: "auto",
           marginRight: "auto",

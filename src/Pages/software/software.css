@@ -1,0 +1,128 @@
+.software-hero-sec {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 70px;
+}
+
+.software-hero-section2 {
+    margin-top: 300px;
+}
+
+.software-hero-text-sec {
+    width: 50%;
+    align-content: center;
+}
+
+.software-herosubtitle {
+    width: 70%;
+}
+
+.software-hero-img-sec {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.software-hero-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    right: -50px;
+}
+
+.software-herosubtitle2 {}
+
+.bentogrid-container {
+    margin-top: 50px;
+}
+
+.bentogrid-item {
+    display: flex;
+    /* display: flex; */
+    /* width: 593px; */
+    height: 480px;
+    border-radius: 24px !important;
+    /* max-height: 480px; */
+    padding: 32px !important;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: #262626 !important;
+}
+@media screen and (max-width: 1440px) {
+    .bentogrid-item {
+        height: 400px;
+    }
+    .expertise-sub-cards{
+        height: 450px !important;
+        width: 450px  !important;
+    }
+}
+
+
+.bentogrid-text-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* text-wrap: nowrap; */
+    align-items: flex-start !important;
+}
+
+/* software */
+
+.spec-title-sec,
+.spec-text-sec {
+    width: 50%;
+}
+
+.spec-text-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.software-hr {
+    display: none;
+    height: 1px !important;
+}
+
+.software-specifications-items {
+    margin-top: 50px;
+    padding-top: 45px;
+    border-top: 0.5px solid #6F6F6F;
+}
+
+/* expertise */
+
+
+.expertise-sub-cards {
+    width: 593px;
+    height: 604px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background-color:  #262626;
+    
+}
+.expertise-sub-cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:45px 39px;
+    margin-bottom: 20px;
+}
+.expertise-maincards-container{
+    display: flex;
+    justify-content:center;
+    gap: 20px;
+    margin-top: 50px;
+    /* margin-top: 100px; */
+}
+.expertise-sub-cards-container2{
+    padding-top: 300px !important;
+}
+.expertise-text-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

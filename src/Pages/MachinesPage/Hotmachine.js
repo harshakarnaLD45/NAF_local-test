@@ -95,20 +95,22 @@ const hotmachineData3 = {
 
 const vendingData = [hotmachineData1, hotmachineData2, hotmachineData3,];
 
-const VendingSection = ({ data, imageOnRight }) => {
+const VendingSection = ({ data, index }) => {
+  const isMobile = window.innerWidth < 900;
+
   const leftContent = (
-    <Stack spacing={4} >
+    <Stack spacing={4}>
       <Box>
         <Typography
           variant="h2"
-          className="maintenancehead headings-h2"
+          className="headings-h2"
           color="#FCFCFC"
           sx={{ mb: 2 }}
         >
           {data.title}
         </Typography>
         <Typography
-          className="maintenancebody bodyRegularText3"
+          className="bodyRegularText3"
           color="#C2C2C4"
           sx={{}}
         >
@@ -133,13 +135,13 @@ const VendingSection = ({ data, imageOnRight }) => {
           >
             <Typography
               color="#C2C2C4"
-              className="maintenancebody bodyRegularText4"
+              className="bodyRegularText4"
             >
               {item.label}
             </Typography>
             <Box sx={{ width: "350px", textAlign: "right" }}>
               <Typography
-                className="labelvalue bodyRegularText4"
+                className="bodyRegularText4"
                 color={item.highlighted ? "#FA7854" : "#C2C2C4"}
                 sx={{
                   fontWeight: item.highlighted ? "500" : "400",
@@ -153,7 +155,7 @@ const VendingSection = ({ data, imageOnRight }) => {
         <Typography
           align="right"
           color="#C2C2C4"
-          className="pricetext bodyRegularText5"
+          className="bodyRegularText5"
         >
           {data.footnote}
         </Typography>
@@ -221,11 +223,15 @@ const VendingSection = ({ data, imageOnRight }) => {
       className="section-container"
       sx={{ paddingY: '5rem' }}
     >
-      <Grid item xs={12} md={6}>
-        {imageOnRight ? leftContent : rightContent}
+      <Grid item xs={12} md={6} sx={{
+        order: { xs: 1, md: index % 2 === 0 ? 1 : 2 } // Image always first in mobile
+      }}>
+        {isMobile || index % 2 === 0 ? rightContent : leftContent}
       </Grid>
-      <Grid item xs={12} md={6}>
-        {imageOnRight ? rightContent : leftContent}
+      <Grid item xs={12} md={6} sx={{
+        order: { xs: 2, md: index % 2 === 0 ? 2 : 1 } // Text always second in mobile
+      }}>
+        {isMobile || index % 2 === 0 ? leftContent : rightContent}
       </Grid>
     </Grid>
   );
@@ -238,7 +244,7 @@ export default function Hotmachine() {
         <VendingSection
           key={index}
           data={data}
-          imageOnRight={index % 2 !== 0}
+          index={index}
         />
       ))}
     </>

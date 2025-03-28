@@ -21,16 +21,16 @@ const Footer = () => {
 
   return (
     <Box sx={{ pt: { xs: '2rem', md: '5rem' } }} className='footer-container'>
-      <Box
+      <Box className="footer-section"
         sx={{
           bgcolor: "#FA7854",
           overflow: "hidden",
           position: "relative",
-          pt: { xs: 4, sm: 6, md: 10},
-          pb: { xs: 4, sm: 6, md: 0},
+          pt: { xs: 4, sm: 6, md: 10 },
+          pb: { xs: 4, sm: 6, md: 0 },
         }}
       >
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ position: "relative ",}} >
           <Box className="footer-orange-ball"
             sx={{
               width: {
@@ -71,7 +71,7 @@ const Footer = () => {
             Got a project? Want to collaborate?
           </Typography>
 
-          <Box  className="footer-main-div"
+          <Box className="footer-main-div"
             sx={{
               display: "grid",
               gridTemplateColumns: {
@@ -156,9 +156,10 @@ const Footer = () => {
               </Box>
               <Box className="social-icon-sec" sx={{
                 position: 'relative',
-                bottom: '-50px',
-                
-                display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center' }}>
+                // bottom: '-50px',
+
+                display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center'
+              }}>
                 {socialIcons.map((social, index) => (
                   <a
                     key={index}
@@ -184,7 +185,7 @@ const Footer = () => {
                 ))}</Box>
 
 
-             
+
 
             </Box>
             <Stack className="mobile-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
@@ -247,7 +248,7 @@ const Footer = () => {
                   Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
               </Stack>
-              <Box className="info-stack"  sx={{ mt: { xs: 2,  } }}>
+              <Box className="info-stack" sx={{ mt: { xs: 2, } }}>
                 <Typography
                   className="footercontact bodyRegularText4 "
                   sx={{
@@ -271,7 +272,7 @@ const Footer = () => {
                       fontSize: { xs: "18px", md: "22px" }
                     }}
                   >
-                    DBI Foyer Freiberg, Halsbrückerstrasse <br className="br-footer"  /> 34, 09599 Freiberg
+                    DBI Foyer Freiberg, Halsbrückerstrasse <br className="br-footer" /> 34, 09599 Freiberg
                   </Typography>
                   <Typography
                     className="footercontactdown footerright bodyMediumText2"
@@ -281,67 +282,69 @@ const Footer = () => {
                       fontSize: { xs: "18px", md: "22px" }
                     }}
                   >
-                    Landratsamt Mittweida Haus A, Am <br  className="br-footer" /> Landratsamt 3, 09648 Mittweida
+                    Landratsamt Mittweida Haus A, Am <br className="br-footer" /> Landratsamt 3, 09648 Mittweida
                   </Typography>
                 </Stack>
               </Box>
             </Stack>
           </Box>
-        
-          <Box className="footer-policy-div"
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              justifyContent: "space-between",
-              position: "relative",
-              bottom: "-35px",
-              zIndex: 1,
-              px: { xs: 2, md: "2rem" },
-              gap: { xs: 2, md: 0 },
-              // paddingBottom: '2rem',
-              paddingTop: '0rem'
-            }}>
-            <Typography
-              className="footercontact bodyRegularText4"
+          {/* <Box className=" " sx={{position:'relative',}} > */}
+            <Box className="footer-policy-div"
               sx={{
-                color: "#1A1A1A",
-                fontSize: { xs: "14px", md: "17px" },
-                textAlign: { xs: "center", md: "left" }
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+                justifyContent: "space-between",
+                position: "relative",
+                bottom: "-35px",
+                zIndex: 1,
+                px: { xs: 2, md: "2rem" },
+                gap: { xs: 2, md: 0 },
+                // paddingBottom: '2rem',
+                paddingTop: '0rem'
+              }}>
+              <Typography
+                className="footercontact bodyRegularText4"
+                sx={{
+                  color: "#1A1A1A",
+                  fontSize: { xs: "14px", md: "17px" },
+                  textAlign: { xs: "center", md: "left" }
+                }}
+              >
+                © Copyright {currentYear}. All rights reserved.
+              </Typography>
+              <Typography
+                className="footercontact bodyRegularText4"
+                sx={{
+                  color: "#1A1A1A",
+                  fontSize: { xs: "14px", md: "17px" },
+                  textAlign: { xs: "center", md: "right" }
+                }}
+              >
+                Terms and Conditions
+              </Typography>
+            </Box>
+            
+
+
+            <Typography
+              variant="h1"
+              className="footerBottomhead letworktogether"
+              sx={{
+                color: "#FCFCFC",
+                fontSize: { xs: "40px", sm: "80px", md: "100px", lg: "130px" },
+                position: "relative",
+                bottom: { xs: -20, sm: -40, md: -40, },
+                textAlign: "center",
+                zIndex: 0,
+                whiteSpace: "nowrap",
+                width: "100%",
               }}
             >
-              © Copyright {currentYear}. All rights reserved.
-            </Typography>
-            <Typography
-              className="footercontact bodyRegularText4"
-              sx={{
-                color: "#1A1A1A",
-                fontSize: { xs: "14px", md: "17px" },
-                textAlign: { xs: "center", md: "right" }
-              }}
-            >
-              Terms and Conditions
+              LET'S WORK TOGETHER
             </Typography>
           </Box>
-        {/* <Box className="footerBottom-div px-4"> */}
-
-          <Typography
-            variant="h1"
-            className="footerBottomhead letworktogether"
-            sx={{
-              color: "#FCFCFC",
-              fontSize: { xs: "40px", sm: "80px", md: "100px", lg: "130px" },
-              position: "relative",
-              bottom: { xs: -20, sm: -40, md: -40, },
-              textAlign: "center",
-              zIndex: 0,
-              whiteSpace: "nowrap",
-              width: "100%",
-            }}
-            >
-            LET'S WORK TOGETHER
-          </Typography>
-            {/* </Box> */}
-        </Box>
+         
+        {/* </Box> */}
       </Box>
     </Box>
   );

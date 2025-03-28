@@ -13,11 +13,10 @@ const MarqTextScroll = () => {
       <>
         <Typography
           variant="h3"
-          className="Marquetitle headings-h3"
+          className="headings-h3"
           sx={{
             color: "#9D9EA1",
             whiteSpace: "nowrap",
-            // fontSize: "54px",
             textTransform: 'uppercase'
           }}
         >
@@ -40,7 +39,7 @@ const MarqTextScroll = () => {
 
   return (
     <Box
-      className="maruecontainer  "
+      className="maruecontainer"
       sx={{
         position: "relative",
         width: "100%",

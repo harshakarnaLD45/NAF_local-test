@@ -35,10 +35,10 @@ const companyLogosRow2 = [
 const ClientLogo = ({ src, alt }) => (
   <Box
     sx={{
-      width: { xs: 160, sm: 220, md: 280, lg: 320 },
-      height: { xs: 160, sm: 220, md: 280, lg: 320 },
+      width: { xs: 120, sm: 200, md: 280, lg: 320 },
+      height: { xs: 120, sm: 200, md: 280, lg: 320 },
       bgcolor: "#262626",
-      borderRadius: '12px',
+      borderRadius: "12px",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -74,13 +74,23 @@ const Clients = () => {
     const row1SingleWidth = companyLogos.length * totalItemWidth;
     const row2SingleWidth = companyLogosRow2.length * totalItemWidth;
 
+    // Adjust duration based on screen size
+    const getDuration = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 600) return 50; // Slower for small screens (xs)
+      if (screenWidth < 900) return 40; // Medium speed for small-medium screens (sm)
+      return 30; // Default speed for larger screens (md, lg)
+    };
+
+    const duration = getDuration();
+
     // Create seamless looping animation for Row 1 (Right to Left)
     const row1Animation = gsap.fromTo(
       row1,
       { x: 0 },
       {
         x: -row1SingleWidth,
-        duration: 30, // Adjust speed here
+        duration: duration, // Dynamic duration
         ease: "none",
         repeat: -1,
         modifiers: {
@@ -98,7 +108,7 @@ const Clients = () => {
       { x: -row2SingleWidth },
       {
         x: 0,
-        duration: 30, // Adjust speed here
+        duration: duration, // Dynamic duration
         ease: "none",
         repeat: -1,
         modifiers: {
@@ -110,9 +120,19 @@ const Clients = () => {
       }
     );
 
+    // Update animation duration on window resize
+    const handleResize = () => {
+      const newDuration = getDuration();
+      row1Animation.duration(newDuration);
+      row2Animation.duration(newDuration);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
       row1Animation.kill();
       row2Animation.kill();
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -130,11 +150,14 @@ const Clients = () => {
 
   return (
     <Box ref={sectionRef} sx={{ overflow: "hidden" }}>
-      <Box className='section-container'>
+      <Box className="section-container">
         <Typography variant="h2" className="headings-h2">
           Our Clients
         </Typography>
-        <Typography variant="body1" className="bodyRegularText3" color="#C2C2C4"
+        <Typography
+          variant="body1"
+          className="bodyRegularText3"
+          color="#C2C2C4"
           sx={{ maxWidth: { xs: "100%", md: "640px" } }}
         >
           Partnering with businesses of all sizes. We provide customized

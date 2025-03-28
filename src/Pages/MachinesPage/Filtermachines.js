@@ -69,7 +69,7 @@ const Filtermachines = () => {
             <Button
               variant={selectedFilter === category.id ? "contained" : "outlined"}
               onClick={() => handleFilterClick(category.id)}
-              className="machinebuttons bodyRegularText3"
+              className="bodyRegularText3"
               sx={{
                 borderRadius: "100px",
                 fontSize: "22px",

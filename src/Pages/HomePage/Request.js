@@ -65,7 +65,7 @@ const Request = () => {
                 <AnimateButton />
             </Box>
 
-            <Box sx={{ position: "relative" }}>
+            <Box sx={{ position: "relative" }}  className="section-container" >
                 {solutionCards.map((card, i) => (
                     <Card
                         key={card.id}
@@ -83,17 +83,19 @@ const Request = () => {
                                 top: `calc(20vh + ${i * 15}px)`,
                             },
                             width: "100%",
-                            maxWidth: { xs: "100%", md: "1206px" },
+                            maxWidth: { xs: "90%", md: "1206px" },
                             height: { xs: "auto", md: "407px" },
                             mx: "auto",
                             backgroundColor: "#F4F4F4",
                             borderRadius: 2,
                             overflow: "hidden",
                             transform: {
-                                xs: "rotate(0deg)",
+                                // xs: "rotate(0deg)",
+                                xs:`rotate(${card.rotation}deg)`,
                                 md: `rotate(${card.rotation}deg)`,
                             },
                             p: { xs: 2, md: 0 },
+                            paddingTop:{xs:'2rem',md:'0rem'}
                             // zIndex: solutionCards.length - i, 
                         }}
                     >
@@ -106,6 +108,7 @@ const Request = () => {
                                 flexDirection: "column",
                             }}
                         >
+                            <Box sx={{display:"flex",flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
                             <Typography
                                 className="headings-h3"
                                 variant="h3"
@@ -114,7 +117,7 @@ const Request = () => {
                                     top: { md: "57px" },
                                     left: { md: "50px" },
                                     color: "#1A1A1A",
-                                    whiteSpace: "nowrap",
+                                    // whiteSpace: "nowrap",
                                     mb: { xs: 2, md: 0 },
                                 }}
                             >
@@ -132,7 +135,7 @@ const Request = () => {
                                 }}
                             >
                                 {card.id}
-                            </Typography>
+                            </Typography></Box>
                             <Typography
                                 className="bodyRegularText3"
                                 sx={{
@@ -142,6 +145,7 @@ const Request = () => {
                                     left: { md: "50px" },
                                     color: "#444444",
                                     textAlign: "left",
+                                    paddingTop:{xs:'2rem',md:'0rem'}
                                 }}
                             >
                                 {card.description}
