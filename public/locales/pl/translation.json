@@ -1,0 +1,108 @@
+{
+    "Home": {
+        "menu": "Menu",
+        "menuHome": "Strona główna",
+        "menuMachines": "Maszyny",
+        "menuSoftware": "Oprogramowanie",
+        "menuSolutions": "Rozwiązania",
+        "menuInsights": "Wgląd",
+        "menuCompany": "Firma",
+
+        "profilemenbership": "Członkostwo",
+        "profilelogin": "Zaloguj się / Zarejestruj",
+        "profileregister": "Logowanie klienta",
+
+        "BookaDemo": "Umów się na demo",
+
+        "revolutionizeTitle": "Zrewolucjonizuj swój biznes dzięki inteligentnym automatom vendingowym",
+        "revolutionizeSubTitle": "Usprawnij operacje i zwiększ swoje zyski. Nasze rozwiązania vendingowe zostały zaprojektowane z myślą o wydajności, niezawodności i większych przychodach.",
+        "viewMore": "Zobacz więcej",
+
+        "exploreTitle": "Odkryj nasze automaty vendingowe",
+        "exploreSubTitle": "Nasze inteligentne automaty vendingowe zapewniają wygodę, niezawodność i możliwość dostosowania dzięki nowoczesnej technologii oraz intuicyjnemu projektowi, który zwiększa efektywność i zyski.",
+
+        "pizzaVendingMachine": "Automat do pizzy",
+        "CottonCandyVendingMachine": "Automat do waty cukrowej",
+        "IceCreamVendingMachine": "Automat do lodów",
+        "HotVendingMachine": "Automat z gorącymi napojami",
+
+        "OurClientsTitle": "Nasi klienci",
+        "OurClientsSubTitle": "Współpracujemy z firmami każdej wielkości. Oferujemy spersonalizowane rozwiązania vendingowe dostosowane do Twoich indywidualnych potrzeb.",
+
+        "CloudSystem": "System chmurowy",
+        "CloudSystemTitle": "Przejmij kontrolę nad swoją siecią vendingową",
+        "CloudSystemSubTitle": "Zarządzaj automatami vendingowymi na całym świecie, zmieniaj ceny w czasie rzeczywistym i śledź kluczowe wskaźniki wydajności – wszystko za pomocą jednego intuicyjnego panelu sterowania.",
+
+        "YouRequest": "Ty zamawiasz.",
+        "WeBuild": "My budujemy!",
+
+        "UXUIDesignTitle": "Projektowanie UX/UI",
+        "UXUIDesignSubTitle": "Zarządzaj automatami vendingowymi na całym świecie, zmieniaj ceny w czasie rzeczywistym i śledź kluczowe wskaźniki wydajności – wszystko za pomocą jednego intuicyjnego panelu sterowania.",
+
+        "GraphicDesignTitle": "Projektowanie graficzne",
+        "GraphicDesignSubTitle": "Zarządzaj automatami vendingowymi na całym świecie, zmieniaj ceny w czasie rzeczywistym i śledź kluczowe wskaźniki wydajności – wszystko za pomocą jednego intuicyjnego panelu sterowania.",
+
+        "EndDevelopmentTitle": "Kompleksowy rozwój oprogramowania",
+        "EndDevelopmentSubTitle": "Zarządzaj automatami vendingowymi na całym świecie, zmieniaj ceny w czasie rzeczywistym i śledź kluczowe wskaźniki wydajności – wszystko za pomocą jednego intuicyjnego panelu sterowania.",
+
+        "WhatsNew": "Co nowego",
+
+        "NafCrossText": "W NAF Germany z pasją dostarczamy innowacyjne rozwiązania, które przekształcają biznesy. Dzięki wieloletniemu doświadczeniu w technologii vendingowej i tworzeniu oprogramowania łączymy najnowocześniejsze technologie z podejściem skoncentrowanym na użytkowniku, aby zapewnić wyjątkowe rezultaty.",
+
+        "WhatsOurClientsareSaying": "Co mówią nasi klienci",
+        "clientDavidLee": "David Lee, CIO, Gamma Industries.",
+        "clientDavidLeeText1": "Byliśmy pod wrażeniem ekspertyzy [Nazwa Twojej Firmy] w zakresie rozwiązań chmurowych. Ich zespół pomógł nam płynnie przenieść infrastrukturę do chmury, poprawiając bezpieczeństwo i znacznie redukując koszty IT.",
+        "clientDavidLeeText2": "Byliśmy pod wrażeniem ekspertyzy [Nazwa Twojej Firmy] w zakresie rozwiązań chmurowych. Ich zespół pomógł nam płynnie przenieść infrastrukturę do chmury, poprawiając bezpieczeństwo i znacznie redukując koszty IT.",
+        "clientJohnSmith": "John Smith, CEO, Acme Corp",
+        "clientJohnSmithText1": "Współpraca z NAF Germany była przełomem dla naszego biznesu. Ich projekty UI/UX są nie tylko estetyczne, ale także niezwykle intuicyjne, co znacznie zwiększyło zaangażowanie klientów.",
+        "clientJaneDoe": "Jane Doe, CTO, Beta Solutions",
+        "clientJaneDoeText1": "Usługi kompleksowego rozwoju oprogramowania NAF Germany były wyjątkowe. Dostarczyli wysokiej jakości rozwiązanie programistyczne przed terminem i w ramach budżetu. Ich zespół był profesjonalny, responsywny i świetnie się z nimi współpracowało.",
+        "clientJaneDoeText2": "Zarządzanie zapasami w naszej restauracji nigdy nie było tak efektywne! Oprogramowanie [Nazwa Twojej Firmy] znacznie zmniejszyło marnowanie żywności i poprawiło nasze wyniki finansowe. Gorąco polecamy ich usługi.",
+
+        "Gotaproject": "Masz projekt? Chcesz współpracować?",
+        "footerContact": "Kontakt",
+        "footerinfomail": "Coninfo@naf-halsbach.de",
+        "footerinfonumber": "0152 – 28387141 (Odette Lamkhizni)",
+        "footerinfonumber2": "0162 – 1638005 (Wsparcie techniczne 24/7)",
+
+        "footerCopyright": "© Copyright 2025. Wszelkie prawa zastrzeżone.",
+        "footerTermsConditions": "Regulamin",
+        "footerTitle": "Współpracujmy",
+        "footerAddress": "Adres:",
+        "footerAddressText": "Obere Straße 3, 09599 Freiberg, OT Halsbach",
+        "AutomatenStandorte": "Lokalizacje automatów:",
+        "AutomatenStandorteText1": "DBI Foyer Freiberg, Halsbrückerstrasse 34, 09599 Freiberg",
+        "AutomatenStandorteText2": "Landratsamt Mittweida Haus A, Am Landratsamt 3, 09648 Mittweida",
+
+        "ssfafas": "o"
+    },
+    "machines": {
+        "machineTitle": "Wydajne automaty vendingowe dla każdej potrzeby",
+        "machineSubTitle": "Zwiększ przychody i usprawnij operacje dzięki naszej gamie konfigurowalnych automatów vendingowych.",
+        "EXPLOREOURVENDINGMACHINES": "ODKRYJ NASZE AUTOMATY VENDINGOWE",
+
+        "hotVendingMachineTitle": "Automat z gorącymi napojami",
+        "hotVendingMachineSubTitle": "Nasz automat do gorących posiłków o dużej pojemności oferuje szeroki wybór dań dostosowanych do potrzeb klientów. Innowacyjny system podgrzewania utrzymuje optymalną temperaturę i jakość potraw, a intuicyjny interfejs sprawia, że zamawianie jest proste i wygodne.",
+
+        "WeightText": "Waga",
+        "Weightnumber": "650 kg",
+        "TemperatureText": "Temperatura",
+        "Temperaturetnumber": "650 kg",
+        "PowerText": "Moc",
+        "Powernumber": "1800 W i 2200 W",
+        "ElectricityText": "Zasilanie",
+        "Electricitynumber": "H2280 z nadstawką, H1900 bez nadstawki, B1880 D1020 z technologią grzewczą",
+        "FranchiseCostText": "Koszt franczyzy",
+        "FranchiseCostnumber": "500* € miesięcznie",
+        "AcquisitioncostsText": "Koszt zakupu",
+        "Acquisitioncostsnumber": "16000* € (możliwa płatność ratalna)",
+
+        "ColdVendingMachine": "Automat z napojami zimnymi",
+        "UnmatchedMaintenanceSupport": "Bezkonkurencyjna konserwacja i wsparcie",
+        "PromptRepairs": "Szybkie naprawy",
+        "RemoteDiagnostics": "Diagnostyka zdalna",
+        "DedicatedSupportTeam": "Dedykowany zespół wsparcia",
+
+        "End": "machines End"
+    }
+}

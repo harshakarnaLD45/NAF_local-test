@@ -120,6 +120,25 @@
   display: none !important;
 }
 
+.language-dropdown-trigger {
+  background-color: transparent;
+  color: #444;
+  padding: 14px 13px 13px 19px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 80px;
+  border: 1px solid #F4F4F4;
+}
+
+.language-dropdown-trigger:focus {
+  outline: 1px solid #F4F4F4;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
 /* For larger screens (desktops, screens above 1024px) */
 @media (max-width: 1024px) {
   .header-container {

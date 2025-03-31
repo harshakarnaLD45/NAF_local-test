@@ -1,3 +1,110 @@
 {
-  
+    "Home": {
+        "menu": "Menü",
+        "menuHome": "Startseite",
+        "menuMachines": "Maschinen",
+        "menuSoftware": "Software",
+        "menuSolutions": "Lösungen",
+        "menuInsights": "Einblicke",
+        "menuCompany": "Unternehmen",
+
+        "profilemenbership": "Mitgliedschaft",
+        "profilelogin": "Anmelden / Registrieren",
+        "profileregister": "Kunden-Login",
+
+        "BookaDemo": "Demo buchen",
+
+        "revolutionizeTitle": "Revolutionieren Sie Ihr Geschäft mit intelligenten Verkaufsautomaten",
+        "revolutionizeSubTitle": "Optimieren Sie Ihre Abläufe und steigern Sie Ihren Gewinn. Unsere Verkaufsautomaten sind auf Effizienz ausgelegt und bieten zuverlässige Leistung sowie höhere Einnahmen.",
+        "viewMore": "Mehr anzeigen",
+
+        "exploreTitle": "Entdecken Sie unsere Verkaufsautomaten",
+        "exploreSubTitle": "Unsere intelligenten Verkaufsautomaten bieten Komfort, Zuverlässigkeit und Anpassungsmöglichkeiten mit modernster Technologie und benutzerfreundlichem Design zur Steigerung der Effizienz und Rentabilität.",
+
+        "pizzaVendingMachine": "Pizza-Automat",
+        "CottonCandyVendingMachine": "Zuckerwatte-Automat",
+        "IceCreamVendingMachine": "Eiscreme-Automat",
+        "HotVendingMachine": "Heißgetränke-Automat",
+
+        "OurClientsTitle": "Unsere Kunden",
+        "OurClientsSubTitle": "Partnerschaft mit Unternehmen jeder Größe. Wir bieten maßgeschneiderte Verkaufsautomaten-Lösungen für Ihre individuellen Anforderungen.",
+
+        "CloudSystem": "Cloud-System",
+        "CloudSystemTitle": "Übernehmen Sie die Kontrolle über Ihr Verkaufsnetzwerk",
+        "CloudSystemSubTitle": "Verwalten Sie Ihre Verkaufsautomaten weltweit, passen Sie Preise in Echtzeit an und verfolgen Sie wichtige Leistungskennzahlen – alles von einem einzigen, benutzerfreundlichen Dashboard aus.",
+
+        "YouRequest": "Sie wünschen.",
+        "WeBuild": "Wir bauen!",
+
+        "UXUIDesignTitle": "UX/UI-Design",
+        "UXUIDesignSubTitle": "Verwalten Sie Ihre Verkaufsautomaten weltweit, passen Sie Preise in Echtzeit an und verfolgen Sie wichtige Leistungskennzahlen – alles von einem einzigen, benutzerfreundlichen Dashboard aus.",
+
+        "GraphicDesignTitle": "Grafikdesign",
+        "GraphicDesignSubTitle": "Verwalten Sie Ihre Verkaufsautomaten weltweit, passen Sie Preise in Echtzeit an und verfolgen Sie wichtige Leistungskennzahlen – alles von einem einzigen, benutzerfreundlichen Dashboard aus.",
+
+        "EndDevelopmentTitle": "End-to-End-Entwicklung",
+        "EndDevelopmentSubTitle": "Verwalten Sie Ihre Verkaufsautomaten weltweit, passen Sie Preise in Echtzeit an und verfolgen Sie wichtige Leistungskennzahlen – alles von einem einzigen, benutzerfreundlichen Dashboard aus.",
+
+        "WhatsNew": "Neuigkeiten",
+
+        "NafCrossText": "Bei NAF Germany sind wir leidenschaftlich darin, innovative Lösungen bereitzustellen, die Unternehmen transformieren. Mit jahrelanger Erfahrung in der Verkaufsautomaten-Technologie und Softwareentwicklung kombinieren wir modernste Technik mit einem nutzerzentrierten Ansatz, um außergewöhnliche Ergebnisse zu liefern.",
+
+        "WhatsOurClientsareSaying": "Was unsere Kunden sagen",
+        "clientDavidLee": "David Lee, CIO, Gamma Industries.",
+        "clientDavidLeeText1": "Wir waren beeindruckt von der Expertise von [Ihr Firmenname] in Cloud-basierten Lösungen. Ihr Team hat uns nahtlos bei der Migration unserer Infrastruktur in die Cloud unterstützt, die Sicherheit verbessert und unsere IT-Kosten erheblich gesenkt.",
+        "clientDavidLeeText2": "Wir waren beeindruckt von der Expertise von [Ihr Firmenname] in Cloud-basierten Lösungen. Ihr Team hat uns nahtlos bei der Migration unserer Infrastruktur in die Cloud unterstützt, die Sicherheit verbessert und unsere IT-Kosten erheblich gesenkt.",
+        "clientJohnSmith": "John Smith, CEO, Acme Corp",
+        "clientJohnSmithText1": "Die Zusammenarbeit mit NAF Germany war ein Wendepunkt für unser Unternehmen. Ihre UI/UX-Designs sind nicht nur optisch ansprechend, sondern auch äußerst benutzerfreundlich, was zu einer erheblichen Steigerung der Kundenbindung führte.",
+        "clientJaneDoe": "Jane Doe, CTO, Beta Solutions",
+        "clientJaneDoeText1": "Die End-to-End-Entwicklungsdienstleistungen von NAF Germany waren außergewöhnlich. Sie lieferten eine qualitativ hochwertige Softwarelösung vor dem geplanten Termin und im Budgetrahmen. Ihr Team war professionell, reaktionsschnell und eine Freude, mit ihnen zu arbeiten.",
+        "clientJaneDoeText2": "Das Bestandsmanagement unseres Restaurants war noch nie so effizient! Die Software von [Ihr Firmenname] hat Lebensmittelverschwendung erheblich reduziert und unsere Rentabilität verbessert. Wir empfehlen ihre Dienstleistungen sehr.",
+
+        "Gotaproject": "Haben Sie ein Projekt? Möchten Sie zusammenarbeiten?",
+        "footerContact": "Kontakt",
+        "footerinfomail": "Coninfo@naf-halsbach.de",
+        "footerinfonumber": "0152 – 28387141 (Odette Lamkhizni)",
+        "footerinfonumber2": "0162 – 1638005 (Technischer Support 24/7)",
+
+        "footerCopyright": "© Copyright 2025. Alle Rechte vorbehalten.",
+        "footerTermsConditions": "Allgemeine Geschäftsbedingungen",
+        "footerTitle": "Lassen Sie uns zusammenarbeiten",
+        "footerAddress": "Adresse:",
+        "footerAddressText": "Obere Straße 3, 09599 Freiberg, OT Halsbach",
+        "AutomatenStandorte": "Standorte der Verkaufsautomaten:",
+        "AutomatenStandorteText1": "DBI Foyer Freiberg, Halsbrückerstrasse 34, 09599 Freiberg",
+        "AutomatenStandorteText2": "Landratsamt Mittweida Haus A, Am Landratsamt 3, 09648 Mittweida",
+
+        "ssfafas": "o"
+    },
+    "machines": {
+        "machineTitle": "Hochleistungs-Verkaufsautomaten für jeden Bedarf",
+        "machineSubTitle": "Steigern Sie Ihren Umsatz und optimieren Sie Ihre Abläufe mit unserer Reihe an anpassbaren Verkaufsautomaten.",
+        "EXPLOREOURVENDINGMACHINES": "ENTDECKEN SIE UNSERE VERKAUFSAUTOMATEN",
+
+        "hotVendingMachineTitle": "Heißgetränke-Automat",
+        "hotVendingMachineSubTitle": "Unser Hochkapazitäts-Heißspeisenautomat bietet eine große Auswahl an individuell anpassbaren Speisen und sorgt dafür, dass selbst die anspruchsvollsten Kunden zufriedengestellt werden. Sein innovatives Heizsystem hält die optimale Temperatur und Qualität der Speisen aufrecht, während die benutzerfreundliche Oberfläche eine einfache und effiziente Bestellung ermöglicht.",
+
+        "WeightText": "Gewicht",
+        "Weightnumber": "650 Kg",
+        "TemperatureText": "Temperatur",
+        "Temperaturetnumber": "650 Kg",
+        "PowerText": "Leistung",
+        "Powernumber": "1800 W und 2200 W",
+        "ElectricityText": "Elektrizität",
+        "Electricitynumber": "H2280 mit Aufsatz, H1900 ohne Aufsatz, B1880 D1020 mit Heiztechnologie",
+        "FranchiseCostText": "Franchise-Kosten",
+        "FranchiseCostnumber": "500* € pro Monat",
+        "AcquisitioncostsText": "Anschaffungskosten",
+        "Acquisitioncostsnumber": "16000* € (Ratenzahlung möglich)",
+        "PricesannouncedText": "*Preise werden nach Markteinführung basierend auf den gezeigten Prototypen bekannt gegeben",
+        "ColdVendingMachine": "Kaltgetränke-Automat",
+        "UnmatchedMaintenanceSupport": "Unübertroffener Wartungs- & Supportservice",
+
+        "PreventativeMaintenance": "Vorbeugende Wartung",
+        "PromptRepairs": "Schnelle Reparaturen",
+        "RemoteDiagnostics": "Fern-Diagnose",
+        "DedicatedSupportTeam": "Engagiertes Support-Team",
+
+         "End": "machines End"
+    }
 }

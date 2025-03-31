@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Menu, MenuItem } from '@mui/material';
+import { Box, FormControl, Menu, MenuItem, Select } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Naflogo from '../../assets/naf-halsbach_logo 1.png';
 import MenuIcons from '../../assets/Menu_icon.png';
@@ -10,7 +10,7 @@ import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef(null);
@@ -19,10 +19,12 @@ const Header = () => {
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
   const [isSignInOpen, setIsSignInOpen] = useState(false); // Correct state variable
 
+  const [language, setLanguage] = useState(i18n.language);
   const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
   const handleProfileMenuClose = () => setProfileAnchorEl(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const languageDropdownRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -68,6 +70,14 @@ const Header = () => {
     return () => window.removeEventListener('mousedown', handleClickOutside);
   }, [profileAnchorEl]);
 
+  const handleLanguageChange = (event) => {
+    console.log(event.target.value);
+
+    const newLanguage = event.target.value;
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
+  };
+
   return (
     <Box className='header-container'>
       <Box
@@ -99,7 +109,7 @@ const Header = () => {
             height: '15px',
           }}
         />
-        <span className="bodyRegularText3">{t('homePage.menu')}</span>
+        <span className="bodyRegularText3">{t('headerSection.menu')}</span>
       </Box>
       <Box
         className='menu-mobile-sec'
@@ -148,6 +158,30 @@ const Header = () => {
 
         {anchorEl && (
           <Box className="menu-container" ref={menuRef}>
+            {/* Language Dropdown at Top Right */}
+            <Box sx={{ position: 'absolute', top: 25, right: 25 }} ref={languageDropdownRef}>
+              <select
+                value={language}
+                onChange={handleLanguageChange}
+                className="language-dropdown-trigger bodyRegularText3"
+                style={{
+                  paddingRight: '40px',
+                  appearance: 'none',
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'right 8px center',
+                  backgroundSize: '25px',
+                }}
+              >
+                <option value="de" className='bodyRegularText3'>DEU</option>
+                <option value="en" className='bodyRegularText3'>ENG</option>
+                <option value="fr" className='bodyRegularText3'>FRA</option>
+                <option value="es" className='bodyRegularText3'>ESP</option>
+                <option value="pl" className='bodyRegularText3'>POL</option>
+              </select>
+            </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
               {[
                 { label: 'Home', path: '/' },
@@ -229,7 +263,7 @@ const Header = () => {
             {!isMobile && (
               <Box className="custom-button" onClick={handleMenuClose}>
                 <CloseIcon sx={{ fontSize: '24px' }} />
-                <span className="bodyRegularText3">Menu</span>
+                <span className="bodyRegularText3">{t('headerSection.menu')}</span>
               </Box>
             )}
           </Box>

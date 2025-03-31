@@ -42,8 +42,8 @@ function NoiseEffect() {
 
             for (let i = ripples.length - 1; i >= 0; i--) {
                 const ripple = ripples[i];
-                ripple.radius += 3;
-                ripple.alpha -= 0.01;
+                ripple.radius += 5;
+                ripple.alpha -= 0.02;
 
                 ctx.beginPath();
                 ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 3);
