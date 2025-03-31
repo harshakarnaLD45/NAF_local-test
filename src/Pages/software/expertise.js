@@ -57,8 +57,8 @@ const expertise = () => {
 
                 <Box class name="expertise-sub-cards-container" style={{ padding: '0px', }}>
                     <Box className='expertise-sub-cards'>
-                        <Box className="" >
-                            <img className='' src={CloudMigration} alt="Software Hero Image" />
+                        <Box className=" expertise-image" >
+                            <img className='expertise-image' src={CloudMigration} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
 
@@ -70,8 +70,8 @@ const expertise = () => {
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
-                        <Box className="" >
-                            <img className='' src={CloudSecurity} alt="Software Hero Image" />
+                        <Box className="expertise-image" >
+                            <img className='expertise-image' src={CloudSecurity} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
 
@@ -83,8 +83,8 @@ const expertise = () => {
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
-                        <Box className="" >
-                            <img className='' src={CustomCloudSolutions} alt="Software Hero Image" />
+                        <Box className="expertise-image" >
+                            <img className='expertise-image' src={CustomCloudSolutions} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
 
@@ -102,8 +102,8 @@ const expertise = () => {
                 </Box>
                 <Box className="expertise-sub-cards-container2" style={{ }}>
                     <Box className='expertise-sub-cards'>
-                        <Box className="" >
-                            <img className='' src={CloudOptimization} alt="Software Hero Image" />
+                        <Box className="expertise-image" >
+                            <img className='expertise-image' src={CloudOptimization} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
 
@@ -115,8 +115,8 @@ const expertise = () => {
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
-                        <Box className="" >
-                            <img className='' src={ManagedCloudServices} alt="Software Hero Image" />
+                        <Box className="expertise-image" >
+                            <img className='expertise-image' src={ManagedCloudServices} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
 

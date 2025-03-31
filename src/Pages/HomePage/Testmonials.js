@@ -115,6 +115,7 @@ const Testimonials = () => {
           position: "relative",
           px: "2rem",
           borderRadius: '24px',
+          overflow: "hidden", // Ensure no overflow outside the section
         }}
       >
         <Grid container alignItems="center">
@@ -130,7 +131,7 @@ const Testimonials = () => {
                 height: "100%",
                 justifyContent: "space-between",
                 paddingRight: '2rem',
-                paddingTop: { xs: '3rem', md: '6rem' },
+                paddingTop: '6rem',
                 paddingBottom: { xs: "3rem", md: "0rem" }
               }}
             >
@@ -184,7 +185,7 @@ const Testimonials = () => {
           </Grid>
 
 
-          <Grid item xs={12} md={7}  >
+          <Grid item xs={12} md={7}>
             <Grid container
               spacing={3} className="testimonial-columns"
             >
@@ -193,7 +194,7 @@ const Testimonials = () => {
                 <Box
                   ref={column1Ref} className="column-container"
                   sx={{
-                    height: '600px',
+                    height: '670px',
                     overflow: 'hidden',
                     display: "flex",
                     flexDirection: "column",
@@ -215,17 +216,18 @@ const Testimonials = () => {
               <Grid item xs={12} sm={6}
                 sx={{
                   paddingTop: '0px',
-                  display: { xs: 'none', sm: 'block' }, // Hide below 600px
+                  display: { xs: 'none', sm: 'block' },
                 }}
               >
-                <Box
+                <Box className="testimonial-cards-sec"
                   ref={column2Ref}
                   sx={{
-                    height: '600px',
+                    height: '670px',
                     overflow: 'hidden',
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+
                   }}
                 >
                   {extendedColumn2.map((item, index) => (

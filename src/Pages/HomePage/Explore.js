@@ -7,19 +7,15 @@ import pizza from '../../assets/1 (1).png';
 import Cottoncandy from '../../assets/11.png';
 import Icecream from '../../assets/11 (1).png';
 import ArrowButton from '../../Componenets/CommonComponents/ArrowButton';
-
 import pizzaSmall1 from '../../assets/A Mint Leaf Transparent Plant Vector - Mint Png Transparent PNG Image With Transparent Background png - Free PNG Images 1.png';
 import pizzaSmall2 from '../../assets/Salami slices on white background_ 1.png';
 import pizzaSmall3 from '../../assets/Sausage slices isolated on white background cutout_ 1.png';
-
 import cottonSmall1 from '../../assets/A Mint Leaf Transparent Plant Vector - Mint Png Transparent PNG Image With Transparent Background png - Free PNG Images 1.png';
 import cottonSmall2 from '../../assets/Salami slices on white background_ 1.png';
 import cottonSmall3 from '../../assets/Sausage slices isolated on white background cutout_ 1.png';
-
 import icecreamSmall1 from '../../assets/A Mint Leaf Transparent Plant Vector - Mint Png Transparent PNG Image With Transparent Background png - Free PNG Images 1.png';
 import icecreamSmall2 from '../../assets/Salami slices on white background_ 1.png';
 import icecreamSmall3 from '../../assets/Sausage slices isolated on white background cutout_ 1.png';
-
 import hotSmall1 from '../../assets/A Mint Leaf Transparent Plant Vector - Mint Png Transparent PNG Image With Transparent Background png - Free PNG Images 1.png';
 import hotSmall2 from '../../assets/Salami slices on white background_ 1.png';
 import hotSmall3 from '../../assets/Sausage slices isolated on white background cutout_ 1.png';
@@ -67,12 +63,15 @@ function Explore() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Smooth scrolling initialization
+    if (cardsContainerRef.current) {
+      cardsContainerRef.current.style.scrollBehavior = 'smooth';
+    }
+
     // Check if screen width is greater than 1024px
     const isLargeScreen = window.matchMedia('(min-width: 1025px)').matches;
-
     if (isLargeScreen) {
       const cards = cardsContainerRef.current.children;
-
       gsap.fromTo(
         cards,
         { y: 100, opacity: 1 },
@@ -91,17 +90,13 @@ function Explore() {
           },
         }
       );
-
       cardRefs.current.forEach((card) => {
         if (!card) return;
-
         const smallImages = card.querySelectorAll('.smallImage');
         const image1 = smallImages[0];
         const image2 = smallImages[1];
         const image3 = smallImages[2];
-
         const tl = gsap.timeline({ paused: true });
-
         tl
           .fromTo(image1,
             { y: 200, opacity: 0 },
@@ -115,12 +110,10 @@ function Explore() {
             { x: 100, opacity: 0 },
             { x: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.3'
           );
-
         card.addEventListener('mouseenter', () => tl.play());
         card.addEventListener('mouseleave', () => tl.reverse());
       });
     }
-
     return () => {
       if (isLargeScreen) {
         ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -146,7 +139,7 @@ function Explore() {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - cardsContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 2; // Adjust sensitivity here
     cardsContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -160,7 +153,7 @@ function Explore() {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.touches[0].pageX - cardsContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 2; // Adjust sensitivity here
     cardsContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
@@ -188,7 +181,6 @@ function Explore() {
             <AnimateButton />
           </Box>
         </Box>
-
         <Box
           sx={{
             paddingLeft: isDragging ? 0 : {
@@ -212,6 +204,8 @@ function Explore() {
               paddingBottom: '16px',
               userSelect: 'none',
               transition: 'padding-left 0.3s ease',
+              cursor: 'grab',
+              scrollBehavior: 'smooth', // Enable smooth scrolling
             }}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
@@ -268,7 +262,6 @@ function Explore() {
                       left: 0,
                       right: 0,
                       bottom: 0,
-
                     }}
                   >
                     <CardMedia

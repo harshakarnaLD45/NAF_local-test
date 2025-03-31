@@ -4,6 +4,7 @@
   align-items: center;
   height: 84vh;
   padding: 0px 50px;
+
 }
 
 .main-sub-container1 {
@@ -42,10 +43,40 @@
 /* Media Queries for Responsive Design */
 
 /* Large Screens (Desktops) */
+
+
+@media (max-width: 2720px) {
+  .blog-image {
+    position: relative;
+    bottom: -80px;
+  }
+
+  .bigimagecontaiter {
+    bottom: 30px !important;
+  }
+
+  .testimonial-cards-sec {
+    height: '650px' !important;
+  }
+}
+
+@media (max-width: 1920px) {
+  .blog-image {
+    position: relative;
+    bottom: 70px;
+  }
+
+  .bigimagecontaiter {
+    bottom: -77px !important;
+  }
+}
+
 @media (min-width: 2170px) {
+
   .left-sections {
     padding-top: 9rem !important;
   }
+
 }
 
 @media (min-width: 2135px) {
@@ -55,10 +86,17 @@
   }
 }
 
+
 @media (min-width: 2135px) {
   .blog-image {
     max-width: 420px !important;
     left: 20% !important;
+  }
+}
+
+@media (min-width: 1850px) {
+  .takeimage {
+    padding-top: 5rem !important;
   }
 }
 
@@ -83,11 +121,12 @@
   }
 }
 
+
 @media (max-width: 1440px) {
 
   .main-sub-container1,
   .main-sub-container2 {
-    width: 65%;
+    width: 48%;
   }
 }
 
@@ -197,8 +236,20 @@
     width: 17px !important;
   }
 
+
+
+
+
+
+
+
+
+
+
+
   .datebig {
     display: none !important;
+    ;
   }
 
   .bigimage {
@@ -241,11 +292,14 @@
   .main-sub-container2 {
     gap: 16px;
     flex-direction: column;
+
   }
 
   .cardimage {
     padding-top: 1rem !important;
   }
+
+
 
   .videobox {
     border-radius: 9.495px !important;
@@ -259,6 +313,8 @@
 
   .blog-containerss {
     flex-direction: row;
+
+
   }
 
 }
@@ -275,6 +331,9 @@
 
   .blog-containerss {
     flex-direction: column !important;
+
+
+
   }
 
   .whatsmiddletext {
@@ -292,13 +351,15 @@
   .arrowbig {
     display: block !important;
     width: 16px !important;
-    height: 16px !important;
+    height: 21.3px !important;
     aspect-ratio: 16.00/21.33 !important;
     transform: none !important;
   }
 
+
   .datebig {
     display: none !important;
+    ;
   }
 
   .bigimage {
@@ -312,6 +373,7 @@
   .bigtitle {
     display: none !important;
   }
+
 }
 
 /* Extra Small Screens (Very Small Devices) */

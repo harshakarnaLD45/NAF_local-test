@@ -19,7 +19,7 @@ const bentogrid = () => {
     return (
         <div className="bentogrid-container" style= {{ padding: '0px',  }}>
             <Grid container spacing={1} sx={{ width: '100%' }}>
-                <Grid item xs={12} sm={4} md={4}>
+                <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                             <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -31,7 +31,7 @@ const bentogrid = () => {
                             </Box>
                     </Item>
                 </Grid>
-                <Grid item xs={12} sm={8} md={8}>
+                <Grid item xs={12} sm={6} lg={8}>
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -44,7 +44,7 @@ const bentogrid = () => {
                             </Box>
                             </Item>
                 </Grid>
-                <Grid item xs={12} sm={4} md={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -57,7 +57,7 @@ const bentogrid = () => {
                             </Box>
                     </Item>
                 </Grid>
-                <Grid item xs={12} sm={4} md={6}>
+                <Grid item xs={12} sm={6} lg={6}>
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -70,7 +70,9 @@ const bentogrid = () => {
                             </Box>
                     </Item>
                 </Grid>
-                <Grid item xs={12} sm={4} md={4}>
+                <Grid item xs={12} sm={6} lg={4}
+               
+                >
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -82,7 +84,7 @@ const bentogrid = () => {
                             </Box>
                     </Item>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>
@@ -95,7 +97,7 @@ const bentogrid = () => {
                             </Box>
                     </Item>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                     <Box className="bentogrid-image-sec " >
                                 <img className='bentogrid-image' src={DemoFrame} alt="Software Hero Image"/>

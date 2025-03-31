@@ -1,7 +1,3 @@
-
-
-
-
 import { Box, Typography } from "@mui/material";
 import React, { useRef } from "react";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
@@ -19,54 +15,62 @@ const Ready = () => {
 
   const containerRef = useRef(null);
 
-  // Animation variants with bouncy effect
+  
   const bounceVariants = {
     initial: {
-      y: -1000, // Start well above the screen
+      y: -1000,
       opacity: 0,
-      scale: 0.5,
+    //   scale: 0.5,
     },
     animate: (i) => ({
-      y: 0, // Drop to final position
+      y: 0, 
       opacity: 1,
-      scale: 1,
+    //   scale: 1,
       transition: {
         type: "spring",
-        stiffness: 200, // Controls bounce strength
-        damping: 10,   // Controls bounce duration
-        mass: 0.8,     // Controls weight feeling
+        stiffness: 200,
+        damping: 10,   
+        mass: 0.8,     
         duration: 1.5,
-        delay: i * 0.15, // Staggered entry
+        delay: i * 0.15, 
         bounce: 0.5,   
       },
     }),
   };
 
   return (
-    <Box className="section-container">
-      <Box
+    <Box 
+    // className="section-container"
+    sx={{
+        marginTop:'200px',
+        marginBottom:"3vw"
+    }}
+    >
+      <Box 
         sx={{
-          width: "100%",
-          maxWidth: 1820,
-          height: 674,
+        //   width: "100%",
+          height: { xs: "auto", md: 674 }, 
           borderRadius: "24px",
           overflow: "hidden",
           border: "1px solid",
           borderColor: "#525252",
           position: "relative",
+          px: { xs: 2, md: 0 }, 
         }}
       >
+        {/* Main Heading */}
         <Typography
           variant="h2"
           className="headings-h2"
           sx={{
             position: "absolute",
-            width: "719px",
-            maxWidth: 719,
-            top: 0,
+            width: { xs: "90%", md: "719px" }, 
+            top: { xs: "20%", md: 0 }, 
             left: "50%",
             transform: "translateX(-50%)",
-            mt: "119px",
+            mt: { xs: 0, md: "119px" },
+            
+            textAlign: "center",
           }}
         >
           Ready to See the NAF Cloud System in Action?
@@ -74,15 +78,16 @@ const Ready = () => {
 
         {/* Central Button */}
         <Box
+        className="centralButton"
           sx={{
             position: "absolute",
-            width: 120,
-            height: 120,
-            top: 288,
+            width: { xs: "80px", md: "120px" },
+            height: { xs: "80px", md: "120px" }, 
+            top: { xs: "40%", md: "288px" }, 
             left: "50%",
             transform: "translateX(-50%)",
-            borderRadius: "120px",
-            border: "1.5px solid #7fee64",
+            borderRadius: "50%",
+           
             color: "#fcfcfc",
             display: "flex",
             flexDirection: "column",
@@ -91,16 +96,15 @@ const Ready = () => {
             zIndex: 1,
           }}
         >
-          <AnimateButton />
+              <AnimateButton text1='GET IN' text2='TOUCH' />
         </Box>
 
-       
+      
         <Box
           ref={containerRef}
           sx={{
             position: "relative",
             width: "100%",
-            maxWidth: 1561,
             height: 555,
             mt: "119px",
             mx: "auto",
@@ -112,6 +116,7 @@ const Ready = () => {
               drag
               dragConstraints={containerRef}
               dragElastic={0.2}
+              className="benefitBall"
               style={{
                 position: "absolute",
                 width: "200px",
@@ -132,7 +137,7 @@ const Ready = () => {
               variants={bounceVariants}
               initial="initial"
               animate="animate"
-              whileDrag={{ cursor: "grabbing", scale: 1.05 }}
+
               
             >
               <Typography
@@ -148,10 +153,13 @@ const Ready = () => {
             </motion.div>
           ))}
         </Box>
+
       </Box>
     </Box>
   );
 };
 
 export default Ready;
+
+
 

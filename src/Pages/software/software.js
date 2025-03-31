@@ -30,7 +30,7 @@ const software = () => {
 
             </Box>
             <Box className='software-hero-sec software-hero-section2'>
-                <Box className='software-hero-text-sec'>
+                <Box className='software-hero-text-sec2'>
                     <Typography className="herotitle headings-h2" variant="h1" sx={{ color: "#FCFCFC" }}>
                         Introducing the NAF Cloud System
                     </Typography>
@@ -38,9 +38,9 @@ const software = () => {
                         The NAF Cloud System is a comprehensive web-based dashboard designed to provide real-time insights and complete control over your vending machine operations. This centralized platform streamlines management and enhances business efficiency.
                     </Typography>
                 </Box>
-                <Box className='software-hero-img-sec'>
-                    {/* <img className='software-hero-img' src={softwareHeroImg} alt="Software Hero Image"/> */}
-                </Box>
+                {/* <Box className='software-hero-img-sec'>
+                    <img className='software-hero-img' src={softwareHeroImg} alt="Software Hero Image"/>
+                </Box> */}
             </Box>
             <Bentogrid />
 
