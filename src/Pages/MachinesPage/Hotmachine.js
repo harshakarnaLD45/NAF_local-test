@@ -2,6 +2,7 @@ import hotmachine from "../../assets/image 1.png";
 import React from "react";
 import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
+import { DownloadIcon } from "../../Componenets/CustomIcons";
 
 const hotmachineData1 = {
   title: "Hot Vending Machine",
@@ -212,7 +213,7 @@ const VendingSection = ({ data, index }) => {
         />
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 2, gap: 6 }}>
-        <AnimateButton />
+        <button className="download-btn"><DownloadIcon /></button>
         <AnimateButton />
       </Box>
     </Box>
@@ -226,12 +227,12 @@ const VendingSection = ({ data, index }) => {
       <Grid item xs={12} md={6} sx={{
         order: { xs: 1, md: index % 2 === 0 ? 1 : 2 } // Image always first in mobile
       }}>
-        {isMobile || index % 2 === 0 ? rightContent : leftContent}
+        {!isMobile || index % 2 === 0 ? rightContent : leftContent}
       </Grid>
       <Grid item xs={12} md={6} sx={{
         order: { xs: 2, md: index % 2 === 0 ? 2 : 1 } // Text always second in mobile
       }}>
-        {isMobile || index % 2 === 0 ? leftContent : rightContent}
+        {!isMobile || index % 2 === 0 ? leftContent : rightContent}
       </Grid>
     </Grid>
   );

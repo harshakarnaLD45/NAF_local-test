@@ -130,7 +130,7 @@ const Testimonials = () => {
                 height: "100%",
                 justifyContent: "space-between",
                 paddingRight: '2rem',
-                paddingTop: '6rem',
+                paddingTop: { xs: '3rem', md: '6rem' },
                 paddingBottom: { xs: "3rem", md: "0rem" }
               }}
             >

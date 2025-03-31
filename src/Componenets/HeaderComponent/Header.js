@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Menu, MenuItem, IconButton } from '@mui/material';
+import { Box, Menu, MenuItem } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Naflogo from '../../assets/naf-halsbach_logo 1.png';
 import MenuIcons from '../../assets/Menu_icon.png';
 import './Header.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowIcon1, ProfileIcon } from '../CustomIcons';
+import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
+import EastIcon from '@mui/icons-material/East';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -16,10 +17,18 @@ const Header = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
+  const [isSignInOpen, setIsSignInOpen] = useState(false); // Correct state variable
 
   const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
   const handleProfileMenuClose = () => setProfileAnchorEl(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setAnchorEl(null); // Close menu on window resize
@@ -69,19 +78,45 @@ const Header = () => {
       />
 
       <Box
+        className='mobile-view1'
+        sx={{
+          backgroundColor: '#F4F4F4',
+          borderRadius: '32px',
+          padding: '12px 20px',
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          gap: '12px',
+        }}
+        onClick={handleMenuOpen}
+      >
+        <img
+          className='menuicons'
+          src={MenuIcons}
+          alt="Menu"
+          style={{
+            width: '20px',
+            height: '15px',
+          }}
+        />
+        <span className="bodyRegularText3">{t('homePage.menu')}</span>
+      </Box>
+      <Box
         className='menu-mobile-sec'
         sx={{
           position: 'absolute',
           left: '50%',
           transform: 'translateX(-50%)',
-          top: { xs: '0px', sm: '0px', md: '0px' },
+          top: 0,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          zIndex: '999999 !important',
         }}
       >
-        {!anchorEl && (
+        {!anchorEl && !isMobile && (
           <Box
+            className='mobile-view'
             sx={{
               backgroundColor: '#7FEE64',
               borderRadius: {
@@ -113,7 +148,7 @@ const Header = () => {
 
         {anchorEl && (
           <Box className="menu-container" ref={menuRef}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 2, sm: 2, md: 3 } }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
               {[
                 { label: 'Home', path: '/' },
                 { label: 'Machine', path: '/machine' },
@@ -138,46 +173,127 @@ const Header = () => {
                   {label}
                 </Box>
               ))}
+              {isMobile && (
+                <Box>
+                  <Box
+                    className={`menu-item ${location.pathname === '/signIn' ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC',
+                      cursor: 'pointer'
+                    }}
+                    onClick={() => setIsSignInOpen((prev) => !prev)} // Toggle dropdown properly
+                  >
+                    <Box sx={{ width: '20px' }}>
+                      {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon /></Box>
+                  </Box>
+
+                  {/* Show sublist when isSignInOpen is true */}
+                  {isSignInOpen && (
+                    <Box sx={{ pl: 8, display: 'flex', flexDirection: 'column' }}>
+                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                        Membership Log In
+                      </Box>
+                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                        Log In / Sign Up
+                      </Box>
+                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                        Client Log In
+                      </Box>
+                    </Box>
+                  )}
+
+                  <Box
+                    className={`menu-item ${location.pathname === '/contact' ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      mt: '16px',
+                      color: location.pathname === '/contact' ? '#1A1A1A' : '#FCFCFC'
+                    }}
+                    onClick={() => handleNavigation('/contact')}
+                  >
+                    <Box sx={{ width: '20px' }}>
+                      {location.pathname === '/contact' && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    </Box>
+                    Book a Demo
+                  </Box>
+                </Box>
+              )}
             </Box>
 
             {/* Cancel Menu at Bottom */}
-            <Box className="custom-button" onClick={handleMenuClose}>
-              <CloseIcon sx={{ fontSize: '24px' }} />
-              <span className="bodyRegularText3">Menu</span>
-            </Box>
+            {!isMobile && (
+              <Box className="custom-button" onClick={handleMenuClose}>
+                <CloseIcon sx={{ fontSize: '24px' }} />
+                <span className="bodyRegularText3">Menu</span>
+              </Box>
+            )}
           </Box>
         )}
       </Box>
 
-      <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
-        <Box sx={{ position: 'relative' }}>
-          <IconButton className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
-            <ProfileIcon />
-          </IconButton>
+      {!isMobile && (
+        <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
+          <Box>
+            <button className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
+              <ProfileIcon />
+            </button>
 
-          <Menu
-            anchorEl={profileAnchorEl}
-            open={Boolean(profileAnchorEl)}
-            onClose={handleProfileMenuClose}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-            PaperProps={{
-              sx: {
-                backgroundColor: '#262626',
-                borderRadius: '10px',
-                width: { xs: '160px', sm: '200px', md: '230px' },
-                marginTop: '4px',
-              }
-            }}
-          >
-            <MenuItem onClick={handleProfileMenuClose} sx={{ color: "#FCFCFC", padding: "10px 20px" }} className='bodyRegularText4'>Membership Log In</MenuItem>
-            <MenuItem onClick={handleProfileMenuClose} sx={{ color: "#FCFCFC", padding: "10px 20px" }} className='bodyRegularText4'>Log In / Sign Up</MenuItem>
-            <MenuItem onClick={handleProfileMenuClose} sx={{ color: "#FCFCFC", padding: "10px 20px" }} className='bodyRegularText4'>Client Log In</MenuItem>
-          </Menu>
+            <Menu
+              anchorEl={profileAnchorEl}
+              open={Boolean(profileAnchorEl)}
+              onClose={handleProfileMenuClose}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+              PaperProps={{
+                sx: {
+                  backgroundColor: '#262626',
+                  borderRadius: '10px',
+                  width: { xs: '160px', sm: '200px', md: '230px' },
+                  marginTop: '4px',
+                }
+              }}
+            >
+              {["Membership Log In", "Log In / Sign Up", "Client Log In"].map((text) => (
+                <MenuItem
+                  key={text}
+                  onClick={handleProfileMenuClose}
+                  sx={{
+                    color: "#FCFCFC",
+                    padding: "10px 20px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    "&:hover": {
+                      color: "#7FEE64",
+                      "& .arrow-icon": {
+                        opacity: 1, // Show the arrow when hovering over the item
+                        color: "#7FEE64",
+                      },
+                    },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {text}
+                  <EastIcon
+                    className="arrow-icon"
+                    sx={{
+                      opacity: 0, // Initially hidden
+                      transition: "opacity 0.2s ease-in-out",
+                    }}
+                  />
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
+          <button class="book-demo-btn bodyRegularText4">Book a Demo</button>
         </Box>
-
-        <button class="book-demo-btn bodyRegularText4">Book a Demo</button>
-      </Box>
+      )}
     </Box>
   );
 };

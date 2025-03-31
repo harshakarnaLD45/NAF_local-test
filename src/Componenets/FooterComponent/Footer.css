@@ -92,7 +92,7 @@
     }
 
     .btn-social-icon {
-        height: 270px;
+        height: 250px;
         justify-content: space-between !important;
         margin-bottom: 150px !important;
     }
@@ -184,7 +184,7 @@
     }
 
     .btn-social-icon {
-        margin-bottom: 50px !important;
+        margin-bottom: 0px !important;
     }
 
     .footerBottomhead {

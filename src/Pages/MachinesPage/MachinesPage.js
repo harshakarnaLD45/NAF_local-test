@@ -6,6 +6,7 @@ import MarqTextScroll from "./MarqTextScroll";
 import Maintenance from "./Maintenance";
 import Hotmachine from "./Hotmachine";
 import Filtermachines from "./Filtermachines";
+import PhysicsButtons from "./PhysicsButtons";
 
 const MachinesPage = () => {
   return (
@@ -22,7 +23,8 @@ const MachinesPage = () => {
         <MarqTextScroll />
       </Box>
 
-      <Filtermachines />
+      <PhysicsButtons />
+      {/* <Filtermachines /> */}
       <Hotmachine />
       <Maintenance />
     </Box>

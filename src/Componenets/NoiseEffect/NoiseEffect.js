@@ -23,7 +23,7 @@ function NoiseEffect() {
             }
 
             ctx.putImageData(noiseImageData, 0, 0);
-            ctx.globalAlpha = 0.08; // Softer noise visibility
+            ctx.globalAlpha = 0.2; // Softer noise visibility
         };
 
         const createRipple = (x, y) => {

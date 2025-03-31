@@ -69,7 +69,7 @@ const Clients = () => {
 
     // Calculate total width of one set of logos including gaps
     const logoWidth = 320; // Using lg breakpoint width
-    const gap = 24; // md gap (3 * 8px = 24px)
+    const gap = 16; // md gap (3 * 8px = 24px)
     const totalItemWidth = logoWidth + gap;
     const row1SingleWidth = companyLogos.length * totalItemWidth;
     const row2SingleWidth = companyLogosRow2.length * totalItemWidth;
@@ -170,8 +170,8 @@ const Clients = () => {
         ref={row1Ref}
         sx={{
           display: "flex",
-          gap: { xs: 2, md: 3 },
-          mb: { xs: 2, md: 3 },
+          gap: { xs: 1, md: 2 },
+          mb: { xs: 1, md: 2 },
           width: "max-content",
           willChange: "transform",
         }}
@@ -186,7 +186,7 @@ const Clients = () => {
         ref={row2Ref}
         sx={{
           display: "flex",
-          gap: { xs: 2, md: 3 },
+          gap: { xs: 1, md: 2 },
           width: "max-content",
           willChange: "transform",
         }}
