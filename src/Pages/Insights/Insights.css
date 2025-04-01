@@ -1,0 +1,24 @@
+.Insightscontainer{
+    margin-top: 200px !important;
+}
+
+.bloghoverContainer{
+    margin-top: 0px !important;
+    margin-bottom: 2vw !important;
+}
+.blogdetailedcontainer{
+    margin-top: 80px !important;
+}
+
+.backbutton{
+    /* padding: 0px !important; */
+}
+
+@media (max-width: 768px) {
+    .blogdetailedcontainer{
+        margin-top: 40px !important;
+    }
+    .Insightscontainer{
+        margin-top: 100px !important;
+    }
+    }

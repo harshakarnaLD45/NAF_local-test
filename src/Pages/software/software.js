@@ -6,6 +6,7 @@ import { Box, Divider, Grid, Typography } from '@mui/material'
 import Bentogrid from './bentogrid'
 import Expertise from './expertise'
 import Ready from './Ready'
+import Ready1 from './Ready1'
 const software = () => {
     return (
 
@@ -179,6 +180,7 @@ const software = () => {
             {/* expertise */}
 <Expertise/>
 <Ready/>
+<Ready1/>
 
 
 
