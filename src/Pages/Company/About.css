@@ -1,0 +1,133 @@
+/* .firstsectiontext{
+    color: #FCFCFC !important;
+    font-family: TrapSemiBold !important;
+font-size: 128px !important;
+font-style: normal !important;
+font-weight: 600 !important;
+line-height: 120% !important; 
+letter-spacing: -1.28px !important;
+}
+
+.firstsectiontextgreen{
+    color: #7FEE64 !important;
+    font-family: TrapSemiBold !important;
+font-size: 128px !important;
+font-style: normal !important;
+font-weight: 600 !important;
+line-height: 120% !important;
+letter-spacing: -1.28px !important;
+} */
+
+/* Default styles */
+.firstsectiontext {
+    color: #FCFCFC !important;
+    font-family: 'TrapSemiBold', sans-serif !important;
+    font-size: 128px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    letter-spacing: -1.28px !important;
+}
+
+.firstsectiontextgreen {
+    color: #7FEE64 !important;
+    font-family: 'TrapSemiBold', sans-serif !important;
+    font-size: 128px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    letter-spacing: -1.28px !important;
+}
+
+/* Media query for smaller screens (e.g., tablets and mobile devices) */
+@media (max-width: 1200px) {
+    .firstsectiontext {
+        font-size: 96px !important;
+    }
+
+    .firstsectiontextgreen {
+        font-size: 96px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .firstsectiontext {
+        font-size: 72px !important;
+    }
+
+    .firstsectiontextgreen {
+        font-size: 72px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .firstsectiontext {
+        font-size: 56px !important;
+    }
+
+    .firstsectiontextgreen {
+        font-size: 56px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .firstsectiontext {
+        font-size: 40px !important;
+    }
+
+    .firstsectiontextgreen {
+        font-size: 40px !important;
+    }
+}
+
+/* .cardboxes {
+    display: flex;
+    width: 100%; 
+    max-width: 607px; 
+    height: 700px; 
+    padding: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+@media (min-width: 1500px) {
+    .cardboxes {
+        width: 1007px !important;
+    }
+   
+}
+@media (max-width: 768px) {
+    .cardboxes {
+        padding: 16px;
+        max-width: 90%; 
+        height: 400px; 
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .cardboxes {
+        padding: 12px; 
+        max-width: 10%;
+        height: 400px; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .cardboxes {
+        width: 80%;
+        margin: 0 auto; 
+    }
+} */
+
+
+@media (max-width: 480px) {
+    .Values-containers{
+       gap: 0px !important;
+    }
+}

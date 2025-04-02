@@ -15,7 +15,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import blogimage from "../../assets/representations-user-experience-interface-design 1.png";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -23,6 +23,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const BlogDetailPage2 = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(1);
+    const sectionRefs = useRef([]);
   
 
   // Table of contents data
@@ -86,10 +87,34 @@ const BlogDetailPage2 = () => {
     setActiveSection(id);
     const element = document.getElementById(`section-${id}`);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" }); 
+      const offset = 100; // Adjust this value to control how far down it scrolls
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth"
+      });
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200; // Offset to trigger earlier
+      
+      sectionRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const sectionTop = ref.offsetTop;
+          const sectionBottom = sectionTop + ref.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(index + 1);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
    const introText =
     "In today's fast-paced world, convenience is king. As consumers increasingly seek quick and seamless purchasing experiences, vending machines are becoming more popular than ever. However, the true potential of vending machines is often untapped due to poor user interfaces (UI) and user experiences (UX). Investing in excellent UI/UX design can significantly enhance customer satisfaction and drive sales. Here, we explore how thoughtful design can transform your vending machine business.";
@@ -187,6 +212,7 @@ const BlogDetailPage2 = () => {
               <List sx={{ p: 0 }}>
                 {tableOfContents.map((item, index) => (
                   <ListItem
+                   className="tablecontentsection"
                     key={index}
                     onClick={() => handleSectionClick(item.id)} // Click handler using ID
                     sx={{
@@ -255,8 +281,12 @@ const BlogDetailPage2 = () => {
             </Typography>
             {/* Blog sections */}
             <Stack spacing={6}>
-              {blogSections.map((section, index) => (
-                <Box key={index} id={`section-${section.id}`}> {/* Unique ID for each section */}
+            {blogSections.map((section, index) => (
+                              <Box 
+                                key={index} 
+                                id={`section-${section.id}`}
+                                ref={el => sectionRefs.current[index] = el}
+                              >{/* Unique ID for each section */}
                   <Typography
                     className="bodyMediumText1"
                     sx={{

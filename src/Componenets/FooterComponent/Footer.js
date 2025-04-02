@@ -136,7 +136,7 @@ const Footer = () => {
 
                 // gap: { xs: 2, md: 15 },
                 flexWrap: 'wrap',
-                paddingBottom: '0rem'
+                paddingBottom: '0rem',
                 // mt: { xs: 0, md: "200px" },
                 // order: { xs: -1, md: 0 }
               }}
@@ -150,6 +150,7 @@ const Footer = () => {
                   mx: "auto",
                   position: "relative",
                   zIndex: 1,
+                  marginBottom:{xs: "0rem", md: "5rem"}
                 }}
               >
                 <AnimateButton text1='GET IN' text2='TOUCH' />
@@ -248,7 +249,7 @@ const Footer = () => {
                   Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
               </Stack>
-              <Box className="info-stack" sx={{ mt: { xs: 2, } }}>
+              {/* <Box className="info-stack" sx={{ mt: { xs: 2, } }}>
                 <Typography
                   className="footercontact bodyRegularText4 "
                   sx={{
@@ -285,7 +286,7 @@ const Footer = () => {
                     Landratsamt Mittweida Haus A, Am <br className="br-footer" /> Landratsamt 3, 09648 Mittweida
                   </Typography>
                 </Stack>
-              </Box>
+              </Box> */}
             </Stack>
           </Box>
           {/* <Box className=" " sx={{position:'relative',}} > */}

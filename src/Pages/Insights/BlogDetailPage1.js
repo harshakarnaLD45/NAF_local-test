@@ -15,7 +15,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import blogimage from "../../assets/representations-user-experience-interface-design 1.png";
 import { useNavigate, useParams } from "react-router-dom";
 import BlogDetailPage2 from "./BlogDetailPage2";
@@ -23,6 +23,7 @@ import BlogDetailPage2 from "./BlogDetailPage2";
 const BlogDetailPage1 = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(1);
+   const sectionRefs = useRef([]);
   
 
   // Table of contents data
@@ -83,12 +84,37 @@ const BlogDetailPage1 = () => {
   ];
 
   const handleSectionClick = (id) => {
-    setActiveSection(id);
-    const element = document.getElementById(`section-${id}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" }); 
-    }
-  };
+      setActiveSection(id);
+      const element = document.getElementById(`section-${id}`);
+      if (element) {
+        const offset = 100; // Adjust this value to control how far down it scrolls
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: "smooth"
+        });
+      }
+    };
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY + 200; // Offset to trigger earlier
+        
+        sectionRefs.current.forEach((ref, index) => {
+          if (ref) {
+            const sectionTop = ref.offsetTop;
+            const sectionBottom = sectionTop + ref.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+              setActiveSection(index + 1);
+            }
+          }
+        });
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
 
    const introText =
@@ -171,6 +197,7 @@ const BlogDetailPage1 = () => {
           {/* Table of contents */}
           <Grid item xs={12} md={3} spacing={10}>
             <Box
+            
               sx={{
                 position: "sticky", // Make the table of contents sticky
                 top: 20, // Offset from the top of the viewport
@@ -187,6 +214,7 @@ const BlogDetailPage1 = () => {
               <List sx={{ p: 0 }}>
                 {tableOfContents.map((item, index) => (
                   <ListItem
+                   className="tablecontentsection"
                     key={index}
                     onClick={() => handleSectionClick(item.id)} // Click handler using ID
                     sx={{
@@ -255,8 +283,12 @@ const BlogDetailPage1 = () => {
             </Typography>
             {/* Blog sections */}
             <Stack spacing={6}>
-              {blogSections.map((section, index) => (
-                <Box key={index} id={`section-${section.id}`}> {/* Unique ID for each section */}
+               {blogSections.map((section, index) => (
+                              <Box 
+                                key={index} 
+                                id={`section-${section.id}`}
+                                ref={el => sectionRefs.current[index] = el}
+                              >{/* Unique ID for each section */}
                   <Typography
                     className="bodyMediumText1"
                     sx={{

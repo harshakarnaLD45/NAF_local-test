@@ -81,7 +81,13 @@ const TakeControl = () => {
         <Box
           sx={{
             width: { xs: "100%", sm: "100%", md:  "100%", lg: "70%" },
-            height: { xs: '100%', md: '100%' },
+            height: { xs: '390px', md: '100%' },
+            "@media (max-width: 480px)": {
+                    height:'200px'
+                  },
+                  "@media (max-width: 375px)": {
+                    height:'150px'
+                  },
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
