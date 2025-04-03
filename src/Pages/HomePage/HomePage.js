@@ -35,7 +35,7 @@ const HomePage = () => {
         <Box></Box>
       </Box>
 
-      {/* <HomepageShowreel /> */}
+      <HomepageShowreel />
       <Explore />
       <Clients />
       <TakeControl />

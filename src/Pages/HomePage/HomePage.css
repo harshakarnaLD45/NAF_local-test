@@ -363,8 +363,8 @@
 
   .arrowbig {
     display: block !important;
-    width: 16px !important;
-    height: 17px !important;
+    width: 30px !important;
+    height: 22px !important;
     aspect-ratio: 16.00/21.33 !important;
     transform: none !important;
   }

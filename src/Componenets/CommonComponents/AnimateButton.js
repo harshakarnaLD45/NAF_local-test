@@ -110,8 +110,8 @@ const styles = {
     detectionArea: {
         position: 'relative',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
         zIndex: 1,
     },
     button: {

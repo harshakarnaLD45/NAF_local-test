@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, FormControl, Menu, MenuItem, Select } from '@mui/material';
+import { Box, Menu, MenuItem } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Naflogo from '../../assets/naf-halsbach_logo 1.png';
 import MenuIcons from '../../assets/Menu_icon.png';
@@ -109,7 +109,7 @@ const Header = () => {
             height: '15px',
           }}
         />
-        <span className="bodyRegularText3">{t('headerSection.menu')}</span>
+        <span className="bodyRegularText3">Menu</span>
       </Box>
       <Box
         className='menu-mobile-sec'
@@ -152,7 +152,7 @@ const Header = () => {
                 marginRight: { xs: '2px', sm: '4px', md: '18px' },
               }}
             />
-            <span className="bodyRegularText3">{t('homePage.menu')}</span>
+            <span className="bodyRegularText3">Menu</span>
           </Box>
         )}
 
@@ -263,7 +263,7 @@ const Header = () => {
             {!isMobile && (
               <Box className="custom-button" onClick={handleMenuClose}>
                 <CloseIcon sx={{ fontSize: '24px' }} />
-                <span className="bodyRegularText3">{t('headerSection.menu')}</span>
+                <span className="bodyRegularText3">Menu</span>
               </Box>
             )}
           </Box>

@@ -1,109 +1,74 @@
 import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import Browser from "../../assets/Browsers.png";
+import Browser from "../../assets/Browsers.svg";
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 
 const TakeControl = () => {
   return (
-    <Box className='section-container  '>
-      <Box
-      className="control-section"
+    <Box sx={{ p: 3 }} className='section-container'>
+     <Box
         sx={{
           position: 'relative',
-          background: '#262626',
-         
-          paddingBottom: { xs: '2rem', md: '3rem' },
+          backgroundColor: '#262626',
+          borderRadius: '24px',
           display: 'flex',
-          flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row', },
-          gap: { xs: '30px', md: '50px' },
+          flexDirection: { xs: 'column', lg: 'row' },
+          alignItems: 'center',
+          gap: { xs: 3, md: 5 },
           overflow: 'hidden',
-          borderRadius:'24px',
-          '&:before': {
+          px: { xs: 2, md: 6 },
+          py: { xs: 2, md: 6 },
+          '&::before': {
             content: '""',
             position: 'absolute',
             bottom: '-20%',
             right: '-5%',
-            width: { xs: '300px', md: '600px' },
-            height: { xs: '300px', md: '510px' },
+            width: { xs: '250px', md: '500px' },
+            height: { xs: '250px', md: '450px' },
             background: 'linear-gradient(135deg, #93CAEE 50%, #620C90 55%)',
-            filter: 'blur(100px)',
-            opacity: 0.8,
+            filter: 'blur(90px)',
+            opacity: 0.7,
             zIndex: 0,
-            pointerEvents: 'none',
           },
         }}
       >
-        {/* Left Section */}
-        <Box
-          sx={{
-            // width: { xs: '100%', md: '70%' },
-            width: { xs: "100%", sm: "70%", md:  "70%", lg: "70%" },
-            display: 'flex',
-            flexDirection: 'column',
-
-            pt: { xs: '2%', md: '5%' },
-            padding: { xs: '40px 15px', sm: '50px 20px', md: '90px 50px 50px' },
-            alignItems: 'flex-start',
-            zIndex: 1,
-          }}
-        >
-          <List sx={{ pl: '20px' }}>
-            <ListItem sx={{ p: 0 }}>
-              <ListItemText
-                className="cloudsysytemlist"
-                primary="Cloud System"
+        {/* Left Content */}
+        <Box sx={{ flex: 1, zIndex: 1 }}>
+          <List>
+            <ListItem sx={{ p: 0, alignItems: 'center' }}>
+              <Box
+                component="span"
                 sx={{
-                  '& .MuiListItemText-primary': {
-                    listStyleType: 'disc',
-                    display: 'list-item',
-                    color: '#C2C2C4',
-                    // fontSize: { xs: '14px', sm: '16px', md: '17px', xxl: '25px' },
-                    fontWeight: 400,
-                    lineHeight: '150%',
-                  },
+                  display: 'inline-block',
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  backgroundColor: '#C2C2C4',
+                  mr: 1.5, // Spacing between dot and text
                 }}
+                className='bodyRegularText4'
+              />
+              <ListItemText
+                primary="Cloud System"
+                sx={{ '& .MuiListItemText-primary': { color: '#C2C2C4', fontSize: '16px', fontWeight: 400 } }}
               />
             </ListItem>
           </List>
 
-          <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
+          <Typography variant="h2" sx={{ color: '#FCFCFC', mb: 2 }} className='headings-h2'>
             Take Control of Your Vending Network
           </Typography>
 
-          <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4',paddingRight:'2rem' }}>
+          <Typography sx={{ color: '#C2C2C4', mb: 3 }} className='bodyRegularText3'>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography>
-          <Box sx={{ mt: 3 }}></Box>
+
           <AnimateButton />
         </Box>
 
-        {/* Right Section */}
-        <Box
-          sx={{
-            width: { xs: "100%", sm: "100%", md:  "100%", lg: "70%" },
-            height: { xs: '390px', md: '100%' },
-            "@media (max-width: 480px)": {
-                    height:'200px'
-                  },
-                  "@media (max-width: 375px)": {
-                    height:'150px'
-                  },
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 1,
-          }}
-        >
-          <Box
-            component="img"
-            src={Browser}
-            alt="Dashboard Preview"
-            sx={{
-              width: {  xs: "100%", sm: "100%", md:  "100%", md: '100%' },
-              height: { xs: 'auto', md: '600px' },
-              objectFit: 'contain',
-            }}
-          />
+        {/* Right Image Section */}
+        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', zIndex: 1 }}>
+          <Box component="img" src={Browser} alt="Dashboard Preview" sx={{ width: '100%', maxWidth: '800px' }} />
         </Box>
       </Box>
     </Box>

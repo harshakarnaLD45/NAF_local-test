@@ -111,7 +111,7 @@ const WhatsNew = () => {
           sx={{ position: "relative", width: '100%' }}
         >
           <Divider sx={{ borderColor: "#6F6F6F" }} />
-   
+
           <Box
             sx={{
               py: 5,
@@ -119,12 +119,13 @@ const WhatsNew = () => {
               justifyContent: "space-between",
               alignItems: "center",
               position: "relative",
+              gap: 1
             }}
           >
             <Box className="imagestaticwhatssmallscreen"
               sx={{
                 // mx: 2, 
-                marginRight:2
+                marginRight: 1
               }}
             >
               <img
@@ -132,7 +133,7 @@ const WhatsNew = () => {
                   borderRadius: '1.608px',
                   width: "110px",
                   height: "77px",
-                  alignItems:'center',
+                  alignItems: 'center',
                 }}
                 src={post.image}
                 alt={post.title}
@@ -142,90 +143,90 @@ const WhatsNew = () => {
               className="blog-containerss"
               sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}
             > */}
-              <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
-                {post.date}
-              </Typography>
+            <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
+              {post.date}
+            </Typography>
 
-             
-              <Box className="imagestaticwhats bigimage"
-                sx={{
-                  mx: 2, 
-                }}
-              >
-                <img
-                  style={{
-                    borderRadius: '1.608px',
-                    width: "201px",
-                    height: "140px",
-                    alignItems:'center',
-                  }}
-                  src={post.image}
-                  alt={post.title}
-                />
-              </Box>
 
-             
-              <Box
-                className="Whatimage-container bigimagecontaiter"
-                sx={{
-                  position: "absolute",
-                  left: "11%",
-                  "@media (min-width: 2000px)": {
-                    left: `25%`,
-                  },
-                  "@media (min-width: 1320px)": {
-                    left: `14%`,
-                  },
-                  bottom: "-50px",
-                  zIndex: 10,
-                  borderRadius: '10px',
-                  // overflow: "hidden",
+            <Box className="imagestaticwhats bigimage"
+              sx={{
+                mx: 2,
+              }}
+            >
+              <img
+                style={{
+                  borderRadius: '1.608px',
+                  width: "201px",
+                  height: "140px",
+                  alignItems: 'center',
                 }}
-              >
-                <img
-                
-                  style={{
-                    borderRadius: '10px',
-                    width: "450px",
-                    height: "100%",
-                  }}
-                  src={post.image}
-                  alt={post.title}
-                  className="blog-image bigimage"
-                />
-              </Box>
-
-           
-              <Typography
-                className="bodyMediumText1 whatsmiddletext bigtitle"
-                sx={{
-                  color: "#FCFCFC",
-                  width: "35%",
-                  marginLeft: { xs: 0, lg: '20%' }, 
-                }}
-              >
-                {post.title}
-              </Typography>
-              <Box
-                component="img"
-                src={whatarrow}
-                alt="Arrow Icon"
-                className="arrow arrowtabscreen arrowbigscreen"
-                sx={{
-                  width: 28,
-                  height: 28,
-                }}
+                src={post.image}
+                alt={post.title}
               />
-               
-              
+            </Box>
+
+
+            <Box
+              className="Whatimage-container bigimagecontaiter"
+              sx={{
+                position: "absolute",
+                left: "11%",
+                "@media (min-width: 2000px)": {
+                  left: `25%`,
+                },
+                "@media (min-width: 1320px)": {
+                  left: `14%`,
+                },
+                bottom: "-50px",
+                zIndex: 10,
+                borderRadius: '10px',
+                // overflow: "hidden",
+              }}
+            >
+              <img
+
+                style={{
+                  borderRadius: '10px',
+                  width: "450px",
+                  height: "100%",
+                }}
+                src={post.image}
+                alt={post.title}
+                className="blog-image bigimage"
+              />
+            </Box>
+
+
+            <Typography
+              className="bodyMediumText1 whatsmiddletext bigtitle"
+              sx={{
+                color: "#FCFCFC",
+                width: "35%",
+                marginLeft: { xs: 0, lg: '20%' },
+              }}
+            >
+              {post.title}
+            </Typography>
+            <Box
+              component="img"
+              src={whatarrow}
+              alt="Arrow Icon"
+              className="arrow arrowtabscreen arrowbigscreen"
+              sx={{
+                width: 28,
+                height: 28,
+              }}
+            />
+
+
             {/* </Box> */}
 
 
 
 
-            <Box 
+            <Box
               className="blog-containerss"
-              sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}
+              sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}
             >
               <Typography className="bodyRegularText4 date" sx={{ color: "#C2C2C4" }}>
                 {post.date}
@@ -234,7 +235,7 @@ const WhatsNew = () => {
               {/* Image - Static below 1024px */}
               <Box className="imagestaticwhats"
                 sx={{
-                  mx: 2, 
+                  mx: 2,
                 }}
               >
                 <img
@@ -242,7 +243,7 @@ const WhatsNew = () => {
                     borderRadius: '1.608px',
                     width: "201px",
                     height: "140px",
-                    alignItems:'center',
+                    alignItems: 'center',
                   }}
                   src={post.image}
                   alt={post.title}
@@ -250,7 +251,7 @@ const WhatsNew = () => {
               </Box>
 
               {/* Image - Hover effect for 1024px and above */}
-       
+
 
               {/* Title */}
               <Typography
@@ -258,7 +259,7 @@ const WhatsNew = () => {
                 sx={{
                   color: "#FCFCFC",
                   width: "35%",
-                  marginLeft: { xs: 0, lg: '20%' }, 
+                  marginLeft: { xs: 0, lg: '20%' },
                 }}
               >
                 {post.title}
@@ -273,7 +274,7 @@ const WhatsNew = () => {
                   height: 28,
                 }}
               />
-              
+
             </Box>
 
             {/* Arrow */}
