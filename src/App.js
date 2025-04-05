@@ -31,7 +31,7 @@ function App() {
           <Route path='machine' Component={MachinesPage} />
           <Route path='software' Component={software} />
           {/* <Route path='Insights' Component={Insights} /> */}
-          <Route path='Insights' Component={Menu} />
+          <Route path='Insights' Component={Insights} />
           <Route path="company" Component={About} />
           <Route path="/blog/ui-ux-design-vending-sales" element={<BlogDetailPage />} />
           <Route path="/blog/choosing-vending-machine-guide" element={<BlogDetailPage1 />} />

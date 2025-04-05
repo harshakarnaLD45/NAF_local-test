@@ -67,7 +67,7 @@ const TakeControl = () => {
         </Box>
 
         {/* Right Image Section */}
-        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', zIndex: 1 }}>
+        <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
           <Box component="img" src={Browser} alt="Dashboard Preview" sx={{ width: '100%', maxWidth: '800px' }} />
         </Box>
       </Box>
