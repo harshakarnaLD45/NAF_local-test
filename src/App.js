@@ -6,7 +6,6 @@ import Footer from './Componenets/FooterComponent/Footer';
 import NoiseEffect from './Componenets/NoiseEffect/NoiseEffect';
 import './i18n';
 import MachinesPage from './Pages/MachinesPage/MachinesPage';
-import software from './Pages/software/software';
 import Insights from './Pages/Insights/Insights';
 import BlogDetailPage from './Pages/Insights/BlogDetailPage';
 import BlogDetailPage1 from './Pages/Insights/BlogDetailPage1';
@@ -17,6 +16,7 @@ import BlogDetailPage5 from './Pages/Insights/BlogDetailPage5';
 import BlogDetailPage6 from './Pages/Insights/BlogDetailPage6';
 import About from './Pages/Company/About';
 import Menu from './Pages/Menu/Menu';
+import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           <Route path='/' Component={HomePage} />
           <Route path='home' Component={HomePage} />
           <Route path='machine' Component={MachinesPage} />
-          <Route path='software' Component={software} />
+          <Route path='software' Component={SoftwarePage} />
           {/* <Route path='Insights' Component={Insights} /> */}
           <Route path='Insights' Component={Insights} />
           <Route path="company" Component={About} />
