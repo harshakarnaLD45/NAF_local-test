@@ -32,7 +32,7 @@
 
 .custom-button {
   position: absolute;
-  bottom: -12%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #7FEE64;
@@ -152,7 +152,6 @@
   }
 
   .custom-button {
-    bottom: -11%;
     border-radius: 0 0 24px 24px;
   }
 }
@@ -178,7 +177,6 @@
   }
 
   .custom-button {
-    bottom: -10%;
     padding: 10px 24px;
   }
 

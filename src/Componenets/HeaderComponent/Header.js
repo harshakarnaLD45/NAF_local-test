@@ -18,6 +18,7 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
   const [isSignInOpen, setIsSignInOpen] = useState(false); // Correct state variable
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
 
   const [language, setLanguage] = useState(i18n.language);
   const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
@@ -188,8 +189,7 @@ const Header = () => {
                 { label: 'Machine', path: '/machine' },
                 { label: 'Software', path: '/software' },
                 { label: 'Solutions', path: '/solutions' },
-                { label: 'Insights', path: '/insights' },
-                { label: 'Company', path: '/company' }
+                { label: 'Insights', path: '/insights' }
               ].map(({ label, path }) => (
                 <Box
                   key={path}
@@ -207,6 +207,49 @@ const Header = () => {
                   {label}
                 </Box>
               ))}
+              <Box>
+                <Box
+                  className={`menu-item ${location.pathname.startsWith('/company') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: location.pathname.startsWith('/company') ? '#1A1A1A' : '#FCFCFC',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => setIsCompanyOpen((prev) => !prev)}
+                >
+                  <Box sx={{ width: '20px' }}>
+                    {location.pathname.startsWith('/company') && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                  </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Company <DropDownIcon color={location.pathname.startsWith('/company') ? '#1A1A1A' : '#FCFCFC'} /></Box>
+                </Box>
+
+                {isCompanyOpen && (
+                  <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
+                    <Box
+                      className="menu-item bodyRegularText3"
+                      sx={{ color: location.pathname.startsWith('/company/about') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                      onClick={() => {
+                        setIsCompanyOpen(false);
+                        handleNavigation('/company/about');
+                      }}
+                    >
+                      About Us
+                    </Box>
+                    <Box
+                      className="menu-item bodyRegularText3"
+                      sx={{ color: location.pathname.startsWith('/company/menu') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                      onClick={() => {
+                        setIsCompanyOpen(false);
+                        handleNavigation('/company/menu');
+                      }}
+                    >
+                      Menu
+                    </Box>
+                  </Box>
+                )}
+              </Box>
+
               {isMobile && (
                 <Box>
                   <Box
@@ -222,19 +265,19 @@ const Header = () => {
                     <Box sx={{ width: '20px' }}>
                       {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
                     </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon /></Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
                   </Box>
 
                   {/* Show sublist when isSignInOpen is true */}
                   {isSignInOpen && (
-                    <Box sx={{ pl: 8, display: 'flex', flexDirection: 'column' }}>
-                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                    <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
+                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
                         Membership Log In
                       </Box>
-                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
                         Log In / Sign Up
                       </Box>
-                      <Box className="menu-item bodyRegularText4" sx={{ color: "#FCFCFC", cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
                         Client Log In
                       </Box>
                     </Box>

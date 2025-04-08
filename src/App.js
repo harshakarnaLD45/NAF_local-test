@@ -14,9 +14,9 @@ import BlogDetailPage3 from './Pages/Insights/BlogDetailPage3';
 import BlogDetailPage4 from './Pages/Insights/BlogDetailPage4';
 import BlogDetailPage5 from './Pages/Insights/BlogDetailPage5';
 import BlogDetailPage6 from './Pages/Insights/BlogDetailPage6';
-import About from './Pages/Company/About';
 import Menu from './Pages/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
+import AboutPage from './Pages/Company/AboutPage/AboutPage';
 
 
 function App() {
@@ -30,9 +30,10 @@ function App() {
           <Route path='home' Component={HomePage} />
           <Route path='machine' Component={MachinesPage} />
           <Route path='software' Component={SoftwarePage} />
-          {/* <Route path='Insights' Component={Insights} /> */}
           <Route path='Insights' Component={Insights} />
-          <Route path="company" Component={About} />
+          <Route path="company/about" Component={AboutPage} />
+          <Route path="company/menu" Component={Menu} />
+
           <Route path="/blog/ui-ux-design-vending-sales" element={<BlogDetailPage />} />
           <Route path="/blog/choosing-vending-machine-guide" element={<BlogDetailPage1 />} />
           <Route path="/blog/power-ui-ux-vending" element={<BlogDetailPage2 />} />
@@ -40,7 +41,6 @@ function App() {
           <Route path="/blog/vending-marketing-strategies" element={<BlogDetailPage4 />} />
           <Route path="/blog/vending-regulations" element={<BlogDetailPage5 />} />
           <Route path="/blog/contactless-vending" element={<BlogDetailPage6 />} />
-          <Route path="/Insights" element={Insights} />
         
           <Route path='*' Component={HomePage} />
          
