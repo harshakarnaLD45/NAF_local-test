@@ -14,7 +14,7 @@ import BlogDetailPage3 from './Pages/Insights/BlogDetailPage3';
 import BlogDetailPage4 from './Pages/Insights/BlogDetailPage4';
 import BlogDetailPage5 from './Pages/Insights/BlogDetailPage5';
 import BlogDetailPage6 from './Pages/Insights/BlogDetailPage6';
-import Menu from './Pages/Menu/Menu';
+import Menu from './Pages/Company/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
 
