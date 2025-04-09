@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { VegetarianIcon, VeganIcon, FishIcon, GlutenIcon, LactoseIcon, ProteinIcon, DietaryIcon, MapIcon } from '../../../Componenets/CustomIcons';
 import SlotCard from './SlotCard';
-import { Box, Grid, Typography, Button, CircularProgress } from '@mui/material';
+import { Box, Grid, Typography, Button, CircularProgress, useMediaQuery, useTheme } from '@mui/material';
 import LocationModal from './LocationModal';
 import DietaryModal from './DietaryModal';
 
@@ -24,6 +24,17 @@ function VMMenu() {
     const [selectedMachineId, setSelectedMachineId] = useState(null);
     const [dietaryModalOpen, setDietaryModalOpen] = useState(false);
     const [selectedTags, setSelectedTags] = useState([]);
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // sm and below (mobile)
+
+    const allSlots = menuData.flatMap((aisle) => aisle.slotItems);
+
+    // Determine how many items to show in 4 rows based on screen
+    const itemsPerRow = isSmallScreen ? 1 : 2; // 1 on mobile, 2 on tablet/desktop
+    const [visibleCount, setVisibleCount] = useState(itemsPerRow * 4);
+
+    // const visibleSlots = showAll ? allSlots : allSlots.slice(0, maxVisibleItems);
+    const visibleSlots = allSlots.slice(0, visibleCount);
 
     // Fetch all locations on mount
     useEffect(() => {
@@ -126,17 +137,35 @@ function VMMenu() {
             </Box>
 
             {/* Slot Data */}
-            {menuData.map((aisle) => (
-                <Grid container spacing={3} key={aisle.slotName} sx={{ marginBottom: "40px" }}>
-                    <Grid container item spacing={3}>
-                        {aisle.slotItems.map((slot) => (
-                            <Grid item xs={12} sm={6} md={3} key={slot.slotId}>
-                                <SlotCard slot={slot} tags={tags} />
-                            </Grid>
-                        ))}
+            <Grid container spacing={3}>
+                {visibleSlots.map((slot) => (
+                    <Grid item xs={12} sm={6} md={3} key={slot.slotId}>
+                        <SlotCard slot={slot} tags={tags} />
                     </Grid>
-                </Grid>
-            ))}
+                ))}
+            </Grid>
+
+            {allSlots.length > itemsPerRow * 4 && (
+                <Box mt={3} textAlign="center">
+                    {visibleCount < allSlots.length ? (
+                        <Button className='bodyRegularText1'
+                            variant="outlined"
+                            sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
+                            onClick={() => setVisibleCount(prev => prev + itemsPerRow * 2)}
+                        >
+                            View More
+                        </Button>
+                    ) : (
+                        <Button className='bodyRegularText1'
+                            variant="outlined"
+                            sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
+                            onClick={() => setVisibleCount(itemsPerRow * 4)}
+                        >
+                            View Less
+                        </Button>
+                    )}
+                </Box>
+            )}
 
             {/* Modal to select location */}
             <LocationModal

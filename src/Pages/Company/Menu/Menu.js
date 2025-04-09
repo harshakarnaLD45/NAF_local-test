@@ -4,6 +4,7 @@ import arrowicon from "../../../assets/Frame 124.png";
 import "./Menu.css";
 import Unlock from "./Unlock";
 import VMMenu from "./VMMenu";
+import Allergen from "./Allergen";
 
 const Menu = () => {
   return (
@@ -73,7 +74,7 @@ const Menu = () => {
       </Box>
 
       <VMMenu />
-
+      <Allergen />
       <Unlock />
     </Box>
   );
