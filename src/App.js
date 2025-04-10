@@ -17,12 +17,13 @@ import BlogDetailPage6 from './Pages/Insights/BlogDetailPage6';
 import Menu from './Pages/Company/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
-
+import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <CustomCursor />
         <Header />
         <NoiseEffect />
         <Routes>
