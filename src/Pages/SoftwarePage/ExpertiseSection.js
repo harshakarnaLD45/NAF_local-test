@@ -12,7 +12,7 @@ const ExpertiseSection = () => {
             <Box
                 sx={{
                     position: 'sticky',
-                    top: 0,
+                    top: '50%',
                     zIndex: -1000,
                     py: 2,
                     marginTop: { xs: '50px', sm: '100px', md: '200px' },

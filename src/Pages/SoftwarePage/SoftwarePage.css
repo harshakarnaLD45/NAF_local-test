@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 84vh;
+    height: 100vh;
     gap: 10%;
     padding: 50px 0px 0px 50px;
 }
@@ -107,7 +107,7 @@
 
 @media screen and (max-width: 1440px) {
     .softwarepage-main-container {
-        height: 50vh;
+        height: 67.5vh;
         margin-top: 5rem;
     }
 
@@ -149,7 +149,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 50px 30px 0px;
+        padding: 80px 30px 0px;
         height: 100vh;
         margin-top: 0rem;
     }
@@ -180,7 +180,7 @@
     }
 
     .softwarepage-main-container {
-        padding: 50px 20px 0px;
+        padding: 80px 20px 0px;
     }
 
     .software-hero-img {

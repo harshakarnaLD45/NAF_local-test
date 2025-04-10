@@ -1,5 +1,5 @@
 .about-page-container {
-    padding: 100px 50px 0px;
+    padding: 185px 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,7 +127,7 @@
     }
 
     .about-page-container {
-        padding: 30px;
+        padding: 125px 30px 30px;
     }
 }
 
@@ -139,7 +139,7 @@
 
 @media (max-width: 768px) {
     .about-page-container {
-        padding: 30px 20px;
+        padding: 100px 20px 30px;
     }
 
     .description {
@@ -178,7 +178,7 @@
 /* Extra small devices (<= 480px) */
 @media (max-width: 480px) {
     .about-page-container {
-        padding: 30px 15px;
+        padding: 100px 15px 30px;
     }
 
     .responsive-text {

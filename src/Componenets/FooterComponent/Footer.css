@@ -7,10 +7,28 @@
     display: none !important;
 }
 
-@media (max-width: 2720px) {
+@media (min-width: 1920px) {
     .footerBottomhead {
-        bottom: -60px !important;
-        padding: 0 10px;
+        bottom: -90px !important;
+        font-size: calc(4.5rem + 5vw) !important;
+    }
+}
+
+@media (min-width: 2100px) {
+    .footerBottomhead {
+        font-size: calc(5rem + 5vw) !important;
+    }
+}
+
+@media (min-width: 2400px) {
+    .footerBottomhead {
+        font-size: calc(5.8rem + 5vw) !important;
+    }
+}
+
+@media (min-width: 2700px) {
+    .footerBottomhead {
+        font-size: calc(6rem + 5.3vw) !important;
     }
 }
 

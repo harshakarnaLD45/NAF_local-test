@@ -329,10 +329,9 @@ const Footer = () => {
 
             <Typography
               variant="h1"
-              className="footerBottomhead letworktogether"
+              className="footerBottomhead headings-h1"
               sx={{
                 color: "#FCFCFC",
-                fontSize: { xs: "40px", sm: "80px", md: "100px", lg: "130px" },
                 position: "relative",
                 bottom: { xs: -20, sm: -40, md: -40, },
                 textAlign: "center",

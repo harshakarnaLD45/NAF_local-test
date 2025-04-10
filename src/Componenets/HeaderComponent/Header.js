@@ -26,6 +26,28 @@ const Header = () => {
   const handleProfileMenuClose = () => setProfileAnchorEl(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const languageDropdownRef = useRef(null);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down & passed 100px
+        setShowHeader(false);
+      } else {
+        // Scrolling up
+        setShowHeader(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -80,7 +102,7 @@ const Header = () => {
   };
 
   return (
-    <Box className='header-container'>
+    <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
       <Box
         component="img"
         className='main-logo'
