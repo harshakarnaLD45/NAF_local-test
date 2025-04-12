@@ -28,6 +28,7 @@ const Header = () => {
   const languageDropdownRef = useRef(null);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hoveredPath, setHoveredPath] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +111,7 @@ const Header = () => {
         src={Naflogo}
       />
 
-      <Box
+      <Box data-cursor="hover"
         className='mobile-view1'
         sx={{
           backgroundColor: '#F4F4F4',
@@ -134,7 +135,7 @@ const Header = () => {
         />
         <span className="bodyRegularText3">Menu</span>
       </Box>
-      <Box
+      <Box data-cursor="hover"
         className='menu-mobile-sec'
         sx={{
           position: 'absolute',
@@ -215,56 +216,84 @@ const Header = () => {
               ].map(({ label, path }) => (
                 <Box
                   key={path}
-                  className={`menu-item ${location.pathname === path ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                  className={`menu-item ${(location.pathname === path || hoveredPath === path) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    color: location.pathname === path ? '#1A1A1A' : '#FCFCFC'
+                    color: (location.pathname === path || hoveredPath === path) ? '#1A1A1A' : '#FCFCFC'
                   }}
                   onClick={() => handleNavigation(path)}
+                  onMouseEnter={() => setHoveredPath(path)}
+                  onMouseLeave={() => setHoveredPath(null)}
                 >
                   <Box sx={{ width: '20px' }}>
-                    {location.pathname === path && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    {(location.pathname === path || hoveredPath === path) && (
+                      <span className="arrow-icon"><ArrowIcon1 /></span>
+                    )}
                   </Box>
                   {label}
                 </Box>
               ))}
               <Box>
                 <Box
-                  className={`menu-item ${location.pathname.startsWith('/company') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                  className='menu-item'
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    color: location.pathname.startsWith('/company') ? '#1A1A1A' : '#FCFCFC',
                     cursor: 'pointer'
                   }}
                   onClick={() => setIsCompanyOpen((prev) => !prev)}
+                  onMouseEnter={() => setHoveredPath('/company')}
+                  onMouseLeave={() => setHoveredPath(null)}
                 >
                   <Box sx={{ width: '20px' }}>
-                    {location.pathname.startsWith('/company') && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    {(location.pathname.startsWith('/company') ||
+                      hoveredPath === '/company' ||
+                      hoveredPath === '/company/about' ||
+                      hoveredPath === '/company/menu') && (
+                        <span className="arrow-icon"><ArrowIcon1 /></span>
+                      )}
                   </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Company <DropDownIcon color={location.pathname.startsWith('/company') ? '#1A1A1A' : '#FCFCFC'} /></Box>
+                  <Box sx={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    color: (
+                      location.pathname.startsWith('/company') ||
+                      hoveredPath === '/company' ||
+                      hoveredPath === '/company/about' ||
+                      hoveredPath === '/company/menu'
+                    ) ? '#1A1A1A' : '#FCFCFC',
+                  }} className={`${(location.pathname.startsWith('/company') ||
+                    hoveredPath === '/company' ||
+                    hoveredPath === '/company/about' ||
+                    hoveredPath === '/company/menu') ? 'bodyMediumText1' : 'bodyRegularText2'}`}>Company <DropDownIcon color={(location.pathname.startsWith('/company') ||
+                      hoveredPath === '/company' ||
+                      hoveredPath === '/company/about' ||
+                      hoveredPath === '/company/menu') ? '#1A1A1A' : '#FCFCFC'} /></Box>
                 </Box>
 
                 {isCompanyOpen && (
                   <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
                     <Box
-                      className="menu-item bodyRegularText3"
-                      sx={{ color: location.pathname.startsWith('/company/about') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                      className={`menu-item ${(location.pathname === '/company/about' || hoveredPath === '/company/about') ? 'bodyMediumText2' : 'bodyRegularText3'}`}
+                      sx={{ color: (location.pathname.startsWith('/company/about') || hoveredPath === '/company/about') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
                       onClick={() => {
                         setIsCompanyOpen(false);
                         handleNavigation('/company/about');
                       }}
+                      onMouseEnter={() => setHoveredPath('/company/about')}
+                      onMouseLeave={() => setHoveredPath(null)}
                     >
                       About Us
                     </Box>
                     <Box
-                      className="menu-item bodyRegularText3"
-                      sx={{ color: location.pathname.startsWith('/company/menu') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                      className={`menu-item ${(location.pathname === '/company/menu' || hoveredPath === '/company/menu') ? 'bodyMediumText2' : 'bodyRegularText3'}`}
+                      sx={{ color: (location.pathname.startsWith('/company/menu') || hoveredPath === '/company/menu') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
                       onClick={() => {
                         setIsCompanyOpen(false);
                         handleNavigation('/company/menu');
                       }}
+                      onMouseEnter={() => setHoveredPath('/company/menu')}
+                      onMouseLeave={() => setHoveredPath(null)}
                     >
                       Menu
                     </Box>
@@ -335,65 +364,67 @@ const Header = () => {
         )}
       </Box>
 
-      {!isMobile && (
-        <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
-          <Box>
-            <button className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
-              <ProfileIcon />
-            </button>
+      {
+        !isMobile && (
+          <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
+            <Box>
+              <button data-cursor="hover" className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
+                <ProfileIcon />
+              </button>
 
-            <Menu
-              anchorEl={profileAnchorEl}
-              open={Boolean(profileAnchorEl)}
-              onClose={handleProfileMenuClose}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-              PaperProps={{
-                sx: {
-                  backgroundColor: '#262626',
-                  borderRadius: '10px',
-                  width: { xs: '160px', sm: '200px', md: '230px' },
-                  marginTop: '4px',
-                }
-              }}
-            >
-              {["Membership Log In", "Log In / Sign Up", "Client Log In"].map((text) => (
-                <MenuItem
-                  key={text}
-                  onClick={handleProfileMenuClose}
-                  sx={{
-                    color: "#FCFCFC",
-                    padding: "10px 20px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    "&:hover": {
-                      color: "#7FEE64",
-                      "& .arrow-icon": {
-                        opacity: 1, // Show the arrow when hovering over the item
-                        color: "#7FEE64",
-                      },
-                    },
-                  }}
-                  className="bodyRegularText4"
-                >
-                  {text}
-                  <EastIcon
-                    className="arrow-icon"
+              <Menu
+                anchorEl={profileAnchorEl}
+                open={Boolean(profileAnchorEl)}
+                onClose={handleProfileMenuClose}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+                PaperProps={{
+                  sx: {
+                    backgroundColor: '#262626',
+                    borderRadius: '10px',
+                    width: { xs: '160px', sm: '200px', md: '230px' },
+                    marginTop: '4px',
+                  }
+                }}
+              >
+                {["Membership Log In", "Log In / Sign Up", "Client Log In"].map((text) => (
+                  <MenuItem
+                    key={text}
+                    onClick={handleProfileMenuClose}
                     sx={{
-                      opacity: 0, // Initially hidden
-                      transition: "opacity 0.2s ease-in-out",
+                      color: "#FCFCFC",
+                      padding: "10px 20px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      "&:hover": {
+                        color: "#7FEE64",
+                        "& .arrow-icon": {
+                          opacity: 1, // Show the arrow when hovering over the item
+                          color: "#7FEE64",
+                        },
+                      },
                     }}
-                  />
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+                    className="bodyRegularText4"
+                  >
+                    {text}
+                    <EastIcon
+                      className="arrow-icon"
+                      sx={{
+                        opacity: 0, // Initially hidden
+                        transition: "opacity 0.2s ease-in-out",
+                      }}
+                    />
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
 
-          <button class="book-demo-btn bodyRegularText4">Book a Demo</button>
-        </Box>
-      )}
-    </Box>
+            <button data-cursor="hover" class="book-demo-btn bodyRegularText4">Book a Demo</button>
+          </Box>
+        )
+      }
+    </Box >
   );
 };
 

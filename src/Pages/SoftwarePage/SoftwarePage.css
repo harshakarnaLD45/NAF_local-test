@@ -253,8 +253,8 @@
 /* Extra Small Screens (Very Small Devices) */
 @media (max-width: 480px) {
     .softwarepage-main-container {
-        padding: 100px 15px 0px;
-        height: 70vh;
+        padding: 150px 15px 0px;
+        height: 76vh;
     }
 
     .expertise-sub-cards {

@@ -1,0 +1,129 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Typography } from '@mui/material';
+import gsap from 'gsap';
+import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
+import SustainabilityBgImg from '../../assets/Home/background.svg'
+import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, SustainabilityIcon4, SustainabilityIcon5 } from '../../Componenets/CustomIcons';
+
+const features = [
+    { icon: SustainabilityIcon1, text: 'Return System & Reusable Packaging' },
+    { icon: SustainabilityIcon2, text: 'Partnerships with Local/Regional Producers' },
+    { icon: SustainabilityIcon3, text: 'In-House Cloud & App Development' },
+    { icon: SustainabilityIcon4, text: 'RFID Integration, Telemetry, & Energy Efficiency' },
+    { icon: SustainabilityIcon5, text: 'Innovation Awards & Grant-Funded Projects' },
+];
+
+const Sustainability = () => {
+    const scrollContainerRef = useRef();
+    const leftSectionRef = useRef();
+    const [leftHeight, setLeftHeight] = useState(400);
+
+    useEffect(() => {
+        if (leftSectionRef.current) {
+            const resizeObserver = new ResizeObserver(() => {
+                requestAnimationFrame(() => {
+                    if (leftSectionRef.current) {
+                        setLeftHeight(leftSectionRef.current.offsetHeight);
+                    }
+                });
+            });
+
+            resizeObserver.observe(leftSectionRef.current);
+            return () => resizeObserver.disconnect();
+        }
+    }, []);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            const container = scrollContainerRef.current;
+
+            // Get height of a single loop
+            const singleLoopHeight = container.scrollHeight / 2;
+
+            // Animate upward scrolling
+            gsap.to(container, {
+                y: `-=${singleLoopHeight}`,
+                ease: 'none',
+                duration: 40,
+                repeat: -1,
+                modifiers: {
+                    y: gsap.utils.unitize((y) => parseFloat(y) % singleLoopHeight),
+                },
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
+
+    // Duplicate the features list to simulate infinite scroll
+    const doubledFeatures = [...features, ...features, ...features, ...features];
+
+    return (
+        <Box className='section-container'
+            sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                justifyContent: "space-between",
+                // minHeight: 400,
+                backgroundImage: `url(${SustainabilityBgImg})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                gap: { md: 6 },
+                overflow: 'hidden',
+            }}
+        >
+            {/* Left Side */}
+            <Box ref={leftSectionRef} className='sustain-sec' sx={{
+                flex: 1, py: { xs: 5, sm: 8, md: 10 }, display: 'flex', flexDirection: 'column', justifyContent: 'center'
+            }}>
+                <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
+                    Sustainability & Technology
+                </Typography>
+                <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
+                    NAF Germany is committed to providing innovative and ecological vending solutions that
+                    benefit both our customers and the environment. We leverage cutting-edge technology and
+                    sustainable practices to create a better future.
+                </Typography>
+                <AnimateButton text1='GET IN' text2='TOUCH' getBtnColor='#161616' />
+            </Box>
+
+            {/* Right Side: Infinite Scroll */}
+            <Box
+                sx={{
+                    flex: 1,
+                    overflow: 'hidden',
+                    position: 'relative',
+                    height: { xs: 200, sm: 200, md: leftHeight },
+                    maxWidth: 800,
+                }}
+            >
+                <Box ref={scrollContainerRef} sx={{ height: { xs: 400, sm: 400, md: leftHeight } }}>
+                    {doubledFeatures.map((item, i) => (
+                        <Box
+                            key={`feature-${i}`}
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                backgroundColor: '#B3F5A3',
+                                borderRadius: 150,
+                                p: 1,
+                                mb: { xs: 1, sm: 2, md: 3 },
+                                gap: { xs: 2, sm: 3, md: 6 },
+                            }}
+                        >
+                            <Box className='sustain-icons'>
+                                <item.icon className="sustainability-icon" />
+                            </Box>
+                            <Typography variant="body1" className='bodyRegularText3' color='#444'>
+                                {item.text}
+                            </Typography>
+                        </Box>
+                    ))}
+                </Box>
+            </Box>
+        </Box>
+    );
+};
+
+export default Sustainability;

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import star from '../../assets/Vector (1).png';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
+import FadeInParagraph from "./FadeInParagraph";
 
 const bannerItems = Array(8).fill({
   text: "NAF GERMANY",
@@ -229,24 +230,7 @@ const NafParagrap = () => {
       </Box>
 
       {/* Main content section */}
-      <Box sx={{ mt: { xs: 3, sm: 4, md: 5 }, display: "flex", justifyContent: "center" }}>
-        <Typography
-          variant="h2"
-          className="headings-h2"
-          sx={{
-            width: { xs: "100%", sm: "90%", md: "1445px" },
-            color: "#C2C2C4",
-            textAlign: "center",
-            px: { xs: 1, sm: 2 },
-          }}
-        >
-          At NAF Germany, we're passionate about delivering innovative solutions
-          that transform businesses. With years of experience in
-          vending technology, software development. We combine cutting-edge
-          technology with a user-centered approach to deliver exceptional
-          results.
-        </Typography>
-      </Box>
+      <FadeInParagraph />
       <Box sx={{
         display: 'flex', justifyContent: 'center', mb: {
           xs: 0,

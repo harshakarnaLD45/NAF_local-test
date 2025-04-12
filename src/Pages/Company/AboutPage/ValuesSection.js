@@ -1,6 +1,12 @@
 import { Box, Card, Typography } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
-import { ValuesIcon1, ValuesIcon2, ValuesIcon3, ValuesIcon4 } from "../../../Componenets/CustomIcons";
+import { motion } from "framer-motion";
+import {
+    ValuesIcon1,
+    ValuesIcon2,
+    ValuesIcon3,
+    ValuesIcon4,
+} from "../../../Componenets/CustomIcons";
 
 const maintenanceServices = [
     {
@@ -35,17 +41,16 @@ const maintenanceServices = [
 
 const ValuesSection = () => {
     const sectionRef = useRef(null);
-
     const [isCollapsed, setIsCollapsed] = useState(false);
-    const [hasAnimated, setHasAnimated] = useState(false); // New state to track animation status
+    const [hasAnimated, setHasAnimated] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 const entry = entries[0];
                 if (entry.isIntersecting && !hasAnimated) {
-                    setIsCollapsed(true); // Trigger animation only once
-                    setHasAnimated(true); // Prevent further animations
+                    setIsCollapsed(true);
+                    setHasAnimated(true);
                 }
             },
             {
@@ -62,7 +67,7 @@ const ValuesSection = () => {
                 observer.unobserve(sectionRef.current);
             }
         };
-    }, [hasAnimated]); // Dependency on `hasAnimated`
+    }, [hasAnimated]);
 
     return (
         <Box
@@ -72,7 +77,6 @@ const ValuesSection = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
-                // marginBottom: { xs: "10rem", md: "18rem" },
                 transition: "all 0.5s ease",
             }}
         >
@@ -81,7 +85,6 @@ const ValuesSection = () => {
                 sx={{
                     position: "relative",
                     width: "100%",
-                    // maxWidth: { xs: "100%", md: "1639px" },
                     height: { md: "605px" },
                     mt: { xs: -1, md: -3 },
                 }}
@@ -89,10 +92,7 @@ const ValuesSection = () => {
                 <Typography
                     variant="h2"
                     className="headings-h2"
-                    sx={{
-                        color: "#FCFCFC",
-                        textAlign: "center",
-                    }}
+                    sx={{ color: "#FCFCFC", textAlign: "center" }}
                 >
                     Our Values
                 </Typography>
@@ -100,10 +100,7 @@ const ValuesSection = () => {
                 <Typography
                     variant="body1"
                     className="bodyRegularText3"
-                    sx={{
-                        color: "#C2C2C4",
-                        textAlign: "center",
-                    }}
+                    sx={{ color: "#C2C2C4", textAlign: "center" }}
                 >
                     The core principles that drive our business forward
                 </Typography>
@@ -125,70 +122,87 @@ const ValuesSection = () => {
                     }}
                 >
                     {maintenanceServices.map((service, index) => (
-                        <Card
+                        <motion.div
                             key={index}
-                            sx={{
-                                position: { xs: "relative", md: isCollapsed ? "relative" : "absolute" },
-                                width: {
-                                    xs: isCollapsed ? "95%" : "440px",
-                                    sm: isCollapsed ? "48%" : "440px",
-                                    md: isCollapsed ? "24%" : "440px",
-                                },
-                                // maxWidth: { xs: "350px", md: "440px" },
-                                height: { xs: "300px", sm: "350px", md: "426px" },
-                                top: { xs: "auto", md: isCollapsed ? "auto" : service.position.top },
-                                left: { xs: "auto", md: isCollapsed ? "auto" : service.position.left },
-                                transform: {
-                                    xs: "rotate(0deg)",
-                                    md: isCollapsed ? "rotate(0deg)" : `rotate(${service.rotation}deg)`,
-                                },
-                                bgcolor: "#161616",
-                                borderRadius: "24px",
-                                overflow: "hidden",
-                                border: "1px solid #525252",
-                                transition: "all 0.5s ease",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "flex-end",
+                            initial={{ opacity: 0, y: -80, rotate: service.rotation }}
+                            animate={
+                                isCollapsed
+                                    ? { opacity: 1, y: 0, rotate: 0 }
+                                    : { opacity: 0, y: -80 }
+                            }
+                            transition={{
+                                duration: 0.8,
+                                delay: index * 0.25,
+                                ease: "easeOut",
+                            }}
+                            className="val-motion-effect"
+                            style={{
+                                position:
+                                    isCollapsed || window.innerWidth < 900
+                                        ? "relative"
+                                        : "absolute",
+                                top:
+                                    isCollapsed || window.innerWidth < 900
+                                        ? "auto"
+                                        : service.position.top,
+                                left:
+                                    isCollapsed || window.innerWidth < 900
+                                        ? "auto"
+                                        : service.position.left,
+                                width: "100%",
                                 zIndex: 1,
-                                marginBottom: { xs: "1rem", md: "0" },
                             }}
                         >
-                            <Box
+                            <Card
                                 sx={{
-                                    position: "absolute",
-                                    top: 16,
-                                    left: 16,
-                                    padding: "8px",
-                                }}
-                            >
-                                {service.valueIcon}
-                            </Box>
-
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    padding: "32px 24px",
+                                    width: "100%",
+                                    height: { xs: "300px", sm: "350px", md: "426px" },
+                                    bgcolor: "#161616",
+                                    borderRadius: "24px",
+                                    overflow: "hidden",
+                                    border: "1px solid #525252",
+                                    transition: "all 0.5s ease",
                                     display: "flex",
                                     flexDirection: "column",
+                                    justifyContent: "flex-end",
+                                    marginBottom: { xs: "1rem", md: "0" },
                                 }}
                             >
-                                <Typography
-                                    variant="body1"
-                                    className="bodyRegularText2"
-                                    sx={{ color: "#FCFCFC" }}
+                                <Box
+                                    sx={{
+                                        position: "absolute",
+                                        top: 16,
+                                        left: 16,
+                                        padding: { xs: 0, sm: 0, md: "8px" },
+                                    }}
                                 >
-                                    {service.title}
-                                </Typography>
-                                <Typography
-                                    variant="body1"
-                                    className="bodyRegularText3"
-                                    sx={{ color: "#C2C2C4" }}
+                                    {service.valueIcon}
+                                </Box>
+
+                                <Box className='crads-title-sec'
+                                    sx={{
+                                        position: "absolute",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                    }}
                                 >
-                                    {service.desc}
-                                </Typography>
-                            </Box>
-                        </Card>
+                                    <Typography
+                                        variant="body1"
+                                        className="bodyRegularText2"
+                                        sx={{ color: "#FCFCFC" }}
+                                    >
+                                        {service.title}
+                                    </Typography>
+                                    <Typography
+                                        variant="body1"
+                                        className="bodyRegularText3"
+                                        sx={{ color: "#C2C2C4" }}
+                                    >
+                                        {service.desc}
+                                    </Typography>
+                                </Box>
+                            </Card>
+                        </motion.div>
                     ))}
                 </Box>
             </Box>

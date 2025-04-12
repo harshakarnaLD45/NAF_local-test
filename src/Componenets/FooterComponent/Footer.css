@@ -38,6 +38,10 @@
         font-size: clamp(80px, 8.5vw, 165px) !important;
     }
 
+    .btn-social-icon {
+        gap: 50px !important;
+    }
+
     .footer-main-div {
         margin-bottom: 0px !important;
     }
@@ -80,6 +84,10 @@
         margin-bottom: 03px !important;
     }
 
+    .footer-orange-ball {
+        width: 760px !important;
+        height: 750px !important;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -216,6 +224,7 @@
         position: relative !important;
         bottom: 7px !important;
         gap: 10px !important;
+        margin-top: 30px !important;
     }
 
     .footer-main-div {

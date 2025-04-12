@@ -108,6 +108,48 @@ body {
 /* Media Queries for Responsive Design */
 
 /* Large Screens (Desktops) */
+@media (min-width: 2100px) {
+  .headings-h1 {
+    font-size: 100px !important;
+  }
+
+  .headings-h2 {
+    font-size: 87px !important;
+  }
+
+  .headings-h3 {
+    font-size: 74px !important;
+  }
+
+  .headings-h4 {
+    font-size: 55px !important;
+  }
+
+  .bodyRegularText1 {
+    font-size: 20px !important;
+  }
+
+  .bodyRegularText2,
+  .bodyMediumText1 {
+    font-size: 35px !important;
+  }
+
+  .bodyRegularText3,
+  .bodyMediumText2 {
+    font-size: 30px !important;
+  }
+
+  .bodyRegularText4,
+  .bodyMediumText3 {
+    font-size: 24px !important;
+  }
+
+  .bodyRegularText5,
+  .bodyMediumText4 {
+    font-size: 18px !important;
+  }
+}
+
 @media (max-width: 1640px) {
   .headings-h1 {
     font-size: 62px !important;
@@ -295,5 +337,18 @@ body {
   .bodyRegularText5,
   .bodyMediumText4 {
     font-size: 8px !important;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .bodyRegularText2,
+  .bodyMediumText1 {
+    font-size: 12px !important;
+  }
+
+  .bodyRegularText4,
+  .bodyMediumText3 {
+    font-size: 10px !important;
   }
 }

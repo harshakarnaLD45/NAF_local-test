@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowIcon } from '../CustomIcons';
 
-function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
+function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/', getBtnColor }) {
     const [position, setPosition] = useState({ x: 0, y: 0, active: false });
     const buttonRef = useRef(null);
 
@@ -70,6 +70,7 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
                 <div
                     style={{
                         ...styles.outerCircle,
+                        border: getBtnColor ? '1.5px solid #1A1A1A' : '1.5px solid #7FEE64',
                         transform: `translate(${position.x * 2.3}px, ${position.y * 2.3}px)`,
                         opacity: 1,
                     }}
@@ -82,7 +83,7 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/' }) {
                 className="animate-button"
                 style={{
                     ...styles.button,
-                    backgroundColor: position.active ? '#161616' : 'transparent',
+                    backgroundColor: position.active ? '#161616' : getBtnColor ? getBtnColor : 'transparent',
                     transform: `translate(${position.x}px, ${position.y}px)`,
                     transition: 'transform 0.3s ease-out',
                 }}

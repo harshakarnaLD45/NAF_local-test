@@ -5,35 +5,49 @@ const CursorPointer = styled.div.attrs(props => ({
     style: {
         left: `${props.x}px`,
         top: `${props.y}px`,
+        width: props.hovered ? '48px' : '12px',
+        height: props.hovered ? '48px' : '12px',
     }
 }))`
     background-color: white;
     position: fixed;
     border-radius: 100%;
     mix-blend-mode: difference;
-    width: 32px;
-    height: 32px;
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999999;
-  `;
+    transition: width 0.2s ease, height 0.2s ease;
+`;
 
 const CustomCursor = () => {
-    const [x, setX] = useState(0)
-    const [y, setY] = useState(0)
+    const [x, setX] = useState(0);
+    const [y, setY] = useState(0);
+    const [hovered, setHovered] = useState(false);
 
     useEffect(() => {
-        const handleMouseMovement = (e) => {
-            setX(e.clientX)
-            setY(e.clientY)
-        }
-        document.addEventListener('mousemove', handleMouseMovement);
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMovement);
-        }
-    }, [x, y])
+        const handleMouseMove = (e) => {
+            setX(e.clientX);
+            setY(e.clientY);
 
-    return <CursorPointer x={x} y={y} />;
+            let el = e.target;
+            while (el) {
+                if (el.dataset?.cursor === 'hover') {
+                    setHovered(true);
+                    return;
+                }
+                el = el.parentElement;
+            }
+
+            setHovered(false);
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
+    return <CursorPointer x={x} y={y} hovered={hovered} />;
 };
 
 export default CustomCursor;

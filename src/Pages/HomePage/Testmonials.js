@@ -108,7 +108,7 @@ const Testimonials = () => {
     }}
       className='section-container'
     >
-      <Box
+      <Box className="testimonials-section"
         sx={{
           bgcolor: "#262626",
           py: 0,
@@ -118,7 +118,7 @@ const Testimonials = () => {
           overflow: "hidden", // Ensure no overflow outside the section
         }}
       >
-        <Grid container alignItems="center">
+        <Grid container alignItems= "center" >
           {/* Left Section */}
           <Grid item xs={12} md={5} className="left-section">
             <Box
@@ -131,7 +131,7 @@ const Testimonials = () => {
                 height: "100%",
                 justifyContent: "space-between",
                 paddingRight: { xs: "0rem", md: "2rem" },
-                paddingTop: { xs: "3rem", md: "6rem" },
+                paddingTop: { xs: "3rem" },
                 paddingBottom: { xs: "3rem", md: "0rem" }
               }}
             >
@@ -186,9 +186,7 @@ const Testimonials = () => {
 
 
           <Grid item xs={12} md={7}>
-            <Grid container
-              spacing={3} className="testimonial-columns"
-            >
+            <Grid container spacing={3}>
               {/* Column 1 - Scrolls Up */}
               <Grid item xs={12} sm={6} sx={{ paddingTop: '0px' }}>
                 <Box

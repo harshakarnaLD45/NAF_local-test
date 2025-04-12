@@ -10,24 +10,27 @@ import NafParagrap from './NafParagrap';
 import WhatsNew from './WhatsNew';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import Testmonials from './Testmonials';
+import Sustainability from './Sustainability';
+import WhoWeServe from './WhoWeServe';
+import GradientMaskText from '../../Componenets/CommonComponents/GradientMaskText';
 
 const HomePage = () => {
   return (
     <Box>
       <Box className='main-container'>
         <Box >
-          <Typography variant='h1' className='headings-h1 main-sub-container1  maintext' sx={{ color: '#FCFCFC' }}>
+          {/* <Typography data-cursor="hover" variant='h1' className='headings-h1 main-sub-container1  maintext' sx={{ color: '#FCFCFC' }}>
             Revolutionize Your Business with Smart Vending Solutions
-          </Typography>
-
+          </Typography> */}
+          <GradientMaskText />
           <Box className='main-sub-container2  maintextcontainer '>
-            <Typography className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
+            <Typography data-cursor="hover" className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
               Streamline your operations and boost your bottom line. Our vending
               solutions are built for efficiency, offering reliable performance and
               increased revenue.
             </Typography>
-            <Box  className="button-container">
-              <AnimateButton  />
+            <Box data-cursor="hover" className="button-container">
+              <AnimateButton />
             </Box>
           </Box>
         </Box>
@@ -38,6 +41,8 @@ const HomePage = () => {
       <HomepageShowreel />
       <Explore />
       <Clients />
+      <WhoWeServe />
+      <Sustainability />
       <TakeControl />
       <Request />
       <WhatsNew />

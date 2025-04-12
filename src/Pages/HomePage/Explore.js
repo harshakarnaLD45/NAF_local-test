@@ -20,6 +20,7 @@ import hotSmall1 from '../../assets/A Mint Leaf Transparent Plant Vector - Mint 
 import hotSmall2 from '../../assets/Salami slices on white background_ 1.png';
 import hotSmall3 from '../../assets/Sausage slices isolated on white background cutout_ 1.png';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
+import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,9 +167,10 @@ function Explore() {
       <Box>
         <Box className='explore-container section-container'>
           <Box>
-            <Typography variant='h2' className='headings-h2 main-sub-container1 main-sub-containerss' sx={{ color: '#FCFCFC' }}>
+            {/* <Typography variant='h2' className='headings-h2 main-sub-container1 main-sub-containerss' sx={{ color: '#FCFCFC' }}>
               Explore Our Vending Machines
-            </Typography>
+            </Typography> */}
+            <ScrollMaskText />
             <Typography variant="body1" className='bodyRegularText3 main-sub-container1 main-sub-containerss' sx={{ color: '#C2C2C4' }}>
               Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.
             </Typography>
