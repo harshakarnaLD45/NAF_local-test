@@ -244,6 +244,11 @@
   .bigimage {
     width: 250px !important;
   }
+
+  .main-sub-container1,
+  .main-sub-container2 {
+    width: 60%;
+  }
 }
 
 @media (max-width: 1200px) {

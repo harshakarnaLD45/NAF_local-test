@@ -25,7 +25,7 @@ const GradientMaskText = () => {
     }, []);
 
     return (
-        <div data-cursor="hover"
+        <div
             ref={containerRef}
             style={{
                 position: "relative",
@@ -34,7 +34,7 @@ const GradientMaskText = () => {
             }}
         >
             {/* Base Text */}
-            <Typography
+            <Typography data-cursor="hover"
                 variant="h1"
                 className="headings-h1 main-sub-container1 maintext"
                 sx={{

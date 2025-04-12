@@ -5,59 +5,61 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollRiseLetters = () => {
-  const textRef = useRef(null);
+const ScrollMaskText = ({ text, textColor, textAlignment,textDisplay }) => {
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const letters = gsap.utils.toArray(".rise-letter");
+    const ctx = gsap.context(() => {
+      const letters = gsap.utils.toArray(".rise-letter", containerRef.current);
 
-    gsap.set(letters, { y: 100, opacity: 0 });
+      gsap.set(letters, { y: "100%", opacity: 0 });
 
-    gsap.to(letters, {
-      y: 0,
-      opacity: 1,
-      ease: "power3.out",
-      duration: 0.6,
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: textRef.current,
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-      },
-    });
+      gsap.to(letters, {
+        y: "0%",
+        opacity: 1,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.03,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }, containerRef);
+
+    return () => ctx.revert(); // Cleanup on unmount
   }, []);
 
-  const text = "Explore Our Vending Machines";
-
   return (
-    <div
-      ref={textRef}
-      style={{
-        display: "flex",
-        overflow: "hidden",
-      }}
-    >
+    <div ref={containerRef} style={{ overflow: "hidden" }}>
       <Typography
         variant="h2"
-        className="headings-h2 main-sub-container1 main-sub-containerss"
+        className="headings-h2"
         sx={{
-          color: "#FCFCFC",
-          fontWeight: 600,
-          display: "flex",
-          flexWrap: "wrap",
+          color: textColor ? textColor : "#FCFCFC",
+          textAlign: textAlignment ? textAlignment : "left",
+          display: textDisplay ? textDisplay : "inline-block",
+          lineHeight: 1.2,
+          wordWrap: "break-word",
+          whiteSpace: "normal",
         }}
       >
-        {text.split("").map((char, index) => (
-          <span
-            key={index}
-            className="rise-letter"
-            style={{
-              display: "inline-block",
-              whiteSpace: "pre",
-            }}
-          >
-            {char}
+        {text.split(" ").map((word, wordIndex) => (
+          <span key={wordIndex} style={{ display: "inline-block" }}>
+            {word.split("").map((char, i) => (
+              <span
+                key={`${wordIndex}-${i}`}
+                className="rise-letter"
+                style={{
+                  display: "inline-block",
+                  transform: "translateY(100%)",
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            {"\u00A0"}
           </span>
         ))}
       </Typography>
@@ -65,4 +67,4 @@ const ScrollRiseLetters = () => {
   );
 };
 
-export default ScrollRiseLetters;
+export default ScrollMaskText;

@@ -5,6 +5,7 @@ import gsap from "gsap";
 import blogimage from '../../assets/representations-user-experience-interface-design 1.png';
 import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
+import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 
 const WhatsNew = () => {
   const blogPosts = [
@@ -95,9 +96,10 @@ const WhatsNew = () => {
     <Box sx={{ position: "relative" }} className='section-container'>
       {/* Title Section */}
       <Box className='explore-container whatsnewcontainer' sx={{ mb: 3 }}>
-        <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
+        {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
-        </Typography>
+        </Typography> */}
+            <ScrollMaskText text="What's New" />
         <Box>
           <AnimateButton text1="VIEW" text2="MORE" />
         </Box>

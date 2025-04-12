@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import SustainabilityBgImg from '../../assets/Home/background.svg'
 import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, SustainabilityIcon4, SustainabilityIcon5 } from '../../Componenets/CustomIcons';
+import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 
 const features = [
     { icon: SustainabilityIcon1, text: 'Return System & Reusable Packaging' },
@@ -77,9 +78,10 @@ const Sustainability = () => {
             <Box ref={leftSectionRef} className='sustain-sec' sx={{
                 flex: 1, py: { xs: 5, sm: 8, md: 10 }, display: 'flex', flexDirection: 'column', justifyContent: 'center'
             }}>
-                <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
+                {/* <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
                     Sustainability & Technology
-                </Typography>
+                </Typography> */}
+                <ScrollMaskText text="Sustainability & Technology" textColor='#1A1A1A' />
                 <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
                     NAF Germany is committed to providing innovative and ecological vending solutions that
                     benefit both our customers and the environment. We leverage cutting-edge technology and

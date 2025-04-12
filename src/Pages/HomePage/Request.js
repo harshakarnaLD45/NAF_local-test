@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
+import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,10 +58,12 @@ const Request = () => {
 
     return (
         <Container className="section-container" sx={{ position: "relative" }}>
-            <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC', textAlign: 'center' }}>
+            {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC', textAlign: 'center' }}>
                 You Request.<br />
                 We Build!
-            </Typography>
+            </Typography> */}
+            <ScrollMaskText text="You Request." textAlignment='center' textDisplay='block' />
+            <ScrollMaskText text="We Build!" textAlignment='center' textDisplay='block' />
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6, mt: 3 }}>
                 <AnimateButton />
             </Box>

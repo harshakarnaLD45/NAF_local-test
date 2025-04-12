@@ -170,7 +170,9 @@ function Explore() {
             {/* <Typography variant='h2' className='headings-h2 main-sub-container1 main-sub-containerss' sx={{ color: '#FCFCFC' }}>
               Explore Our Vending Machines
             </Typography> */}
-            <ScrollMaskText />
+            <div className="main-sub-container1 main-sub-containerss">
+              <ScrollMaskText text="Explore Our Vending Machines" />
+            </div>
             <Typography variant="body1" className='bodyRegularText3 main-sub-container1 main-sub-containerss' sx={{ color: '#C2C2C4' }}>
               Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.
             </Typography>

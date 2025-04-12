@@ -6,6 +6,7 @@ import school from '../../assets/Home/Serve5.png';
 import office from '../../assets/Home/Serve2.png';
 import events from '../../assets/Home/Serve4.png';
 import publicPic from '../../assets/Home/Serve6.png';
+import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 
 const WhoWeServe = () => {
     const serveCards1 = [
@@ -52,10 +53,10 @@ const WhoWeServe = () => {
                     position: 'sticky', marginTop: '150px', top: '100px', // adjust this based on your layout / header height
                     zIndex: 10,
                 }}>
-
-                    <Typography variant='h1' className='headings-h2 whoweServe-left-sec1-text'>
+                    {/* <Typography variant='h1' className='headings-h2 whoweServe-left-sec1-text'>
                         Who We Serve
-                    </Typography>
+                    </Typography> */}
+                    <ScrollMaskText text="Who We Serve" />
                     <Typography color='#C2C2C4' variant='h1' className='bodyRegularText3 whoweServe-left-sec2-text'>
                         NAF Germany provides customized vending solutions to a diverse range of industries. We understand the unique needs of each sector and offer tailored solutions to enhance convenience, boost efficiency, and improve customer satisfaction.
                     </Typography>

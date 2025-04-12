@@ -2,11 +2,12 @@ import React from 'react';
 import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 import Browser from "../../assets/Browsers.svg";
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
+import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 
 const TakeControl = () => {
   return (
     <Box sx={{ p: 3 }} className='section-container'>
-     <Box
+      <Box
         sx={{
           position: 'relative',
           backgroundColor: '#262626',
@@ -55,11 +56,12 @@ const TakeControl = () => {
             </ListItem>
           </List>
 
-          <Typography variant="h2" sx={{ color: '#FCFCFC', mb: 2 }} className='headings-h2'>
+          {/* <Typography variant="h2" sx={{ color: '#FCFCFC', mb: 2 }} className='headings-h2'>
             Take Control of Your Vending Network
-          </Typography>
+          </Typography> */}
+          <ScrollMaskText text="Take Control of Your Vending Network" />
 
-          <Typography sx={{ color: '#C2C2C4', mb: 3 }} className='bodyRegularText3'>
+          <Typography sx={{ color: '#C2C2C4', mb: 3, mt: 2 }} className='bodyRegularText3'>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography>
 

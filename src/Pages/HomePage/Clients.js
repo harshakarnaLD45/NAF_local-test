@@ -13,6 +13,7 @@ import ActiveCampaignAltLogo from "../../assets/representations-user-experience-
 import AdobeAltLogo from "../../assets/Company logo.png";
 import ElasticAltLogo from "../../assets/Company logo (1).png";
 import EvernoteAltLogo from "../../assets/Company logo (3).png";
+import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 
 const companyLogos = [
   { id: 1, src: AdobeLogo, alt: "Adobe" },
@@ -151,9 +152,10 @@ const Clients = () => {
   return (
     <Box ref={sectionRef} sx={{ overflow: "hidden" }}>
       <Box className="section-container">
-        <Typography variant="h2" className="headings-h2">
+        {/* <Typography variant="h2" className="headings-h2">
           Our Clients
-        </Typography>
+        </Typography> */}
+        <ScrollMaskText text="Our Clients" />
         <Typography
           variant="body1"
           className="bodyRegularText3"
