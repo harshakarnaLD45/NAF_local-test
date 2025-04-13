@@ -23,14 +23,14 @@ const HomePage = () => {
             Revolutionize Your Business with Smart Vending Solutions
           </Typography> */}
           <GradientMaskText />
-          <Box className='main-sub-container2  maintextcontainer '>
+          <Box className='main-sub-container2  maintextcontainer'>
             <Typography data-cursor="hover" className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
               Streamline your operations and boost your bottom line. Our vending
               solutions are built for efficiency, offering reliable performance and
               increased revenue.
             </Typography>
             <Box data-cursor="hover" className="button-container">
-              <AnimateButton />
+              <AnimateButton route='machine' />
             </Box>
           </Box>
         </Box>
@@ -44,7 +44,7 @@ const HomePage = () => {
       <WhoWeServe />
       <Sustainability />
       <TakeControl />
-      <Request />
+      {/* <Request /> */}
       <WhatsNew />
       <NafParagrap />
       <Testmonials />

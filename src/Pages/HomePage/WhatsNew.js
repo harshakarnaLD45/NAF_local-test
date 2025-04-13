@@ -6,6 +6,7 @@ import blogimage from '../../assets/representations-user-experience-interface-de
 import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
+import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 
 const WhatsNew = () => {
   const blogPosts = [
@@ -99,9 +100,9 @@ const WhatsNew = () => {
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}
-            <ScrollMaskText text="What's New" />
+            <ScrollManualLinesHeadings text="What's New" />
         <Box>
-          <AnimateButton text1="VIEW" text2="MORE" />
+          <AnimateButton text1="VIEW" text2="MORE" route='Insights' />
         </Box>
       </Box>
 

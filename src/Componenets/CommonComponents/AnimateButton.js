@@ -1,9 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowIcon } from '../CustomIcons';
+import { useNavigate } from 'react-router-dom';
 
 function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/', getBtnColor }) {
     const [position, setPosition] = useState({ x: 0, y: 0, active: false });
     const buttonRef = useRef(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         // Function to determine if hover effect should be enabled
@@ -64,7 +66,7 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route = '/', getBtnCol
     }, []);
 
     return (
-        <div className="detection-area animate-buttons" style={styles.detectionArea}>
+        <div onClick={() => navigate(route)} className="detection-area animate-buttons" style={styles.detectionArea}>
             {/* Outer Circle Slightly Outside */}
             {position.active && (
                 <div

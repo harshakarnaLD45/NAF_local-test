@@ -104,7 +104,7 @@ const Header = () => {
 
   return (
     <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
-      <Box
+      <Box onClick={() => navigate('/')}
         component="img"
         className='main-logo'
         alt="New Age Logo"
@@ -226,11 +226,9 @@ const Header = () => {
                   onMouseEnter={() => setHoveredPath(path)}
                   onMouseLeave={() => setHoveredPath(null)}
                 >
-                  <Box sx={{ width: '20px' }}>
-                    {(location.pathname === path || hoveredPath === path) && (
-                      <span className="arrow-icon"><ArrowIcon1 /></span>
-                    )}
-                  </Box>
+                  {(location.pathname === path || hoveredPath === path) && (
+                    <span className="arrow-icon"><ArrowIcon1 /></span>
+                  )}
                   {label}
                 </Box>
               ))}
@@ -246,14 +244,12 @@ const Header = () => {
                   onMouseEnter={() => setHoveredPath('/company')}
                   onMouseLeave={() => setHoveredPath(null)}
                 >
-                  <Box sx={{ width: '20px' }}>
-                    {(location.pathname.startsWith('/company') ||
-                      hoveredPath === '/company' ||
-                      hoveredPath === '/company/about' ||
-                      hoveredPath === '/company/menu') && (
-                        <span className="arrow-icon"><ArrowIcon1 /></span>
-                      )}
-                  </Box>
+                  {(location.pathname.startsWith('/company') ||
+                    hoveredPath === '/company' ||
+                    hoveredPath === '/company/about' ||
+                    hoveredPath === '/company/menu') && (
+                      <span className="arrow-icon"><ArrowIcon1 /></span>
+                    )}
                   <Box sx={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     color: (
@@ -313,9 +309,7 @@ const Header = () => {
                     }}
                     onClick={() => setIsSignInOpen((prev) => !prev)} // Toggle dropdown properly
                   >
-                    <Box sx={{ width: '20px' }}>
-                      {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    </Box>
+                    {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
                   </Box>
 
@@ -420,7 +414,7 @@ const Header = () => {
               </Menu>
             </Box>
 
-            <button data-cursor="hover" class="book-demo-btn bodyRegularText4">Book a Demo</button>
+            <button data-cursor="hover" onClick={() => navigate('contact')} class="book-demo-btn bodyRegularText4">Book a Demo</button>
           </Box>
         )
       }

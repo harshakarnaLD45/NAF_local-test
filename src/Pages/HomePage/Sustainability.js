@@ -5,6 +5,7 @@ import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import SustainabilityBgImg from '../../assets/Home/background.svg'
 import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, SustainabilityIcon4, SustainabilityIcon5 } from '../../Componenets/CustomIcons';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
+import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 
 const features = [
     { icon: SustainabilityIcon1, text: 'Return System & Reusable Packaging' },
@@ -81,12 +82,18 @@ const Sustainability = () => {
                 {/* <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
                     Sustainability & Technology
                 </Typography> */}
-                <ScrollMaskText text="Sustainability & Technology" textColor='#1A1A1A' />
-                <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
+                <ScrollMaskHeadings text="Sustainability & Technology" textColor='#1A1A1A' />
+                {/* <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
                     NAF Germany is committed to providing innovative and ecological vending solutions that
                     benefit both our customers and the environment. We leverage cutting-edge technology and
                     sustainable practices to create a better future.
-                </Typography>
+                </Typography> */}
+                <Box sx={{ mb: 2 }}>
+                    <ScrollMaskText text="NAF Germany is committed to providing innovative and ecological vending solutions that
+                    benefit both our customers and the environment. We leverage cutting-edge technology and
+                    sustainable practices to create a better future." textColor='#444'
+                    />
+                </Box>
                 <AnimateButton text1='GET IN' text2='TOUCH' getBtnColor='#161616' />
             </Box>
 

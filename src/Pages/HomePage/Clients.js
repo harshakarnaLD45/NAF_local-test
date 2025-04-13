@@ -14,6 +14,7 @@ import AdobeAltLogo from "../../assets/Company logo.png";
 import ElasticAltLogo from "../../assets/Company logo (1).png";
 import EvernoteAltLogo from "../../assets/Company logo (3).png";
 import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
+import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 
 const companyLogos = [
   { id: 1, src: AdobeLogo, alt: "Adobe" },
@@ -155,16 +156,20 @@ const Clients = () => {
         {/* <Typography variant="h2" className="headings-h2">
           Our Clients
         </Typography> */}
-        <ScrollMaskText text="Our Clients" />
-        <Typography
+        <ScrollMaskHeadings text="Our Clients" />
+        {/* <Typography
           variant="body1"
           className="bodyRegularText3"
           color="#C2C2C4"
-          sx={{ maxWidth: { xs: "100%", md: "640px" } }}
+          
         >
           Partnering with businesses of all sizes. We provide customized
           vending solutions to meet your unique requirements.
-        </Typography>
+        </Typography> */}
+        <Box sx={{ maxWidth: { xs: "100%", md: "640px" } }}>
+          <ScrollMaskText text="Partnering with businesses of all sizes. We provide customized
+          vending solutions to meet your unique requirements." />
+        </Box>
       </Box>
 
       {/* Row 1 - Right to Left */}

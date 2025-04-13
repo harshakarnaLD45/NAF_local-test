@@ -18,6 +18,7 @@ import Menu from './Pages/Company/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
 import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
+import ContactPage from './Pages/ContactPage/ContactPage';
 
 function App() {
   return (
@@ -28,12 +29,12 @@ function App() {
         <NoiseEffect />
         <Routes>
           <Route path='/' Component={HomePage} />
-          <Route path='home' Component={HomePage} />
           <Route path='machine' Component={MachinesPage} />
           <Route path='software' Component={SoftwarePage} />
           <Route path='Insights' Component={Insights} />
           <Route path="company/about" Component={AboutPage} />
           <Route path="company/menu" Component={Menu} />
+          <Route path="contact" Component={ContactPage} />
 
           <Route path="/blog/ui-ux-design-vending-sales" element={<BlogDetailPage />} />
           <Route path="/blog/choosing-vending-machine-guide" element={<BlogDetailPage1 />} />

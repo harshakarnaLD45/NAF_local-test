@@ -3,6 +3,7 @@ import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 import Browser from "../../assets/Browsers.svg";
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
+import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 
 const TakeControl = () => {
   return (
@@ -59,13 +60,18 @@ const TakeControl = () => {
           {/* <Typography variant="h2" sx={{ color: '#FCFCFC', mb: 2 }} className='headings-h2'>
             Take Control of Your Vending Network
           </Typography> */}
-          <ScrollMaskText text="Take Control of Your Vending Network" />
-
-          <Typography sx={{ color: '#C2C2C4', mb: 3, mt: 2 }} className='bodyRegularText3'>
+          <div data-cursor="hover">
+            <ScrollMaskHeadings data-cursor="hover" text="Take Control of Your Vending Network" />
+          </div>
+          {/* <Typography sx={{ color: '#C2C2C4', mb: 3, mt: 2 }} className='bodyRegularText3'>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
-          </Typography>
+          </Typography> */}
+          <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
+            <ScrollMaskText text="Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard."
+            />
+          </Box>
 
-          <AnimateButton />
+          <AnimateButton route='software' />
         </Box>
 
         {/* Right Image Section */}

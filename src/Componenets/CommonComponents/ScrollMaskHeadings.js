@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
+const ScrollMaskHeadings = ({ text, textColor, textAlignment, textDisplay }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -38,9 +38,9 @@ const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
   return (
     <div ref={containerRef} style={{ overflow: "hidden" }}>
       <Typography
-        variant="body1"
+        variant="h2"
         sx={{
-          color: textColor || "#C2C2C4",
+          color: textColor ? textColor : "#FCFCFC",
           textAlign: textAlignment || "left",
           display: textDisplay || "inline-block",
           lineHeight: 1.2,
@@ -51,7 +51,7 @@ const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
         {lines.map((line, index) => (
           <div
             key={index}
-            className='custom-line bodyRegularText3'
+            className='custom-line headings-h2'
             style={{ display: "block", overflow: "hidden" }}
           >
             {line}
@@ -62,4 +62,4 @@ const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
   );
 };
 
-export default ScrollMaskText;
+export default ScrollMaskHeadings;

@@ -1,0 +1,42 @@
+.contactus-sec {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contactus-subsec {
+    width: 48%;
+}
+
+.calendy-section {
+    margin-top: -20px;
+}
+
+@media (max-width: 1483px) {
+    .calendy-section {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contactus-sec {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contactus-subsec {
+        width: 93%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contactus-sec {
+        margin-top: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactus-sec {
+        margin-top: 7rem;
+    }
+}

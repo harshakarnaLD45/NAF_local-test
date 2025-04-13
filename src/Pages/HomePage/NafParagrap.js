@@ -238,7 +238,7 @@ const NafParagrap = () => {
           md: 6,
         }, mt: 3
       }}>
-        <AnimateButton text1='VIEW' text2='MORE' />
+        <AnimateButton text1='VIEW' text2='MORE' route='company/about' />
       </Box>
 
       <Box

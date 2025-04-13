@@ -153,7 +153,7 @@ const Footer = () => {
                   marginBottom:{xs: "0rem", md: "5rem"}
                 }}
               >
-                <AnimateButton text1='GET IN' text2='TOUCH' />
+                <AnimateButton text1='GET IN' text2='TOUCH' route='contact' />
               </Box>
               <Box className="social-icon-sec" sx={{
                 position: 'relative',
