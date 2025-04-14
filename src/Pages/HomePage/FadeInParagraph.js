@@ -67,7 +67,7 @@ const FadeInParagraph = () => {
                         style={{
                             display: "inline-block",
                             whiteSpace: "pre",
-                            color: item.highlight ? "#FF6B42" : undefined,
+                            color: item.highlight ? "#FA7854" : undefined,
                             textDecoration: item.highlight ? "underline" : "none",
                             fontWeight: item.highlight ? 600 : 400,
                             position: "relative",

@@ -1,6 +1,4 @@
 import React from 'react';
-import ArrowSvG from '../../assets/Arrow 2.svg';
-
 
 const ArrowButton = () => {
   const buttonStyle = {

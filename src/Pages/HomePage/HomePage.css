@@ -6,6 +6,10 @@
   padding: 0px 50px;
 }
 
+.machine-sec-homepage {
+  padding-left: 50px;
+}
+
 .main-sub-container1 {
   width: 70%;
 }
@@ -123,6 +127,7 @@
   }
 
 }
+
 @media (min-width: 1920px) and (max-width: 2000px) {
   .bigimagecontaiter {
     bottom: -90px !important;
@@ -285,6 +290,9 @@
     padding: 0px 30px;
   }
 
+  .machine-sec-homepage{
+    padding-left: 30px;
+  }
   .main-sub-container1,
   .main-sub-container2 {
     width: 100%;
@@ -384,6 +392,9 @@
     padding: 0px 20px;
   }
 
+  .machine-sec-homepage{
+    padding-left: 20px;
+  }
   .main-sub-container2 {
     gap: 16px;
     flex-direction: column;
@@ -479,6 +490,9 @@
     padding: 0px 15px;
   }
 
+  .machine-sec-homepage{
+    padding-left: 15px;
+  }
   .maintext {
     text-align: center !important;
   }
