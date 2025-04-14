@@ -13,21 +13,22 @@ import Testmonials from './Testmonials';
 import Sustainability from './Sustainability';
 import WhoWeServe from './WhoWeServe';
 import GradientMaskText from '../../Componenets/CommonComponents/GradientMaskText';
+import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
+  const { t } = useTranslation();
+
   return (
     <Box>
       <Box className='main-container'>
-        <Box >
+        <Box>
           {/* <Typography data-cursor="hover" variant='h1' className='headings-h1 main-sub-container1  maintext' sx={{ color: '#FCFCFC' }}>
             Revolutionize Your Business with Smart Vending Solutions
           </Typography> */}
           <GradientMaskText />
-          <Box className='main-sub-container2  maintextcontainer'>
-            <Typography data-cursor="hover" className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
-              Streamline your operations and boost your bottom line. Our vending
-              solutions are built for efficiency, offering reliable performance and
-              increased revenue.
+          <Box className='maintextcontainer'>
+            <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py:3 }}>
+              {t('Home.mainParagraph')}
             </Typography>
             <Box data-cursor="hover" className="button-container">
               <AnimateButton route='machine' />

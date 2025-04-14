@@ -22,6 +22,7 @@ import hotSmall3 from '../../assets/Sausage slices isolated on white background 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
+import { useTranslation } from 'react-i18next';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +54,7 @@ const vendingMachines = [
 ];
 
 function Explore() {
+    const { t } = useTranslation();
   const cardsContainerRef = useRef(null);
   const cardRefs = useRef([]);
   const [isDragging, setIsDragging] = React.useState(false);
@@ -172,13 +174,13 @@ function Explore() {
               Explore Our Vending Machines
             </Typography> */}
             <div data-cursor="hover" className="main-sub-container1 main-sub-containerss">
-              <ScrollMaskHeadings text="Explore Our Vending Machines" />
+              <ScrollMaskHeadings text={t('Home.exploreTitle')} />
             </div>
             {/* <Typography variant="body1" className='bodyRegularText3 main-sub-container1 main-sub-containerss' sx={{ color: '#C2C2C4' }}>
               Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.
             </Typography> */}
             <div data-cursor="hover" className='main-sub-container1 main-sub-containerss'>
-              <ScrollMaskText text="Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits."
+              <ScrollMaskText text={t('Home.exploreSubTitle')}
               />
             </div>
           </Box>

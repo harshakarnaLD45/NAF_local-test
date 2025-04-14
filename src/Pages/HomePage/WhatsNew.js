@@ -5,10 +5,11 @@ import gsap from "gsap";
 import blogimage from '../../assets/representations-user-experience-interface-design 1.png';
 import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
-import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
+import { useTranslation } from "react-i18next";
 
 const WhatsNew = () => {
+    const { t } = useTranslation();
   const blogPosts = [
     {
       id: 1,
@@ -100,7 +101,7 @@ const WhatsNew = () => {
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}
-            <ScrollManualLinesHeadings text="What's New" />
+            <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
         <Box>
           <AnimateButton text1="VIEW" text2="MORE" route='Insights' />
         </Box>

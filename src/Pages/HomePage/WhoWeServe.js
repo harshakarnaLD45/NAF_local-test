@@ -8,8 +8,10 @@ import events from '../../assets/Home/Serve4.png';
 import publicPic from '../../assets/Home/Serve6.png';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
+import { useTranslation } from 'react-i18next';
 
 const WhoWeServe = () => {
+    const { t } = useTranslation();
     const serveCards1 = [
         {
             id: 1,
@@ -57,15 +59,12 @@ const WhoWeServe = () => {
                     {/* <Typography variant='h1' className='headings-h2 whoweServe-left-sec1-text'>
                         Who We Serve
                     </Typography> */}
-                    <ScrollMaskHeadings text="Who We Serve" />
+                    <ScrollMaskHeadings text={t('Home.ServeTitle')} />
                     {/* <Typography color='#C2C2C4' variant='h1' className='bodyRegularText3 whoweServe-left-sec2-text'>
                         NAF Germany provides customized vending solutions to a diverse range of industries. We understand the unique needs of each sector and offer tailored solutions to enhance convenience, boost efficiency, and improve customer satisfaction.
                     </Typography> */}
                     <Box className='whoweServe-left-sec2-text'>
-                        <ScrollMaskText text="NAF Germany is committed to providing innovative and ecological vending solutions that
-                                        benefit both our customers and the environment. We leverage cutting-edge technology and
-                                        sustainable practices to create a better future."
-                        />
+                        <ScrollMaskText text={t('Home.ServeSubTitle')} />
                     </Box>
                 </Box>
             </Box>

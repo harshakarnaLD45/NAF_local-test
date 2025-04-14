@@ -3,10 +3,11 @@ import React from "react";
 import star from '../../assets/Vector (1).png';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import FadeInParagraph from "./FadeInParagraph";
+import NafIcon from '../../assets/Home/naf icon.svg'
 
 const bannerItems = Array(8).fill({
   text: "NAF GERMANY",
-  icon: star,
+  icon: NafIcon,
 });
 
 const NafParagrap = () => {
@@ -28,7 +29,7 @@ const NafParagrap = () => {
         },
       }}
     >
-      {/* Top banner section */}
+      {/* Top banner section - mareq effect */}
       <Box
         sx={{
           position: "relative",
@@ -93,8 +94,8 @@ const NafParagrap = () => {
                   <Box
                     sx={{
                       transform: "rotate(2.86deg)",
-                      width: { xs: "12px", sm: "16px", md: "20px" },
-                      height: { xs: "12px", sm: "16px", md: "20px" },
+                      width: { xs: "20px", sm: "25px", md: "30px" },
+                      height: { xs: "20px", sm: "25px", md: "30px" },
                     }}
                   >
                     <img src={item.icon} alt="Custom Icon" style={{ width: "100%", height: "100%" }} />
@@ -125,8 +126,8 @@ const NafParagrap = () => {
                   <Box
                     sx={{
                       transform: "rotate(2.86deg)",
-                      width: { xs: "12px", sm: "16px", md: "20px" },
-                      height: { xs: "12px", sm: "16px", md: "20px" },
+                      width: { xs: "20px", sm: "25px", md: "30px" },
+                      height: { xs: "20px", sm: "25px", md: "30px" },
                     }}
                   >
                     <img src={item.icon} alt="Custom Icon" style={{ width: "100%", height: "100%" }} />
@@ -184,8 +185,8 @@ const NafParagrap = () => {
                   <Box
                     sx={{
                       transform: "rotate(-3.98deg)",
-                      width: { xs: "12px", sm: "16px", md: "20px" },
-                      height: { xs: "12px", sm: "16px", md: "20px" },
+                      width: { xs: "20px", sm: "25px", md: "30px" },
+                      height: { xs: "20px", sm: "25px", md: "30px" },
                     }}
                   >
                     <img src={item.icon} alt="Custom Icon" style={{ width: "100%", height: "100%" }} />
@@ -216,8 +217,8 @@ const NafParagrap = () => {
                   <Box
                     sx={{
                       transform: "rotate(-3.98deg)",
-                      width: { xs: "12px", sm: "16px", md: "20px" },
-                      height: { xs: "12px", sm: "16px", md: "20px" },
+                      width: { xs: "20px", sm: "25px", md: "30px" },
+                      height: { xs: "20px", sm: "25px", md: "30px" },
                     }}
                   >
                     <img src={item.icon} alt="Custom Icon" style={{ width: "100%", height: "100%" }} />

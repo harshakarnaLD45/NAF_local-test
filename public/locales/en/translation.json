@@ -1,5 +1,5 @@
 {
-    "Home": {
+    "Header": {
         "menu": "Menu",
         "menuHome": "Home",
         "menuMachines": "Machines",
@@ -7,111 +7,54 @@
         "menuSolutions": "Solutions",
         "menuInsights": "Insights",
         "menuCompany": "Company",
-
         "profilemenbership": "Membership",
         "profilelogin": "Log In / Sign Up",
         "profileregister": "Client Log In",
-        
-        "BookaDemo": "Book a Demo",
-
-        "revolutionizeTitle": "Revolutionize Your Business with Smart Vending Solutions",
-        "revolutionizeSubTitle": "Streamline your operations and boost your bottom line. Our vending solutions are built for efficiency, offering reliable performance and increased revenue.",
+        "BookaDemo": "Book a Demo"
+    },
+    "Home": {
+        "mainHeading": "NAF - The Future of Catering",
+        "mainParagraph": "Automated. AI-supported. Sustainable.",
         "viewMore": "viewMore",
-
-        "exploreTitle": "Explore Our Vending Machines",
-        "exploreSubTitle": "Our smart vending machines offer convenience, reliability, and customization with cutting-edge technology and a user-friendly design to boost efficiency and profits.",
-        
-        "pizzaVendingMachine": "Pizza Vending Machine",
-        "CottonCandyVendingMachine": "Cotton Candy Vending Machine",
-        "IceCreamVendingMachine": "Ice Cream Vending Machine",
-        "HotVendingMachine": "Hot Vending Machine",
-        
+        "exploreTitle": "Smart, AI-Powered Vending Machines for Every Need",
+        "exploreSubTitle": "Our machines go beyond classic vending – they’re smart, AI-powered food solutions. From pizza to beer, each unit analyzes sales in real time, spots trends, and optimizes offerings. AI manages temperature, refills, and customer experience for maximum efficiency and minimal costs.",
         "OurClientsTitle": "Our Clients",
         "OurClientsSubTitle": "Partnering with businesses of all sizes. We provide customized vending solutions to meet your unique requirements.",
-        
+        "ServeTitle": "Who We Serve",
+        "ServeSubTitle": "Our AI-controlled vending machines adapt individually to your requirements. Whether hotel, university or factory floor - the artificial intelligence analyses consumption patterns, automatically adjusts the product range and minimizes downtime. Perfect for busy locations or decentralized sites.",
+        "sustainability": "Sustainability & Technology",
+        "sustainabilityHeading": "Artificial Intelligence Meets Environmental Protection",
+        "sustainabilityText": "With AI, we optimize not just sales processes but also ecological cycles. Our return machines automatically recognize container types and digitalize deposit processes. AI analyzes consumption to prevent food waste. Simultaneously, we collaborate with regional partners on innovative reusable systems – made in Saxony.",
         "CloudSystem": "Cloud System",
         "CloudSystemTitle": "Take Control of Your Vending Network",
         "CloudSystemSubTitle": "Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.",
-        
-        "YouRequest": "You Request.",
-        "WeBuild": "We Build!",
-        
-        "UXUIDesignTitle": "UX/UI Design",
-        "UXUIDesignSubTitle": "Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.",
-        
-        
-        "GraphicDesignTitle": "Graphic Design",
-        "GraphicDesignSubTitle": "Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.",
-        
-        "EndDevelopmentTitle": "End to End Development",
-        "EndDevelopmentSubTitle": "Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.",
-
-        "WhatsNew": "What’s New",
-        
-        "NafCrossText": "At NAF Germany, we're passionate about delivering innovative solutions that transform businesses.  With years of experience in vending technology, software development. We combine cutting-edge technology with a user-centered approach to deliver exceptional results.",
-        
-        "WhatsOurClientsareSaying":"What’s Our Clients are Saying ",
-        "clientDavidLee":"David Lee, CIO, Gamma Industries.",
-        "clientDavidLeeText1":"We were impressed by [Your Company Name]'s expertise in cloud-based solutions.  Their team helped us migrate our infrastructure to the cloud seamlessly, improving security and reducing our IT costs significantly.",
-        "clientDavidLeeText2":"We were impressed by [Your Company Name]'s expertise in cloud-based solutions.  Their team helped us migrate our infrastructure to the cloud seamlessly, improving security and reducing our IT costs significantly.",
-        "clientJohnSmith":"John Smith, CEO, Acme Corp",
-        "clientJohnSmithText1":"Working with NAF Germany was a game-changer for our business. Their UI/UX designs are not only aesthetically pleasing but also incredibly user-friendly, resulting in a significant increase in customer engagement.",
-        "clientJaneDoe":"Jane Doe, CTO, Beta Solutions",
-        "clientJaneDoeText1":"NAF Germany's end-to-end development services were exceptional.  They delivered a high-quality software solution ahead of schedule and within budget.  Their team was professional, responsive, and a pleasure to work with.",
-        "clientJaneDoeText2":"Our restaurant's inventory management has never been so efficient!  [Your Company Name]'s software has dramatically reduced food waste and improved our bottom line.  We highly recommend their services.",
-     
-
-
-
-        "Gotaproject": "Got a project? Want to collaborate?",
-        "footerContact": "Contact",
-        "footerinfomail": "Coninfo@naf-halsbach.detact",
-        "footerinfonumber": "0152 – 28387141 (Odette Lamkhizni)",
-        "footerinfonumber2": "0162 – 1638005  (Technischer Support 24/7)",
-       
-        "footerCopyright": "© Copyright 2025. All rights reserved.",
-        "footerTermsConditions": "Terms and Conditions",
-        "footerTitle": "let’s work together",
-        "footerAddress": "Address: ",
-        "footerAddressText": "Obere Straße 3, 09599 Freiberg, OT Halsbach ",
-        "AutomatenStandorte": "Automaten Standorte:",
-        "AutomatenStandorteText1": "DBI Foyer Freiberg, Halsbrückerstrasse 34, 09599 Freiberg",
-        "AutomatenStandorteText2": "Landratsamt Mittweida Haus A, Am Landratsamt 3, 09648 Mittweida",
-       
-        "ssfafas": "o"
-
+        "WhatsNew": "What’s New"
     },
-    "machines":{
-
-        "machineTitle":"High-Performance Vending Machines for Every Need",
-        "machineSubTitle":"Increase revenue and streamline operations with our range of customizable vending machines.",
-        "EXPLOREOURVENDINGMACHINES":" EXPLORE OUR VENDING MACHINES",
-        
-        "hotVendingMachineTitle":"Hot Vending Machine",
-        "hotVendingMachineSubTitle":"Our high-capacity hot food vending machine offers a wide range of customizable food options, ensuring you can satisfy even the most discerning customers. Its innovative heating system maintains optimal food temperature and quality, while the user-friendly interface makes ordering simple and efficient.",
-        
-        "WeightText":"Weight",
-        "Weightnumber":"650 Kg",
-        "TemperatureText":"Temperature",
-        "Temperaturetnumber":"650 Kg",
-        "PowerText":"Power",
-        "Powernumber":"1800 W and 2200 W",
-        "ElectricityText":"Electricity",
-        "Electricitynumber":"H2280 with superstructure H1900 without superstructure B1880 D1020 with heating technology",
-        "FranchiseCostText":"Franchise Cost",
-        "FranchiseCostnumber":"500* € per month",
-        "AcquisitioncostsText":"Franchise Cost",
-        "Acquisitioncostsnumber":"16000* € (payment in installments possible)",
-        "PricesannouncedText":"*Prices announced after market launch based on the prototypes shown",
-        "ColdVendingMachine":"Cold Vending Machine",
-        "UnmatchedMaintenanceSupport":"Unmatched Maintenance & Support",
-        
-        "PreventativeMaintenance":"Preventative Maintenance",
-        "PromptRepairs":"Prompt Repairs",
-        "RemoteDiagnostics":"Remote Diagnostics",
-        "DedicatedSupportTeam":"Dedicated Support Team",
-        
-        
-         "End": "machines End"
+    "machines": {
+        "machineTitle": "High-Performance Vending Machines for Every Need",
+        "machineSubTitle": "Increase revenue and streamline operations with our range of customizable vending machines.",
+        "EXPLOREOURVENDINGMACHINES": " EXPLORE OUR VENDING MACHINES",
+        "hotVendingMachineTitle": "Hot Vending Machine",
+        "hotVendingMachineSubTitle": "Our high-capacity hot food vending machine offers a wide range of customizable food options, ensuring you can satisfy even the most discerning customers. Its innovative heating system maintains optimal food temperature and quality, while the user-friendly interface makes ordering simple and efficient.",
+        "WeightText": "Weight",
+        "Weightnumber": "650 Kg",
+        "TemperatureText": "Temperature",
+        "Temperaturetnumber": "650 Kg",
+        "PowerText": "Power",
+        "Powernumber": "1800 W and 2200 W",
+        "ElectricityText": "Electricity",
+        "Electricitynumber": "H2280 with superstructure H1900 without superstructure B1880 D1020 with heating technology",
+        "FranchiseCostText": "Franchise Cost",
+        "FranchiseCostnumber": "500* € per month",
+        "AcquisitioncostsText": "Franchise Cost",
+        "Acquisitioncostsnumber": "16000* € (payment in installments possible)",
+        "PricesannouncedText": "*Prices announced after market launch based on the prototypes shown",
+        "ColdVendingMachine": "Cold Vending Machine",
+        "UnmatchedMaintenanceSupport": "Unmatched Maintenance & Support",
+        "PreventativeMaintenance": "Preventative Maintenance",
+        "PromptRepairs": "Prompt Repairs",
+        "RemoteDiagnostics": "Remote Diagnostics",
+        "DedicatedSupportTeam": "Dedicated Support Team",
+        "End": "machines End"
     }
 }

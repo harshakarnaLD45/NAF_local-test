@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const GradientMaskText = () => {
+    const { t } = useTranslation();
     const containerRef = useRef(null);
     const [maskPosition, setMaskPosition] = useState({ x: 0, y: 0 });
 
@@ -36,20 +38,21 @@ const GradientMaskText = () => {
             {/* Base Text */}
             <Typography data-cursor="hover"
                 variant="h1"
-                className="headings-h1 main-sub-container1 maintext"
+                className="headings-h1 maintext"
                 sx={{
                     color: "#FCFCFC",
                     position: "relative",
                     zIndex: 1,
+                    width: { xs: "100%", sm: "70%", md: "70%" }
                 }}
             >
-                Revolutionize Your Business with Smart Vending Solutions
+                {t('Home.mainHeading')}
             </Typography>
 
             {/* Hover Reveal Text */}
             <Typography
                 variant="h1"
-                className="headings-h1 main-sub-container1 maintext"
+                className="headings-h1 maintext"
                 sx={{
                     color: "transparent",
                     background: "linear-gradient(to right, #7FEE64, #FA7854)",
@@ -59,12 +62,13 @@ const GradientMaskText = () => {
                     left: 0,
                     zIndex: 2,
                     pointerEvents: "none",
+                    width: { xs: "100%", sm: "70%", md: "70%" },
                     maskImage: `radial-gradient(circle 250px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`,
                     WebkitMaskImage: `radial-gradient(circle 180px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`,
                     transition: "mask-image 0.1s ease-out",
                 }}
             >
-                Revolutionize Your Business with Smart Vending Solutions
+                {t('Home.mainHeading')}
             </Typography>
         </div>
     );

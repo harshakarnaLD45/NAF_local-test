@@ -1,11 +1,13 @@
 import React from 'react';
-import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
-import Browser from "../../assets/Browsers.svg";
+import { Box, List, ListItem, ListItemText } from '@mui/material';
+import Browser from "../../assets/Home/Browsers.svg";
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
+import { useTranslation } from 'react-i18next';
 
 const TakeControl = () => {
+  const { t } = useTranslation();
   return (
     <Box sx={{ p: 3 }} className='section-container'>
       <Box
@@ -51,7 +53,7 @@ const TakeControl = () => {
                 className='bodyRegularText4'
               />
               <ListItemText
-                primary="Cloud System"
+                primary={t('Home.CloudSystem')}
                 sx={{ '& .MuiListItemText-primary': { color: '#C2C2C4', fontSize: '16px', fontWeight: 400 } }}
               />
             </ListItem>
@@ -61,13 +63,13 @@ const TakeControl = () => {
             Take Control of Your Vending Network
           </Typography> */}
           <div data-cursor="hover">
-            <ScrollMaskHeadings data-cursor="hover" text="Take Control of Your Vending Network" />
+            <ScrollMaskHeadings data-cursor="hover" text={t('Home.CloudSystemTitle')} />
           </div>
           {/* <Typography sx={{ color: '#C2C2C4', mb: 3, mt: 2 }} className='bodyRegularText3'>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography> */}
           <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
-            <ScrollMaskText text="Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard."
+            <ScrollMaskText text={t('Home.CloudSystemSubTitle')}
             />
           </Box>
 

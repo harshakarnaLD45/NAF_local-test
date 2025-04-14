@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, List, ListItem, ListItemText, Typography } from '@mui/material';
 import gsap from 'gsap';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import SustainabilityBgImg from '../../assets/Home/background.svg'
 import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, SustainabilityIcon4, SustainabilityIcon5 } from '../../Componenets/CustomIcons';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
+import { useTranslation } from 'react-i18next';
 
 const features = [
     { icon: SustainabilityIcon1, text: 'Return System & Reusable Packaging' },
@@ -16,6 +17,7 @@ const features = [
 ];
 
 const Sustainability = () => {
+    const { t } = useTranslation();
     const scrollContainerRef = useRef();
     const leftSectionRef = useRef();
     const [leftHeight, setLeftHeight] = useState(400);
@@ -77,21 +79,41 @@ const Sustainability = () => {
         >
             {/* Left Side */}
             <Box ref={leftSectionRef} className='sustain-sec' sx={{
-                flex: 1, py: { xs: 5, sm: 8, md: 10 }, display: 'flex', flexDirection: 'column', justifyContent: 'center'
+                flex: 1, py: { xs: 5, sm: 8, md: 5 }, display: 'flex', flexDirection: 'column', justifyContent: 'center'
             }}>
+
+                <List>
+                    <ListItem sx={{ p: 0, alignItems: 'center' }}>
+                        <Box
+                            component="span"
+                            sx={{
+                                display: 'inline-block',
+                                width: '6px',
+                                height: '6px',
+                                borderRadius: '50%',
+                                backgroundColor: '#444',
+                                mr: 1.5, // Spacing between dot and text
+                            }}
+                            className='bodyRegularText4'
+                        />
+                        <ListItemText
+                            primary={t('Home.sustainability')}
+                            sx={{ '& .MuiListItemText-primary': { color: '#444', fontSize: '16px', fontWeight: 400 } }}
+                        />
+                    </ListItem>
+                </List>
+
                 {/* <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
                     Sustainability & Technology
                 </Typography> */}
-                <ScrollMaskHeadings text="Sustainability & Technology" textColor='#1A1A1A' />
+                <ScrollMaskHeadings text={t('Home.sustainabilityHeading')} textColor='#1A1A1A' />
                 {/* <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
                     NAF Germany is committed to providing innovative and ecological vending solutions that
                     benefit both our customers and the environment. We leverage cutting-edge technology and
                     sustainable practices to create a better future.
                 </Typography> */}
                 <Box sx={{ mb: 2 }}>
-                    <ScrollMaskText text="NAF Germany is committed to providing innovative and ecological vending solutions that
-                    benefit both our customers and the environment. We leverage cutting-edge technology and
-                    sustainable practices to create a better future." textColor='#444'
+                    <ScrollMaskText text={t('Home.sustainabilityText')} textColor='#444'
                     />
                 </Box>
                 <AnimateButton text1='GET IN' text2='TOUCH' getBtnColor='#161616' />

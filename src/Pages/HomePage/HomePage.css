@@ -7,14 +7,14 @@
 }
 
 .main-sub-container1 {
-  width: 50%;
+  width: 70%;
 }
 
 .main-sub-container2 {
   display: flex;
   gap: 32px;
   align-items: center;
-  width: 50%;
+  width: 60%;
 }
 
 .explore-container {
@@ -50,7 +50,7 @@
 }
 
 .sustain-sec {
-  max-width: 30%;
+  max-width: 40%;
 }
 
 .whoweServe-sec {
@@ -123,13 +123,6 @@
   }
 
 }
-
-@media (min-width: 2100px) {
-  .sustain-sec {
-    max-width: 40%;
-  }
-}
-
 @media (min-width: 1920px) and (max-width: 2000px) {
   .bigimagecontaiter {
     bottom: -90px !important;
@@ -184,9 +177,6 @@
     height: 40px;
   }
 
-  .sustain-sec {
-    max-width: 40%;
-  }
 }
 
 @media (min-width: 1650px) {
@@ -214,11 +204,11 @@
 
   .main-sub-container1,
   .main-sub-container2 {
-    width: 48%;
+    width: 75%;
   }
 
   .sustain-sec {
-    max-width: 60%;
+    max-width: 75%;
   }
 
   .whoweServe-left-sec {
@@ -247,7 +237,7 @@
 
   .main-sub-container1,
   .main-sub-container2 {
-    width: 60%;
+    width: 90%;
   }
 }
 
@@ -529,8 +519,6 @@
   .whoweServe-right-sec1 {
     width: 100% !important;
     height: 1000px !important;
-
-
   }
 
   .whoweServe-right-card-sec1 {
@@ -539,6 +527,14 @@
 
   .whoweServe-right-sec2 {
     padding-top: 0% !important;
+  }
+
+  .explore-container {
+    display: block;
+  }
+
+  .explore-container .main-sub-container1:last-child {
+    padding: 1rem 0rem;
   }
 }
 

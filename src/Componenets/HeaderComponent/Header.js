@@ -121,6 +121,7 @@ const Header = () => {
           alignItems: 'center',
           cursor: 'pointer',
           gap: '12px',
+          color: "#1A1A1A"
         }}
         onClick={handleMenuOpen}
       >
@@ -162,6 +163,7 @@ const Header = () => {
               display: 'flex',
               alignItems: 'center',
               cursor: 'pointer',
+              color: "#1A1A1A",
               gap: 1.5
             }}
             onClick={handleMenuOpen}

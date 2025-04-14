@@ -1,207 +1,78 @@
-import { Box, Typography } from "@mui/material";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import AdobeLogo from "../../assets/Company logo.png";
-import ElasticLogo from "../../assets/Company logo (1).png";
-import ActiveCampaignLogo from "../../assets/Company logo (2).png";
-import EvernoteLogo from "../../assets/Company logo (3).png";
-import AirbnbLogo from "../../assets/Company logo (4).png";
-import AirtaskerLogo from "../../assets/Company logo (5).png";
-import AirtaskerAltLogo from "../../assets/Company logo (5).png";
-import AirbnbAltLogo from "../../assets/Company logo (4).png";
-import ActiveCampaignAltLogo from "../../assets/representations-user-experience-interface-design 1.png";
-import AdobeAltLogo from "../../assets/Company logo.png";
-import ElasticAltLogo from "../../assets/Company logo (1).png";
-import EvernoteAltLogo from "../../assets/Company logo (3).png";
+import { Box } from "@mui/material";
+import React from "react";
 import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
+import { useTranslation } from "react-i18next";
+import Client1 from '../../assets/Home/Client1.svg';
+import Client2 from '../../assets/Home/Client2.svg';
+import Client3 from '../../assets/Home/Client3.svg';
+import Client4 from '../../assets/Home/Client4.svg';
 
-const companyLogos = [
-  { id: 1, src: AdobeLogo, alt: "Adobe" },
-  { id: 2, src: ElasticLogo, alt: "Elastic" },
-  { id: 3, src: ActiveCampaignLogo, alt: "ActiveCampaign" },
-  { id: 4, src: EvernoteLogo, alt: "Evernote" },
-  { id: 5, src: AirbnbLogo, alt: "Airbnb" },
-  { id: 6, src: AirtaskerLogo, alt: "Airtasker" },
-];
-
-const companyLogosRow2 = [
-  { id: 7, src: AirtaskerAltLogo, alt: "Airtasker" },
-  { id: 8, src: AirbnbAltLogo, alt: "Airbnb" },
-  { id: 9, src: ActiveCampaignAltLogo, alt: "ActiveCampaign" },
-  { id: 10, src: AdobeAltLogo, alt: "Adobe" },
-  { id: 11, src: ElasticAltLogo, alt: "Elastic" },
-  { id: 12, src: EvernoteAltLogo, alt: "Evernote" },
-];
-
-const ClientLogo = ({ src, alt }) => (
-  <Box
-    sx={{
-      width: { xs: 120, sm: 200, md: 280, lg: 320 },
-      height: { xs: 120, sm: 200, md: 280, lg: 320 },
-      bgcolor: "#262626",
-      borderRadius: "12px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      overflow: "hidden",
-      flexShrink: 0,
-    }}
-  >
-    <Box
-      component="img"
-      src={src}
-      alt={`${alt} logo`}
-      sx={{
-        maxWidth: { xs: 116, sm: 160, md: 200, lg: 232 },
-        maxHeight: { xs: 24, sm: 32, md: 40, lg: 48 },
-      }}
-    />
-  </Box>
-);
+const logos = [Client1, Client2, Client3, Client4];
 
 const Clients = () => {
-  const row1Ref = useRef(null);
-  const row2Ref = useRef(null);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const row1 = row1Ref.current;
-    const row2 = row2Ref.current;
-
-    // Calculate total width of one set of logos including gaps
-    const logoWidth = 320; // Using lg breakpoint width
-    const gap = 16; // md gap (3 * 8px = 24px)
-    const totalItemWidth = logoWidth + gap;
-    const row1SingleWidth = companyLogos.length * totalItemWidth;
-    const row2SingleWidth = companyLogosRow2.length * totalItemWidth;
-
-    // Adjust duration based on screen size
-    const getDuration = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 600) return 50; // Slower for small screens (xs)
-      if (screenWidth < 900) return 40; // Medium speed for small-medium screens (sm)
-      return 30; // Default speed for larger screens (md, lg)
-    };
-
-    const duration = getDuration();
-
-    // Create seamless looping animation for Row 1 (Right to Left)
-    const row1Animation = gsap.fromTo(
-      row1,
-      { x: 0 },
-      {
-        x: -row1SingleWidth,
-        duration: duration, // Dynamic duration
-        ease: "none",
-        repeat: -1,
-        modifiers: {
-          x: function (x) {
-            x = parseFloat(x) % row1SingleWidth;
-            return `${x}px`;
-          },
-        },
-      }
-    );
-
-    // Create seamless looping animation for Row 2 (Left to Right)
-    const row2Animation = gsap.fromTo(
-      row2,
-      { x: -row2SingleWidth },
-      {
-        x: 0,
-        duration: duration, // Dynamic duration
-        ease: "none",
-        repeat: -1,
-        modifiers: {
-          x: function (x) {
-            x = parseFloat(x) % row2SingleWidth;
-            return `${x}px`;
-          },
-        },
-      }
-    );
-
-    // Update animation duration on window resize
-    const handleResize = () => {
-      const newDuration = getDuration();
-      row1Animation.duration(newDuration);
-      row2Animation.duration(newDuration);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      row1Animation.kill();
-      row2Animation.kill();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  // Calculate how many repetitions are needed to fill screen plus buffer
-  const screenWidth = window.innerWidth;
-  const minRepeats = Math.ceil(screenWidth / (320 * companyLogos.length)) + 2;
-
-  // Create repeated arrays for rendering
-  const repeatedLogos1 = Array(minRepeats)
-    .fill()
-    .flatMap(() => companyLogos);
-  const repeatedLogos2 = Array(minRepeats)
-    .fill()
-    .flatMap(() => companyLogosRow2);
+  const { t } = useTranslation();
 
   return (
-    <Box ref={sectionRef} sx={{ overflow: "hidden" }}>
+    <Box sx={{ overflow: "hidden" }}>
       <Box className="section-container">
-        {/* <Typography variant="h2" className="headings-h2">
-          Our Clients
-        </Typography> */}
-        <ScrollMaskHeadings text="Our Clients" />
-        {/* <Typography
-          variant="body1"
-          className="bodyRegularText3"
-          color="#C2C2C4"
-          
-        >
-          Partnering with businesses of all sizes. We provide customized
-          vending solutions to meet your unique requirements.
-        </Typography> */}
+        <ScrollMaskHeadings text={t("Home.OurClientsTitle")} />
         <Box sx={{ maxWidth: { xs: "100%", md: "640px" } }}>
-          <ScrollMaskText text="Partnering with businesses of all sizes. We provide customized
-          vending solutions to meet your unique requirements." />
+          <ScrollMaskText text={t("Home.OurClientsSubTitle")} />
         </Box>
       </Box>
 
-      {/* Row 1 - Right to Left */}
-      <Box
-        ref={row1Ref}
-        sx={{
-          display: "flex",
-          gap: { xs: 1, md: 2 },
-          mb: { xs: 1, md: 2 },
-          width: "max-content",
-          willChange: "transform",
-        }}
-      >
-        {repeatedLogos1.map((logo, index) => (
-          <ClientLogo key={`${logo.id}-${index}`} src={logo.src} alt={logo.alt} />
-        ))}
+      {/* Logo Slider */}
+      <Box sx={{ overflow: "hidden", width: "100%", mt: 6 }}>
+        <Box
+          className="slider-track"
+          sx={{
+            display: "flex",
+            gap: "10px",
+            width: "fit-content",
+            animation: "scroll 30s linear infinite",
+          }}
+        >
+          {/* Repeat logos enough times for seamless scroll */}
+          {[...logos, ...logos, ...logos, ...logos].map((src, index) => (
+            <Box
+              key={index}
+              sx={{
+                flexShrink: 0,
+                width: { xs: "250px", sm: "250px", md: "320px" },
+                height: { xs: "250px", sm: "250px", md: "320px" },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "12px",
+                background: "#262626",
+              }}
+            >
+              <img
+                src={src}
+                alt={`logo-${index}`}
+                style={{
+                  height: "auto",
+                  objectFit: "contain",
+                  filter: "grayscale(1) brightness(1.5)",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
       </Box>
 
-      {/* Row 2 - Left to Right */}
-      <Box
-        ref={row2Ref}
-        sx={{
-          display: "flex",
-          gap: { xs: 1, md: 2 },
-          width: "max-content",
-          willChange: "transform",
-        }}
-      >
-        {repeatedLogos2.map((logo, index) => (
-          <ClientLogo key={`${logo.id}-${index}`} src={logo.src} alt={logo.alt} />
-        ))}
-      </Box>
+      {/* Keyframes CSS */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </Box>
   );
 };
