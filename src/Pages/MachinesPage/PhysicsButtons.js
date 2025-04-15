@@ -1,28 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
-import styles from './MachinesPage.css'; // Ensure this path is correct for your CSS file
+import styles from './MachinesPage.css';
 
 const machineData = [
-    { id: 'hot', label: 'Hot Machine', width: 100, height: 40, initialXOffset: -50, initialAngle: -0.2 },
-    { id: 'all', label: 'All', width: 80, height: 30, initialXOffset: -100, initialAngle: 0.05 },
-    { id: 'cold', label: 'Cold Machine', width: 120, height: 40, initialXOffset: 50, initialAngle: 0.1 },
-    { id: 'snack', label: 'Snack Machine', width: 120, height: 40, initialXOffset: -180, initialAngle: 0.25 },
-    { id: 'pizza', label: 'Pizza Machine', width: 110, height: 40, initialXOffset: 100, initialAngle: -0.2 },
-    { id: 'cotton', label: 'Cotton Candy Machine', width: 160, height: 40, initialXOffset: 150, initialAngle: 0.5 },
-    { id: 'ice', label: 'Ice Cream Machine', width: 150, height: 40, initialXOffset: 220, initialAngle: -0.3 },
-    { id: 'return', label: 'Return Station', width: 130, height: 40, initialXOffset: -310, initialAngle: 0.1 },
-    { id: 'beer', label: 'Beer Dispenser Machine', width: 180, height: 40, initialXOffset: -50, initialAngle: -0.05 },
-    { id: 'fries', label: 'French Fries Machine', width: 160, height: 40, initialXOffset: -250, initialAngle: 0.15 },
-    { id: 'gourmet', label: 'Gourmet Food Machine', width: 200, height: 40, initialXOffset: 280, initialAngle: -0.1 },
+    { id: 1, label: 'All', width: 80, height: 30, initialXOffset: -200, initialAngle: 0.05 },
+    { id: 2, label: 'Pizza Machine', width: 110, height: 40, initialXOffset: 100, initialAngle: 0 },
+    { id: 3, label: 'Fries Machine', width: 120, height: 40, initialXOffset: 50, initialAngle: 0.6 },
+    { id: 4, label: 'Soft Ice Cream Machine', width: 120, height: 40, initialXOffset: -180, initialAngle: 0.25 },
+    { id: 5, label: 'Cotton Candy Machine', width: 160, height: 40, initialXOffset: 150, initialAngle: 0.5 },
+    { id: 6, label: 'Beer Machine', width: 150, height: 40, initialXOffset: 180, initialAngle: -0.3 },
+    { id: 7, label: 'Return Machine', width: 130, height: 40, initialXOffset: -310, initialAngle: 0.1 },
+    { id: 8, label: 'Gourmet Machine', width: 180, height: 40, initialXOffset: -120, initialAngle: -0.03 },
 ];
 
-function MachineLayout() {
+function MachineLayout({ selectedMachine, setSelectedMachine }) {
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);
     const bodiesRef = useRef([]);
-    const engineRef = useRef(null);
-    const renderRef = useRef(null);
-    const [selectedIndex, setSelectedIndex] = useState(1);
+    const [selectedIndex, setSelectedIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const hasInitialized = useRef(false); // Track if the physics simulation has already run
 
@@ -140,13 +135,8 @@ function MachineLayout() {
     }, [isVisible]); // Only re-run when section visibility changes
 
     const handleClick = (index) => {
-        console.log('Button clicked:', index);
         setSelectedIndex(index);
-
-        // const body = bodiesRef.current[index];
-        // if (body) {
-        //     Matter.Body.setStatic(body, true);
-        // }
+        setSelectedMachine(machineData[index].label); // <--- This updates the selected machine in parent
     };
 
     return (

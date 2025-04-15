@@ -20,13 +20,13 @@ import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ArrowButton from '../../Componenets/CommonComponents/ArrowButton';
 
 const machines = [
+  { img: Machine7, name: 'Gourmet Machine', button: 'Explore Combo' },
   { img: Machine1, name: 'Pizza Machine', button: 'Explore Pizza' },
-  { img: Machine2, name: 'Cotton Candy Machine', button: 'Explore Cotton' },
-  { img: Machine3, name: 'Hot Drink Machine', button: 'Explore Drinks' },
-  { img: Machine4, name: 'Snack Machine', button: 'Explore Snacks' },
-  { img: Machine5, name: 'Ice Cream Machine', button: 'Explore Ice Cream' },
-  { img: Machine6, name: 'Bottle Machine', button: 'Explore Bottles' },
-  { img: Machine7, name: 'Combo Machine', button: 'Explore Combo' },
+  { img: Machine2, name: 'Fries Machine', button: 'Explore Cotton' },
+  { img: Machine3, name: 'Soft Ice Cream Machine', button: 'Explore Drinks' },
+  { img: Machine4, name: 'Cotton Candy Machine', button: 'Explore Snacks' },
+  { img: Machine5, name: 'Beer Machine', button: 'Explore Ice Cream' },
+  { img: Machine6, name: 'Return Machine', button: 'Return Machine' },
 ];
 
 function Explore() {

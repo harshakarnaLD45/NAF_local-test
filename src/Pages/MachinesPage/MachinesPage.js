@@ -1,14 +1,15 @@
 
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import "./MachinesPage.css"
 import MarqTextScroll from "./MarqTextScroll";
 import Maintenance from "./Maintenance";
-import Hotmachine from "./Hotmachine";
-import Filtermachines from "./Filtermachines";
 import PhysicsButtons from "./PhysicsButtons";
+import MachinesSection from "./MachinesSection";
 
 const MachinesPage = () => {
+  const [selectedMachine, setSelectedMachine] = useState("All");
+
   return (
     <Box>
       <Box className='machines-container1'>
@@ -23,10 +24,10 @@ const MachinesPage = () => {
         <MarqTextScroll />
       </Box>
 
-      <PhysicsButtons />
-      {/* <Filtermachines /> */}
-      <Hotmachine />
-      <Maintenance />
+      <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
+      <MachinesSection selectedMachine={selectedMachine} />
+      {/* <Hotmachine /> */}
+      {/* <Maintenance /> */}
     </Box>
   );
 };
