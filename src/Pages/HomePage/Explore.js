@@ -18,6 +18,7 @@ import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHea
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ArrowButton from '../../Componenets/CommonComponents/ArrowButton';
+import { useNavigate } from 'react-router-dom';
 
 const machines = [
   { img: Machine7, name: 'Gourmet Machine', button: 'Explore Combo' },
@@ -31,6 +32,11 @@ const machines = [
 
 function Explore() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleMachineClick = (machineName) => {
+    navigate('/machine', { state: { selectedMachine: machineName } });
+  };
 
   return (
     <Box sx={{ width: '100%', overflowX: 'hidden' }}>
@@ -55,7 +61,7 @@ function Explore() {
           spaceBetween={30}
           slidesPerView={'auto'}
           freeMode={true}
-          mousewheel={true}
+          mousewheel={false}
           grabCursor={true}
         >
           {machines.map((machine, index) => (
@@ -96,7 +102,7 @@ function Explore() {
                   <Box className='bodyMediumText1' sx={{ color: '#fff' }}>
                     {machine.name}
                   </Box>
-                  <ArrowButton />
+                  <ArrowButton onClick={() => handleMachineClick(machine.name)} />
                 </Box>
               </Box>
             </SwiperSlide>

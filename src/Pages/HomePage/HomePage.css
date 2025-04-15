@@ -493,9 +493,9 @@
   .machine-sec-homepage{
     padding-left: 15px;
   }
-  .maintext {
+  /* .maintext {
     text-align: center !important;
-  }
+  } */
 
   .explore-container {
     flex-direction: column;

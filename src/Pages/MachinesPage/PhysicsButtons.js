@@ -13,7 +13,7 @@ const machineData = [
     { id: 8, label: 'Gourmet Machine', width: 180, height: 40, initialXOffset: -120, initialAngle: -0.03 },
 ];
 
-function MachineLayout({ selectedMachine, setSelectedMachine }) {
+function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);
     const bodiesRef = useRef([]);
@@ -21,11 +21,27 @@ function MachineLayout({ selectedMachine, setSelectedMachine }) {
     const [isVisible, setIsVisible] = useState(false);
     const hasInitialized = useRef(false); // Track if the physics simulation has already run
 
-    // Observer to check if section is in viewport
     useEffect(() => {
+        const index = machineData.findIndex(m => m.label === selectedMachine);
+        if (index !== -1) {
+            setSelectedIndex(index);
+        }
+    }, [selectedMachine]);
+
+    useEffect(() => {
+        let timeoutId; // To store the timeout ID
+
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsVisible(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        setIsVisible(false);
+                    }, 30000); // 30000 ms = half minute
+                } else {
+                    clearTimeout(timeoutId);
+                }
             },
             { threshold: 0.2 } // Trigger when 20% of the section is visible
         );
@@ -34,10 +50,12 @@ function MachineLayout({ selectedMachine, setSelectedMachine }) {
             observer.observe(sceneRef.current);
         }
 
+        // Cleanup on unmount or visibility changes
         return () => {
             if (sceneRef.current) {
                 observer.unobserve(sceneRef.current);
             }
+            clearTimeout(timeoutId); // Ensure timeout is cleared on component unmount
         };
     }, []);
 
@@ -178,4 +196,4 @@ function MachineLayout({ selectedMachine, setSelectedMachine }) {
     );
 }
 
-export default MachineLayout;
+export default PhysicsButtons;

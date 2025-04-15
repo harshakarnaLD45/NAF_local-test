@@ -1,14 +1,23 @@
 
 import { Box, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MachinesPage.css"
 import MarqTextScroll from "./MarqTextScroll";
 import Maintenance from "./Maintenance";
 import PhysicsButtons from "./PhysicsButtons";
 import MachinesSection from "./MachinesSection";
+import { useLocation } from "react-router-dom";
+import PaymentOptions from "./PaymentOptions";
+import Solutions from "./Solutions";
 
 const MachinesPage = () => {
-  const [selectedMachine, setSelectedMachine] = useState("All");
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [selectedMachine, setSelectedMachine] = useState(location.state?.selectedMachine || "All");
 
   return (
     <Box>
@@ -26,8 +35,9 @@ const MachinesPage = () => {
 
       <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
       <MachinesSection selectedMachine={selectedMachine} />
-      {/* <Hotmachine /> */}
-      {/* <Maintenance /> */}
+      <Solutions />
+      <PaymentOptions />
+      <Maintenance />
     </Box>
   );
 };

@@ -19,6 +19,7 @@ import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
 import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
 import ContactPage from './Pages/ContactPage/ContactPage';
+import MantaincePage from './Pages/MachinesPage/MantaincePage/MantaincePage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path='/' Component={HomePage} />
           <Route path='machine' Component={MachinesPage} />
+          <Route path='maintaince' Component={MantaincePage} />
           <Route path='software' Component={SoftwarePage} />
           <Route path='Insights' Component={Insights} />
           <Route path="company/about" Component={AboutPage} />

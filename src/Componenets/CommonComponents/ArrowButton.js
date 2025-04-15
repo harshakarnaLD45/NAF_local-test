@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArrowButton = () => {
+const ArrowButton = ({ onClick }) => {
   const buttonStyle = {
     display: 'flex',
     width: '70px',
@@ -20,28 +20,29 @@ const ArrowButton = () => {
 
 
   const iconStyle = {
-    width: "20.748px" ,
+    width: "20.748px",
     fontSize: '2em',
     transition: ' transform 0.5s ease', // Changed 'rotate' to 'transform'
-};
+  };
 
   // Use state to handle hover
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
     <button
-    className='arrowbutton'
+      className='arrowbutton'
       style={buttonStyle}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
-      
-      <svg 
-      className='arrowsvg'
-      style={{ 
-        ...iconStyle,
-        transform: isHovered ? 'rotate(45deg)' : 'rotate(0deg)',
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
+    >
+      <svg
+        className='arrowsvg'
+        style={{
+          ...iconStyle,
+          transform: isHovered ? 'rotate(45deg)' : 'rotate(0deg)',
 
-      }} xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 17 17" fill="none">
+        }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
         <path d="M16.6854 1.4142C16.6854 0.936743 16.2984 0.549688 15.8209 0.549689L8.0403 0.549689C7.56285 0.549689 7.17579 0.936744 7.17579 1.4142C7.17579 1.89166 7.56285 2.27871 8.0403 2.27871L14.9564 2.27871L14.9564 9.19481C14.9564 9.67226 15.3435 10.0593 15.8209 10.0593C16.2984 10.0593 16.6854 9.67226 16.6854 9.1948L16.6854 1.4142ZM1.76096 16.6968L16.4322 2.0255L15.2096 0.802898L0.538356 15.4741L1.76096 16.6968Z" fill="#AAE74B" />
       </svg>
 
