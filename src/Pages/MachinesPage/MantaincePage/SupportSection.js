@@ -25,53 +25,34 @@ const SupportSection = () => {
                         <Box className=" expertise-image" >
                             <SupportIcon1 />
                         </Box>
-                        <Box className="expertise-text-sec">
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Remote Machine Monitoring</Typography>
-                            <Typography className=' bodyRegularText3 ' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>Monitor machine status, schedule maintenance, and address technical issues remotely.</Typography>
+                        <Box>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Preventative <br />Maintenance</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
                         <Box className="expertise-image" >
-                            <SupportIcon2 />
+                            <SupportIcon3 />
                         </Box>
-                        <Box className=" expertise-text-sec">
-
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Cloud Security</Typography>
-                            <Typography className=' bodyRegularText3 ' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>Protect your sensitive data with robust security measures, ensuring compliance and peace of mind.</Typography>
+                        <Box>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Remote <br />Diagnostics</Typography>
                         </Box>
                     </Box>
                 </Box>
                 <Box className="expertise-sub-cards-container2" style={{}}>
                     <Box className='expertise-sub-cards'>
                         <Box className="expertise-image" >
-                            <SupportIcon3 />
+                            <SupportIcon2 />
                         </Box>
-                        <Box className=" expertise-text-sec">
-
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Cloud Optimization</Typography>
-                            <Typography className=' bodyRegularText3 ' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>We fine-tune your cloud environment for optimal performance and cost-effectiveness, reducing expenses and improving resource utilization.</Typography>
+                        <Box>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Prompt <br />Repairs</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
                         <Box className="expertise-image" >
                             <SupportIcon4 />
                         </Box>
-                        <Box className=" expertise-text-sec">
-
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Managed Cloud Services</Typography>
-                            <Typography className=' bodyRegularText3 ' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>We provide ongoing maintenance and proactive support, freeing up your IT team to focus on strategic initiatives.</Typography>
+                        <Box>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Dedicated Support <br />Team</Typography>
                         </Box>
                     </Box>
                 </Box>

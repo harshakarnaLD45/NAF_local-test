@@ -211,10 +211,10 @@ const Header = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
               {[
                 { label: 'Home', path: '/' },
-                { label: 'Machine', path: '/machine' },
+                { label: 'Vending Machine', path: '/machine' },
                 { label: 'Software', path: '/software' },
-                { label: 'Solutions', path: '/solutions' },
-                { label: 'Insights', path: '/insights' }
+                // { label: 'Solutions', path: '/solutions' },
+                { label: 'Blogs & Insights', path: '/insights' }
               ].map(({ label, path }) => (
                 <Box
                   key={path}
@@ -281,7 +281,7 @@ const Header = () => {
                       onMouseEnter={() => setHoveredPath('/company/about')}
                       onMouseLeave={() => setHoveredPath(null)}
                     >
-                      About Us
+                      Discover NAF
                     </Box>
                     <Box
                       className={`menu-item ${(location.pathname === '/company/menu' || hoveredPath === '/company/menu') ? 'bodyMediumText2' : 'bodyRegularText3'}`}
@@ -293,7 +293,7 @@ const Header = () => {
                       onMouseEnter={() => setHoveredPath('/company/menu')}
                       onMouseLeave={() => setHoveredPath(null)}
                     >
-                      Menu
+                      Live Menu
                     </Box>
                   </Box>
                 )}

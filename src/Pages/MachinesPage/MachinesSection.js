@@ -146,8 +146,8 @@ const MachinesSection = ({ selectedMachine }) => {
     ];
 
     const visibleMachines = selectedMachine === "All"
-    ? machineData
-    : machineData.filter(machine => machine.title === selectedMachine);
+        ? machineData
+        : machineData.filter(machine => machine.title === selectedMachine);
 
     return (
         <Box>
@@ -233,7 +233,11 @@ const MachinesSection = ({ selectedMachine }) => {
                                         <MenuItem value={24}>24 Months</MenuItem>
                                         <MenuItem value={36}>36 Months</MenuItem>
                                     </Select>
-                                    <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography>
+                                    {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
+                                    <Typography color="#FA7854" className='bodyMediumText2'>
+                                        €{Math.round(machine.price / months).toLocaleString()}*
+                                        <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span>
+                                    </Typography>
                                 </Box>
                             </Box>
 

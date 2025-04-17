@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import './AboutPage.css';
 import StarIcon from '../../../assets/About/Vector.svg'
@@ -8,6 +8,11 @@ import AwardsSection from './AwardsSection';
 import ValuesSection from './ValuesSection';
 
 function AboutPage() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Box>
             {/* Hero section */}
@@ -45,6 +50,26 @@ function AboutPage() {
                     <Typography className="headings-h1 responsive-text white-text">
                         VENDING SOLUTIONS
                     </Typography>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            maxWidth: '355px',
+                            maxHeight: '150px',
+                            aspectRatio: '16 / 9',
+                            borderRadius: 100,
+                            overflow: 'hidden',
+                            background: "#FCFCFC",
+                        }}
+                    >
+                        <video
+                            src="" // replace with your actual path
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </Box>
                 </Box>
                 <Typography className="bodyRegularText3 white-text description1">
                     A prominent provider of innovative vending machine solutions, committed to delivering cutting-edge products and services that meet the evolving needs of consumers and businesses.

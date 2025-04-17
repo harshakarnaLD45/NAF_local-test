@@ -16,7 +16,7 @@
 }
 
 .responsive-text {
-    font-size: calc(4rem + 4vw) !important;
+    font-size: calc(4rem + 3.5vw) !important;
     white-space: nowrap;
 }
 
@@ -120,7 +120,7 @@
 
 @media (max-width: 1300px) {
     .responsive-text {
-        font-size: calc(2.5rem + 3vw) !important;
+        font-size: calc(2rem + 3vw) !important;
     }
 
     .crads-title-sec {
@@ -198,7 +198,7 @@
     }
 
     .responsive-text {
-        font-size: calc(1rem + 2vw) !important;
+        font-size: calc(1rem + 1.8vw) !important;
     }
 
     .team-card {

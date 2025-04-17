@@ -7,6 +7,7 @@ import Instagram from '../../assets/Social Icons (2).png';
 import LinkedIn from '../../assets/Social Icons (3).png';
 import YouTube from '../../assets/Social Icons (4).png';
 import AnimateButton from "../CommonComponents/AnimateButton";
+import FooterLogo from '../../assets/FooterLogo.svg'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -243,6 +244,7 @@ const Footer = () => {
                 >
                   Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
+                <img src={FooterLogo} style={{ width: '100%' }} alt="logo" />
               </Stack>
               {/* <Box className="info-stack" sx={{ mt: { xs: 2, } }}>
                 <Typography
@@ -319,8 +321,6 @@ const Footer = () => {
               Terms and Conditions
             </Typography>
           </Box>
-
-
 
           <Typography
             variant="h1"

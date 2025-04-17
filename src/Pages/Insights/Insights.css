@@ -1,23 +1,18 @@
-.Insightscontainer{
-    margin-top: 300px !important;
-}
-
-.bloghoverContainer{
+.bloghoverContainer {
     margin-top: 0px !important;
     margin-bottom: 2vw !important;
 }
-.blogdetailedcontainer{
+
+.blogdetailedcontainer {
     margin-top: 80px !important;
 }
 
 @media (max-width: 768px) {
-    .blogdetailedcontainer{
+    .blogdetailedcontainer {
         margin-top: 40px !important;
     }
-    .Insightscontainer{
-        margin-top: 200px !important;
-    }
-    .tablecontentsection{
+
+    .tablecontentsection {
         height: 60px !important;
     }
-    }
+}

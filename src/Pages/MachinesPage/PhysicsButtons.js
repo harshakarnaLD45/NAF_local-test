@@ -12,14 +12,116 @@ const machineData = [
     { id: 7, label: 'Return Machine', width: 130, height: 40, initialXOffset: -310, initialAngle: 0.1 },
     { id: 8, label: 'Gourmet Machine', width: 180, height: 40, initialXOffset: -120, initialAngle: -0.03 },
 ];
+const getResponsiveMachineData = () => {
+    const width = window.innerWidth;
+
+    const breakpoint = (() => {
+        if (width > 1800) return 'xl';
+        if (width > 1400) return 'lg';
+        if (width > 1024) return 'md';
+        if (width > 768) return 'sm';
+        if (width > 300) return 'xs';
+        return 'xxs';
+    })();
+
+    const configs = {
+        xl: [
+            [-200, 0.05],
+            [100, 0],
+            [50, 0.6],
+            [-180, 0.25],
+            [150, 0.5],
+            [180, -0.3],
+            [-310, 0.1],
+            [-120, -0.03],
+        ],
+        lg: [
+            [-140, 0.05],
+            [60, 0],
+            [30, 0.6],
+            [-120, 0.25],
+            [90, 0.5],
+            [100, -0.3],
+            [-200, 0.1],
+            [-70, -0.03],
+        ],
+        md: [
+            [-100, 0.05],
+            [30, 0],
+            [10, 0.6],
+            [-120, 0.25],
+            [70, 0.5],
+            [50, -0.3],
+            [-200, -0.1],
+            [-40, -0.03],
+        ],
+        sm: [
+            [-80, 0.05],
+            [-30, 0],
+            [0, 0.6],
+            [-80, 0.25],
+            [40, 0.5],
+            [-50, -0.3],
+            [-80, -0.3],
+            [-20, -0.03],
+        ],
+        xs: [
+            [0, 2],
+            [1, 0.5],
+            [0, 2],
+            [3, 1.5],
+            [0, 2],
+            [2, 2],
+            [0, 2],
+            [1, 1.5],
+        ],
+        xxs: [
+            [-40, 0.05],
+            [10, 0],
+            [0, 0.6],
+            [-40, 0.25],
+            [20, 0.5],
+            [30, -0.3],
+            [-50, 0.1],
+            [0, -0.03],
+        ],
+    };
+
+    const data = [
+        { id: 1, label: 'All', width: 80, height: 30 },
+        { id: 2, label: 'Pizza Machine', width: 110, height: 40 },
+        { id: 3, label: 'Fries Machine', width: 120, height: 40 },
+        { id: 4, label: 'Soft Ice Cream Machine', width: 120, height: 40 },
+        { id: 5, label: 'Cotton Candy Machine', width: 160, height: 40 },
+        { id: 6, label: 'Beer Machine', width: 150, height: 40 },
+        { id: 7, label: 'Return Machine', width: 130, height: 40 },
+        { id: 8, label: 'Gourmet Machine', width: 180, height: 40 },
+    ];
+
+    return data.map((machine, index) => ({
+        ...machine,
+        initialXOffset: configs[breakpoint][index][0],
+        initialAngle: configs[breakpoint][index][1],
+    }));
+};
 
 function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
+    const [machineData, setMachineData] = useState(getResponsiveMachineData());
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);
     const bodiesRef = useRef([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const hasInitialized = useRef(false); // Track if the physics simulation has already run
+
+    useEffect(() => {
+        const handleResize = () => {
+            setMachineData(getResponsiveMachineData());
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         const index = machineData.findIndex(m => m.label === selectedMachine);
@@ -87,7 +189,7 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
         const centerX = render.options.width / 2;
 
         const bodies = machineData.map((machine, index) => {
-            const startY = -60 - index * 15; // Different heights for staggered falling
+            const startY = -60 - index * 5; // Different heights for staggered falling
             const startX = centerX + machine.initialXOffset;
 
             const body = Matter.Bodies.rectangle(
@@ -96,9 +198,10 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
                 machine.width,
                 machine.height,
                 {
-                    friction: 0.2,
-                    restitution: 0.5,
-                    density: 0.0005,
+                    friction: 0.1,
+                    restitution: 0.2,
+                    density: 0.001,
+                    frictionAir: 0.01,
                     inertia: Infinity,
                     label: machine.label
                 }

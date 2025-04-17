@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Calendly from './calendly';
 import './ContactPage.css'
-import { Box, Grid, Stack, TextField, Typography } from '@mui/material'
+import { Box, Container, Grid, Stack, TextField, Typography } from '@mui/material'
 import { Location, Contactmail, Contactphone } from "../../Componenets/CustomIcons"
 import Facebook from '../../assets/Social Icons.png';
 import Twitter from '../../assets/Social Icons (1).png';
@@ -15,6 +15,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import Picture1 from '../../assets/Contact/Picture1.png'
+import Picture2 from '../../assets/Contact/Picture2.png'
+import Picture3 from '../../assets/Contact/Picture3.png'
 
 const locations = [
     {
@@ -169,6 +172,27 @@ const faqs = {
     ],
 }
 
+const contacts = [
+    {
+        title: 'For Marketing Inquiries',
+        name: 'Odette Lamkhizni',
+        image: Picture1,
+        alt: 'Marketing Contact',
+    },
+    {
+        title: 'For Machine Sales',
+        name: 'Abdelilah Lamkhizni',
+        image: Picture2,
+        alt: 'Sales Contact',
+    },
+    {
+        title: 'For Technical Inquiries',
+        name: 'Sri Satya Sai Kanna Dhulipudi',
+        image: Picture3,
+        alt: 'Technical Contact',
+    },
+];
+
 function ContactPage() {
     const [active, setActive] = useState('submit');
     const [selectedItems, setSelectedItems] = useState([]);
@@ -180,6 +204,10 @@ function ContactPage() {
         setIsSubmitform(type === 'submit');
         setActive(type);
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         setExpandedIndex(null);
@@ -203,7 +231,7 @@ function ContactPage() {
 
     return (
         <Box>
-            <Box className='section-container contactus-sec'>
+            <Box className='section-container contactus-sec' sx={{ pr: 0 }}>
                 <Box className='contactus-subsec'>
                     <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>Contact with us</Typography>
                     <Typography className='headings-h1'>Together, We Can Do Extraordinary Things.</Typography>
@@ -503,6 +531,33 @@ function ContactPage() {
                 </Box>
             </Box>
 
+            <Container className='section-container' sx={{ display: 'flex', justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
+                {contacts.map((contact, index) => (
+                    <Box key={index} sx={{ flex: 1, minWidth: 250 }}>
+                        <Typography className='bodyMediumText1' color='#FCFCFC' gutterBottom>
+                            {contact.title}
+                        </Typography>
+                        <img src={contact.image} alt={contact.alt} style={{ width: '100%', borderRadius: 8 }} />
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}>
+                            <Typography className='bodyRegularText3' color='#FCFCFC'>
+                                {contact.name}
+                            </Typography>
+                            <Box
+                                sx={{
+                                    backgroundColor: '#F4F4F4',
+                                    borderRadius: '50%',
+                                    p: '14px 12px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <Contactmail color='#FA7854' />
+                            </Box>
+                        </Box>
+                    </Box>
+                ))}
+            </Container>
 
             <Box className="section-container">
                 <Typography className='headings-h2' sx={{ width: { xs: '80%', sm: '50%', md: '42%' }, mb: { xs: 2, sm: 3, md: 5 } }}>
@@ -581,7 +636,6 @@ function ContactPage() {
                     </Grid>
                 </Box>
             </Box>
-
 
             <Box className='section-container' sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, justifyContent: 'space-between', gap: { xs: 3, sm: 6, md: 8 } }}>
                 {/* Left Column - Categories */}

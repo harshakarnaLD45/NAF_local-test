@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import arrowicon from "../../../assets/Frame 124.png";
 import "./Menu.css";
 import Unlock from "./Unlock";
@@ -7,6 +7,11 @@ import VMMenu from "./VMMenu";
 import Allergen from "./Allergen";
 
 const Menu = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box>
       <Box className="section-container menucontainer">

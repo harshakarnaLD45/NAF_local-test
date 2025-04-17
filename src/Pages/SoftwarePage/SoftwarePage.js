@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import softwareHeroImg from '../../assets/software/software_hero-svg.svg'
 import { Box, Typography } from '@mui/material'
 import './SoftwarePage.css';
@@ -8,6 +8,11 @@ import ExpertiseSection from './ExpertiseSection';
 import ReadySection from './ReadySection';
 
 function SoftwarePage() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <Box className='softwarepage-main-container'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import './HomePage.css';
 import HomepageShowreel from './Homepagereel';
@@ -17,6 +17,10 @@ import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Box>

@@ -1,41 +1,64 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
-import styles from '../MachinesPage/MachinesPage.css'; // Make sure this path is correct for your CSS file
+import styles from '../MachinesPage/MachinesPage.css';
 
 const machineData = [
     { id: 'blogs', label: 'Blogs', width: 100, height: 40, initialXOffset: -300 },
     { id: 'all', label: 'All', width: 80, height: 30, style: { backgroundColor: 'lightgreen' }, initialXOffset: -150 },
     { id: 'events', label: 'Events', width: 120, height: 40, initialXOffset: 0 },
     { id: 'news', label: 'News', width: 120, height: 40, initialXOffset: -220 },
-   
 ];
 
-function Blogfilter() {
+function Blogfilter({ selectedMachine, setSelectedMachine }) {
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);
-    const [isSectionVisible, setIsSectionVisible] = useState(true);
-
-    const handleDragStart = (e, index) => {
-        const button = buttonsRef.current[index];
-        const offsetX = e.clientX - button.getBoundingClientRect().left;
-        const offsetY = e.clientY - button.getBoundingClientRect().top;
-
-        const handleDragMove = (e) => {
-            button.style.left = `${e.clientX - offsetX}px`;
-            button.style.top = `${e.clientY - offsetY}px`;
-        };
-
-        const handleDragEnd = () => {
-            document.removeEventListener('mousemove', handleDragMove);
-            document.removeEventListener('mouseup', handleDragEnd);
-        };
-
-        document.addEventListener('mousemove', handleDragMove);
-        document.addEventListener('mouseup', handleDragEnd);
-    };
+    const bodiesRef = useRef([]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const hasInitialized = useRef(false); // Track if the physics simulation has already run
 
     useEffect(() => {
-        if (!isSectionVisible) return;
+        const index = machineData.findIndex(m => m.label === selectedMachine);
+        if (index !== -1) {
+            setSelectedIndex(index);
+        }
+    }, [selectedMachine]);
+
+    useEffect(() => {
+        let timeoutId; // To store the timeout ID
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => {
+                        setIsVisible(false);
+                    }, 30000); // 30000 ms = half minute
+                } else {
+                    clearTimeout(timeoutId);
+                }
+            },
+            { threshold: 0.2 } // Trigger when 20% of the section is visible
+        );
+
+        if (sceneRef.current) {
+            observer.observe(sceneRef.current);
+        }
+
+        // Cleanup on unmount or visibility changes
+        return () => {
+            if (sceneRef.current) {
+                observer.unobserve(sceneRef.current);
+            }
+            clearTimeout(timeoutId); // Ensure timeout is cleared on component unmount
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible || hasInitialized.current) return; // Run only the first time
+
+        hasInitialized.current = true; // Mark as initialized
 
         const scene = sceneRef.current;
         const engine = Matter.Engine.create();
@@ -44,20 +67,23 @@ function Blogfilter() {
             element: scene,
             engine: engine,
             options: {
-                width: scene ? scene.offsetWidth : window.innerWidth, // Full width
-                height: 400, 
+                width: scene ? scene.offsetWidth : window.innerWidth,
+                height: 300,
                 wireframes: false,
                 background: 'transparent',
+                visible: false,
             },
         });
 
-        render.canvas.style.opacity = "0";
-        world.gravity.y = 0.3; // Further reduced gravity for a wider spread
+        render.canvas.style.pointerEvents = "none"; // Prevent interaction
+        render.canvas.style.display = 'none';
+
+        world.gravity.y = 0.8; // Slight gravity for a natural fall
 
         const centerX = render.options.width / 2;
 
         const bodies = machineData.map((machine, index) => {
-            const startY = -150 - index * 30; // Increased starting height
+            const startY = -60 - index * 5; // Different heights for staggered falling
             const startX = centerX + machine.initialXOffset;
 
             const body = Matter.Bodies.rectangle(
@@ -65,18 +91,30 @@ function Blogfilter() {
                 startY,
                 machine.width,
                 machine.height,
-                { friction: 0.2, restitution: 0.1, label: machine.label }
+                {
+                    friction: 0.1,
+                    restitution: 0.6,
+                    density: 0.001,
+                    frictionAir: 0.01,
+                    inertia: Infinity,
+                    label: machine.label
+                }
             );
 
-            if (machine.rotation) {
-                Matter.Body.rotate(body, machine.rotation);
-            }
-            if (machine.initialAngle) {
-                Matter.Body.rotate(body, machine.initialAngle);
-            }
+            Matter.Body.rotate(body, machine.initialAngle || 0);
 
             return body;
         });
+
+        bodiesRef.current = bodies;
+
+        const divider = Matter.Bodies.rectangle(
+            centerX,
+            310,
+            render.options.width * 0.5,
+            0,
+            { isStatic: true, render: { visible: false } }
+        );
 
         const ground = Matter.Bodies.rectangle(
             render.options.width / 2,
@@ -86,7 +124,7 @@ function Blogfilter() {
             { isStatic: true }
         );
 
-        Matter.World.add(world, [...bodies, ground]);
+        Matter.World.add(world, [...bodies, divider, ground]);
 
         const runner = Matter.Runner.create();
         Matter.Runner.run(runner, engine);
@@ -109,37 +147,48 @@ function Blogfilter() {
             Matter.Engine.clear(engine);
             Matter.World.clear(world);
         };
-    }, [isSectionVisible]);
+    }, [isVisible]); // Only re-run when section visibility changes
+
+    const handleClick = (index) => {
+        setSelectedIndex(index);
+        setSelectedMachine(machineData[index].label); // <--- This updates the selected machine in parent
+    };
 
     return (
-        <div className={styles.machineLayoutContainer} ref={sceneRef} style={{ position: 'relative', height: '400px', overflow: 'hidden', width: '100%' }}>
-            {machineData.map((machine, index) => {
-                return (
-                    <div
-                        key={machine.id}
-                        ref={(el) => (buttonsRef.current[index] = el)}
-                        className='bodyRegularText3'
-                        style={{
-                            position: 'absolute',
-                            left: `calc(0% + ${machine.initialXOffset}px)`,
-                            top: '-150px',
-                            padding: '16px 48px',
-                            backgroundColor: machine.style?.backgroundColor || 'transparent',
-                            textAlign: 'center',
-                            lineHeight: `${machine.height}px`,
-                            border: '1px solid #ddd',
-                            borderRadius: '100px',
-                            fontWeight: machine.id === 'all' ? 'bold' : 'normal',
-                            color: '#F4F4F4',
-                            userSelect: 'none',
-                            transform: `translateX(-50%) rotate(${machine.initialAngle || machine.rotation || 0}rad)`,
-                        }}
-                        onMouseDown={(e) => handleDragStart(e, index)}
-                    >
-                        {machine.label}
-                    </div>
-                );
-            })}
+        <div
+            className={styles.machineLayoutContainer}
+            ref={sceneRef}
+            style={{
+                position: 'relative', height: '300px', overflow: 'hidden', width: '100%', borderBottom: '1px solid #525252',
+            }}
+        >
+            {machineData.map((machine, index) => (
+                <div
+                    key={machine.id}
+                    ref={(el) => (buttonsRef.current[index] = el)}
+                    className='bodyRegularText3'
+                    style={{
+                        position: 'absolute',
+                        left: `calc(0% + ${machine.initialXOffset}px)`,
+                        top: '-40px',
+                        padding: '16px 48px',
+                        backgroundColor: selectedIndex === index ? '#7FEE64' : 'transparent',
+                        textAlign: 'center',
+                        lineHeight: `${machine.height}px`,
+                        border: '0.5px solid #F4F4F4',
+                        borderRadius: '100px',
+                        color: selectedIndex === index ? '#1A1A1A' : '#FCFCFC',
+                        zIndex: selectedIndex === index ? 2 : 1,
+                        userSelect: 'none',
+                        transform: `translateX(-50%) rotate(${machine.initialAngle || machine.rotation || 0}rad)`,
+                        pointerEvents: 'auto',
+                        cursor: 'pointer',
+                    }}
+                    onClick={() => handleClick(index)}
+                >
+                    {machine.label}
+                </div>
+            ))}
         </div>
     );
 }

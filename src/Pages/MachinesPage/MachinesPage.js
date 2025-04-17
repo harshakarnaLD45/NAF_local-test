@@ -9,6 +9,7 @@ import MachinesSection from "./MachinesSection";
 import { useLocation } from "react-router-dom";
 import PaymentOptions from "./PaymentOptions";
 import Solutions from "./Solutions";
+import PartnersForm from "./PartnersForm";
 
 const MachinesPage = () => {
   const location = useLocation();
@@ -37,6 +38,18 @@ const MachinesPage = () => {
       <MachinesSection selectedMachine={selectedMachine} />
       <Solutions />
       <PaymentOptions />
+
+      <Box className="section-container" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Typography className='expertise-title headings-h2' sx={{
+          position: 'relative',
+          bottom: '-50px',
+          width: { xs: '100%', sm: '100%', md: '70%' }
+        }} variant="h4" align="center" gutterBottom>
+          Partner with NAF Germany: Two Ways to Join the Vending Revolution
+        </Typography>
+        <PartnersForm />
+      </Box>
+
       <Maintenance />
     </Box>
   );

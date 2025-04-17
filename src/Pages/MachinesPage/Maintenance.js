@@ -1,11 +1,14 @@
-import { Box, Card, Typography } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import { Box, Typography } from "@mui/material";
+import React, { useEffect } from "react";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import MaintainceImage from '../../assets/Machines/Maintaince.png'
-import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
-import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 
 const Maintenance = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box className='section-container'>
       <Box
@@ -23,11 +26,14 @@ const Maintenance = () => {
         {/* Left Content */}
         <Box sx={{ flex: 1, zIndex: 1 }}>
           <div data-cursor="hover">
-            <ScrollMaskHeadings data-cursor="hover" text='NAF Maintenance & Support' />
+            <Typography data-cursor="hover" variant='h1' className='headings-h2' sx={{ color: '#FCFCFC' }}>
+              NAF Maintenance & Support
+            </Typography>
           </div>
           <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
-            <ScrollMaskText text='We ensure your vending machines run smoothly with reliable maintenance and support that minimize downtime and maximize ROI.'
-            />
+            <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: 3 }}>
+              We ensure your vending machines run smoothly with reliable maintenance and support that minimize downtime and maximize ROI.
+            </Typography>
           </Box>
 
           <AnimateButton route='/maintaince' />

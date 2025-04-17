@@ -7,19 +7,13 @@ import NoiseEffect from './Componenets/NoiseEffect/NoiseEffect';
 import './i18n';
 import MachinesPage from './Pages/MachinesPage/MachinesPage';
 import Insights from './Pages/Insights/Insights';
-import BlogDetailPage from './Pages/Insights/BlogDetailPage';
-import BlogDetailPage1 from './Pages/Insights/BlogDetailPage1';
-import BlogDetailPage2 from './Pages/Insights/BlogDetailPage2';
-import BlogDetailPage3 from './Pages/Insights/BlogDetailPage3';
-import BlogDetailPage4 from './Pages/Insights/BlogDetailPage4';
-import BlogDetailPage5 from './Pages/Insights/BlogDetailPage5';
-import BlogDetailPage6 from './Pages/Insights/BlogDetailPage6';
 import Menu from './Pages/Company/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
 import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import MantaincePage from './Pages/MachinesPage/MantaincePage/MantaincePage';
+import BlogContainer from './Pages/Insights/BlogContainer';
 
 function App() {
   return (
@@ -34,20 +28,11 @@ function App() {
           <Route path='maintaince' Component={MantaincePage} />
           <Route path='software' Component={SoftwarePage} />
           <Route path='Insights' Component={Insights} />
+          <Route path='Insights/blog' Component={BlogContainer} />
           <Route path="company/about" Component={AboutPage} />
           <Route path="company/menu" Component={Menu} />
           <Route path="contact" Component={ContactPage} />
-
-          <Route path="/blog/ui-ux-design-vending-sales" element={<BlogDetailPage />} />
-          <Route path="/blog/choosing-vending-machine-guide" element={<BlogDetailPage1 />} />
-          <Route path="/blog/power-ui-ux-vending" element={<BlogDetailPage2 />} />
-          <Route path="/blog/cloud-vending-management" element={<BlogDetailPage3 />} />
-          <Route path="/blog/vending-marketing-strategies" element={<BlogDetailPage4 />} />
-          <Route path="/blog/vending-regulations" element={<BlogDetailPage5 />} />
-          <Route path="/blog/contactless-vending" element={<BlogDetailPage6 />} />
-        
           <Route path='*' Component={HomePage} />
-         
         </Routes>
         <Footer />
       </BrowserRouter>

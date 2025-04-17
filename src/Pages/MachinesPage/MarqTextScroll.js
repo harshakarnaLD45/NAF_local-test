@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-import starImage from "../../assets/21.svg";
+import NafIcon from '../../assets/Home/naf icon.svg'
 
 const MarqTextScroll = () => {
   // Data for the repeating text
@@ -24,7 +24,7 @@ const MarqTextScroll = () => {
         </Typography>
         <Box
           component="img"
-          src={starImage}
+          src={NafIcon}
           alt="Star"
           sx={{
             width: { xs: "30px", sm: "40px", md: "50px" }, // Adjust width for different breakpoints
