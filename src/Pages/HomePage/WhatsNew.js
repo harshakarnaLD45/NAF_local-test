@@ -9,7 +9,7 @@ import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/Scroll
 import { useTranslation } from "react-i18next";
 
 const WhatsNew = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const blogPosts = [
     {
       id: 1,
@@ -101,7 +101,7 @@ const WhatsNew = () => {
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}
-            <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
+        <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
         <Box>
           <AnimateButton text1="VIEW" text2="MORE" route='Insights' />
         </Box>
@@ -128,7 +128,6 @@ const WhatsNew = () => {
           >
             <Box className="imagestaticwhatssmallscreen"
               sx={{
-                // mx: 2, 
                 marginRight: 1
               }}
             >
@@ -143,14 +142,9 @@ const WhatsNew = () => {
                 alt={post.title}
               />
             </Box>
-            {/* <Box 
-              className="blog-containerss"
-              sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}
-            > */}
             <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
               {post.date}
             </Typography>
-
 
             <Box className="imagestaticwhats bigimage"
               sx={{
@@ -224,10 +218,6 @@ const WhatsNew = () => {
 
 
             {/* </Box> */}
-
-
-
-
             <Box
               className="blog-containerss"
               sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}
@@ -278,7 +268,6 @@ const WhatsNew = () => {
                   height: 28,
                 }}
               />
-
             </Box>
 
             {/* Arrow */}

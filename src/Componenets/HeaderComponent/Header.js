@@ -214,7 +214,9 @@ const Header = () => {
                 { label: 'Vending Machine', path: '/machine' },
                 { label: 'Software', path: '/software' },
                 // { label: 'Solutions', path: '/solutions' },
-                { label: 'Blogs & Insights', path: '/insights' }
+                { label: 'Blogs & Insights', path: '/insights' },
+                { label: 'Discover NAF', path: '/company/about' },
+                { label: 'Food Menu', path: '/company/menu' },
               ].map(({ label, path }) => (
                 <Box
                   key={path}
@@ -234,7 +236,7 @@ const Header = () => {
                   {label}
                 </Box>
               ))}
-              <Box>
+              {/* <Box>
                 <Box
                   className='menu-item'
                   sx={{
@@ -297,7 +299,7 @@ const Header = () => {
                     </Box>
                   </Box>
                 )}
-              </Box>
+              </Box> */}
 
               {isMobile && (
                 <Box>

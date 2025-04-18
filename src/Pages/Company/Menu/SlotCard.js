@@ -31,11 +31,11 @@ const SlotCard = ({ slot, tags }) => {
                         alt={product.productName}
                         style={{
                             width: "calc(100% - 10px)", // Subtract padding to fit the container with the gap
-                            maxHeight: "250px",
                             objectFit: "cover",
                             margin: "5px 5px 0px",
                             borderRadius: "8px", // Same as card's radius
                         }}
+                        className='menu-image-sec'
                     />
                     {/* Tags: Icons at the bottom-right corner */}
                     {product?.tags && product?.tags?.length > 0 && (
@@ -70,7 +70,7 @@ const SlotCard = ({ slot, tags }) => {
                 {/* Slot Details */}
                 <Box sx={{ padding: "5px 10px" }}>
                     {/* Product Name */}
-                    <Typography className="bodyMediumText1" sx={{ color: '#FCFCFC' }}>{product.productName}</Typography>
+                    <Typography className="bodyMediumText1" sx={{ color: '#FCFCFC' }}>{product.productName || 'N/A'}</Typography>
 
                     {/* Price */}
                     <Box sx={{

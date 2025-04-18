@@ -216,6 +216,14 @@ const MachinesSection = ({ selectedMachine }) => {
                                         onChange={handleChange}
                                         displayEmpty
                                         inputProps={{ 'aria-label': 'Installment duration' }}
+                                        MenuProps={{
+                                            PaperProps: {
+                                                sx: {
+                                                    backgroundColor: '#262626',
+                                                    color: '#C2C2C4',          
+                                                },
+                                            },
+                                        }}
                                         sx={{
                                             color: '#C2C2C4',
                                             border: '1px solid #5E5E5E',
@@ -224,6 +232,16 @@ const MachinesSection = ({ selectedMachine }) => {
                                             minWidth: '120px',
                                             '& .MuiSelect-icon': {
                                                 color: '#C2C2C4',
+                                            },
+                                            '& .MuiOutlinedInput-notchedOutline': {
+                                                border: 'none',
+                                            },
+                                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                border: 'none',
+                                            },
+                                            '&.Mui-focused': {
+                                                border: '1px solid #5E5E5E', // keep same border when focused
+                                                boxShadow: 'none',
                                             },
                                         }}
                                         className='bodyRegularText5'

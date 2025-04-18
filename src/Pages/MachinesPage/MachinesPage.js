@@ -1,5 +1,5 @@
 
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import "./MachinesPage.css"
 import MarqTextScroll from "./MarqTextScroll";
@@ -10,9 +10,12 @@ import { useLocation } from "react-router-dom";
 import PaymentOptions from "./PaymentOptions";
 import Solutions from "./Solutions";
 import PartnersForm from "./PartnersForm";
+import MobileButtons from "./MobileButtons";
 
 const MachinesPage = () => {
   const location = useLocation();
+  const theme = useTheme();
+  const isMobileOrTablet = useMediaQuery(theme.breakpoints.down("md")); // lg = 1200, you can use "md" for 1024px
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +37,12 @@ const MachinesPage = () => {
         <MarqTextScroll />
       </Box>
 
-      <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
+      {/* <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} /> */}
+      {isMobileOrTablet ? (
+        <MobileButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
+      ) : (
+        <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
+      )}
       <MachinesSection selectedMachine={selectedMachine} />
       <Solutions />
       <PaymentOptions />

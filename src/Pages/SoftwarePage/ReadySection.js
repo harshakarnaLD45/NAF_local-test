@@ -17,18 +17,26 @@ const ReadySection = () => {
 
     useEffect(() => {
         const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Apply different height ratio for small screens
+            const heightRatio = screenWidth < 480 ? 0.5 : 0.9;
+
             setContainerSize({
-                width: window.innerWidth * 0.9,
-                height: window.innerHeight * 0.9,
+                width: screenWidth * 0.9,
+                height: screenHeight * heightRatio,
             });
         };
 
-        window.addEventListener("resize", handleResize);
+        handleResize(); // Initialize on mount
 
+        window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
 
     useEffect(() => {
         const { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint } = Matter;
@@ -121,36 +129,72 @@ const ReadySection = () => {
             return images;
         };
 
+        // const createMixedImages = async () => {
+        //     const imageUrls = [image1, image2, image3, image3, image4, image5, image6];
+
+        //     try {
+        //         const loadedImages = await preloadImages(imageUrls);
+        //         const images = [];
+        //         for (let i = 0; i < 7; i++) {
+        //             const maxSize = Math.min(200, sectionWidth * 0.2); // Responsive max size
+        //             const minSize = Math.min(120, sectionWidth * 0.1); // Responsive min size
+        //             const size = Math.random() * (maxSize - minSize) + minSize;
+        //             const x = Math.random() * (sectionWidth - size) + (size / 2);
+        //             const y = Math.random() * (sectionHeight - size) + (size / 2);
+        //             const randomImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
+
+        //             // Changed from Bodies.rectangle to Bodies.circle
+        //             images.push(
+        //                 Bodies.circle(x, y, size / 2, {
+        //                     restitution: 0.2, // 🔧 Less bounce
+        //                     friction: 0.05,   // 🔧 Slight ground friction
+        //                     frictionAir: 0.02, // 🔧 Air resistance to slow things down
+        //                     render: {
+        //                         sprite: {
+        //                             texture: randomImage.src,
+        //                             xScale: size / randomImage.width,
+        //                             yScale: size / randomImage.height,
+        //                         },
+        //                     },
+        //                 })
+        //             );
+        //         }
+        //         World.add(world, images);
+        //     } catch (error) {
+        //         console.error("Failed to load images:", error);
+        //     }
+        // };
+
         const createMixedImages = async () => {
             const imageUrls = [image1, image2, image3, image3, image4, image5, image6];
 
             try {
                 const loadedImages = await preloadImages(imageUrls);
                 const images = [];
+
+                const fixedSize = Math.min(200, sectionWidth * 0.12); // Fixed size
+
                 for (let i = 0; i < 7; i++) {
-                    const maxSize = Math.min(200, sectionWidth * 0.2); // Responsive max size
-                    const minSize = Math.min(120, sectionWidth * 0.1); // Responsive min size
-                    const size = Math.random() * (maxSize - minSize) + minSize;
-                    const x = Math.random() * (sectionWidth - size) + (size / 2);
-                    const y = Math.random() * (sectionHeight - size) + (size / 2);
+                    const x = Math.random() * (sectionWidth - fixedSize) + (fixedSize / 2);
+                    const y = Math.random() * (sectionHeight - fixedSize) + (fixedSize / 2);
                     const randomImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
 
-                    // Changed from Bodies.rectangle to Bodies.circle
                     images.push(
-                        Bodies.circle(x, y, size / 2, {
-                            restitution: 0.2, // 🔧 Less bounce
-                            friction: 0.05,   // 🔧 Slight ground friction
-                            frictionAir: 0.02, // 🔧 Air resistance to slow things down
+                        Bodies.circle(x, y, fixedSize / 2, {
+                            restitution: 0.2,
+                            friction: 0.05,
+                            frictionAir: 0.02,
                             render: {
                                 sprite: {
                                     texture: randomImage.src,
-                                    xScale: size / randomImage.width,
-                                    yScale: size / randomImage.height,
+                                    xScale: fixedSize / randomImage.width,
+                                    yScale: fixedSize / randomImage.height,
                                 },
                             },
                         })
                     );
                 }
+
                 World.add(world, images);
             } catch (error) {
                 console.error("Failed to load images:", error);
@@ -173,7 +217,7 @@ const ReadySection = () => {
     }, [containerSize]);
 
     return (
-        <Box sx={{
+        <Box className='section-container' sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -198,7 +242,7 @@ const ReadySection = () => {
                     sx={{
                         position: "absolute",
                         width: { xs: "90%", md: "719px" },
-                        top: { xs: "15%", md: "10%" }, // Adjusted top position
+                        top: { xs: "5%", sm: "15%", md: "10%" }, // Adjusted top position
                         left: "50%",
                         transform: "translateX(-50%)",
                         textAlign: "center",

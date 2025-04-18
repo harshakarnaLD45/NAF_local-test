@@ -65,10 +65,6 @@ function PartnersForm() {
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10 }}>
             <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }} component="form" onSubmit={handleSubmit}>
-                <Typography variant="h4" align="center" gutterBottom fontWeight="bold">
-                    Partner with NAF Germany: Two Ways to Join the Vending Revolution
-                </Typography>
-
                 <Tabs
                     value={tab}
                     onChange={handleTabChange}

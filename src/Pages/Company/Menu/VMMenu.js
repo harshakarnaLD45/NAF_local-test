@@ -148,7 +148,7 @@ function VMMenu() {
             {allSlots.length > itemsPerRow * 4 && (
                 <Box mt={3} textAlign="center">
                     {visibleCount < allSlots.length ? (
-                        <Button className='bodyRegularText1'
+                        <Button className='bodyRegularText3'
                             variant="outlined"
                             sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
                             onClick={() => setVisibleCount(prev => prev + itemsPerRow * 2)}
@@ -156,7 +156,7 @@ function VMMenu() {
                             View More
                         </Button>
                     ) : (
-                        <Button className='bodyRegularText1'
+                        <Button className='bodyRegularText3'
                             variant="outlined"
                             sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
                             onClick={() => setVisibleCount(itemsPerRow * 4)}
