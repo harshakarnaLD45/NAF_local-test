@@ -6,6 +6,9 @@ const GradientMaskText = () => {
     const { t } = useTranslation();
     const containerRef = useRef(null);
     const [maskPosition, setMaskPosition] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
+    const [showMask, setShowMask] = useState(false);
+    const timeoutRef = useRef(null);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -19,16 +22,35 @@ const GradientMaskText = () => {
         };
 
         const el = containerRef.current;
-        if (el) el.addEventListener("mousemove", handleMouseMove);
+        if (el && isHovered) {
+            el.addEventListener("mousemove", handleMouseMove);
+        }
 
         return () => {
             if (el) el.removeEventListener("mousemove", handleMouseMove);
         };
-    }, []);
+    }, [isHovered]);
+
+    const handleMouseEnter = () => {
+        // Cancel any existing timeout
+        clearTimeout(timeoutRef.current);
+        setIsHovered(true);
+        setShowMask(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        // Delay removing mask so opacity can fade out first
+        timeoutRef.current = setTimeout(() => {
+            setShowMask(false);
+        }, 300); // match the opacity transition duration
+    };
 
     return (
         <div
             ref={containerRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             style={{
                 position: "relative",
                 display: "inline-block",
@@ -36,20 +58,21 @@ const GradientMaskText = () => {
             }}
         >
             {/* Base Text */}
-            <Typography data-cursor="hover"
+            <Typography
+                data-cursor="hover"
                 variant="h1"
                 className="headings-h1 maintext"
                 sx={{
                     color: "#FCFCFC",
                     position: "relative",
                     zIndex: 1,
-                    width: { xs: "100%", sm: "70%", md: "70%" }
+                    width: { xs: "100%", sm: "70%", md: "70%" },
                 }}
             >
-                {t('Home.mainHeading')}
+                {t("Home.mainHeading")}
             </Typography>
 
-            {/* Hover Reveal Text */}
+            {/* Gradient Reveal Text */}
             <Typography
                 variant="h1"
                 className="headings-h1 maintext"
@@ -63,12 +86,17 @@ const GradientMaskText = () => {
                     zIndex: 2,
                     pointerEvents: "none",
                     width: { xs: "100%", sm: "70%", md: "70%" },
-                    maskImage: `radial-gradient(circle 250px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`,
-                    WebkitMaskImage: `radial-gradient(circle 180px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`,
-                    transition: "mask-image 0.1s ease-out",
+                    opacity: isHovered ? 1 : 0,
+                    transition: "opacity 0.3s ease-out",
+                    maskImage: showMask
+                        ? `radial-gradient(circle 250px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`
+                        : "none",
+                    WebkitMaskImage: showMask
+                        ? `radial-gradient(circle 180px at ${maskPosition.x}px ${maskPosition.y}px, white 0%, transparent 100%)`
+                        : "none",
                 }}
             >
-                {t('Home.mainHeading')}
+                {t("Home.mainHeading")}
             </Typography>
         </div>
     );

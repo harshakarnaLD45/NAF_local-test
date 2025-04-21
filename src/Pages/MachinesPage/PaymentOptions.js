@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { PaymentOptionsIcon1, PaymentOptionsIcon2, PaymentOptionsIcon3 } from "../../Componenets/CustomIcons";
-import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
-import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 
 const paymentOptions = [
@@ -43,11 +41,14 @@ const PaymentOptions = () => {
         <Box className='section-container'>
             <Box sx={{ width: { xs: '100%', sm: '80%', md: '50%' }, mb: { xs: 2, sm: 2, md: 3 } }}>
                 <div data-cursor="hover">
-                    <ScrollMaskHeadings data-cursor="hover" text='Flexible Payment Options for Your NAF Machines' />
+                    <Typography data-cursor="hover" variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
+                        Flexible Payment Options for Your NAF Machines
+                    </Typography>
                 </div>
                 <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
-                    <ScrollMaskText text='Our financing models make it easy to enter automated catering. Whether leasing, hire purchase, or direct purchase, we show you the best options and calculate your amortization period. Save on personnel and operating costs from the first month.'
-                    />
+                    <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: 3 }}>
+                        Our financing models make it easy to enter automated catering. Whether leasing, hire purchase, or direct purchase, we show you the best options and calculate your amortization period. Save on personnel and operating costs from the first month.
+                    </Typography>
                 </Box>
             </Box>
             <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'column', md: 'row' }, justifyContent: "center" }}>

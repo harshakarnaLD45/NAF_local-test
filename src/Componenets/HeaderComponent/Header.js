@@ -211,7 +211,7 @@ const Header = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
               {[
                 { label: 'Home', path: '/' },
-                { label: 'Vending Machine', path: '/machine' },
+                { label: 'Vending Machines', path: '/machine' },
                 { label: 'Software', path: '/software' },
                 // { label: 'Solutions', path: '/solutions' },
                 { label: 'Blogs & Insights', path: '/insights' },
