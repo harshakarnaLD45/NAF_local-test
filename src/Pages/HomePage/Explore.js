@@ -146,7 +146,7 @@ function Explore() {
       <Box className='machine-sec-homepage'>
         <Swiper
           modules={[FreeMode, Mousewheel]}
-          spaceBetween={30}
+          spaceBetween={16}
           slidesPerView={'auto'}
           freeMode={true}
           mousewheel={false}
@@ -207,8 +207,8 @@ function Explore() {
                   src={machine.img}
                   alt={machine.name}
                   sx={{
-                    height: { xs: 250, sm: 300, md: 400 },
-                    width: { xs: 200, sm: 250, md: 300 },
+                    height: { xs: 250, sm: 300, md: 450 },
+                    width: { xs: 200, sm: 250, md: 350 },
                     p: { xs: 3, sm: 4, md: 5 },
                     transition: 'transform 0.3s ease',
                     cursor: 'grab',
