@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Mousewheel } from 'swiper/modules';
@@ -57,10 +57,38 @@ const machines = [
     name: 'Gourmet Machine',
     button: 'Explore Combo',
     icons: [
-      { src: Machine7SmallIcon1, top: '40px', left: '20px' },
-      { src: Machine7SmallIcon2, top: '300px', left: '0px' },
-      { src: Machine7SmallIcon3, top: '80px', left: '370px' },
-      { src: Machine7SmallIcon4, top: '350px', left: '340px' },
+      {
+        src: Machine7SmallIcon1, positions: {
+          1500: { top: '40px', left: '20px' },
+          900: { top: '40px', left: '15px' },
+          400: { top: '20px', left: '10px' },
+          0: { top: '20px', left: '7px' }
+        }
+      },
+      {
+        src: Machine7SmallIcon2, positions: {
+          1500: { top: '420px', left: '400px' },
+          900: { top: '300px', left: '370px' },
+          400: { top: '250px', left: '240px' },
+          0: { top: '200px', left: '150px' }
+        }
+      },
+      {
+        src: Machine7SmallIcon3, positions: {
+          1500: { top: '380px', left: '0px' },
+          900: { top: '330px', left: '0px' },
+          400: { top: '200px', left: '0px' },
+          0: { top: '220px', left: '0px' }
+        }
+      },
+      {
+        src: Machine7SmallIcon4, positions: {
+          1500: { top: '50px', left: '420px' },
+          900: { top: '37px', left: '350px' },
+          400: { top: '25px', left: '250px' },
+          0: { top: '17px', left: '180px' }
+        }
+      },
     ]
   },
   {
@@ -68,47 +96,222 @@ const machines = [
     name: 'Pizza Machine',
     button: 'Explore Pizza',
     icons: [
-      { src: MachineSmallIcon1, top: '40px', left: '35px' },
-      { src: MachineSmallIcon2, top: '220px', left: '40px' },
-      { src: MachineSmallIcon3, top: '380px', left: '0px' },
-      { src: MachineSmallIcon4, top: '50px', left: '320px' },
-      { src: MachineSmallIcon5, top: '200px', left: '340px' },
-      { src: MachineSmallIcon6, top: '360px', left: '290px' }
+      {
+        src: MachineSmallIcon1, positions: {
+          1500: { top: '40px', left: '35px' },
+          900: { top: '40px', left: '35px' },
+          400: { top: '20px', left: '17px' },
+          0: { top: '14px', left: '10px' }
+        }
+      },
+      {
+        src: MachineSmallIcon2, positions: {
+          1500: { top: '260px', left: '40px' },
+          900: { top: '265px', left: '35px' },
+          400: { top: '150px', left: '20px' },
+          0: { top: '130px', left: '10px' }
+        }
+      },
+      {
+        src: MachineSmallIcon3, positions: {
+          1500: { top: '480px', left: '0px' },
+          900: { top: '420px', left: '0px' },
+          400: { top: '250px', left: '0px' },
+          0: { top: '200px', left: '0px' }
+        }
+      },
+      {
+        src: MachineSmallIcon4, positions: {
+          1500: { top: '50px', left: '420px' },
+          900: { top: '50px', left: '370px' },
+          400: { top: '25px', left: '240px' },
+          0: { top: '15px', left: '175px' }
+        }
+      },
+      {
+        src: MachineSmallIcon5, positions: {
+          1500: { top: '270px', left: '440px' },
+          900: { top: '250px', left: '375px' },
+          400: { top: '120px', left: '250px' },
+          0: { top: '70px', left: '150px' }
+        }
+      },
+      {
+        src: MachineSmallIcon6, positions: {
+          1500: { top: '460px', left: '390px' },
+          900: { top: '400px', left: '340px' },
+          400: { top: '240px', left: '195px' },
+          0: { top: '180px', left: '200px' }
+        }
+      }
     ]
   }, {
     img: Machine2, name: 'Fries Machine', button: 'Explore Cotton',
     icons: [
-      { src: Machine2SmallIcon1, top: '150px', left: '10px' },
-      { src: Machine2SmallIcon2, top: '420px', left: '0px' },
-      { src: Machine2SmallIcon3, top: '40px', left: '340px' },
-      { src: Machine2SmallIcon3, top: '250px', left: '340px' },
-      { src: Machine2SmallIcon1, top: '370px', left: '350px' },
-      { src: Machine2SmallIcon4, top: '470px', left: '270px' }
+      {
+        src: Machine2SmallIcon1, positions: {
+          1500: { top: '200px', left: '10px' },
+          900: { top: '200px', left: '10px' },
+          400: { top: '100px', left: '10px' },
+          0: { top: '70px', left: '0px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon2, positions: {
+          1500: { top: '500px', left: '5px' },
+          900: { top: '480px', left: '5px' },
+          400: { top: '320px', left: '0px' },
+          0: { top: '250px', left: '0px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon3, positions: {
+          1500: { top: '50px', left: '450px' },
+          900: { top: '50px', left: '385px' },
+          400: { top: '25px', left: '260px' },
+          0: { top: '15px', left: '190px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon3, positions: {
+          1500: { top: '300px', left: '440px' },
+          900: { top: '270px', left: '385px' },
+          400: { top: '150px', left: '250px' },
+          0: { top: '125px', left: '180px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon1, positions: {
+          1500: { top: '460px', left: '460px' },
+          900: { top: '410px', left: '400px' },
+          400: { top: '250px', left: '270px' },
+          0: { top: '200px', left: '185px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon4, positions: {
+          1500: { top: '580px', left: '360px' },
+          900: { top: '530px', left: '310px' },
+          400: { top: '355px', left: '200px' },
+          0: { top: '275px', left: '130px' }
+        }
+      }
     ]
   },
   {
     img: Machine3, name: 'Soft Ice Cream Machine', button: 'Explore Drinks', icons: [
-      { src: Machine3SmallIcon1, top: '10px', left: '10px' },
-      { src: Machine3SmallIcon2, top: '250px', left: '330px' },
-      { src: Machine3SmallIcon3, top: '340px', left: '40px' },
-      { src: Machine3SmallIcon4, top: '430px', left: '320px' },
-      { src: Machine3SmallIcon5, top: '20px', left: '160px' }
+      {
+        src: Machine3SmallIcon1, positions: {
+          1500: { top: '60px', left: '20px' },
+          900: { top: '60px', left: '20px' },
+          400: { top: '10px', left: '10px' },
+          0: { top: '0px', left: '5px' }
+        }
+      },
+      {
+        src: Machine3SmallIcon2, positions: {
+          1500: { top: '340px', left: '440px' },
+          900: { top: '280px', left: '380px' },
+          400: { top: '150px', left: '260px' },
+          0: { top: '120px', left: '200px' }
+        }
+      },
+      {
+        src: Machine3SmallIcon3, positions: {
+          1500: { top: '300px', left: '30px' },
+          900: { top: '280px', left: '25px' },
+          400: { top: '180px', left: '10px' },
+          0: { top: '150px', left: '0px' }
+        }
+      },
+      {
+        src: Machine3SmallIcon4, positions: {
+          1500: { top: '540px', left: '400px' },
+          900: { top: '480px', left: '370px' },
+          400: { top: '280px', left: '245px' },
+          0: { top: '225px', left: '180px' }
+        }
+      },
+      {
+        src: Machine3SmallIcon5, positions: {
+          1500: { top: '40px', left: '250px' },
+          900: { top: '40px', left: '200px' },
+          400: { top: '20px', left: '125px' },
+          0: { top: '0px', left: '110px' }
+        }
+      }
     ]
   },
   {
     img: Machine4, name: 'Cotton Candy Machine', button: 'Explore Snacks', icons: [
-      { src: Machine3SmallIcon1, top: '40px', left: '20px' },
-      { src: Machine4SmallIcon1, top: '300px', left: '0px' },
-      { src: Machine4SmallIcon2, top: '80px', left: '370px' },
-      { src: Machine4SmallIcon3, top: '350px', left: '340px' },
+      {
+        src: Machine4SmallIcon1, positions: {
+          1500: { top: '360px', left: '0px' },
+          900: { top: '350px', left: '0px' },
+          400: { top: '160px', left: '0px' },
+          0: { top: '125px', left: '0px' }
+        }
+      },
+      {
+        src: Machine4SmallIcon2, positions: {
+          1500: { top: '60px', left: '465px' },
+          900: { top: '60px', left: '420px' },
+          400: { top: '40px', left: '275px' },
+          0: { top: '15px', left: '200px' }
+        }
+      },
+      {
+        src: Machine4SmallIcon3, positions: {
+          1500: { top: '460px', left: '450px' },
+          900: { top: '425px', left: '380px' },
+          400: { top: '260px', left: '250px' },
+          0: { top: '200px', left: '200px' }
+        }
+      },
+      {
+        src: Machine3SmallIcon1, positions: {
+          1500: { top: '60px', left: '20px' },
+          900: { top: '60px', left: '20px' },
+          400: { top: '20px', left: '0px' },
+          0: { top: '20px', left: '0px' }
+        }
+      },
     ]
   },
   {
     img: Machine5, name: 'Beer Machine', button: 'Explore Ice Cream', icons: [
-      { src: Machine5SmallIcon1, top: '40px', left: '20px' },
-      { src: Machine5SmallIcon2, top: '300px', left: '0px' },
-      { src: Machine5SmallIcon3, top: '80px', left: '370px' },
-      { src: Machine5SmallIcon4, top: '350px', left: '340px' },
+      {
+        src: Machine5SmallIcon1, positions: {
+          1500: { top: '360px', left: '290px' },
+          900: { top: '270px', left: '217px' },
+          400: { top: '180px', left: '145px' },
+          0: { top: '125px', left: '101px' }
+        }
+      },
+      {
+        src: Machine5SmallIcon2, positions: {
+          1500: { top: '360px', left: '290px' },
+          900: { top: '270px', left: '217px' },
+          400: { top: '180px', left: '145px' },
+          0: { top: '125px', left: '101px' }
+        }
+      },
+      {
+        src: Machine5SmallIcon3, positions: {
+          1500: { top: '360px', left: '290px' },
+          900: { top: '270px', left: '217px' },
+          400: { top: '180px', left: '145px' },
+          0: { top: '125px', left: '101px' }
+        }
+      },
+      {
+        src: Machine5SmallIcon4, positions: {
+          1500: { top: '360px', left: '290px' },
+          900: { top: '270px', left: '217px' },
+          400: { top: '180px', left: '145px' },
+          0: { top: '125px', left: '101px' }
+        }
+      },
     ]
   },
   {
@@ -121,6 +324,21 @@ const machines = [
 function Explore() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getIconPosition = (positions) => {
+    const width = window.innerWidth;
+    if (width >= 1500) return positions['1500'];
+    if (width > 900) return positions['900'];
+    if (width > 600) return positions['400'];
+    return positions['0'];
+  };
 
   const handleMachineClick = (machineName) => {
     navigate('/machine', { state: { selectedMachine: machineName } });
@@ -183,22 +401,25 @@ function Explore() {
                     pointerEvents: 'none',
                   }}
                 >
-                  {machine.icons.map((Icon, i) => (
-                    <Box
-                      key={i}
-                      sx={{
-                        position: 'absolute',
-                        top: Icon.top,
-                        left: Icon.left,
-                        width: 30,
-                        height: 30,
-                        animation: 'floatIcon 4s ease-in-out infinite',
-                        svg: { width: '100%', height: '100%' },
-                      }}
-                    >
-                      <img src={Icon.src} alt='icons' />
-                    </Box>
-                  ))}
+                  {machine.icons.map((Icon, i) => {
+                    const { top, left } = getIconPosition(Icon.positions);
+                    return (
+                      <Box
+                        key={i}
+                        sx={{
+                          position: 'absolute',
+                          top,
+                          left,
+                          width: { xs: 10, sm: 20, md: 30 },
+                          height: { xs: 10, sm: 20, md: 30 },
+                          animation: 'floatIcon 4s ease-in-out infinite',
+                          svg: { width: '100%', height: '100%' },
+                        }}
+                      >
+                        <img src={Icon.src} alt='icons' />
+                      </Box>
+                    )
+                  })}
                 </Box>
 
                 {/* Machine image */}
