@@ -26,6 +26,7 @@ function CustomSelect({
             }}>{label}</InputLabel>
             <Select
                 variant="standard"
+                className='bodyRegularText4'
                 name={name}
                 value={value}
                 onChange={onChange}
@@ -48,9 +49,17 @@ function CustomSelect({
                     '&:after': { borderBottom: '0.5px solid #C6C6C6' },
                     '&:hover:not(.Mui-disabled):before': { borderBottom: '0.5px solid #C6C6C6' },
                 }}
+                MenuProps={{
+                    PaperProps: {
+                        sx: {
+                            backgroundColor: '#1E1E1E', // optional dark background for dropdown
+                            color: '#C2C2C4', // sets text color inside dropdown
+                        },
+                    },
+                }}
             >
                 {options.map((opt) => (
-                    <MenuItem key={opt.value} value={opt.value}>
+                    <MenuItem key={opt.value} value={opt.value} className='bodyRegularText4'>
                         {opt.label}
                     </MenuItem>
                 ))}

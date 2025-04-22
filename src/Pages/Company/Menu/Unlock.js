@@ -6,8 +6,10 @@ import {
 } from "@mui/material";
 import CardImage from '../../../assets/About/card.svg'
 import AnimateButton from "../../../Componenets/CommonComponents/AnimateButton";
+import { useTranslation } from "react-i18next";
 
 const Unlock = () => {
+  const { t } = useTranslation();
   return (
     <Box className='section-container'>
       <Box
@@ -27,14 +29,14 @@ const Unlock = () => {
               className="headings-h3"
               sx={{ mb: 3 }}
             >
-              Unlock Exclusive Benefits<br />with a NAF Membership Card!
+             {t('menu.memberdhipTitle1')}<br />{t('menu.memberdhipTitle2')}
             </Typography>
 
             <Typography variant="body1" className="bodyRegularText3" sx={{ color: "#C2C2C4", mb: 5 }}>
-              Enjoy faster checkout, exclusive discounts, and convenient access to your favorite vending machines
+            {t('menu.memberdhipSubTitle')}
             </Typography>
 
-            <AnimateButton text1="APPLY" text2="NOW" />
+            <AnimateButton text1={t('menu.APPLY')} text2={t('menu.NOW')} />
           </Grid>
 
           {/* Right Card Image Side */}

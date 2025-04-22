@@ -59,12 +59,12 @@ const WhoWeServe = () => {
                     {/* <Typography variant='h1' className='headings-h2 whoweServe-left-sec1-text'>
                         Who We Serve
                     </Typography> */}
-                    <ScrollMaskHeadings text={t('Home.ServeTitle')} />
+                    <ScrollMaskHeadings text={t('Home.serveTitle')} />
                     {/* <Typography color='#C2C2C4' variant='h1' className='bodyRegularText3 whoweServe-left-sec2-text'>
                         NAF Germany provides customized vending solutions to a diverse range of industries. We understand the unique needs of each sector and offer tailored solutions to enhance convenience, boost efficiency, and improve customer satisfaction.
                     </Typography> */}
                     <Box className='whoweServe-left-sec2-text'>
-                        <ScrollMaskText text={t('Home.ServeSubTitle')} />
+                        <ScrollMaskText text={t('Home.serveSubTitle')} />
                     </Box>
                 </Box>
             </Box>

@@ -7,18 +7,20 @@ import 'swiper/css/pagination';
 import { Box, Typography, IconButton } from '@mui/material';
 import Allergen1 from '../../../assets/About/Alergen1.svg'
 import EastIcon from '@mui/icons-material/East';
+import { useTranslation } from 'react-i18next';
 
 const allergenImages = [Allergen1, Allergen1, Allergen1];
 
 export default function Allergen() {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+    const { t } = useTranslation();
 
     return (
-        <Box sx={{ position: 'relative' }} className='section-container'>
+        <Box sx={{ position: 'relative',pr: 0 }} className='section-container' >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
                 <Typography variant="h4" className='headings-h2'>
-                    Allergene
+                    {t('menu.Allergene')}
                 </Typography>
 
                 {/* Arrows at the Top-Right */}
@@ -35,7 +37,7 @@ export default function Allergen() {
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={30}
-                slidesPerView={1}
+                slidesPerView="auto"
                 navigation={{
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
@@ -49,7 +51,10 @@ export default function Allergen() {
                 loop
             >
                 {allergenImages.map((src, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide
+                        key={index}
+                        style={{ width: 'auto', maxWidth: '1200px' }} // 👈 or set a fixed width like '250px'
+                    >
                         <Box
                             component="img"
                             src={src}
@@ -64,6 +69,7 @@ export default function Allergen() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </Box>
+
+        </Box >
     );
 }

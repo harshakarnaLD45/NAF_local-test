@@ -11,8 +11,10 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const DietaryModal = ({ open, onClose, selected = [], onApply, tags }) => {
+    const { t } = useTranslation();
     const [localSelected, setLocalSelected] = useState(selected || []);
 
     const toggleTag = (label) => {
@@ -31,8 +33,8 @@ const DietaryModal = ({ open, onClose, selected = [], onApply, tags }) => {
     return (
         <Dialog open={open} onClose={onClose} fullWidth maxWidth="xs" PaperProps={{ sx: { backgroundColor: "#1C1C1C", borderRadius: 3 } }}>
             <DialogTitle sx={{ color: "white", display: "flex", justifyContent: "space-between" }}>
-                <Typography className="bodyMediumText2" color="#FCFCFC">Food Preferences</Typography>
-                <IconButton onClick={onClose} sx={{ color: "#FCFCFC" }}>
+            <Typography className="bodyMediumText2" color="#FCFCFC"> {t('menu.FoodPreferences')}</Typography>
+            <IconButton onClick={onClose} sx={{ color: "#FCFCFC" }}>
                     <CloseIcon />
                 </IconButton>
             </DialogTitle>

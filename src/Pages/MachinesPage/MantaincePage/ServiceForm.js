@@ -2,17 +2,10 @@ import React, { useState } from 'react';
 import {
   Box,
   Typography,
-  Button,
-  Checkbox,
   FormControlLabel,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Select,
   Radio,
 } from '@mui/material';
 import CustomTextField from './CustomTextField';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CustomSelect from './CustomSelect';
 import CloseIcon from '@mui/icons-material/Close';
 import { UploadIcon } from '../../../Componenets/CustomIcons';
@@ -227,7 +220,12 @@ function ServiceForm() {
                 })
               }
               required
-              sx={{ color: '#C2C2C4' }}
+              sx={{
+                color: '#C2C2C4',
+                '&.Mui-checked': {
+                  color: '#7FEE64', // green when checked
+                },
+              }}
             />
           }
           className="bodyRegularText4"

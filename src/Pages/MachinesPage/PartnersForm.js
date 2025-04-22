@@ -15,6 +15,7 @@ import Service3 from '../../assets/Machines/Service3.png'
 import Service4 from '../../assets/Machines/Service4.png'
 import Service5 from '../../assets/Machines/Service5.png'
 import Service6 from '../../assets/Machines/Service6.png'
+import CustomSelect from './MantaincePage/CustomSelect';
 
 function PartnersForm() {
     const [tab, setTab] = useState(0);
@@ -28,6 +29,7 @@ function PartnersForm() {
         contactName: '',
         email: '',
         phone: '',
+        agreement: false,
     });
 
     const [formTab1, setFormTab1] = useState({
@@ -39,6 +41,7 @@ function PartnersForm() {
         contactName: '',
         email: '',
         phone: '',
+        agreement: false,
     });
 
     const handleTabChange = (event, newValue) => {
@@ -51,6 +54,15 @@ function PartnersForm() {
             setFormTab0({ ...formTab0, [name]: value });
         } else {
             setFormTab1({ ...formTab1, [name]: value });
+        }
+    };
+
+    const handleCheckboxChange = (e, tabIndex) => {
+        const { name, checked } = e.target;
+        if (tabIndex === 0) {
+            setFormTab0({ ...formTab0, [name]: checked });
+        } else {
+            setFormTab1({ ...formTab1, [name]: checked });
         }
     };
 
@@ -83,7 +95,6 @@ function PartnersForm() {
                             fontWeight: 500,
                             fontSize: { xs: '12px', sm: '15px', md: '18px' },
                             textTransform: 'none',
-                            mt: { xs: 3, sm: 4, md: 6 }
                         },
                         '& .Mui-selected': {
                             color: '#FCFCFC !important', // ✅ Active tab text color
@@ -138,8 +149,29 @@ function PartnersForm() {
                         <CustomTextField required label="Company Name" name="companyName" value={formTab0.companyName} onChange={handleChange} />
                         <CustomTextField required label="Installation Address" name="installationAddress" value={formTab0.installationAddress} onChange={handleChange} />
                         <CustomTextField required label="Number of Employees" name="numberOfEmployees" type="number" value={formTab0.numberOfEmployees} onChange={handleChange} />
-                        <CustomTextField required label="Are you willing to purchase the vending machine?" name="purchaseMachine" value={formTab0.purchaseMachine} onChange={handleChange} />
-                        <CustomTextField required label="Would you like us to provide a catering partner?" name="cateringPartner" value={formTab0.cateringPartner} onChange={handleChange} />
+
+                        <CustomSelect
+                            required
+                            label="Are you willing to purchase the vending machine?"
+                            name="purchaseMachine"
+                            value={formTab0.purchaseMachine}
+                            onChange={handleChange}
+                            options={[
+                                { value: 'yes', label: 'Yes' },
+                                { value: 'no', label: 'No' },
+                            ]}
+                        />
+                        <CustomSelect
+                            required
+                            label="Would you like us to provide a catering partner?"
+                            name="cateringPartner"
+                            value={formTab0.cateringPartner}
+                            onChange={handleChange}
+                            options={[
+                                { value: 'yes', label: 'Yes' },
+                                { value: 'no', label: 'No' },
+                            ]}
+                        />
                         {/* Contact info */}
                         <CustomTextField required label="Contact Person Full Name" name="contactName" value={formTab0.contactName} onChange={handleChange} />
                         <CustomTextField required label="Email" name="email" type="email" value={formTab0.email} onChange={handleChange} />
@@ -150,14 +182,14 @@ function PartnersForm() {
                                 <Radio
                                     name="agreement"
                                     checked={formTab0.agreement}
-                                    onChange={(e) =>
-                                        setFormTab0({
-                                            ...formTab0,
-                                            agreement: e.target.checked,
-                                        })
-                                    }
+                                    onChange={(e) => handleCheckboxChange(e, 0)} // or 1 for second tab
                                     required
-                                    sx={{ color: '#C2C2C4' }}
+                                    sx={{
+                                        color: '#C2C2C4',
+                                        '&.Mui-checked': {
+                                            color: '#7FEE64', // green when checked
+                                        },
+                                    }}
                                 />
                             }
                             className="bodyRegularText4"
@@ -215,8 +247,29 @@ function PartnersForm() {
                         <CustomTextField required label="Restaurant or Café Name" name="companyName" value={formTab1.companyName} onChange={handleChange} />
                         <CustomTextField required label="Location Address" name="installationAddress" value={formTab1.installationAddress} onChange={handleChange} />
                         <CustomTextField required label="Daily Footfall" name="numberOfEmployees" type="number" value={formTab1.numberOfEmployees} onChange={handleChange} />
-                        <CustomTextField required label="Are you interested in vending solutions?" name="purchaseMachine" value={formTab1.purchaseMachine} onChange={handleChange} />
-                        <CustomTextField required label="Do you offer food or beverages?" name="cateringPartner" value={formTab1.cateringPartner} onChange={handleChange} />
+
+                        <CustomSelect
+                            required
+                            label="Are you interested in vending solutions?"
+                            name="purchaseMachine"
+                            value={formTab1.purchaseMachine}
+                            onChange={handleChange}
+                            options={[
+                                { value: 'yes', label: 'Yes' },
+                                { value: 'no', label: 'No' },
+                            ]}
+                        />
+                        <CustomSelect
+                            required
+                            label="Do you offer food or beverages?"
+                            name="cateringPartner"
+                            value={formTab1.cateringPartner}
+                            onChange={handleChange}
+                            options={[
+                                { value: 'yes', label: 'Yes' },
+                                { value: 'no', label: 'No' },
+                            ]}
+                        />
                         {/* Contact info */}
                         <CustomTextField required label="Contact Name" name="contactName" value={formTab1.contactName} onChange={handleChange} />
                         <CustomTextField required label="Email" name="email" type="email" value={formTab1.email} onChange={handleChange} />
@@ -227,14 +280,14 @@ function PartnersForm() {
                                 <Radio
                                     name="agreement"
                                     checked={formTab1.agreement}
-                                    onChange={(e) =>
-                                        setFormTab1({
-                                            ...formTab1,
-                                            agreement: e.target.checked,
-                                        })
-                                    }
+                                    onChange={(e) => handleCheckboxChange(e, 1)}
                                     required
-                                    sx={{ color: '#C2C2C4' }}
+                                    sx={{
+                                        color: '#C2C2C4',
+                                        '&.Mui-checked': {
+                                            color: '#7FEE64', // green when checked
+                                        },
+                                    }}
                                 />
                             }
                             className="bodyRegularText4"

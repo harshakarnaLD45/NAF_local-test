@@ -145,58 +145,6 @@ const machines = [
         }
       }
     ]
-  }, {
-    img: Machine2, name: 'Fries Machine', button: 'Explore Cotton',
-    icons: [
-      {
-        src: Machine2SmallIcon1, positions: {
-          1500: { top: '200px', left: '10px' },
-          900: { top: '200px', left: '10px' },
-          400: { top: '100px', left: '10px' },
-          0: { top: '70px', left: '0px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon2, positions: {
-          1500: { top: '500px', left: '5px' },
-          900: { top: '480px', left: '5px' },
-          400: { top: '320px', left: '0px' },
-          0: { top: '250px', left: '0px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon3, positions: {
-          1500: { top: '50px', left: '450px' },
-          900: { top: '50px', left: '385px' },
-          400: { top: '25px', left: '260px' },
-          0: { top: '15px', left: '190px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon3, positions: {
-          1500: { top: '300px', left: '440px' },
-          900: { top: '270px', left: '385px' },
-          400: { top: '150px', left: '250px' },
-          0: { top: '125px', left: '180px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon1, positions: {
-          1500: { top: '460px', left: '460px' },
-          900: { top: '410px', left: '400px' },
-          400: { top: '250px', left: '270px' },
-          0: { top: '200px', left: '185px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon4, positions: {
-          1500: { top: '580px', left: '360px' },
-          900: { top: '530px', left: '310px' },
-          400: { top: '355px', left: '200px' },
-          0: { top: '275px', left: '130px' }
-        }
-      }
-    ]
   },
   {
     img: Machine3, name: 'Soft Ice Cream Machine', button: 'Explore Drinks', icons: [
@@ -317,6 +265,58 @@ const machines = [
   {
     img: Machine6, name: 'Return Machine', button: 'Return Machine', icons: [
 
+    ]
+  }, {
+    img: Machine2, name: 'Fries Machine', button: 'Explore Cotton',
+    icons: [
+      {
+        src: Machine2SmallIcon1, positions: {
+          1500: { top: '200px', left: '10px' },
+          900: { top: '200px', left: '10px' },
+          400: { top: '100px', left: '10px' },
+          0: { top: '70px', left: '0px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon2, positions: {
+          1500: { top: '500px', left: '5px' },
+          900: { top: '480px', left: '5px' },
+          400: { top: '320px', left: '0px' },
+          0: { top: '250px', left: '0px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon3, positions: {
+          1500: { top: '50px', left: '450px' },
+          900: { top: '50px', left: '385px' },
+          400: { top: '25px', left: '260px' },
+          0: { top: '15px', left: '190px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon3, positions: {
+          1500: { top: '300px', left: '440px' },
+          900: { top: '270px', left: '385px' },
+          400: { top: '150px', left: '250px' },
+          0: { top: '125px', left: '180px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon1, positions: {
+          1500: { top: '460px', left: '460px' },
+          900: { top: '410px', left: '400px' },
+          400: { top: '250px', left: '270px' },
+          0: { top: '200px', left: '185px' }
+        }
+      },
+      {
+        src: Machine2SmallIcon4, positions: {
+          1500: { top: '580px', left: '360px' },
+          900: { top: '530px', left: '310px' },
+          400: { top: '355px', left: '200px' },
+          0: { top: '275px', left: '130px' }
+        }
+      }
     ]
   },
 ];

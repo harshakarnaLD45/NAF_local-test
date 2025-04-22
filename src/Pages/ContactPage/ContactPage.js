@@ -18,186 +18,188 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Picture1 from '../../assets/Contact/Picture1.png'
 import Picture2 from '../../assets/Contact/Picture2.png'
 import Picture3 from '../../assets/Contact/Picture3.png'
-
-const locations = [
-    {
-        address: (
-            <>
-                DBI Foyer Freiberg,<br />
-                Halsbrückerstrasse 34, 09599<br />
-                Freiberg
-            </>
-        )
-    },
-    {
-        address: (
-            <>
-                Mittweida District Office Building,<br />
-                Am Landratsamt 3, 09648<br />
-                Mittweida
-            </>
-        )
-    },
-    {
-        address: (
-            <>
-                Mittweida District Office Building,<br />
-                Am Landratsamt 3, 09648<br />
-                Mittweida
-            </>
-        )
-    }
-];
-
-const categories = [
-    'General',
-    'Demo Request',
-    'Partnership Inquiry',
-    'Sales Inquiry',
-    'Technical Support',
-    'Franchise Enquiry',
-    'Others',
-];
-
-const faqs = {
-
-    'General About NAF': [
-        {
-            question: 'What is NAF?',
-            answer: 'NAF stands for “New Age of Food” – an innovative food and supply concept that combines food vending machines, sustainable reusable packaging, smart software solutions, and intelligent sales strategies.'
-        },
-
-        {
-            question: 'What is NAF’s goal?',
-            answer: 'Our goal is to rethink gastronomy: 24/7 catering without staff shortages, innovative vending machine solutions, healthy meals, and a financially attractive option for businesses, hotels, public institutions, and more.'
-        },
-        {
-            question: 'Who is behind NAF?',
-            answer: 'NAF was founded by Abdelilah Lamkhizni – who has many years of experience in gastronomy, hospitality, and technology. The company combines culinary know-how with digital solutions.'
-        },
-
-    ],
-
-    'NAF Machines FAQs': [
-        {
-            question: 'What is NAF and what machines do you offer?',
-            answer: 'NAF stands for "New Age of Food" and provides a digital, innovative solution for gastronomy. Our vending machines serve fresh, high-quality meals around the clock — without staff. We offer:',
-            list: [
-                "Gourmet vending machine (“3-minute restaurant”)",
-                "Return machine",
-                "Pizza vending machine",
-                "Soft ice cream machine",
-                "Cotton candy machine",
-                "Popcorn machine",
-                "French fries machine",
-                "Beer dispenser (coming soon)",
-                "Food machines for hotels, factories, gas stations, schools, etc.",
-            ],
-            answerSecond: 'Each machine is equipped with state-of-the-art tech and can be customized. ',
-
-        },
-
-        {
-            question: 'How do the NAF machines work?',
-            answer: 'Our machines feature smart control systems and can be operated contactlessly via card, app, or voucher. Depending on the type, food is served fresh, stored frozen and reheated, or freshly prepared.'
-        },
-        {
-            question: 'Can machines be individually designed?',
-            answer: 'Yes! We offer:'
-        },
-
-    ],
-    'Design & Customization': [
-        {
-            question: 'Can the machine be customized?',
-            answer: 'Yes:',
-            list: [
-                "Standard: With NAF logo, free",
-                "Custom design: €2,000 extra",
-
-            ],
-        },
-
-        {
-            question: 'Is a digital menu display possible?',
-            answer: 'Yes.'
-        },
-
-
-    ],
-    'Reusable System & Return Machines': [
-        {
-            question: 'What reusable solutions does NAF offer?',
-            answer: 'We rely on a sustainable system with reusable containers and return machines.',
-
-        },
-
-        {
-            question: 'How does the return machine work?',
-            answer: 'Customers scan a QR code and return the container. The deposit is automatically assigned via customer card or app.'
-        },
-        {
-            question: 'Are there subsidies for return machines?',
-            answer: 'Yes.'
-        },
-
-
-    ],
-    'Software & Cloud System': [
-        {
-            question: 'What does the NAF Cloud System offer?',
-            answer: '',
-            list: [
-                "Telemetry & live data",
-                "Sales analytics",
-                "Temperature control",
-                "Product management",
-                "Coupon & discount system",
-                "User management & membership cards",
-
-            ],
-            answerSecond: '',
-
-        },
-
-        {
-            question: 'Is there a mobile app?',
-            answer: 'Not yet — but one is in development to allow purchases, coupons, feedback, returns, and payments.'
-        },
-        {
-            question: 'What languages are supported?',
-            answer: 'Multilingual support is included — ideal for hotels, gas stations, or international customers.'
-        },
-
-    ],
-}
-
-const contacts = [
-    {
-        title: 'For Marketing Inquiries',
-        name: 'Odette Lamkhizni',
-        image: Picture1,
-        alt: 'Marketing Contact',
-    },
-    {
-        title: 'For Machine Sales',
-        name: 'Abdelilah Lamkhizni',
-        image: Picture2,
-        alt: 'Sales Contact',
-    },
-    {
-        title: 'For Technical Inquiries',
-        name: 'Sri Satya Sai Kanna Dhulipudi',
-        image: Picture3,
-        alt: 'Technical Contact',
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 function ContactPage() {
+    const { t } = useTranslation();
     const [active, setActive] = useState('submit');
     const [selectedItems, setSelectedItems] = useState([]);
     const [isSubmitform, setIsSubmitform] = useState(true); // default to showing the form
     const [expandedIndex, setExpandedIndex] = useState(null);
+
+    const locations = [
+        {
+            address: (
+                <>
+                    {t('contactus.MachineLocation1text1')}<br />
+                    {t('contactus.MachineLocation1text2')}<br />
+                    {t('contactus.MachineLocation1text3')}
+                </>
+            )
+        },
+        {
+            address: (
+                <>
+                    {t('contactus.MachineLocation2text1')}<br />
+                    {t('contactus.MachineLocation2text2')}<br />
+                    {t('contactus.MachineLocation2text3')}
+                </>
+            )
+        },
+        {
+            address: (
+                <>
+                    {t('contactus.MachineLocation2text1')}<br />
+                    {t('contactus.MachineLocation2text2')}<br />
+                    {t('contactus.MachineLocation2text3')}
+                </>
+            )
+        }
+    ];
+
+    const categories = [
+        t('contactus.General'),
+        t('contactus.DemoRequest'),
+        t('contactus.PartnershipInquiry'),
+        t('contactus.SalesInquiry'),
+        t('contactus.TechnicalSupport'),
+        t('contactus.FranchiseEnquiry'),
+        t('contactus.Others'),
+    ];
+
+    const faqs = {
+
+        'General About NAF': [
+            {
+                question: 'What is NAF?',
+                answer: 'NAF stands for “New Age of Food” – an innovative food and supply concept that combines food vending machines, sustainable reusable packaging, smart software solutions, and intelligent sales strategies.'
+            },
+
+            {
+                question: 'What is NAF’s goal?',
+                answer: 'Our goal is to rethink gastronomy: 24/7 catering without staff shortages, innovative vending machine solutions, healthy meals, and a financially attractive option for businesses, hotels, public institutions, and more.'
+            },
+            {
+                question: 'Who is behind NAF?',
+                answer: 'NAF was founded by Abdelilah Lamkhizni – who has many years of experience in gastronomy, hospitality, and technology. The company combines culinary know-how with digital solutions.'
+            },
+
+        ],
+
+        'NAF Machines FAQs': [
+            {
+                question: 'What is NAF and what machines do you offer?',
+                answer: 'NAF stands for "New Age of Food" and provides a digital, innovative solution for gastronomy. Our vending machines serve fresh, high-quality meals around the clock — without staff. We offer:',
+                list: [
+                    "Gourmet vending machine (“3-minute restaurant”)",
+                    "Return machine",
+                    "Pizza vending machine",
+                    "Soft ice cream machine",
+                    "Cotton candy machine",
+                    "Popcorn machine",
+                    "French fries machine",
+                    "Beer dispenser (coming soon)",
+                    "Food machines for hotels, factories, gas stations, schools, etc.",
+                ],
+                answerSecond: 'Each machine is equipped with state-of-the-art tech and can be customized. ',
+
+            },
+
+            {
+                question: 'How do the NAF machines work?',
+                answer: 'Our machines feature smart control systems and can be operated contactlessly via card, app, or voucher. Depending on the type, food is served fresh, stored frozen and reheated, or freshly prepared.'
+            },
+            {
+                question: 'Can machines be individually designed?',
+                answer: 'Yes! We offer:'
+            },
+
+        ],
+        'Design & Customization': [
+            {
+                question: 'Can the machine be customized?',
+                answer: 'Yes:',
+                list: [
+                    "Standard: With NAF logo, free",
+                    "Custom design: €2,000 extra",
+
+                ],
+            },
+
+            {
+                question: 'Is a digital menu display possible?',
+                answer: 'Yes.'
+            },
+
+
+        ],
+        'Reusable System & Return Machines': [
+            {
+                question: 'What reusable solutions does NAF offer?',
+                answer: 'We rely on a sustainable system with reusable containers and return machines.',
+
+            },
+
+            {
+                question: 'How does the return machine work?',
+                answer: 'Customers scan a QR code and return the container. The deposit is automatically assigned via customer card or app.'
+            },
+            {
+                question: 'Are there subsidies for return machines?',
+                answer: 'Yes.'
+            },
+
+
+        ],
+        'Software & Cloud System': [
+            {
+                question: 'What does the NAF Cloud System offer?',
+                answer: '',
+                list: [
+                    "Telemetry & live data",
+                    "Sales analytics",
+                    "Temperature control",
+                    "Product management",
+                    "Coupon & discount system",
+                    "User management & membership cards",
+
+                ],
+                answerSecond: '',
+
+            },
+
+            {
+                question: 'Is there a mobile app?',
+                answer: 'Not yet — but one is in development to allow purchases, coupons, feedback, returns, and payments.'
+            },
+            {
+                question: 'What languages are supported?',
+                answer: 'Multilingual support is included — ideal for hotels, gas stations, or international customers.'
+            },
+
+        ],
+    }
+
+    const contacts = [
+        {
+            title: t('contactus.personrole1'),
+            name: 'Odette Lamkhizni',
+            image: Picture1,
+            alt: 'Marketing Contact',
+        },
+        {
+            title: t('contactus.personrole2'),
+            name: 'Abdelilah Lamkhizni',
+            image: Picture2,
+            alt: 'Sales Contact',
+        },
+        {
+            title: t('contactus.personrole3'),
+            name: 'Sri Satya Sai Kanna Dhulipudi',
+            image: Picture3,
+            alt: 'Technical Contact',
+        },
+    ];
 
     const [activeCategory, setActiveCategory] = useState('General About NAF');
     const toggleForm = (type) => {
@@ -288,7 +290,7 @@ function ContactPage() {
                             </Box>
                         </Box>
                         <Box sx={{ mt: { xs: 3, sm: 4, md: 6 } }}>
-                            <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>Socials</Typography>
+                            <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>{t('contactus.heroSubTitle3')}</Typography>
                             <Box sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
@@ -344,7 +346,7 @@ function ContactPage() {
                                 },
                             }}
                         >
-                            Submit Form
+                            {t('contactus.SubmitForm')}
                         </Typography>
                         <Typography
                             variant="body1"
@@ -367,7 +369,7 @@ function ContactPage() {
                                 },
                             }}
                         >
-                            Schedule a Call
+                            {t('contactus.ScheduleCall')}
                         </Typography>
                     </Box>
 
@@ -377,7 +379,7 @@ function ContactPage() {
                             <Box sx={{ width: '100%', marginTop: { xs: '10px', sm: '30px', md: '60px' }, display: 'flex', flexDirection: 'column', gap: { xs: '10px', sm: '30px', md: '50px' } }}>
                                 <TextField
                                     className='bodyRegularText3'
-                                    label="E-mail"
+                                    label={t('contactus.Email')}
                                     variant="standard"
                                     required
                                     fullWidth
@@ -403,7 +405,7 @@ function ContactPage() {
                                 />
                                 <TextField
                                     className='bodyRegularText3'
-                                    label="Full Name"
+                                    label={t('contactus.FullName')}
                                     variant="standard"
                                     required
                                     fullWidth
@@ -432,7 +434,7 @@ function ContactPage() {
                             {/* Categories */}
                             <Box sx={{ marginTop: { xs: '10px', sm: '30px', md: '50px' } }}>
                                 <Typography variant="h6" className='bodyRegularText3' sx={{ mb: 3, color: "#FCFCFC" }}>
-                                    How Can We Help?*
+                                    {t('contactus.typeofHelp')}
                                 </Typography>
                                 <Stack direction="row" flexWrap="wrap" gap={2}>
                                     {categories.map((label) => {
@@ -499,13 +501,13 @@ function ContactPage() {
                                         control={<Checkbox sx={{ color: '#FCFCFC', borderRadius: '50px' }} />}
                                         label={
                                             <Typography variant="body2" className='bodyRegularText5' sx={{ color: '#FCFCFC' }}>
-                                                I Understand that NAF Germany will securely hold my data in accordance with their{' '}
+                                                {t('contactus.privacypolicy1')}{' '}
                                                 <Link
                                                     href="/privacy-policy"
                                                     underline="hover"
                                                     sx={{ color: '#161616', textDecorationColor: '#161616', textDecoration: 'underline' }}
                                                 >
-                                                    privacy policy
+                                                    {t('contactus.privacypolicy2')}
                                                 </Link>
                                             </Typography>
                                         }
@@ -521,7 +523,7 @@ function ContactPage() {
                                     zIndex: 1,
                                     marginBottom: { xs: "1rem", sm: "1rem", md: "2rem" }
                                 }}>
-                                    <AnimateButton text1='SUBMIT' text2='NOW' />
+                                    <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.NOW')} />
                                 </Box>
                             </Box>
                         </>
@@ -531,9 +533,19 @@ function ContactPage() {
                 </Box>
             </Box>
 
-            <Container className='section-container' sx={{ display: 'flex', justifyContent: 'space-between', gap: 4, flexWrap: 'wrap' }}>
+            <Box className="section-container" sx={{
+                display: 'flex',
+                justifyContent: 'center', // Center the items in the container
+                gap: 4,
+                flexWrap: 'wrap',
+            }}>
                 {contacts.map((contact, index) => (
-                    <Box key={index} sx={{ flex: 1, minWidth: 250 }}>
+                    <Box key={index} sx={{
+                        flex: { xs: '0 0 100%', sm: '0 0 100%', md: '0 0 25%' },
+                        display: 'flex',
+                        flexDirection: 'column',
+                        mb: 4,
+                    }}>
                         <Typography className='bodyMediumText1' color='#FCFCFC' gutterBottom>
                             {contact.title}
                         </Typography>
@@ -557,11 +569,11 @@ function ContactPage() {
                         </Box>
                     </Box>
                 ))}
-            </Container>
+            </Box>
 
             <Box className="section-container">
                 <Typography className='headings-h2' sx={{ width: { xs: '80%', sm: '50%', md: '42%' }, mb: { xs: 2, sm: 3, md: 5 } }}>
-                    Or Reach Out to Us Directly
+                    {t('contactus.reachDirectly')}
                 </Typography>
                 <Box
                     sx={{
@@ -573,7 +585,7 @@ function ContactPage() {
                         {/* Column 1: Text */}
                         <Grid item xs={6} sm={6} lg={3}>
                             <Typography className='bodyRegularText4' sx={{ color: '#C2C2C4' }}>
-                                Location
+                                {t('contactus.location')}
                             </Typography>
                         </Grid>
 
@@ -616,7 +628,7 @@ function ContactPage() {
                         {/* First column: Title */}
                         <Grid item xs={12} sm={6} lg={3}>
                             <Typography className="bodyRegularText4" sx={{ color: '#C2C2C4' }}>
-                                Machine Locations
+                                {t('contactus.MachineLocation')}
                             </Typography>
                         </Grid>
 
@@ -641,7 +653,7 @@ function ContactPage() {
                 {/* Left Column - Categories */}
                 <Box sx={{ width: { xs: '95%', sm: '35%', md: '35%' } }}>
                     <Typography className='headings-h2' sx={{ color: '#FCFCFC', mb: 4 }}>
-                        Curious to Know More?
+                        {t('contactus.Curious')}
                     </Typography>
                     <Box sx={{ maxWidth: '365px' }}>
                         <Box sx={{ borderBottom: '0.5px dashed #525252', my: 1 }} />

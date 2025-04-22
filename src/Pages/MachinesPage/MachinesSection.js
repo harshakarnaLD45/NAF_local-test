@@ -10,7 +10,7 @@ import MachineImage6 from '../../assets/Home/Machine6.png';
 import MachineImage7 from '../../assets/Home/Machine7.png';
 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
-import { MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
+import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
 
 const MachinesSection = ({ selectedMachine }) => {
     const theme = useTheme();
@@ -52,24 +52,6 @@ const MachinesSection = ({ selectedMachine }) => {
             ],
             features: [
                 { text: 'AI-enhanced baking', icon: <MachineSmallIcon5 /> },
-                { text: 'Fully automated', icon: <MachineSmallIcon6 /> },
-                { text: 'Self-service', icon: <MachineSmallIcon7 /> },
-            ],
-            price: 27500,
-            monthly: 500,
-        },
-        {
-            image: MachineImage2,
-            title: 'Fries Machine',
-            subtitle: 'Oil Management AI',
-            description: 'Delivers fresh, crispy fries in 3 minutes. Stainless steel fryer. AI optimized oil use.',
-            idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Amusement Parks' },
-                { icon: <MachineSmallIcon2 />, label: 'Malls' },
-                { icon: <MachineSmallIcon3 />, label: 'Cinemas' },
-            ],
-            features: [
-                { text: 'AI oil control baking', icon: <MachineSmallIcon5 /> },
                 { text: 'Fully automated', icon: <MachineSmallIcon6 /> },
                 { text: 'Self-service', icon: <MachineSmallIcon7 /> },
             ],
@@ -143,6 +125,24 @@ const MachinesSection = ({ selectedMachine }) => {
             price: 14500,
             monthly: 450,
         },
+        {
+            image: MachineImage2,
+            title: 'Fries Machine',
+            subtitle: 'Oil Management AI',
+            description: 'Delivers fresh, crispy fries in 3 minutes. Stainless steel fryer. AI optimized oil use.',
+            idealFor: [
+                { icon: <MachineSmallIcon1 />, label: 'Amusement Parks' },
+                { icon: <MachineSmallIcon2 />, label: 'Malls' },
+                { icon: <MachineSmallIcon3 />, label: 'Cinemas' },
+            ],
+            features: [
+                { text: 'AI oil control baking', icon: <MachineSmallIcon5 /> },
+                { text: 'Fully automated', icon: <MachineSmallIcon6 /> },
+                { text: 'Self-service', icon: <MachineSmallIcon7 /> },
+            ],
+            price: 27500,
+            monthly: 500,
+        },
     ];
 
     const visibleMachines = selectedMachine === "All"
@@ -168,7 +168,10 @@ const MachinesSection = ({ selectedMachine }) => {
                         {/* Left Side - Image + Button */}
                         <Box sx={{ flex: 1, display: 'flex', gap: 3, flexDirection: 'column', alignItems: 'center' }}>
                             <img src={machine.image} alt={machine.title} style={{ maxWidth: '100%', height: 'auto' }} />
-                            <AnimateButton />
+                            <Box sx={{ display: "flex", justifyContent: "center", mt: 2, gap: 6 }}>
+                                <button className="download-btn"><DownloadIcon /></button>
+                                <AnimateButton />
+                            </Box>
                         </Box>
 
                         {/* Right Side - Details */}
@@ -220,7 +223,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                             PaperProps: {
                                                 sx: {
                                                     backgroundColor: '#262626',
-                                                    color: '#C2C2C4',          
+                                                    color: '#C2C2C4',
                                                 },
                                             },
                                         }}

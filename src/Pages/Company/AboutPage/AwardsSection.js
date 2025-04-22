@@ -1,17 +1,14 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const AwardsSection = () => {
+    const { t } = useTranslation();
+
     // Award data for mapping
     const awardsData = [
-        {
-            year: "2023",
-            title: 'Founder\'s Prize "Lively City Center"',
-        },
-        {
-            year: "2024",
-            title: 'Founder\'s Prize "Lively City Center"',
-        },
+        { year: t('about.year1'), title: t('about.award1') },
+        { year: t('about.year2'), title: t('about.award1') },
     ];
 
     return (
@@ -23,7 +20,7 @@ const AwardsSection = () => {
                 className="headings-h2"
                 sx={{ mb: { xs: 3, sm: 5, md: 8 } }}
             >
-                Awards & Recognitions
+                {t('about.AwardsRecognitions')}
             </Typography>
 
             {/* Awards Grid */}

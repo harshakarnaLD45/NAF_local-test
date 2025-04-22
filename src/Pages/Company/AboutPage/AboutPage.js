@@ -6,8 +6,10 @@ import TextSection from './TextSection';
 import TeamSection from './TeamSection';
 import AwardsSection from './AwardsSection';
 import ValuesSection from './ValuesSection';
+import { useTranslation } from 'react-i18next';
 
 function AboutPage() {
+    const { t } = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,35 +22,35 @@ function AboutPage() {
                 {/* Row 1: Title + Star + Description */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text white-text">
-                        WE’ RE THE
+                        {t('about.heroTitleline1')}
                     </Typography>
                     <img src={StarIcon} alt='star' className="star-icon" />
                     <Typography className="bodyRegularText3 white-text description">
-                        A prominent provider of innovative vending machine solutions, committed to delivering cutting-edge products and services that meet the evolving needs of consumers and businesses.
+                        {t('about.heroSubTitleline')}
                     </Typography>
                 </Box>
 
                 {/* Row 2 */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text green-text">
-                        NEW AGE OF FOOD,
+                        {t('about.heroTitleline2')}
                     </Typography>
                     <Typography className="headings-h1 responsive-text white-text">
-                        YOUR
+                        {t('about.YOUR')}
                     </Typography>
                 </Box>
 
                 {/* Row 3 */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text white-text">
-                        PARTNER FOR INNOVATIVE
+                        {t('about.heroTitleline3')}
                     </Typography>
                 </Box>
 
                 {/* Row 4 */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text white-text">
-                        VENDING SOLUTIONS
+                        {t('about.heroTitleline4')}
                     </Typography>
                     <Box
                         sx={{
@@ -72,7 +74,7 @@ function AboutPage() {
                     </Box>
                 </Box>
                 <Typography className="bodyRegularText3 white-text description1">
-                    A prominent provider of innovative vending machine solutions, committed to delivering cutting-edge products and services that meet the evolving needs of consumers and businesses.
+                    {t('about.heroSubTitleline')}
                 </Typography>
             </Box>
 
@@ -94,9 +96,7 @@ function AboutPage() {
                     alignItems: 'center',
                 }}
             >
-
             </Box>
-
             <TextSection />
             <TeamSection />
             <AwardsSection />

@@ -22,7 +22,7 @@ const ArrowButton = ({ onClick }) => {
   const iconStyle = {
     width: "20.748px",
     fontSize: '2em',
-    transition: ' transform 0.5s ease', // Changed 'rotate' to 'transform'
+    transition: ' transform 0.2s ease', // Changed 'rotate' to 'transform'
   };
 
   // Use state to handle hover

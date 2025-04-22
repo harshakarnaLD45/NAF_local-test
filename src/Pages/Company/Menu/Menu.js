@@ -5,8 +5,10 @@ import "./Menu.css";
 import Unlock from "./Unlock";
 import VMMenu from "./VMMenu";
 import Allergen from "./Allergen";
+import { useTranslation } from "react-i18next";
 
 const Menu = () => {
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,8 +41,7 @@ const Menu = () => {
                 textAlign: { xs: "center", sm: "left", md: "left" }, // Center on smaller screens, align left on larger screens
                 mb: { xs: 2, sm: 3, md: 4 },
               }}
-            >
-              What's Vending Now? Explore Our Live & Monthly Menus!
+            >{t('menu.menuherotitle')}
             </Typography>
             <Typography
               variant="body1"
@@ -51,7 +52,7 @@ const Menu = () => {
                 mb: { xs: 3, sm: 4, md: 5 },
               }}
             >
-              Find Fresh Food at a Vending Machine Near You
+             {t('menu.menuheroSubtitle1')}
             </Typography>
 
             <Box

@@ -7,42 +7,44 @@ import {
     ValuesIcon3,
     ValuesIcon4,
 } from "../../../Componenets/CustomIcons";
-
-const maintenanceServices = [
-    {
-        valueIcon: <ValuesIcon1 />,
-        title: "Innovation",
-        desc: "We innovate to create cutting-edge solutions for your business needs.",
-        rotation: -10.54,
-        position: { top: "5%", left: "-15%" },
-    },
-    {
-        valueIcon: <ValuesIcon2 />,
-        title: "Quality",
-        desc: "We deliver high-quality, reliable services built for lasting success.",
-        rotation: 15,
-        position: { top: "15%", left: "10%" },
-    },
-    {
-        valueIcon: <ValuesIcon3 />,
-        title: "Reliability",
-        desc: "We ensure dependable solutions with maximum operational efficiency.",
-        rotation: -22.85,
-        position: { top: "15%", left: "40%" },
-    },
-    {
-        valueIcon: <ValuesIcon4 />,
-        title: "Customer Satisfaction",
-        desc: "We prioritize customer needs, exceeding expectations with every interaction.",
-        rotation: 18.33,
-        position: { top: "20%", left: "65%" },
-    },
-];
+import { useTranslation } from "react-i18next";
 
 const ValuesSection = () => {
+    const { t } = useTranslation();
     const sectionRef = useRef(null);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [hasAnimated, setHasAnimated] = useState(false);
+
+    const maintenanceServices = [
+        {
+            valueIcon: <ValuesIcon1 />,
+            title: t('about.ValueTitle1'),
+            desc: t('about.ValuesubTitle1'),
+            rotation: -10.54,
+            position: { top: "5%", left: "-15%" },
+        },
+        {
+            valueIcon: <ValuesIcon2 />,
+            title: t('about.ValueTitle2'),
+            desc: t('about.ValuesubTitle2'),
+            rotation: 15,
+            position: { top: "15%", left: "10%" },
+        },
+        {
+            valueIcon: <ValuesIcon3 />,
+            title: t('about.ValueTitle3'),
+            desc: t('about.ValuesubTitle3'),
+            rotation: -22.85,
+            position: { top: "15%", left: "40%" },
+        },
+        {
+            valueIcon: <ValuesIcon4 />,
+            title: t('about.ValueTitle4'),
+            desc: t('about.ValuesubTitle4'),
+            rotation: 18.33,
+            position: { top: "20%", left: "65%" },
+        },
+    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -94,7 +96,7 @@ const ValuesSection = () => {
                     className="headings-h2"
                     sx={{ color: "#FCFCFC", textAlign: "center" }}
                 >
-                    Our Values
+                    {t('about.OurValues')}
                 </Typography>
 
                 <Typography
@@ -102,7 +104,7 @@ const ValuesSection = () => {
                     className="bodyRegularText3"
                     sx={{ color: "#C2C2C4", textAlign: "center" }}
                 >
-                    The core principles that drive our business forward
+                     {t('about.OurValuesubTilte')}
                 </Typography>
 
                 <Box

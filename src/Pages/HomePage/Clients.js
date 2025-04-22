@@ -16,9 +16,9 @@ const Clients = () => {
   return (
     <Box sx={{ overflow: "hidden" }}>
       <Box className="section-container">
-        <ScrollMaskHeadings text={t("Home.OurClientsTitle")} />
+        <ScrollMaskHeadings text={t("Home.ourClientsTitle")} />
         <Box sx={{ maxWidth: { xs: "100%", md: "640px" } }}>
-          <ScrollMaskText text={t("Home.OurClientsSubTitle")} />
+          <ScrollMaskText text={t("Home.ourClientsSubTitle")} />
         </Box>
       </Box>
 

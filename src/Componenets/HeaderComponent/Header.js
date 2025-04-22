@@ -67,22 +67,39 @@ const Header = () => {
     handleMenuClose();
   };
 
-  // Handle outside click to close menu
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        handleMenuClose(); // Close menu when clicking outside
-      }
-    };
+  // // Handle outside click to close menu
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+  //       handleMenuClose(); // Close menu when clicking outside
+  //     }
+  //   };
 
-    if (anchorEl) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
+  //   if (anchorEl) {
+  //     document.addEventListener('mousedown', handleClickOutside);
+  //   }
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [anchorEl]);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, [anchorEl]);
+  
+    // Close menu on scroll if it's open
+    useEffect(() => {
+      const handleScroll = () => {
+        if (anchorEl) {
+          handleMenuClose(); // Close menu on scroll
+        }
+      };
+  
+      // Listen for scroll events
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        // Cleanup event listener
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [anchorEl]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -110,6 +127,7 @@ const Header = () => {
         alt="New Age Logo"
         src={Naflogo}
       />
+      <Box></Box>
 
       <Box data-cursor="hover"
         className='mobile-view1'
@@ -208,7 +226,7 @@ const Header = () => {
                 <option value="pl" className='bodyRegularText3'>POL</option>
               </select>
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
               {[
                 { label: 'Home', path: '/' },
                 { label: 'Vending Machines', path: '/machine' },

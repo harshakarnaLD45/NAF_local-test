@@ -5,17 +5,11 @@ import SlotCard from './SlotCard';
 import { Box, Grid, Typography, Button, CircularProgress, useMediaQuery, useTheme } from '@mui/material';
 import LocationModal from './LocationModal';
 import DietaryModal from './DietaryModal';
+import { useTranslation } from 'react-i18next';
 
-const tags = [
-    { IconComponent: VegetarianIcon, label: "Vegetarian" },
-    { IconComponent: VeganIcon, label: "Vegan" },
-    { IconComponent: FishIcon, label: "Fish-Free" },
-    { IconComponent: GlutenIcon, label: "Gluten-Free" },
-    { IconComponent: LactoseIcon, label: "Lactose-Free" },
-    { IconComponent: ProteinIcon, label: "High Protein" },
-];
 
 function VMMenu() {
+    const { t } = useTranslation();
     const [menuData, setMenuData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -27,10 +21,18 @@ function VMMenu() {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // sm and below (mobile)
 
+    const tags = [
+        { IconComponent: VegetarianIcon, label: t('menu.Vegetarian') },
+        { IconComponent: VeganIcon,      label: t('menu.FishFree') },
+        { IconComponent: FishIcon,       label: t('menu.GlutenFree') },
+        { IconComponent: GlutenIcon,     label: t('menu.LactoseFree') },
+        { IconComponent: LactoseIcon,    label: t('menu.HighProtein') },
+        { IconComponent: ProteinIcon,    label: t('menu.vegan') },
+    ];
     const allSlots = menuData.flatMap((aisle) => aisle.slotItems);
 
     // Determine how many items to show in 4 rows based on screen
-    const itemsPerRow = isSmallScreen ? 1 : 2; // 1 on mobile, 2 on tablet/desktop
+    const itemsPerRow = isSmallScreen ? 1 : 4; // 1 on mobile, 2 on tablet/desktop
     const [visibleCount, setVisibleCount] = useState(itemsPerRow * 4);
 
     // const visibleSlots = showAll ? allSlots : allSlots.slice(0, maxVisibleItems);
@@ -91,7 +93,7 @@ function VMMenu() {
         <Box className='section-container'>
             {/* Intro Text */}
             <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4' }}>
-                Explore our live inventory to see what delicious food and snacks are currently available in our vending machines throughout the city. Check prices, discover special offers, and find the perfect treat to satisfy your cravings.
+            {t('menu.menuheroSubtitle2')}
             </Typography>
 
             {/* Location and Dietary Buttons */}
@@ -112,7 +114,7 @@ function VMMenu() {
                     endIcon={<MapIcon />}
                 >
                     <Typography variant="h6" color='#FCFCFC' sx={{ mr: 4 }} className='bodyRegularText3'>
-                        Select Machine Location
+                    {t('menu.SelectMachineLocation')}
                     </Typography>
                 </Button>
                 <Button
@@ -131,7 +133,7 @@ function VMMenu() {
                     endIcon={<DietaryIcon />}
                 >
                     <Typography variant="h6" color='#FCFCFC' sx={{ mr: 4 }} className='bodyRegularText3'>
-                        Dietary Preferences
+                    {t('menu.DietaryPreferences')}
                     </Typography>
                 </Button>
             </Box>
@@ -153,7 +155,7 @@ function VMMenu() {
                             sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
                             onClick={() => setVisibleCount(prev => prev + itemsPerRow * 2)}
                         >
-                            View More
+                            {t('menu.ViewMore')}
                         </Button>
                     ) : (
                         <Button className='bodyRegularText3'
@@ -161,7 +163,7 @@ function VMMenu() {
                             sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
                             onClick={() => setVisibleCount(itemsPerRow * 4)}
                         >
-                            View Less
+                             {t('menu.ViewLess')}
                         </Button>
                     )}
                 </Box>

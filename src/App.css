@@ -9,13 +9,18 @@
 }
 
 @font-face {
-  font-family: TrapSemiBold;
-  src: url(../public/Trap-SemiBold.otf);
+  font-family: PowerGroteskTrialBold;
+  src: url(../public/PowerGroteskTrial-Bold.otf);
 }
 
 @font-face {
-  font-family: PowerGroteskTrialBold;
-  src: url(../public/PowerGroteskTrial-Bold.otf);
+  font-family: ShantellSans;
+  src: url(../public/ShantellSans-Regular.ttf);
+}
+
+.css-13rd1mj-MuiFormLabel-root-MuiInputLabel-root,
+.css-5lrzbe-MuiFormLabel-root-MuiInputLabel-root {
+  font-family: SatoshiRegular !important;
 }
 
 * {
@@ -59,6 +64,15 @@ body {
 
 .headings-h4 {
   font-size: 43px !important;
+}
+
+.shantellSansFont {
+  font-family: ShantellSans !important;
+  color: #C2C2C4;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .bodyRegularText1,
@@ -133,6 +147,7 @@ body {
   }
 
   .bodyRegularText2,
+  .shantellSansFont,
   .bodyMediumText1 {
     font-size: 35px !important;
   }
@@ -175,6 +190,7 @@ body {
   }
 
   .bodyRegularText2,
+  .shantellSansFont,
   .bodyMediumText1 {
     font-size: 24px !important;
   }
@@ -229,6 +245,7 @@ body {
   }
 
   .bodyRegularText2,
+  .shantellSansFont,
   .bodyMediumText1 {
     font-size: 20px !important;
   }
@@ -276,6 +293,7 @@ body {
   }
 
   .bodyRegularText2,
+  .shantellSansFont,
   .bodyMediumText1 {
     font-size: 18px !important;
   }
@@ -323,6 +341,7 @@ body {
   }
 
   .bodyRegularText2,
+  .shantellSansFont,
   .bodyMediumText1 {
     font-size: 16px !important;
   }

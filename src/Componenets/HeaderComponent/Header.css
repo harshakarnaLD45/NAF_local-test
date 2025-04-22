@@ -26,7 +26,12 @@
 .main-logo {
   width: 70px;
   height: 70px;
+  /* position: fixed; */
   margin-top: 16px;
+  top: 20px;
+  left: 45px;
+  z-index: 1100;
+  cursor: pointer;
 }
 
 .menu-container {
@@ -64,6 +69,7 @@
 .arrow-icon {
   font-weight: bold;
   color: #1A1A1A;
+  transition: transform 0.3s ease-in-out;
 }
 
 .menu-item {
