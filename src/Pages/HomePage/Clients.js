@@ -15,15 +15,15 @@ const Clients = () => {
 
   return (
     <Box sx={{ overflow: "hidden" }}>
-      <Box className="section-container">
+      <Box className="section-container" sx={{ pb: 0, mb: 0 }}>
         <ScrollMaskHeadings text={t("Home.ourClientsTitle")} />
-        <Box sx={{ maxWidth: { xs: "100%", md: "640px" } }}>
+        <Box sx={{ maxWidth: { xs: "100%", md: "640px" }, mt: '16px' }}>
           <ScrollMaskText text={t("Home.ourClientsSubTitle")} />
         </Box>
       </Box>
 
       {/* Logo Slider */}
-      <Box sx={{ overflow: "hidden", width: "100%", mt: 6 }}>
+      <Box sx={{ overflow: "hidden", width: "100%", mt: '20px' }}>
         <Box
           className="slider-track"
           sx={{

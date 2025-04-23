@@ -68,7 +68,7 @@ const TakeControl = () => {
           {/* <Typography sx={{ color: '#C2C2C4', mb: 3, mt: 2 }} className='bodyRegularText3'>
             Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.
           </Typography> */}
-          <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
+          <Box sx={{ mb: 3, mt: '16px' }} data-cursor="hover">
             <ScrollMaskText text={t('Home.CloudSystemSubTitle')}
             />
           </Box>

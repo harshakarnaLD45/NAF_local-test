@@ -204,6 +204,9 @@ const WhatsNew = () => {
               }}
             >
               {post.title}
+              <Typography className="bodyRegularText4" sx={{ color: '#444444' }}>
+                Blog
+              </Typography>
             </Typography>
             <Box
               component="img"

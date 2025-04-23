@@ -351,7 +351,7 @@ function Explore() {
           <div data-cursor="hover" className="main-sub-container1 main-sub-containerss">
             <ScrollMaskHeadings text={t('Home.exploreTitle')} />
           </div>
-          <div data-cursor="hover" className='main-sub-container1 main-sub-containerss'>
+          <div style={{ marginTop: '16px' }} data-cursor="hover" className='main-sub-container1 main-sub-containerss'>
             <ScrollMaskText text={t('Home.exploreSubTitle')} />
           </div>
         </Box>
@@ -362,7 +362,7 @@ function Explore() {
 
       {/* Swiper Machines */}
       <Box className='machine-sec-homepage'>
-        <Swiper
+        < Swiper
           modules={[FreeMode, Mousewheel]}
           spaceBetween={16}
           slidesPerView={'auto'}
@@ -386,60 +386,63 @@ function Explore() {
                   overflow: 'hidden',
                 }}
               >
-                {/* Background icons on hover */}
-                <Box
-                  className="icon-background"
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    zIndex: 1,
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease',
-                    pointerEvents: 'none',
-                  }}
-                >
-                  {machine.icons.map((Icon, i) => {
-                    const { top, left } = getIconPosition(Icon.positions);
-                    return (
-                      <Box
-                        key={i}
-                        sx={{
-                          position: 'absolute',
-                          top,
-                          left,
-                          width: { xs: 10, sm: 20, md: 30 },
-                          height: { xs: 10, sm: 20, md: 30 },
-                          animation: 'floatIcon 4s ease-in-out infinite',
-                          svg: { width: '100%', height: '100%' },
-                        }}
-                      >
-                        <img src={Icon.src} alt='icons' />
-                      </Box>
-                    )
-                  })}
+                <Box sx={{
+                  height: { xs: 320, sm: 400, md: 575, xl: 650 },
+                }}>
+                  {/* Background icons on hover */}
+                  {/* <Box
+                    className="icon-background"
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      zIndex: 1,
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease',
+                      pointerEvents: 'none',
+                    }}
+                  >
+                    {machine.icons.map((Icon, i) => {
+                      const { top, left } = getIconPosition(Icon.positions);
+                      return (
+                        <Box
+                          key={i}
+                          sx={{
+                            position: 'absolute',
+                            top,
+                            left,
+                            width: { xs: 10, sm: 20, md: 30 },
+                            height: { xs: 10, sm: 20, md: 30 },
+                            animation: 'floatIcon 4s ease-in-out infinite',
+                            svg: { width: '100%', height: '100%' },
+                          }}
+                        >
+                          <img src={Icon.src} alt='icons' />
+                        </Box>
+                      )
+                    })}
+                  </Box> */}
+
+                  {/* Machine image */}
+                  <Box
+                    component="img"
+                    src={machine.img}
+                    alt={machine.name}
+                    sx={{
+                      // height: { xs: 250, sm: 300, md: 450, xl: 500 },
+                      width: { xs: 200, sm: 250, md: 350, xl: 400 },
+                      p: { xs: 3, sm: 4, md: 5 },
+                      transition: 'transform 0.3s ease',
+                      cursor: 'grab',
+                      zIndex: 2,
+                      '&:hover': {
+                        transform: 'scale(1.05)',
+                      },
+                    }}
+                  />
                 </Box>
-
-                {/* Machine image */}
-                <Box
-                  component="img"
-                  src={machine.img}
-                  alt={machine.name}
-                  sx={{
-                    height: { xs: 250, sm: 300, md: 450, xl: 500 },
-                    width: { xs: 200, sm: 250, md: 350, xl: 400 },
-                    p: { xs: 3, sm: 4, md: 5 },
-                    transition: 'transform 0.3s ease',
-                    cursor: 'grab',
-                    zIndex: 2,
-                    '&:hover': {
-                      transform: 'scale(1.05)',
-                    },
-                  }}
-                />
-
                 {/* Name and button */}
                 <Box
                   sx={{
@@ -478,7 +481,7 @@ function Explore() {
     }
   `}
       </style>
-    </Box>
+    </Box >
   );
 }
 

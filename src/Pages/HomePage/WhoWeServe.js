@@ -50,46 +50,44 @@ const WhoWeServe = () => {
     ];
 
     return (
-        <div className='whoweServe-sec'>
+        <div className='whoweServe-sec section-container'>
             <Box sx={{ position: 'relative' }} className='whoweServe-left-sec'>
                 <Box sx={{
-                    position: 'sticky', marginTop: '150px', top: '100px', // adjust this based on your layout / header height
+                    position: 'sticky', top: '100px',
                     zIndex: 10,
                 }}>
-                    {/* <Typography variant='h1' className='headings-h2 whoweServe-left-sec1-text'>
-                        Who We Serve
-                    </Typography> */}
                     <ScrollMaskHeadings text={t('Home.serveTitle')} />
-                    {/* <Typography color='#C2C2C4' variant='h1' className='bodyRegularText3 whoweServe-left-sec2-text'>
-                        NAF Germany provides customized vending solutions to a diverse range of industries. We understand the unique needs of each sector and offer tailored solutions to enhance convenience, boost efficiency, and improve customer satisfaction.
-                    </Typography> */}
-                    <Box className='whoweServe-left-sec2-text'>
+                    <Box className='whoweServe-left-sec2-text' sx={{ mt: '16px' }}>
                         <ScrollMaskText text={t('Home.serveSubTitle')} />
                     </Box>
                 </Box>
             </Box>
-            <Box className='whoweServe-right-sec ' sx={{ paddingTop: '150px' }}>
-                {/* <Box className='whoweServe-right-sec1'> */}
-                <Box className='whoweServe-right-sec1'>
-
+            <Box className='whoweServe-right-sec'>
+                {/* Desktop/Tablet View (unchanged) */}
+                <Box
+                    className='whoweServe-right-sec1'
+                    sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column', gap: '24px' }}
+                >
                     {serveCards1.map((card) => (
                         <Box
                             key={card.id}
-                            className="whoweServe-right-card-sec1"
                             sx={{
                                 backgroundImage: `url(${card.image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                padding: '30px 20px',
-                                // width: '450px',
-                                // height: '450px',
+                                width: {
+                                    sm: '85%',
+                                    md: '89%',
+                                    xl: '91%',
+                                },
+                                aspectRatio: '1 / 1',
                                 alignItems: 'end',
                                 display: 'flex',
-                                // justifyContent: 'center',
+                                borderRadius: '24px',
+                                padding: '30px 20px',
                             }}
                         >
                             <Typography
-                                sx={{ alignSelf: 'end' }}
                                 variant="h1"
                                 color="#FCFCFC"
                                 className="bodyMediumText1 whoweServe-right-sec1-text"
@@ -98,29 +96,32 @@ const WhoWeServe = () => {
                             </Typography>
                         </Box>
                     ))}
-
-
                 </Box>
-                <Box className='whoweServe-right-sec1 whoweServe-right-sec2'>
 
+                <Box
+                    className='whoweServe-right-sec1 whoweServe-right-sec2'
+                    sx={{ display: { xs: 'none', sm: 'flex' }, flexDirection: 'column', gap: '24px' }}
+                >
                     {serveCards2.map((card) => (
                         <Box
                             key={card.id}
-                            className="whoweServe-right-card-sec1"
                             sx={{
                                 backgroundImage: `url(${card.image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                padding: '30px 20px',
-                                // width: '450px',
-                                // height: '450px',
+                                width: {
+                                    sm: '85%',
+                                    md: '89%',
+                                    xl: '91%',
+                                },
+                                aspectRatio: '1 / 1',
                                 alignItems: 'end',
                                 display: 'flex',
-                                // justifyContent: 'center',
+                                borderRadius: '24px',
+                                padding: '30px 20px',
                             }}
                         >
                             <Typography
-                                sx={{ alignSelf: 'end' }}
                                 variant="h1"
                                 color="#FCFCFC"
                                 className="bodyMediumText1 whoweServe-right-sec1-text"
@@ -129,10 +130,56 @@ const WhoWeServe = () => {
                             </Typography>
                         </Box>
                     ))}
+                </Box>
 
-
+                {/* Mobile View (scrollable slides) */}
+                <Box
+                    className='whoweServe-mobile-slides'
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        // overflowX: 'scroll',
+                        // scrollSnapType: 'x mandatory',
+                        gap: '20px',
+                        paddingBottom: '16px',
+                    }}
+                >
+                    {[serveCards1, serveCards2].map((group, index) => (
+                        <Box
+                            key={index}
+                            sx={{
+                                minWidth: '90%',
+                            }}
+                        >
+                            {group.map((card) => (
+                                <Box
+                                    key={card.id}
+                                    sx={{
+                                        backgroundImage: `url(${card.image})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        width: '90%',
+                                        aspectRatio: '1 / 1',
+                                        alignItems: 'end',
+                                        display: 'flex',
+                                        borderRadius: '24px',
+                                        padding: '30px 20px',
+                                        mb: '20px',
+                                    }}
+                                >
+                                    <Typography
+                                        variant="h1"
+                                        color="#FCFCFC"
+                                        className="bodyMediumText1 whoweServe-right-sec1-text"
+                                    >
+                                        {card.title}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    ))}
                 </Box>
             </Box>
+
         </div>
     )
 }

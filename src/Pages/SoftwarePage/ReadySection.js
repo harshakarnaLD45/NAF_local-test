@@ -9,241 +9,274 @@ import image6 from '../../assets/software/ball (5).png';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import { Box, Typography } from "@mui/material";
 
-// Utility to debounce resize event
-const debounceResize = (callback, delay) => {
-  let timeout;
-  return () => {
-    clearTimeout(timeout);
-    timeout = setTimeout(callback, delay);
-  };
-};
-
 const ReadySection = () => {
-  const [containerSize, setContainerSize] = useState({
-    width: window.innerWidth * 0.9,
-    height: window.innerHeight * 0.9,
-  });
-
-  useEffect(() => {
-    const handleResize = debounceResize(() => {
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-
-      const heightRatio = screenWidth < 480 ? 0.5 : 0.9;
-
-      setContainerSize({
-        width: screenWidth * 0.9,
-        height: screenHeight * heightRatio,
-      });
-    }, 200);
-
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initialize resize logic
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint } = Matter;
-
-    const engine = Engine.create();
-    const { world } = engine;
-
-    const sectionWidth = containerSize.width;
-    const sectionHeight = containerSize.height;
-
-    const render = Render.create({
-      element: document.getElementById("physics-container"),
-      engine: engine,
-      options: {
-        width: sectionWidth,
-        height: sectionHeight,
-        wireframes: false,
-        background: "transparent",
-      },
+    const [containerSize, setContainerSize] = useState({
+        width: window.innerWidth * 0.9,
+        height: window.innerHeight * 0.9,
     });
 
-    let mouseConstraint;
-    if (sectionWidth > 0) {
-      const mouse = Mouse.create(render.canvas);
-      mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-          stiffness: 0.9,
-          render: {
-            visible: false,
-          },
-        },
-      });
-      World.add(world, mouseConstraint);
-    }
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
 
-    const wallThickness = 100;
+            // Apply different height ratio for small screens
+            const heightRatio = screenWidth < 480 ? 0.5 : 0.9;
 
-    // Adding walls to the world
-    const ground = Bodies.rectangle(
-      sectionWidth / 2,
-      sectionHeight + wallThickness / 2,
-      sectionWidth,
-      wallThickness,
-      { isStatic: true, render: { fillStyle: "transparent" } }
-    );
-    const ceiling = Bodies.rectangle(
-      sectionWidth / 2,
-      -wallThickness / 2,
-      sectionWidth,
-      wallThickness,
-      { isStatic: true, render: { fillStyle: "transparent" } }
-    );
-    const leftWall = Bodies.rectangle(
-      -wallThickness / 2,
-      sectionHeight / 2,
-      wallThickness,
-      sectionHeight,
-      { isStatic: true, render: { fillStyle: "transparent" } }
-    );
-    const rightWall = Bodies.rectangle(
-      sectionWidth + wallThickness / 2,
-      sectionHeight / 2,
-      wallThickness,
-      sectionHeight,
-      { isStatic: true, render: { fillStyle: "transparent" } }
-    );
+            setContainerSize({
+                width: screenWidth * 0.9,
+                height: screenHeight * heightRatio,
+            });
+        };
 
-    World.add(world, [ground, leftWall, rightWall, ceiling]);
+        handleResize(); // Initialize on mount
 
-    const preloadImages = async (imageUrls) => {
-      const images = [];
-      for (const url of imageUrls) {
-        const img = new Image();
-        img.src = url;
-        await new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+
+    useEffect(() => {
+        const { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint } = Matter;
+
+        const engine = Engine.create();
+        const { world } = engine;
+
+        const sectionWidth = containerSize.width;
+        const sectionHeight = containerSize.height;
+
+        const render = Render.create({
+            element: document.getElementById("physics-container"),
+            engine: engine,
+            options: {
+                width: sectionWidth,
+                height: sectionHeight,
+                wireframes: false,
+                background: "transparent",
+            },
         });
-        images.push(img);
-      }
-      return images;
-    };
 
-    const createMixedImages = async () => {
-      const imageUrls = [image1, image2, image3, image4, image5, image6];
-      try {
-        const loadedImages = await preloadImages(imageUrls);
-        const images = [];
-
-        const fixedSize = Math.min(200, sectionWidth * 0.12); // Fixed size for images
-
-        for (let i = 0; i < 7; i++) {
-          const x = Math.random() * (sectionWidth - fixedSize) + fixedSize / 2;
-          const y = Math.random() * (sectionHeight - fixedSize) + fixedSize / 2;
-          const randomImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
-
-          images.push(
-            Bodies.circle(x, y, fixedSize / 2, {
-              restitution: 0.2,
-              friction: 0.05,
-              frictionAir: 0.02,
-              render: {
-                sprite: {
-                  texture: randomImage.src,
-                  xScale: fixedSize / randomImage.width,
-                  yScale: fixedSize / randomImage.height,
+        let mouseConstraint;
+        if (sectionWidth > 0) {
+            const mouse = Mouse.create(render.canvas);
+            const mouseConstraint = MouseConstraint.create(engine, {
+              mouse: mouse,
+              constraint: {
+                stiffness: 0.2,
+                render: {
+                  visible: false,
                 },
-              },
-            })
-          );
+              }
+            });
+            
+            // Make sure it only listens to your canvas container
+            mouseConstraint.mouse.element = render.canvas;
+            World.add(engine.world, mouseConstraint);            
         }
 
-        World.add(world, images);
-      } catch (error) {
-        console.error("Failed to load images:", error);
-      }
-    };
+        // Boundaries adjusted to the new height
+        // const ground = Bodies.rectangle(sectionWidth / 2, sectionHeight + 20, sectionWidth, 40, { isStatic: true, render: { fillStyle: "transparent", strokeStyle: "transparent" } });
+        // const leftWall = Bodies.rectangle(-10, sectionHeight / 2, 40, sectionHeight + 40, { isStatic: true, render: { fillStyle: "transparent", strokeStyle: "transparent" } });
+        // const rightWall = Bodies.rectangle(sectionWidth + 10, sectionHeight / 2, 40, sectionHeight + 40, { isStatic: true, render: { fillStyle: "transparent", strokeStyle: "transparent" } });
+        // const ceiling = Bodies.rectangle(sectionWidth / 2, -20, sectionWidth, 40, { isStatic: true, render: { fillStyle: "transparent", strokeStyle: "transparent" } });
 
-    createMixedImages();
+        const wallThickness = 100;
 
-    // Function to animate the physics world
-    const animate = () => {
-      Engine.update(engine, 1000 / 60); // 60 FPS
-      Render.world(render);
-      requestAnimationFrame(animate); // Keep the animation running
-    };
+        const ground = Bodies.rectangle(
+            sectionWidth / 2,
+            sectionHeight + wallThickness / 2,
+            sectionWidth,
+            wallThickness,
+            { isStatic: true, render: { fillStyle: "transparent" } }
+        );
 
-    animate(); // Start the animation loop
+        const ceiling = Bodies.rectangle(
+            sectionWidth / 2,
+            -wallThickness / 2,
+            sectionWidth,
+            wallThickness,
+            { isStatic: true, render: { fillStyle: "transparent" } }
+        );
 
-    Render.run(render);
-    const runner = Runner.create();
-    Runner.run(runner, engine);
+        const leftWall = Bodies.rectangle(
+            -wallThickness / 2,
+            sectionHeight / 2,
+            wallThickness,
+            sectionHeight,
+            { isStatic: true, render: { fillStyle: "transparent" } }
+        );
 
-    return () => {
-      Render.stop(render);
-      Runner.stop(runner);
-      World.clear(world, false);
-      Engine.clear(engine);
-      render.canvas.remove();
-    };
-  }, [containerSize]);
+        const rightWall = Bodies.rectangle(
+            sectionWidth + wallThickness / 2,
+            sectionHeight / 2,
+            wallThickness,
+            sectionHeight,
+            { isStatic: true, render: { fillStyle: "transparent" } }
+        );
 
-  return (
-    <Box className='section-container' sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      mt: { xs: '75px', sm: '150px', md: "200px" }
-    }}>
-      <div style={{ position: 'relative' }}>
-        {/* Physics Container */}
-        <div
-          id="physics-container"
-          style={{
-            width: `${containerSize.width}px`,
-            height: `${containerSize.height}px`,
-            margin: "0 auto",
-            border: "1px solid",
-            borderColor: "#525252",
-            borderRadius: "24px",
-          }}
-        ></div>
+        World.add(world, [ground, leftWall, rightWall, ceiling]);
 
-        <Typography
-          variant="h2"
-          className="headings-h2"
-          sx={{
-            position: "absolute",
-            width: { xs: "90%", md: "80%", xl: "70%" },
-            top: { xs: "5%", sm: "15%", md: "10%" },
-            left: "50%",
-            transform: "translateX(-50%)",
-            textAlign: "center",
-          }}
-        >
-          Ready to See the NAF Cloud System in Action?
-        </Typography>
+        const preloadImages = async (imageUrls) => {
+            const images = [];
+            for (const url of imageUrls) {
+                const img = new Image();
+                img.src = url;
+                await new Promise((resolve, reject) => {
+                    img.onload = resolve;
+                    img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
+                });
+                images.push(img);
+            }
+            return images;
+        };
 
-        <Box
-          className="centralButton"
-          sx={{
-            position: "absolute",
-            width: { xs: "80px", md: "120px" },
-            height: { xs: "80px", md: "120px" },
-            top: { xs: "40%", md: "35%" },
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 1,
-          }}
-        >
-          <AnimateButton text1='GET IN' text2='TOUCH' />
+        // const createMixedImages = async () => {
+        //     const imageUrls = [image1, image2, image3, image3, image4, image5, image6];
+
+        //     try {
+        //         const loadedImages = await preloadImages(imageUrls);
+        //         const images = [];
+        //         for (let i = 0; i < 7; i++) {
+        //             const maxSize = Math.min(200, sectionWidth * 0.2); // Responsive max size
+        //             const minSize = Math.min(120, sectionWidth * 0.1); // Responsive min size
+        //             const size = Math.random() * (maxSize - minSize) + minSize;
+        //             const x = Math.random() * (sectionWidth - size) + (size / 2);
+        //             const y = Math.random() * (sectionHeight - size) + (size / 2);
+        //             const randomImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
+
+        //             // Changed from Bodies.rectangle to Bodies.circle
+        //             images.push(
+        //                 Bodies.circle(x, y, size / 2, {
+        //                     restitution: 0.2, // 🔧 Less bounce
+        //                     friction: 0.05,   // 🔧 Slight ground friction
+        //                     frictionAir: 0.02, // 🔧 Air resistance to slow things down
+        //                     render: {
+        //                         sprite: {
+        //                             texture: randomImage.src,
+        //                             xScale: size / randomImage.width,
+        //                             yScale: size / randomImage.height,
+        //                         },
+        //                     },
+        //                 })
+        //             );
+        //         }
+        //         World.add(world, images);
+        //     } catch (error) {
+        //         console.error("Failed to load images:", error);
+        //     }
+        // };
+
+        const createMixedImages = async () => {
+            const imageUrls = [image1, image2, image3, image3, image4, image5, image6];
+
+            try {
+                const loadedImages = await preloadImages(imageUrls);
+                const images = [];
+
+                const fixedSize = Math.min(200, sectionWidth * 0.12); // Fixed size
+
+                for (let i = 0; i < 7; i++) {
+                    const x = Math.random() * (sectionWidth - fixedSize) + (fixedSize / 2);
+                    const y = Math.random() * (sectionHeight - fixedSize) + (fixedSize / 2);
+                    const randomImage = loadedImages[Math.floor(Math.random() * loadedImages.length)];
+
+                    images.push(
+                        Bodies.circle(x, y, fixedSize / 2, {
+                            restitution: 0.2,
+                            friction: 0.05,
+                            frictionAir: 0.02,
+                            render: {
+                                sprite: {
+                                    texture: randomImage.src,
+                                    xScale: fixedSize / randomImage.width,
+                                    yScale: fixedSize / randomImage.height,
+                                },
+                            },
+                        })
+                    );
+                }
+
+                World.add(world, images);
+            } catch (error) {
+                console.error("Failed to load images:", error);
+            }
+        };
+
+        createMixedImages();
+
+        Render.run(render);
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        return () => {
+            Render.stop(render);
+            Runner.stop(runner);
+            World.clear(world, false);
+            Engine.clear(engine);
+            render.canvas.remove();
+        };
+    }, [containerSize]);
+
+    return (
+        <Box className='section-container' sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            mt: { xs: '75px', sm: '150px', md: "200px" }
+        }}>
+            <div style={{ position: 'relative' }}>
+                {/* Adjusted height in inline styles */}
+                <div
+                    id="physics-container"
+                    style={{
+                        width: `${containerSize.width}px`,
+                        height: `${containerSize.height}px`,
+                        margin: "0 auto",
+                        border: "1px solid",
+                        borderColor: "#525252",
+                        borderRadius: "24px",
+                        touchAction: "manipulation", // ✅ allows scrolling while still detecting dragging
+                        position: 'relative',
+                    }}
+                ></div>
+                <Typography
+                    variant="h2"
+                    className="headings-h2"
+                    sx={{
+                        position: "absolute",
+                        width: { xs: "90%", md: "80%", xl: "70%" },
+                        top: { xs: "5%", sm: "15%", md: "10%" },
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        textAlign: "center",
+                    }}
+                >
+                    Ready to See the NAF Cloud System in Action?
+                </Typography>
+
+                <Box
+                    className="centralButton"
+                    sx={{
+                        position: "absolute",
+                        width: { xs: "80px", md: "120px" },
+                        height: { xs: "80px", md: "120px" },
+                        top: { xs: "40%", md: "35%" },
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        zIndex: 1,
+                    }}
+                >
+                    <AnimateButton text1='GET IN' text2='TOUCH' />
+                </Box>
+            </div>
         </Box>
-      </div>
-    </Box>
-  );
+    );
 };
 
 export default ReadySection;

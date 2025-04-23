@@ -112,7 +112,7 @@ const Sustainability = () => {
                     benefit both our customers and the environment. We leverage cutting-edge technology and
                     sustainable practices to create a better future.
                 </Typography> */}
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, mt: '16px' }}>
                     <ScrollMaskText text={t('Home.sustainabilityText')} textColor='#444'
                     />
                 </Box>
