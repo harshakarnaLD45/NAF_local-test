@@ -7,32 +7,28 @@ import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const WhatsNew = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const blogPosts = [
     {
       id: 1,
       date: "11 March 2025",
-      title: "How UI/UX Design Can Boost Your Vending Machine Sales",
+      title: "Der Automatenblog: Warum alles bei mir um Automaten geht",
       image: blogimage,
     },
     {
       id: 2,
       date: "11 March 2025",
-      title: "How UI/UX Design Can Boost Your Vending Machine Sales",
+      title: "Die Evolution der Gastronomie – Von Herd & Herz zu Hightech & Automaten",
       image: blogimage,
     },
     {
       id: 3,
       date: "11 March 2025",
-      title: "How UI/UX Design Can Boost Your Vending Machine Sales",
-      image: blogimage,
-    },
-    {
-      id: 4,
-      date: "11 March 2025",
-      title: "How UI/UX Design Can Boost Your Vending Machine Sales",
+      title: "Automaten-Software im Vergleich – Die unsichtbare Kraft hinter dem Erfolg",
       image: blogimage,
     },
   ];
@@ -94,6 +90,9 @@ const WhatsNew = () => {
     });
   }, []);
 
+  const handleBlogClick = (index) => {
+    navigate("Insights/blog", { state: { blogIndex: index } });
+  };
   return (
     <Box sx={{ position: "relative" }} className='section-container'>
       {/* Title Section */}
@@ -211,6 +210,7 @@ const WhatsNew = () => {
             <Box
               component="img"
               src={whatarrow}
+              onClick={() => handleBlogClick(index)}
               alt="Arrow Icon"
               className="arrow arrowtabscreen arrowbigscreen"
               sx={{
@@ -264,6 +264,7 @@ const WhatsNew = () => {
               <Box
                 component="img"
                 src={whatarrow}
+                onClick={() => handleBlogClick(index)}
                 alt="Arrow Icon"
                 className="arrow arrowtabscreen"
                 sx={{
@@ -277,6 +278,7 @@ const WhatsNew = () => {
             <Box
               component="img"
               src={whatarrow}
+              onClick={() => handleBlogClick(index)}
               alt="Arrow Icon"
               className="arrow arrowbig"
               sx={{

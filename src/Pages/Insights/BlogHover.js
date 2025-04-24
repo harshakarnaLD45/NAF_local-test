@@ -11,43 +11,19 @@ const BlogHover = () => {
     {
       id: 1,
       date: "11 March 2025",
-      title: "How UI/UX Design Can Boost Your Vending Machine Sales",
+      title: "Der Automatenblog: Warum alles bei mir um Automaten geht",
       image: blogimage,
     },
     {
       id: 2,
       date: "11 March 2025",
-      title: "The Ultimate Guide to Choosing the Right Vending Machine for Your Business",
+      title: "Die Evolution der Gastronomie – Von Herd & Herz zu Hightech & Automaten",
       image: blogimage,
     },
     {
       id: 3,
       date: "11 March 2025",
-      title: "The Power of UI/UX Design: Creating Engaging Vending Machine Experiences",
-      image: blogimage,
-    },
-    {
-      id: 4,
-      date: "11 March 2024",
-      title: "Cloud-Based Vending Management: Streamline Your Operations and Maximize Efficiency",
-      image: blogimage,
-    },
-    {
-      id: 5,
-      date: "26 October 2024",
-      title: "Top 5 Vending Machine Marketing Strategies to Attract More Customers",
-      image: blogimage,
-    },
-    {
-      id: 6,
-      date: "01 November 2024",
-      title: "Navigating Vending Regulations: What You Need to Know to Stay Compliant",
-      image: blogimage,
-    },
-    {
-      id: 7,
-      date: "11 November 2024",
-      title: "The Rise of Contactless Vending: Meeting the Demands of a Changing World",
+      title: "Automaten-Software im Vergleich – Die unsichtbare Kraft hinter dem Erfolg",
       image: blogimage,
     },
   ];
