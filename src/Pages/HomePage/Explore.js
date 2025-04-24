@@ -351,9 +351,9 @@ function Explore() {
           <div data-cursor="hover" className="main-sub-container1 main-sub-containerss">
             <ScrollMaskHeadings text={t('Home.exploreTitle')} />
           </div>
-          <div style={{ marginTop: '16px' }} data-cursor="hover" className='main-sub-container1 main-sub-containerss'>
+          <Box sx={{ marginTop: { xs: '8px', sm: '8px', md: '16px' } }} data-cursor="hover" className='main-sub-container1 main-sub-containerss'>
             <ScrollMaskText text={t('Home.exploreSubTitle')} />
-          </div>
+          </Box>
         </Box>
         <Box sx={{ alignSelf: 'flex-end' }} className="explorebutton">
           <AnimateButton route='machine' />

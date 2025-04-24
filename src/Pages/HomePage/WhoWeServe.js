@@ -15,12 +15,12 @@ const WhoWeServe = () => {
     const serveCards1 = [
         {
             id: 1,
-            title: "Hotels & Resorts",
+            title: "Hotels & Restaurants",
             image: hotel,
         },
         {
             id: 2,
-            title: "Gas Stations & Rest Areas",
+            title: "Gas Stations & Roadside Restaurants",
             image: gasStation,
         },
         {
@@ -33,7 +33,7 @@ const WhoWeServe = () => {
     const serveCards2 = [
         {
             id: 1,
-            title: "Offices & Factories",
+            title: "Companies & Factories",
             image: office,
         },
         {
@@ -43,10 +43,9 @@ const WhoWeServe = () => {
         },
         {
             id: 3,
-            title: "Public Institutions",
+            title: "Municipalities & Public Authorities",
             image: publicPic,
         },
-
     ];
 
     return (
@@ -57,7 +56,7 @@ const WhoWeServe = () => {
                     zIndex: 10,
                 }}>
                     <ScrollMaskHeadings text={t('Home.serveTitle')} />
-                    <Box className='whoweServe-left-sec2-text' sx={{ mt: '16px' }}>
+                    <Box className='whoweServe-left-sec2-text' sx={{ mt: { xs: '8px', sm: '8px', md: '16px' } }}>
                         <ScrollMaskText text={t('Home.serveSubTitle')} />
                     </Box>
                 </Box>

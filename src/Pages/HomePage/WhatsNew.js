@@ -97,7 +97,7 @@ const WhatsNew = () => {
   return (
     <Box sx={{ position: "relative" }} className='section-container'>
       {/* Title Section */}
-      <Box className='explore-container whatsnewcontainer' sx={{ mb: 3 }}>
+      <Box className='whatsnewcontainer' sx={{ mb: 3 }}>
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}

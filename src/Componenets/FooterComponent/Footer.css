@@ -7,6 +7,14 @@
     display: none !important;
 }
 
+.btn-spac-left {
+    margin-left: 20px !important;
+}
+
+.btn-spac-right {
+    margin-right: 15px !important;
+}
+
 @media (min-width: 1920px) {
     .footerBottomhead {
         bottom: -45px !important;
@@ -183,7 +191,7 @@
 
 }
 
-@media (max-width: 770px) {
+@media (max-width: 899px) {
     .btn-spac-left {
         margin-left: 10px !important;
     }
@@ -191,7 +199,9 @@
     .btn-spac-right {
         margin-right: 5px !important;
     }
+}
 
+@media (max-width: 770px) {
     .footerBottomhead {
         font-size: clamp(28px, 7.5vw, 165px) !important;
     }

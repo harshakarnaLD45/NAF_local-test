@@ -44,11 +44,21 @@
   box-sizing: border-box;
 }
 
+.max-mac-img {
+  max-width: 400px;
+  height: auto;
+}
+
 @media (max-width: 1400px) {
   .paymenticons {
     width: 80px;
     height: 80px;
   }
+
+  .max-mac-img {
+    max-width: 300px;
+  }
+
 }
 
 @media (max-width: 1024px) {
@@ -61,14 +71,18 @@
     width: 70px;
     height: 70px;
   }
+
+  .max-mac-img {
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 899px) {
 
   .download-btn,
   .animate-button {
-    width: 100px !important;
-    height: 100px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
 
   .maintenance-containers {
@@ -86,6 +100,10 @@
   .maruecontainer {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
+  }
+
+  .max-mac-img {
+    max-width: 200px;
   }
 }
 

@@ -31,7 +31,7 @@ const HomePage = () => {
           </Typography> */}
           <GradientMaskText />
           <Box className='maintextcontainer'>
-            <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py:3 }}>
+            <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: { xs: '8px', sm: '8px', md: '16px' } }}>
               {t('Home.mainParagraph')}
             </Typography>
             <Box data-cursor="hover" className="button-container">

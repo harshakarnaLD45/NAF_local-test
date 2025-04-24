@@ -30,7 +30,7 @@ const MachinesPage = () => {
           <Typography className="headings-h1" variant="h1" sx={{ color: "#FCFCFC" }}>
             High-Performance Vending Machines for Every Need
           </Typography>
-          <Typography className="bodyRegularText3" variant="body1" sx={{ color: "#C2C2C4", mt: '16px' }} >
+          <Typography className="bodyRegularText3" variant="body1" sx={{ color: "#C2C2C4", mt: { xs: '8px', sm: '8px', md: '16px' } }} >
             Increase revenue and streamline operations with our range of customizable vending machines.
           </Typography>
         </Box>

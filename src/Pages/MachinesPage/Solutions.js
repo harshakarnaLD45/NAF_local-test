@@ -30,7 +30,7 @@ const CustomVendingSection = () => {
                 <Typography variant="h3" className='headings-h2' sx={{ color: '#FCFCFC' }}>
                     Custom Vending Solutions for Every Business
                 </Typography>
-                <Typography variant="body1" className='bodyRegularText3' sx={{ color: '#C2C2C4', my: '16px' }}>
+                <Typography variant="body1" className='bodyRegularText3' sx={{ color: '#C2C2C4', my: { xs: '8px', sm: '8px', md: '16px' } }}>
                     Need a vending machine that’s perfectly tailored to your specific products, branding, or location? NAF Germany specializes in creating custom vending machines to meet your unique requirements.
                 </Typography>
 

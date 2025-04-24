@@ -167,7 +167,7 @@ const MachinesSection = ({ selectedMachine }) => {
                     >
                         {/* Left Side - Image + Button */}
                         <Box sx={{ flex: 1, display: 'flex', gap: 3, flexDirection: 'column', alignItems: 'center' }}>
-                            <img src={machine.image} alt={machine.title} style={{ maxWidth: '400px', height: 'auto' }} />
+                            <img src={machine.image} alt={machine.title} className='max-mac-img' />
                             <Box sx={{ display: "flex", justifyContent: "center", mt: 2, gap: 6 }}>
                                 <button className="download-btn"><DownloadIcon /></button>
                                 <AnimateButton />

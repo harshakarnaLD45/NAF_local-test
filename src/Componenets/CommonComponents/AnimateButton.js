@@ -146,12 +146,12 @@ const styles = {
     },
     leftText: {
         textAlign: 'left',
-        paddingLeft: '10px',
+        // paddingLeft: '10px',
         color: '#FCFCFC',
     },
     rightText: {
         textAlign: 'right',
-        paddingRight: '10px',
+        // paddingRight: '10px',
         color: '#FCFCFC',
     },
     outerCircle: {
