@@ -45,8 +45,8 @@ const PaymentOptions = () => {
                         Flexible Payment Options for Your NAF Machines
                     </Typography>
                 </div>
-                <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
-                    <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: 3 }}>
+                <Box sx={{ mb: 3 }} data-cursor="hover">
+                    <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: '16px' }}>
                         Our financing models make it easy to enter automated catering. Whether leasing, hire purchase, or direct purchase, we show you the best options and calculate your amortization period. Save on personnel and operating costs from the first month.
                     </Typography>
                 </Box>

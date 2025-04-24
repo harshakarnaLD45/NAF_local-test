@@ -23,8 +23,21 @@ const CustomCursor = () => {
     const [x, setX] = useState(0);
     const [y, setY] = useState(0);
     const [hovered, setHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) return;
+
         const handleMouseMove = (e) => {
             setX(e.clientX);
             setY(e.clientY);
@@ -42,10 +55,10 @@ const CustomCursor = () => {
         };
 
         document.addEventListener('mousemove', handleMouseMove);
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
+        return () => document.removeEventListener('mousemove', handleMouseMove);
+    }, [isMobile]);
+
+    if (isMobile) return null;
 
     return <CursorPointer x={x} y={y} hovered={hovered} />;
 };

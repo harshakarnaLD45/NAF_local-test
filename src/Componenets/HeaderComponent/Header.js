@@ -14,6 +14,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef(null);
+  const menuTriggerRef = useRef(null); // for the menu button
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
@@ -64,42 +65,39 @@ const Header = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    handleMenuClose();
+    setAnchorEl(null);
+    setHoveredPath(null);
+    setIsSignInOpen(false);
   };
 
-  // // Handle outside click to close menu
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (menuRef.current && !menuRef.current.contains(event.target)) {
-  //       handleMenuClose(); // Close menu when clicking outside
-  //     }
-  //   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        anchorEl && // menu is open
+        menuRef.current && !menuRef.current.contains(event.target) &&
+        menuTriggerRef.current && !menuTriggerRef.current.contains(event.target)
+      ) {
+        handleMenuClose();
+      }
+    };
 
-  //   if (anchorEl) {
-  //     document.addEventListener('mousedown', handleClickOutside);
-  //   }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [anchorEl]);
 
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-  // }, [anchorEl]);
-  
-    // Close menu on scroll if it's open
-    useEffect(() => {
-      const handleScroll = () => {
-        if (anchorEl) {
-          handleMenuClose(); // Close menu on scroll
-        }
-      };
-  
-      // Listen for scroll events
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-        // Cleanup event listener
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, [anchorEl]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (anchorEl) {
+        handleMenuClose(); // Close the menu if open
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true }); // passive for better performance
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [anchorEl, handleMenuClose]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -131,6 +129,7 @@ const Header = () => {
 
       <Box data-cursor="hover"
         className='mobile-view1'
+        ref={menuTriggerRef}
         sx={{
           backgroundColor: '#F4F4F4',
           borderRadius: '32px',
@@ -141,17 +140,25 @@ const Header = () => {
           gap: '12px',
           color: "#1A1A1A"
         }}
-        onClick={handleMenuOpen}
+        onClick={anchorEl ? handleMenuClose : handleMenuOpen}
       >
-        <img
-          className='menuicons'
-          src={MenuIcons}
-          alt="Menu"
-          style={{
-            width: '20px',
-            height: '15px',
-          }}
-        />
+        {anchorEl ? (
+          <>
+            <CloseIcon sx={{ fontSize: '20px' }} />
+          </>
+        ) : (
+          <>
+            <img
+              className='menuicons'
+              src={MenuIcons}
+              alt="Menu"
+              style={{
+                width: '20px',
+                height: '15px',
+              }}
+            />
+          </>
+        )}
         <span className="bodyRegularText3">Menu</span>
       </Box>
       <Box data-cursor="hover"
@@ -329,7 +336,7 @@ const Header = () => {
                       color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC',
                       cursor: 'pointer'
                     }}
-                    onClick={() => setIsSignInOpen((prev) => !prev)} // Toggle dropdown properly
+                    onClick={() => setIsSignInOpen((prev) => !prev)}
                   >
                     {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
@@ -355,15 +362,15 @@ const Header = () => {
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      mt: '16px',
-                      color: location.pathname === '/contact' ? '#1A1A1A' : '#FCFCFC'
+                      justifyContent: 'flex-start',
+                      mt: '10px',
+                      color: location.pathname === '/contact' ? '#1A1A1A' : '#FCFCFC',
+                      gap: '10px',
                     }}
                     onClick={() => handleNavigation('/contact')}
                   >
-                    <Box sx={{ width: '20px' }}>
-                      {location.pathname === '/contact' && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    </Box>
-                    Book a Demo
+                    {location.pathname === '/contact' && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    <span>Book a Demo</span>
                   </Box>
                 </Box>
               )}
