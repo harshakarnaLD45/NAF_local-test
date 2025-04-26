@@ -2,7 +2,9 @@ import { Box, Divider, Typography } from "@mui/material";
 import React, { useEffect, useRef } from "react";
 import whatarrow from "../../assets/Vector (2).png";
 import gsap from "gsap";
-import blogimage from '../../assets/representations-user-experience-interface-design 1.png';
+import blogimage1 from '../../assets/Home/Blog banners 1.jpg';
+import blogimage2 from '../../assets/Home/Blog banners 2.jpg';
+import blogimage3 from '../../assets/Home/Blog banners 3.jpg';
 import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
@@ -15,21 +17,21 @@ const WhatsNew = () => {
   const blogPosts = [
     {
       id: 1,
-      date: "11 March 2025",
-      title: "Der Automatenblog: Warum alles bei mir um Automaten geht",
-      image: blogimage,
+      date: "14 April 2025",
+      title: "THE EVOLUTION OF GASTRONOMY – FROM STOVE & SOUL TO HIGH-TECH & VENDING MACHINES",
+      image: blogimage1,
     },
     {
       id: 2,
-      date: "11 March 2025",
-      title: "Die Evolution der Gastronomie – Von Herd & Herz zu Hightech & Automaten",
-      image: blogimage,
+      date: "21 April 2025",
+      title: "WHO AM I – AND WHY IS MY LIFE ALL ABOUT VENDING MACHINES?",
+      image: blogimage2,
     },
     {
       id: 3,
-      date: "11 March 2025",
-      title: "Automaten-Software im Vergleich – Die unsichtbare Kraft hinter dem Erfolg",
-      image: blogimage,
+      date: "28 April 2025",
+      title: "VENDING SOFTWARE COMPARISON – THE INVISIBLE FORCE BEHIND SUCCESS",
+      image: blogimage3,
     },
   ];
 
@@ -102,7 +104,7 @@ const WhatsNew = () => {
         </Typography> */}
         <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
         <Box>
-          <AnimateButton text1="VIEW" text2="MORE" route='Insights' />
+          <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route='/Insights' />
         </Box>
       </Box>
 

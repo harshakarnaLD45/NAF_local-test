@@ -4,12 +4,15 @@ import {
   Typography,
   FormControlLabel,
   Radio,
+  Snackbar,
+  Alert,
 } from '@mui/material';
 import CustomTextField from './CustomTextField';
 import CustomSelect from './CustomSelect';
 import CloseIcon from '@mui/icons-material/Close';
 import { UploadIcon } from '../../../Componenets/CustomIcons';
 import AnimateButton from '../../../Componenets/CommonComponents/AnimateButton';
+import axios from 'axios';
 
 function ServiceForm() {
   const [formValues, setFormValues] = useState({
@@ -18,12 +21,53 @@ function ServiceForm() {
     problemCategory: '',
     problemType: '',
     description: '',
-    contactName: '',
+    contactPersonName: '',
     email: '',
-    phone: '',
+    phoneNumber: '',
     media: [],
     agreement: false,
   });
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: '',
+    severity: 'success',
+  });
+
+  const showSnackbar = (message, severity = 'success') => {
+    setSnackbar({ open: true, message, severity });
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbar({ open: false, message: '', severity: 'success' });
+  };
+
+  const validateForm = () => {
+    if (!formValues.machineLocation.trim()) {
+      showSnackbar('Machine location is required.', 'error');
+      return false;
+    }
+    if (!formValues.problemCategory) {
+      showSnackbar('Problem category is required.', 'error');
+      return false;
+    }
+    if (!formValues.problemType) {
+      showSnackbar('Problem type is required.', 'error');
+      return false;
+    }
+    if (!formValues.contactPersonName.trim()) {
+      showSnackbar('Contact person name is required.', 'error');
+      return false;
+    }
+    if (!formValues.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+      showSnackbar('Valid email is required.', 'error');
+      return false;
+    }
+    if (!formValues.agreement) {
+      showSnackbar('You must agree to the privacy policy.', 'error');
+      return false;
+    }
+    return true;
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -40,12 +84,46 @@ function ServiceForm() {
       media: newMedia,
     });
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formValues);
-  };
 
+    if (!validateForm()) return;
+
+    const { media, agreement, ...issueData } = formValues; // remove media and agreement
+    const formData = new FormData();
+    formData.append('issueData', JSON.stringify(issueData));
+
+    if (media.length > 0) {
+      media.forEach((file) => {
+        formData.append('mediaFiles', file);
+      });
+    }
+
+    try {
+      await axios.post('https://api.naf-cloudsystem.de/api/NAFWebsite/issue', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      showSnackbar('Support issue submitted successfully!', 'success');
+
+      // Reset form
+      setFormValues({
+        machineLocation: '',
+        machineId: '',
+        problemCategory: '',
+        problemType: '',
+        description: '',
+        contactPersonName: '',
+        email: '',
+        phoneNumber: '',
+        media: [],
+        agreement: false,
+      });
+    } catch (error) {
+      console.error(error);
+      showSnackbar('Submission failed. Please try again.', 'error');
+    }
+  };
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10 }}>
       <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }} component="form" onSubmit={handleSubmit}>
@@ -103,8 +181,8 @@ function ServiceForm() {
         <CustomTextField
           required
           label="Contact Person Full Name"
-          name="contactName"
-          value={formValues.contactName}
+          name="contactPersonName"
+          value={formValues.contactPersonName}
           onChange={handleChange}
         />
         <CustomTextField
@@ -117,8 +195,8 @@ function ServiceForm() {
         />
         <CustomTextField
           label="Phone Number"
-          name="phone"
-          value={formValues.phone}
+          name="phoneNumber"
+          value={formValues.phoneNumber}
           onChange={handleChange}
         />
 
@@ -240,9 +318,19 @@ function ServiceForm() {
           sx={{ mt: 2, color: '#C2C2C4' }}
         />
 
-        <Box sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
+        <Box onClick={handleSubmit} sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
           <AnimateButton text1="SUBMIT" text2="FORM" />
         </Box>
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={4000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        >
+          <Alert onClose={handleSnackbarClose} severity={snackbar.severity} sx={{ width: '100%' }}>
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
 
         <Typography variant="body2" className="bodyRegularText4" align="center" color="#C2C2C4" sx={{ mt: 2 }}>
           Our team will review your request and contact you shortly.

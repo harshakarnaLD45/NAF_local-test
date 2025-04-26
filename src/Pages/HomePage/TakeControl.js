@@ -5,6 +5,7 @@ import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
+import CloudVideo from '../../assets/Home/CloudVideo.mp4'
 
 const TakeControl = () => {
   const { t } = useTranslation();
@@ -78,7 +79,19 @@ const TakeControl = () => {
 
         {/* Right Image Section */}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
-          <Box component="img" src={Browser} alt="Dashboard Preview" sx={{ width: '100%', maxWidth: '800px' }} />
+          <video
+            src={CloudVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: '100%',
+              maxWidth: '800px',
+              borderRadius: '16px',
+              objectFit: 'cover',
+            }}
+          />
         </Box>
       </Box>
     </Box>

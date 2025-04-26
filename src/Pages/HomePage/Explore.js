@@ -356,7 +356,7 @@ function Explore() {
           </Box>
         </Box>
         <Box sx={{ alignSelf: 'flex-end' }} className="explorebutton">
-          <AnimateButton route='machine' />
+          <AnimateButton route='/machine' />
         </Box>
       </Box>
 

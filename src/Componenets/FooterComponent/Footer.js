@@ -8,8 +8,10 @@ import LinkedIn from '../../assets/Social Icons (3).png';
 import YouTube from '../../assets/Social Icons (4).png';
 import AnimateButton from "../CommonComponents/AnimateButton";
 import FooterLogo from '../../assets/FooterLogo.svg'
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialIcons = [
@@ -69,7 +71,7 @@ const Footer = () => {
               mb: 8,
             }}
           >
-            Got a project? Want to collaborate?
+            {t('footer.Gotaproject')}
           </Typography>
 
           <Box className="footer-main-div"
@@ -92,7 +94,7 @@ const Footer = () => {
                 className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
-                Contact
+                {t('footer.footerContact')}
               </Typography>
               <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
                 <Typography
@@ -102,8 +104,8 @@ const Footer = () => {
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                > info@naf-halsbach.de
-
+                >
+                  info@naf-halsbach.de
                 </Typography>
                 <Typography
                   className="footercontactdown footerpadding bodyMediumText2"
@@ -122,8 +124,8 @@ const Footer = () => {
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                >0162 – 1638005  (Technischer Support 24/7)
-
+                >
+                  0162 – 1638005  (Technischer Support 24/7)
                 </Typography>
               </Stack>
             </Stack>
@@ -154,7 +156,7 @@ const Footer = () => {
                   marginBottom: { xs: "0rem", md: "5rem" }
                 }}
               >
-                <AnimateButton text1='GET IN' text2='TOUCH' route='contact' />
+                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route='contact' />
               </Box>
               <Box className="social-icon-sec" sx={{
                 position: 'relative',
@@ -190,7 +192,7 @@ const Footer = () => {
                 className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
-                Contact
+                {t('footer.footerContact')}
               </Typography>
               <Stack className="info-stack" spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
                 <Typography
@@ -200,8 +202,8 @@ const Footer = () => {
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                > info@naf-halsbach.de
-
+                >
+                  info@naf-halsbach.de
                 </Typography>
                 <Typography
                   className="footercontactdown footerpadding bodyMediumText2"
@@ -210,8 +212,8 @@ const Footer = () => {
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                >0152 – 28387141 (Odette Lamkhizni)
-
+                >
+                  0152 – 28387141 (Odette Lamkhizni)
                 </Typography>
                 <Typography
                   className="footercontactdown footerpadding bodyMediumText2"
@@ -220,8 +222,8 @@ const Footer = () => {
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
-                >0162 – 1638005  (Technischer Support 24/7)
-
+                >
+                  0162 – 1638005  (Technischer Support 24/7)
                 </Typography>
               </Stack>
             </Stack>
@@ -231,7 +233,7 @@ const Footer = () => {
                 className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
-                Address
+                {t('footer.footerAddress')}
               </Typography>
               <Stack className="info-stack" spacing={3} alignItems={{ xs: "center", md: "flex-end" }}>
                 <Typography
@@ -308,7 +310,7 @@ const Footer = () => {
                 textAlign: { xs: "center", md: "left" }
               }}
             >
-              © Copyright {currentYear}. All rights reserved.
+              {t('footer.footerCopyright')}{currentYear} {t('footer.footerCopyright2')}
             </Typography>
             <Typography
               className="footercontact bodyRegularText4"
@@ -318,7 +320,7 @@ const Footer = () => {
                 textAlign: { xs: "center", md: "right" }
               }}
             >
-              Terms and Conditions
+              {t('footer.footerTermsConditions')}
             </Typography>
           </Box>
 
@@ -333,9 +335,10 @@ const Footer = () => {
               zIndex: 0,
               whiteSpace: "nowrap",
               width: "100%",
+              textTransform: 'uppercase'
             }}
           >
-            LET'S WORK TOGETHER
+            {t('footer.footerTitle')}
           </Typography>
         </Box>
 

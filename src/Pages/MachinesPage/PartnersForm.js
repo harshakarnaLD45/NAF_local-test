@@ -6,6 +6,9 @@ import {
     Tab,
     FormControlLabel,
     Radio,
+    Snackbar,
+    Alert,
+    Button,
 } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import CustomTextField from './MantaincePage/CustomTextField';
@@ -16,67 +19,178 @@ import Service4 from '../../assets/Machines/Service4.png'
 import Service5 from '../../assets/Machines/Service5.png'
 import Service6 from '../../assets/Machines/Service6.png'
 import CustomSelect from './MantaincePage/CustomSelect';
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 function PartnersForm() {
+    const { t } = useTranslation();
     const [tab, setTab] = useState(0);
+    const [snackbar, setSnackbar] = useState({
+        open: false,
+        message: '',
+        severity: 'success', // or 'error'
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
 
     const [formTab0, setFormTab0] = useState({
         companyName: '',
         installationAddress: '',
         numberOfEmployees: '',
-        purchaseMachine: '',
-        cateringPartner: '',
-        contactName: '',
+        willingToPurchaseMachine: '',
+        provideCateringPermit: '',
+        contactPersonName: '',
         email: '',
-        phone: '',
+        phoneNumber: '',
         agreement: false,
     });
 
     const [formTab1, setFormTab1] = useState({
-        companyName: '',
-        installationAddress: '',
-        numberOfEmployees: '',
-        purchaseMachine: '',
-        cateringPartner: '',
-        contactName: '',
+        businessName: '',
+        contactPersonName: '',
+        position: '',
         email: '',
-        phone: '',
+        phoneNumber: '',
+        specialization: '',
         agreement: false,
     });
-
-    const handleTabChange = (event, newValue) => {
-        setTab(newValue);
+    const showSnackbar = (message, severity = 'success') => {
+        setSnackbar({ open: true, message, severity });
     };
+
+    const handleSnackbarClose = () => {
+        setSnackbar((prev) => ({ ...prev, open: false }));
+    };
+
+    const handleTabChange = (_, newValue) => setTab(newValue);
 
     const handleChange = (e, tabIndex) => {
         const { name, value } = e.target;
-        if (tabIndex === 0) {
-            setFormTab0({ ...formTab0, [name]: value });
-        } else {
-            setFormTab1({ ...formTab1, [name]: value });
-        }
+        const updater = tabIndex === 0 ? setFormTab0 : setFormTab1;
+        updater((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleCheckboxChange = (e, tabIndex) => {
         const { name, checked } = e.target;
-        if (tabIndex === 0) {
-            setFormTab0({ ...formTab0, [name]: checked });
-        } else {
-            setFormTab1({ ...formTab1, [name]: checked });
-        }
+        const updater = tabIndex === 0 ? setFormTab0 : setFormTab1;
+        updater((prev) => ({ ...prev, [name]: checked }));
     };
 
-    const handleSubmit = (e) => {
+    const validateTab0 = () => {
+        if (!formTab0.companyName.trim()) {
+            showSnackbar('Company name is required.', 'error');
+            return false;
+        }
+        if (!formTab0.installationAddress.trim()) {
+            showSnackbar('Installation address is required.', 'error');
+            return false;
+        }
+        if (!formTab0.numberOfEmployees.trim()) {
+            showSnackbar('Number of employees is required.', 'error');
+            return false;
+        }
+        if (!formTab0.willingToPurchaseMachine) {
+            showSnackbar('Please select willingness to purchase.', 'error');
+            return false;
+        }
+        if (!formTab0.provideCateringPermit) {
+            showSnackbar('Please select catering partner option.', 'error');
+            return false;
+        }
+        if (!formTab0.contactPersonName.trim()) {
+            showSnackbar('Contact person name is required.', 'error');
+            return false;
+        }
+        if (!formTab0.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formTab0.email)) {
+            showSnackbar('Please enter a valid email.', 'error');
+            return false;
+        }
+        if (!formTab0.agreement) {
+            showSnackbar('You must agree to the privacy policy.', 'error');
+            return false;
+        }
+        return true;
+    };
+    const validateTab1 = () => {
+        if (!formTab1.businessName.trim()) {
+            showSnackbar('Business name is required.', 'error');
+            return false;
+        }
+        if (!formTab1.contactPersonName.trim()) {
+            showSnackbar('Contact person name is required.', 'error');
+            return false;
+        }
+        if (!formTab1.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formTab1.email)) {
+            showSnackbar('Please enter a valid email.', 'error');
+            return false;
+        }
+        if (!formTab1.agreement) {
+            showSnackbar('You must agree to the privacy policy.', 'error');
+            return false;
+        }
+        return true;
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const submittedData = tab === 0 ? formTab0 : formTab1;
+        const isValid = tab === 0 ? validateTab0() : validateTab1();
+        if (!isValid) return;
+
+        // const { agreement, ...submittedData } = tab === 0 ? formTab0 : formTab1;
+        const { agreement, ...rawData } = tab === 0 ? formTab0 : formTab1;
+        const submittedData = tab === 0
+            ? {
+                ...rawData,
+                numberOfEmployees: parseInt(rawData.numberOfEmployees || '0'),
+                willingToPurchaseMachine: rawData.willingToPurchaseMachine === 'yes',
+                provideCateringPermit: rawData.provideCateringPermit === 'yes',
+            }
+            : rawData;
         console.log('Submitted Data:', submittedData);
 
-        // You can add custom validation or API submission here
+        try {
+            setIsSubmitting(true);  // Determine the endpoint
+            const endpoint =
+                tab === 0
+                    ? 'https://api.naf-cloudsystem.de/api/NAFWebsite/company-installations'
+                    : 'https://api.naf-cloudsystem.de/api/NAFWebsite/gastronomy-partners';
+            await axios.post(endpoint, submittedData);
+
+            showSnackbar('Form submitted successfully!', 'success');
+            // Reset
+            if (tab === 0) {
+                setFormTab0({
+                    companyName: '',
+                    installationAddress: '',
+                    numberOfEmployees: '',
+                    willingToPurchaseMachine: '',
+                    provideCateringPermit: '',
+                    contactPersonName: '',
+                    email: '',
+                    phoneNumber: '',
+                    agreement: false,
+                });
+            } else {
+                setFormTab1({
+                    businessName: '',
+                    contactPersonName: '',
+                    position: '',
+                    email: '',
+                    phoneNumber: '',
+                    specialization: '',
+                    agreement: false,
+                });
+            }
+        } catch (error) {
+            setSnackbar({ open: true, message: 'Submission failed. Please try again.', severity: 'error' });
+        } finally {
+            setIsSubmitting(false); // ✅ Stop loading
+        }
     };
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10 }}>
-            <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }} component="form" onSubmit={handleSubmit}>
+            <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }}>
                 <Tabs
                     value={tab}
                     onChange={handleTabChange}
@@ -146,16 +260,16 @@ function PartnersForm() {
 
                         <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
 
-                        <CustomTextField required label="Company Name" name="companyName" value={formTab0.companyName} onChange={handleChange} />
-                        <CustomTextField required label="Installation Address" name="installationAddress" value={formTab0.installationAddress} onChange={handleChange} />
-                        <CustomTextField required label="Number of Employees" name="numberOfEmployees" type="number" value={formTab0.numberOfEmployees} onChange={handleChange} />
+                        <CustomTextField required label="Company Name" name="companyName" value={formTab0.companyName} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label="Installation Address" name="installationAddress" value={formTab0.installationAddress} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label="Number of Employees" name="numberOfEmployees" type="number" value={formTab0.numberOfEmployees} onChange={(e) => handleChange(e, 0)} />
 
                         <CustomSelect
                             required
                             label="Are you willing to purchase the vending machine?"
-                            name="purchaseMachine"
-                            value={formTab0.purchaseMachine}
-                            onChange={handleChange}
+                            name="willingToPurchaseMachine"
+                            value={formTab0.willingToPurchaseMachine}
+                            onChange={(e) => handleChange(e, 0)}
                             options={[
                                 { value: 'yes', label: 'Yes' },
                                 { value: 'no', label: 'No' },
@@ -164,18 +278,18 @@ function PartnersForm() {
                         <CustomSelect
                             required
                             label="Would you like us to provide a catering partner?"
-                            name="cateringPartner"
-                            value={formTab0.cateringPartner}
-                            onChange={handleChange}
+                            name="provideCateringPermit"
+                            value={formTab0.provideCateringPermit}
+                            onChange={(e) => handleChange(e, 0)}
                             options={[
                                 { value: 'yes', label: 'Yes' },
                                 { value: 'no', label: 'No' },
                             ]}
                         />
                         {/* Contact info */}
-                        <CustomTextField required label="Contact Person Full Name" name="contactName" value={formTab0.contactName} onChange={handleChange} />
-                        <CustomTextField required label="Email" name="email" type="email" value={formTab0.email} onChange={handleChange} />
-                        <CustomTextField label="Phone Number" name="phone" value={formTab0.phone} onChange={handleChange} />
+                        <CustomTextField required label="Contact Person Full Name" name="contactPersonName" value={formTab0.contactPersonName} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label="Email" name="email" type="email" value={formTab0.email} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField label="Phone Number" name="phoneNumber" value={formTab0.phoneNumber} onChange={(e) => handleChange(e, 0)} />
 
                         <FormControlLabel
                             control={
@@ -244,36 +358,14 @@ function PartnersForm() {
 
                         <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
 
-                        <CustomTextField required label="Restaurant or Café Name" name="companyName" value={formTab1.companyName} onChange={handleChange} />
-                        <CustomTextField required label="Location Address" name="installationAddress" value={formTab1.installationAddress} onChange={handleChange} />
-                        <CustomTextField required label="Daily Footfall" name="numberOfEmployees" type="number" value={formTab1.numberOfEmployees} onChange={handleChange} />
+                        <CustomTextField required label="Restaurant / Business Name" name="businessName" value={formTab1.businessName} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField required label="Contact Person Full Name*" name="contactPersonName" value={formTab1.contactPersonName} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label="Position" name="position" value={formTab1.position} onChange={(e) => handleChange(e, 1)} />
 
-                        <CustomSelect
-                            required
-                            label="Are you interested in vending solutions?"
-                            name="purchaseMachine"
-                            value={formTab1.purchaseMachine}
-                            onChange={handleChange}
-                            options={[
-                                { value: 'yes', label: 'Yes' },
-                                { value: 'no', label: 'No' },
-                            ]}
-                        />
-                        <CustomSelect
-                            required
-                            label="Do you offer food or beverages?"
-                            name="cateringPartner"
-                            value={formTab1.cateringPartner}
-                            onChange={handleChange}
-                            options={[
-                                { value: 'yes', label: 'Yes' },
-                                { value: 'no', label: 'No' },
-                            ]}
-                        />
                         {/* Contact info */}
-                        <CustomTextField required label="Contact Name" name="contactName" value={formTab1.contactName} onChange={handleChange} />
-                        <CustomTextField required label="Email" name="email" type="email" value={formTab1.email} onChange={handleChange} />
-                        <CustomTextField label="Phone Number" name="phone" value={formTab1.phone} onChange={handleChange} />
+                        <CustomTextField required label="Email" name="email" type="email" value={formTab1.email} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label="Phone Number" name="phoneNumber" value={formTab1.phoneNumber} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label="Your Specialization" name="specialization" value={formTab1.specialization} onChange={(e) => handleChange(e, 1)} />
 
                         <FormControlLabel
                             control={
@@ -303,9 +395,31 @@ function PartnersForm() {
                         />
                     </Box>
                 )}
+                <Snackbar
+                    open={snackbar.open}
+                    autoHideDuration={4000}
+                    onClose={handleSnackbarClose}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                >
+                    <Alert
+                        onClose={handleSnackbarClose}
+                        severity={snackbar.severity}
+                        sx={{ width: '100%' }}
+                    >
+                        {snackbar.message}
+                    </Alert>
+                </Snackbar>
 
                 <Box sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
-                    <AnimateButton text1="SUBMIT" text2="FORM" />
+                    {isSubmitting ? (
+                        <Button disabled variant="contained" sx={{ borderRadius: '50px', px: 5, py: 1.5 }}>
+                            Submitting...
+                        </Button>
+                    ) : (
+                        <div onClick={handleSubmit} style={{ cursor: 'pointer' }}>
+                            <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.NOW')} />
+                        </div>
+                    )}
                 </Box>
 
                 <Typography variant="body2" className="bodyRegularText4" align="center" color="#C2C2C4" sx={{ mt: 2 }}>

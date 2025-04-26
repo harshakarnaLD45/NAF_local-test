@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Calendly from './calendly';
 import './ContactPage.css'
-import { Box, Container, Grid, Stack, TextField, Typography } from '@mui/material'
+import { Alert, Box, Grid, Radio, Snackbar, Stack, TextField, Typography } from '@mui/material'
 import { Location, Contactmail, Contactphone } from "../../Componenets/CustomIcons"
 import Facebook from '../../assets/Social Icons.png';
 import Twitter from '../../assets/Social Icons (1).png';
@@ -10,7 +10,7 @@ import LinkedIn from '../../assets/Social Icons (3).png';
 import YouTube from '../../assets/Social Icons (4).png';
 import Button from '@mui/material/Button';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
-import { FormControlLabel, Checkbox, Link, } from '@mui/material';
+import { FormControlLabel, Link, } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -19,6 +19,7 @@ import Picture1 from '../../assets/Contact/Picture1.png'
 import Picture2 from '../../assets/Contact/Picture2.png'
 import Picture3 from '../../assets/Contact/Picture3.png'
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 function ContactPage() {
     const { t } = useTranslation();
@@ -26,6 +27,86 @@ function ContactPage() {
     const [selectedItems, setSelectedItems] = useState([]);
     const [isSubmitform, setIsSubmitform] = useState(true); // default to showing the form
     const [expandedIndex, setExpandedIndex] = useState(null);
+    const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
+    const [isConsentChecked, setIsConsentChecked] = useState(false);
+    const [customCategory, setCustomCategory] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSnackbarClose = () => {
+        setSnackbar((prev) => ({ ...prev, open: false }));
+    };
+    const [formData, setFormData] = useState({
+        email: '',
+        fullName: '',
+        message: '',
+        inquiryType: '',
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleCategorySelect = (category) => {
+        setFormData((prev) => ({
+            ...prev,
+            inquiryType: prev.inquiryType === category ? '' : category,
+        }));
+        setSelectedItems(category)
+
+        if (category !== 'Others') {
+            setCustomCategory('');
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const { email, fullName, message, inquiryType } = formData;
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return setSnackbar({ open: true, message: 'Please enter a valid email.', severity: 'error' });
+        }
+        if (!fullName.trim()) {
+            return setSnackbar({ open: true, message: 'Full name is required.', severity: 'error' });
+        }
+        if (!message.trim()) {
+            return setSnackbar({ open: true, message: 'Message is required.', severity: 'error' });
+        }
+        if (inquiryType === 'Others' && !customCategory.trim()) {
+            return setSnackbar({ open: true, message: 'Please specify your category.', severity: 'error' });
+        }
+
+        if (!isConsentChecked) {
+            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
+        }
+        if (!isConsentChecked) {
+            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
+        }
+
+        try {
+            setIsSubmitting(true);
+            await axios.post('https://api.naf-cloudsystem.de/api/NAFWebsite/submitForm', formData);
+            setSnackbar({ open: true, message: 'Support issue submitted successfully!', severity: 'success' });
+
+            // Clear the form
+            setFormData({
+                email: '',
+                fullName: '',
+                message: '',
+                inquiryType: '',
+            });
+            setSelectedItems([]);
+            setIsConsentChecked(false);
+        } catch (error) {
+            setSnackbar({ open: true, message: 'Submission failed. Please try again.', severity: 'error' });
+        } finally {
+            setIsSubmitting(false); // ✅ Stop loading
+        }
+    };
 
     const locations = [
         {
@@ -215,14 +296,6 @@ function ContactPage() {
         setExpandedIndex(null);
     }, [activeCategory]);
 
-
-    const handleToggle = (label) => {
-        setSelectedItems((prevSelected) =>
-            prevSelected.includes(label)
-                ? prevSelected.filter((item) => item !== label) // Remove if already selected
-                : [...prevSelected, label] // Add if not selected
-        );
-    };
     const socialIcons = [
         { src: Facebook, name: "Facebook", url: "https://www.facebook.com/yourcompany" },
         { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
@@ -383,6 +456,9 @@ function ContactPage() {
                                     variant="standard"
                                     required
                                     fullWidth
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                     InputLabelProps={{
                                         style: {
                                             color: '#FCFCFC',
@@ -409,6 +485,9 @@ function ContactPage() {
                                     variant="standard"
                                     required
                                     fullWidth
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
                                     InputLabelProps={{
                                         style: {
                                             color: '#FCFCFC', fontSize: {
@@ -442,9 +521,9 @@ function ContactPage() {
                                         return (
                                             <Button
                                                 className='bodyRegularText4'
+                                                onClick={() => handleCategorySelect(label)}
                                                 key={label}
                                                 variant="outlined"
-                                                onClick={() => handleToggle(label)}
                                                 sx={{
                                                     color: '#FCFCFC',
                                                     borderRadius: '50px',
@@ -465,6 +544,32 @@ function ContactPage() {
                                         );
                                     })}
                                 </Stack>
+                                {formData.inquiryType === 'Others' && (
+                                    <TextField
+                                        className='bodyRegularText3'
+                                        label="Please specify"
+                                        variant="standard"
+                                        required
+                                        fullWidth
+                                        name="customCategory"
+                                        value={customCategory}
+                                        onChange={(e) => setCustomCategory(e.target.value)}
+                                        InputLabelProps={{
+                                            style: { color: '#FCFCFC' },
+                                        }}
+                                        InputProps={{
+                                            disableUnderline: false,
+                                            sx: {
+                                                color: '#FCFCFC',
+                                                paddingTop: '28px',
+                                                '&:before': { borderBottomColor: '#C6C6C6' },
+                                                '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#ffffff' },
+                                                '&:after': { borderBottomColor: '#C6C6C6' },
+                                            },
+                                        }}
+                                    />
+                                )}
+
                             </Box>
 
                             {/* Message + Consent + Submit */}
@@ -475,6 +580,9 @@ function ContactPage() {
                                     variant="standard"
                                     required
                                     fullWidth
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     InputLabelProps={{
                                         style: {
                                             color: '#FCFCFC', fontSize: {
@@ -496,22 +604,32 @@ function ContactPage() {
                                         },
                                     }}
                                 />
-                                <Box>
-                                    <FormControlLabel
-                                        control={<Checkbox sx={{ color: '#FCFCFC', borderRadius: '50px' }} />}
-                                        label={
-                                            <Typography variant="body2" className='bodyRegularText5' sx={{ color: '#FCFCFC' }}>
-                                                {t('contactus.privacypolicy1')}{' '}
-                                                <Link
-                                                    href="/privacy-policy"
-                                                    underline="hover"
-                                                    sx={{ color: '#161616', textDecorationColor: '#161616', textDecoration: 'underline' }}
-                                                >
-                                                    {t('contactus.privacypolicy2')}
-                                                </Link>
-                                            </Typography>
-                                        }
-                                    />
+                                <Box><FormControlLabel
+                                    control={
+                                        <Radio
+                                            checked={isConsentChecked}
+                                            onChange={(e) => setIsConsentChecked(e.target.checked)}
+                                            sx={{
+                                                color: '#E0E0E0',
+                                                '&.Mui-checked': {
+                                                    color: '#7FEE64', // green when checked
+                                                },
+                                            }}
+                                        />
+                                    }
+                                    label={
+                                        <Typography variant="body2" className="bodyRegularText5" sx={{ color: '#FCFCFC' }}>
+                                            {t('contactus.privacypolicy1')}{' '}
+                                            <Link
+                                                href="/privacy-policy"
+                                                underline="hover"
+                                                sx={{ color: '#161616', textDecorationColor: '#161616', textDecoration: 'underline' }}
+                                            >
+                                                {t('contactus.privacypolicy2')}
+                                            </Link>
+                                        </Typography>
+                                    }
+                                />
                                 </Box>
                                 <Box sx={{
                                     display: "flex",
@@ -523,9 +641,28 @@ function ContactPage() {
                                     zIndex: 1,
                                     marginBottom: { xs: "1rem", sm: "1rem", md: "2rem" }
                                 }}>
-                                    <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.NOW')} />
+                                    {isSubmitting ? (
+                                        <Button disabled variant="contained" sx={{ borderRadius: '50px', px: 5, py: 1.5 }}>
+                                            Submitting...
+                                        </Button>
+                                    ) : (
+                                        <div onClick={handleSubmit} style={{ cursor: 'pointer' }}>
+                                            <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.NOW')} />
+                                        </div>
+                                    )}
                                 </Box>
                             </Box>
+
+                            <Snackbar
+                                open={snackbar.open}
+                                autoHideDuration={4000}
+                                onClose={handleSnackbarClose}
+                                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                            >
+                                <Alert onClose={handleSnackbarClose} severity={snackbar.severity} sx={{ width: '100%' }}>
+                                    {snackbar.message}
+                                </Alert>
+                            </Snackbar>
                         </>
                     ) : (
                         <Calendly />

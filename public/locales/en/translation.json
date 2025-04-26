@@ -2,20 +2,12 @@
     "Header": {
         "menu": "Menu",
         "menuHome": "Home",
-        "de": "DEU",
-        "en": "ENG",
-        "fr": "FRA",
-        "es": "ESP",
-        "pl": "POL",
         "menuMachines": "Vending Machines",
         "menuSoftware": "Software",
-        "menuSolutions": "Solutions",
         "menuInsights": "Blogs & Insights",
         "CompanyDiscover": "Discover NAF",
-        "menuContactus": "Contact us",
         "foodMenu": "Food Menu",
         "menuCompany": "Company",
-        "CompanyLiveMenu": "Live Menu",
         "profilemenbership": "Membership Log In",
         "profileSignIn": "Sign In",
         "profilelogin": "Log In / Sign Up",
@@ -23,9 +15,11 @@
         "BookaDemo": "Book a Demo"
     },
     "Home": {
-        "mainHeading": "NAF - The Future of Catering",
+        "mainHeading": "NAF - The Future of Vending",
         "mainParagraph": "Automated. AI-supported. Sustainable.",
         "viewMore": "viewMore",
+        "VIEW":"VIEW",
+        "MORE":"MORE",
         "exploreTitle": "Smart, AI-Powered Vending Machines for Every Need",
         "exploreSubTitle": "Our machines go beyond classic vending – they’re smart, AI-powered food solutions. From pizza to beer, each unit analyzes sales in real time, spots trends, and optimizes offerings. AI manages temperature, refills, and customer experience for maximum efficiency and minimal costs.",
         "ourClientsTitle": "Our Clients",
@@ -513,23 +507,15 @@
         "privacypolicy": "I Understand that NAF Germany will securely hold my data in accordance with their privacy policy",
         "Membershipend": "end"
     },
-    "footer": {
-        "Gotaproject": "Got a project? Want to collaborate?",
+    "footer":{
+        "Gotaproject":"Got a project? Want to collaborate?",
         "footerContact": "Contact",
         "footergetIn": "GET IN",
         "footertouch": "TOUCH",
-        "footerinfomail": "info@naf-halsbach.de",
-        "footerinfonumber": "0152 – 28387141 (Odette Lamkhizni)",
-        "footerinfonumber2": "0162 – 1638005  (Technischer Support 24/7)",
         "footerCopyright": "© Copyright ",
         "footerCopyright2": ". All rights reserved.",
         "footerTermsConditions": "Terms and Conditions",
         "footerTitle": "let’s work together",
-        "footerAddress": "Address: ",
-        "footerAddressText": "Obere Straße 3, 09599 Freiberg, OT ",
-        "footerAddressText2": " Halsbach ",
-        "AutomatenStandorte": "Automaten Standorte:",
-        "AutomatenStandorteText1": "DBI Foyer Freiberg, Halsbrückerstrasse 34, 09599 Freiberg",
-        "AutomatenStandorteText2": "Landratsamt Mittweida Haus A, Am Landratsamt 3, 09648 Mittweida"
+        "footerAddress": "Address"
     }
 }

@@ -1,11 +1,14 @@
 import { Box, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import AnimateButton from '../../../Componenets/CommonComponents/AnimateButton'
 import './MantaincePage.css'
 import SupportSection from './SupportSection'
 import ServiceForm from './ServiceForm'
 
 function MantaincePage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <Box>
             <Box className='maintaince-container'>

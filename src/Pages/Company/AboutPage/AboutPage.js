@@ -7,6 +7,10 @@ import TeamSection from './TeamSection';
 import AwardsSection from './AwardsSection';
 import ValuesSection from './ValuesSection';
 import { useTranslation } from 'react-i18next';
+import NAF1Image from '../../../assets/About/NAF1.svg'
+import NAF2Image from '../../../assets/About/NAF2.svg'
+import NAF3Image from '../../../assets/About/NAF3.svg'
+import { motion } from 'framer-motion';
 
 function AboutPage() {
     const { t } = useTranslation();
@@ -18,7 +22,47 @@ function AboutPage() {
     return (
         <Box>
             {/* Hero section */}
-            <Box className="about-page-container">
+            <Box className="about-page-container">{/* Letter Images Section */}
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        mb: { xs: '3rem', md: '5rem' },
+                        flexWrap: 'wrap',
+                    }}
+                >
+                    {[
+                        { src: NAF1Image, alt: 'N' },
+                        { src: NAF2Image, alt: 'A' },
+                        { src: NAF3Image, alt: 'F' }
+                    ].map((img, index) => (
+                        <motion.img
+                            key={index}
+                            src={img.src}
+                            alt={img.alt}
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{
+                                delay: index * 0.2,
+                                duration: 0.5,
+                                type: 'spring',
+                                stiffness: 100
+                            }}
+                            whileHover={{
+                                scale: 1.2,
+                                rotate: [0, -5, 5, 0],
+                                transition: { duration: 0.4 }
+                            }}
+                            style={{
+                                height: 'auto',
+                                cursor: 'pointer'
+                            }}
+                            className='about-naf-img-let'
+                        />
+                    ))}
+                </Box>
+
                 {/* Row 1: Title + Star + Description */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text white-text">
@@ -52,7 +96,7 @@ function AboutPage() {
                     <Typography className="headings-h1 responsive-text white-text">
                         {t('about.heroTitleline4')}
                     </Typography>
-                    <Box
+                    {/* <Box
                         sx={{
                             width: '100%',
                             maxWidth: '355px',
@@ -71,7 +115,7 @@ function AboutPage() {
                             playsInline
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
-                    </Box>
+                    </Box> */}
                 </Box>
                 <Typography className="bodyRegularText3 white-text description1">
                     {t('about.heroSubTitleline')}

@@ -159,7 +159,7 @@ const Header = () => {
             />
           </>
         )}
-        <span className="bodyRegularText3">Menu</span>
+        <span className="bodyRegularText3"> {t("Header.menu")}</span>
       </Box>
       <Box data-cursor="hover"
         className='menu-mobile-sec'
@@ -203,7 +203,7 @@ const Header = () => {
                 marginRight: { xs: '2px', sm: '4px', md: '18px' },
               }}
             />
-            <span className="bodyRegularText3">Menu</span>
+            <span className="bodyRegularText3"> {t("Header.menu")}</span>
           </Box>
         )}
 
@@ -235,13 +235,13 @@ const Header = () => {
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
               {[
-                { label: 'Home', path: '/' },
-                { label: 'Vending Machines', path: '/machine' },
-                { label: 'Software', path: '/software' },
+                { label: t("Header.menuHome"), path: '/' },
+                { label: t("Header.menuMachines"), path: '/machine' },
+                { label: t("Header.menuSoftware"), path: '/software' },
                 // { label: 'Solutions', path: '/solutions' },
-                { label: 'Blogs & Insights', path: '/insights' },
-                { label: 'Discover NAF', path: '/company/about' },
-                { label: 'Food Menu', path: '/company/menu' },
+                { label: t("Header.menuInsights"), path: '/insights' },
+                { label: t("Header.CompanyDiscover"), path: '/company/about' },
+                { label: t("Header.foodMenu"), path: '/company/menu' },
               ].map(({ label, path }) => (
                 <Box
                   key={path}
@@ -339,20 +339,20 @@ const Header = () => {
                     onClick={() => setIsSignInOpen((prev) => !prev)}
                   >
                     {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>Sign In <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>{t("Header.profileSignIn")} <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
                   </Box>
 
                   {/* Show sublist when isSignInOpen is true */}
                   {isSignInOpen && (
                     <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
                       <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
-                        Membership Log In
+                        {t("Header.profilemenbership")}
                       </Box>
                       <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
-                        Log In / Sign Up
+                        {t("Header.profilelogin")}
                       </Box>
                       <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
-                        Client Log In
+                        {t("Header.profileregister")}
                       </Box>
                     </Box>
                   )}
@@ -370,7 +370,7 @@ const Header = () => {
                     onClick={() => handleNavigation('/contact')}
                   >
                     {location.pathname === '/contact' && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    <span>Book a Demo</span>
+                    <span>{t("Header.BookaDemo")}</span>
                   </Box>
                 </Box>
               )}
@@ -380,7 +380,7 @@ const Header = () => {
             {!isMobile && (
               <Box className="custom-button" onClick={handleMenuClose}>
                 <CloseIcon sx={{ fontSize: '24px' }} />
-                <span className="bodyRegularText3">Menu</span>
+                <span className="bodyRegularText3"> {t("Header.menu")}</span>
               </Box>
             )}
           </Box>
@@ -410,7 +410,7 @@ const Header = () => {
                   }
                 }}
               >
-                {["Membership Log In", "Log In / Sign Up", "Client Log In"].map((text) => (
+                {[t("Header.profilemenbership"), t("Header.profilelogin"), t("Header.profileregister")].map((text) => (
                   <MenuItem
                     key={text}
                     onClick={handleProfileMenuClose}
@@ -443,7 +443,7 @@ const Header = () => {
               </Menu>
             </Box>
 
-            <button data-cursor="hover" onClick={() => navigate('contact')} class="book-demo-btn bodyRegularText4">Book a Demo</button>
+            <button data-cursor="hover" onClick={() => navigate('contact')} class="book-demo-btn bodyRegularText4">{t("Header.BookaDemo")}</button>
           </Box>
         )
       }

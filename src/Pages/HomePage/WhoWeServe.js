@@ -15,17 +15,17 @@ const WhoWeServe = () => {
     const serveCards1 = [
         {
             id: 1,
-            title: "Hotels & Restaurants",
+            title: t('Home.hotelsRestaurants'),
             image: hotel,
         },
         {
             id: 2,
-            title: "Gas Stations & Roadside Restaurants",
+            title: t('Home.gasRoadsideRestaurants'),
             image: gasStation,
         },
         {
             id: 3,
-            title: "Schools & Universities",
+            title: t('Home.schoolsUniversities'),
             image: school,
         },
 
@@ -33,17 +33,17 @@ const WhoWeServe = () => {
     const serveCards2 = [
         {
             id: 1,
-            title: "Companies & Factories",
+            title: t('Home.companiesFactories'),
             image: office,
         },
         {
             id: 2,
-            title: "Events & Festivals",
+            title: t('Home.eventsFestivals'),
             image: events,
         },
         {
             id: 3,
-            title: "Municipalities & Public Authorities",
+            title: t('Home.municipalitiesPublic'),
             image: publicPic,
         },
     ];

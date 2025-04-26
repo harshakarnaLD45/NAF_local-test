@@ -8,16 +8,16 @@ import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
 
-const features = [
-    { icon: SustainabilityIcon1, text: 'Return System & Reusable Packaging' },
-    { icon: SustainabilityIcon2, text: 'Partnerships with Local/Regional Producers' },
-    { icon: SustainabilityIcon3, text: 'In-House Cloud & App Development' },
-    { icon: SustainabilityIcon4, text: 'RFID Integration, Telemetry, & Energy Efficiency' },
-    { icon: SustainabilityIcon5, text: 'Innovation Awards & Grant-Funded Projects' },
-];
-
 const Sustainability = () => {
     const { t } = useTranslation();
+    const features = [
+        { icon: SustainabilityIcon1, text: t('Home.sustainabilitybenifits1') },
+        { icon: SustainabilityIcon2, text: t('Home.sustainabilitybenifits2') },
+        { icon: SustainabilityIcon3, text: t('Home.sustainabilitybenifits3') },
+        { icon: SustainabilityIcon4, text: t('Home.sustainabilitybenifits4') },
+        { icon: SustainabilityIcon5, text: t('Home.sustainabilitybenifits5') },
+    ];
+
     const scrollContainerRef = useRef();
     const leftSectionRef = useRef();
     const [leftHeight, setLeftHeight] = useState(400);
@@ -116,7 +116,7 @@ const Sustainability = () => {
                     <ScrollMaskText text={t('Home.sustainabilityText')} textColor='#444'
                     />
                 </Box>
-                <AnimateButton text1='GET IN' text2='TOUCH' getBtnColor='#161616' />
+                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} getBtnColor='#161616' />
             </Box>
 
             {/* Right Side: Infinite Scroll */}

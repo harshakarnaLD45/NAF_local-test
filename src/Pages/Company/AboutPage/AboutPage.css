@@ -82,6 +82,10 @@
     padding: 32px 24px;
 }
 
+.about-naf-img-let {
+    width: 200px;
+}
+
 @media (min-width: 2200px) {
     .responsive-text {
         font-size: calc(4rem + 4.5vw) !important;
@@ -116,6 +120,10 @@
     .team-card {
         height: 450px;
     }
+
+    .about-naf-img-let {
+        width: 150px;
+    }
 }
 
 @media (max-width: 1300px) {
@@ -148,6 +156,7 @@
     .crads-title-sec {
         padding: 20px 14px;
     }
+
     .maintenance-containers1 {
         height: 100vh !important;
     }
@@ -174,6 +183,10 @@
     .star-icon {
         width: 25px;
         height: 25px;
+    }
+
+    .about-naf-img-let {
+        width: 100px;
     }
 }
 
@@ -208,7 +221,15 @@
     .maintenance-containers1 {
         height: 165vh !important;
     }
+
     .val-motion-effect {
         max-width: 98%;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .about-naf-img-let {
+        width: 80px;
     }
 }

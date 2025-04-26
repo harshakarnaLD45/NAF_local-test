@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import star from '../../assets/Vector (1).png';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import FadeInParagraph from "./FadeInParagraph";
 import NafIcon from '../../assets/Home/naf icon.svg'
+import { useTranslation } from "react-i18next";
 
 const bannerItems = Array(8).fill({
   text: "NAF GERMANY",
@@ -11,6 +11,7 @@ const bannerItems = Array(8).fill({
 });
 
 const NafParagrap = () => {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -239,7 +240,7 @@ const NafParagrap = () => {
           md: 6,
         }, mt: 3
       }}>
-        <AnimateButton text1='VIEW' text2='MORE' route='company/about' />
+        <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route='company/about' />
       </Box>
 
       <Box

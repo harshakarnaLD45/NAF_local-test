@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import OdetteImg from '../../assets/Company logo (1).png';
-import AbdelilahImg from "../../assets/Company logo (2).png";
+import OdetteImg from '../../assets/Arrow 2.svg';
+import AbdelilahImg from "../../assets/Arrow 2.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
