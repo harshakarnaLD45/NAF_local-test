@@ -224,10 +224,10 @@ function PartnersForm() {
                     // Installation Locations Form
                     <Box sx={{ mt: { xs: 4, sm: 6, md: 8 } }}>
                         <Typography className='bodyRegularText3' sx={{ my: 4 }} color='#C2C2C4'>
-                            Suggest your location now! Our innovative food vending machines provide 24/7 fresh meals right at your site – perfect for companies with more than 200 employees.
+                            {t('machines.CompaniesInstallationSubTitle')}
                         </Typography>
                         <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
-                            How it Works
+                            {t('machines.HowitWork')}
                         </Typography>
                         <Box
                             sx={{
@@ -249,24 +249,24 @@ function PartnersForm() {
                                     <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography className='bodyRegularText3' color='#C2C2C4'>
                                         {[
-                                            'You pick the place that works best for you',
-                                            'We handle the machine and help pick your caterer',
-                                            'Or buy a machine and use your caterer'
+                                            t('machines.HowitWorktext1'),
+                                            t('machines.HowitWorktext2'),
+                                            t('machines.HowitWorktext3')
                                         ][index]}
                                     </Typography>
                                 </Box>
                             ))}
                         </Box>
 
-                        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
+                        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>{t('machines.FillupForm')}</Typography>
 
-                        <CustomTextField required label="Company Name" name="companyName" value={formTab0.companyName} onChange={(e) => handleChange(e, 0)} />
-                        <CustomTextField required label="Installation Address" name="installationAddress" value={formTab0.installationAddress} onChange={(e) => handleChange(e, 0)} />
-                        <CustomTextField required label="Number of Employees" name="numberOfEmployees" type="number" value={formTab0.numberOfEmployees} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label={t('machines.CompanyName')} name="companyName" value={formTab0.companyName} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label={t('machines.InstallationAddress')} name="installationAddress" value={formTab0.installationAddress} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label={t('machines.NumberofEmployees')} name="numberOfEmployees" type="number" value={formTab0.numberOfEmployees} onChange={(e) => handleChange(e, 0)} />
 
                         <CustomSelect
                             required
-                            label="Are you willing to purchase the vending machine?"
+                            label={t('machines.willingpurchase')}
                             name="willingToPurchaseMachine"
                             value={formTab0.willingToPurchaseMachine}
                             onChange={(e) => handleChange(e, 0)}
@@ -277,7 +277,7 @@ function PartnersForm() {
                         />
                         <CustomSelect
                             required
-                            label="Would you like us to provide a catering partner?"
+                            label={t('machines.likecatering')}
                             name="provideCateringPermit"
                             value={formTab0.provideCateringPermit}
                             onChange={(e) => handleChange(e, 0)}
@@ -287,9 +287,9 @@ function PartnersForm() {
                             ]}
                         />
                         {/* Contact info */}
-                        <CustomTextField required label="Contact Person Full Name" name="contactPersonName" value={formTab0.contactPersonName} onChange={(e) => handleChange(e, 0)} />
-                        <CustomTextField required label="Email" name="email" type="email" value={formTab0.email} onChange={(e) => handleChange(e, 0)} />
-                        <CustomTextField label="Phone Number" name="phoneNumber" value={formTab0.phoneNumber} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label={t('machines.ContactPersonFName')} name="contactPersonName" value={formTab0.contactPersonName} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField required label={t('machines.Email')} name="email" type="email" value={formTab0.email} onChange={(e) => handleChange(e, 0)} />
+                        <CustomTextField label={t('machines.PhoneNumber')} name="phoneNumber" value={formTab0.phoneNumber} onChange={(e) => handleChange(e, 0)} />
 
                         <FormControlLabel
                             control={
@@ -309,9 +309,9 @@ function PartnersForm() {
                             className="bodyRegularText4"
                             label={
                                 <span>
-                                    I Understand that NAF Germany will securely hold my data in accordance with their{' '}
+                                    {t('machines.privacytext')}{' '}
                                     <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-                                        privacy policy
+                                        {t('machines.privacypolicy')}
                                     </span>
                                 </span>
                             }
@@ -322,10 +322,10 @@ function PartnersForm() {
                     // Gastronomy Partner Form
                     <Box sx={{ mt: { xs: 4, sm: 6, md: 8 } }}>
                         <Typography className='bodyRegularText3' sx={{ my: 4 }} color='#C2C2C4'>
-                            Become a catering partner today! Whether you serve regional dishes, vegan bowls, or hearty meals – as a catering partner, you deliver fresh meals to our smart vending machines and reach new customers effortlessly.
+                            {t('machines.GastronomyPartnersSubTitle')}
                         </Typography>
                         <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
-                            What’s in it for you
+                            {t('machines.WhatsInyou')}
                         </Typography>
                         <Box
                             sx={{
@@ -347,9 +347,9 @@ function PartnersForm() {
                                     <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography className='bodyRegularText3' color='#C2C2C4'>
                                         {[
-                                            'New revenue streams and broader reach',
-                                            'Flexible delivery on your schedule',
-                                            'Automated sales and reporting through our cloud system'
+                                            t('machines.WhatsInyoupoint1'),
+                                            t('machines.WhatsInyoupoint2'),
+                                            t('machines.WhatsInyoupoint3')
                                         ][index]}
                                     </Typography>
                                 </Box>
@@ -358,14 +358,14 @@ function PartnersForm() {
 
                         <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
 
-                        <CustomTextField required label="Restaurant / Business Name" name="businessName" value={formTab1.businessName} onChange={(e) => handleChange(e, 1)} />
-                        <CustomTextField required label="Contact Person Full Name*" name="contactPersonName" value={formTab1.contactPersonName} onChange={(e) => handleChange(e, 1)} />
-                        <CustomTextField label="Position" name="position" value={formTab1.position} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField required label={t('machines.Restaurant')} name="businessName" value={formTab1.businessName} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField required label={t('machines.ContactPersonFName')} name="contactPersonName" value={formTab1.contactPersonName} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label={t('machines.Position')} name="position" value={formTab1.position} onChange={(e) => handleChange(e, 1)} />
 
                         {/* Contact info */}
-                        <CustomTextField required label="Email" name="email" type="email" value={formTab1.email} onChange={(e) => handleChange(e, 1)} />
-                        <CustomTextField label="Phone Number" name="phoneNumber" value={formTab1.phoneNumber} onChange={(e) => handleChange(e, 1)} />
-                        <CustomTextField label="Your Specialization" name="specialization" value={formTab1.specialization} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField required label={t('machines.Email')} name="email" type="email" value={formTab1.email} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label={t('machines.PhoneNumber')} name="phoneNumber" value={formTab1.phoneNumber} onChange={(e) => handleChange(e, 1)} />
+                        <CustomTextField label={t('machines.Specialization')} name="specialization" value={formTab1.specialization} onChange={(e) => handleChange(e, 1)} />
 
                         <FormControlLabel
                             control={
@@ -385,9 +385,9 @@ function PartnersForm() {
                             className="bodyRegularText4"
                             label={
                                 <span>
-                                    I Understand that NAF Germany will securely hold my data in accordance with their{' '}
+                                    {t('machines.privacytext')}{' '}
                                     <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-                                        privacy policy
+                                        {t('machines.privacypolicy')}
                                     </span>
                                 </span>
                             }

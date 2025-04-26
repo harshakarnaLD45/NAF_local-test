@@ -129,16 +129,16 @@ function ServiceForm() {
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10 }}>
       <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }} component="form" onSubmit={handleSubmit}>
-        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
+        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>{t('Maintenance.FillupForm')}</Typography>
         <CustomTextField
           required
-          label="Machine Location"
+          label={t('Maintenance.MachineLocation')}
           name="machineLocation"
           value={formValues.machineLocation}
           onChange={handleChange}
         />
         <CustomTextField
-          label="Machine ID"
+          label={t('Maintenance.MachineID')}
           name="machineId"
           value={formValues.machineId}
           onChange={handleChange}
@@ -146,7 +146,7 @@ function ServiceForm() {
 
         <CustomSelect
           required
-          label="Problem Category"
+          label={t('Maintenance.ProblemCategory')}
           name="problemCategory"
           value={formValues.problemCategory}
           onChange={handleChange}
@@ -160,7 +160,7 @@ function ServiceForm() {
 
         <CustomSelect
           required
-          label="Problem Type"
+          label={t('Maintenance.ProblemType')}
           name="problemType"
           value={formValues.problemType}
           onChange={handleChange}
@@ -173,7 +173,7 @@ function ServiceForm() {
         />
 
         <CustomTextField
-          label="Description"
+          label={t('Maintenance.Description')}
           name="description"
           value={formValues.description}
           onChange={handleChange}
@@ -182,21 +182,21 @@ function ServiceForm() {
 
         <CustomTextField
           required
-          label="Contact Person Full Name"
+          label={t('Maintenance.ContactPersonFName')}
           name="contactPersonName"
           value={formValues.contactPersonName}
           onChange={handleChange}
         />
         <CustomTextField
           required
-          label="Email"
+          label={t('Maintenance.Email')}
           name="email"
           type="email"
           value={formValues.email}
           onChange={handleChange}
         />
         <CustomTextField
-          label="Phone Number"
+          label={t('Maintenance.PhoneNumber')}
           name="phoneNumber"
           value={formValues.phoneNumber}
           onChange={handleChange}
@@ -227,7 +227,7 @@ function ServiceForm() {
             >
               <UploadIcon />
             </div>
-            Upload Media (Photos, Videos, or Audio)
+            {t('Maintenance.UploadMedia')}
           </label>
 
           <input
@@ -269,7 +269,7 @@ function ServiceForm() {
                   {file.type.startsWith('image') ? (
                     <img src={URL.createObjectURL(file)} alt={file.name} width="60" height="60" />
                   ) : (
-                    <Typography sx={{ fontSize: '12px' }}>Media</Typography>
+                    <Typography sx={{ fontSize: '12px' }}>{t('Maintenance.media')}</Typography>
                   )}
                 </Box>
                 <CloseIcon
@@ -311,9 +311,9 @@ function ServiceForm() {
           className="bodyRegularText4"
           label={
             <span>
-              I Understand that NAF Germany will securely hold my data in accordance with their{' '}
+              {t('Maintenance.uderstnadTest')}
               <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-                privacy policy
+              {t('Maintenance.privacy')}
               </span>
             </span>
           }
@@ -321,7 +321,7 @@ function ServiceForm() {
         />
 
         <Box onClick={handleSubmit} sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
-          <AnimateButton text1="SUBMIT" text2="FORM" />
+          <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.FORM')} />
         </Box>
         <Snackbar
           open={snackbar.open}
@@ -335,7 +335,7 @@ function ServiceForm() {
         </Snackbar>
 
         <Typography variant="body2" className="bodyRegularText4" align="center" color="#C2C2C4" sx={{ mt: 2 }}>
-          Our team will review your request and contact you shortly.
+          {t('Maintenance.Requestformfooter')}
         </Typography>
       </Box>
     </Box>
