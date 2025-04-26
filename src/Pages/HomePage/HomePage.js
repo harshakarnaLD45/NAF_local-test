@@ -13,9 +13,11 @@ import Sustainability from './Sustainability';
 import WhoWeServe from './WhoWeServe';
 import GradientMaskText from '../../Componenets/CommonComponents/GradientMaskText';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const { lang } = useParams(); 
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,7 +33,7 @@ const HomePage = () => {
               {t('Home.mainParagraph')}
             </Typography>
             <Box data-cursor="hover" className="button-container">
-              <AnimateButton route='machine' />
+              <AnimateButton route={`/${lang}/machine`} />
             </Box>
           </Box>
         </Box>

@@ -7,9 +7,12 @@ import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, Sustaina
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const Sustainability = () => {
     const { t } = useTranslation();
+    const { lang } = useParams(); 
+
     const features = [
         { icon: SustainabilityIcon1, text: t('Home.sustainabilitybenifits1') },
         { icon: SustainabilityIcon2, text: t('Home.sustainabilitybenifits2') },

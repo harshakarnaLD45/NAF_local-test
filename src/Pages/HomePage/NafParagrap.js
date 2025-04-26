@@ -4,6 +4,7 @@ import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import FadeInParagraph from "./FadeInParagraph";
 import NafIcon from '../../assets/Home/naf icon.svg'
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 const bannerItems = Array(8).fill({
   text: "NAF GERMANY",
@@ -12,6 +13,8 @@ const bannerItems = Array(8).fill({
 
 const NafParagrap = () => {
   const { t } = useTranslation();
+  const { lang } = useParams(); 
+
   return (
     <Box
       sx={{
@@ -240,7 +243,7 @@ const NafParagrap = () => {
           md: 6,
         }, mt: 3
       }}>
-        <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route='company/about' />
+        <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route={`/${lang}/company/about`} />
       </Box>
 
       <Box

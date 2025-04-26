@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import MaintainceImage from '../../assets/Machines/Maintaince.png'
 import { useTranslation } from 'react-i18next';
+import { useParams } from "react-router-dom";
 
 const Maintenance = () => {
   const { t } = useTranslation();
-
+  const { lang } = useParams(); 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -38,7 +39,7 @@ const Maintenance = () => {
             </Typography>
           </Box>
 
-          <AnimateButton route='/maintaince' />
+          <AnimateButton route={`/${lang}/maintaince`} />
         </Box>
 
         {/* Right Image Section */}

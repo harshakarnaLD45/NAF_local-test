@@ -5,9 +5,11 @@ import './MantaincePage.css'
 import SupportSection from './SupportSection'
 import ServiceForm from './ServiceForm'
 import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 
 function MantaincePage() {
     const { t } = useTranslation();
+    const { lang } = useParams(); 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -23,7 +25,7 @@ function MantaincePage() {
                             {t('Maintenance.ReliableMaintenanceSubtitle')}
                         </Typography>
                         <Box data-cursor="hover" className="button-container">
-                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route='machine' />
+                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/machine`} />
                         </Box>
                     </Box>
                 </Box>

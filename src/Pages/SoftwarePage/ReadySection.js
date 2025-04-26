@@ -9,9 +9,11 @@ import image6 from '../../assets/software/ball (5).png';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from 'react-i18next';
+import { useParams } from "react-router-dom";
 
 const ReadySection = () => {
     const { t } = useTranslation();
+    const { lang } = useParams(); 
     const [containerSize, setContainerSize] = useState({
         width: window.innerWidth * 0.9,
         height: window.innerHeight * 0.9,
@@ -274,7 +276,7 @@ const ReadySection = () => {
                         zIndex: 1,
                     }}
                 >
-                    <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} />
+                    <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
                 </Box>
             </div>
         </Box>

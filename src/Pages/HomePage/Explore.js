@@ -18,7 +18,7 @@ import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHea
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ArrowButton from '../../Componenets/CommonComponents/ArrowButton';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import MachineSmallIcon1 from '../../assets/Home/MachineIcons/Machine1Icon1.svg'
 import MachineSmallIcon2 from '../../assets/Home/MachineIcons/Machine1Icon2.svg'
 import MachineSmallIcon3 from '../../assets/Home/MachineIcons/Machine1Icon3.svg'
@@ -322,7 +322,9 @@ const machines = [
 ];
 
 function Explore() {
-  const { t } = useTranslation();
+  const { t } = useTranslation();  
+  const { lang } = useParams(); 
+
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -341,7 +343,7 @@ function Explore() {
   };
 
   const handleMachineClick = (machineName) => {
-    navigate('/machine', { state: { selectedMachine: machineName } });
+    navigate(`/${lang}/machine`, { state: { selectedMachine: machineName } });
   };
 
   return (
@@ -356,7 +358,7 @@ function Explore() {
           </Box>
         </Box>
         <Box sx={{ alignSelf: 'flex-end' }} className="explorebutton">
-          <AnimateButton route='/machine' />
+          <AnimateButton route={`/${lang}/machine`} />
         </Box>
       </Box>
 

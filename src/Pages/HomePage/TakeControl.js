@@ -6,9 +6,12 @@ import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
 import CloudVideo from '../../assets/Home/CloudVideo.mp4'
+import { useParams } from 'react-router-dom';
 
 const TakeControl = () => {
   const { t } = useTranslation();
+  const { lang } = useParams(); 
+
   return (
     <Box sx={{ p: 3 }} className='section-container'>
       <Box
@@ -74,7 +77,7 @@ const TakeControl = () => {
             />
           </Box>
 
-          <AnimateButton route='software' />
+          <AnimateButton route={`/${lang}/software`} />
         </Box>
 
         {/* Right Image Section */}

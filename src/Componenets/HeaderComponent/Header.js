@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Naflogo from '../../assets/naf-halsbach_logo 1.png';
 import MenuIcons from '../../assets/Menu_icon.png';
 import './Header.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
@@ -14,7 +14,9 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef(null);
-  const menuTriggerRef = useRef(null); // for the menu button
+  const menuTriggerRef = useRef(null); // for the menu button  
+  const { lang } = useParams(); // 👈 get language from URL
+
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
@@ -110,12 +112,23 @@ const Header = () => {
   }, [profileAnchorEl]);
 
   const handleLanguageChange = (event) => {
-    console.log(event.target.value);
-
     const newLanguage = event.target.value;
+    const pathParts = location.pathname.split('/').filter(Boolean);
+
+    // Replace the first part (language) with newLanguage
+    if (pathParts.length > 0) {
+      pathParts[0] = newLanguage;
+    } else {
+      pathParts.unshift(newLanguage);
+    }
+
+    const newPath = `/${pathParts.join('/')}`;
+
     setLanguage(newLanguage);
     i18n.changeLanguage(newLanguage);
+    navigate(newPath);
   };
+  const strippedPath = location.pathname.replace(/^\/[a-z]{2}\//, '/');
 
   return (
     <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
@@ -235,17 +248,16 @@ const Header = () => {
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
               {[
-                { label: t("Header.menuHome"), path: '/' },
-                { label: t("Header.menuMachines"), path: '/machine' },
-                { label: t("Header.menuSoftware"), path: '/software' },
-                // { label: 'Solutions', path: '/solutions' },
-                { label: t("Header.menuInsights"), path: '/insights' },
-                { label: t("Header.CompanyDiscover"), path: '/company/about' },
-                { label: t("Header.foodMenu"), path: '/company/menu' },
+                { label: t("Header.menuHome"), path: `/${lang}` },
+                { label: t("Header.menuMachines"), path: `/${lang}/machine` },
+                { label: t("Header.menuSoftware"), path: `/${lang}/software` },
+                { label: t("Header.menuInsights"), path: `/${lang}/insights` },
+                { label: t("Header.CompanyDiscover"), path: `/${lang}/company/about` },
+                { label: t("Header.foodMenu"), path: `/${lang}/company/menu` },
               ].map(({ label, path }) => (
                 <Box
                   key={path}
-                  className={`menu-item ${(location.pathname === path || hoveredPath === path) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                  className={`menu-item ${(strippedPath === path.replace(`/${lang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -261,119 +273,72 @@ const Header = () => {
                   {label}
                 </Box>
               ))}
-              {/* <Box>
-                <Box
-                  className='menu-item'
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => setIsCompanyOpen((prev) => !prev)}
-                  onMouseEnter={() => setHoveredPath('/company')}
-                  onMouseLeave={() => setHoveredPath(null)}
-                >
-                  {(location.pathname.startsWith('/company') ||
-                    hoveredPath === '/company' ||
-                    hoveredPath === '/company/about' ||
-                    hoveredPath === '/company/menu') && (
-                      <span className="arrow-icon"><ArrowIcon1 /></span>
-                    )}
-                  <Box sx={{
-                    display: 'flex', alignItems: 'center', gap: '10px',
-                    color: (
-                      location.pathname.startsWith('/company') ||
-                      hoveredPath === '/company' ||
-                      hoveredPath === '/company/about' ||
-                      hoveredPath === '/company/menu'
-                    ) ? '#1A1A1A' : '#FCFCFC',
-                  }} className={`${(location.pathname.startsWith('/company') ||
-                    hoveredPath === '/company' ||
-                    hoveredPath === '/company/about' ||
-                    hoveredPath === '/company/menu') ? 'bodyMediumText1' : 'bodyRegularText2'}`}>Company <DropDownIcon color={(location.pathname.startsWith('/company') ||
-                      hoveredPath === '/company' ||
-                      hoveredPath === '/company/about' ||
-                      hoveredPath === '/company/menu') ? '#1A1A1A' : '#FCFCFC'} /></Box>
-                </Box>
-
-                {isCompanyOpen && (
-                  <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
-                    <Box
-                      className={`menu-item ${(location.pathname === '/company/about' || hoveredPath === '/company/about') ? 'bodyMediumText2' : 'bodyRegularText3'}`}
-                      sx={{ color: (location.pathname.startsWith('/company/about') || hoveredPath === '/company/about') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
-                      onClick={() => {
-                        setIsCompanyOpen(false);
-                        handleNavigation('/company/about');
-                      }}
-                      onMouseEnter={() => setHoveredPath('/company/about')}
-                      onMouseLeave={() => setHoveredPath(null)}
-                    >
-                      Discover NAF
-                    </Box>
-                    <Box
-                      className={`menu-item ${(location.pathname === '/company/menu' || hoveredPath === '/company/menu') ? 'bodyMediumText2' : 'bodyRegularText3'}`}
-                      sx={{ color: (location.pathname.startsWith('/company/menu') || hoveredPath === '/company/menu') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
-                      onClick={() => {
-                        setIsCompanyOpen(false);
-                        handleNavigation('/company/menu');
-                      }}
-                      onMouseEnter={() => setHoveredPath('/company/menu')}
-                      onMouseLeave={() => setHoveredPath(null)}
-                    >
-                      Live Menu
-                    </Box>
-                  </Box>
-                )}
-              </Box> */}
-
               {isMobile && (
                 <Box>
+                  {/* SignIn Dropdown Menu */}
                   <Box
-                    className={`menu-item ${location.pathname === '/signIn' ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    className={`menu-item ${(strippedPath === '/signIn') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC',
+                      color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC',
                       cursor: 'pointer'
                     }}
                     onClick={() => setIsSignInOpen((prev) => !prev)}
                   >
-                    {location.pathname === '/signIn' && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>{t("Header.profileSignIn")} <DropDownIcon color={location.pathname.startsWith('/signIn') ? '#1A1A1A' : '#FCFCFC'} /></Box>
+                    {(strippedPath === '/signIn') && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      {t("Header.profileSignIn")}
+                      <DropDownIcon color={(strippedPath.startsWith('/signIn')) ? '#1A1A1A' : '#FCFCFC'} />
+                    </Box>
                   </Box>
 
-                  {/* Show sublist when isSignInOpen is true */}
+                  {/* Show sublist when SignIn dropdown is open */}
                   {isSignInOpen && (
                     <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
-                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                      <Box
+                        className="menu-item bodyRegularText3"
+                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                        onClick={() => setIsSignInOpen(false)}
+                      >
                         {t("Header.profilemenbership")}
                       </Box>
-                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                      <Box
+                        className="menu-item bodyRegularText3"
+                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                        onClick={() => setIsSignInOpen(false)}
+                      >
                         {t("Header.profilelogin")}
                       </Box>
-                      <Box className="menu-item bodyRegularText3" sx={{ color: location.pathname === '/signIn' ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }} onClick={() => setIsSignInOpen(false)}>
+                      <Box
+                        className="menu-item bodyRegularText3"
+                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                        onClick={() => setIsSignInOpen(false)}
+                      >
                         {t("Header.profileregister")}
                       </Box>
                     </Box>
                   )}
 
+                  {/* Contact Page Menu */}
                   <Box
-                    className={`menu-item ${location.pathname === '/contact' ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    className={`menu-item ${(strippedPath === '/contact') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'flex-start',
                       mt: '10px',
-                      color: location.pathname === '/contact' ? '#1A1A1A' : '#FCFCFC',
+                      color: (strippedPath === '/contact') ? '#1A1A1A' : '#FCFCFC',
                       gap: '10px',
                     }}
-                    onClick={() => handleNavigation('/contact')}
+                    onClick={() => handleNavigation(`/${lang}/contact`)}
                   >
-                    {location.pathname === '/contact' && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                    {(strippedPath === '/contact') && <span className="arrow-icon"><ArrowIcon1 /></span>}
                     <span>{t("Header.BookaDemo")}</span>
                   </Box>
                 </Box>
               )}
+
             </Box>
 
             {/* Cancel Menu at Bottom */}
@@ -443,7 +408,13 @@ const Header = () => {
               </Menu>
             </Box>
 
-            <button data-cursor="hover" onClick={() => navigate('contact')} class="book-demo-btn bodyRegularText4">{t("Header.BookaDemo")}</button>
+            <button
+              data-cursor="hover"
+              onClick={() => navigate(`/${lang}/contact`)}
+              className="book-demo-btn bodyRegularText4"
+            >
+              {t("Header.BookaDemo")}
+            </button>
           </Box>
         )
       }

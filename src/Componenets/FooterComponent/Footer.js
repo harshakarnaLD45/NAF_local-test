@@ -9,9 +9,11 @@ import YouTube from '../../assets/Social Icons (4).png';
 import AnimateButton from "../CommonComponents/AnimateButton";
 import FooterLogo from '../../assets/FooterLogo.svg'
 import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { lang } = useParams(); 
   const currentYear = new Date().getFullYear();
 
   const socialIcons = [
@@ -156,7 +158,7 @@ const Footer = () => {
                   marginBottom: { xs: "0rem", md: "5rem" }
                 }}
               >
-                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route='contact' />
+                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
               </Box>
               <Box className="social-icon-sec" sx={{
                 position: 'relative',

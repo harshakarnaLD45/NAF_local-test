@@ -9,11 +9,13 @@ import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const WhatsNew = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { lang } = useParams(); 
+
   const blogPosts = [
     {
       id: 1,
@@ -104,7 +106,7 @@ const WhatsNew = () => {
         </Typography> */}
         <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
         <Box>
-          <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route='/Insights' />
+          <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route={`/${lang}/Insights`} />
         </Box>
       </Box>
 
