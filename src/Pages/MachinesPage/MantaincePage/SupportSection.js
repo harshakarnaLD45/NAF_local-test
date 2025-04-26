@@ -1,8 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { SupportIcon1, SupportIcon2, SupportIcon3, SupportIcon4 } from '../../../Componenets/CustomIcons';
+import { useTranslation } from 'react-i18next';
 
 const SupportSection = () => {
+    const { t } = useTranslation();
     return (
         <Box className="expertise-main-section" sx={{ position: 'relative' }}>
             <Box
@@ -16,7 +18,7 @@ const SupportSection = () => {
                 }}
             >
                 <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
-                    Our Support <br />Services
+                {t('Maintenance.OurSupportServices')} <br />{t('Maintenance.OurSupportServices1')}
                 </Typography>
             </Box>
             <Box className="expertise-maincards-container" style={{ padding: '0px', zIndex: '5' }}>
@@ -26,7 +28,7 @@ const SupportSection = () => {
                             <SupportIcon1 />
                         </Box>
                         <Box>
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Preventative <br />Maintenance</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('Maintenance.PreventativeMaintenance')} <br />{t('Maintenance.PreventativeMaintenance1')}</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
@@ -34,7 +36,7 @@ const SupportSection = () => {
                             <SupportIcon3 />
                         </Box>
                         <Box>
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Remote <br />Diagnostics</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('Maintenance.RemoteDiagnostics')} <br />{t('Maintenance.RemoteDiagnostics1')}</Typography>
                         </Box>
                     </Box>
                 </Box>
@@ -44,7 +46,7 @@ const SupportSection = () => {
                             <SupportIcon2 />
                         </Box>
                         <Box>
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Prompt <br />Repairs</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('Maintenance.PromptRepairs')} <br />{t('Maintenance.PromptRepairs1')}</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
@@ -52,7 +54,7 @@ const SupportSection = () => {
                             <SupportIcon4 />
                         </Box>
                         <Box>
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Dedicated Support <br />Team</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('Maintenance.DedicatedSupportTeam')} <br />{t('Maintenance.DedicatedSupportTeam1')}</Typography>
                         </Box>
                     </Box>
                 </Box>

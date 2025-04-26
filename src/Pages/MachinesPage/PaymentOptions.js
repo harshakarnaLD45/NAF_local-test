@@ -2,52 +2,54 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { PaymentOptionsIcon1, PaymentOptionsIcon2, PaymentOptionsIcon3 } from "../../Componenets/CustomIcons";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
-
-const paymentOptions = [
-    {
-        title: "Leasing",
-        description: "Lease a vending machine with low upfront cost. Pay monthly, then choose to buy, renew, or return at lease end.",
-        points: [
-            "Low upfront costs",
-            "Predictable monthly payments",
-            "Ability to upgrade equipment",
-        ],
-        icon: PaymentOptionsIcon1,
-    },
-    {
-        title: "Rental Purchase",
-        description: "Rent-to-own builds equity over time. Make regular payments, and own the vending machine at the end of the term.",
-        points: [
-            "Build equity over time",
-            "Eventual ownership of the machine",
-            "Flexible payment options",
-        ],
-        icon: PaymentOptionsIcon2,
-    },
-    {
-        title: "Direct Purchase",
-        description: "Buy the vending machine outright with a one-time payment and get full ownership and control from day one.",
-        points: [
-            "Full ownership from day one",
-            "Immediate equity",
-            "No ongoing payments",
-        ],
-        icon: PaymentOptionsIcon3,
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 const PaymentOptions = () => {
+    const { t } = useTranslation();
+    const paymentOptions = [
+        {
+            title: t('machines.LeasingTitle'),
+            description: t('machines.Leasingtext'),
+            points: [
+                t('machines.Leasingpoints1'),
+                t('machines.Leasingpoints2'),
+                t('machines.Leasingpoints3'),
+            ],
+            icon: PaymentOptionsIcon1,
+        },
+        {
+            title: t('machines.RentalPurchase'),
+            description: t('machines.Rentaltext'),
+            points: [
+                t('machines.Rentalpoints1'),
+                t('machines.Rentalpoints2'),
+                t('machines.Rentalpoints3'),
+            ],
+            icon: PaymentOptionsIcon2,
+        },
+        {
+            title: t('machines.DirectPurchaseTitle'),
+            description: t('machines.DirectPurchaseSubTitle'),
+            points: [
+                t('machines.Directpoints1'),
+                t('machines.Directpoints2'),
+                t('machines.Directpoints3'),
+            ],
+            icon: PaymentOptionsIcon3,
+        },
+    ];
+
     return (
         <Box className='section-container'>
             <Box sx={{ width: { xs: '100%', sm: '80%', md: '50%' }, mb: { xs: 2, sm: 2, md: 3 } }}>
                 <div data-cursor="hover">
                     <Typography data-cursor="hover" variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
-                        Flexible Payment Options for Your NAF Machines
+                        {t('machines.FlexiblePaymentTitle')}
                     </Typography>
                 </div>
                 <Box sx={{ mb: 3 }} data-cursor="hover">
                     <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: { xs: '8px', sm: '8px', md: '16px' } }}>
-                        Our financing models make it easy to enter automated catering. Whether leasing, hire purchase, or direct purchase, we show you the best options and calculate your amortization period. Save on personnel and operating costs from the first month.
+                        {t('machines.FlexiblePaymentsubTitle')}
                     </Typography>
                 </Box>
             </Box>
@@ -87,7 +89,7 @@ const PaymentOptions = () => {
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                                <AnimateButton text1="GET IN" text2="TOUCH" />
+                                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} />
                             </Box>
                         </Box>
                     </Box>

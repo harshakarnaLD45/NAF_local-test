@@ -7,8 +7,8 @@ const AwardsSection = () => {
 
     // Award data for mapping
     const awardsData = [
-        { year: t('about.year1'), title: t('about.award1') },
-        { year: t('about.year2'), title: t('about.award1') },
+        { year: 2023, title: t('about.award1') },
+        { year: 2024, title: t('about.award1') },
     ];
 
     return (

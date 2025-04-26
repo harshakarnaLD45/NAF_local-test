@@ -4,23 +4,25 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import OdetteImg from '../../assets/Arrow 2.svg';
 import AbdelilahImg from "../../assets/Arrow 2.svg";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const paragraphText = [
-    { text: "From Fine Dining to AI Gastronomy - NAF was founded by", highlight: false },
-    { text: "Odette", highlight: true, person: "odette" },
-    { text: "and", highlight: false },
-    { text: "Abdelilah", highlight: true, person: "abdelilah" },
-    { text: "Lamkhizni", highlight: true, person: "abdelilah" },
-    {
-        text: "- with the vision of creating real alternatives to traditional Gastronomy. With roots in fine dining and a passion for technology, we combine culinary delight with digitalization. Our AI systems are developed in-house by an international team of IT talents and Gastronomy professionals.",
-        highlight: false,
-    },
-];
-
 const FadeInParagraph = () => {
+    const { t } = useTranslation();
     const ref = useRef(null);
+
+    const paragraphText = [
+        { text: t('Home.naftext1'), highlight: false },
+        { text: "Odette", highlight: true, person: "odette" },
+        { text: t('Home.naftext2'), highlight: false },
+        { text: "Abdelilah", highlight: true, person: "abdelilah" },
+        { text: "Lamkhizni", highlight: true, person: "abdelilah" },
+        {
+            text: t('Home.naftext3'),
+            highlight: false,
+        },
+    ];
     const [hoveredPerson, setHoveredPerson] = useState(null);
     const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 

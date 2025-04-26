@@ -1,17 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import styles from './MachinesPage.css';
+import { useTranslation } from 'react-i18next';
 
-const machineData = [
-    { id: 1, label: 'All', width: 80, height: 30, initialXOffset: -200, initialAngle: 0.05 },
-    { id: 2, label: 'Pizza Machine', width: 110, height: 40, initialXOffset: 100, initialAngle: 0 },
-    { id: 3, label: 'Fries Machine', width: 120, height: 40, initialXOffset: 50, initialAngle: 0.6 },
-    { id: 4, label: 'Soft Ice Cream Machine', width: 120, height: 40, initialXOffset: -180, initialAngle: 0.25 },
-    { id: 5, label: 'Cotton Candy Machine', width: 160, height: 40, initialXOffset: 150, initialAngle: 0.5 },
-    { id: 6, label: 'Beer Machine', width: 150, height: 40, initialXOffset: 180, initialAngle: -0.3 },
-    { id: 7, label: 'Return Machine', width: 130, height: 40, initialXOffset: -310, initialAngle: 0.1 },
-    { id: 8, label: 'Gourmet Machine', width: 180, height: 40, initialXOffset: -120, initialAngle: -0.03 },
-];
 const getResponsiveMachineData = () => {
     const width = window.innerWidth;
 

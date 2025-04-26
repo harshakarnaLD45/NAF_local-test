@@ -13,8 +13,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import { UploadIcon } from '../../../Componenets/CustomIcons';
 import AnimateButton from '../../../Componenets/CommonComponents/AnimateButton';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 function ServiceForm() {
+  const { t } = useTranslation();
   const [formValues, setFormValues] = useState({
     machineLocation: '',
     machineId: '',

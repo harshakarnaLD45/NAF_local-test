@@ -8,20 +8,20 @@ function TeamSection() {
 
     const teamMembers = [
         {
-            name: t('about.MeetTeamTitle1'),
-            position: t('about.MeetTeamSubTitle1'),
+            name: 'Odette Lamkhizni',
+            position: 'CEO',
             color: "#E7F9DC",
             linkedin: "#",
         },
         {
-            name: t('about.MeetTeamTitle2'),
-            position: t('about.MeetTeamSubTitle2'),
+            name: 'Abdelilah Lamkhizni',
+            position: 'Managing Director',
             color: "#FEB6A2",
             linkedin: "#",
         },
         {
-            name: t('about.MeetTeamTitle3'),
-            position: t('about.MeetTeamSubTitle3'),
+            name: 'Sri Satya Sai Kanna Dhulipudi',
+            position: 'Position',
             color: "#94CDFF",
             linkedin: "#",
         },

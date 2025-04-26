@@ -5,8 +5,11 @@ import CloudSecurity from '../../assets/software/Cloud_Security.svg'
 import CustomCloudSolutions from '../../assets/software/Custom_CloudSolutions.svg'
 import CloudOptimization from '../../assets/software/Cloud_Optimization.svg'
 import ManagedCloudServices from '../../assets/software/Managed_CloudServices.svg'
+import { useTranslation } from 'react-i18next';
 
 const ExpertiseSection = () => {
+      const { t } = useTranslation();
+    
     return (
         <Box className="expertise-main-section" sx={{ position: 'relative' }}>
             <Box
@@ -20,7 +23,7 @@ const ExpertiseSection = () => {
                 }}
             >
                 <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
-                    Our Expertise
+                {t('software.ourExpertise')}
                 </Typography>
             </Box>
             <Box className="expertise-maincards-container" style={{ padding: '0px', zIndex: '5' }}>
@@ -30,11 +33,11 @@ const ExpertiseSection = () => {
                             <img className='expertise-image' src={CloudMigration} alt="Software Hero Image" />
                         </Box>
                         <Box className=" expertise-text-sec">
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Remote Machine Monitoring</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} > {t('software.ExpCardTitile1')}</Typography>
                             <Typography className=' bodyRegularText3 ' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>Monitor machine status, schedule maintenance, and address technical issues remotely.</Typography>
+                            }}> {t('software.ExpCardSubTitile1')}</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
@@ -43,11 +46,11 @@ const ExpertiseSection = () => {
                         </Box>
                         <Box className=" expertise-text-sec">
 
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Cloud Security</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('software.ExpCardTitile2')}</Typography>
                             <Typography className=' bodyRegularText3 ' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>Protect your sensitive data with robust security measures, ensuring compliance and peace of mind.</Typography>
+                            }}>{t('software.ExpCardSubTitile2')}</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
@@ -56,11 +59,11 @@ const ExpertiseSection = () => {
                         </Box>
                         <Box className=" expertise-text-sec">
 
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Custom Cloud Solutions</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('software.ExpCardTitile3')}</Typography>
                             <Typography className=' bodyRegularText3 ' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>We design and implement tailored cloud solutions to meet your unique business requirements, providing the flexibility and scalability you need to grow.</Typography>
+                            }}>{t('software.ExpCardSubTitile3')}</Typography>
                         </Box>
                     </Box>
                 </Box>
@@ -71,11 +74,11 @@ const ExpertiseSection = () => {
                         </Box>
                         <Box className=" expertise-text-sec">
 
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Cloud Optimization</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('software.ExpCardTitile4')}</Typography>
                             <Typography className=' bodyRegularText3 ' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>We fine-tune your cloud environment for optimal performance and cost-effectiveness, reducing expenses and improving resource utilization.</Typography>
+                            }}>{t('software.ExpCardSubTitile4')}</Typography>
                         </Box>
                     </Box>
                     <Box className='expertise-sub-cards'>
@@ -84,11 +87,11 @@ const ExpertiseSection = () => {
                         </Box>
                         <Box className=" expertise-text-sec">
 
-                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >Managed Cloud Services</Typography>
+                            <Typography className=' headings-h4' sx={{ textAlign: 'left' }} >{t('software.ExpCardTitile5')}</Typography>
                             <Typography className=' bodyRegularText3 ' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>We provide ongoing maintenance and proactive support, freeing up your IT team to focus on strategic initiatives.</Typography>
+                            }}>{t('software.ExpCardSubTitile5')}</Typography>
                         </Box>
                     </Box>
                 </Box>

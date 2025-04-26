@@ -423,7 +423,7 @@ function PartnersForm() {
                 </Box>
 
                 <Typography variant="body2" className="bodyRegularText4" align="center" color="#C2C2C4" sx={{ mt: 2 }}>
-                    We’ll send you detailed information on how to become a NAF partner – free and without obligation
+                    {t('machines.FormfooterText')}
                 </Typography>
             </Box>
         </Box>

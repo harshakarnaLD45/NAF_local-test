@@ -11,8 +11,10 @@ import MachineImage7 from '../../assets/Home/Machine7.png';
 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
+import { useTranslation } from 'react-i18next';
 
 const MachinesSection = ({ selectedMachine }) => {
+    const { t } = useTranslation();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [months, setMonths] = useState(24);
@@ -23,125 +25,135 @@ const MachinesSection = ({ selectedMachine }) => {
     const machineData = [
         {
             image: MachineImage7,
-            title: 'Gourmet Machine',
-            subtitle: 'AI Menu Logic + AI Customer Profiles',
-            description: 'Serves restaurant-quality gourmet meals. Uses AI-based meal logic and personalized options.',
+            title: t('machines.GourmetMachine'),
+            subtitle: t('machines.AImenu'),
+            description: t('machines.GourmetMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Offices' },
-                { icon: <MachineSmallIcon2 />, label: 'Gyms' },
-                { icon: <MachineSmallIcon3 />, label: 'Corporate' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: 'Automated heating', icon: <MachineSmallIcon5 /> },
-                { text: 'AI based menu logic', icon: <MachineSmallIcon6 /> },
-                { text: 'Sustainable packaging', icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Automatedheating'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.AImenulogic'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Sustainablepackaging'), icon: <MachineSmallIcon7 /> },
             ],
             price: 28500,
             monthly: 500,
         },
         {
             image: MachineImage1,
-            title: 'Pizza Machine',
-            subtitle: 'AI Baking Algorithm',
-            description: 'Dispenses creamy soft ice cream in 3 flavors, 3 toppings, and 3 types of sprinkles.',
+            title: t('machines.PizzaMachine'),
+            subtitle: t('machines.AIBaking'),
+            description: t('machines.PizzaMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Hotel' },
-                { icon: <MachineSmallIcon2 />, label: 'Gas Station' },
-                { icon: <MachineSmallIcon3 />, label: 'Cinemas' },
-                { icon: <MachineSmallIcon4 />, label: 'Theme Parks' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: 'AI-enhanced baking', icon: <MachineSmallIcon5 /> },
-                { text: 'Fully automated', icon: <MachineSmallIcon6 /> },
-                { text: 'Self-service', icon: <MachineSmallIcon7 /> },
+                { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
+            ],
+            price: 27500,
+            monthly: 500,
+        },
+        {
+            image: MachineImage2,
+            title: t('machines.FriesMachine'),
+            subtitle: t('machines.AIOil'),
+            description: t('machines.PizzaMachinesubtitle'),
+            idealFor: [
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+            ],
+            features: [
+                { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
             ],
             price: 27500,
             monthly: 500,
         },
         {
             image: MachineImage3,
-            title: 'Soft Ice Cream Machine',
-            subtitle: 'Self-cleaning, Freon R-22',
-            description: 'Delivers fresh, creamy ice cream in 5 minutes. Various from NAF options to specialty cones.',
+            title: t('machines.IceCreamMachine'),
+            subtitle: t('machines.AIMonitoring'),
+            description: t('machines.IceMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Resorts' },
-                { icon: <MachineSmallIcon2 />, label: 'Malls' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: 'Self-clean model', icon: <MachineSmallIcon5 /> },
-                { text: 'No staff time required', icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon6 /> },
             ],
             price: 16500,
             monthly: 500,
         },
         {
             image: MachineImage4,
-            title: 'Cotton Candy Machine',
-            subtitle: 'Self-clean & Energy Efficient',
-            description: 'Fresh cotton candy in multiple colors, flavors and shapes — over 100+ automated tool sets.',
+            title: t('machines.CandyMachine'),
+            subtitle: t('machines.AIMonitoring'),
+            description: t('machines.CandyMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Events' },
-                { icon: <MachineSmallIcon2 />, label: 'Playgrounds' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: '100% hygienic', icon: <MachineSmallIcon5 /> },
-                { text: 'No refilling distraction', icon: <MachineSmallIcon6 /> },
-                { text: 'No staffing required', icon: <MachineSmallIcon7 /> },
+                { text: t('machines.hygienic'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.Kidfriendlyattraction'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon7 /> },
             ],
             price: 14500,
             monthly: 450,
         },
         {
             image: MachineImage5,
-            title: 'Beer Machine',
-            subtitle: 'AI Detection Age Verification',
-            description: 'Serving chilled beer 24/7 while ensuring legal safety through smart AI-powered age verification.',
+            title: t('machines.BeerMachine'),
+            subtitle: t('machines.AIAgeVerification'),
+            description: t('machines.beerMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Pubs' },
-                { icon: <MachineSmallIcon2 />, label: 'Events' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: 'AI-driven age verification', icon: <MachineSmallIcon5 /> },
-                { text: 'Chilled beer in seconds', icon: <MachineSmallIcon6 /> },
-                { text: 'Fully automated for minimal staff', icon: <MachineSmallIcon7 /> },
+                { text: t('machines.AIageverification'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.Chilledbeerseconds'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.fullyMinimalStaff'), icon: <MachineSmallIcon7 /> },
             ],
             price: 14500,
             monthly: 500,
         },
         {
             image: MachineImage6,
-            title: 'Return Machine',
-            subtitle: 'AI Camera Recognition',
-            description: 'Designed to support closed loop systems. It uses advanced AI to detect and sort reusable containers efficiently.',
+            title: t('machines.ReturnMachine'),
+            subtitle: t('machines.AIContainerRecognition'),
+            description: t('machines.returnMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Supermarkets' },
-                { icon: <MachineSmallIcon2 />, label: 'Events' },
+                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
+                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
+                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
-                { text: 'Eco-friendly', icon: <MachineSmallIcon5 /> },
-                { text: 'Automatic sorting and logging', icon: <MachineSmallIcon6 /> },
-                { text: 'Rewards & loyalty points', icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Ecofriendly'), icon: <MachineSmallIcon5 /> },
+                { text: t('machines.Automaticsortinglogging'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Rewardsloyaltypoint'), icon: <MachineSmallIcon7 /> },
             ],
             price: 14500,
             monthly: 450,
-        },
-        {
-            image: MachineImage2,
-            title: 'Fries Machine',
-            subtitle: 'Oil Management AI',
-            description: 'Delivers fresh, crispy fries in 3 minutes. Stainless steel fryer. AI optimized oil use.',
-            idealFor: [
-                { icon: <MachineSmallIcon1 />, label: 'Amusement Parks' },
-                { icon: <MachineSmallIcon2 />, label: 'Malls' },
-                { icon: <MachineSmallIcon3 />, label: 'Cinemas' },
-            ],
-            features: [
-                { text: 'AI oil control baking', icon: <MachineSmallIcon5 /> },
-                { text: 'Fully automated', icon: <MachineSmallIcon6 /> },
-                { text: 'Self-service', icon: <MachineSmallIcon7 /> },
-            ],
-            price: 27500,
-            monthly: 500,
         },
     ];
 
@@ -204,7 +216,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                 display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#262626',
                                 py: 3, px: 2.5, borderRadius: '8px', border: '1px solid #525252', mt: 1
                             }}>
-                                <Typography color="#C2C2C4" className='bodyRegularText3'>Acquisition costs</Typography>
+                                <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Acquisitioncosts')}</Typography>
                                 <Typography color="#FA7854" className='bodyMediumText2'>€{machine.price.toLocaleString()} <span style={{ color: "#FA7854" }} className='bodyMediumText3'>+ 19% VAT</span></Typography>
                             </Box>
 
@@ -212,7 +224,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                 display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#262626',
                                 py: 2, px: 2.5, borderRadius: '8px', border: '1px solid #525252', mt: 1
                             }}>
-                                <Typography color="#C2C2C4" className='bodyRegularText3'>Installments</Typography>
+                                <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Installment')}</Typography>
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
                                     <Select
                                         value={months}
@@ -257,13 +269,13 @@ const MachinesSection = ({ selectedMachine }) => {
                                     {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
                                     <Typography color="#FA7854" className='bodyMediumText2'>
                                         €{Math.round(machine.price / months).toLocaleString()}*
-                                        <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span>
+                                        <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/  {t('machines.Installmentsmonths')}</span>
                                     </Typography>
                                 </Box>
                             </Box>
 
                             <Typography color="#C2C2C4" sx={{ textAlign: 'right' }} className='bodyRegularText5'>
-                                *Prices announced after market launch based on the prototypes shown
+                                {t('machines.PricesannouncedText')}
                             </Typography>
                         </Box>
                     </Box>

@@ -2,19 +2,25 @@ import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import Image1 from '../../assets/Machines/HoverImage1.png';
-
-const items = [
-    { label: "Custom Sizes & Layouts", image: Image1 },
-    { label: "Branding & Graphics", image: Image1 },
-    { label: "Specialized Dispensing", image: Image1 },
-    { label: "Unique Storage Options", image: Image1 },
-    { label: "Software Integration", image: Image1 },
-    { label: "Custom Payments", image: Image1 },
-];
+import Image2 from '../../assets/Machines/HoverImage2.jpg';
+import Image3 from '../../assets/Machines/HoverImage3.jpg';
+import Image4 from '../../assets/Machines/HoverImage4.jpg';
+import Image5 from '../../assets/Machines/HoverImage5.jpg';
+import Image6 from '../../assets/Machines/HoverImage6.jpg';
+import { useTranslation } from 'react-i18next';
 
 const CustomVendingSection = () => {
+    const { t } = useTranslation();
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
+    const items = [
+        { label: t('machines.CustomSizesLayouts'), image: Image1 },
+        { label: t('machines.BrandingGraphics'), image: Image2 },
+        { label: t('machines.SpecializedDispensing'), image: Image3 },
+        { label: t('machines.UniqueStorage'), image: Image4 },
+        { label: t('machines.SoftwareIntegration'), image: Image5 },
+        { label: t('machines.CustomPayments'), image: Image6 },
+    ];
     return (
         <Box
             className='section-container'
@@ -28,10 +34,10 @@ const CustomVendingSection = () => {
             {/* Left Section */}
             <Box sx={{ width: { xs: '100%', sm: '100%', md: '40%' }, my: { xs: 3, sm: 4, md: 0 } }}>
                 <Typography variant="h3" className='headings-h2' sx={{ color: '#FCFCFC' }}>
-                    Custom Vending Solutions for Every Business
+                    {t('machines.CustomVendingtitle')}
                 </Typography>
                 <Typography variant="body1" className='bodyRegularText3' sx={{ color: '#C2C2C4', my: { xs: '8px', sm: '8px', md: '16px' } }}>
-                    Need a vending machine that’s perfectly tailored to your specific products, branding, or location? NAF Germany specializes in creating custom vending machines to meet your unique requirements.
+                    {t('machines.CustomVendingsubtitle')}
                 </Typography>
 
                 <AnimateButton />

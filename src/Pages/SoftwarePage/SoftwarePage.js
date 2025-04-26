@@ -6,8 +6,10 @@ import GridsSection from './GridsSection';
 import Specifications from './Specifications';
 import ExpertiseSection from './ExpertiseSection';
 import ReadySection from './ReadySection';
+import { useTranslation } from 'react-i18next';
 
 function SoftwarePage() {
+  const { t } = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -18,10 +20,10 @@ function SoftwarePage() {
             <Box className='softwarepage-main-container'>
                 <Box>
                     <Typography variant='h1' className='headings-h1 maintext' sx={{ color: '#FCFCFC' }}>
-                        Smart Vending, Powered by the NAF Cloud System
+                        {t('software.heroTitle')}
                     </Typography>
                     <Typography className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
-                        Cutting-edge technology for efficient, scalable, and secure global vending operations.
+                    {t('software.heroSubTitle')}
                     </Typography>
                 </Box>
                 <Box>
@@ -32,10 +34,10 @@ function SoftwarePage() {
             <Box className='section-container'>
                 <Box className='software-intro-sec'>
                     <Typography className="herotitle headings-h2" variant="h2" sx={{ color: "#FCFCFC" }}>
-                        Introducing the NAF Cloud System
+                    {t('software.introducingcloud')}
                     </Typography>
                     <Typography className="bodyRegularText3 bodyMediumText2" variant="body1" sx={{ color: "#C2C2C4" }} >
-                        The NAF Cloud System is a comprehensive web-based dashboard designed to provide real-time insights and complete control over your vending machine operations. This centralized platform streamlines management and enhances business efficiency.
+                    {t('software.introducingcloudSubtitle')}
                     </Typography>
                 </Box>
                 <GridsSection />

@@ -2,8 +2,10 @@ import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import MaintainceImage from '../../assets/Machines/Maintaince.png'
+import { useTranslation } from 'react-i18next';
 
 const Maintenance = () => {
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,12 +29,12 @@ const Maintenance = () => {
         <Box sx={{ flex: 1, zIndex: 1 }}>
           <div data-cursor="hover">
             <Typography data-cursor="hover" variant='h1' className='headings-h2' sx={{ color: '#FCFCFC' }}>
-              NAF Maintenance & Support
+              {t('machines.NAFMaintenanceTitle')}
             </Typography>
           </div>
           <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
             <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: 3 }}>
-              We ensure your vending machines run smoothly with reliable maintenance and support that minimize downtime and maximize ROI.
+              {t('machines.NAFMaintenanceSubTitle')}
             </Typography>
           </Box>
 

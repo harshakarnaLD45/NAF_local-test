@@ -10,8 +10,12 @@ import SoftwareSystemIcon4 from '../../assets/software/SoftwareSystemIcon4.svg';
 import SoftwareSystemIcon5 from '../../assets/software/SoftwareSystemIcon5.svg';
 import SoftwareSystemIcon6 from '../../assets/software/SoftwareSystemIcon6.svg';
 import SoftwareSystemIcon7 from '../../assets/software/SoftwareSystemIcon7.svg';
+import { useTranslation } from 'react-i18next';
 
 const GridsSection = () => {
+  const { t } = useTranslation();
+
+
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: '#1A2027',
         color: '#fff',
@@ -30,8 +34,8 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon1} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Real-Time Sales Analytics</Typography>
-                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}>Track sales performance by product, location, and time period through intuitive charts and graphs.</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} > {t('software.bentoTitle1')}</Typography>
+                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}> {t('software.bentoSubTitle1')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -41,12 +45,12 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon2} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Intelligent Inventory Management</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle2')}</Typography>
                             <Typography className='bodyRegularText3' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
                             }}>
-                                Optimize stock levels and minimize downtime with real-time inventory tracking and automated restocking alerts.</Typography>
+                                {t('software.bentoSubTitle2')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -56,12 +60,12 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon3} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Targeted Advertising Capabilities</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle3')}</Typography>
                             <Typography className='bodyRegularText3' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
                             }}>
-                                Create and deploy engaging advertisements to vending machine screens to drive sales.</Typography>
+                               {t('software.bentoSubTitle3')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -71,11 +75,11 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon4} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Remote Machine Monitoring</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle4')}</Typography>
                             <Typography className='bodyRegularText3' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
-                            }}>Monitor machine status, schedule maintenance, and address technical issues remotely.</Typography>
+                            }}>{t('software.bentoSubTitle4')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -85,8 +89,8 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon5} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Customer Relationship Management (CRM)</Typography>
-                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}>Manage customer memberships, discounts, and coupons to enhance customer loyalty.</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle5')}</Typography>
+                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}>{t('software.bentoSubTitle5')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -96,12 +100,12 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon6} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Automated Tax Reporting</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle6')}</Typography>
                             <Typography className='bodyRegularText3' sx={{
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
                             }}>
-                                Generate accurate monthly tax reports for simplified compliance.</Typography>
+                                {t('software.bentoSubTitle6')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
@@ -111,13 +115,13 @@ const GridsSection = () => {
                             <img src={SoftwareSystemIcon7} className='soft-ware-icon' alt='software' />
                         </Box>
                         <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >Secure Infrastructure</Typography>
+                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle7')}</Typography>
                             <Typography className='bodyRegularText3' sx={{
                                 color: '#C2C2C4',
                                 textAlign: 'left',
                                 maxWidth: '720px'
                             }}>
-                                Benefit from a secure and reliable AWS-hosted system, ensuring data protection and business continuity.</Typography>
+                                {t('software.bentoSubTitle7')}</Typography>
                         </Box>
                     </Item>
                 </Grid>

@@ -4,8 +4,10 @@ import AnimateButton from '../../../Componenets/CommonComponents/AnimateButton'
 import './MantaincePage.css'
 import SupportSection from './SupportSection'
 import ServiceForm from './ServiceForm'
+import { useTranslation } from 'react-i18next'
 
 function MantaincePage() {
+    const { t } = useTranslation();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -14,14 +16,14 @@ function MantaincePage() {
             <Box className='maintaince-container'>
                 <Box>
                     <Typography data-cursor="hover" variant='h1' className='headings-h1 maintaince-sub-container1  maintext' sx={{ color: '#FCFCFC' }}>
-                        Reliable Maintenance & Support for Your Vending Investment
+                        {t('Maintenance.ReliableMaintenance')}
                     </Typography>
                     <Box className='maintextcontainer'>
                         <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: 3 }}>
-                            Ensuring Maximum Uptime and Long-Term Reliability
+                            {t('Maintenance.ReliableMaintenanceSubtitle')}
                         </Typography>
                         <Box data-cursor="hover" className="button-container">
-                            <AnimateButton text1='GET IN' text2='TOUCH' route='machine' />
+                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route='machine' />
                         </Box>
                     </Box>
                 </Box>
@@ -33,7 +35,7 @@ function MantaincePage() {
 
             <Box className="section-container">
                 <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
-                    Request Service Form
+                {t('Maintenance.RequestServiceForm')}
                 </Typography>
                 <ServiceForm />
             </Box>

@@ -5,6 +5,7 @@ import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
 import React from "react";
 import PersonIcon from '@mui/icons-material/Person'; // or use a custom image/icon
+import { useTranslation } from "react-i18next";
 
 const testimonials = [
   {
@@ -52,6 +53,7 @@ const TestimonialCard = ({ text, author }) => {
 };
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   return (
     <Box className='section-container' sx={{ px: 0 }}>
       <Typography
@@ -61,7 +63,7 @@ const Testimonials = () => {
         sx={{ width: { xs: '90%', sm: '90%', md: '50%' }, px: { xs: '15px', sm: '20px', md: '50px' } }}
         mb={4}
       >
-        What's Our Clients Are Saying
+        {t('Home.testmonialHeading')}
       </Typography>
 
       <Box sx={{ overflow: "hidden", position: "relative" }}>

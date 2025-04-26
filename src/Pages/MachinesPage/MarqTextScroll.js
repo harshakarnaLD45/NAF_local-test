@@ -2,10 +2,12 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 
 import NafIcon from '../../assets/Home/naf icon1.svg'
+import { useTranslation } from "react-i18next";
 
 const MarqTextScroll = () => {
+  const { t } = useTranslation();
   // Data for the repeating text
-  const marqueeText = "EXPLORE OUR VENDING MACHINES";
+  const marqueeText = t('machines.EXPLOREOURVENDINGMACHINES');
 
   // Create an array to repeat the content multiple times for seamless scrolling
   const repeatedContent = Array(10) // Increased to 10 for smoother looping

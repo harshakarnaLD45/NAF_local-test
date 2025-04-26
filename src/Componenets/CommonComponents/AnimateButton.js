@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowIcon } from '../CustomIcons';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route, getBtnColor }) {
+function AnimateButton({ text1, text2, route, getBtnColor }) {
+    const { t } = useTranslation();
     const [position, setPosition] = useState({ x: 0, y: 0, active: false });
     const buttonRef = useRef(null);
     const navigate = useNavigate()
@@ -96,10 +98,10 @@ function AnimateButton({ text1 = 'LEARN', text2 = 'MORE', route, getBtnColor }) 
                     ) : (
                         <div style={styles.splitText}>
                             <div className="bodyRegularText1 btn-spac-left" style={styles.leftText}>
-                                {text1}
+                                {text1 ? text1 : t('Home.LEARN')}
                             </div>
                             <div className="bodyRegularText1 btn-spac-right" style={styles.rightText}>
-                                {text2}
+                                {text2 ? text2 : t('Home.MORE')}
                             </div>
                         </div>
                     )}

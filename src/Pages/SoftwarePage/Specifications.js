@@ -1,35 +1,38 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 function Specifications() {
+      const { t } = useTranslation();
+    
     return (
         <Box className="section-container">
             <Typography className='headings-h2'
                 variant="h4"
                 sx={{ color: '#FCFCFC', marginBottom: '20px', textAlign: 'left' }}
             >
-                Specifications
+                {t('software.Specifications')}
             </Typography>
             <hr className='software-hr' style={{ margin: '50px 0', width: '100%' }} />
             <Box className='software-specifications-items' >
                 <Box sx={{ display: 'flex' }}>
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
-                            Sales & Performance
+                        {t('software.SalesPerformance')}
                         </Typography>
                     </Box>
                     <Box className='spec-text-sec'>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Sales Reporting (daily, weekly, monthly, yearly)
+                        {t('software.salespoints1')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Performance Analytics (product, category, machine)
+                        {t('software.salespoints2')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Error Notifications
+                        {t('software.salespoints3')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            User Permissions
+                        {t('software.salespoints4')}
                         </Typography>
                     </Box>
                 </Box>
@@ -39,30 +42,30 @@ function Specifications() {
                 <Box sx={{ display: 'flex' }}>
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
-                            Machines
+                        {t('software.Machines')}
                         </Typography>
                     </Box>
                     <Box className='spec-text-sec'>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Real-Time Machine Status
+                        {t('software.machinepoints1')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Track Order History
+                        {t('software.machinepoints2')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Manage Ad Campaigns
+                        {t('software.machinepoints3')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Access Reports
+                        {t('software.machinepoints4')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            View Inventory Levels
+                        {t('software.machinepoints5')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Analyze Sales Data
+                        {t('software.machinepoints6')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Organize Machines
+                        {t('software.machinepoints7')}
                         </Typography>
                     </Box>
                 </Box>
@@ -72,33 +75,33 @@ function Specifications() {
                 <Box sx={{ display: 'flex' }}>
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
-                            Products
+                        {t('software.Products')}
                         </Typography>
                     </Box>
                     <Box className='spec-text-sec'>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Easy Product Setup
+                        {t('software.Productspoints1')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Flexible Product Organization
+                        {t('software.Productspoints2')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Precise Inventory Control
+                        {t('software.Productspoints3')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Dynamic Pricing
+                        {t('software.Productspoints4')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            View Inventory Levels
+                        {t('software.Productspoints5')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Targeted Promotions
+                        {t('software.Productspoints6')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Nutritional Info Management
+                        {t('software.Productspoints7')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Precise Temperature Control
+                        {t('software.Productspoints8')}
                         </Typography>
                     </Box>
                 </Box>
@@ -108,18 +111,18 @@ function Specifications() {
                 <Box sx={{ display: 'flex' }}>
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
-                            Users
+                        {t('software.user')}
                         </Typography>
                     </Box>
                     <Box className='spec-text-sec'>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            User Profile Management
+                        {t('software.userpoints1')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Role-Based Access Control
+                        {t('software.userpoints2')}
                         </Typography>
                         <Typography className='bodyRegularText3' variant="body2" sx={{ color: '#C2C2C4' }}>
-                            Customizable Company Segmentation
+                        {t('software.userpoints3')}
                         </Typography>
                     </Box>
                 </Box>

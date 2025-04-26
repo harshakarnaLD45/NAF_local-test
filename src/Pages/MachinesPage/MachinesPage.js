@@ -11,8 +11,10 @@ import PaymentOptions from "./PaymentOptions";
 import Solutions from "./Solutions";
 import PartnersForm from "./PartnersForm";
 import MobileButtons from "./MobileButtons";
+import { useTranslation } from "react-i18next";
 
 const MachinesPage = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down("md")); // lg = 1200, you can use "md" for 1024px
@@ -28,10 +30,10 @@ const MachinesPage = () => {
       <Box className='machines-container1'>
         <Box className='machines-container'>
           <Typography className="headings-h1" variant="h1" sx={{ color: "#FCFCFC" }}>
-            High-Performance Vending Machines for Every Need
+            {t('machines.machineTitle')}
           </Typography>
           <Typography className="bodyRegularText3" variant="body1" sx={{ color: "#C2C2C4", mt: { xs: '8px', sm: '8px', md: '16px' } }} >
-            Increase revenue and streamline operations with our range of customizable vending machines.
+            {t('machines.machineSubTitle')}
           </Typography>
         </Box>
         <MarqTextScroll />
@@ -53,7 +55,7 @@ const MachinesPage = () => {
           bottom: '-50px',
           width: { xs: '100%', sm: '100%', md: '70%' }
         }} variant="h4" align="center" gutterBottom>
-          Partner with NAF Germany: Two Ways to Join the Vending Revolution
+          {t('machines.PartnerNAFGermany')}
         </Typography>
         <PartnersForm />
       </Box>
