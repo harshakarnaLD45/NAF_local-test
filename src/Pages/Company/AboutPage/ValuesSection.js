@@ -80,13 +80,14 @@ const ValuesSection = () => {
                 alignItems: "center",
                 position: "relative",
                 transition: "all 0.5s ease",
+                py: { xs: 0 },
             }}
         >
             <Box
                 className="maintenance-containers1"
                 sx={{
                     position: "relative",
-                    width: "100%",
+                    width: "90%",
                     height: { md: "605px" },
                     mt: { xs: -1, md: -3 },
                 }}
@@ -104,15 +105,15 @@ const ValuesSection = () => {
                     className="bodyRegularText3"
                     sx={{ color: "#C2C2C4", textAlign: "center" }}
                 >
-                     {t('about.OurValuesubTilte')}
+                    {t('about.OurValuesubTilte')}
                 </Typography>
 
                 <Box
                     ref={sectionRef}
                     sx={{
                         position: "absolute",
-                        width: "100%",
-                        maxWidth: { xs: "100%", md: isCollapsed ? "auto" : "1200px" },
+                        width: isCollapsed ? "100%" : "80%",
+                        maxWidth: { xs:  isCollapsed ? "100%" : "80%", md: isCollapsed ? "auto" : "1200px" },
                         top: { xs: "100px", sm: "150px", md: isCollapsed ? "200px" : "100px" },
                         left: "50%",
                         transform: "translateX(-50%)",
@@ -157,7 +158,7 @@ const ValuesSection = () => {
                         >
                             <Card
                                 sx={{
-                                    width: "100%",
+                                    width:  "100%" ,
                                     height: { xs: "300px", sm: "350px", md: "426px" },
                                     bgcolor: "#161616",
                                     borderRadius: "24px",
