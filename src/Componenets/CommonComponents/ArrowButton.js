@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ArrowButton = ({ onClick }) => {
+const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
   const buttonStyle = {
     display: 'flex',
     width: '70px',
@@ -12,7 +12,7 @@ const ArrowButton = ({ onClick }) => {
     flexShrink: 0,
     aspectRatio: '1 / 1',
     borderRadius: '27.664px',
-    background: 'var(--Grey-Scale-100, #161616)',
+    background: colorBg,
     border: 'none',
     cursor: 'pointer',
     transition: 'background-color 0.5s ease',

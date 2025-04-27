@@ -12,6 +12,7 @@ import Solutions from "./Solutions";
 import PartnersForm from "./PartnersForm";
 import MobileButtons from "./MobileButtons";
 import { useTranslation } from "react-i18next";
+import FormTextScroll from "./FormTextScroll";
 
 const MachinesPage = () => {
   const { t } = useTranslation();
@@ -57,6 +58,7 @@ const MachinesPage = () => {
         }} variant="h4" align="center" gutterBottom>
           {t('machines.PartnerNAFGermany')}
         </Typography>
+        {/* <FormTextScroll /> */}
         <PartnersForm />
       </Box>
 

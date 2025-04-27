@@ -55,7 +55,27 @@
         "naftext1": "From Fine Dining to AI Gastronomy - NAF was founded by",
         "naftext2": "and",
         "naftext3": "- with the vision of creating real alternatives to traditional Gastronomy. With roots in fine dining and a passion for technology, we combine culinary delight with digitalization. Our AI systems are developed in-house by an international team of IT talents and Gastronomy professionals.",
-        "testmonialHeading": "What's Our Clients Are Saying"
+        "testmonialHeading": "What's Our Clients Are Saying",
+        "testimonial1": {
+            "text": "Today's eggplant and cherry pea curry was delicious. Yesterday's chicken meatball was also good.",
+            "author": "Customer"
+        },
+        "testimonial2": {
+            "text": "The roast beef was delicious 👍🏻 and the price was great too 🤩.",
+            "author": "Gerdi"
+        },
+        "testimonial3": {
+            "text": "Hello NAF team 😎, a little feedback from me too. A great concept with really great culinary ideas week after week 👍 You can taste that you prepare it with a lot of passion and joy 🫶 There is something for every taste. Among my favorites were the spinach ricotta dumplings or the hemp bowl etc ... and the desserts anyway 😅 Keep up the good work 👌",
+            "author": "Customer"
+        },
+        "testimonial4": {
+            "text": "Hello dear NAF team, For your continued development, here is some brief feedback on your delicious food. I'm always delighted when I buy food from the NAF vending machine. The offerings are not only varied but also particularly tasty and healthy thanks to the variety of spices. With this in mind, keep up the good work!",
+            "author": "Customer"
+        },
+        "testimonial5": {
+            "text": "Today's eggplant and cherry pea curry was delicious. Yesterday's chicken meatball was also good.",
+            "author": "Holm"
+        }
     },
     "machines": {
         "machineTitle": "High-Performance Vending Machines for Every Need",
@@ -359,6 +379,32 @@
         "MeetTeam": "Meet the Team",
         "AwardsRecognitions": "Awards & Recognitions",
         "award1": "Founder's Prize 'Lively City Center'",
+        "awards": {
+            "award1": {
+                "title": "Gründerwettbewerb 2023"
+            },
+            "award2": {
+                "title": "“Fresh Otto” what’s the Appetite: New Vending Machine in Freiberg goes into Operation"
+            },
+            "award3": {
+                "title": "Culinary test in Freiberg: How does the food from the New Age of Food vending machines taste?"
+            },
+            "award4": {
+                "title": "Modern lunch: Gizef Business Center in Freiberg Switches to Vending Machines"
+            },
+            "award5": {
+                "title": "Innovations at Gasthof Halsbach: Why an Indian Computer Specialist is getting Involved in Moroccan-German Cuisine"
+            },
+            "award6": {
+                "title": "NAF – Rethinking Automated Food Supply"
+            },
+            "award7": {
+                "title": "New Age of Food’: Freiberg Shows How Modern Food Vending Machines can be"
+            },
+            "award8": {
+                "title": "Fresh Food from the Vending Machine"
+            }
+        },
         "OurValues": "Our Values",
         "OurValuesubTilte": "The core principles that drive our business forward",
         "ValueTitle1": "Innovation",

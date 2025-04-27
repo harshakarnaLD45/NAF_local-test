@@ -1,62 +1,110 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import { FreeMode } from 'swiper/modules';
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Award1 from '../../../assets/About/Awards/Award1.png';
+import Award2 from '../../../assets/About/Awards/Award2.png';
+import Award3 from '../../../assets/About/Awards/Award3.png';
+import Award4 from '../../../assets/About/Awards/Award4.png';
+import Award5 from '../../../assets/About/Awards/Award5.png';
+import Award6 from '../../../assets/About/Awards/Award6.png';
+import Award7 from '../../../assets/About/Awards/Award7.png';
+import Award8 from '../../../assets/About/Awards/Award8.png';
+import ArrowButton from "../../../Componenets/CommonComponents/ArrowButton";
+
+const AwardCard = ({ index, title, image, link }) => {
+    return (
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: { xs: '300px', sm: '350px', md: '550px' },
+                paddingLeft: index === 0 ? { xs: '15px', sm: '20px', md: '40px' } : 0,
+            }}
+        >
+            {/* Image section */}
+            <Box
+                component="img"
+                src={image}
+                alt={title}
+                sx={{
+                    width: { xs: '300px', sm: '350px', md: '550px' },
+                    height: { xs: '200px', sm: '250px', md: '400px' },
+                    objectFit: 'cover',
+                    borderRadius: 2,
+                    mb: 1,
+                }}
+            />
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+                {/* Title */}
+                <Typography
+                    variant="body2"
+                    color="#FCFCFC"
+                    className="bodyMediumText1"
+                >
+                    {title}
+                </Typography>
+
+                {/* Conditionally render arrow button if there's a link */}
+                {link && (
+                    <Box onClick={() => window.open(link, "_blank")}>
+                        <ArrowButton colorBg='#262626' />
+                    </Box>
+                )}
+            </Box>
+        </Box>
+    );
+};
 
 const AwardsSection = () => {
     const { t } = useTranslation();
 
-    // Award data for mapping
     const awardsData = [
-        { year: 2023, title: t('about.award1') },
-        { year: 2024, title: t('about.award1') },
+        { title: t('about.awards.award1.title'), image: Award1 },
+        { title: t('about.awards.award2.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/frischer-otto-macht-appetit-neuer-speiseautomat-in-freiberg-nimmt-seinen-dienst-auf-artikel13635242?ref=share_link', image: Award2 },
+        { title: t('about.awards.award3.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/kulinarischer-test-in-freiberg-wie-schmeckt-das-essen-aus-den-automaten-von-new-age-of-food-artikel13571672?ref=share_link', image: Award3 },
+        { title: t('about.awards.award4.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/mittagessen-ganz-modern-unternehmerzentrum-gizef-in-freiberg-stellt-auf-automaten-um-artikel13450282?ref=share_link', image: Award4 },
+        { title: t('about.awards.award5.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/innovationen-im-gasthof-halsbach-warum-ein-indischer-computerspezialist-in-marrokanisch-deutscher-kueche-mitmischt-artikel13347381?ref=share_link', image: Award5 },
+        { title: t('about.awards.award6.title'), link: 'https://nafhalsbach-my.sharepoint.com/:b:/g/personal/anitha_boppidi_naf-halsbach_de/Efb0SYHLKVNIoy-8T7ovpnEBDRTwsnKsZCfWX8uOLteeEg?e=RjPRXN', image: Award6 },
+        { title: t('about.awards.award7.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/new-age-of-food-freiberg-zeigt-wie-modern-speiseautomaten-sein-koennen-artikel13201205?ref=share_link', image: Award7 },
+        { title: t('about.awards.award8.title'), link: 'https://youtu.be/TtR2bxr-sbw?si=hPGsUVK9RZVOnOEw', image: Award8 },
     ];
 
     return (
-        <Box className="section-container">
-            {/* Title Section */}
+        <Box className="section-container" sx={{ px: 0 }}>
             <Typography
                 variant="h2"
-                color="#fcfcfc"
+                color="#FCFCFC"
                 className="headings-h2"
-                sx={{ mb: { xs: 3, sm: 5, md: 8 } }}
+                sx={{ width: { xs: '90%', sm: '90%', md: '50%' }, px: { xs: '15px', sm: '20px', md: '50px' } }}
+                mb={4}
             >
                 {t('about.AwardsRecognitions')}
             </Typography>
 
-            {/* Awards Grid */}
-            <Grid container spacing={2}>
-                {awardsData.map((award, index) => (
-                    <Grid item xs={12} md={6} key={index}>
-                        {/* Award Card */}
-                        <Paper
-                            elevation={0}
-                            sx={{
-                                bgcolor: "#393939",
-                                borderRadius: { xs: '16px', sm: '16px', md: "24px" },
-                                height: { xs: '300px', sm: '400px', md: '530px' },
-                                mb: 2,
-                            }}
-                        />
-
-                        {/* Award Details */}
-                        <Box sx={{ mt: 1.5 }}>
-                            <Typography color="#fcfcfc" variant="body1"
-                                className="bodyRegularText3"
-                            >
-                                {award.year}
-                            </Typography>
-                            <Typography
-                                className="headings-h4 "
-                                color="#fcfcfc"
-                                variant="h4"
-                                sx={{ mt: 1 }}
-                            >
-                                {award.title}
-                            </Typography>
-                        </Box>
-                    </Grid>
-                ))}
-            </Grid>
+            <Box sx={{ overflow: "hidden", position: "relative" }}>
+                <Swiper
+                    modules={[FreeMode]}
+                    spaceBetween={24}
+                    slidesPerView="auto"
+                    freeMode={true}
+                    style={{ padding: '0 16px' }}
+                >
+                    {awardsData.map((award, index) => (
+                        <SwiperSlide key={index} style={{ width: "auto" }}>
+                            <AwardCard
+                                index={index}
+                                title={award.title}
+                                image={award.image}
+                                link={award.link}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </Box>
         </Box>
     );
 };

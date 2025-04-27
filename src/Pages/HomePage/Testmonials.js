@@ -1,30 +1,9 @@
 import { Avatar, Box, Typography } from "@mui/material";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import { FreeMode } from 'swiper/modules';
-import React from "react";
-import PersonIcon from '@mui/icons-material/Person'; // or use a custom image/icon
 import { useTranslation } from "react-i18next";
-
-const testimonials = [
-  {
-    text: "We were impressed by [Your Company Name]'s expertise in cloud-based solutions...",
-    author: "David Lee, CIO, Gamma Industries.",
-  },
-  {
-    text: "Working with NAF Germany was a game-changer for our business...",
-    author: "John Smith, CEO, Acme Corp",
-  },
-  {
-    text: "NAF Germany's end-to-end development services were exceptional...",
-    author: "Jane Doe, CTO, Beta Solutions",
-  },
-  {
-    text: "Our restaurant's inventory management has never been so efficient!",
-    author: "Jane Doe, CTO, Beta Solutions",
-  },
-];
+import PersonIcon from '@mui/icons-material/Person';
+import React from "react";
+import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
+import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 
 const TestimonialCard = ({ text, author }) => {
   return (
@@ -54,33 +33,73 @@ const TestimonialCard = ({ text, author }) => {
 
 const Testimonials = () => {
   const { t } = useTranslation();
-  return (
-    <Box className='section-container' sx={{ px: 0 }}>
-      <Typography
-        variant="h2"
-        color="#FCFCFC"
-        className="headings-h2"
-        sx={{ width: { xs: '90%', sm: '90%', md: '50%' }, px: { xs: '15px', sm: '20px', md: '50px' } }}
-        mb={4}
-      >
-        {t('Home.testmonialHeading')}
-      </Typography>
 
-      <Box sx={{ overflow: "hidden", position: "relative" }}>
-        <Swiper
-          modules={[FreeMode]}
-          spaceBetween={16}
-          slidesPerView="auto"
-          freeMode={true}
-          style={{ padding: '0 16px' }}
-        >
-          {[...testimonials, ...testimonials].map((item, index) => (
-            <SwiperSlide key={index} style={{ width: "auto" }}>
-              <TestimonialCard text={item.text} author={item.author} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+  const testimonials = [
+    {
+      text: t('Home.testimonial1.text'),
+      author: t('Home.testimonial1.author'),
+    },
+    {
+      text: t('Home.testimonial2.text'),
+      author: t('Home.testimonial2.author'),
+    },
+    {
+      text: t('Home.testimonial3.text'),
+      author: t('Home.testimonial3.author'),
+    },
+    {
+      text: t('Home.testimonial4.text'),
+      author: t('Home.testimonial4.author'),
+    },
+    {
+      text: t('Home.testimonial5.text'),
+      author: t('Home.testimonial5.author'),
+    },
+  ];
+
+  return (
+    <Box>
+      <Box className="section-container">
+        <ScrollMaskHeadings text={t("Home.testmonialHeading")} />
       </Box>
+      {/* Testimonial Slider */}
+      <Box sx={{ overflow: "hidden", width: "100%", mt: '20px' }}>
+        <Box
+          className="slider-track"
+          sx={{
+            display: "flex",
+            gap: "16px",
+            animation: "scroll 30s linear infinite",
+          }}
+        >
+          {/* Repeat testimonials enough times for seamless scroll */}
+          {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                flexShrink: 0,
+                width: "auto",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <TestimonialCard text={item.text} author={item.author} />
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      {/* Keyframes CSS for continuous scroll */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </Box>
   );
 };

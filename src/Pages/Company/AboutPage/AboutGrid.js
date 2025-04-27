@@ -9,7 +9,6 @@ import Image5 from '../../../assets/About/About5.png';
 import Image6 from '../../../assets/About/About6.png';
 import Image7 from '../../../assets/About/About7.png';
 import Image8 from '../../../assets/About/About8.png';
-import Image9 from '../../../assets/About/About9.png';
 import Image10 from '../../../assets/About/About10.png';
 import Image11 from '../../../assets/About/About11.png';
 import Image12 from '../../../assets/About/About12.png';
@@ -28,7 +27,6 @@ const mediaItems = [
     { type: 'image', src: Image6 },
     { type: 'image', src: Image7 },
     { type: 'image', src: Image8 },
-    { type: 'image', src: Image9 },
     { type: 'image', src: Image10 },
     { type: 'image', src: Image11 },
     { type: 'image', src: Image12 },
@@ -58,7 +56,7 @@ const AboutCarousel = () => {
                         key={index}
                         sx={{
                             flexShrink: 0,
-                            borderRadius: '20px',
+                            borderRadius: '10px',
                             overflow: 'hidden',
                             display: 'flex',
                             justifyContent: 'flex-start',
