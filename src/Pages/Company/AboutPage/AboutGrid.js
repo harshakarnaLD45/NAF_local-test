@@ -1,5 +1,5 @@
-import { Box } from '@mui/material';
 import React from 'react';
+import { Box } from '@mui/material';
 
 import Image1 from '../../../assets/About/About1.png';
 import Image2 from '../../../assets/About/About2.png';
@@ -39,103 +39,82 @@ const mediaItems = [
     { type: 'video', src: Video2 },
 ];
 
-const rows = [
-    [0, 3], // Row 1 (2 items)
-    [2, 1, 4], // Row 2 (3 items)
-    [5, 6], // Row 3 (2 items)
-    [7, 8, 9], // Row 4 (3 items)
-    [10, 11, 16], // Row 5 (2 items)
-    [12, 13, 15], // Row 5 (2 items)
-];
-
-function AboutGrid() {
+const AboutCarousel = () => {
     return (
-        <Box className='section-container'
-            sx={{
-                width: '100%',
-                height: '100vh', // Set the container to be 100% of the viewport height
-                overflowY: 'auto', // Enable vertical scrolling inside container
-                position: 'relative',
-                '&::-webkit-scrollbar': {
-                    display: 'none', // Hides scrollbar for webkit browsers (Chrome, Safari)
-                },
-                msOverflowStyle: 'none', // For Internet Explorer 10+
-                scrollbarWidth: 'none', // For Firefox
-                background: "#525252",
-                p: 0
-            }}
-        >
-            <Box sx={{ position: 'relative', padding: '20px' }}>
-                {rows.map((row, rowIndex) => (
+        <Box className='section-container' sx={{ overflow: 'hidden', width: '100%', p: 0 }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-start',
+                    alignItems: 'flex-start',
+                    gap: '20px',
+                    width: 'fit-content',
+                    animation: 'aboutScroll 100s linear infinite',
+                    px: '20px',
+                }}
+            >
+                {[...mediaItems, ...mediaItems, ...mediaItems].map((item, index) => (
                     <Box
-                        key={rowIndex}
+                        key={index}
                         sx={{
+                            flexShrink: 0,
+                            borderRadius: '20px',
+                            overflow: 'hidden',
                             display: 'flex',
-                            justifyContent: 'space-evenly',
-                            marginBottom: '20px', // Space between rows
-                            flexWrap: 'wrap', // Ensures items wrap on smaller screens
-                            gap: '10px', // Adds spacing between items
+                            justifyContent: 'flex-start',
+                            alignItems: 'flex-start',
+                            // Responsive width for different screen sizes
+                            width: {
+                                xs: '200px', // Mobile size
+                                sm: '250px', // Small screen size
+                                md: '300px', // Medium screen size
+                                lg: '350px', // Large screen size
+                            },
                         }}
                     >
-                        {row.map((itemIndex) => {
-                            const item = mediaItems[itemIndex];
-
-                            return (
-                                <Box
-                                    key={itemIndex}
-                                    sx={{
-                                        flex: '1 1 30%', // Makes each item take 30% width, but grow as needed
-                                        '@media (max-width: 768px)': {
-                                            flex: '1 1 45%', // Two items per row on smaller screens
-                                        },
-                                        '@media (max-width: 480px)': {
-                                            flex: '1 1 100%', // One item per row on small screens
-                                        },
-                                        margin: '10px', // Space between items
-                                        borderRadius: '15px',
-                                        overflow: 'hidden',
-                                    }}
-                                >
-                                    {item.type === 'image' ? (
-                                        <img
-                                            src={item.src}
-                                            alt={`Gallery ${itemIndex}`}
-                                            loading="lazy"
-                                            style={{
-                                                display: 'block', // Remove any space below the image
-                                            }}
-                                        />
-                                    ) : (
-                                        <Box
-                                            sx={{
-                                                width: '300px', // Fix width to 100% of the container
-                                                height: '400px', // Fix height for the video
-                                                borderRadius: '25px', // Border radius for the video container
-                                                overflow: 'hidden', // Ensure the video respects the border radius
-                                            }}
-                                        >
-                                            <video
-                                                src={item.src}
-                                                autoPlay
-                                                loop
-                                                muted
-                                                loading="lazy"
-                                                style={{
-                                                    width: '100%', // Fix width to 100% of the container
-                                                    height: '100%', // Fix height for the video
-                                                    objectFit: 'cover', // Maintain aspect ratio and cover the container
-                                                }}
-                                            />
-                                        </Box>
-                                    )}
-                                </Box>
-                            );
-                        })}
+                        {item.type === 'image' ? (
+                            <img
+                                src={item.src}
+                                alt={`Media-${index}`}
+                                style={{
+                                    height: 'auto',
+                                    width: '100%',
+                                    display: 'block',
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        ) : (
+                            <video
+                                src={item.src}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                style={{
+                                    display: 'block',
+                                    width: '100%',
+                                    height: 'auto',
+                                    objectFit: 'cover',
+                                }}
+                            />
+                        )}
                     </Box>
                 ))}
             </Box>
+
+            {/* CSS Keyframes */}
+            <style jsx>{`
+                @keyframes aboutScroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+            `}</style>
         </Box>
     );
-}
+};
 
-export default AboutGrid;
+export default AboutCarousel;
