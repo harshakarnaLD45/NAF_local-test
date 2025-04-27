@@ -11,6 +11,8 @@ import NAF1Image from '../../../assets/About/NAF1.svg'
 import NAF2Image from '../../../assets/About/NAF2.svg'
 import NAF3Image from '../../../assets/About/NAF3.svg'
 import { motion } from 'framer-motion';
+import SmallVideo from '../../../assets/About/smallVideo.mp4'
+import AboutGrid from './AboutGrid';
 
 function AboutPage() {
     const { t } = useTranslation();
@@ -96,7 +98,7 @@ function AboutPage() {
                     <Typography className="headings-h1 responsive-text white-text">
                         {t('about.heroTitleline4')}
                     </Typography>
-                    {/* <Box
+                    <Box
                         sx={{
                             width: '100%',
                             maxWidth: '355px',
@@ -104,43 +106,25 @@ function AboutPage() {
                             aspectRatio: '16 / 9',
                             borderRadius: 100,
                             overflow: 'hidden',
-                            background: "#FCFCFC",
+                            // background: "#FCFCFC",
                         }}
                     >
                         <video
-                            src="" // replace with your actual path
+                            src={SmallVideo}
                             autoPlay
                             muted
                             loop
                             playsInline
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
-                    </Box> */}
+                    </Box>
                 </Box>
                 <Typography className="bodyRegularText3 white-text description1">
                     {t('about.heroSubTitleline')}
                 </Typography>
             </Box>
 
-            {/* Video Section */}
-            <Box
-                sx={{
-                    width: '100%',
-                    marginTop: { xs: '2rem', sm: '4rem', md: '10rem' },
-                    height: {
-                        xs: '300px',
-                        sm: '400px',
-                        md: '600px',
-                        lg: '750px',
-                        xl: '820px',
-                    },
-                    bgcolor: '#525252',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-            </Box>
+            <AboutGrid />
             <TextSection />
             <TeamSection />
             <AwardsSection />
