@@ -20,6 +20,7 @@ import Picture2 from '../../assets/Contact/Picture2.png'
 import Picture3 from '../../assets/Contact/Picture3.png'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 function ContactPage() {
     const { t } = useTranslation();
@@ -306,6 +307,17 @@ function ContactPage() {
 
     return (
         <Box>
+            <Helmet>
+                <title>NAF Vending - Contact</title>
+                <link rel="canonical" href="https://vendinaf.com/en/contact" />
+                <meta name='description'
+                    content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
+                <meta name="keywords"
+                    content="Pizza vending machine, Fries vending machine, NAF food vending, NAF sustainable vending, Soft ice cream vending, Cotton candy vending, Beer vending machine, Return vending system, Gourmet vending machine, Vending maintenance support, NAF cloud system, Real-time vending analytics, Inventory management vending, Targeted vending ads, Remote machine monitoring, Vending machine leasing, Vending machine partnerships, Germany vending solutions, Innovative vending technology, Food waste reduction vending, Reusable packaging vending, Vending for hotels/universities, Fresh food vending machine, Local food vending, AI vending machines, Smart vending solutions, Automated vending systems, Sustainable vending, Cloud-based vending, Custom vending machines, High-performance vending, Vending machine management, Eco-friendly vending, AI gastronomy, NAF AI vending, NAF vending machines, Near food vending machine, Food vending near me" />
+                <meta name="author" content="NAF Vending" />
+                <meta name="robots" content="index, follow" />
+                <html lang="en" />
+            </Helmet>
             <Box className='section-container contactus-sec' sx={{ pr: 0 }}>
                 <Box className='contactus-subsec'>
                     <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>Contact with us</Typography>
