@@ -6,10 +6,12 @@
     gap: 10%;
     padding: 50px 0px 0px 50px;
 }
+
 canvas {
-    touch-action: none; /* avoids touch zooming but still scrolls */
-  }
-  
+    touch-action: none;
+    /* avoids touch zooming but still scrolls */
+}
+
 .software-hero-img {
     max-width: 828px;
 }

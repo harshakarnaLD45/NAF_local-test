@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import Image1 from '../../assets/Machines/HoverImage1.png';
-import Image2 from '../../assets/Machines/HoverImage2.jpg';
-import Image3 from '../../assets/Machines/HoverImage3.jpg';
-import Image4 from '../../assets/Machines/HoverImage4.jpg';
-import Image5 from '../../assets/Machines/HoverImage5.jpg';
-import Image6 from '../../assets/Machines/HoverImage6.jpg';
+import Image2 from '../../assets/Machines/HoverImage2.png';
+import Image3 from '../../assets/Machines/HoverImage3.png';
+import Image4 from '../../assets/Machines/HoverImage4.png';
+import Image5 from '../../assets/Machines/HoverImage5.png';
+import Image6 from '../../assets/Machines/HoverImage6.png';
 import { useTranslation } from 'react-i18next';
 
 const CustomVendingSection = () => {
@@ -74,7 +74,7 @@ const CustomVendingSection = () => {
                             transition: 'all 0.3s ease-in-out',
                         }}
                     >
-                        {/* Hover image */}
+                        {/* Hover image with overlay */}
                         <Box
                             sx={{
                                 position: 'absolute',
@@ -87,7 +87,18 @@ const CustomVendingSection = () => {
                                 zIndex: 1,
                                 height: { xs: "300px", sm: "300px", md: "100%" },
                             }}
-                        />
+                        >
+                            {/* Dark Overlay */}
+                            <Box
+                                sx={{
+                                    position: 'absolute',
+                                    inset: 0,
+                                    backgroundColor: 'rgba(0,0,0,0.3)',  // black with 50% opacity
+                                    zIndex: 2,
+                                }}
+                            />
+                        </Box>
+
 
                         {/* Vertical Text */}
                         <Typography className='bodyRegularText3'

@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import blogimage1 from '../../assets/Home/Blog banners 1.jpg';
 import blogimage2 from '../../assets/Home/Blog banners 2.jpg';
@@ -111,150 +111,198 @@ import { Helmet } from "react-helmet";
 // ];
 const blogData = [
     {
-        title: "THE EVOLUTION OF GASTRONOMY – FROM STOVE & SOUL TO HIGH-TECH & VENDING MACHINES",
-        subtitle: "",
-        date: "14 April 2025",
-        blogimage: blogimage1,
-        readTime: "6 Min Read",
-        introText: "More than passion – the turning point of an industry",
-        tableOfContents: [
-            { id: 1, title: "My Motivation" },
-            { id: 2, title: "Personal Note from Odette:" },
+        title: "VERGLEICH VON VERKAUFSSOFTWARE – DIE UNSICHTBARE KRAFT HINTER DEM ERFOLG",
 
+        date: "28. April 2025",
+        readTime: "6 Min. Lesezeit",
+        blogimage: blogimage3,
+        introText: "Warum die Software hinter deinem Verkaufsautomaten wichtiger ist, als du denkst",
+
+        tableOfContents: [
+            { id: 1, title: "Was macht großartige Verkaufssoftware aus?" },
+            { id: 2, title: "Kurz gesagt:" },
         ],
         blogSections: [
-            { id: 1, content: "Gastronomy has always been a place of encounters, enjoyment, and emotion—once dominated by the classic kitchen, chefs, and waitstaff, operating with heart, heat, and hustle. But rising pressures like staff shortages, increasing costs, and growing guest expectations demanded change. Tradition met harsh realities: short breaks, limited opening hours, sustainability challenges, and a flood of packaging waste." },
             {
-                id: 1, content: "A new path was necessary—one of innovation.",
+                id: 1,
+                content: "Heutzutage ist es einfacher denn je, einen modernen Food- oder Verkaufsautomaten einzurichten.",
+            },
+            {
+                id: 2,
+                content: "Was jedoch viele übersehen: Echter Erfolg hängt nicht nur von Technologie oder Design ab – sondern von der Software, die ihn antreibt.",
+            },
+            {
+                id: 3,
+                content: "Eine hochwertige Cloud-Software für Verkaufsautomaten entscheidet darüber, ob:",
                 // blogpoints: [
-                //     {id: 1, content: "•	Modern vending machines, like those from NAF, are reshaping food service. Offering fresh, hot meals in just 3 minutes, 24/7, without staff, they provide:Healthy meals around the clock" },
-                //      { id: 2, content: "Hygienic, contactless service" },
-                //     { id: 3, content: "Flexibility for users and operators" },
-                //     { id: 4, content: "Stylish design that fits into any environment" },
-                //     { id: 5, content: "Cost savings through reduced staffing" },
-
+                //   { id: 1, content: "• Dein Automat effizient läuft" },
+                //   { id: 2, content: "• Probleme in Echtzeit erkannt werden" },
+                //   { id: 3, content: "• Verkaufsdaten transparent und nutzbar sind" },
+                //   { id: 4, content: "• Du flexibel auf Kundenbedürfnisse reagieren kannst" },
+                //   { id: 5, content: "• Personalkosten durch Automatisierung gesenkt werden" },
                 // ]
             },
-            { id: 2, content: "These high-tech vending systems with touchscreens, heating/cooling systems, and AI are more than just sales points—they're mini-restaurants with smart cores." },
-            { id: 3, content: "The message is clear: gastronomy isn't dying—it's becoming smarter." },
-            { id: 4, content: " Vending machines are not a substitute for passion, but a solution to real challenges, creating space, efficiency, and new moments of enjoyment." },
-            { id: 5, content: "And this is just the beginning. Whether in hotels, offices, hospitals, or gas stations, the future of dining is automated and personalized." },
-            { id: 6, content: "A new path was necessary—one of innovation." },
             {
-                id: 7, title: "Personal Note from Odette:",
-                content: "Coming from a gastronomy background, I know both the love for food and the daily backstage struggles."
+                id: 5,
+                content: "Ohne moderne Software kann ein Automat schnell von einer Lösung zum Problem werden.",
             },
-            { id: 8, content: "That’s why I founded NAF: to bring together tradition and technology, pleasure and efficiency." },
-        ],
-
+            {
+                id: 6,
+                title: "Was macht großartige Verkaufssoftware aus?",
+                content:
+                    "Und das ist erst der Anfang. Ob in Hotels, Büros, Krankenhäusern oder Tankstellen – die Zukunft des Essens ist automatisiert und personalisiert.",
+                // blogpoints: [
+                //   { id: 1, content: "Echtzeit-Fehlererkennung: Warnungen, bevor Kunden Probleme bemerken" },
+                //   { id: 2, content: "Datenbasierte Optimierung: Wissen, was sich verkauft und wann nachgefüllt werden muss" },
+                //   { id: 3, content: "Fernsteuerung: Preise ändern, Rabatte anbieten oder Menüs sofort aktualisieren" },
+                //   { id: 4, content: "Wartungsverfolgung: Komponentenlaufzeiten überwachen, Updates einspielen und Ausfälle vermeiden" },
+                // ]
+            },
+            {
+                id: 7,
+                title: "Kurz gesagt:",
+                content:
+                    "Die Software ist das Herzstück deines Automaten – sie treibt Effizienz, Kostenkontrolle und Kundenzufriedenheit voran.",
+            },
+        ]
     },
     {
-        title: "WHO AM I – AND WHY IS MY LIFE ALL ABOUT VENDING MACHINES?",
+        title: "WER BIN ICH – UND WARUM DREHT SICH MEIN LEBEN NUR UM VERKAUFSAUTOMATEN?",
 
-        date: "21 April 2025",
+        date: "21. April 2025",
         blogimage: blogimage2,
-        readTime: "6 Min Read",
-        introText: "From Heartfelt Hospitality to High-Tech Food Solutions",
-        tableOfContents: [
-            { id: 1, title: "Our Mission – Simply Put:" },
-            { id: 2, title: "Why I’m Writing This Blog" },
+        readTime: "6 Min. Lesezeit",
+        introText: "Von herzlicher Gastfreundschaft zu High-Tech-Food-Lösungen",
 
+        tableOfContents: [
+            { id: 1, title: "Unsere Mission – kurz gesagt:" },
+            { id: 2, title: "Warum ich diesen Blog schreibe" },
         ],
+
         blogSections: [
             {
-                id: 1, content: "Hi, I’m Odette Lamkhizni – passionate host, devoted gastronome, and now a vending visionary.",
-
+                id: 1,
+                content: "Hallo, ich bin Odette Lamkhizni – leidenschaftliche Gastgeberin, engagierte Feinschmeckerin und jetzt eine Visionärin im Bereich Verkaufsautomaten.",
             },
             {
-                id: 2, content: "Hospitality was my home for many years. I love delighting people—with great food, genuine moments, and heartfelt service.",
-
+                id: 2,
+                content: "Viele Jahre lang war die Gastronomie mein Zuhause. Ich liebe es, Menschen zu begeistern – mit gutem Essen, echten Momenten und herzlichem Service.",
             },
-            { id: 3, content: "But I also witnessed the challenges: labor shortages, long hours, and high operational costs. Sound familiar?" },
-            { id: 4, content: "So I asked myself:" },
-            { id: 5, content: "Why not think differently?" },
-            { id: 6, content: "Why not rethink everything?" },
-            { id: 7, content: "That’s how the story of NAF Vending Machines began." },
+            {
+                id: 3,
+                content: "Aber ich habe auch die Herausforderungen erlebt: Personalmangel, lange Arbeitszeiten und hohe Betriebskosten. Kommt dir das bekannt vor?",
+            },
+            {
+                id: 4,
+                content: "Also habe ich mich gefragt:",
+            },
+            {
+                id: 5,
+                content: "Warum nicht anders denken?",
+            },
+            {
+                id: 6,
+                content: "Warum nicht alles neu überdenken?",
+            },
+            {
+                id: 7,
+                content: "So begann die Geschichte der NAF Verkaufsautomaten.",
+            },
             {
                 id: 8,
-                title: "Our Mission – Simply Put:",
-                content: "We deliver fresh, delicious, and healthy meals in just 3 minutes—anytime, anywhere!"
-
+                title: "Unsere Mission – kurz gesagt:",
+                content: "Wir liefern frische, leckere und gesunde Mahlzeiten in nur 3 Minuten – jederzeit und überall!",
             },
-
-
-            { id: 9, content: "No stress, no staff shortages, no compromises" },
-            { id: 10, content: "Our machines are not your average vending machines—they’re little high-tech restaurants at the push of a button." },
-            { id: 11, content: "  Whether in hotels, offices, hospitals, or gas stations—they serve around the clock:" },
-            { id: 12, content: " Fresh. Sustainable. Efficient. Simply WOW." },
-
-
+            {
+                id: 9,
+                content: "Kein Stress, kein Personalmangel, keine Kompromisse.",
+            },
+            {
+                id: 10,
+                content: "Unsere Automaten sind keine gewöhnlichen Verkaufsautomaten – sie sind kleine High-Tech-Restaurants auf Knopfdruck.",
+            },
+            {
+                id: 11,
+                content: "Ob in Hotels, Büros, Krankenhäusern oder Tankstellen – sie sind rund um die Uhr im Einsatz:",
+            },
+            {
+                id: 12,
+                content: "Frisch. Nachhaltig. Effizient. Einfach WOW.",
+            },
             {
                 id: 13,
-                title: "Why I’m Writing This Blog",
-                content: "Because I want to take you along for the ride:",
-
+                title: "Warum ich diesen Blog schreibe",
+                content: "Weil ich dich mitnehmen möchte auf diese Reise:",
             },
-            { id: 14, content: "Behind the scenes, into our everyday work, and through real success stories and new ideas." },
-
-
-
-            { id: 15, content: "We’re more than technology—we’re a lifestyle." },
-
+            {
+                id: 14,
+                content: "Hinter die Kulissen, in unseren Arbeitsalltag und durch echte Erfolgsgeschichten und neue Ideen.",
+            },
+            {
+                id: 15,
+                content: "Wir sind mehr als nur Technologie – wir sind ein Lebensgefühl.",
+            },
         ]
     },
     {
-        title: "VENDING SOFTWARE COMPARISON – THE INVISIBLE FORCE BEHIND SUCCESS",
-
-        date: "28 April 2025",
-        readTime: "6 Min Read",
-        blogimage: blogimage3,
-        introText: "Why the software behind your vending machine matters more than you think",
+        title: "DIE EVOLUTION DER GASTRONOMIE – VON HERD & HERZ ZU HIGH-TECH & VERKAUFSAUTOMATEN",
+        subtitle: "",
+        date: "14. April 2025",
+        blogimage: blogimage1,
+        readTime: "6 Min. Lesezeit",
+        introText: "Mehr als Leidenschaft – der Wendepunkt einer Branche",
 
         tableOfContents: [
-            { id: 1, title: "What makes great vending software?" },
-            { id: 2, title: "In short:" },
-
+            { id: 1, title: "Meine Motivation" },
+            { id: 2, title: "Persönliche Notiz von Odette:" },
         ],
+
         blogSections: [
             {
-                id: 1, content: "Setting up a modern food or vending machine today is easier than ever.",
-
-            },
-            { id: 2, content: "But what many overlook: true success doesn't just depend on technology or design—it depends on the software that powers it" },
-            {
-                id: 3, content: "A high-quality vending cloud software determines whether:",
-                // blogpoints: [
-                //     {id: 1, content: "•	Your machine runs efficiently" },
-                //      { id: 2, content: "•	Issues are detected in real-time" },
-                //     { id: 3, content: "•	Sales data is transparent and actionable" },
-                //     { id: 4, content: "•	You can respond flexibly to customer needs" },
-                //     { id: 5, content: "Cost savings through reduced staffing" },
-
-                // ] 
-            },
-            { id: 5, content: " Without modern software, a machine can quickly turn from a solution into a problem" },
-
-            {
-                id: 6, title: "What makes great vending software?", content: "And this is just the beginning. Whether in hotels, offices, hospitals, or gas stations, the future of dining is automated and personalized.",
-                // blogpoints: [
-                //     {id: 1, content: "Real-time error detection: Alerts before customers notice a problem•	Your machine runs efficiently" },
-                //      { id: 2, content: "Data-based optimization: Know what's selling and when to restock" },
-                //     { id: 3, content: "Remote control: Change prices, offer discounts, or upload new menus instantly" },
-                //     { id: 4, content: "Maintenance tracking: Monitor component lifespans, push updates, and avoid breakdowns" },
-
-
-                // ]
+                id: 1,
+                content: "Die Gastronomie war schon immer ein Ort der Begegnung, des Genusses und der Emotionen – einst geprägt von klassischer Küche, Köchen und Servicekräften, die mit Herz, Hitze und Hingabe arbeiteten. Doch steigender Druck wie Personalmangel, wachsende Kosten und zunehmende Erwartungen der Gäste forderten Veränderung. Die Tradition traf auf harte Realität: kurze Pausen, eingeschränkte Öffnungszeiten, Nachhaltigkeitsprobleme und eine Flut an Verpackungsmüll.",
             },
             {
-                id: 7, title: "In short:",
-                content: " The software is the heart of your machine—driving efficiency, cost control, and customer satisfaction."
+                id: 1,
+                content: "Ein neuer Weg war notwendig – ein Weg der Innovation.",
             },
-
+            {
+                id: 2,
+                content: "Moderne Verkaufsautomaten mit Touchscreens, Heiz- und Kühlsystemen sowie KI sind mehr als bloße Verkaufsstellen – sie sind Mini-Restaurants mit intelligentem Kern.",
+            },
+            {
+                id: 3,
+                content: "Die Botschaft ist klar: Die Gastronomie stirbt nicht – sie wird smarter.",
+            },
+            {
+                id: 4,
+                content: "Verkaufsautomaten sind kein Ersatz für Leidenschaft, sondern eine Antwort auf echte Herausforderungen – sie schaffen Raum, Effizienz und neue Genussmomente.",
+            },
+            {
+                id: 5,
+                content: "Und das ist erst der Anfang. Ob in Hotels, Büros, Krankenhäusern oder Tankstellen – die Zukunft des Essens ist automatisiert und personalisiert.",
+            },
+            {
+                id: 6,
+                content: "Ein neuer Weg war notwendig – ein Weg der Innovation.",
+            },
+            {
+                id: 7,
+                title: "Persönliche Notiz von Odette:",
+                content: "Ich komme aus der Gastronomie und kenne sowohl die Liebe zum Essen als auch die täglichen Herausforderungen hinter den Kulissen.",
+            },
+            {
+                id: 8,
+                content: "Deshalb habe ich NAF gegründet: um Tradition und Technologie, Genuss und Effizienz miteinander zu verbinden.",
+            },
         ]
-    },]
+    },
+]
+
 const BlogContainer = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const { lang } = useParams();
     const initialIndex = location.state?.blogIndex ?? 0;
     const [currentBlogIndex, setCurrentBlogIndex] = useState(initialIndex);
 
@@ -271,7 +319,7 @@ const BlogContainer = () => {
 
     const handleBack = () => {
         if (currentBlogIndex === 0) {
-            navigate("/Insights");
+            navigate(`/${lang}/Insights`);
         } else {
             setCurrentBlogIndex((prev) => prev - 1);
         }
@@ -306,7 +354,7 @@ const BlogContainer = () => {
                         className="bodyRegularText2"
                     >
                         <img src={arrowBack} alt="Back Arrow" style={{ width: 18, height: 15, marginRight: 8 }} />
-                        Back
+                        Zurück
                     </Button>
 
                     {currentBlogIndex < blogData.length - 1 && (
@@ -315,7 +363,7 @@ const BlogContainer = () => {
                             sx={{ color: "#FCFCFC", padding: 0, textTransform: "none", "&:hover": { backgroundColor: "transparent" } }}
                             className="bodyRegularText2"
                         >
-                            Next
+                            Weiter
                             <img src={arrowForward} alt="Next Arrow" style={{ width: 18, height: 15, marginLeft: 8, aspectRatio: "3/4" }} />
                         </Button>
                     )}
@@ -329,7 +377,7 @@ const BlogContainer = () => {
                     tableOfContents={blog.tableOfContents}
                     blogSections={blog.blogSections}
                     blogImage={blog.blogimage}
-                    prevRoute={currentBlogIndex === 0 ? "/Insights" : null}
+                    prevRoute={currentBlogIndex === 0 ? `${lang}/Insights` : null}
                     nextRoute={currentBlogIndex < blogData.length - 1 ? `/blog/${currentBlogIndex + 1}` : null}
                     dateIcon={dateImage}
                 />

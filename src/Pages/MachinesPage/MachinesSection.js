@@ -12,10 +12,12 @@ import MachineImage7 from '../../assets/Home/Machine7.png';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 const MachinesSection = ({ selectedMachine }) => {
     const { t } = useTranslation();
     const theme = useTheme();
+    const { lang } = useParams(); 
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [months, setMonths] = useState(24);
 
@@ -182,7 +184,7 @@ const MachinesSection = ({ selectedMachine }) => {
                             <img src={machine.image} alt={machine.title} className='max-mac-img' />
                             <Box sx={{ display: "flex", justifyContent: "center", mt: 2, gap: 6 }}>
                                 <button className="download-btn"><DownloadIcon /></button>
-                                <AnimateButton />
+                                <AnimateButton route={`/${lang}/contact`} />
                             </Box>
                         </Box>
 
@@ -217,7 +219,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                 py: 3, px: 2.5, borderRadius: '8px', border: '1px solid #525252', mt: 1
                             }}>
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Acquisitioncosts')}</Typography>
-                                <Typography color="#FA7854" className='bodyMediumText2'>€{machine.price.toLocaleString()} <span style={{ color: "#FA7854" }} className='bodyMediumText3'>+ 19% VAT</span></Typography>
+                                <Typography color="#FA7854" className='bodyMediumText2'>€{machine.price.toLocaleString()} <span style={{ color: "#FA7854" }} className='bodyMediumText3'>+ 19% MwSt</span></Typography>
                             </Box>
 
                             <Box sx={{

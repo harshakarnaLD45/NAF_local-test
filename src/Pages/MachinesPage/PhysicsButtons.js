@@ -3,100 +3,100 @@ import Matter from 'matter-js';
 import styles from './MachinesPage.css';
 import { useTranslation } from 'react-i18next';
 
-const getResponsiveMachineData = () => {
-    const width = window.innerWidth;
-
-    const breakpoint = (() => {
-        if (width > 1800) return 'xl';
-        if (width > 1400) return 'lg';
-        if (width > 1024) return 'md';
-        if (width > 768) return 'sm';
-        if (width > 300) return 'xs';
-        return 'xxs';
-    })();
-
-    const configs = {
-        xl: [
-            [-200, 0.05],
-            [100, 0],
-            [50, 0.6],
-            [-180, 0.25],
-            [150, 0.5],
-            [180, -0.3],
-            [-310, 0.1],
-            [-120, -0.03],
-        ],
-        lg: [
-            [-140, 0.05],
-            [60, 0],
-            [30, 0.6],
-            [-120, 0.25],
-            [90, 0.5],
-            [100, -0.3],
-            [-200, 0.1],
-            [-70, -0.03],
-        ],
-        md: [
-            [-100, 0.05],
-            [30, 0],
-            [10, 0.6],
-            [-120, 0.25],
-            [70, 0.5],
-            [50, -0.3],
-            [-200, -0.1],
-            [-40, -0.03],
-        ],
-        sm: [
-            [-80, 0.05],
-            [-30, 0],
-            [0, 0.6],
-            [-80, 0.25],
-            [40, 0.5],
-            [-50, -0.3],
-            [-80, -0.3],
-            [-20, -0.03],
-        ],
-        xs: [
-            [0, 2],
-            [1, 0.5],
-            [0, 2],
-            [3, 1.5],
-            [0, 2],
-            [2, 2],
-            [0, 2],
-            [1, 1.5],
-        ],
-        xxs: [
-            [-40, 0.05],
-            [10, 0],
-            [0, 0.6],
-            [-40, 0.25],
-            [20, 0.5],
-            [30, -0.3],
-            [-50, 0.1],
-            [0, -0.03],
-        ],
-    };
-
-    const data = [
-        { id: 1, label: 'All', width: 80, height: 30 },
-        { id: 2, label: 'Pizza Machine', width: 110, height: 40 },
-        { id: 3, label: 'Fries Machine', width: 120, height: 40 },
-        { id: 4, label: 'Soft Ice Cream Machine', width: 120, height: 40 },
-        { id: 5, label: 'Cotton Candy Machine', width: 160, height: 40 },
-        { id: 6, label: 'Beer Machine', width: 150, height: 40 },
-        { id: 7, label: 'Return Machine', width: 130, height: 40 },
-        { id: 8, label: 'Gourmet Machine', width: 180, height: 40 },
-    ];
-
-    return data.map((machine, index) => ({
-        ...machine,
-        initialXOffset: configs[breakpoint][index][0],
-        initialAngle: configs[breakpoint][index][1],
-    }));
-};
-
 function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
+    const { t } = useTranslation();
+    const getResponsiveMachineData = () => {
+        const width = window.innerWidth;
+
+        const breakpoint = (() => {
+            if (width > 1800) return 'xl';
+            if (width > 1400) return 'lg';
+            if (width > 1024) return 'md';
+            if (width > 768) return 'sm';
+            if (width > 300) return 'xs';
+            return 'xxs';
+        })();
+
+        const configs = {
+            xl: [
+                [-200, 0.05],
+                [100, 0],
+                [50, 0.6],
+                [-180, 0.25],
+                [150, 0.5],
+                [180, -0.3],
+                [-310, 0.1],
+                [-120, -0.03],
+            ],
+            lg: [
+                [-140, 0.05],
+                [60, 0],
+                [30, 0.6],
+                [-120, 0.25],
+                [90, 0.5],
+                [100, -0.3],
+                [-200, 0.1],
+                [-70, -0.03],
+            ],
+            md: [
+                [-100, 0.05],
+                [30, 0],
+                [10, 0.6],
+                [-120, 0.25],
+                [70, 0.5],
+                [50, -0.3],
+                [-200, -0.1],
+                [-40, -0.03],
+            ],
+            sm: [
+                [-80, 0.05],
+                [-30, 0],
+                [0, 0.6],
+                [-80, 0.25],
+                [40, 0.5],
+                [-50, -0.3],
+                [-80, -0.3],
+                [-20, -0.03],
+            ],
+            xs: [
+                [0, 2],
+                [1, 0.5],
+                [0, 2],
+                [3, 1.5],
+                [0, 2],
+                [2, 2],
+                [0, 2],
+                [1, 1.5],
+            ],
+            xxs: [
+                [-40, 0.05],
+                [10, 0],
+                [0, 0.6],
+                [-40, 0.25],
+                [20, 0.5],
+                [30, -0.3],
+                [-50, 0.1],
+                [0, -0.03],
+            ],
+        };
+
+        const data = [
+            { id: 1, label: 'All', width: 80, height: 30 },
+            { id: 2, label: t('machines.PizzaMachine'), width: 110, height: 40 },
+            { id: 3, label: t('machines.FriesMachine'), width: 120, height: 40 },
+            { id: 4, label: t('machines.IceCreamMachine'), width: 120, height: 40 },
+            { id: 5, label: t('machines.CandyMachine'), width: 160, height: 40 },
+            { id: 6, label: t('machines.BeerMachine'), width: 150, height: 40 },
+            { id: 7, label: t('machines.ReturnMachine'), width: 130, height: 40 },
+            { id: 8, label: t('machines.GourmetMachine'), width: 180, height: 40 },
+        ];
+
+        return data.map((machine, index) => ({
+            ...machine,
+            initialXOffset: configs[breakpoint][index][0],
+            initialAngle: configs[breakpoint][index][1],
+        }));
+    };
     const [machineData, setMachineData] = useState(getResponsiveMachineData());
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);

@@ -12,6 +12,22 @@
     margin-top: -20px;
 }
 
+.calendly-container {
+    width: 100%;
+    height: 1005px;
+    overflow: hidden;
+    position: relative;
+}
+
+.calendly-container iframe {
+    overflow: hidden !important;
+    scrollbar-width: none;
+}
+
+.calendly-container iframe::-webkit-scrollbar {
+    display: none;
+}
+
 @media (max-width: 1483px) {
     .calendy-section {
         margin-top: 0px;

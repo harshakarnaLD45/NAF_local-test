@@ -51,279 +51,280 @@ import Machine7SmallIcon2 from '../../assets/Home/MachineIcons/Machine7Icon2.svg
 import Machine7SmallIcon3 from '../../assets/Home/MachineIcons/Machine7Icon3.svg'
 import Machine7SmallIcon4 from '../../assets/Home/MachineIcons/Machine7Icon4.svg'
 
-const machines = [
-  {
-    img: Machine7,
-    name: 'Gourmet Machine',
-    button: 'Explore Combo',
-    icons: [
-      {
-        src: Machine7SmallIcon1, positions: {
-          1500: { top: '40px', left: '20px' },
-          900: { top: '40px', left: '15px' },
-          400: { top: '20px', left: '10px' },
-          0: { top: '20px', left: '7px' }
-        }
-      },
-      {
-        src: Machine7SmallIcon2, positions: {
-          1500: { top: '420px', left: '400px' },
-          900: { top: '300px', left: '370px' },
-          400: { top: '250px', left: '240px' },
-          0: { top: '200px', left: '150px' }
-        }
-      },
-      {
-        src: Machine7SmallIcon3, positions: {
-          1500: { top: '380px', left: '0px' },
-          900: { top: '330px', left: '0px' },
-          400: { top: '200px', left: '0px' },
-          0: { top: '220px', left: '0px' }
-        }
-      },
-      {
-        src: Machine7SmallIcon4, positions: {
-          1500: { top: '50px', left: '420px' },
-          900: { top: '37px', left: '350px' },
-          400: { top: '25px', left: '250px' },
-          0: { top: '17px', left: '180px' }
-        }
-      },
-    ]
-  },
-  {
-    img: Machine1,
-    name: 'Pizza Machine',
-    button: 'Explore Pizza',
-    icons: [
-      {
-        src: MachineSmallIcon1, positions: {
-          1500: { top: '40px', left: '35px' },
-          900: { top: '40px', left: '35px' },
-          400: { top: '20px', left: '17px' },
-          0: { top: '14px', left: '10px' }
-        }
-      },
-      {
-        src: MachineSmallIcon2, positions: {
-          1500: { top: '260px', left: '40px' },
-          900: { top: '265px', left: '35px' },
-          400: { top: '150px', left: '20px' },
-          0: { top: '130px', left: '10px' }
-        }
-      },
-      {
-        src: MachineSmallIcon3, positions: {
-          1500: { top: '480px', left: '0px' },
-          900: { top: '420px', left: '0px' },
-          400: { top: '250px', left: '0px' },
-          0: { top: '200px', left: '0px' }
-        }
-      },
-      {
-        src: MachineSmallIcon4, positions: {
-          1500: { top: '50px', left: '420px' },
-          900: { top: '50px', left: '370px' },
-          400: { top: '25px', left: '240px' },
-          0: { top: '15px', left: '175px' }
-        }
-      },
-      {
-        src: MachineSmallIcon5, positions: {
-          1500: { top: '270px', left: '440px' },
-          900: { top: '250px', left: '375px' },
-          400: { top: '120px', left: '250px' },
-          0: { top: '70px', left: '150px' }
-        }
-      },
-      {
-        src: MachineSmallIcon6, positions: {
-          1500: { top: '460px', left: '390px' },
-          900: { top: '400px', left: '340px' },
-          400: { top: '240px', left: '195px' },
-          0: { top: '180px', left: '200px' }
-        }
-      }
-    ]
-  },
-  {
-    img: Machine3, name: 'Soft Ice Cream Machine', button: 'Explore Drinks', icons: [
-      {
-        src: Machine3SmallIcon1, positions: {
-          1500: { top: '60px', left: '20px' },
-          900: { top: '60px', left: '20px' },
-          400: { top: '10px', left: '10px' },
-          0: { top: '0px', left: '5px' }
-        }
-      },
-      {
-        src: Machine3SmallIcon2, positions: {
-          1500: { top: '340px', left: '440px' },
-          900: { top: '280px', left: '380px' },
-          400: { top: '150px', left: '260px' },
-          0: { top: '120px', left: '200px' }
-        }
-      },
-      {
-        src: Machine3SmallIcon3, positions: {
-          1500: { top: '300px', left: '30px' },
-          900: { top: '280px', left: '25px' },
-          400: { top: '180px', left: '10px' },
-          0: { top: '150px', left: '0px' }
-        }
-      },
-      {
-        src: Machine3SmallIcon4, positions: {
-          1500: { top: '540px', left: '400px' },
-          900: { top: '480px', left: '370px' },
-          400: { top: '280px', left: '245px' },
-          0: { top: '225px', left: '180px' }
-        }
-      },
-      {
-        src: Machine3SmallIcon5, positions: {
-          1500: { top: '40px', left: '250px' },
-          900: { top: '40px', left: '200px' },
-          400: { top: '20px', left: '125px' },
-          0: { top: '0px', left: '110px' }
-        }
-      }
-    ]
-  },
-  {
-    img: Machine4, name: 'Cotton Candy Machine', button: 'Explore Snacks', icons: [
-      {
-        src: Machine4SmallIcon1, positions: {
-          1500: { top: '360px', left: '0px' },
-          900: { top: '350px', left: '0px' },
-          400: { top: '160px', left: '0px' },
-          0: { top: '125px', left: '0px' }
-        }
-      },
-      {
-        src: Machine4SmallIcon2, positions: {
-          1500: { top: '60px', left: '465px' },
-          900: { top: '60px', left: '420px' },
-          400: { top: '40px', left: '275px' },
-          0: { top: '15px', left: '200px' }
-        }
-      },
-      {
-        src: Machine4SmallIcon3, positions: {
-          1500: { top: '460px', left: '450px' },
-          900: { top: '425px', left: '380px' },
-          400: { top: '260px', left: '250px' },
-          0: { top: '200px', left: '200px' }
-        }
-      },
-      {
-        src: Machine3SmallIcon1, positions: {
-          1500: { top: '60px', left: '20px' },
-          900: { top: '60px', left: '20px' },
-          400: { top: '20px', left: '0px' },
-          0: { top: '20px', left: '0px' }
-        }
-      },
-    ]
-  },
-  {
-    img: Machine5, name: 'Beer Machine', button: 'Explore Ice Cream', icons: [
-      {
-        src: Machine5SmallIcon1, positions: {
-          1500: { top: '360px', left: '290px' },
-          900: { top: '270px', left: '217px' },
-          400: { top: '180px', left: '145px' },
-          0: { top: '125px', left: '101px' }
-        }
-      },
-      {
-        src: Machine5SmallIcon2, positions: {
-          1500: { top: '360px', left: '290px' },
-          900: { top: '270px', left: '217px' },
-          400: { top: '180px', left: '145px' },
-          0: { top: '125px', left: '101px' }
-        }
-      },
-      {
-        src: Machine5SmallIcon3, positions: {
-          1500: { top: '360px', left: '290px' },
-          900: { top: '270px', left: '217px' },
-          400: { top: '180px', left: '145px' },
-          0: { top: '125px', left: '101px' }
-        }
-      },
-      {
-        src: Machine5SmallIcon4, positions: {
-          1500: { top: '360px', left: '290px' },
-          900: { top: '270px', left: '217px' },
-          400: { top: '180px', left: '145px' },
-          0: { top: '125px', left: '101px' }
-        }
-      },
-    ]
-  },
-  {
-    img: Machine6, name: 'Return Machine', button: 'Return Machine', icons: [
-
-    ]
-  }, {
-    img: Machine2, name: 'Fries Machine', button: 'Explore Cotton',
-    icons: [
-      {
-        src: Machine2SmallIcon1, positions: {
-          1500: { top: '200px', left: '10px' },
-          900: { top: '200px', left: '10px' },
-          400: { top: '100px', left: '10px' },
-          0: { top: '70px', left: '0px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon2, positions: {
-          1500: { top: '500px', left: '5px' },
-          900: { top: '480px', left: '5px' },
-          400: { top: '320px', left: '0px' },
-          0: { top: '250px', left: '0px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon3, positions: {
-          1500: { top: '50px', left: '450px' },
-          900: { top: '50px', left: '385px' },
-          400: { top: '25px', left: '260px' },
-          0: { top: '15px', left: '190px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon3, positions: {
-          1500: { top: '300px', left: '440px' },
-          900: { top: '270px', left: '385px' },
-          400: { top: '150px', left: '250px' },
-          0: { top: '125px', left: '180px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon1, positions: {
-          1500: { top: '460px', left: '460px' },
-          900: { top: '410px', left: '400px' },
-          400: { top: '250px', left: '270px' },
-          0: { top: '200px', left: '185px' }
-        }
-      },
-      {
-        src: Machine2SmallIcon4, positions: {
-          1500: { top: '580px', left: '360px' },
-          900: { top: '530px', left: '310px' },
-          400: { top: '355px', left: '200px' },
-          0: { top: '275px', left: '130px' }
-        }
-      }
-    ]
-  },
-];
 
 function Explore() {
-  const { t } = useTranslation();  
-  const { lang } = useParams(); 
+  const { t } = useTranslation();
+  const { lang } = useParams();
+
+  const machines = [
+    {
+      img: Machine7,
+      name: t('machines.GourmetMachine'),
+      button: 'Explore Combo',
+      icons: [
+        {
+          src: Machine7SmallIcon1, positions: {
+            1500: { top: '40px', left: '20px' },
+            900: { top: '40px', left: '15px' },
+            400: { top: '20px', left: '10px' },
+            0: { top: '20px', left: '7px' }
+          }
+        },
+        {
+          src: Machine7SmallIcon2, positions: {
+            1500: { top: '420px', left: '400px' },
+            900: { top: '300px', left: '370px' },
+            400: { top: '250px', left: '240px' },
+            0: { top: '200px', left: '150px' }
+          }
+        },
+        {
+          src: Machine7SmallIcon3, positions: {
+            1500: { top: '380px', left: '0px' },
+            900: { top: '330px', left: '0px' },
+            400: { top: '200px', left: '0px' },
+            0: { top: '220px', left: '0px' }
+          }
+        },
+        {
+          src: Machine7SmallIcon4, positions: {
+            1500: { top: '50px', left: '420px' },
+            900: { top: '37px', left: '350px' },
+            400: { top: '25px', left: '250px' },
+            0: { top: '17px', left: '180px' }
+          }
+        },
+      ]
+    },
+    {
+      img: Machine1,
+      name: t('machines.PizzaMachine'),
+      button: 'Explore Pizza',
+      icons: [
+        {
+          src: MachineSmallIcon1, positions: {
+            1500: { top: '40px', left: '35px' },
+            900: { top: '40px', left: '35px' },
+            400: { top: '20px', left: '17px' },
+            0: { top: '14px', left: '10px' }
+          }
+        },
+        {
+          src: MachineSmallIcon2, positions: {
+            1500: { top: '260px', left: '40px' },
+            900: { top: '265px', left: '35px' },
+            400: { top: '150px', left: '20px' },
+            0: { top: '130px', left: '10px' }
+          }
+        },
+        {
+          src: MachineSmallIcon3, positions: {
+            1500: { top: '480px', left: '0px' },
+            900: { top: '420px', left: '0px' },
+            400: { top: '250px', left: '0px' },
+            0: { top: '200px', left: '0px' }
+          }
+        },
+        {
+          src: MachineSmallIcon4, positions: {
+            1500: { top: '50px', left: '420px' },
+            900: { top: '50px', left: '370px' },
+            400: { top: '25px', left: '240px' },
+            0: { top: '15px', left: '175px' }
+          }
+        },
+        {
+          src: MachineSmallIcon5, positions: {
+            1500: { top: '270px', left: '440px' },
+            900: { top: '250px', left: '375px' },
+            400: { top: '120px', left: '250px' },
+            0: { top: '70px', left: '150px' }
+          }
+        },
+        {
+          src: MachineSmallIcon6, positions: {
+            1500: { top: '460px', left: '390px' },
+            900: { top: '400px', left: '340px' },
+            400: { top: '240px', left: '195px' },
+            0: { top: '180px', left: '200px' }
+          }
+        }
+      ]
+    },
+    {
+      img: Machine3, name: t('machines.IceCreamMachine'), button: 'Explore Drinks', icons: [
+        {
+          src: Machine3SmallIcon1, positions: {
+            1500: { top: '60px', left: '20px' },
+            900: { top: '60px', left: '20px' },
+            400: { top: '10px', left: '10px' },
+            0: { top: '0px', left: '5px' }
+          }
+        },
+        {
+          src: Machine3SmallIcon2, positions: {
+            1500: { top: '340px', left: '440px' },
+            900: { top: '280px', left: '380px' },
+            400: { top: '150px', left: '260px' },
+            0: { top: '120px', left: '200px' }
+          }
+        },
+        {
+          src: Machine3SmallIcon3, positions: {
+            1500: { top: '300px', left: '30px' },
+            900: { top: '280px', left: '25px' },
+            400: { top: '180px', left: '10px' },
+            0: { top: '150px', left: '0px' }
+          }
+        },
+        {
+          src: Machine3SmallIcon4, positions: {
+            1500: { top: '540px', left: '400px' },
+            900: { top: '480px', left: '370px' },
+            400: { top: '280px', left: '245px' },
+            0: { top: '225px', left: '180px' }
+          }
+        },
+        {
+          src: Machine3SmallIcon5, positions: {
+            1500: { top: '40px', left: '250px' },
+            900: { top: '40px', left: '200px' },
+            400: { top: '20px', left: '125px' },
+            0: { top: '0px', left: '110px' }
+          }
+        }
+      ]
+    },
+    {
+      img: Machine4, name: t('machines.CandyMachine'), button: 'Explore Snacks', icons: [
+        {
+          src: Machine4SmallIcon1, positions: {
+            1500: { top: '360px', left: '0px' },
+            900: { top: '350px', left: '0px' },
+            400: { top: '160px', left: '0px' },
+            0: { top: '125px', left: '0px' }
+          }
+        },
+        {
+          src: Machine4SmallIcon2, positions: {
+            1500: { top: '60px', left: '465px' },
+            900: { top: '60px', left: '420px' },
+            400: { top: '40px', left: '275px' },
+            0: { top: '15px', left: '200px' }
+          }
+        },
+        {
+          src: Machine4SmallIcon3, positions: {
+            1500: { top: '460px', left: '450px' },
+            900: { top: '425px', left: '380px' },
+            400: { top: '260px', left: '250px' },
+            0: { top: '200px', left: '200px' }
+          }
+        },
+        {
+          src: Machine3SmallIcon1, positions: {
+            1500: { top: '60px', left: '20px' },
+            900: { top: '60px', left: '20px' },
+            400: { top: '20px', left: '0px' },
+            0: { top: '20px', left: '0px' }
+          }
+        },
+      ]
+    },
+    {
+      img: Machine5, name: t('machines.BeerMachine'), button: 'Explore Ice Cream', icons: [
+        {
+          src: Machine5SmallIcon1, positions: {
+            1500: { top: '360px', left: '290px' },
+            900: { top: '270px', left: '217px' },
+            400: { top: '180px', left: '145px' },
+            0: { top: '125px', left: '101px' }
+          }
+        },
+        {
+          src: Machine5SmallIcon2, positions: {
+            1500: { top: '360px', left: '290px' },
+            900: { top: '270px', left: '217px' },
+            400: { top: '180px', left: '145px' },
+            0: { top: '125px', left: '101px' }
+          }
+        },
+        {
+          src: Machine5SmallIcon3, positions: {
+            1500: { top: '360px', left: '290px' },
+            900: { top: '270px', left: '217px' },
+            400: { top: '180px', left: '145px' },
+            0: { top: '125px', left: '101px' }
+          }
+        },
+        {
+          src: Machine5SmallIcon4, positions: {
+            1500: { top: '360px', left: '290px' },
+            900: { top: '270px', left: '217px' },
+            400: { top: '180px', left: '145px' },
+            0: { top: '125px', left: '101px' }
+          }
+        },
+      ]
+    },
+    {
+      img: Machine6, name: t('machines.ReturnMachine'), button: 'Return Machine', icons: [
+
+      ]
+    }, {
+      img: Machine2, name: t('machines.FriesMachine'), button: 'Explore Cotton',
+      icons: [
+        {
+          src: Machine2SmallIcon1, positions: {
+            1500: { top: '200px', left: '10px' },
+            900: { top: '200px', left: '10px' },
+            400: { top: '100px', left: '10px' },
+            0: { top: '70px', left: '0px' }
+          }
+        },
+        {
+          src: Machine2SmallIcon2, positions: {
+            1500: { top: '500px', left: '5px' },
+            900: { top: '480px', left: '5px' },
+            400: { top: '320px', left: '0px' },
+            0: { top: '250px', left: '0px' }
+          }
+        },
+        {
+          src: Machine2SmallIcon3, positions: {
+            1500: { top: '50px', left: '450px' },
+            900: { top: '50px', left: '385px' },
+            400: { top: '25px', left: '260px' },
+            0: { top: '15px', left: '190px' }
+          }
+        },
+        {
+          src: Machine2SmallIcon3, positions: {
+            1500: { top: '300px', left: '440px' },
+            900: { top: '270px', left: '385px' },
+            400: { top: '150px', left: '250px' },
+            0: { top: '125px', left: '180px' }
+          }
+        },
+        {
+          src: Machine2SmallIcon1, positions: {
+            1500: { top: '460px', left: '460px' },
+            900: { top: '410px', left: '400px' },
+            400: { top: '250px', left: '270px' },
+            0: { top: '200px', left: '185px' }
+          }
+        },
+        {
+          src: Machine2SmallIcon4, positions: {
+            1500: { top: '580px', left: '360px' },
+            900: { top: '530px', left: '310px' },
+            400: { top: '355px', left: '200px' },
+            0: { top: '275px', left: '130px' }
+          }
+        }
+      ]
+    },
+  ];
 
   const navigate = useNavigate();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -435,6 +436,7 @@ function Explore() {
                     sx={{
                       // height: { xs: 250, sm: 300, md: 450, xl: 500 },
                       width: { xs: 200, sm: 250, md: 350, xl: 400 },
+                      height: '90%',
                       p: { xs: 3, sm: 4, md: 5 },
                       transition: 'transform 0.3s ease',
                       cursor: 'grab',

@@ -61,7 +61,7 @@ const WhoWeServe = () => {
                     </Box>
                 </Box>
             </Box>
-            <Box className='whoweServe-right-sec'>
+            <Box className='whoweServe-right-sec' sx={{ mt: '20px' }}>
                 {/* Desktop/Tablet View (unchanged) */}
                 <Box
                     className='whoweServe-right-sec1'

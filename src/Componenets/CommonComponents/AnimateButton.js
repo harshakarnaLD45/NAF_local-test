@@ -147,13 +147,14 @@ const styles = {
         width: '100%',
     },
     leftText: {
-        textAlign: 'left',
+        // textAlign: 'left',
         // paddingLeft: '10px',
         color: '#FCFCFC',
     },
     rightText: {
-        textAlign: 'right',
+        // textAlign: 'right',
         // paddingRight: '10px',
+        marginTop: '4px',
         color: '#FCFCFC',
     },
     outerCircle: {

@@ -92,7 +92,7 @@ function AboutPage() {
                 {/* Row 2 */}
                 <Box className="about-container">
                     <Typography className="headings-h1 responsive-text green-text">
-                        {t('about.heroTitleline2')}
+                        NEW AGE OF FOOD,
                     </Typography>
                     <Typography className="headings-h1 responsive-text white-text">
                         {t('about.YOUR')}

@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import OdetteImg from '../../assets/Arrow 2.svg';
-import AbdelilahImg from "../../assets/Arrow 2.svg";
+import OdetteImg from '../../assets/About/Person1.png';
+import AbdelilahImg from "../../assets/About/Person2.png";
 import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -59,32 +59,34 @@ const FadeInParagraph = () => {
 
     const renderWords = () => {
         return paragraphText.flatMap((item, idx) =>
-            item.text.split(" ").map((word, i) => {
-                const key = `${idx}-${i}`;
-                const isPerson = item.highlight && item.person;
-                return (
-                    <span
-                        key={key}
-                        className={`fade-word headings-h2 ${item.highlight ? "highlighted" : ""}`}
-                        style={{
-                            display: "inline-block",
-                            whiteSpace: "pre",
-                            color: item.highlight ? "#FA7854" : undefined,
-                            textDecoration: item.highlight ? "underline" : "none",
-                            fontWeight: item.highlight ? 600 : 400,
-                            position: "relative",
-                            cursor: isPerson ? "pointer" : "default",
-                        }}
-                        onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
-                        onMouseLeave={isPerson ? handleMouseLeave : undefined}
-                    >
-                        {word + " "}
-                    </span>
-                );
-            })
+          item.text.split(" ").map((word, i) => {
+            const key = `${idx}-${i}`;
+            const isPerson = item.highlight && item.person;
+      
+            return (
+              <span key={key} style={{ display: "inline-block" }}>
+                <span
+                  className="fade-word headings-h2"
+                  style={{
+                    color: item.highlight ? "#FA7854" : undefined,
+                    textDecoration: item.highlight ? "underline" : "none",
+                    fontWeight: item.highlight ? 600 : 400,
+                    position: "relative",
+                    cursor: isPerson ? "pointer" : "default",
+                  }}
+                  onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
+                  onMouseLeave={isPerson ? handleMouseLeave : undefined}
+                >
+                  {word}
+                </span>
+                {/* Add space as a non-breaking space */}
+                <span>&nbsp;</span>
+              </span>
+            );
+          })
         );
-    };
-
+      };
+      
     const getImageForPerson = (person) => {
         switch (person) {
             case "odette":
@@ -131,17 +133,17 @@ const FadeInParagraph = () => {
                             pointerEvents: "none",
                             opacity: hoveredPerson ? 1 : 0,
                             borderRadius: '12px',
-                            background: '#FFF',
+                            // background: '#FFF',
                             overflow: "hidden",
                             width: { xs: "120px", sm: "140px", md: "400px" },
                             height: { xs: "120px", sm: "140px", md: "400px" },
                         }}
                     >
-                        {/* <img
+                        <img
                             src={getImageForPerson(hoveredPerson)}
                             alt={hoveredPerson}
                             style={{ width: "100%", display: "block" }}
-                        /> */}
+                        />
                     </Box>
                 )}
             </Box>

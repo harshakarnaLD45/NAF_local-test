@@ -7,13 +7,13 @@
     display: none !important;
 }
 
-.btn-spac-left {
+/* .btn-spac-left {
     margin-left: 20px !important;
 }
 
 .btn-spac-right {
     margin-right: 15px !important;
-}
+} */
 
 @media (min-width: 1920px) {
     .footerBottomhead {
@@ -191,7 +191,7 @@
 
 }
 
-@media (max-width: 899px) {
+/* @media (max-width: 899px) {
     .btn-spac-left {
         margin-left: 10px !important;
     }
@@ -199,7 +199,7 @@
     .btn-spac-right {
         margin-right: 5px !important;
     }
-}
+} */
 
 @media (max-width: 770px) {
     .footerBottomhead {

@@ -20,21 +20,21 @@ import Video2 from '../../../assets/About/AboutVideo2.mp4';
 
 const mediaItems = [
     { type: 'image', src: Image1 },
-    { type: 'image', src: Image2 },
     { type: 'image', src: Image3 },
     { type: 'image', src: Image4 },
+    { type: 'image', src: Image2 },
     { type: 'image', src: Image5 },
     { type: 'image', src: Image6 },
     { type: 'image', src: Image7 },
+    { type: 'video', src: Video2 },
     { type: 'image', src: Image8 },
     { type: 'image', src: Image10 },
     { type: 'image', src: Image11 },
     { type: 'image', src: Image12 },
     { type: 'image', src: Image13 },
-    { type: 'image', src: Image14 },
-    { type: 'image', src: Image15 },
     { type: 'video', src: Video1 },
-    { type: 'video', src: Video2 },
+    // { type: 'image', src: Image14 },
+    { type: 'image', src: Image15 },
 ];
 
 const AboutCarousel = () => {

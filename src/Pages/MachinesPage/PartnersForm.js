@@ -189,7 +189,7 @@ function PartnersForm() {
     };
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 10 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', px: { xs: 2, sm: 3, md: 4 } }}>
             <Box sx={{ maxWidth: 800, width: '100%', p: { xs: 2, sm: 5, md: 10 }, color: '#FCFCFC', border: '1px solid #525252', borderRadius: '24px' }}>
                 <Tabs
                     value={tab}
@@ -216,8 +216,8 @@ function PartnersForm() {
                         },
                     }}
                 >
-                    <Tab label="Companies & Installation Locations" />
-                    <Tab label="Gastronomy Partners" />
+                    <Tab label="Unternehmen & Installationsstandorte" />
+                    <Tab label="Gastronomische Partner" />
                 </Tabs>
 
                 {tab === 0 ? (
@@ -247,7 +247,7 @@ function PartnersForm() {
                                     }}
                                 >
                                     <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
-                                    <Typography className='bodyRegularText3' color='#C2C2C4'>
+                                    <Typography className='bodyRegularText3' sx={{ mt: 1 }} color='#C2C2C4'>
                                         {[
                                             t('machines.HowitWorktext1'),
                                             t('machines.HowitWorktext2'),
@@ -271,8 +271,8 @@ function PartnersForm() {
                             value={formTab0.willingToPurchaseMachine}
                             onChange={(e) => handleChange(e, 0)}
                             options={[
-                                { value: 'yes', label: 'Yes' },
-                                { value: 'no', label: 'No' },
+                                { value: 'yes', label: 'Ja' },
+                                { value: 'no', label: 'Nein' },
                             ]}
                         />
                         <CustomSelect
@@ -282,8 +282,8 @@ function PartnersForm() {
                             value={formTab0.provideCateringPermit}
                             onChange={(e) => handleChange(e, 0)}
                             options={[
-                                { value: 'yes', label: 'Yes' },
-                                { value: 'no', label: 'No' },
+                                { value: 'yes', label: 'Ja' },
+                                { value: 'no', label: 'Nein' },
                             ]}
                         />
                         {/* Contact info */}
@@ -345,7 +345,7 @@ function PartnersForm() {
                                     }}
                                 >
                                     <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
-                                    <Typography className='bodyRegularText3' color='#C2C2C4'>
+                                    <Typography className='bodyRegularText3' sx={{ mt: 1 }} color='#C2C2C4'>
                                         {[
                                             t('machines.WhatsInyoupoint1'),
                                             t('machines.WhatsInyoupoint2'),

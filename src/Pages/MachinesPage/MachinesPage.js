@@ -12,7 +12,8 @@ import Solutions from "./Solutions";
 import PartnersForm from "./PartnersForm";
 import MobileButtons from "./MobileButtons";
 import { useTranslation } from "react-i18next";
-import FormTextScroll from "./FormTextScroll";
+import { Helmet } from "react-helmet";
+import GetinTouch from "./GetinTouch";
 
 const MachinesPage = () => {
   const { t } = useTranslation();
@@ -61,15 +62,16 @@ const MachinesPage = () => {
       <Solutions />
       <PaymentOptions />
 
-      <Box className="section-container" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <Box className="section-container" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', px: 0 }}>
         <Typography className='expertise-title headings-h2' sx={{
           position: 'relative',
           bottom: '-50px',
-          width: { xs: '100%', sm: '100%', md: '70%' }
+          width: { xs: '100%', sm: '100%', md: '70%' },
+          px: { xs: 2, sm: 3, md: 4 }
         }} variant="h4" align="center" gutterBottom>
           {t('machines.PartnerNAFGermany')}
         </Typography>
-        {/* <FormTextScroll /> */}
+        <GetinTouch />
         <PartnersForm />
       </Box>
 

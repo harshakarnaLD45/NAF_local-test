@@ -22,10 +22,10 @@ const LanguageWrapper = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    if (lang && ['en', 'de'].includes(lang)) {
+    if (lang && ['de', 'en'].includes(lang)) {
       i18n.changeLanguage(lang);
     } else {
-      i18n.changeLanguage('en'); // fallback to English if unknown lang
+      i18n.changeLanguage('de'); // fallback to English if unknown lang
     }
   }, [lang, i18n]);
 
@@ -56,7 +56,7 @@ function App() {
       <BrowserRouter>
         <CustomCursor />
         <Routes>
-          <Route path="/" element={<Navigate to="/en" />} />
+          <Route path="/" element={<Navigate to="/de" />} />
           <Route path="/:lang/*" element={<LanguageWrapper />} />
         </Routes>
       </BrowserRouter>

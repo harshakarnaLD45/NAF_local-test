@@ -4,7 +4,7 @@
         "menuHome": "Startseite",
         "menuMachines": "Verkaufautomaten",
         "menuSoftware": "Software",
-        "menuInsights": "Blogs und Insights",
+        "menuInsights": "Blogs und Einblicke",
         "CompanyDiscover": "NAF entdecken",
         "foodMenu": "Speisekarte",
         "menuCompany": "Unternehmen",
@@ -15,7 +15,7 @@
         "BookaDemo": "Eine Demo buchen"
     },
     "Home": {
-        "mainHeading": "NAF – Die Zukunft des Verkaufs",
+        "mainHeading": "NAF – Die Zukunft des Verkaufsautomaten",
         "mainParagraph": "Automatisiert. KI-gestützt. Nachhaltig.",
         "viewMore": "Mehr anzeigen",
         "VIEW": "ANSICHT",
@@ -34,11 +34,11 @@
         "Cotton": "Zuckerwatte-Maschine",
         "Beer": "Bier-Maschine",
         "Return": "Rückgabe-Maschine",
-        "hotelsRestaurants": "Hotels & Restaurants",
+        "hotelsRestaurants": "Hotels und Gaststätten",
         "gasRoadsideRestaurants": "Tankstellen & Raststätten",
         "schoolsUniversities": "Schulen & Universitäten",
         "companiesFactories": "Unternehmen & Fabriken",
-        "eventsFestivals": "Events & Festivals",
+        "eventsFestivals": "Veranstaltungen und Festivals",
         "municipalitiesPublic": "Gemeinden & Behörden",
         "sustainability": "Nachhaltigkeit & Technologie",
         "sustainabilityHeading": "Künstliche Intelligenz trifft Umweltschutz",
@@ -207,7 +207,7 @@
         "ContactName": "Name der Kontaktperson",
         "FormfooterText": "Wir senden Ihnen kostenlos und unverbindlich detaillierte Informationen zur NAF-Partnerschaft zu.",
         "NAFMaintenanceTitle": "NAF Wartung & Support",
-        "NAFMaintenanceSubTitle": "Wir sorgen dafür, dass Ihre Automaten reibungslos laufen – mit zuverlässiger Wartung und Support, die Ausfallzeiten minimieren und Ihren ROI maximieren."
+        "NAFMaintenanceSubTitle": "Persönlich, zuverlässig und immer für Sie da"
     },
     "Maintenance": {
         "ReliableMaintenance": "Zuverlässige Wartung & Support für Ihre Automateninvestition",
@@ -247,7 +247,7 @@
         "bentoTitle2": "Intelligente Bestandsverwaltung",
         "bentoTitle3": "Gezielte Werbemöglichkeiten",
         "bentoTitle4": "Fernüberwachung von Maschinen",
-        "bentoTitle5": "Kundenbeziehungsmanagement (CRM)",
+        "bentoTitle5": "Verwaltung von Kundenbeziehungen (CRM)",
         "bentoTitle6": "Automatisierte Steuerberichte",
         "bentoTitle7": "Sichere Infrastruktur",
         "bentoSubTitle1": "Verfolgen Sie Verkaufsleistungen nach Produkt, Standort und Zeitraum über intuitive Diagramme und Grafiken.",
@@ -312,11 +312,11 @@
         "heroTitleline2": "DIE NEUE ÄRA DER LEBENSMITTEL,",
         "YOUR": "DEIN",
         "heroTitleline3": "PARTNER FÜR INNOVATIVE",
-        "heroTitleline4": "AUTOMATENLÖSUNGEN",
+        "heroTitleline4": "VENDING-LÖSUNGEN",
         "About": "Über uns",
         "mission": "Mission",
         "vision": "Vision",
-        "AboutText1": "NAF Germany wurde 2014 mit der Vision gegründet, das Automaten-Erlebnis zu revolutionieren. Wir sahen die Möglichkeit, innovative Technologie mit zuverlässiger Hardware zu kombinieren, um Lösungen zu schaffen, die den Bedürfnissen moderner Unternehmen gerecht werden.",
+        "AboutText1": "NAF Germany wurde 2024 mit der Vision gegründet, das Automaten-Erlebnis zu revolutionieren. Wir sahen die Möglichkeit, innovative Technologie mit zuverlässiger Hardware zu kombinieren, um Lösungen zu schaffen, die den Bedürfnissen moderner Unternehmen gerecht werden.",
         "AboutText2": "Seitdem sind wir bestrebt, die Grenzen der Automaten-Technologie zu verschieben und moderne Funktionen und Designs zu entwickeln, die uns von der Konkurrenz abheben.",
         "AboutText3": "Von Anfang an haben wir Qualität, Zuverlässigkeit und Kundenzufriedenheit in den Vordergrund gestellt. Wir sind stolz darauf, mit Unternehmen aus verschiedenen Branchen zusammenzuarbeiten und ihnen zu helfen, ihre Abläufe zu optimieren und ihre Ergebnisse zu steigern.",
         "missionText1": "Wir gestalten die Zukunft der Gastronomie – mit innovativen Lebensmittelautomaten, die Qualität, Nachhaltigkeit und Bequemlichkeit vereinen. Unser Ziel ist es, echte Alternativen anzubieten: gegen Personalmangel, steigende Kosten und starre Öffnungszeiten. Wir schaffen Lösungen, die den Menschen rund um die Uhr gute Lebensmittel bieten – flexibel, effizient und in höchster Qualität.",
@@ -402,7 +402,7 @@
         "manuend": "Ende"
     },
     "contactus": {
-        "heroTitle": "Gemeinsam können wir Außergewöhnliches erreichen.",
+        "heroTitle": "Gemeinsam können wir außergewöhnliche Dinge tun.",
         "heroSubTitle1": "Kontaktieren Sie uns",
         "heroSubTitle2": "Kontakt",
         "heroSubTitle3": "Soziale Medien",
@@ -456,7 +456,7 @@
         "footerCopyright": "© Urheberrecht ",
         "footerCopyright2": ". Alle Rechte vorbehalten.",
         "footerTermsConditions": "Allgemeine Geschäftsbedingungen",
-        "footerTitle": "Lass uns zusammenarbeiten",
+        "footerTitle": "Zusammenarbeiten",
         "footerAddress": "Adresse"
     }
 }

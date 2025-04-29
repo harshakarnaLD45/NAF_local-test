@@ -9,8 +9,8 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/translation.json', // Path to translation files in public folder
     },
-    lng: 'en', // Default language
-    fallbackLng: 'de', // Fallback language if the chosen language translation is missing
+    lng: 'de', // Default language
+    fallbackLng: 'en', // Fallback language if the chosen language translation is missing
     interpolation: {
       escapeValue: false, // React already escapes by default
     },

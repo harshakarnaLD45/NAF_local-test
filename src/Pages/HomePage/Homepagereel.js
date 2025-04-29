@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CloudVideo from '../../assets/Home/CloudVideo.mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,6 +63,7 @@ const Homepagereel = () => {
         flexDirection: "column",
         alignItems: "center",
         overflowX: "hidden",
+        mt: '-130px'
       }}
     >
       {/* Video Container */}
@@ -75,7 +77,7 @@ const Homepagereel = () => {
           "@media (max-width: 1024px)": {
             borderRadius: "9.495px",
           },
-        
+
           width: "93%",
           "@media (min-width: 1650px)": {
             width: "96%",
@@ -100,7 +102,7 @@ const Homepagereel = () => {
           }}
         >
           <source
-            src="https://player.vimeo.com/progressive_redirect/playback/900035537/rendition/1080p/file.mp4?loc=external&log_user=0&signature=92f8baecbcaa673d013bf28d8697afbb95b9360f73659a39636e837060325902"
+            src={CloudVideo}
             type="video/mp4"
           />
           Your browser does not support the video tag.

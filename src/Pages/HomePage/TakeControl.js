@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 
 const TakeControl = () => {
   const { t } = useTranslation();
-  const { lang } = useParams(); 
+  const { lang } = useParams();
 
   return (
     <Box sx={{ p: 3 }} className='section-container'>
@@ -82,7 +82,7 @@ const TakeControl = () => {
 
         {/* Right Image Section */}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
-          <video
+          {/* <video
             src={CloudVideo}
             autoPlay
             muted
@@ -93,6 +93,17 @@ const TakeControl = () => {
               maxWidth: '800px',
               borderRadius: '16px',
               objectFit: 'cover',
+            }}
+          /> */}
+          <Box
+            component="img"
+            src={Browser}
+            alt="Dashboard Preview"
+            sx={{
+              width: { xs: "100%", sm: "100%", md: "100%", md: '100%' },
+              height: { xs: 'auto', md: '600px' },
+              objectFit: 'contain',
+              borderRadius: 3
             }}
           />
         </Box>

@@ -3,9 +3,11 @@ import { Box, Typography } from "@mui/material";
 import { PaymentOptionsIcon1, PaymentOptionsIcon2, PaymentOptionsIcon3 } from "../../Componenets/CustomIcons";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import { useTranslation } from 'react-i18next';
+import { useParams } from "react-router-dom";
 
 const PaymentOptions = () => {
     const { t } = useTranslation();
+    const { lang } = useParams(); 
     const paymentOptions = [
         {
             title: t('machines.LeasingTitle'),
@@ -59,7 +61,7 @@ const PaymentOptions = () => {
                         <Box
                             sx={{
                                 border: '1px solid #525252',
-                                borderRadius: 2,
+                                // borderRadius: 2,
                                 px: { xs: 2, sm: 3, md: 4 },
                                 py: { xs: 3, sm: 4, md: 5 },
                                 display: "flex",
@@ -89,7 +91,7 @@ const PaymentOptions = () => {
                                 </Box>
                             </Box>
                             <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} />
+                                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
                             </Box>
                         </Box>
                     </Box>

@@ -1,18 +1,20 @@
 import React from "react";
 import { Box, Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
-const machineCategories = [
-    { id: 1, label: 'All' },
-    { id: 2, label: 'Pizza Machine' },
-    { id: 3, label: 'Fries Machine' },
-    { id: 4, label: 'Soft Ice Cream Machine' },
-    { id: 5, label: 'Cotton Candy Machine' },
-    { id: 6, label: 'Beer Machine' },
-    { id: 7, label: 'Return Machine' },
-    { id: 8, label: 'Gourmet Machine' },
-];
 
 const MobileButtons = ({ selectedMachine, setSelectedMachine }) => {
+       const { t } = useTranslation();
+const machineCategories = [
+    { id: 1, label: 'All' },
+    { id: 2, label:  t('machines.PizzaMachine') },
+    { id: 3, label: t('machines.FriesMachine') },
+    { id: 4, label: t('machines.IceCreamMachine') },
+    { id: 5, label: t('machines.CandyMachine') },
+    { id: 6, label: t('machines.BeerMachine') },
+    { id: 7, label: t('machines.ReturnMachine') },
+    { id: 8, label: t('machines.GourmetMachine') },
+];
     return (
         <Box
             sx={{

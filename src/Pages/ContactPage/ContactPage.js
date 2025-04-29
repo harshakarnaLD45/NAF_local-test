@@ -110,30 +110,59 @@ function ContactPage() {
     };
 
     const locations = [
+
         {
             address: (
                 <>
-                    {t('contactus.MachineLocation1text1')}<br />
-                    {t('contactus.MachineLocation1text2')}<br />
-                    {t('contactus.MachineLocation1text3')}
+                    DBI Foyer Freiberg, <br />
+                    Halsbrückerstrasse 34, 09599 <br />
+                    Freiberg
+                </>
+            )
+        },
+
+        {
+            address: (
+                <>
+                    Mittweida District Office Building A, <br />
+                    Am Landratsamt 3, 09648 <br />
+                    Mittweida
                 </>
             )
         },
         {
             address: (
                 <>
-                    {t('contactus.MachineLocation2text1')}<br />
-                    {t('contactus.MachineLocation2text2')}<br />
-                    {t('contactus.MachineLocation2text3')}
+                    GIZEF GmbH, <br />
+                    Am St.-Niclas-Schacht 13, <br />
+                    Freiberg, 09599
                 </>
             )
         },
         {
             address: (
                 <>
-                    {t('contactus.MachineLocation2text1')}<br />
-                    {t('contactus.MachineLocation2text2')}<br />
-                    {t('contactus.MachineLocation2text3')}
+                    WEPA Deutschland GmbH & <br />
+                    Co. KG, An d. Zschopau 1, <br />
+                    Kriebstein, 09648
+                </>
+            )
+        },
+        {
+            address: (
+                <>
+                    Helmholtz Institute,<br />
+                    C hemnitzer Str. 40, <br />
+                    Freiberg, 09599
+                </>
+            )
+        },
+        {
+            address: (
+                <>
+                    Transgourmet Deutschland GmbH <br />
+                    & Co. OHG, Handelsstraße 1, <br />
+                    Striegistal, 09661
                 </>
             )
         }
@@ -143,124 +172,109 @@ function ContactPage() {
         t('contactus.General'),
         t('contactus.DemoRequest'),
         t('contactus.PartnershipInquiry'),
-        t('contactus.SalesInquiry'),
+        // t('contactus.SalesInquiry'),
         t('contactus.TechnicalSupport'),
-        t('contactus.FranchiseEnquiry'),
+        // t('contactus.FranchiseEnquiry'),
         t('contactus.Others'),
     ];
 
     const faqs = {
-
-        'General About NAF': [
+        'Allgemeines über NAF': [
             {
-                question: 'What is NAF?',
-                answer: 'NAF stands for “New Age of Food” – an innovative food and supply concept that combines food vending machines, sustainable reusable packaging, smart software solutions, and intelligent sales strategies.'
-            },
-
-            {
-                question: 'What is NAF’s goal?',
-                answer: 'Our goal is to rethink gastronomy: 24/7 catering without staff shortages, innovative vending machine solutions, healthy meals, and a financially attractive option for businesses, hotels, public institutions, and more.'
+                question: 'Was ist NAF?',
+                answer: 'NAF steht für „New Age of Food“ – ein innovatives Food- und Versorgungskonzept, das Verkaufsautomaten, nachhaltige Mehrwegverpackungen, smarte Softwarelösungen und intelligente Vertriebsstrategien kombiniert.'
             },
             {
-                question: 'Who is behind NAF?',
-                answer: 'NAF was founded by Abdelilah Lamkhizni – who has many years of experience in gastronomy, hospitality, and technology. The company combines culinary know-how with digital solutions.'
+                question: 'Was ist das Ziel von NAF?',
+                answer: 'Unser Ziel ist es, Gastronomie neu zu denken: 24/7-Verpflegung ohne Personalmangel, innovative Automatenlösungen, gesunde Mahlzeiten und eine finanziell attraktive Option für Unternehmen, Hotels, öffentliche Einrichtungen und mehr.'
             },
-
+            {
+                question: 'Wer steckt hinter NAF?',
+                answer: 'NAF wurde von Abdelilah Lamkhizni gegründet – mit langjähriger Erfahrung in Gastronomie, Hotellerie und Technologie. Das Unternehmen vereint kulinarisches Know-how mit digitalen Lösungen.'
+            }
         ],
 
-        'NAF Machines FAQs': [
+        'NAF Automaten – FAQs': [
             {
-                question: 'What is NAF and what machines do you offer?',
-                answer: 'NAF stands for "New Age of Food" and provides a digital, innovative solution for gastronomy. Our vending machines serve fresh, high-quality meals around the clock — without staff. We offer:',
+                question: 'Was ist NAF und welche Automaten bietet ihr an?',
+                answer: 'NAF steht für „New Age of Food“ und bietet eine digitale, innovative Lösung für die Gastronomie. Unsere Verkaufsautomaten servieren rund um die Uhr frische, hochwertige Mahlzeiten – ganz ohne Personal. Wir bieten:',
                 list: [
-                    "Gourmet vending machine (“3-minute restaurant”)",
-                    "Return machine",
-                    "Pizza vending machine",
-                    "Soft ice cream machine",
-                    "Cotton candy machine",
-                    "Popcorn machine",
-                    "French fries machine",
-                    "Beer dispenser (coming soon)",
-                    "Food machines for hotels, factories, gas stations, schools, etc.",
+                    "Gourmet-Automat („3-Minuten-Restaurant“)",
+                    "Rückgabeautomat",
+                    "Pizza-Automat",
+                    "Softeis-Automat",
+                    "Zuckerwatte-Automat",
+                    "Popcorn-Automat",
+                    "Pommes-Automat",
+                    "Bier-Automat (in Kürze)",
+                    "Verpflegungsautomaten für Hotels, Fabriken, Tankstellen, Schulen usw.",
                 ],
-                answerSecond: 'Each machine is equipped with state-of-the-art tech and can be customized. ',
-
-            },
-
-            {
-                question: 'How do the NAF machines work?',
-                answer: 'Our machines feature smart control systems and can be operated contactlessly via card, app, or voucher. Depending on the type, food is served fresh, stored frozen and reheated, or freshly prepared.'
+                answerSecond: 'Jeder Automat ist mit modernster Technik ausgestattet und individuell anpassbar.'
             },
             {
-                question: 'Can machines be individually designed?',
-                answer: 'Yes! We offer:'
+                question: 'Wie funktionieren die NAF-Automaten?',
+                answer: 'Unsere Automaten verfügen über smarte Steuersysteme und lassen sich kontaktlos per Karte, App oder Gutschein bedienen. Je nach Gerätetyp werden Speisen frisch serviert, tiefgekühlt gelagert und aufgewärmt oder frisch zubereitet.'
             },
-
+            {
+                question: 'Können Automaten individuell gestaltet werden?',
+                answer: 'Ja! Wir bieten individuelle Gestaltungsmöglichkeiten.'
+            }
         ],
-        'Design & Customization': [
+
+        'Design & Individualisierung': [
             {
-                question: 'Can the machine be customized?',
-                answer: 'Yes:',
+                question: 'Kann der Automat individuell gestaltet werden?',
+                answer: 'Ja:',
                 list: [
-                    "Standard: With NAF logo, free",
-                    "Custom design: €2,000 extra",
-
-                ],
+                    "Standard: Mit NAF-Logo, kostenlos",
+                    "Individuelles Design: 2.000 € Aufpreis"
+                ]
             },
-
             {
-                question: 'Is a digital menu display possible?',
-                answer: 'Yes.'
-            },
-
-
+                question: 'Ist eine digitale Menüanzeige möglich?',
+                answer: 'Ja.'
+            }
         ],
-        'Reusable System & Return Machines': [
-            {
-                question: 'What reusable solutions does NAF offer?',
-                answer: 'We rely on a sustainable system with reusable containers and return machines.',
 
-            },
-
+        'Mehrwegsystem & Rückgabeautomaten': [
             {
-                question: 'How does the return machine work?',
-                answer: 'Customers scan a QR code and return the container. The deposit is automatically assigned via customer card or app.'
+                question: 'Welche Mehrweglösungen bietet NAF?',
+                answer: 'Wir setzen auf ein nachhaltiges System mit Mehrwegbehältern und Rückgabeautomaten.'
             },
             {
-                question: 'Are there subsidies for return machines?',
-                answer: 'Yes.'
+                question: 'Wie funktioniert der Rückgabeautomat?',
+                answer: 'Kunden scannen einen QR-Code und geben den Behälter zurück. Die Pfandrückgabe erfolgt automatisch über Kundenkarte oder App.'
             },
-
-
+            {
+                question: 'Gibt es Förderungen für Rückgabeautomaten?',
+                answer: 'Ja.'
+            }
         ],
-        'Software & Cloud System': [
+
+        'Software & Cloud-System': [
             {
-                question: 'What does the NAF Cloud System offer?',
+                question: 'Was bietet das NAF-Cloud-System?',
                 answer: '',
                 list: [
-                    "Telemetry & live data",
-                    "Sales analytics",
-                    "Temperature control",
-                    "Product management",
-                    "Coupon & discount system",
-                    "User management & membership cards",
-
+                    "Telemetrie & Live-Daten",
+                    "Verkaufsanalysen",
+                    "Temperaturkontrolle",
+                    "Produktverwaltung",
+                    "Coupon- & Rabattsystem",
+                    "Benutzerverwaltung & Mitgliedskarten"
                 ],
-                answerSecond: '',
-
-            },
-
-            {
-                question: 'Is there a mobile app?',
-                answer: 'Not yet — but one is in development to allow purchases, coupons, feedback, returns, and payments.'
+                answerSecond: ''
             },
             {
-                question: 'What languages are supported?',
-                answer: 'Multilingual support is included — ideal for hotels, gas stations, or international customers.'
+                question: 'Gibt es eine Mobile App?',
+                answer: 'Noch nicht – aber eine App ist in Entwicklung, um Käufe, Coupons, Feedback, Rückgaben und Zahlungen zu ermöglichen.'
             },
-
-        ],
-    }
+            {
+                question: 'Welche Sprachen werden unterstützt?',
+                answer: 'Mehrsprachigkeit ist integriert – ideal für Hotels, Tankstellen oder internationale Kunden.'
+            }
+        ]
+    };
 
     const contacts = [
         {
@@ -283,7 +297,8 @@ function ContactPage() {
         },
     ];
 
-    const [activeCategory, setActiveCategory] = useState('General About NAF');
+    const [activeCategory, setActiveCategory] = useState('Allgemeines über NAF');
+    
     const toggleForm = (type) => {
         setIsSubmitform(type === 'submit');
         setActive(type);
@@ -298,11 +313,11 @@ function ContactPage() {
     }, [activeCategory]);
 
     const socialIcons = [
-        { src: Facebook, name: "Facebook", url: "https://www.facebook.com/yourcompany" },
-        { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
-        { src: Instagram, name: "Instagram", url: "https://www.instagram.com/yourcompany" },
-        { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/company/yourcompany" },
-        { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@yourcompany" },
+        { src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
+        // { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
+        { src: Instagram, name: "Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
+        { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
+        { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
     ];
 
     return (
@@ -320,10 +335,10 @@ function ContactPage() {
             </Helmet>
             <Box className='section-container contactus-sec' sx={{ pr: 0 }}>
                 <Box className='contactus-subsec'>
-                    <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>Contact with us</Typography>
-                    <Typography className='headings-h1'>Together, We Can Do Extraordinary Things.</Typography>
+                    <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>{t('contactus.heroSubTitle1')}</Typography>
+                    <Typography className='headings-h1'>{t('contactus.heroTitle')}</Typography>
                     <Box sx={{ mt: { xs: 3, sm: 4, md: 6 } }}>
-                        <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>Contact</Typography>
+                        <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>{t('contactus.heroSubTitle2')}</Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '12px', sm: '18px', md: '40px' } }}>
                             <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
                                 <Box
@@ -581,14 +596,13 @@ function ContactPage() {
                                         }}
                                     />
                                 )}
-
                             </Box>
 
                             {/* Message + Consent + Submit */}
                             <Box sx={{ width: '100%', marginTop: { xs: '10px', sm: '30px', md: '60px' }, display: 'flex', flexDirection: 'column', gap: { xs: '10px', sm: '30px', md: '60px' } }}>
                                 <TextField
                                     className='bodyRegularText3'
-                                    label="Message"
+                                    label="Nachricht"
                                     variant="standard"
                                     required
                                     fullWidth
@@ -732,14 +746,14 @@ function ContactPage() {
                 >
                     <Grid container spacing={1} alignItems="flex-start">
                         {/* Column 1: Text */}
-                        <Grid item xs={6} sm={6} lg={3}>
+                        <Grid item xs={6} sm={4} lg={3}>
                             <Typography className='bodyRegularText4' sx={{ color: '#C2C2C4' }}>
                                 {t('contactus.location')}
                             </Typography>
                         </Grid>
 
                         {/* Column 2: Location info */}
-                        <Grid item xs={6} sm={6} lg={3}>
+                        <Grid item xs={6} sm={8} lg={3}>
                             <Box sx={{ display: 'flex', gap: '10px' }}>
                                 <Box sx={{ mt: '5px' }}>
                                     <Location />
@@ -758,11 +772,21 @@ function ContactPage() {
                             <Box
                                 sx={{
                                     borderRadius: "24px",
-                                    backgroundColor: "#525252",
+                                    overflow: 'hidden', // ensures iframe corners are clipped
                                     width: '100%',
-                                    height: '200px',
+                                    height: { xs: '250px', sm: '300px', md: '250px' }, // responsive height
                                 }}
-                            />
+                            >
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2983.3281649400715!2d13.3770389!3d50.923086899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709df750e52bdaf%3A0xe8da94e14ad9e730!2sNAF-New%20Age%20of%20Food%20by%20Gasthof%20Halsbach!5e1!3m2!1sen!2sin!4v1745905829150!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                />
+                            </Box>
                         </Grid>
                     </Grid>
                 </Box>
@@ -775,27 +799,39 @@ function ContactPage() {
                 >
                     <Grid container spacing={1}>
                         {/* First column: Title */}
-                        <Grid item xs={12} sm={6} lg={3}>
+                        <Grid item xs={12} sm={4} lg={3}>
                             <Typography className="bodyRegularText4" sx={{ color: '#C2C2C4' }}>
                                 {t('contactus.MachineLocation')}
                             </Typography>
                         </Grid>
 
-                        {/* Remaining columns: Location cards */}
-                        {locations.map((item, index) => (
-                            <Grid item xs={12} sm={6} lg={3} key={index}>
-                                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                                    <Box sx={{ mt: '5px' }}>
-                                        <Location />
-                                    </Box>
-                                    <Typography className="bodyRegularText3" sx={{ color: '#C2C2C4' }}>
-                                        {item.address}
-                                    </Typography>
-                                </Box>
+                        {/* Second column: Locations */}
+                        <Grid item xs={12} sm={8} lg={9}>
+                            <Grid container spacing={5}>
+                                {locations.map((item, index) => (
+                                    <Grid item xs={12} sm={6} md={6} xl={4} key={index}>
+                                        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+                                            <Box sx={{ mt: '6px' }}>
+                                                <Location style={{ color: '#72FF5C' }} />
+                                            </Box>
+                                            <Typography
+                                                className="bodyRegularText3"
+                                                sx={{
+                                                    color: '#C2C2C4',
+                                                    lineHeight: 1.6,
+                                                    fontSize: '18px',
+                                                }}
+                                            >
+                                                {item.address}
+                                            </Typography>
+                                        </Box>
+                                    </Grid>
+                                ))}
                             </Grid>
-                        ))}
+                        </Grid>
                     </Grid>
                 </Box>
+
             </Box>
 
             <Box className='section-container' sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, justifyContent: 'space-between', gap: { xs: 3, sm: 6, md: 8 } }}>

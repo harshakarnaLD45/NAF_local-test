@@ -17,11 +17,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialIcons = [
-    { src: Facebook, name: "Facebook", url: "https://www.facebook.com/yourcompany" },
-    { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
-    { src: Instagram, name: "Instagram", url: "https://www.instagram.com/yourcompany" },
-    { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/company/yourcompany" },
-    { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@yourcompany" },
+    { src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
+    // { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
+    { src: Instagram, name: "Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
+    { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
+    { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
   ];
 
   return (

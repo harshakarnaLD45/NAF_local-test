@@ -57,6 +57,10 @@
     position: relative;
 }
 
+.image-person-sec{
+    width: 90%;
+}
+
 .team-info {
     display: flex;
     justify-content: space-between;

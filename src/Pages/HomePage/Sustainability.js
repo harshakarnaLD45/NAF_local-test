@@ -119,7 +119,7 @@ const Sustainability = () => {
                     <ScrollMaskText text={t('Home.sustainabilityText')} textColor='#444'
                     />
                 </Box>
-                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} getBtnColor='#161616' />
+                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} getBtnColor='#161616' route={`/${lang}/contact`} />
             </Box>
 
             {/* Right Side: Infinite Scroll */}

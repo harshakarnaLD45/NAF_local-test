@@ -7,8 +7,10 @@ import Client1 from '../../assets/Home/Client1.svg';
 import Client2 from '../../assets/Home/Client2.svg';
 import Client3 from '../../assets/Home/Client3.svg';
 import Client4 from '../../assets/Home/Client4.svg';
+import Client5 from '../../assets/Home/Client5.svg';
+import Client6 from '../../assets/Home/Client6.svg';
 
-const logos = [Client1, Client2, Client3, Client4];
+const logos = [Client1, Client2, Client3, Client4, Client5, Client6];
 
 const Clients = () => {
   const { t } = useTranslation();

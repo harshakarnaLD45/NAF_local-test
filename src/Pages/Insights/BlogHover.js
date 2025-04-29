@@ -6,32 +6,34 @@ import blogimage1 from '../../assets/Home/blog1.jpg';
 import blogimage2 from '../../assets/Home/blog2.jpg';
 import blogimage3 from '../../assets/Home/blog3.jpg';
 import "../../Pages/HomePage/HomePage.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const BlogHover = () => {
+  
   const blogPosts = [
     {
       id: 1,
-      date: "14 April 2025",
-      title: "THE EVOLUTION OF GASTRONOMY – FROM STOVE & SOUL TO HIGH-TECH & VENDING MACHINES",
-      image: blogimage1,
+      date: "28. April 2025",
+      title: "VERGLEICH VON VERKAUFSSOFTWARE – DIE UNSICHTBARE KRAFT HINTER DEM ERFOLG",
+      image: blogimage3,
     },
     {
       id: 2,
-      date: "21 April 2025",
-      title: "WHO AM I – AND WHY IS MY LIFE ALL ABOUT VENDING MACHINES?",
+      date: "21. April 2025",
+      title: "WER BIN ICH – UND WARUM DREHT SICH MEIN LEBEN NUR UM VERKAUFSAUTOMATEN?",
       image: blogimage2,
     },
     {
       id: 3,
-      date: "28 April 2025",
-      title: "VENDING SOFTWARE COMPARISON – THE INVISIBLE FORCE BEHIND SUCCESS",
-      image: blogimage3,
+      date: "14. April 2025",
+      title: "DIE EVOLUTION DER GASTRONOMIE – VON HERD & SEELE ZU HIGH-TECH & VERKAUFSAUTOMATEN",
+      image: blogimage1,
     },
   ];
 
   const blogRefs = useRef([]);
   const navigate = useNavigate(); // Initialize useNavigate
+  const { lang } = useParams();
 
   useEffect(() => {
     blogRefs.current.forEach((blog, index) => {
@@ -88,8 +90,8 @@ const BlogHover = () => {
     });
   }, []);
 
-  const handleBlogClick = () => {
-    navigate('/Insights/blog');
+  const handleBlogClick = (index) => {
+    navigate(`blog`, { state: { blogIndex: index } });
   };
 
   return (
@@ -103,7 +105,7 @@ const BlogHover = () => {
           key={post.id}
           ref={el => blogRefs.current[index] = el}
           sx={{ position: "relative", width: '100%', cursor: 'pointer', }}
-          onClick={() => handleBlogClick()}
+          onClick={() => handleBlogClick(index)}
         >
           <Divider sx={{ borderColor: "#6F6F6F" }} />
 

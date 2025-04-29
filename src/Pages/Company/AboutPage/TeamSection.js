@@ -1,7 +1,10 @@
 import React from "react";
 import { LinkedInIcon } from "../../../Componenets/CustomIcons";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import PersonImage1 from '../../../assets/About/Person1.png';
+import PersonImage2 from '../../../assets/About/Person2.png';
+import PersonImage3 from '../../../assets/About/Person3.png';
 
 function TeamSection() {
     const { t } = useTranslation();
@@ -12,46 +15,92 @@ function TeamSection() {
             position: 'CEO',
             color: "#E7F9DC",
             linkedin: "#",
+            image: PersonImage1,
         },
         {
             name: 'Abdelilah Lamkhizni',
             position: 'Managing Director',
             color: "#FEB6A2",
             linkedin: "#",
+            image: PersonImage2,
         },
         {
             name: 'Sri Satya Sai Kanna Dhulipudi',
             position: 'Position',
             color: "#94CDFF",
             linkedin: "#",
+            image: PersonImage3,
         },
     ];
+
     return (
         <section className="section-container">
-            <Typography className="headings-h2" variant="h2">{t('about.MeetTeam')}</Typography>
-            <div className="team-grid">
+            <Typography className="headings-h2" variant="h2" gutterBottom>
+                {t('about.MeetTeam')}
+            </Typography>
+
+            {/* Responsive Grid Layout */}
+            <Box
+                sx={{
+                    display: 'grid',
+                    gridTemplateColumns: {
+                        xs: '1fr',       // < 600px
+                        sm: '1fr 1fr',   // 600px - 899px
+                        md: '1fr 1fr 1fr'// ≥ 900px
+                    },
+                    gap: 2,
+                    justifyItems: 'center',
+                }}
+            >
                 {teamMembers.map((member, idx) => (
-                    <div
+                    <Box
                         key={idx}
-                        className="team-card"
-                        style={{ backgroundColor: member.color }}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            width: { xs: '100%', sm: '100%', md: '100%' },
+                            // maxWidth: 350,
+                        }}
                     >
-                        <div className="team-info">
-                            <div>
-                                <h3 className="bodyMediumText1">{member.name}</h3>
-                                <p className="bodyMediumText3">{member.position}</p>
-                            </div>
-                            <a
-                                href={member.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                        {/* Image */}
+                        <Box
+                            component="img"
+                            src={member.image}
+                            alt={member.name}
+                            sx={{
+                                width: '100%',
+                                // height: { xs: 220, sm: 250, md: 300 },
+                                objectFit: 'cover',
+                                borderRadius: 2,
+                                mb: 2,
+                            }}
+                        />
+
+                        {/* Info */}
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mr: 2 }}>
+                            <Box>
+                                <Typography
+                                    variant="body1"
+                                    color="#FCFCFC"
+                                    className="bodyMediumText1"
+                                >
+                                    {member.name}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    color="#C2C2C4"
+                                    className="bodyMediumText3"
+                                >
+                                    {member.position}
+                                </Typography>
+                            </Box>
+                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                                 <LinkedInIcon />
                             </a>
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
                 ))}
-            </div>
+            </Box>
         </section>
     );
 }

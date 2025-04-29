@@ -22,12 +22,12 @@ function VMMenu() {
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm')); // sm and below (mobile)
 
     const tags = [
-        { IconComponent: VegetarianIcon, label: t('menu.Vegetarian') },
-        { IconComponent: VeganIcon,      label: t('menu.FishFree') },
-        { IconComponent: FishIcon,       label: t('menu.GlutenFree') },
-        { IconComponent: GlutenIcon,     label: t('menu.LactoseFree') },
-        { IconComponent: LactoseIcon,    label: t('menu.HighProtein') },
-        { IconComponent: ProteinIcon,    label: t('menu.vegan') },
+        { IconComponent: VegetarianIcon, label: "Vegetarian" },
+        { IconComponent: VeganIcon, label: "Vegan" },
+        { IconComponent: FishIcon, label: "Fish-Free" },
+        { IconComponent: GlutenIcon, label: "Gluten-Free" },
+        { IconComponent: LactoseIcon, label: "Lactose-Free" },
+        { IconComponent: ProteinIcon, label: "High Protein" },
     ];
     const allSlots = menuData.flatMap((aisle) => aisle.slotItems);
 
