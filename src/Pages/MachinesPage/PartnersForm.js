@@ -78,54 +78,55 @@ function PartnersForm() {
 
     const validateTab0 = () => {
         if (!formTab0.companyName.trim()) {
-            showSnackbar('Company name is required.', 'error');
+            showSnackbar(t('validation.companyNameRequired'), 'error');
             return false;
         }
         if (!formTab0.installationAddress.trim()) {
-            showSnackbar('Installation address is required.', 'error');
+            showSnackbar(t('validation.installationAddressRequired'), 'error');
             return false;
         }
         if (!formTab0.numberOfEmployees.trim()) {
-            showSnackbar('Number of employees is required.', 'error');
+            showSnackbar(t('validation.numberOfEmployeesRequired'), 'error');
             return false;
         }
         if (!formTab0.willingToPurchaseMachine) {
-            showSnackbar('Please select willingness to purchase.', 'error');
+            showSnackbar(t('validation.willingToPurchaseRequired'), 'error');
             return false;
         }
         if (!formTab0.provideCateringPermit) {
-            showSnackbar('Please select catering partner option.', 'error');
+            showSnackbar(t('validation.cateringPermitRequired'), 'error');
             return false;
         }
         if (!formTab0.contactPersonName.trim()) {
-            showSnackbar('Contact person name is required.', 'error');
+            showSnackbar(t('validation.contactPersonNameRequired'), 'error');
             return false;
         }
         if (!formTab0.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formTab0.email)) {
-            showSnackbar('Please enter a valid email.', 'error');
+            showSnackbar(t('validation.validEmailRequired'), 'error');
             return false;
         }
         if (!formTab0.agreement) {
-            showSnackbar('You must agree to the privacy policy.', 'error');
+            showSnackbar(t('validation.agreementRequired'), 'error');
             return false;
         }
         return true;
     };
+
     const validateTab1 = () => {
         if (!formTab1.businessName.trim()) {
-            showSnackbar('Business name is required.', 'error');
+            showSnackbar(t('validation.businessNameRequired'), 'error');
             return false;
         }
         if (!formTab1.contactPersonName.trim()) {
-            showSnackbar('Contact person name is required.', 'error');
+            showSnackbar(t('validation.contactPersonNameRequired'), 'error');
             return false;
         }
         if (!formTab1.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formTab1.email)) {
-            showSnackbar('Please enter a valid email.', 'error');
+            showSnackbar(t('validation.validEmailRequired'), 'error');
             return false;
         }
         if (!formTab1.agreement) {
-            showSnackbar('You must agree to the privacy policy.', 'error');
+            showSnackbar(t('validation.agreementRequired'), 'error');
             return false;
         }
         return true;
@@ -156,7 +157,7 @@ function PartnersForm() {
                     : 'https://api.naf-cloudsystem.de/api/NAFWebsite/gastronomy-partners';
             await axios.post(endpoint, submittedData);
 
-            showSnackbar('Form submitted successfully!', 'success');
+            showSnackbar(t('validation.submissionSuccess'), 'success');
             // Reset
             if (tab === 0) {
                 setFormTab0({
@@ -321,6 +322,9 @@ function PartnersForm() {
                 ) : (
                     // Gastronomy Partner Form
                     <Box sx={{ mt: { xs: 4, sm: 6, md: 8 } }}>
+                        <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
+                            Gastronomie- und Catering-Partner werden – neue Umsatzquellen erschließen
+                        </Typography>
                         <Typography className='bodyRegularText3' sx={{ my: 4 }} color='#C2C2C4'>
                             {t('machines.GastronomyPartnersSubTitle')}
                         </Typography>
@@ -356,7 +360,7 @@ function PartnersForm() {
                             ))}
                         </Box>
 
-                        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>Fill up the Form</Typography>
+                        <Typography color='#FCFCFC' className='bodyMediumText1' align='center'>{t('machines.FillupForm')}</Typography>
 
                         <CustomTextField required label={t('machines.Restaurant')} name="businessName" value={formTab1.businessName} onChange={(e) => handleChange(e, 1)} />
                         <CustomTextField required label={t('machines.ContactPersonFName')} name="contactPersonName" value={formTab1.contactPersonName} onChange={(e) => handleChange(e, 1)} />

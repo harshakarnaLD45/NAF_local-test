@@ -168,10 +168,9 @@
         "Rentalpoints2": "Eventual ownership of the machine",
         "Rentalpoints3": "Flexible payment options",
         "DirectPurchaseTitle": "Direct Purchase",
-        "DirectPurchaseSubTitle": "Buy the vending machine outright with a one-time payment and get full ownership and control from day one.",
-        "Directpoints1": "Full ownership from day one",
-        "Directpoints2": "Immediate equity",
-        "Directpoints3": "No ongoing payments",
+        "DirectPurchaseSubTitle": "Buy vending machines directly – immediate ownership from day one. With us, you have the opportunity to purchase our machines directly – without complicated leasing contracts or hidden costs.",
+        "Directpoints1": "50% deposit upon signing the contract",
+        "Directpoints2": "50% final payment upon loading the machine",
         "PartnerNAFGermany": "Partner with NAF Germany: Two Ways to Join the Vending Revolution",
         "CompaniesInstallationLocations": "Companies & Installation Locations",
         "GastronomyPartners": "Gastronomy Partners",
@@ -546,7 +545,8 @@
         "Membershipend": "end"
     },
     "footer": {
-        "Gotaproject": "Got a project? Want to collaborate?",
+        "Gotaproject": "Got a project?",
+        "Gotaproject1": " Want to collaborate?",
         "footerContact": "Contact",
         "footergetIn": "GET IN",
         "footertouch": "TOUCH",
@@ -555,5 +555,21 @@
         "footerTermsConditions": "Terms and Conditions",
         "footerTitle": "let’s work together",
         "footerAddress": "Address"
+    },
+    "validation": {
+        "companyNameRequired": "Company name is required.",
+        "installationAddressRequired": "Installation address is required.",
+        "numberOfEmployeesRequired": "Number of employees is required.",
+        "willingToPurchaseRequired": "Please select willingness to purchase.",
+        "cateringPermitRequired": "Please select catering partner option.",
+        "contactPersonNameRequired": "Contact person name is required.",
+        "validEmailRequired": "Please enter a valid email.",
+        "agreementRequired": "You must agree to the privacy policy.",
+        "businessNameRequired": "Business name is required.",
+        "submissionSuccess": "Form submitted successfully!",
+        "machineLocationRequired": "Machine location is required.",
+        "problemCategoryRequired": "Problem category is required.",
+        "problemTypeRequired": "Problem type is required.",
+        "supportIssueSubmitted": "Support issue submitted successfully!"
     }
 }

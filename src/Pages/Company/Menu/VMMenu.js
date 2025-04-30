@@ -163,7 +163,7 @@ function VMMenu() {
                             sx={{ color: '#FCFCFC', borderColor: '#FCFCFC', border: 'none', textTransform: 'none', textDecoration: 'underline' }}
                             onClick={() => setVisibleCount(itemsPerRow * 4)}
                         >
-                             {t('menu.ViewLess')}
+                             {t('menu.Viewless')}
                         </Button>
                     )}
                 </Box>

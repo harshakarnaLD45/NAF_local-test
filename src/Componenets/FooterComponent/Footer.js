@@ -10,10 +10,11 @@ import AnimateButton from "../CommonComponents/AnimateButton";
 import FooterLogo from '../../assets/FooterLogo.svg'
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import FooterVideo from '../../assets/footer video.mp4'
 
 const Footer = () => {
   const { t } = useTranslation();
-  const { lang } = useParams(); 
+  const { lang } = useParams();
   const currentYear = new Date().getFullYear();
 
   const socialIcons = [
@@ -59,8 +60,49 @@ const Footer = () => {
               zIndex: 0,
             }}
           />
-
           <Typography
+            className="headings-h2 footerhead"
+            variant="h2"
+            align="center"
+            sx={{
+              color: "#FCFCFC",
+              position: "relative",
+              zIndex: 1,
+              maxWidth: { xs: "95%", sm: "70%", md: "60%", lg: "50%" },
+              mx: "auto",
+              mb: 8,
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Box component="span" sx={{ whiteSpace: "nowrap" }}>
+              {t('footer.Gotaproject')}
+            </Box>
+
+            <Box
+              component="video"
+              src={FooterVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              sx={{
+                width: { xs: "80px", sm: "100px", md: "170px" },
+                height: "auto",
+                borderRadius: "70px",
+                objectFit: "cover",
+              }}
+            />
+
+            <Box component="span">
+              {t('footer.Gotaproject1')}
+            </Box>
+          </Typography>
+
+          {/* <Typography
             className="headings-h2 footerhead "
             variant="h2"
             align="center"
@@ -73,8 +115,8 @@ const Footer = () => {
               mb: 8,
             }}
           >
-            {t('footer.Gotaproject')}
-          </Typography>
+            {t('footer.Gotaproject')} {t('footer.Gotaproject1')}
+          </Typography> */}
 
           <Box className="footer-main-div"
             sx={{

@@ -15,9 +15,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Picture1 from '../../assets/Contact/Picture1.png'
-import Picture2 from '../../assets/Contact/Picture2.png'
-import Picture3 from '../../assets/Contact/Picture3.png'
+import Picture1 from '../../assets/About/Person1.png'
+import Picture2 from '../../assets/About/Person2.png'
+import Picture3 from '../../assets/About/Person3.png'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
@@ -174,6 +174,7 @@ function ContactPage() {
         t('contactus.PartnershipInquiry'),
         // t('contactus.SalesInquiry'),
         t('contactus.TechnicalSupport'),
+        'Kaufanfragen',
         // t('contactus.FranchiseEnquiry'),
         t('contactus.Others'),
     ];
@@ -298,7 +299,7 @@ function ContactPage() {
     ];
 
     const [activeCategory, setActiveCategory] = useState('Allgemeines über NAF');
-    
+
     const toggleForm = (type) => {
         setIsSubmitform(type === 'submit');
         setActive(type);

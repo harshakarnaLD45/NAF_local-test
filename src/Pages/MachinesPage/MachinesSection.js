@@ -17,9 +17,9 @@ import { useParams } from 'react-router-dom';
 const MachinesSection = ({ selectedMachine }) => {
     const { t } = useTranslation();
     const theme = useTheme();
-    const { lang } = useParams(); 
+    const { lang } = useParams();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [months, setMonths] = useState(24);
+    const [months, setMonths] = useState(72);
 
     const handleChange = (event) => {
         setMonths(event.target.value);
@@ -41,8 +41,13 @@ const MachinesSection = ({ selectedMachine }) => {
                 { text: t('machines.AImenulogic'), icon: <MachineSmallIcon6 /> },
                 { text: t('machines.Sustainablepackaging'), icon: <MachineSmallIcon7 /> },
             ],
-            price: 28500,
-            monthly: 500,
+            price: 23982,
+            monthlyRates: {
+                36: 824.72,
+                48: 635.61,
+                60: 525.30,
+                72: 457.01
+            },
         },
         {
             image: MachineImage1,
@@ -60,8 +65,13 @@ const MachinesSection = ({ selectedMachine }) => {
                 { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
                 { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
             ],
-            price: 27500,
-            monthly: 500,
+            price: 29425,
+            monthlyRates: {
+                36: 863.50,
+                48: 665.50,
+                60: 550.00,
+                72: 478.50
+            },
         },
         {
             image: MachineImage2,
@@ -79,8 +89,13 @@ const MachinesSection = ({ selectedMachine }) => {
                 { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
                 { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
             ],
-            price: 27500,
-            monthly: 500,
+            price: 45877,
+            monthlyRates: {
+                36: 786.50,
+                48: 721.50,
+                60: 650.00,
+                72: 565.50
+            },
         },
         {
             image: MachineImage3,
@@ -97,8 +112,13 @@ const MachinesSection = ({ selectedMachine }) => {
                 { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon5 /> },
                 { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon6 /> },
             ],
-            price: 16500,
-            monthly: 500,
+            price: 23982,
+            monthlyRates: {
+                36: 824.72,
+                48: 635.61,
+                60: 525.30,
+                72: 457.01
+            },
         },
         {
             image: MachineImage4,
@@ -116,8 +136,13 @@ const MachinesSection = ({ selectedMachine }) => {
                 { text: t('machines.Kidfriendlyattraction'), icon: <MachineSmallIcon6 /> },
                 { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon7 /> },
             ],
-            price: 14500,
-            monthly: 450,
+            price: 13636,
+            monthlyRates: {
+                36: 359.60,
+                48: 329.15,
+                60: 297.25,
+                72: 259.55
+            },
         },
         {
             image: MachineImage5,
@@ -219,7 +244,15 @@ const MachinesSection = ({ selectedMachine }) => {
                                 py: 3, px: 2.5, borderRadius: '8px', border: '1px solid #525252', mt: 1
                             }}>
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Acquisitioncosts')}</Typography>
-                                <Typography color="#FA7854" className='bodyMediumText2'>€{machine.price.toLocaleString()} <span style={{ color: "#FA7854" }} className='bodyMediumText3'>+ 19% MwSt</span></Typography>
+                                {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
+                                    <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
+                                        Demnächst verfügbar
+                                    </Typography>
+                                ) : (
+                                    <>
+                                        <Typography color="#FA7854" className='bodyMediumText2'>€{machine.price.toLocaleString()} <span style={{ color: "#FA7854" }} className='bodyMediumText3'>+ 19% MwSt</span></Typography>
+                                    </>
+                                )}
                             </Box>
 
                             <Box sx={{
@@ -227,53 +260,62 @@ const MachinesSection = ({ selectedMachine }) => {
                                 py: 2, px: 2.5, borderRadius: '8px', border: '1px solid #525252', mt: 1
                             }}>
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Installment')}</Typography>
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
-                                    <Select
-                                        value={months}
-                                        onChange={handleChange}
-                                        displayEmpty
-                                        inputProps={{ 'aria-label': 'Installment duration' }}
-                                        MenuProps={{
-                                            PaperProps: {
-                                                sx: {
-                                                    backgroundColor: '#262626',
-                                                    color: '#C2C2C4',
-                                                },
-                                            },
-                                        }}
-                                        sx={{
-                                            color: '#C2C2C4',
-                                            border: '1px solid #5E5E5E',
-                                            borderRadius: '8px',
-                                            px: 1,
-                                            minWidth: '120px',
-                                            '& .MuiSelect-icon': {
-                                                color: '#C2C2C4',
-                                            },
-                                            '& .MuiOutlinedInput-notchedOutline': {
-                                                border: 'none',
-                                            },
-                                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                                border: 'none',
-                                            },
-                                            '&.Mui-focused': {
-                                                border: '1px solid #5E5E5E', // keep same border when focused
-                                                boxShadow: 'none',
-                                            },
-                                        }}
-                                        className='bodyRegularText5'
-                                    >
-                                        <MenuItem value={12}>12 Months</MenuItem>
-                                        <MenuItem value={18}>18 Months</MenuItem>
-                                        <MenuItem value={24}>24 Months</MenuItem>
-                                        <MenuItem value={36}>36 Months</MenuItem>
-                                    </Select>
-                                    {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
-                                    <Typography color="#FA7854" className='bodyMediumText2'>
-                                        €{Math.round(machine.price / months).toLocaleString()}*
-                                        <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/  {t('machines.Installmentsmonths')}</span>
+                                {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
+                                    <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
+                                        Demnächst verfügbar
                                     </Typography>
-                                </Box>
+                                ) : (
+                                    <>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                                            <Select
+                                                value={months}
+                                                onChange={handleChange}
+                                                displayEmpty
+                                                inputProps={{ 'aria-label': 'Installment duration' }}
+                                                MenuProps={{
+                                                    PaperProps: {
+                                                        sx: {
+                                                            backgroundColor: '#262626',
+                                                            color: '#C2C2C4',
+                                                        },
+                                                    },
+                                                }}
+                                                sx={{
+                                                    color: '#C2C2C4',
+                                                    border: '1px solid #5E5E5E',
+                                                    borderRadius: '8px',
+                                                    px: 1,
+                                                    minWidth: '120px',
+                                                    '& .MuiSelect-icon': {
+                                                        color: '#C2C2C4',
+                                                    },
+                                                    '& .MuiOutlinedInput-notchedOutline': {
+                                                        border: 'none',
+                                                    },
+                                                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                        border: 'none',
+                                                    },
+                                                    '&.Mui-focused': {
+                                                        border: '1px solid #5E5E5E', // keep same border when focused
+                                                        boxShadow: 'none',
+                                                    },
+                                                }}
+                                                className='bodyRegularText5'
+                                            >
+                                                <MenuItem value={36}>36 Months</MenuItem>
+                                                <MenuItem value={48}>48 Months</MenuItem>
+                                                <MenuItem value={60}>60 Months</MenuItem>
+                                                <MenuItem value={72}>72 Months</MenuItem>
+                                            </Select>
+                                            {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
+                                            <Typography color="#FA7854" className='bodyMediumText2'>
+                                                €{machine.monthlyRates?.[months]?.toFixed(2) || "—"}*
+                                                <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/  {t('machines.Installmentsmonths')}</span>
+                                            </Typography>
+
+                                        </Box>
+                                    </>
+                                )}
                             </Box>
 
                             <Typography color="#C2C2C4" sx={{ textAlign: 'right' }} className='bodyRegularText5'>

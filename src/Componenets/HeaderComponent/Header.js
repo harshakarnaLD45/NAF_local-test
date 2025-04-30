@@ -8,6 +8,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
+import NafLogoGif from '../../assets/logo_naf_Animation_3.gif'
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -138,6 +139,15 @@ const Header = () => {
         alt="New Age Logo"
         src={Naflogo}
       />
+      {/* <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
+        <img
+          src={NafLogoGif}
+          alt="New Age Logo"
+          className="main-logo"
+          style={{ width: '100px', height: 'auto' }} // customize as needed
+        />
+      </Box> */}
+
       <Box></Box>
 
       <Box data-cursor="hover"

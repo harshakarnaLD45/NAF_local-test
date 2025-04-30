@@ -35,7 +35,6 @@ const PaymentOptions = () => {
             points: [
                 t('machines.Directpoints1'),
                 t('machines.Directpoints2'),
-                t('machines.Directpoints3'),
             ],
             icon: PaymentOptionsIcon3,
         },

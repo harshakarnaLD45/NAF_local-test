@@ -449,7 +449,8 @@
         "contactend": "fin"
     },
     "footer": {
-        "Gotaproject": "Vous avez un projet ? Vous souhaitez collaborer ?",
+        "Gotaproject": "Vous avez un projet ?",
+        "Gotaproject1": " Vous souhaitez collaborer ?",
         "footerContact": "Contact",
         "footergetIn": "PRENONS",
         "footertouch": "CONTACT",
@@ -458,5 +459,21 @@
         "footerTermsConditions": "Termes et Conditions",
         "footerTitle": "travaillons ensemble",
         "footerAddress": "Adresse"
+    },
+    "validation": {
+        "companyNameRequired": "Le nom de l'entreprise est requis.",
+        "installationAddressRequired": "L'adresse d'installation est requise.",
+        "numberOfEmployeesRequired": "Le nombre d'employés est requis.",
+        "willingToPurchaseRequired": "Veuillez sélectionner votre volonté d'achat.",
+        "cateringPermitRequired": "Veuillez sélectionner une option de traiteur.",
+        "contactPersonNameRequired": "Le nom du contact est requis.",
+        "validEmailRequired": "Veuillez entrer une adresse e-mail valide.",
+        "agreementRequired": "Vous devez accepter la politique de confidentialité.",
+        "businessNameRequired": "Le nom commercial est requis.",
+        "submissionSuccess": "Formulaire soumis avec succès !",
+        "machineLocationRequired": "L'emplacement de la machine est requis.",
+        "problemCategoryRequired": "La catégorie du problème est requise.",
+        "problemTypeRequired": "Le type de problème est requis.",
+        "supportIssueSubmitted": "Problème de support soumis avec succès !"
     }
 }

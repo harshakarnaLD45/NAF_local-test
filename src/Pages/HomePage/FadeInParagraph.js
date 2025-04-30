@@ -5,6 +5,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import OdetteImg from '../../assets/About/Person1.png';
 import AbdelilahImg from "../../assets/About/Person2.png";
 import { useTranslation } from "react-i18next";
+import OdetteVideo from '../../assets/Home/1.mp4'
+import AbdelilahVideo from '../../assets/Home/2.mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,40 +61,40 @@ const FadeInParagraph = () => {
 
     const renderWords = () => {
         return paragraphText.flatMap((item, idx) =>
-          item.text.split(" ").map((word, i) => {
-            const key = `${idx}-${i}`;
-            const isPerson = item.highlight && item.person;
-      
-            return (
-              <span key={key} style={{ display: "inline-block" }}>
-                <span
-                  className="fade-word headings-h2"
-                  style={{
-                    color: item.highlight ? "#FA7854" : undefined,
-                    textDecoration: item.highlight ? "underline" : "none",
-                    fontWeight: item.highlight ? 600 : 400,
-                    position: "relative",
-                    cursor: isPerson ? "pointer" : "default",
-                  }}
-                  onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
-                  onMouseLeave={isPerson ? handleMouseLeave : undefined}
-                >
-                  {word}
-                </span>
-                {/* Add space as a non-breaking space */}
-                <span>&nbsp;</span>
-              </span>
-            );
-          })
+            item.text.split(" ").map((word, i) => {
+                const key = `${idx}-${i}`;
+                const isPerson = item.highlight && item.person;
+
+                return (
+                    <span key={key} style={{ display: "inline-block" }}>
+                        <span
+                            className="fade-word headings-h2"
+                            style={{
+                                color: item.highlight ? "#FA7854" : undefined,
+                                textDecoration: item.highlight ? "underline" : "none",
+                                fontWeight: item.highlight ? 600 : 400,
+                                position: "relative",
+                                cursor: isPerson ? "pointer" : "default",
+                            }}
+                            onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
+                            onMouseLeave={isPerson ? handleMouseLeave : undefined}
+                        >
+                            {word}
+                        </span>
+                        {/* Add space as a non-breaking space */}
+                        <span>&nbsp;</span>
+                    </span>
+                );
+            })
         );
-      };
-      
-    const getImageForPerson = (person) => {
+    };
+
+    const getVideoForPerson = (person) => {
         switch (person) {
             case "odette":
-                return OdetteImg;
+                return OdetteVideo;
             case "abdelilah":
-                return AbdelilahImg;
+                return AbdelilahVideo;
             default:
                 return null;
         }
@@ -133,16 +135,18 @@ const FadeInParagraph = () => {
                             pointerEvents: "none",
                             opacity: hoveredPerson ? 1 : 0,
                             borderRadius: '12px',
-                            // background: '#FFF',
                             overflow: "hidden",
                             width: { xs: "120px", sm: "140px", md: "400px" },
                             height: { xs: "120px", sm: "140px", md: "400px" },
                         }}
                     >
-                        <img
-                            src={getImageForPerson(hoveredPerson)}
-                            alt={hoveredPerson}
-                            style={{ width: "100%", display: "block" }}
+                        <video
+                            src={getVideoForPerson(hoveredPerson)}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                         />
                     </Box>
                 )}

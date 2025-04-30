@@ -45,27 +45,27 @@ function ServiceForm() {
 
   const validateForm = () => {
     if (!formValues.machineLocation.trim()) {
-      showSnackbar('Machine location is required.', 'error');
+      showSnackbar(t('validation.machineLocationRequired'), 'error');
       return false;
     }
     if (!formValues.problemCategory) {
-      showSnackbar('Problem category is required.', 'error');
+      showSnackbar(t('validation.problemCategoryRequired'), 'error');
       return false;
     }
     if (!formValues.problemType) {
-      showSnackbar('Problem type is required.', 'error');
+      showSnackbar(t('validation.problemTypeRequired'), 'error');
       return false;
     }
     if (!formValues.contactPersonName.trim()) {
-      showSnackbar('Contact person name is required.', 'error');
+      showSnackbar(t('validation.contactPersonNameRequired'), 'error');
       return false;
     }
     if (!formValues.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
-      showSnackbar('Valid email is required.', 'error');
+      showSnackbar(t('validation.validEmailRequired'), 'error');
       return false;
     }
     if (!formValues.agreement) {
-      showSnackbar('You must agree to the privacy policy.', 'error');
+      showSnackbar(t('validation.agreementRequired'), 'error');
       return false;
     }
     return true;
@@ -106,7 +106,7 @@ function ServiceForm() {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
-      showSnackbar('Support issue submitted successfully!', 'success');
+      showSnackbar(t('validation.supportIssueSubmitted'), 'success');
 
       // Reset form
       setFormValues({
@@ -313,7 +313,7 @@ function ServiceForm() {
             <span>
               {t('Maintenance.uderstnadTest')}
               <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-              {t('Maintenance.privacy')}
+                {t('Maintenance.privacy')}
               </span>
             </span>
           }

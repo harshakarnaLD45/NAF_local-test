@@ -14,6 +14,7 @@ import MobileButtons from "./MobileButtons";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import GetinTouch from "./GetinTouch";
+import CatalogueDownloadSection from "./CatalogueDownloadSection";
 
 const MachinesPage = () => {
   const { t } = useTranslation();
@@ -59,6 +60,7 @@ const MachinesPage = () => {
         <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
       )}
       <MachinesSection selectedMachine={selectedMachine} />
+      <CatalogueDownloadSection />
       <Solutions />
       <PaymentOptions />
 

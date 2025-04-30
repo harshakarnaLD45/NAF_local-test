@@ -15,6 +15,7 @@ import GradientMaskText from '../../Componenets/CommonComponents/GradientMaskTex
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import VendImg from '../../assets/Home/Machine7.png'
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -51,7 +52,29 @@ const HomePage = () => {
           </Box>
         </Box>
 
-        <Box></Box>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "100%",
+            overflow: "hidden",
+            display: { xs: 'none', sm: 'none', md: "flex" },
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            component="img"
+            src={VendImg}
+            alt="naf-vending"
+            sx={{
+              width: { xs: "80%", sm: "60%", md: "40%" },
+              height: "auto",
+              maxWidth: "100%",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </Box>
+
       </Box>
 
       <HomepageShowreel />

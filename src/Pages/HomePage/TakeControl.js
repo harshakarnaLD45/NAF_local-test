@@ -1,11 +1,10 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemText } from '@mui/material';
-import Browser from "../../assets/Home/Browsers.svg";
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
-import CloudVideo from '../../assets/Home/CloudVideo.mp4'
+import CloudVideo from '../../assets/Home/NAF Cloud System.mp4'
 import { useParams } from 'react-router-dom';
 
 const TakeControl = () => {
@@ -82,7 +81,7 @@ const TakeControl = () => {
 
         {/* Right Image Section */}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
-          {/* <video
+          <video
             src={CloudVideo}
             autoPlay
             muted
@@ -94,18 +93,8 @@ const TakeControl = () => {
               borderRadius: '16px',
               objectFit: 'cover',
             }}
-          /> */}
-          <Box
-            component="img"
-            src={Browser}
-            alt="Dashboard Preview"
-            sx={{
-              width: { xs: "100%", sm: "100%", md: "100%", md: '100%' },
-              height: { xs: 'auto', md: '600px' },
-              objectFit: 'contain',
-              borderRadius: 3
-            }}
           />
+
         </Box>
       </Box>
     </Box>
