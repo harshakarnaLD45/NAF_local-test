@@ -26,7 +26,7 @@ function TeamSection() {
         },
         {
             name: 'Sri Satya Sai Kanna Dhulipudi',
-            position: 'Position',
+            position: 'CTO',
             color: "#94CDFF",
             linkedin: "https://www.linkedin.com/in/sri-satya-sai-kanna-dhulipudi-31676617b/",
             image: PersonImage3,

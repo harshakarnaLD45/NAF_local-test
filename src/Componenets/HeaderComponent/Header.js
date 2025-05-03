@@ -133,20 +133,20 @@ const Header = () => {
 
   return (
     <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
-      <Box onClick={() => navigate('/')}
+      {/* <Box onClick={() => navigate('/')}
         component="img"
         className='main-logo'
         alt="New Age Logo"
         src={Naflogo}
-      />
-      {/* <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
+      /> */}
+      <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
         <img
           src={NafLogoGif}
           alt="New Age Logo"
           className="main-logo"
-          style={{ width: '100px', height: 'auto' }} // customize as needed
+          style={{ width: '100px', backgroundBlendMode:'lighten', height: 'auto' }} // customize as needed
         />
-      </Box> */}
+      </Box>
 
       <Box></Box>
 
