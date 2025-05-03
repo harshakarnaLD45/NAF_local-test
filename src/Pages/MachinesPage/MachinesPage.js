@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import GetinTouch from "./GetinTouch";
 import CatalogueDownloadSection from "./CatalogueDownloadSection";
+import MachinesSection1 from "./MachinesSection1";
 
 const MachinesPage = () => {
   const { t } = useTranslation();
@@ -59,7 +60,11 @@ const MachinesPage = () => {
       ) : (
         <PhysicsButtons selectedMachine={selectedMachine} setSelectedMachine={setSelectedMachine} />
       )}
-      <MachinesSection selectedMachine={selectedMachine} />
+      {isMobileOrTablet ? (
+        <MachinesSection1 selectedMachine={selectedMachine} />
+      ) : (
+        <MachinesSection selectedMachine={selectedMachine} />
+      )}
       <CatalogueDownloadSection />
       <Solutions />
       <PaymentOptions />
@@ -68,7 +73,7 @@ const MachinesPage = () => {
         <Typography className='expertise-title headings-h2' sx={{
           position: 'relative',
           bottom: '-50px',
-          width: { xs: '100%', sm: '100%', md: '70%' },
+          width: { md: '70%' },
           px: { xs: 2, sm: 3, md: 4 }
         }} variant="h4" align="center" gutterBottom>
           {t('machines.PartnerNAFGermany')}

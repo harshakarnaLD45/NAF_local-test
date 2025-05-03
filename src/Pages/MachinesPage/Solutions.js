@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import Image1 from '../../assets/Machines/HoverImage1.png';
 import Image2 from '../../assets/Machines/HoverImage2.png';
@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 const CustomVendingSection = () => {
     const { t } = useTranslation();
     const [hoveredIndex, setHoveredIndex] = useState(null);
+    const theme = useTheme();
 
     const items = [
         { label: t('machines.CustomSizesLayouts'), image: Image1 },
@@ -22,17 +23,9 @@ const CustomVendingSection = () => {
         { label: t('machines.CustomPayments'), image: Image6 },
     ];
     return (
-        <Box
-            className='section-container'
-            sx={{
-                display: { xs: 'block', sm: 'block', md: 'flex' },
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: 2,
-            }}
-        >
+        <Box className='section-container solutuons-sec'>
             {/* Left Section */}
-            <Box sx={{ width: { xs: '100%', sm: '100%', md: '40%' }, my: { xs: 3, sm: 4, md: 0 } }}>
+            <Box className='secltion-subsec'>
                 <Typography variant="h3" className='headings-h2' sx={{ color: '#FCFCFC' }}>
                     {t('machines.CustomVendingtitle')}
                 </Typography>
@@ -44,12 +37,9 @@ const CustomVendingSection = () => {
             </Box>
 
             {/* Right Section */}
-            <Box
+            <Box className='solution-card-sec'
                 sx={{
                     display: "flex",
-                    flexDirection: { xs: 'column', sm: 'column', md: "row" },
-                    alignItems: { md: "flex-end" },
-                    height: { xs: 'auto', sm: 'auto', md: "420px" },
                     borderBottom: "1px solid #666",
                     borderTop: "1px solid #666",
                     borderLeft: "1px solid #666",
@@ -63,15 +53,21 @@ const CustomVendingSection = () => {
                         sx={{
                             position: 'relative',
                             borderRight: "1px solid #666",
-                            height: hoveredIndex === index ? { xs: "300px", sm: "300px", md: "100%" } : { md: "100%" },
-                            width: hoveredIndex === index ? { md: '300px' } : { md: '80px' },
                             overflow: 'hidden',
                             display: "flex",
                             justifyContent: "flex-start",
                             alignItems: "flex-end",
                             cursor: 'pointer',
-                            borderBottom: { xs: "1px solid #666", sm: "1px solid #666", md: "none" },
+                            borderBottom: "none",
                             transition: 'all 0.3s ease-in-out',
+                            [`@media (min-width:1301px)`]: {
+                                height: hoveredIndex === index ? "100%" : "100%",
+                                width: hoveredIndex === index ? '300px' : '80px',
+                            },
+                            [`@media (max-width:1300px)`]: {
+                                height: hoveredIndex === index ? "300px" : 'auto',
+                                borderBottom: "1px solid #666",
+                            }
                         }}
                     >
                         {/* Hover image with overlay */}
@@ -85,7 +81,10 @@ const CustomVendingSection = () => {
                                 opacity: hoveredIndex === index ? 1 : 0,
                                 transition: 'all 0.3s ease-in-out',
                                 zIndex: 1,
-                                height: { xs: "300px", sm: "300px", md: "100%" },
+                                height: "100%",
+                                [`@media (max-width:1300px)`]: {
+                                    height: "300px",
+                                }
                             }}
                         >
                             {/* Dark Overlay */}
@@ -103,8 +102,6 @@ const CustomVendingSection = () => {
                         {/* Vertical Text */}
                         <Typography className='bodyRegularText3'
                             sx={{
-                                writingMode: { md: "vertical-rl" },
-                                transform: { md: "rotate(180deg)" },
                                 textAlign: "center",
                                 color: hoveredIndex === index ? "#fff" : "#ccc",
                                 zIndex: 2,
@@ -112,6 +109,10 @@ const CustomVendingSection = () => {
                                 px: 3,
                                 transition: 'color 0.3s ease',
                                 textShadow: hoveredIndex === index ? '0 0 6px rgba(255,255,255,0.5)' : 'none',
+                                [`@media (min-width:1301px)`]: {
+                                    writingMode: "vertical-rl",
+                                    transform: "rotate(180deg)",
+                                }
                             }}
                         >
                             {item.label}

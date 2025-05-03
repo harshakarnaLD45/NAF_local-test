@@ -63,7 +63,7 @@ const Homepagereel = () => {
         flexDirection: "column",
         alignItems: "center",
         overflowX: "hidden",
-        mt: '-130px'
+        mt: '-80px'
       }}
     >
       {/* Video Container */}

@@ -75,10 +75,9 @@ const Footer = () => {
               flexWrap: "wrap",
               justifyContent: "center",
               alignItems: "center",
-              gap: 2,
             }}
           >
-            <Box component="span" sx={{ whiteSpace: "nowrap" }}>
+            <Box component="span" className="headings-h2" sx={{ whiteSpace: "nowrap" }}>
               {t('footer.Gotaproject')}
             </Box>
 
@@ -94,10 +93,11 @@ const Footer = () => {
                 height: "auto",
                 borderRadius: "70px",
                 objectFit: "cover",
+                ml: 2
               }}
             />
 
-            <Box component="span">
+            <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
               {t('footer.Gotaproject1')}
             </Box>
           </Typography>

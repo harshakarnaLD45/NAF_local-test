@@ -16,8 +16,8 @@ const TakeControl = () => {
       <Box
         sx={{
           position: 'relative',
-          backgroundColor: '#262626',
-          borderRadius: '24px',
+          // backgroundColor: '#262626',
+          // borderRadius: '24px',
           display: 'flex',
           flexDirection: { xs: 'column', lg: 'row' },
           alignItems: 'center',
@@ -25,18 +25,18 @@ const TakeControl = () => {
           overflow: 'hidden',
           px: { xs: 2, md: 6 },
           py: { xs: 2, md: 6 },
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            bottom: '-20%',
-            right: '-5%',
-            width: { xs: '250px', md: '500px' },
-            height: { xs: '250px', md: '450px' },
-            background: 'linear-gradient(135deg, #93CAEE 50%, #620C90 55%)',
-            filter: 'blur(90px)',
-            opacity: 0.7,
-            zIndex: 0,
-          },
+          // '&::before': {
+          //   content: '""',
+          //   position: 'absolute',
+          //   bottom: '-20%',
+          //   right: '-5%',
+          //   width: { xs: '250px', md: '500px' },
+          //   height: { xs: '250px', md: '450px' },
+          //   background: 'linear-gradient(135deg, #93CAEE 50%, #620C90 55%)',
+          //   filter: 'blur(90px)',
+          //   opacity: 0.7,
+          //   zIndex: 0,
+          // },
         }}
       >
         {/* Left Content */}
@@ -89,12 +89,11 @@ const TakeControl = () => {
             playsInline
             style={{
               width: '100%',
-              maxWidth: '800px',
+              maxWidth: '850px',
               borderRadius: '16px',
               objectFit: 'cover',
             }}
           />
-
         </Box>
       </Box>
     </Box>

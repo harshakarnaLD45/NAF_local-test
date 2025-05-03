@@ -46,7 +46,7 @@ const Maintenance = () => {
             </Typography>
           </div>
           <Box sx={{ mb: 3, mt: 2 }} data-cursor="hover">
-            <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4', py: 3 }}>
+            <Typography data-cursor="hover" className='bodyRegularText3' sx={{ color: '#C2C2C4' }}>
               {t('machines.NAFMaintenanceSubTitle')}
             </Typography>
           </Box>

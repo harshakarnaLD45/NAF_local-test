@@ -286,7 +286,7 @@ const Header = () => {
               {isMobile && (
                 <Box>
                   {/* SignIn Dropdown Menu */}
-                  <Box
+                  {/* <Box
                     className={`menu-item ${(strippedPath === '/signIn') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                     sx={{
                       display: 'flex',
@@ -301,7 +301,7 @@ const Header = () => {
                       {t("Header.profileSignIn")}
                       <DropDownIcon color={(strippedPath.startsWith('/signIn')) ? '#1A1A1A' : '#FCFCFC'} />
                     </Box>
-                  </Box>
+                  </Box> */}
 
                   {/* Show sublist when SignIn dropdown is open */}
                   {isSignInOpen && (
@@ -365,7 +365,7 @@ const Header = () => {
       {
         !isMobile && (
           <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
-            <Box>
+            {/* <Box>
               <button data-cursor="hover" className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
                 <ProfileIcon />
               </button>
@@ -416,7 +416,7 @@ const Header = () => {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+            </Box> */}
 
             <button
               data-cursor="hover"
@@ -428,7 +428,7 @@ const Header = () => {
           </Box>
         )
       }
-    </Box >
+    </Box>
   );
 };
 

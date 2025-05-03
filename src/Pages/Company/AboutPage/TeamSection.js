@@ -48,7 +48,7 @@ function TeamSection() {
                         sm: '1fr 1fr',   // 600px - 899px
                         md: '1fr 1fr 1fr'// ≥ 900px
                     },
-                    gap: 2,
+                    gap: { xs: 5, md: 2 },
                     justifyItems: 'center',
                 }}
             >

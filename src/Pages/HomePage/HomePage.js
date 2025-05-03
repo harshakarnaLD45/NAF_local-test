@@ -54,11 +54,11 @@ const HomePage = () => {
 
         <Box
           sx={{
-            width: "100%",
-            maxWidth: "100%",
+            width: "50%",
+            // maxWidth: "100%",
             overflow: "hidden",
             display: { xs: 'none', sm: 'none', md: "flex" },
-            justifyContent: "center",
+            justifyContent: "flex-end",
           }}
         >
           <Box
@@ -68,7 +68,7 @@ const HomePage = () => {
             sx={{
               width: { xs: "80%", sm: "60%", md: "40%" },
               height: "auto",
-              maxWidth: "100%",
+              // maxWidth: "100%",
               objectFit: "contain",
               display: "block",
             }}

@@ -66,7 +66,7 @@ const GradientMaskText = () => {
                     color: "#FCFCFC",
                     position: "relative",
                     zIndex: 1,
-                    width: { xs: "100%", sm: "70%", md: "70%" },
+                    width: { xs: "100%", sm: "100%", md: "100%" },
                 }}
             >
                 {t("Home.mainHeading")}
@@ -85,7 +85,7 @@ const GradientMaskText = () => {
                     left: 0,
                     zIndex: 2,
                     pointerEvents: "none",
-                    width: { xs: "100%", sm: "70%", md: "70%" },
+                    width: { xs: "100%", sm: "100%", md: "100%" },
                     opacity: isHovered ? 1 : 0,
                     transition: "opacity 0.3s ease-out",
                     maskImage: showMask

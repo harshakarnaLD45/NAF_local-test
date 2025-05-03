@@ -368,8 +368,7 @@ body {
 
 @media (max-width: 375px) {
 
-  .bodyRegularText2,
-  .bodyMediumText1 {
+  .bodyRegularText2 {
     font-size: 12px !important;
   }
 

@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const PaymentOptions = () => {
     const { t } = useTranslation();
-    const { lang } = useParams(); 
+    const { lang } = useParams();
     const paymentOptions = [
         {
             title: t('machines.LeasingTitle'),
@@ -42,7 +42,7 @@ const PaymentOptions = () => {
 
     return (
         <Box className='section-container'>
-            <Box sx={{ width: { xs: '100%', sm: '80%', md: '50%' }, mb: { xs: 2, sm: 2, md: 3 } }}>
+            <Box sx={{ width: { xs: '100%', sm: '80%', lg: '50%' }, mb: { xs: 2, sm: 2, md: 3 } }}>
                 <div data-cursor="hover">
                     <Typography data-cursor="hover" variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
                         {t('machines.FlexiblePaymentTitle')}
@@ -54,48 +54,59 @@ const PaymentOptions = () => {
                     </Typography>
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'column', md: 'row' }, justifyContent: "center" }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', lg: 'row' },
+                    justifyContent: 'center',
+                    alignItems: 'stretch', // ensures equal height if needed
+                    flexWrap: 'nowrap',
+                }}
+            >
                 {paymentOptions.map((option, idx) => (
-                    <Box key={idx}>
-                        <Box
-                            sx={{
-                                border: '1px solid #525252',
-                                // borderRadius: 2,
-                                px: { xs: 2, sm: 3, md: 4 },
-                                py: { xs: 3, sm: 4, md: 5 },
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: 'space-between',
-                                alignItems: "flex-start",
-                                minHeight: { xs: '400px', sm: '600px', md: "700px" },
-                            }}
-                        >
-                            <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
-                                <option.icon className='paymenticons' />
-                            </Box>
+                    <Box
+                        key={idx}
+                        sx={{
+                            flex: { xs: '1 1 100%', lg: '1 1 33%' }, // full width on small, 1/3 on large
+                            border: '1px solid #525252',
+                            px: { xs: 2, sm: 3, md: 4 },
+                            py: { xs: 3, sm: 4, md: 5 },
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
+                            alignItems: 'flex-start',
+                            minHeight: { xs: '400px', sm: '500px', lg: '700px' },
+                        }}
+                    >
+                        <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
+                            <option.icon className='paymenticons' />
+                        </Box>
 
-                            <Box>
-                                <Typography variant="h4" color="#FCFCFC" className="headings-h4">
-                                    {option.title}
-                                </Typography>
+                        <Box>
+                            <Typography variant="h4" color="#FCFCFC" className="headings-h4">
+                                {option.title}
+                            </Typography>
 
-                                <Typography className="bodyRegularText3" sx={{ color: "#C2C2C4", my: 2 }}>
-                                    {option.description}
-                                </Typography>
+                            <Typography className="bodyRegularText3" sx={{ color: "#C2C2C4", my: 2 }}>
+                                {option.description}
+                            </Typography>
 
-                                <Box component="ul" sx={{ pl: 3, mb: 4, color: "#C2C2C4" }}>
-                                    {option.points.map((point, i) => (
-                                        <li key={i} style={{ marginBottom: "8px" }} className="bodyRegularText3">{point}</li>
-                                    ))}
-                                </Box>
+                            <Box component="ul" sx={{ pl: 3, mb: 4, color: "#C2C2C4" }}>
+                                {option.points.map((point, i) => (
+                                    <li key={i} style={{ marginBottom: "8px" }} className="bodyRegularText3">
+                                        {point}
+                                    </li>
+                                ))}
                             </Box>
-                            <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
-                            </Box>
+                        </Box>
+
+                        <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
                         </Box>
                     </Box>
                 ))}
             </Box>
+
         </Box>
     );
 };

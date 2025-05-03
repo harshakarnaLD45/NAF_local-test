@@ -57,7 +57,7 @@ function SoftwarePage() {
 
             <Specifications />
             <ExpertiseSection />
-            <ReadySection />
+            {/* <ReadySection /> */}
         </div>
     )
 }
