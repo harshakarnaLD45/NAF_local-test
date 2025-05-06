@@ -8,7 +8,8 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
-import NafLogoGif from '../../assets/logo_naf_Animation_3.gif'
+import NafLogoGif from '../../assets/NAF Json 2.json'
+import Lottie from "lottie-react";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -132,161 +133,156 @@ const Header = () => {
   const strippedPath = location.pathname.replace(/^\/[a-z]{2}\//, '/');
 
   return (
-    <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
-      {/* <Box onClick={() => navigate('/')}
-        component="img"
-        className='main-logo'
-        alt="New Age Logo"
-        src={Naflogo}
-      /> */}
-      <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }}>
-        <img
-          src={NafLogoGif}
-          alt="New Age Logo"
-          className="main-logo"
-          style={{ width: '100px', backgroundBlendMode:'lighten', height: 'auto' }} // customize as needed
+    <>
+      <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }} className="main-logo">
+        <Lottie
+          animationData={NafLogoGif}
+          className="w-full h-full"
+          loop
+          autoplay
         />
       </Box>
+      <Box className={`header-container header ${showHeader ? "visible" : "hidden"}`}>
 
-      <Box></Box>
+        <Box></Box>
 
-      <Box data-cursor="hover"
-        className='mobile-view1'
-        ref={menuTriggerRef}
-        sx={{
-          backgroundColor: '#F4F4F4',
-          borderRadius: '32px',
-          padding: '12px 20px',
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          gap: '12px',
-          color: "#1A1A1A"
-        }}
-        onClick={anchorEl ? handleMenuClose : handleMenuOpen}
-      >
-        {anchorEl ? (
-          <>
-            <CloseIcon sx={{ fontSize: '20px' }} />
-          </>
-        ) : (
-          <>
-            <img
-              className='menuicons'
-              src={MenuIcons}
-              alt="Menu"
-              style={{
-                width: '20px',
-                height: '15px',
-              }}
-            />
-          </>
-        )}
-        <span className="bodyRegularText3"> {t("Header.menu")}</span>
-      </Box>
-      <Box data-cursor="hover"
-        className='menu-mobile-sec'
-        sx={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          top: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          zIndex: '999999 !important',
-        }}
-      >
-        {!anchorEl && !isMobile && (
-          <Box
-            className='mobile-view'
-            sx={{
-              backgroundColor: '#7FEE64',
-              borderRadius: {
-                xs: '0px 0px 16px 16px',
-                sm: '0px 0px 20px 20px',
-                md: '0px 0px 24px 24px',
-              },
-              padding: { xs: '6px 12px', sm: '10px 16px', md: '14px 24px' },
-              display: 'flex',
-              alignItems: 'center',
-              cursor: 'pointer',
-              color: "#1A1A1A",
-              gap: 1.5
-            }}
-            onClick={handleMenuOpen}
-          >
-            <img
-              className='menuicons'
-              src={MenuIcons}
-              alt="Menu"
-              style={{
-                width: { xs: '18px', sm: '20px', md: '20px' },
-                height: '16px',
-                marginRight: { xs: '2px', sm: '4px', md: '18px' },
-              }}
-            />
-            <span className="bodyRegularText3"> {t("Header.menu")}</span>
-          </Box>
-        )}
-
-        {anchorEl && (
-          <Box className="menu-container" ref={menuRef}>
-            {/* Language Dropdown at Top Right */}
-            <Box sx={{ position: 'absolute', top: 25, right: 25 }} ref={languageDropdownRef}>
-              <select
-                value={language}
-                onChange={handleLanguageChange}
-                className="language-dropdown-trigger bodyRegularText3"
+        <Box data-cursor="hover"
+          className='mobile-view1'
+          ref={menuTriggerRef}
+          sx={{
+            backgroundColor: '#F4F4F4',
+            borderRadius: '32px',
+            padding: '12px 20px',
+            display: 'flex',
+            alignItems: 'center',
+            cursor: 'pointer',
+            gap: '12px',
+            color: "#1A1A1A"
+          }}
+          onClick={anchorEl ? handleMenuClose : handleMenuOpen}
+        >
+          {anchorEl ? (
+            <>
+              <CloseIcon sx={{ fontSize: '20px' }} />
+            </>
+          ) : (
+            <>
+              <img
+                className='menuicons'
+                src={MenuIcons}
+                alt="Menu"
                 style={{
-                  paddingRight: '40px',
-                  appearance: 'none',
-                  WebkitAppearance: 'none',
-                  MozAppearance: 'none',
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 8px center',
-                  backgroundSize: '25px',
+                  width: '20px',
+                  height: '15px',
                 }}
-              >
-                <option value="de" className='bodyRegularText3'>DEU</option>
-                <option value="en" className='bodyRegularText3'>ENG</option>
-                <option value="fr" className='bodyRegularText3'>FRA</option>
-                <option value="es" className='bodyRegularText3'>ESP</option>
-                <option value="pl" className='bodyRegularText3'>POL</option>
-              </select>
+              />
+            </>
+          )}
+          <span className="bodyRegularText3"> {t("Header.menu")}</span>
+        </Box>
+        <Box data-cursor="hover"
+          className='menu-mobile-sec'
+          sx={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            top: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            zIndex: '999999 !important',
+          }}
+        >
+          {!anchorEl && !isMobile && (
+            <Box
+              className='mobile-view'
+              sx={{
+                backgroundColor: '#7FEE64',
+                borderRadius: {
+                  xs: '0px 0px 16px 16px',
+                  sm: '0px 0px 20px 20px',
+                  md: '0px 0px 24px 24px',
+                },
+                padding: { xs: '6px 12px', sm: '10px 16px', md: '14px 24px' },
+                display: 'flex',
+                alignItems: 'center',
+                cursor: 'pointer',
+                color: "#1A1A1A",
+                gap: 1.5
+              }}
+              onClick={handleMenuOpen}
+            >
+              <img
+                className='menuicons'
+                src={MenuIcons}
+                alt="Menu"
+                style={{
+                  width: { xs: '18px', sm: '20px', md: '20px' },
+                  height: '16px',
+                  marginRight: { xs: '2px', sm: '4px', md: '18px' },
+                }}
+              />
+              <span className="bodyRegularText3"> {t("Header.menu")}</span>
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
-              {[
-                { label: t("Header.menuHome"), path: `/${lang}` },
-                { label: t("Header.menuMachines"), path: `/${lang}/machine` },
-                { label: t("Header.menuSoftware"), path: `/${lang}/software` },
-                { label: t("Header.menuInsights"), path: `/${lang}/insights` },
-                { label: t("Header.CompanyDiscover"), path: `/${lang}/company/about` },
-                { label: t("Header.foodMenu"), path: `/${lang}/company/menu` },
-              ].map(({ label, path }) => (
-                <Box
-                  key={path}
-                  className={`menu-item ${(strippedPath === path.replace(`/${lang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    color: (location.pathname === path || hoveredPath === path) ? '#1A1A1A' : '#FCFCFC'
+          )}
+
+          {anchorEl && (
+            <Box className="menu-container" ref={menuRef}>
+              {/* Language Dropdown at Top Right */}
+              <Box sx={{ position: 'absolute', top: 25, right: 25 }} ref={languageDropdownRef}>
+                <select
+                  value={language}
+                  onChange={handleLanguageChange}
+                  className="language-dropdown-trigger bodyRegularText3"
+                  style={{
+                    paddingRight: '40px',
+                    appearance: 'none',
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 8px center',
+                    backgroundSize: '25px',
                   }}
-                  onClick={() => handleNavigation(path)}
-                  onMouseEnter={() => setHoveredPath(path)}
-                  onMouseLeave={() => setHoveredPath(null)}
                 >
-                  {(location.pathname === path || hoveredPath === path) && (
-                    <span className="arrow-icon"><ArrowIcon1 /></span>
-                  )}
-                  {label}
-                </Box>
-              ))}
-              {isMobile && (
-                <Box>
-                  {/* SignIn Dropdown Menu */}
-                  {/* <Box
+                  <option value="de" className='bodyRegularText3'>DEU</option>
+                  <option value="en" className='bodyRegularText3'>ENG</option>
+                  <option value="fr" className='bodyRegularText3'>FRA</option>
+                  <option value="es" className='bodyRegularText3'>ESP</option>
+                  <option value="pl" className='bodyRegularText3'>POL</option>
+                </select>
+              </Box>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
+                {[
+                  { label: t("Header.menuHome"), path: `/${lang}` },
+                  { label: t("Header.menuMachines"), path: `/${lang}/machine` },
+                  { label: t("Header.menuSoftware"), path: `/${lang}/software` },
+                  { label: t("Header.menuInsights"), path: `/${lang}/insights` },
+                  { label: t("Header.CompanyDiscover"), path: `/${lang}/company/about` },
+                  { label: t("Header.foodMenu"), path: `/${lang}/company/menu` },
+                ].map(({ label, path }) => (
+                  <Box
+                    key={path}
+                    className={`menu-item ${(strippedPath === path.replace(`/${lang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: (location.pathname === path || hoveredPath === path) ? '#1A1A1A' : '#FCFCFC'
+                    }}
+                    onClick={() => handleNavigation(path)}
+                    onMouseEnter={() => setHoveredPath(path)}
+                    onMouseLeave={() => setHoveredPath(null)}
+                  >
+                    {(location.pathname === path || hoveredPath === path) && (
+                      <span className="arrow-icon"><ArrowIcon1 /></span>
+                    )}
+                    {label}
+                  </Box>
+                ))}
+                {isMobile && (
+                  <Box>
+                    {/* SignIn Dropdown Menu */}
+                    {/* <Box
                     className={`menu-item ${(strippedPath === '/signIn') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                     sx={{
                       display: 'flex',
@@ -303,69 +299,69 @@ const Header = () => {
                     </Box>
                   </Box> */}
 
-                  {/* Show sublist when SignIn dropdown is open */}
-                  {isSignInOpen && (
-                    <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
-                      <Box
-                        className="menu-item bodyRegularText3"
-                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
-                        onClick={() => setIsSignInOpen(false)}
-                      >
-                        {t("Header.profilemenbership")}
+                    {/* Show sublist when SignIn dropdown is open */}
+                    {isSignInOpen && (
+                      <Box sx={{ pl: 12, display: 'flex', flexDirection: 'column' }}>
+                        <Box
+                          className="menu-item bodyRegularText3"
+                          sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                          onClick={() => setIsSignInOpen(false)}
+                        >
+                          {t("Header.profilemenbership")}
+                        </Box>
+                        <Box
+                          className="menu-item bodyRegularText3"
+                          sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                          onClick={() => setIsSignInOpen(false)}
+                        >
+                          {t("Header.profilelogin")}
+                        </Box>
+                        <Box
+                          className="menu-item bodyRegularText3"
+                          sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
+                          onClick={() => setIsSignInOpen(false)}
+                        >
+                          {t("Header.profileregister")}
+                        </Box>
                       </Box>
-                      <Box
-                        className="menu-item bodyRegularText3"
-                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
-                        onClick={() => setIsSignInOpen(false)}
-                      >
-                        {t("Header.profilelogin")}
-                      </Box>
-                      <Box
-                        className="menu-item bodyRegularText3"
-                        sx={{ color: (strippedPath === '/signIn') ? '#1A1A1A' : '#FCFCFC', cursor: "pointer" }}
-                        onClick={() => setIsSignInOpen(false)}
-                      >
-                        {t("Header.profileregister")}
-                      </Box>
-                    </Box>
-                  )}
+                    )}
 
-                  {/* Contact Page Menu */}
-                  <Box
-                    className={`menu-item ${(strippedPath === '/contact') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'flex-start',
-                      mt: '10px',
-                      color: (strippedPath === '/contact') ? '#1A1A1A' : '#FCFCFC',
-                      gap: '10px',
-                    }}
-                    onClick={() => handleNavigation(`/${lang}/contact`)}
-                  >
-                    {(strippedPath === '/contact') && <span className="arrow-icon"><ArrowIcon1 /></span>}
-                    <span>{t("Header.BookaDemo")}</span>
+                    {/* Contact Page Menu */}
+                    <Box
+                      className={`menu-item ${(strippedPath === '/contact') ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        mt: '10px',
+                        color: (strippedPath === '/contact') ? '#1A1A1A' : '#FCFCFC',
+                        gap: '10px',
+                      }}
+                      onClick={() => handleNavigation(`/${lang}/contact`)}
+                    >
+                      {(strippedPath === '/contact') && <span className="arrow-icon"><ArrowIcon1 /></span>}
+                      <span>{t("Header.BookaDemo")}</span>
+                    </Box>
                   </Box>
+                )}
+
+              </Box>
+
+              {/* Cancel Menu at Bottom */}
+              {!isMobile && (
+                <Box className="custom-button" onClick={handleMenuClose}>
+                  <CloseIcon sx={{ fontSize: '24px' }} />
+                  <span className="bodyRegularText3"> {t("Header.menu")}</span>
                 </Box>
               )}
-
             </Box>
+          )}
+        </Box>
 
-            {/* Cancel Menu at Bottom */}
-            {!isMobile && (
-              <Box className="custom-button" onClick={handleMenuClose}>
-                <CloseIcon sx={{ fontSize: '24px' }} />
-                <span className="bodyRegularText3"> {t("Header.menu")}</span>
-              </Box>
-            )}
-          </Box>
-        )}
-      </Box>
-
-      {
-        !isMobile && (
-          <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
-            {/* <Box>
+        {
+          !isMobile && (
+            <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '16px', gap: { xs: '4px', sm: '6px', md: '10px' } }}>
+              {/* <Box>
               <button data-cursor="hover" className='profile-button' onClick={(event) => setProfileAnchorEl(event.currentTarget)}>
                 <ProfileIcon />
               </button>
@@ -418,17 +414,18 @@ const Header = () => {
               </Menu>
             </Box> */}
 
-            <button
-              data-cursor="hover"
-              onClick={() => navigate(`/${lang}/contact`)}
-              className="book-demo-btn bodyRegularText4"
-            >
-              {t("Header.BookaDemo")}
-            </button>
-          </Box>
-        )
-      }
-    </Box>
+              <button
+                data-cursor="hover"
+                onClick={() => navigate(`/${lang}/contact`)}
+                className="book-demo-btn bodyRegularText4"
+              >
+                {t("Header.BookaDemo")}
+              </button>
+            </Box>
+          )
+        }
+      </Box>
+    </>
   );
 };
 
