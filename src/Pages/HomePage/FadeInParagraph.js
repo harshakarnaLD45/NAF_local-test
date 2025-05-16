@@ -2,11 +2,10 @@ import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import OdetteImg from '../../assets/About/Person1.png';
-import AbdelilahImg from "../../assets/About/Person2.png";
 import { useTranslation } from "react-i18next";
 import OdetteVideo from '../../assets/Home/1.mp4'
 import AbdelilahVideo from '../../assets/Home/2.mp4'
+import SaiVideo from '../../assets/Home/3.mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,10 +19,9 @@ const FadeInParagraph = () => {
         { text: t('Home.naftext2'), highlight: false },
         { text: "Abdelilah", highlight: true, person: "abdelilah" },
         { text: "Lamkhizni", highlight: true, person: "abdelilah" },
-        {
-            text: t('Home.naftext3'),
-            highlight: false,
-        },
+        { text: t('Home.naftext3'), highlight: false },
+        { text: "Sri Satya Sai Kanna Dhulipudi", highlight: true, person: "sai" },
+        { text: t('Home.naftext4'), highlight: false },
     ];
     const [hoveredPerson, setHoveredPerson] = useState(null);
     const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
@@ -59,42 +57,84 @@ const FadeInParagraph = () => {
         setHoveredPerson(null);
     };
 
-    const renderWords = () => {
-        return paragraphText.flatMap((item, idx) =>
-            item.text.split(" ").map((word, i) => {
-                const key = `${idx}-${i}`;
-                const isPerson = item.highlight && item.person;
+    // const renderWords = () => {
+    //     return paragraphText.flatMap((item, idx) =>
+    //         item.text.split(" ").map((word, i) => {
+    //             const key = `${idx}-${i}`;
+    //             const isPerson = item.highlight && item.person;
 
+    //             return (
+    //                 <span key={key} style={{ display: "inline-block" }}>
+    //                     <span
+    //                         className="fade-word headings-h2"
+    //                         style={{
+    //                             color: item.highlight ? "#FA7854" : undefined,
+    //                             textDecoration: item.highlight ? "underline" : "none",
+    //                             fontWeight: item.highlight ? 600 : 400,
+    //                             position: "relative",
+    //                             cursor: isPerson ? "pointer" : "default",
+    //                         }}
+    //                         onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
+    //                         onMouseLeave={isPerson ? handleMouseLeave : undefined}
+    //                     >
+    //                         {word}
+    //                     </span>
+    //                     {/* Add space as a non-breaking space */}
+    //                     <span>&nbsp;</span>
+    //                 </span>
+    //             );
+    //         })
+    //     );
+    // };
+    const renderWords = () => {
+        return paragraphText.flatMap((item, idx) => {
+            const isPerson = item.highlight && item.person;
+    
+            if (isPerson) {
+                // Keep the full name as one underlined block
                 return (
-                    <span key={key} style={{ display: "inline-block" }}>
+                    <span key={idx} style={{ display: "inline-block" }}>
                         <span
                             className="fade-word headings-h2"
                             style={{
-                                color: item.highlight ? "#FA7854" : undefined,
-                                textDecoration: item.highlight ? "underline" : "none",
-                                fontWeight: item.highlight ? 600 : 400,
-                                position: "relative",
-                                cursor: isPerson ? "pointer" : "default",
+                                color: "#FA7854",
+                                textDecoration: "underline",
+                                fontWeight: 600,
+                                textUnderlineOffset: "4px",
+                                cursor: "pointer",
+                                whiteSpace: "nowrap",
                             }}
-                            onMouseEnter={isPerson ? (e) => handleMouseEnter(item.person, e) : undefined}
-                            onMouseLeave={isPerson ? handleMouseLeave : undefined}
+                            onMouseEnter={(e) => handleMouseEnter(item.person, e)}
+                            onMouseLeave={handleMouseLeave}
                         >
-                            {word}
+                            {item.text}
                         </span>
-                        {/* Add space as a non-breaking space */}
                         <span>&nbsp;</span>
                     </span>
                 );
-            })
-        );
+            } else {
+                // Split regular text into words
+                return item.text.split(" ").map((word, i) => {
+                    const key = `${idx}-${i}`;
+                    return (
+                        <span key={key} style={{ display: "inline-block" }}>
+                            <span className="fade-word headings-h2">{word}</span>
+                            <span>&nbsp;</span>
+                        </span>
+                    );
+                });
+            }
+        });
     };
-
+    
     const getVideoForPerson = (person) => {
         switch (person) {
             case "odette":
                 return OdetteVideo;
             case "abdelilah":
                 return AbdelilahVideo;
+            case "sai":
+                return SaiVideo;
             default:
                 return null;
         }

@@ -48,14 +48,14 @@
         "sustainabilitybenifits3": "In-House Cloud & App Development",
         "sustainabilitybenifits4": "RFID Integration, Telemetry, & Energy Efficiency",
         "sustainabilitybenifits5": "Innovation Awards & Grant-Funded Projects",
-        "CloudSystem": "Cloud System",
+        "CloudSystem": "Cloud System Powered by Android, AWS, NAYAX",
         "CloudSystemTitle": "Take Control of Your Vending Network",
         "CloudSystemSubTitle": "Manage your vending machines globally, adjust pricing on the fly, and track key performance indicators—all from a single, user-friendly dashboard.",
         "WhatsNew": "What’s New",
-        "naftext1": "From Fine Dining to AI Gastronomy - NAF was founded by",
+        "naftext1": "NAF was founded by ",
         "naftext2": "and",
-        "naftext3": "- with the vision of creating real alternatives to traditional Gastronomy. With roots in fine dining and a passion for technology, we combine culinary delight with digitalization. Our AI systems are developed in-house by an international team of IT talents and Gastronomy professionals.",
-        "testmonialHeading": "What's Our Clients Are Saying",
+        "naftext3": "– with the vision of creating real alternatives to traditional Gastronomy. With roots in fine dining and a passion for technology, we combine culinary delight with digitalization. Our AI systems are developed in-house by an international team of IT talents and Gastronomy professionals, under the leadership of our CTO,",
+        "naftext4": ", who spearheads innovation in AI-driven culinary solutions and technological advancements.",
         "testimonial1": {
             "text": "Today's eggplant and cherry pea curry was delicious. Yesterday's chicken meatball was also good.",
             "author": "Customer"

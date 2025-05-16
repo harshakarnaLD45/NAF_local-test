@@ -15,7 +15,53 @@ import Award7 from '../../../assets/About/Awards/Award7.png';
 import Award8 from '../../../assets/About/Awards/Award8.png';
 import ArrowButton from "../../../Componenets/CommonComponents/ArrowButton";
 
+// const AwardCard = ({ index, title, image, link }) => {
+//     return (
+//         <Box
+//             sx={{
+//                 display: "flex",
+//                 flexDirection: "column",
+//                 width: { xs: '300px', sm: '350px', md: '550px' },
+//                 paddingLeft: index === 0 ? { xs: '15px', sm: '20px', md: '40px' } : 0,
+//             }}
+//         >
+//             {/* Image section */}
+//             <Box
+//                 component="img"
+//                 src={image}
+//                 alt={title}
+//                 sx={{
+//                     width: { xs: '300px', sm: '350px', md: '550px' },
+//                     height: { xs: '200px', sm: '250px', md: '400px' },
+//                     objectFit: 'cover',
+//                     borderRadius: 2,
+//                     mb: 1,
+//                 }}
+//             />
+//             <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+//                 {/* Title */}
+//                 <Typography
+//                     variant="body2"
+//                     color="#FCFCFC"
+//                     className="bodyMediumText1"
+//                 >
+//                     {title}
+//                 </Typography>
+
+//                 {/* Conditionally render arrow button if there's a link */}
+//                 {link && (
+//                     <Box onClick={() => window.open(link, "_blank")}>
+//                         <ArrowButton colorBg='#262626' />
+//                     </Box>
+//                 )}
+//             </Box>
+//         </Box>
+//     );
+// };
+
 const AwardCard = ({ index, title, image, link }) => {
+    const isYouTube = link && link.includes('youtube.com');
+
     return (
         <Box
             sx={{
@@ -25,21 +71,43 @@ const AwardCard = ({ index, title, image, link }) => {
                 paddingLeft: index === 0 ? { xs: '15px', sm: '20px', md: '40px' } : 0,
             }}
         >
-            {/* Image section */}
-            <Box
-                component="img"
-                src={image}
-                alt={title}
-                sx={{
-                    width: { xs: '300px', sm: '350px', md: '550px' },
-                    height: { xs: '200px', sm: '250px', md: '400px' },
-                    objectFit: 'cover',
-                    borderRadius: 2,
-                    mb: 1,
-                }}
-            />
+            {/* Conditional rendering for YouTube or Image */}
+            {isYouTube ? (
+                <Box
+                    sx={{
+                        width: { xs: '300px', sm: '350px', md: '550px' },
+                        height: { xs: '200px', sm: '250px', md: '400px' },
+                        mb: 1,
+                        borderRadius: 2,
+                        overflow: 'hidden'
+                    }}
+                >
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src={link.replace('watch?v=', 'embed/')}
+                        title={title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </Box>
+            ) : (
+                <Box
+                    component="img"
+                    src={image}
+                    alt={title}
+                    sx={{
+                        width: { xs: '300px', sm: '350px', md: '550px' },
+                        height: { xs: '200px', sm: '250px', md: '400px' },
+                        objectFit: 'cover',
+                        borderRadius: 2,
+                        mb: 1,
+                    }}
+                />
+            )}
+
             <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-                {/* Title */}
                 <Typography
                     variant="body2"
                     color="#FCFCFC"
@@ -48,8 +116,8 @@ const AwardCard = ({ index, title, image, link }) => {
                     {title}
                 </Typography>
 
-                {/* Conditionally render arrow button if there's a link */}
-                {link && (
+                {/* Show Arrow button for non-YouTube links */}
+                {link && !isYouTube && (
                     <Box onClick={() => window.open(link, "_blank")}>
                         <ArrowButton colorBg='#262626' />
                     </Box>
@@ -70,7 +138,7 @@ const AwardsSection = () => {
         { title: t('about.awards.award5.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/innovationen-im-gasthof-halsbach-warum-ein-indischer-computerspezialist-in-marrokanisch-deutscher-kueche-mitmischt-artikel13347381?ref=share_link', image: Award5 },
         { title: t('about.awards.award6.title'), link: 'https://nafhalsbach-my.sharepoint.com/:b:/g/personal/anitha_boppidi_naf-halsbach_de/Efb0SYHLKVNIoy-8T7ovpnEBDRTwsnKsZCfWX8uOLteeEg?e=RjPRXN', image: Award6 },
         { title: t('about.awards.award7.title'), link: 'https://www.freiepresse.de/mittelsachsen/freiberg/new-age-of-food-freiberg-zeigt-wie-modern-speiseautomaten-sein-koennen-artikel13201205?ref=share_link', image: Award7 },
-        { title: t('about.awards.award8.title'), link: 'https://youtu.be/TtR2bxr-sbw?si=hPGsUVK9RZVOnOEw', image: Award8 },
+        { title: t('about.awards.award8.title'), link: 'https://www.youtube.com/watch?v=TtR2bxr-sbw', image: Award8 },
     ];
 
     return (
