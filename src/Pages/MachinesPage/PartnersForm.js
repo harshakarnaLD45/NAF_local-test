@@ -322,14 +322,14 @@ function PartnersForm() {
                 ) : (
                     // Gastronomy Partner Form
                     <Box sx={{ mt: { xs: 4, sm: 6, md: 8 } }}>
-                        <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
+                        {/* <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
                             Gastronomie- und Catering-Partner werden – neue Umsatzquellen erschließen
-                        </Typography>
+                        </Typography> */}
                         <Typography className='bodyRegularText3' sx={{ my: 4 }} color='#C2C2C4'>
                             {t('machines.GastronomyPartnersSubTitle')}
                         </Typography>
                         <Typography className='bodyMediumText1' sx={{ my: 4 }} color='#FCFCFC'>
-                            {t('machines.WhatsInyou')}
+                            {t('machines.Benefits')}
                         </Typography>
                         <Box
                             sx={{
