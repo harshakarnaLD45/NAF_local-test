@@ -10,7 +10,12 @@ import MachineImage6 from '../../assets/Home/Machine6.png';
 import MachineImage7 from '../../assets/Home/Machine7.png';
 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
-import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
+import { DownloadIcon,SnackBar,CampingSite,Companies,
+    Pizzarias,Festivals,OfficaCenters,Festivals2,Villagefairs
+    ,Zoos,AnimalParks,Events,Hotels,Clubs,RoofTop,
+    
+    
+    MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -31,10 +36,10 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AImenu'),
             description: t('machines.GourmetMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: <SnackBar/>, label: t('machines.SnackBars') },
+                { icon: <CampingSite />, label: t('machines.CampingSites') },
+                { icon: <OfficaCenters />, label: t('machines.Officecenters') },
+                 { icon: <Companies />, label: t('machines.Companies') },
             ],
             features: [
                 { text: t('machines.Automatedheating'), icon: <MachineSmallIcon5 /> },
@@ -55,10 +60,10 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIBaking'),
             description: t('machines.PizzaMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: <SnackBar/>, label: t('machines.SnackBars') },
+                { icon: <CampingSite />, label: t('machines.CampingSites') },
+                { icon: <Companies />, label: t('machines.Companies') },
+                { icon: <Pizzarias />, label: t('machines.Pizzerias') },
             ],
             features: [
                 { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
@@ -79,10 +84,8 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIOil'),
             description: t('machines.PizzaMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                 { icon: <SnackBar/>, label: t('machines.SnackBars') },
+                { icon: <CampingSite />, label: t('machines.CampingSites')},
             ],
             features: [
                 { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
@@ -103,10 +106,10 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIMonitoring'),
             description: t('machines.IceMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                 { icon: <SnackBar/>, label: t('machines.SnackBars') },
+                { icon: <CampingSite />, label: t('machines.CampingSites')},
+                { icon: <AnimalParks />, label: t('machines.AnimalParks') },
+                { icon: <Zoos />, label: t('machines.Zoos') },
             ],
             features: [
                 { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon5 /> },
@@ -126,10 +129,10 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIMonitoring'),
             description: t('machines.CandyMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                 { icon: <SnackBar/>, label: t('machines.SnackBars') },
+                { icon: <CampingSite />, label: t('machines.CampingSites')},
+                { icon: <AnimalParks />, label: t('machines.AnimalParks') },
+                { icon: <Zoos />, label: t('machines.Zoos') },
             ],
             features: [
                 { text: t('machines.hygienic'), icon: <MachineSmallIcon5 /> },
@@ -150,10 +153,10 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIAgeVerification'),
             description: t('machines.beerMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: <Festivals />, label: t('machines.Festivals') },
+                { icon: <Villagefairs />, label: t('machines.VillageFairs') },
+                // { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
+                // { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
                 { text: t('machines.AIageverification'), icon: <MachineSmallIcon5 /> },
@@ -169,10 +172,12 @@ const MachinesSection = ({ selectedMachine }) => {
             subtitle: t('machines.AIContainerRecognition'),
             description: t('machines.returnMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: <Events />, label: t('machines.Events') },
+                { icon: <Hotels />, label: t('machines.Hotel') },
+                { icon: <Festivals2 />, label: t('machines.Festivals') },
+                { icon: <Clubs />, label: t('machines.Clubs') },
+                { icon: <RoofTop />, label: t('machines.Rooftopbars') },
+                 
             ],
             features: [
                 { text: t('machines.Ecofriendly'), icon: <MachineSmallIcon5 /> },

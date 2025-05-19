@@ -1,5 +1,5 @@
-import { Box, Stack, Typography } from "@mui/material";
-import React from "react";
+import { Box, Stack, TextField, Typography } from "@mui/material";
+import React, { useState } from "react";
 import "./Footer.css";
 import Facebook from '../../assets/Social Icons.png';
 import Twitter from '../../assets/Social Icons (1).png';
@@ -11,11 +11,21 @@ import FooterLogo from '../../assets/FooterLogo.svg'
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import FooterVideo from '../../assets/footer video.mp4'
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const { t } = useTranslation();
   const { lang } = useParams();
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState(null);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEmail(value);
+  };
 
   const socialIcons = [
     { src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
@@ -26,98 +36,43 @@ const Footer = () => {
   ];
 
   return (
-    <Box sx={{ pt: { xs: '2rem', md: '5rem' } }} className='footer-container'>
+    <Box sx={{ pt: { xs: '2rem', md: '5rem' }, height: "100%" }} className='footer-container'>
       <Box className="footer-section"
         sx={{
           bgcolor: "#FA7854",
           overflow: "hidden",
           position: "relative",
-          pt: { xs: 4, sm: 6, md: 10 },
-          pb: { xs: 4, sm: 6, md: 0 },
+          height: "100%",
+          mt: { xs: 4, sm: 6, md: 10 },
+          pb: { xs: 0, sm: 1, md: 0 },
         }}
       >
-        <Box sx={{ position: "relative ", }} >
+        <Box sx={{
+          position: "relative",
+          width: "100%",
+          // whiteSpace: "nowrap",
+        }} >
           <Box className="footer-orange-ball"
             sx={{
               width: {
                 xs: "300px",
                 sm: "500px",
-                md: "700px",
-                lg: "700.333px"
+                md: "700px"
               },
               height: {
                 xs: "300px",
                 sm: "500px",
-                md: "700px",
-                lg: "700px"
+                md: "700px"
               },
               bgcolor: "#F84311",
               borderRadius: "857.333px",
               position: "absolute",
-              top: "50%",
+              top: "85%",
               left: "50%",
               transform: "translate(-50%, -40%)",
               zIndex: 0,
             }}
           />
-          <Typography
-            className="headings-h2 footerhead"
-            variant="h2"
-            align="center"
-            sx={{
-              color: "#FCFCFC",
-              position: "relative",
-              zIndex: 1,
-              maxWidth: { xs: "95%", sm: "70%", md: "60%", lg: "50%" },
-              mx: "auto",
-              mb: 8,
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box component="span" className="headings-h2" sx={{ whiteSpace: "nowrap" }}>
-              {t('footer.Gotaproject')}
-            </Box>
-
-            <Box
-              component="video"
-              src={FooterVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              sx={{
-                width: { xs: "80px", sm: "100px", md: "170px" },
-                height: "auto",
-                borderRadius: "70px",
-                objectFit: "cover",
-                ml: 2
-              }}
-            />
-
-            <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
-              {t('footer.Gotaproject1')}
-            </Box>
-          </Typography>
-
-          {/* <Typography
-            className="headings-h2 footerhead "
-            variant="h2"
-            align="center"
-            sx={{
-              color: "#FCFCFC",
-              position: "relative",
-              zIndex: 1,
-              maxWidth: { xs: "95%", sm: "70%", md: "60%", lg: "50%" },
-              mx: "auto",
-              mb: 8,
-            }}
-          >
-            {t('footer.Gotaproject')} {t('footer.Gotaproject1')}
-          </Typography> */}
-
           <Box className="footer-main-div"
             sx={{
               display: "grid",
@@ -134,6 +89,126 @@ const Footer = () => {
             }}
           >
             <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
+              <Typography
+                className="headings-h2 footerhead"
+                variant="h2"
+                sx={{
+                  color: "#FCFCFC",
+                  position: "relative",
+                  zIndex: 1,
+                  mx: "auto",
+                  mb: 8,
+                  display: "flex",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Box component="span" className="headings-h2" sx={{ whiteSpace: "nowrap" }}>
+                  {t('footer.Gotaproject')}
+                </Box>
+
+                <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
+                  {t('footer.Gotaproject1')}
+                </Box>
+
+                <Box
+                  component="video"
+                  src={FooterVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  sx={{
+                    width: { xs: "80px", sm: "100px", md: "170px" },
+                    height: "auto",
+                    borderRadius: "70px",
+                    objectFit: "cover",
+                    ml: 2
+                  }}
+                />
+                <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
+                  {t('footer.Gotaproject2')}
+                </Box>
+              </Typography>
+              <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
+
+              <Box className="social-icon-sec" sx={{
+                position: 'relative', mt: 4,
+                display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center'
+              }}>
+                {socialIcons.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Box className="social-icon"
+                      component="img"
+                      src={social.src}
+                      alt={social.name}
+                      sx={{
+                        width: { xs: 32, md: 40 },
+                        height: { xs: 32, md: 40 },
+                        cursor: "pointer",
+                        objectFit: "contain",
+                        '&:hover': {
+                          opacity: 0.8,
+                        }
+                      }}
+                    />
+                  </a>
+                ))}
+              </Box>
+            </Stack>
+
+            <Box className="btn-social-icon"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                paddingBottom: '0rem',
+              }}
+            >
+            </Box>
+
+            <Stack spacing={{ xs: 2, md: 2 }}>
+              <Typography
+                className="footercontact bodyMediumText1"
+                sx={{ color: "#FCFCFC" }}
+              >
+                {t('footer.subscrptionText')}
+              </Typography>
+              <TextField
+                className='bodyRegularText3'
+                label={t('contactus.Email')}
+                variant="standard"
+                required
+                fullWidth
+                name="email"
+                value={email}
+                onChange={handleInputChange}
+                InputLabelProps={{
+                  style: {
+                    color: '#FCFCFC',
+                    fontSize: {
+                      md: '10px',
+                      lg: '20px',
+                    },
+                  },
+                }}
+                InputProps={{
+                  disableUnderline: false,
+                  sx: {
+                    color: '#FCFCFC',
+                    paddingTop: "28px",
+                    '&:before': { borderBottomColor: '#C6C6C6' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#ffffffcc' },
+                    '&:after': { borderBottomColor: '#C6C6C6' },
+                  },
+                }}
+              />
+
               <Typography
                 className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
@@ -172,164 +247,25 @@ const Footer = () => {
                   0162 – 1638005  (Technischer Support 24/7)
                 </Typography>
               </Stack>
-            </Stack>
-
-            <Box className="btn-social-icon"
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-
-                // gap: { xs: 2, md: 15 },
-                flexWrap: 'wrap',
-                paddingBottom: '0rem',
-                // mt: { xs: 0, md: "200px" },
-                // order: { xs: -1, md: 0 }
-              }}
-            >
-              <Box className="btn-contact-sec"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  mx: "auto",
-                  position: "relative",
-                  zIndex: 1,
-                  marginBottom: { xs: "0rem", md: "5rem" }
-                }}
-              >
-                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
-              </Box>
-              <Box className="social-icon-sec" sx={{
-                position: 'relative',
-                display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center'
-              }}>
-                {socialIcons.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Box className="social-icon"
-                      component="img"
-                      src={social.src}
-                      alt={social.name}
-                      sx={{
-                        width: { xs: 32, md: 40 },
-                        height: { xs: 32, md: 40 },
-                        cursor: "pointer",
-                        objectFit: "contain",
-                        '&:hover': {
-                          opacity: 0.8,
-                        }
-                      }}
-                    />
-                  </a>
-                ))}
-              </Box>
-            </Box>
-            <Stack className="mobile-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
-              <Typography
-                className="footercontact bodyRegularText4"
-                sx={{ color: "#444444" }}
-              >
-                {t('footer.footerContact')}
-              </Typography>
-              <Stack className="info-stack" spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
-                <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
-                  sx={{
-                    color: "#1A1A1A",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >
-                  info@naf-halsbach.de
-                </Typography>
-                <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
-                  sx={{
-                    color: "#1A1A1A",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >
-                  0152 – 28387141 (Odette Lamkhizni)
-                </Typography>
-                <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
-                  sx={{
-                    color: "#1A1A1A",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >
-                  0162 – 1638005  (Technischer Support 24/7)
-                </Typography>
-              </Stack>
-            </Stack>
-
-            <Stack spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-end" }}>
               <Typography
                 className="footercontact bodyRegularText4"
                 sx={{ color: "#444444" }}
               >
                 {t('footer.footerAddress')}
               </Typography>
-              <Stack className="info-stack" spacing={3} alignItems={{ xs: "center", md: "flex-end" }}>
+              <Stack className="info-stack" spacing={3}>
                 <Typography
                   className="footercontactdown footerright bodyMediumText2"
                   sx={{
                     color: "#1A1A1A",
-                    textAlign: { xs: "left", md: "right" },
+                    // textAlign: { xs: "left", md: "right" },
                     fontSize: { xs: "18px", md: "22px" }
                   }}
                 >
                   Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
-                <img src={FooterLogo} style={{ width: '100%' }} alt="logo" />
+                <img src={FooterLogo} style={{ width: '100%', marginBottom: '2vh' }} alt="logo" />
               </Stack>
-              {/* <Box className="info-stack" sx={{ mt: { xs: 2, } }}>
-                <Typography
-                  className="footercontact bodyRegularText4 "
-                  sx={{
-                    color: "#444444",
-                    textAlign: { xs: "center", md: "right" },
-                    mt: { xs: 1, md: 2 }
-                  }}
-                >
-                  Automaten Standorte:
-                </Typography>
-                <Stack
-                  spacing={2}
-                  alignItems={{ xs: "center", md: "flex-end" }}
-                  sx={{ mt: 2 }}
-                >
-                  <Typography
-                    className="footercontactdown footerright bodyMediumText2"
-                    sx={{
-                      color: "#1A1A1A",
-                      textAlign: { xs: "center", md: "right" },
-                      fontSize: { xs: "18px", md: "22px" }
-                    }}
-                  >
-                    DBI Foyer Freiberg, Halsbrückerstrasse <br className="br-footer" /> 34, 09599 Freiberg
-                  </Typography>
-                  <Typography
-                    className="footercontactdown footerright bodyMediumText2"
-                    sx={{
-                      color: "#1A1A1A",
-                      textAlign: { xs: "center", md: "right" },
-                      fontSize: { xs: "18px", md: "22px" }
-                    }}
-                  >
-                    Landratsamt Mittweida Haus A, Am <br className="br-footer" /> Landratsamt 3, 09648 Mittweida
-                  </Typography>
-                </Stack>
-              </Box> */}
             </Stack>
           </Box>
           {/* <Box className=" " sx={{position:'relative',}} > */}
@@ -368,22 +304,28 @@ const Footer = () => {
             </Typography>
           </Box>
 
+
           <Typography
             variant="h1"
             className="footerBottomhead headings-h1"
+
             sx={{
               color: "#FCFCFC",
               position: "relative",
               bottom: { xs: -20, sm: -40, md: -40, },
               textAlign: "center",
               zIndex: 0,
-              whiteSpace: "nowrap",
+              // whiteSpace: "nowrap",
               width: "100%",
               textTransform: 'uppercase'
             }}
           >
-            {t('footer.footerTitle')}
+            <Box className="footer-scroll-text">
+              {t('footer.footerTitle')} &nbsp;  &nbsp; {t('footer.footerTitle')} &nbsp;  &nbsp; {t('footer.footerTitle')}
+            </Box>
           </Typography>
+
+
         </Box>
 
         {/* </Box> */}
