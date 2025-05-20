@@ -39,6 +39,59 @@ const TestimonialCard = ({ text, author }) => (
   </Box>
 );
 
+// const TestimonialVideoCard = ({ videoSrc }) => {
+//   const videoRef = useRef(null);
+//   const [muted, setMuted] = useState(true);
+
+//   const toggleMute = () => {
+//     if (videoRef.current) {
+//       videoRef.current.muted = !muted;
+//       setMuted(!muted);
+//     }
+//   };
+
+//   return (
+//     <Box
+//       sx={{
+//         width: 300,
+//         height: 300,
+//         bgcolor: "#262626",
+//         borderRadius: 4,
+//         overflow: "hidden",
+//         position: "relative",
+//       }}
+//     >
+//       <video
+//         ref={videoRef}
+//         src={videoSrc}
+//         autoPlay
+//         loop
+//         muted={muted}
+//         playsInline
+//         style={{
+//           width: "100%",
+//           height: "100%",
+//           objectFit: "cover",
+//           display: "block",
+//         }}
+//       />
+//       <IconButton
+//         onClick={toggleMute}
+//         sx={{
+//           position: "absolute",
+//           bottom: 8,
+//           right: 8,
+//           color: "#000",
+//           zIndex: 1,
+//           cursor:'pointer',
+//         }}
+//       >
+//         {muted ? <VolumeOffIcon /> : <VolumeUpIcon />}
+//       </IconButton>
+//     </Box>
+//   );
+// };
+
 const TestimonialVideoCard = ({ videoSrc }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
@@ -50,8 +103,22 @@ const TestimonialVideoCard = ({ videoSrc }) => {
     }
   };
 
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   return (
     <Box
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       sx={{
         width: 300,
         height: 300,
@@ -64,7 +131,6 @@ const TestimonialVideoCard = ({ videoSrc }) => {
       <video
         ref={videoRef}
         src={videoSrc}
-        autoPlay
         loop
         muted={muted}
         playsInline
@@ -83,7 +149,7 @@ const TestimonialVideoCard = ({ videoSrc }) => {
           right: 8,
           color: "#000",
           zIndex: 1,
-          cursor:'pointer',
+          cursor: "pointer",
         }}
       >
         {muted ? <VolumeOffIcon /> : <VolumeUpIcon />}

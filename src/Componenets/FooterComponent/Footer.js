@@ -190,7 +190,7 @@ const Footer = () => {
                 onChange={handleInputChange}
                 InputLabelProps={{
                   style: {
-                    color: '#FCFCFC',
+                    color: '#C2C2C4',
                     fontSize: {
                       md: '10px',
                       lg: '20px',
@@ -200,26 +200,26 @@ const Footer = () => {
                 InputProps={{
                   disableUnderline: false,
                   sx: {
-                    color: '#FCFCFC',
+                    color: '#C2C2C4',
                     paddingTop: "28px",
-                    '&:before': { borderBottomColor: '#C6C6C6' },
-                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#ffffffcc' },
-                    '&:after': { borderBottomColor: '#C6C6C6' },
+                    '&:before': { borderBottomColor: '#C2C2C4' },
+                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#C2C2C4' },
+                    '&:after': { borderBottomColor: '#C2C2C4' },
                   },
                 }}
               />
 
               <Typography
-                className="footercontact bodyRegularText4"
-                sx={{ color: "#444444" }}
+                className="footercontact bodyRegularText5"
+                sx={{ color: "#C2C2C4", pt: 3 }}
               >
                 {t('footer.footerContact')}
               </Typography>
               <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
                 <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
+                  className="footercontactdown footerpadding bodyRegularText4"
                   sx={{
-                    color: "#1A1A1A",
+                    color: "#FCFCFC",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
@@ -227,9 +227,9 @@ const Footer = () => {
                   info@naf-halsbach.de
                 </Typography>
                 <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
+                  className="footercontactdown footerpadding bodyRegularText4"
                   sx={{
-                    color: "#1A1A1A",
+                    color: "#FCFCFC",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
@@ -237,9 +237,9 @@ const Footer = () => {
 
                 </Typography>
                 <Typography
-                  className="footercontactdown footerpadding bodyMediumText2"
+                  className="footercontactdown footerpadding bodyRegularText4"
                   sx={{
-                    color: "#1A1A1A",
+                    color: "#FCFCFC",
                     fontSize: { xs: "18px", md: "22px" },
                     textAlign: { xs: "center", md: "left" }
                   }}
@@ -248,23 +248,23 @@ const Footer = () => {
                 </Typography>
               </Stack>
               <Typography
-                className="footercontact bodyRegularText4"
-                sx={{ color: "#444444" }}
+                className="footercontact bodyRegularText5"
+                sx={{ color: "#C2C2C4", pt: 3 }}
               >
                 {t('footer.footerAddress')}
               </Typography>
               <Stack className="info-stack" spacing={3}>
                 <Typography
-                  className="footercontactdown footerright bodyMediumText2"
+                  className="footercontactdown footerright bodyRegularText4"
                   sx={{
-                    color: "#1A1A1A",
+                    color: "#FCFCFC",
                     // textAlign: { xs: "left", md: "right" },
                     fontSize: { xs: "18px", md: "22px" }
                   }}
                 >
                   Obere Straße 3, 09599 Freiberg, OT <br className="br-footer" /> Halsbach
                 </Typography>
-                <img src={FooterLogo} style={{ width: '100%', marginBottom: '2vh' }} alt="logo" />
+                <img src={FooterLogo} style={{ width: '100%', marginBottom: '4vh' }} alt="logo" />
               </Stack>
             </Stack>
           </Box>
@@ -285,7 +285,7 @@ const Footer = () => {
             <Typography
               className="footercontact bodyRegularText4"
               sx={{
-                color: "#1A1A1A",
+                color: "#FCFCFC",
                 fontSize: { xs: "14px", md: "17px" },
                 textAlign: { xs: "center", md: "left" }
               }}
@@ -295,7 +295,7 @@ const Footer = () => {
             <Typography
               className="footercontact bodyRegularText4"
               sx={{
-                color: "#1A1A1A",
+                color: "#FCFCFC",
                 fontSize: { xs: "14px", md: "17px" },
                 textAlign: { xs: "center", md: "right" }
               }}
