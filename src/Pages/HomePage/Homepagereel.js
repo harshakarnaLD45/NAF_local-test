@@ -1,20 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CloudVideo from '../../assets/Home/CloudVideo.mp4'
+import CloudVideo from '../../assets/Home/CloudVideo.mp4';
+import { MuteIcon, UnmuteIcon } from "../../Componenets/CustomIcons";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Homepagereel = () => {
   const videoContainerRef = useRef(null);
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+    }
+  };
 
   useEffect(() => {
     const videoContainer = videoContainerRef.current;
 
-    // Check if screen width is greater than 1024px
     if (window.innerWidth > 1024) {
-      // GSAP animation with timeline
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: videoContainer,
@@ -47,7 +55,6 @@ const Homepagereel = () => {
           ease: "power2.inOut",
         });
 
-      // Cleanup function
       return () => {
         tl.kill();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -63,24 +70,23 @@ const Homepagereel = () => {
         flexDirection: "column",
         alignItems: "center",
         overflowX: "hidden",
-        mt: '-80px'
+        mt: '-80px',
       }}
     >
-      {/* Video Container */}
       <Box
         ref={videoContainerRef}
-        classname="videobox"
+        className="videobox"
         sx={{
+          position: "relative",
           height: "auto",
           overflow: "hidden",
           borderRadius: "24px",
-          "@media (max-width: 1024px)": {
-            borderRadius: "9.495px",
-          },
-
           width: "93%",
           "@media (min-width: 1650px)": {
             width: "96%",
+          },
+          "@media (max-width: 1024px)": {
+            borderRadius: "9.495px",
           },
           "@media (max-width: 480px)": {
             borderRadius: "0px",
@@ -90,8 +96,37 @@ const Homepagereel = () => {
           marginRight: "auto",
         }}
       >
+        {/* Mute/Unmute Button */}
+        <Box
+          onClick={toggleMute}
+          sx={{
+            position: "absolute",
+            top: 16,
+            right: 16,
+            zIndex: 2,
+            width: 60,
+            height: 60,
+            padding: 2,
+            borderRadius: "50%",
+            backgroundColor: "rgba(255, 255, 255, 0.50)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            cursor: "pointer",
+            transition: "background-color 0.3s",
+          }}
+        >
+          {isMuted ? (
+            <MuteIcon sx={{ color: "#fff" }} />
+          ) : (
+            <UnmuteIcon sx={{ color: "#fff" }} />
+          )}
+        </Box>
+
+        {/* Video */}
         <video
-          muted
+          ref={videoRef}
+          muted={isMuted}
           autoPlay
           loop
           style={{
@@ -101,10 +136,7 @@ const Homepagereel = () => {
             borderRadius: "inherit",
           }}
         >
-          <source
-            src={CloudVideo}
-            type="video/mp4"
-          />
+          <source src={CloudVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Box>
