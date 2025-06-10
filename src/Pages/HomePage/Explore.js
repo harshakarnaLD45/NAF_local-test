@@ -5,13 +5,13 @@ import { FreeMode, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
-import Machine1 from '../../assets/Home/Machine1.png';
-import Machine2 from '../../assets/Home/Machine2.png';
-import Machine3 from '../../assets/Home/Machine3.png';
-import Machine4 from '../../assets/Home/Machine4.png';
-import Machine5 from '../../assets/Home/Machine5.png';
-import Machine6 from '../../assets/Home/Machine6.png';
-import Machine7 from '../../assets/Home/Machine7.png';
+import Machine1 from '../../assets/Home/Pizza-machine.png';
+import Machine2 from '../../assets/Home/Fries-machine.png';
+import Machine3 from '../../assets/Home/Ice-cream-machine.png';
+import Machine4 from '../../assets/Home/Cotton-candy-machine.png';
+import Machine5 from '../../assets/Home/Beer-machine.png';
+import Machine6 from '../../assets/Home/Return-machine.png';
+import Machine7 from '../../assets/Home/Gourmet-machine.png';
 
 import { useTranslation } from 'react-i18next';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
@@ -61,6 +61,7 @@ function Explore() {
       img: Machine7,
       name: t('machines.GourmetMachine'),
       button: 'Explore Combo',
+      alt: 'NAF Gourmet Vending Machine Delivering Fresh, High-Quality Food Options.',
       icons: [
         {
           src: Machine7SmallIcon1, positions: {
@@ -100,6 +101,7 @@ function Explore() {
       img: Machine1,
       name: t('machines.PizzaMachine'),
       button: 'Explore Pizza',
+      alt: 'NAF  Vending at Gas Stations & Rest Areas: 24/7 Convenience.',
       icons: [
         {
           src: MachineSmallIcon1, positions: {
@@ -152,7 +154,9 @@ function Explore() {
       ]
     },
     {
-      img: Machine3, name: t('machines.IceCreamMachine'), button: 'Explore Drinks', icons: [
+      img: Machine3, name: t('machines.IceCreamMachine'),
+      alt: 'NAF  Ice Cream Vending Machine: Delicious Frozen Treats On-Demand.',
+      button: 'Explore Drinks', icons: [
         {
           src: Machine3SmallIcon1, positions: {
             1500: { top: '60px', left: '20px' },
@@ -196,7 +200,8 @@ function Explore() {
       ]
     },
     {
-      img: Machine4, name: t('machines.CandyMachine'), button: 'Explore Snacks', icons: [
+      img: Machine4, name: t('machines.CandyMachine'),
+      alt: 'NAF  Candy Vending Machine: Sweet Treats and Snacks On-Demand.', button: 'Explore Snacks', icons: [
         {
           src: Machine4SmallIcon1, positions: {
             1500: { top: '360px', left: '0px' },
@@ -232,7 +237,8 @@ function Explore() {
       ]
     },
     {
-      img: Machine5, name: t('machines.BeerMachine'), button: 'Explore Ice Cream', icons: [
+      img: Machine5, name: t('machines.BeerMachine'),
+      alt: 'NAF  Beer Vending Machine: Convenient and Chilled Refreshments On-Demand.', button: 'Explore Ice Cream', icons: [
         {
           src: Machine5SmallIcon1, positions: {
             1500: { top: '360px', left: '290px' },
@@ -268,11 +274,13 @@ function Explore() {
       ]
     },
     {
-      img: Machine6, name: t('machines.ReturnMachine'), button: 'Return Machine', icons: [
+      img: Machine6, name: t('machines.ReturnMachine'),
+      alt: 'NAF  Automated Bowl Return Machine - Sustainable Vending Solution.', button: 'Return Machine', icons: [
 
       ]
     }, {
-      img: Machine2, name: t('machines.FriesMachine'), button: 'Explore Cotton',
+      img: Machine2, name: t('machines.FriesMachine'),
+      alt: 'NAF Germany Fries Vending Machine: Hot, Freshly Cooked Fries On-Demand.', button: 'Explore Cotton',
       icons: [
         {
           src: Machine2SmallIcon1, positions: {

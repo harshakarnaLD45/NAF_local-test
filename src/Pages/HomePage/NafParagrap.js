@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import FadeInParagraph from "./FadeInParagraph";
-import NafIcon from '../../assets/Home/naf icon.svg'
+import NafIcon from '../../assets/Home/naf-icon.svg'
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import CloudVideo from '../../assets/Home/CloudVideo.mp4';
+import CloudVideo from '../../assets/NAF-showreel.mp4';
 import { MuteIcon, UnmuteIcon } from "../../Componenets/CustomIcons";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -125,6 +125,7 @@ const Homepagereel = () => {
 
         {/* Video */}
         <video
+          aria-label="NAF Showreel - Innovative Vending Machines and Technology Solutions."
           ref={videoRef}
           muted={isMuted}
           autoPlay

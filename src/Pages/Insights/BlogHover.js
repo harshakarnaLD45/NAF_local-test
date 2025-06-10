@@ -1,6 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 import React, { useEffect, useRef } from "react";
-import whatarrow from "../../assets/Vector (2).png";
+import whatarrow from "../../assets/star.svg";
 import gsap from "gsap";
 import blogimage1 from '../../assets/Home/blog1.jpg';
 import blogimage2 from '../../assets/Home/blog2.jpg';

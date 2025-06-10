@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
-import Image1 from '../../assets/Machines/HoverImage1.png';
-import Image2 from '../../assets/Machines/HoverImage2.png';
-import Image3 from '../../assets/Machines/HoverImage3.png';
-import Image4 from '../../assets/Machines/HoverImage4.png';
-import Image5 from '../../assets/Machines/HoverImage5.png';
-import Image6 from '../../assets/Machines/HoverImage6.png';
+import Image1 from '../../assets/Machines/Custom-sizes-&-layouts.avif';
+import Image2 from '../../assets/Machines/Branding-&-graphics.avif';
+import Image3 from '../../assets/Machines/Specialized-dispensing.avif';
+import Image4 from '../../assets/Machines/Unique-storage-options.avif';
+import Image5 from '../../assets/Machines/Software-integration.avif';
+import Image6 from '../../assets/Machines/Custom-payments.avif';
 import { useTranslation } from 'react-i18next';
 
 const CustomVendingSection = () => {
     const { t } = useTranslation();
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const theme = useTheme();
 
     const items = [
-        { label: t('machines.CustomSizesLayouts'), image: Image1 },
-        { label: t('machines.BrandingGraphics'), image: Image2 },
-        { label: t('machines.SpecializedDispensing'), image: Image3 },
-        { label: t('machines.UniqueStorage'), image: Image4 },
-        { label: t('machines.SoftwareIntegration'), image: Image5 },
-        { label: t('machines.CustomPayments'), image: Image6 },
+        { label: t('machines.CustomSizesLayouts'), image: Image1, alt: 'NAF : Customizable Vending Machines with Flexible Sizes and Layouts.' },
+        { label: t('machines.BrandingGraphics'), image: Image2, alt: 'NAF : Enhance Brand Presence with Customized Vending Machines.' },
+        { label: t('machines.SpecializedDispensing'), image: Image3, alt: ' NAF  Vending: Solutions with Specialized and Reliable Dispensing.' },
+        { label: t('machines.UniqueStorage'), image: Image4, alt: 'NAF  Vending - Unique and Customizable Storage Solutions.' },
+        { label: t('machines.SoftwareIntegration'), image: Image5, alt: ' NAF  Vending: Software Integration for Effortless Management.' },
+        { label: t('machines.CustomPayments'), image: Image6, alt: 'NAF  Vending: Customizable Payment Options for Maximum Convenience.' },
     ];
     return (
         <Box className='section-container solutuons-sec'>
@@ -76,6 +75,7 @@ const CustomVendingSection = () => {
                                 position: 'absolute',
                                 inset: 0,
                                 backgroundImage: `url(${item.image})`,
+                                alt: item.alt,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 opacity: hoveredIndex === index ? 1 : 0,

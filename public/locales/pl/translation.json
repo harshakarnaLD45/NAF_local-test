@@ -313,6 +313,21 @@
         "TOUCH": "SIĘ Z NAMI",
         "softwareEnd": "KoniecOprogramowania"
     },
+    "insights": {
+        "heroTitle": "Blogi i Wglądy",
+        "Blog": "Blog",
+        "blogsfilter1": "Wszystkie",
+        "blogsfilter2": "Blogi",
+        "blogsfilter3": "Wydarzenia",
+        "blogsfilter4": "Wiadomości",
+        "Blogs": "Blogi",
+        "All": "Wszystkie",
+        "Events": "Wydarzenia",
+        "News": "Wiadomości",
+        "back": "Wstecz",
+        "next": "Dalej",
+        "tableContent": "Spis treści"
+    },
     "about": {
         "heroTitleline1": "JESTEŚMY",
         "heroSubTitleline": "Wiodący dostawca innowacyjnych rozwiązań w zakresie automatów sprzedających, zaangażowany w dostarczanie nowoczesnych produktów i usług odpowiadających zmieniającym się potrzebom konsumentów i firm.",
@@ -459,7 +474,7 @@
         "Gotaproject": "Masz projekt?",
         "Gotaproject1": " Chcesz ",
         "Gotaproject2": " współpracować?",
-        "subscrptionText":"Dostarczamy innowacyjne automaty vendingowe z płynną technologią i designem. Zasubskrybuj, aby dowiedzieć się jak.",
+        "subscrptionText": "Dostarczamy innowacyjne automaty vendingowe z płynną technologią i designem. Zasubskrybuj, aby dowiedzieć się jak.",
         "footerContact": "Kontakt",
         "footergetIn": "SKONTAKTUJ SIĘ",
         "footertouch": "Z NAMI",

@@ -4,7 +4,7 @@ import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
-import CloudVideo from '../../assets/Home/NAF Cloud System.mp4'
+import CloudVideo from '../../assets/Home/NAF-cloud-system.mp4'
 import { useParams } from 'react-router-dom';
 
 const TakeControl = () => {
@@ -83,6 +83,7 @@ const TakeControl = () => {
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
           <video
             src={CloudVideo}
+            aria-label='NAF  Cloud System: Manage Your Vending Network with Ease.'
             autoPlay
             muted
             loop

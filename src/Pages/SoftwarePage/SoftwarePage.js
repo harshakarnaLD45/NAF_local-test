@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import softwareHeroImg from '../../assets/software/software_hero-svg.svg'
+import softwareHeroImg from '../../assets/software/software-hero-svg.svg'
 import { Box, Typography } from '@mui/material'
 import './SoftwarePage.css';
 import GridsSection from './GridsSection';
@@ -39,7 +39,7 @@ function SoftwarePage() {
                     </Typography>
                 </Box>
                 <Box>
-                    <img className='software-hero-img' src={softwareHeroImg} alt="Software Hero Image" />
+                    <img className='software-hero-img' src={softwareHeroImg} alt="NAF : Streamline Vending Operations with Our Innovative Software." />
                 </Box>
             </Box>
 

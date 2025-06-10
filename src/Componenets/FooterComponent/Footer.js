@@ -1,16 +1,15 @@
 import { Box, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import "./Footer.css";
-import Facebook from '../../assets/Social Icons.png';
-import Twitter from '../../assets/Social Icons (1).png';
-import Instagram from '../../assets/Social Icons (2).png';
-import LinkedIn from '../../assets/Social Icons (3).png';
-import YouTube from '../../assets/Social Icons (4).png';
+import Facebook from '../../assets/facebook.svg';
+import Instagram from '../../assets/Instagram.svg';
+import LinkedIn from '../../assets/Linkedin.svg';
+import YouTube from '../../assets/Youtube.svg';
 import AnimateButton from "../CommonComponents/AnimateButton";
-import FooterLogo from '../../assets/FooterLogo.svg'
+import FooterLogo from '../../assets/Foote-logo.svg'
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import FooterVideo from '../../assets/footer video.mp4'
+import FooterVideo from '../../assets/naf-footer-video.mp4'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -28,11 +27,10 @@ const Footer = () => {
   };
 
   const socialIcons = [
-    { src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
-    // { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
-    { src: Instagram, name: "Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
-    { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
-    { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
+    { src: Facebook, name: "NAF Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
+    { src: Instagram, name: "NAF Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
+    { src: LinkedIn, name: "NAF LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
+    { src: YouTube, name: "NAF YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
   ];
 
   return (
@@ -113,6 +111,7 @@ const Footer = () => {
                 <Box
                   component="video"
                   src={FooterVideo}
+                  aria-label="NAF Founders: Odette Lamkhizni and Abdelilah Lamkhizni."
                   autoPlay
                   loop
                   muted

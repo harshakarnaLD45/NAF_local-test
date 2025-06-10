@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import arrowicon from "../../../assets/Frame 124.png";
+import arrowicon from "../../../assets/Arrow 2.svg";
 import "./Menu.css";
 import Unlock from "./Unlock";
 import VMMenu from "./VMMenu";

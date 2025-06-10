@@ -15,7 +15,8 @@ import GradientMaskText from '../../Componenets/CommonComponents/GradientMaskTex
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import VendImg from '../../assets/Home/Machine7.png'
+import VendImg from '../../assets/Home/Gourmet-machine.png'
+import CookieSettingsButton from './CookieSettingsButton';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -38,7 +39,7 @@ const HomePage = () => {
         <meta name="robots" content="index, follow" />
         <html lang="en" />
       </Helmet>
-
+      {/* <CookieSettingsButton /> */}
       <Box className='main-container'>
         <Box>
           <GradientMaskText />
@@ -64,7 +65,7 @@ const HomePage = () => {
           <Box
             component="img"
             src={VendImg}
-            alt="naf-vending"
+            alt="NAF Gourmet Vending Machine Delivering Fresh, High-Quality Food Options."
             sx={{
               width: { xs: "80%", sm: "60%", md: "40%" },
               height: "auto",

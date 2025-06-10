@@ -6,11 +6,11 @@ import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHea
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 
-import Video1 from '../../assets/Home/testmonials/1.mp4';
-import Video2 from '../../assets/Home/testmonials/2.mp4';
-import Video3 from '../../assets/Home/testmonials/3.mp4';
-import Video4 from '../../assets/Home/testmonials/4.mp4';
-import Video5 from '../../assets/Home/testmonials/5.mp4';
+import Video1 from '../../assets/Home/Testimonials/Testimonial_video (1).mp4';
+import Video2 from '../../assets/Home/Testimonials/Testimonial_video (2).mp4';
+import Video3 from '../../assets/Home/Testimonials/Testimonial_video (3).mp4';
+import Video4 from '../../assets/Home/Testimonials/Testimonial_video (4).mp4';
+import Video5 from '../../assets/Home/Testimonials/Testimonial_video (5).mp4';
 
 const TestimonialCard = ({ text, author }) => (
   <Box
@@ -92,7 +92,7 @@ const TestimonialCard = ({ text, author }) => (
 //   );
 // };
 
-const TestimonialVideoCard = ({ videoSrc }) => {
+const TestimonialVideoCard = ({ videoSrc,ariaLabel }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -130,6 +130,7 @@ const TestimonialVideoCard = ({ videoSrc }) => {
     >
       <video
         ref={videoRef}
+        aria-label={ariaLabel}
         src={videoSrc}
         loop
         muted={muted}
@@ -170,11 +171,11 @@ const Testimonials = () => {
       text: t('Home.testimonial2.text'),
       author: t('Home.testimonial2.author'),
     },
-    { videoSrc: Video1 },
-    { videoSrc: Video2 },
-    { videoSrc: Video3 },
-    { videoSrc: Video4 },
-    { videoSrc: Video5 },
+    { videoSrc: Video1, ariaLabel: "NAF Client Testimonial - Improved Employee Satisfaction with Vending Machines", },
+    { videoSrc: Video2, ariaLabel: "NAF Vending - Testimonial: Increased Revenue with Smart Machines", },
+    { videoSrc: Video3, ariaLabel: "NAF Vending - Testimonial: Streamlined Operations with Cloud Management", },
+    { videoSrc: Video4, ariaLabel: "NAF Vending - Testimonial: Reliable Vending Solutions and Support", },
+    { videoSrc: Video5, ariaLabel: "NAF Vending - Testimonial: Modern and Customizable Vending Experience", },
   ];
 
   return (
@@ -203,7 +204,7 @@ const Testimonials = () => {
               }}
             >
               {item.videoSrc ? (
-                <TestimonialVideoCard videoSrc={item.videoSrc} />
+                <TestimonialVideoCard videoSrc={item.videoSrc} ariaLabel={item.ariaLabel} />
               ) : (
                 <TestimonialCard text={item.text} author={item.author} />
               )}

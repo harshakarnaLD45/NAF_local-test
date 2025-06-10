@@ -3,11 +3,10 @@ import Calendly from './calendly';
 import './ContactPage.css'
 import { Alert, Box, Grid, Radio, Snackbar, Stack, TextField, Typography } from '@mui/material'
 import { Location, Contactmail, Contactphone } from "../../Componenets/CustomIcons"
-import Facebook from '../../assets/Social Icons.png';
-import Twitter from '../../assets/Social Icons (1).png';
-import Instagram from '../../assets/Social Icons (2).png';
-import LinkedIn from '../../assets/Social Icons (3).png';
-import YouTube from '../../assets/Social Icons (4).png';
+import Facebook from '../../assets/facebook.svg';
+import Instagram from '../../assets/Instagram.svg';
+import LinkedIn from '../../assets/Linkedin.svg';
+import YouTube from '../../assets/Youtube.svg';
 import Button from '@mui/material/Button';
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import { FormControlLabel, Link, } from '@mui/material';
@@ -15,9 +14,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import Picture1 from '../../assets/About/Person1.png'
-import Picture2 from '../../assets/About/Person2.png'
-import Picture3 from '../../assets/About/Person3.png'
+import Picture1 from '../../assets/About/Odette-lamkhizni.png'
+import Picture2 from '../../assets/About/Abdelilah-lamkhizni.png'
+import Picture3 from '../../assets/About/Sri-satya-sai-kanna-dhulipudi.png'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
@@ -282,19 +281,19 @@ function ContactPage() {
             title: t('contactus.personrole1'),
             name: 'Odette Lamkhizni',
             image: Picture1,
-            alt: 'Marketing Contact',
+            alt: 'Odette Lamkhizni, NAF Owner - Driving Vending Innovation and Quality.',
         },
         {
             title: t('contactus.personrole2'),
             name: 'Abdelilah Lamkhizni',
             image: Picture2,
-            alt: 'Sales Contact',
+            alt: 'Abdelilah Lamkhizni, NAF Owner - Passionate about Customer Experience.',
         },
         {
             title: t('contactus.personrole3'),
             name: 'Sri Satya Sai Kanna Dhulipudi',
             image: Picture3,
-            alt: 'Technical Contact',
+            alt: 'Sri Satya Sai Kanna Dhulipudi, CTO at NAF - Technical Expertise.',
         },
     ];
 
@@ -314,12 +313,12 @@ function ContactPage() {
     }, [activeCategory]);
 
     const socialIcons = [
-        { src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
-        // { src: Twitter, name: "Twitter", url: "https://twitter.com/yourcompany" },
-        { src: Instagram, name: "Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
-        { src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
-        { src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
+        { alt: "NAF  Facebook ", src: Facebook, name: "Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
+        { alt: "NAF  Instagram ", src: Instagram, name: "Instagram", url: "https://www.instagram.com/nafbygasthofhalsbach/" },
+        { alt: "NAF  LinkedIn ", src: LinkedIn, name: "LinkedIn", url: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/" },
+        { alt: "NAF  YouTube ", src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
     ];
+
 
     return (
         <Box>

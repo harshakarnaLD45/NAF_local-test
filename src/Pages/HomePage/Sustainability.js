@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Box, List, ListItem, ListItemText, Typography } from '@mui/material';
 import gsap from 'gsap';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
-import SustainabilityBgImg from '../../assets/Home/background.svg'
+import SustainabilityBgImg from '../../assets/Home/sustainablity-background.svg'
 import { SustainabilityIcon1, SustainabilityIcon2, SustainabilityIcon3, SustainabilityIcon4, SustainabilityIcon5 } from '../../Componenets/CustomIcons';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';

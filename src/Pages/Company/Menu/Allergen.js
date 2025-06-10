@@ -58,7 +58,7 @@ export default function Allergen() {
                         <Box
                             component="img"
                             src={src}
-                            alt={`Allergen chart ${index + 1}`}
+                            alt="NAF : Allergen Information Chart for Moroccan and German Dishes."
                             sx={{
                                 width: '100%',
                                 height: '100%',

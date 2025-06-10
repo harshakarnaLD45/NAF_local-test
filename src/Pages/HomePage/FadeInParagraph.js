@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import OdetteVideo from '../../assets/Home/1.mp4'
-import AbdelilahVideo from '../../assets/Home/2.mp4'
-import SaiVideo from '../../assets/Home/3.mp4'
+import OdetteVideo from '../../assets/Home/Odette-lamkhizni.mp4'
+import AbdelilahVideo from '../../assets/Home/Abdelilah-lamkhizni.mp4'
+import SaiVideo from '../../assets/Home/Sri-satya-sai kanna-dhulipudi.mp4'
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -2,9 +2,9 @@ import React from "react";
 import { LinkedInIcon } from "../../../Componenets/CustomIcons";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import PersonImage1 from '../../../assets/About/Person1.png';
-import PersonImage2 from '../../../assets/About/Person2.png';
-import PersonImage3 from '../../../assets/About/Person3.png';
+import PersonImage1 from '../../../assets/About/Odette-lamkhizni.png';
+import PersonImage2 from '../../../assets/About/Abdelilah-lamkhizni.png';
+import PersonImage3 from '../../../assets/About/Sri-satya-sai-kanna-dhulipudi.png';
 
 function TeamSection() {
     const { t } = useTranslation();
@@ -14,6 +14,7 @@ function TeamSection() {
             name: 'Odette Lamkhizni',
             position: 'CEO',
             color: "#E7F9DC",
+            alt:"Odette Lamkhizni, NAF Owner - Driving Vending Innovation and Quality.",
             linkedin: "https://www.linkedin.com/in/odette-lamkhizni-42a241251/",
             image: PersonImage1,
         },
@@ -23,6 +24,7 @@ function TeamSection() {
             color: "#FEB6A2",
             linkedin: "https://www.linkedin.com/in/abdelilah-lamkhizni-110864291",
             image: PersonImage2,
+            alt:"Abdelilah Lamkhizni, NAF Owner - Passionate about Customer Experience.",
         },
         {
             name: 'Sri Satya Sai Kanna Dhulipudi',
@@ -30,6 +32,7 @@ function TeamSection() {
             color: "#94CDFF",
             linkedin: "https://www.linkedin.com/in/sri-satya-sai-kanna-dhulipudi-31676617b/",
             image: PersonImage3,
+            alt:"Sri Satya Sai Kanna Dhulipudi, CTO at NAF  - Technical Expertise.",
         },
     ];
 
@@ -66,7 +69,7 @@ function TeamSection() {
                         <Box
                             component="img"
                             src={member.image}
-                            alt={member.name}
+                            alt={member.alt}
                             sx={{
                                 width: '100%',
                                 // height: { xs: 220, sm: 250, md: 300 },

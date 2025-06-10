@@ -4,7 +4,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-import CardImage from '../../../assets/About/card.svg'
+import CardImage from '../../../assets/About/membership-card.svg'
 import AnimateButton from "../../../Componenets/CommonComponents/AnimateButton";
 import { useTranslation } from "react-i18next";
 
@@ -44,7 +44,7 @@ const Unlock = () => {
             <Box
               component="img"
               src={CardImage}
-              alt="Membership Card"
+              alt="NAF Membership Card - Enjoy Exclusive Benefits and Faster Checkout."
               sx={{
                 width: "100%",
                 maxWidth: 577,

@@ -12,12 +12,12 @@ import {
 } from '@mui/material';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import CustomTextField from './MantaincePage/CustomTextField';
-import Service1 from '../../assets/Machines/Service1.png'
-import Service2 from '../../assets/Machines/Service2.png'
-import Service3 from '../../assets/Machines/Service3.png'
-import Service4 from '../../assets/Machines/Service4.png'
-import Service5 from '../../assets/Machines/Service5.png'
-import Service6 from '../../assets/Machines/Service6.png'
+import Service1 from '../../assets/Machines/how-it-works-1.png'
+import Service2 from '../../assets/Machines/how-it-works-2.png'
+import Service3 from '../../assets/Machines/how-it-works-3.png'
+import Service4 from '../../assets/Machines/benefits-1.png'
+import Service5 from '../../assets/Machines/benefits-2.png'
+import Service6 from '../../assets/Machines/benefits-3.png'
 import CustomSelect from './MantaincePage/CustomSelect';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
@@ -76,6 +76,17 @@ function PartnersForm() {
         updater((prev) => ({ ...prev, [name]: checked }));
     };
 
+    const altTextHowItWorks = [
+        "Find NAF  Vending Machines Near You: Easy Location Finder.",
+        "Enjoy Freshly Brewed Coffee and Beverages with NAF  Vending.",
+        "NAF  Vending Machines: Convenient Access to Food for Everyone.",
+
+    ];
+    const altTextBenefits = [
+        "NAF Vending: Maximize Revenue and Optimize Operations.",
+        "NAF Vending: Convenient and Reliable Food Access for Employees.",
+        "NAF : Scalable and Secure Cloud Solutions for Your Vending Business.",
+    ];
     const validateTab0 = () => {
         if (!formTab0.companyName.trim()) {
             showSnackbar(t('validation.companyNameRequired'), 'error');
@@ -247,7 +258,7 @@ function PartnersForm() {
                                         flex: { xs: '1 1 100%', sm: '1 1 calc(33.333% - 16px)' }, // ✅ 3 per row on sm+, full width on xs
                                     }}
                                 >
-                                    <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
+                                    <img src={img} alt={altTextHowItWorks[index]} style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography className='bodyRegularText3' sx={{ mt: 1 }} color='#C2C2C4'>
                                         {[
                                             t('machines.HowitWorktext1'),
@@ -348,7 +359,7 @@ function PartnersForm() {
                                         flex: { xs: '1 1 100%', sm: '1 1 calc(33.333% - 16px)' }, // ✅ 3 per row on sm+, full width on xs
                                     }}
                                 >
-                                    <img src={img} alt='service' style={{ maxWidth: '100%', height: 'auto' }} />
+                                    <img src={img} alt={altTextBenefits[index]} style={{ maxWidth: '100%', height: 'auto' }} />
                                     <Typography className='bodyRegularText3' sx={{ mt: 1 }} color='#C2C2C4'>
                                         {[
                                             t('machines.WhatsInyoupoint1'),

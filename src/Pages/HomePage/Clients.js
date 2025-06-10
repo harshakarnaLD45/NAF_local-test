@@ -3,15 +3,22 @@ import React from "react";
 import ScrollMaskText from "../../Componenets/CommonComponents/ScrollMaskText";
 import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 import { useTranslation } from "react-i18next";
-import Client1 from '../../assets/Home/Client1.svg';
-import Client2 from '../../assets/Home/Client2.svg';
-import Client3 from '../../assets/Home/Client3.svg';
-import Client4 from '../../assets/Home/Client4.svg';
-import Client5 from '../../assets/Home/Client5.svg';
-import Client6 from '../../assets/Home/Client6.svg';
+import Client1 from '../../assets/Home/Logo-Transgourmet.svg';
+import Client2 from '../../assets/Home/Logo-WEPA.svg';
+import Client3 from '../../assets/Home/Logo-dbi.svg';
+import Client4 from '../../assets/Home/Logo-gizef.svg';
+import Client5 from '../../assets/Home/Logo-hif.svg';
+import Client6 from '../../assets/Home/Logo-mittelsachsen.svg';
 
 const logos = [Client1, Client2, Client3, Client4, Client5, Client6];
-
+const altTexts = [
+  "Client 1 AI Vending Solutions",
+  "Client 2 Gourmet Automation",
+  "Client 3 Smart Food Machines",
+  "Client 4 Intelligent Dispensing",
+  "Client 5 Tech-Enabled Retail",
+  "Client 6 Innovative Vending Kiosks",
+];
 const Clients = () => {
   const { t } = useTranslation();
 
@@ -52,7 +59,7 @@ const Clients = () => {
             >
               <img
                 src={src}
-                alt={`logo-${index}`}
+                alt={altTexts[index]}
                 style={{
                   height: "auto",
                   objectFit: "contain",

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Box, MenuItem, Select, Typography } from '@mui/material';
 
-import MachineImage1 from '../../assets/Home/Machine1.png';
-import MachineImage2 from '../../assets/Home/Machine2.png';
-import MachineImage3 from '../../assets/Home/Machine3.png';
-import MachineImage4 from '../../assets/Home/Machine4.png';
-import MachineImage5 from '../../assets/Home/Machine5.png';
-import MachineImage6 from '../../assets/Home/Machine6.png';
-import MachineImage7 from '../../assets/Home/Machine7.png';
+import MachineImage1 from '../../assets/Home/Pizza-machine.png';
+import MachineImage2 from '../../assets/Home/Fries-machine.png';
+import MachineImage3 from '../../assets/Home/Ice-cream-machine.png';
+import MachineImage4 from '../../assets/Home/Cotton-candy-machine.png';
+import MachineImage5 from '../../assets/Home/Beer-machine.png';
+import MachineImage6 from '../../assets/Home/Return-machine.png';
+import MachineImage7 from '../../assets/Home/Gourmet-machine.png';
 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';

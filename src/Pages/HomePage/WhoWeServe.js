@@ -1,11 +1,11 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import hotel from '../../assets/Home/Serve1.png';
-import gasStation from '../../assets/Home/Serve3.png';
-import school from '../../assets/Home/Serve5.png';
-import office from '../../assets/Home/Serve2.png';
-import events from '../../assets/Home/Serve4.png';
-import publicPic from '../../assets/Home/Serve6.png';
+import hotel from '../../assets/Home/Hotels-&-restaurants.avif';
+import gasStation from '../../assets/Home/Gas-stations-&-rest-areas.avif';
+import school from '../../assets/Home/Schools-&-universities.avif';
+import office from '../../assets/Home/Companies-&-factories.avif';
+import events from '../../assets/Home/Events-&-festivals.avif';
+import publicPic from '../../assets/Home/Municipalities-&-public-authorities.avif';
 import ScrollMaskText from '../../Componenets/CommonComponents/ScrollMaskText';
 import ScrollMaskHeadings from '../../Componenets/CommonComponents/ScrollMaskHeadings';
 import { useTranslation } from 'react-i18next';
@@ -17,34 +17,39 @@ const WhoWeServe = () => {
             id: 1,
             title: t('Home.hotelsRestaurants'),
             image: hotel,
+            alt: 'NAF  Vending at Hotels & Restaurants: 24/7 Guest Convenience.',
         },
         {
             id: 2,
             title: t('Home.gasRoadsideRestaurants'),
             image: gasStation,
+            alt: 'NAF  Vending at Gas Stations & Rest Areas: Refreshments On the Go.',
         },
         {
             id: 3,
             title: t('Home.schoolsUniversities'),
             image: school,
+            alt: "NAF  Vending for Schools & Universities: Fueling Students' Success.",
         },
-
     ];
     const serveCards2 = [
         {
             id: 1,
             title: t('Home.companiesFactories'),
             image: office,
+            alt: 'NAF  Vending for Companies & Factories: Convenient Employee Refreshments.',
         },
         {
             id: 2,
             title: t('Home.eventsFestivals'),
             image: events,
+            alt: 'NAF  Vending at Events & Festivals: Refreshments for Every Occasion.',
         },
         {
             id: 3,
             title: t('Home.municipalitiesPublic'),
             image: publicPic,
+            alt: 'NAF  Vending for Municipalities & Public Authorities: Accessible to All.',
         },
     ];
 

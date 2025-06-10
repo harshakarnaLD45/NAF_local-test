@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import CloudMigration from '../../assets/software/cloudMigration.svg'
-import CloudSecurity from '../../assets/software/Cloud_Security.svg'
-import CustomCloudSolutions from '../../assets/software/Custom_CloudSolutions.svg'
-import CloudOptimization from '../../assets/software/Cloud_Optimization.svg'
-import ManagedCloudServices from '../../assets/software/Managed_CloudServices.svg'
+import CloudMigration from '../../assets/software/Clou-migration.svg'
+import CloudSecurity from '../../assets/software/Cloud-security.svg'
+import CustomCloudSolutions from '../../assets/software/Custom-cloudSolutions.svg'
+import CloudOptimization from '../../assets/software/Cloud-optimization.svg'
+import ManagedCloudServices from '../../assets/software/Managed-cloudServices.svg'
 import { useTranslation } from 'react-i18next';
 
 const ExpertiseSection = () => {

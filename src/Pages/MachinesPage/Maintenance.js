@@ -56,7 +56,7 @@ const Maintenance = () => {
 
         {/* Right Image Section */}
         <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end', zIndex: 1 }}>
-          <Box component="img" src={MaintainceImage} alt="Dashboard Preview" sx={{ width: '100%', maxWidth: '800px' }} />
+          <Box component="img" src={MaintainceImage} alt="NAF : Expert Vending Machine Maintenance for Reliability and Uptime." sx={{ width: '100%', maxWidth: '800px' }} />
         </Box>
       </Box>
     </Box>

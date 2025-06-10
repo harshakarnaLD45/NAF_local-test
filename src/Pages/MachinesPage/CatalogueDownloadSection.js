@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import catalogueImage from "../../assets/catalogue.png";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
-import CATPDF from '../../assets/Machines/NAF Automaten Catalogue (210 x 297 mm).pdf';
+import CATPDF from '../../assets/Machines/NAF-automaten-catalogue.pdf';
 
 const CatalogueDownloadSection = () => {
     const theme = useTheme();

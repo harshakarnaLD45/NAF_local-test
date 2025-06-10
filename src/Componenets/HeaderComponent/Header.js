@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Box, Menu, MenuItem } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import Naflogo from '../../assets/naf-halsbach_logo 1.png';
-import MenuIcons from '../../assets/Menu_icon.png';
+import MenuIcons from '../../assets/Menu-icon.png';
 import './Header.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
-import NafLogoGif from '../../assets/NAF Json 2.json'
+import NafLogoGif from '../../assets/naf-logo-json.json'
 import Lottie from "lottie-react";
 
 const Header = () => {
@@ -245,11 +244,11 @@ const Header = () => {
                     backgroundSize: '25px',
                   }}
                 >
-                  <option value="de" className='bodyRegularText3'>DEU</option>
-                  <option value="en" className='bodyRegularText3'>ENG</option>
-                  <option value="fr" className='bodyRegularText3'>FRA</option>
-                  <option value="es" className='bodyRegularText3'>ESP</option>
-                  <option value="pl" className='bodyRegularText3'>POL</option>
+                  <option value="de" className='bodyRegularText3'>Deutsch</option>
+                  <option value="en" className='bodyRegularText3'>English</option>
+                  <option value="fr" className='bodyRegularText3'>Français</option>
+                  <option value="es" className='bodyRegularText3'>Español</option>
+                  <option value="pl" className='bodyRegularText3'>Polski</option>
                 </select>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>

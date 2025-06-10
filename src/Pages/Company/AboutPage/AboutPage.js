@@ -11,7 +11,7 @@ import NAF1Image from '../../../assets/About/NAF1.svg'
 import NAF2Image from '../../../assets/About/NAF2.svg'
 import NAF3Image from '../../../assets/About/NAF3.svg'
 import { motion } from 'framer-motion';
-import SmallVideo from '../../../assets/footer video.mp4'
+import SmallVideo from '../../../assets/NAF-showreel.mp4'
 import AboutGrid from './AboutGrid';
 import { Helmet } from 'react-helmet';
 
@@ -48,9 +48,9 @@ function AboutPage() {
                     }}
                 >
                     {[
-                        { src: NAF1Image, alt: 'N' },
-                        { src: NAF2Image, alt: 'A' },
-                        { src: NAF3Image, alt: 'F' }
+                        { src: NAF1Image, alt: ' NAF Logo - Silver Balloon Letters on a Black Background.' },
+                        { src: NAF2Image, alt: ' NAF Logo - Silver Balloon Letters on a Black Background.' },
+                        { src: NAF3Image, alt: ' NAF Logo - Silver Balloon Letters on a Black Background.' }
                     ].map((img, index) => (
                         <motion.img
                             key={index}
@@ -124,6 +124,7 @@ function AboutPage() {
                     >
                         <video
                             src={SmallVideo}
+                            aria-label='NAF Logo - Silver Balloon Letters on a Black Background.'
                             autoPlay
                             muted
                             loop

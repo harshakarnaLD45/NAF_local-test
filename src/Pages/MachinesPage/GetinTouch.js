@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import NafIcon1 from '../../assets/Machines/Vector.svg'
-import Suitlady from '../../assets/Machines/IMAGE.svg'
+import NafIcon1 from '../../assets/star.svg'
+import Suitlady from '../../assets/Machines/Odette-lamkhizni.svg'
 import { useTranslation } from "react-i18next";
 
 const GetinTouch = () => {

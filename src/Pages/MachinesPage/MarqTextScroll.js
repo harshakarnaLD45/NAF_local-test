@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-import NafIcon from '../../assets/Home/naf icon1.svg'
+import NafIcon from '../../assets/Home/naf-icon.svg'
 import { useTranslation } from "react-i18next";
 
 const MarqTextScroll = () => {

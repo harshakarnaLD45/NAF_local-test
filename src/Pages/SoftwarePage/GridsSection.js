@@ -3,17 +3,17 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Box, Typography } from '@mui/material';
-import SoftwareSystemIcon1 from '../../assets/software/SoftwareSystemIcon1.svg';
-import SoftwareSystemIcon2 from '../../assets/software/SoftwareSystemIcon2.svg';
-import SoftwareSystemIcon3 from '../../assets/software/SoftwareSystemIcon3.svg';
-import SoftwareSystemIcon4 from '../../assets/software/SoftwareSystemIcon4.svg';
-import SoftwareSystemIcon5 from '../../assets/software/SoftwareSystemIcon5.svg';
-import SoftwareSystemIcon6 from '../../assets/software/SoftwareSystemIcon6.svg';
-import SoftwareSystemIcon7 from '../../assets/software/SoftwareSystemIcon7.svg';
+import SoftwareSystemIcon1 from '../../assets/software/Real-time-sales-analytics.svg';
+import SoftwareSystemIcon2 from '../../assets/software/Intelligent-inventory-management.svg';
+import SoftwareSystemIcon3 from '../../assets/software/Targeted-advertising-capabilities.svg';
+import SoftwareSystemIcon4 from '../../assets/software/Remote-machine-monitoring.svg';
+import SoftwareSystemIcon5 from '../../assets/software/Customer-relationship-management.svg';
+import SoftwareSystemIcon6 from '../../assets/software/Automated-tax-reporting.svg';
+import SoftwareSystemIcon7 from '../../assets/software/Secure-insfrastructure.svg';
 import { useTranslation } from 'react-i18next';
 
 const GridsSection = () => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
 
     const Item = styled(Paper)(({ theme }) => ({
@@ -31,7 +31,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon1} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon1} className='soft-ware-icon' alt='NAF : Real-Time Vending Machine Sales Analytics - Boost Profits.' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} > {t('software.bentoTitle1')}</Typography>
@@ -42,7 +42,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={8}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec " >
-                            <img src={SoftwareSystemIcon2} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon2} className='soft-ware-icon' alt='NAF : Intelligent Vending Machine Inventory Management - Reduce' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle2')}</Typography>
@@ -57,7 +57,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={6}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon3} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon3} className='soft-ware-icon' alt='NAF Vending Machines: Targeted Advertising for Increased Product' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle3')}</Typography>
@@ -65,14 +65,14 @@ const GridsSection = () => {
                                 color: '#C2C2C4', textAlign: 'left',
                                 maxWidth: '720px'
                             }}>
-                               {t('software.bentoSubTitle3')}</Typography>
+                                {t('software.bentoSubTitle3')}</Typography>
                         </Box>
                     </Item>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon4} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon4} className='soft-ware-icon' alt='NAF Cloud: Real-Time Vending Machine Remote Monitoring.' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle4')}</Typography>
@@ -86,7 +86,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec" >
-                            <img src={SoftwareSystemIcon5} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon5} className='soft-ware-icon' alt='NAF : Optimize Customer Relationships with Vending Machine Management.' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle5')}</Typography>
@@ -97,7 +97,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon6} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon6} className='soft-ware-icon' alt='NAF Vending: Simplified Tax Reporting and Automated Financial Data.' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle6')}</Typography>
@@ -112,7 +112,7 @@ const GridsSection = () => {
                 <Grid item xs={12} sm={6} lg={4}>
                     <Item className='bentogrid-item'>
                         <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon7} className='soft-ware-icon' alt='software' />
+                            <img src={SoftwareSystemIcon7} className='soft-ware-icon' alt='NAF Vending: Secure Cloud Infrastructure Protects Your Vending Data.' />
                         </Box>
                         <Box className="bentogrid-text-sec">
                             <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle7')}</Typography>

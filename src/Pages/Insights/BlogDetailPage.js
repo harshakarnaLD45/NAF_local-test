@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const BlogPage = ({
   title,
@@ -21,6 +22,7 @@ const BlogPage = ({
 }) => {
   const [activeSection, setActiveSection] = useState(1);
   const sectionRefs = useRef([]);
+  const {t} = useTranslation()
 
   const handleSectionClick = (id) => {
     setActiveSection(id);
@@ -56,9 +58,9 @@ const BlogPage = ({
       </Typography>
 
       <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 3, mb: 3 }}>
-        <Typography className="bodyRegularText4" sx={{ color: "#C2C2C4" }}>
+        {/* <Typography className="bodyRegularText4" sx={{ color: "#C2C2C4" }}>
           {readTime}
-        </Typography>
+        </Typography> */}
         <img src={dateIcon} alt="Date Icon" />
         <Typography className="bodyRegularText4" sx={{ color: "#C2C2C4" }}>
           {date}
@@ -72,7 +74,7 @@ const BlogPage = ({
         <Grid item xs={12} md={3}>
           <Box sx={{ position: "sticky", top: 20 }}>
             <Typography variant="caption" className="bodyRegularText5" sx={{ color: "#C2C2C4", mb: 2 }}>
-              Table of Contents
+              {t('insights.tableContent')}
             </Typography>
             <List sx={{ p: 0 }}>
               {tableOfContents.map((item, index) => (
