@@ -5,19 +5,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Box, Typography, IconButton } from '@mui/material';
-import Allergen1 from '../../../assets/About/Menu/Allergen1.svg'
-import Allergen2 from '../../../assets/About/Menu/Allergen2.svg'
-import Allergen3 from '../../../assets/About/Menu/Allergen3.svg'
-import Allergen4 from '../../../assets/About/Menu/Allergen4.svg'
-import Allergen5 from '../../../assets/About/Menu/Allergen5.svg'
-import Allergen6 from '../../../assets/About/Menu/Allergen6.svg'
-import Allergen7 from '../../../assets/About/Menu/Allergen7.svg'
+import Menu1 from '../../../assets/About/Menu/Juni 2025.svg'
+import Menu2 from '../../../assets/About/Menu/Juli 2025.svg'
 import EastIcon from '@mui/icons-material/East';
 import { useTranslation } from 'react-i18next';
 
-const allergenImages = [Allergen1, Allergen2, Allergen3, Allergen4, Allergen5, Allergen6, Allergen7];
+const allergenImages = [Menu1, Menu2];
 
-export default function Allergen() {
+export default function MonthlyMenu() {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const { t } = useTranslation();
@@ -26,7 +21,7 @@ export default function Allergen() {
         <Box sx={{ position: 'relative', pr: 0 }} className='section-container' >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
                 <Typography variant="h4" className='headings-h2'>
-                    {t('menu.Allergene')}
+                    {t('menu.monthlyMenu')}
                 </Typography>
 
                 {/* Arrows at the Top-Right */}
@@ -43,7 +38,7 @@ export default function Allergen() {
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={30}
-                slidesPerView="auto"
+                slidesPerView={1}
                 navigation={{
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
@@ -59,15 +54,15 @@ export default function Allergen() {
                 {allergenImages.map((src, index) => (
                     <SwiperSlide
                         key={index}
-                        style={{ width: 'auto', maxWidth: '1200px' }} // 👈 or set a fixed width like '250px'
+                        // style={{ width: 'auto', maxWidth: '1200px' }} // 👈 or set a fixed width like '250px'
                     >
                         <Box
                             component="img"
                             src={src}
                             alt="NAF : Allergen Information Chart for Moroccan and German Dishes."
                             sx={{
-                                width: '100%',
-                                height: '100%',
+                                width: '95%',
+                                height: 'auto',
                                 borderRadius: 2,
                                 boxShadow: 2,
                             }}

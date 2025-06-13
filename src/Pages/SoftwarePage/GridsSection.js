@@ -14,7 +14,15 @@ import { useTranslation } from 'react-i18next';
 
 const GridsSection = () => {
     const { t } = useTranslation();
+    const [openImage, setOpenImage] = React.useState(null); // to track clicked image
 
+    const handleImageClick = (src) => {
+        setOpenImage(src);
+    };
+
+    const handleOverlayClick = () => {
+        setOpenImage(null);
+    };
 
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: '#1A2027',
@@ -25,107 +33,95 @@ const GridsSection = () => {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
     }));
 
+    const renderGridItem = (icon, titleKey, subTitleKey, altText) => (
+        <Item className='bentogrid-item'>
+            <Box className="bentogrid-image-sec" onClick={() => handleImageClick(icon)} style={{ cursor: 'pointer' }}>
+                <img src={icon} className='soft-ware-icon' alt={altText} />
+            </Box>
+            <Box className="bentogrid-text-sec">
+                <Typography className='headings-h4' sx={{ textAlign: 'left' }}>{t(titleKey)}</Typography>
+                <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left', maxWidth: '720px' }}>
+                    {t(subTitleKey)}
+                </Typography>
+            </Box>
+        </Item>
+    );
+
     return (
         <div className="bentogrid-container" style={{ padding: '0px' }}>
             <Grid container spacing={1} sx={{ width: '100%' }}>
                 <Grid item xs={12} sm={6} lg={4}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon1} className='soft-ware-icon' alt='NAF : Real-Time Vending Machine Sales Analytics - Boost Profits.' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} > {t('software.bentoTitle1')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}> {t('software.bentoSubTitle1')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon1, 'software.bentoTitle1', 'software.bentoSubTitle1', 'Real-Time Vending Machine Sales Analytics')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={8}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec " >
-                            <img src={SoftwareSystemIcon2} className='soft-ware-icon' alt='NAF : Intelligent Vending Machine Inventory Management - Reduce' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle2')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>
-                                {t('software.bentoSubTitle2')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon2, 'software.bentoTitle2', 'software.bentoSubTitle2', 'Intelligent Inventory Management')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon3} className='soft-ware-icon' alt='NAF Vending Machines: Targeted Advertising for Increased Product' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle3')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>
-                                {t('software.bentoSubTitle3')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon3, 'software.bentoTitle3', 'software.bentoSubTitle3', 'Targeted Advertising')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon4} className='soft-ware-icon' alt='NAF Cloud: Real-Time Vending Machine Remote Monitoring.' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle4')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>{t('software.bentoSubTitle4')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon4, 'software.bentoTitle4', 'software.bentoSubTitle4', 'Remote Monitoring')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec" >
-                            <img src={SoftwareSystemIcon5} className='soft-ware-icon' alt='NAF : Optimize Customer Relationships with Vending Machine Management.' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle5')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4', textAlign: 'left' }}>{t('software.bentoSubTitle5')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon5, 'software.bentoTitle5', 'software.bentoSubTitle5', 'Customer Relationship')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon6} className='soft-ware-icon' alt='NAF Vending: Simplified Tax Reporting and Automated Financial Data.' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle6')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{
-                                color: '#C2C2C4', textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>
-                                {t('software.bentoSubTitle6')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon6, 'software.bentoTitle6', 'software.bentoSubTitle6', 'Automated Tax Reporting')}
                 </Grid>
                 <Grid item xs={12} sm={6} lg={4}>
-                    <Item className='bentogrid-item'>
-                        <Box className="bentogrid-image-sec">
-                            <img src={SoftwareSystemIcon7} className='soft-ware-icon' alt='NAF Vending: Secure Cloud Infrastructure Protects Your Vending Data.' />
-                        </Box>
-                        <Box className="bentogrid-text-sec">
-                            <Typography className='headings-h4' sx={{ textAlign: 'left' }} >{t('software.bentoTitle7')}</Typography>
-                            <Typography className='bodyRegularText3' sx={{
-                                color: '#C2C2C4',
-                                textAlign: 'left',
-                                maxWidth: '720px'
-                            }}>
-                                {t('software.bentoSubTitle7')}</Typography>
-                        </Box>
-                    </Item>
+                    {renderGridItem(SoftwareSystemIcon7, 'software.bentoTitle7', 'software.bentoSubTitle7', 'Secure Infrastructure')}
                 </Grid>
             </Grid>
+
+            {/* Fullscreen Image Overlay */}
+            {openImage && (
+                <Box
+                    onClick={handleOverlayClick}
+                    sx={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 1300,
+                    }}
+                >
+                    {/* Close Button */}
+                    <Box
+                        onClick={handleOverlayClick}
+                        sx={{
+                            position: 'absolute',
+                            top: '20px',
+                            right: '30px',
+                            fontSize: '32px',
+                            color: '#fff',
+                            cursor: 'pointer',
+                            zIndex: 1400,
+                            fontWeight: 'bold',
+                        }}
+                    >
+                        ×
+                    </Box>
+
+                    {/* Enlarged Image */}
+                    <img
+                        src={openImage}
+                        alt="Enlarged Preview"
+                        style={{
+                            height: '75%',
+                            width: '75%',
+                            borderRadius: '8px',
+                            zIndex: 1350,
+                        }}
+                        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
+                    />
+                </Box>
+            )}
+
         </div>
     );
 };

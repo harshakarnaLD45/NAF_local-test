@@ -1,12 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-import arrowicon from "../../../assets/Arrow 2.svg";
+import arrowicon from "../../../assets/buton.png";
 import "./Menu.css";
 import Unlock from "./Unlock";
 import VMMenu from "./VMMenu";
 import Allergen from "./Allergen";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import MonthlyMenu from "./MonthlyMenu";
 
 const Menu = () => {
   const { t } = useTranslation();
@@ -92,6 +93,7 @@ const Menu = () => {
       </Box>
 
       <VMMenu />
+      <MonthlyMenu />
       <Allergen />
       <Unlock />
     </Box>
