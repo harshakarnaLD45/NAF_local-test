@@ -20,9 +20,12 @@ import Picture3 from '../../assets/About/Sri-satya-sai-kanna-dhulipudi.png'
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function ContactPage() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const { lang } = useParams();
     const [active, setActive] = useState('submit');
     const [selectedItems, setSelectedItems] = useState([]);
     const [isSubmitform, setIsSubmitform] = useState(true); // default to showing the form
@@ -647,7 +650,7 @@ function ContactPage() {
                                         <Typography variant="body2" className="bodyRegularText5" sx={{ color: '#FCFCFC' }}>
                                             {t('contactus.privacypolicy1')}{' '}
                                             <Link
-                                                href="/privacy-policy"
+                                                onClick={() => navigate(`/${lang}/privacy-policy`)}
                                                 underline="hover"
                                                 sx={{ color: '#161616', textDecorationColor: '#161616', textDecoration: 'underline' }}
                                             >
@@ -704,7 +707,7 @@ function ContactPage() {
             }}>
                 {contacts.map((contact, index) => (
                     <Box key={index} sx={{
-                        flex: { xs: '0 0 100%', sm: '0 0 100%', md: '0 0 25%' },
+                        flex: { xs: '0 0 100%', sm: '0 0 100%', md: '0 0 30%' },
                         display: 'flex',
                         flexDirection: 'column',
                         mb: 4,

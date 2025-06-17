@@ -18,6 +18,66 @@
   src: url(../public/ShantellSans-Regular.ttf);
 }
 
+.cookie-container {
+  background-color: #525252 !important;
+  color: #fcfcfc !important;
+  font-size: 16px !important;
+  border-radius: 24px !important;
+  padding: 15px 45px 18px 20px !important;
+  max-width: 500px;
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 9999;
+}
+
+.cookie-content {
+  width: 100%;
+  flex: 1 0 0px !important;
+}
+
+.cookie-text {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cookie-link {
+  color: white;
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.cookie-accept-button {
+  background-color: #FCFCFC !important;
+  color: #1A1A1A !important;
+  padding: 14px 32px !important;
+  border-radius: 999px !important;
+  font-weight: bold !important;
+  border: none !important;
+  cursor: pointer;
+  margin: 0px !important;
+}
+
+.cookie-decline-button {
+  background-color: transparent !important;
+  color: #C2C2C4 !important;
+  padding: 14px 32px !important;
+  border: 2px solid white !important;
+  border-radius: 999px !important;
+  font-weight: bold !important;
+  cursor: pointer;
+  margin: 0px 10px 0px 0px !important;
+}
+
 .css-13rd1mj-MuiFormLabel-root-MuiInputLabel-root,
 .css-5lrzbe-MuiFormLabel-root-MuiInputLabel-root,
 .css-4r8vet,
@@ -272,6 +332,11 @@ body {
 
 /* Small Screens (Mobile Devices) */
 @media (max-width: 768px) {
+  .cookie-container {
+    max-width: 75%;
+    padding: 15px 25px 18px 5px !important;
+  }
+
   .section-container {
     padding: 0px 20px;
   }

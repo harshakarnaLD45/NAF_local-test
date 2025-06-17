@@ -21,8 +21,11 @@ import Service6 from '../../assets/Machines/benefits-3.png'
 import CustomSelect from './MantaincePage/CustomSelect';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function PartnersForm() {
+    const navigate = useNavigate();
+    const { lang } = useParams();
     const { t } = useTranslation();
     const [tab, setTab] = useState(0);
     const [snackbar, setSnackbar] = useState({
@@ -322,7 +325,7 @@ function PartnersForm() {
                             label={
                                 <span>
                                     {t('machines.privacytext')}{' '}
-                                    <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                                    <span onClick={() => navigate(`/${lang}/privacy-policy`)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                         {t('machines.privacypolicy')}
                                     </span>
                                 </span>
@@ -401,7 +404,7 @@ function PartnersForm() {
                             label={
                                 <span>
                                     {t('machines.privacytext')}{' '}
-                                    <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+                                    <span onClick={() => navigate(`/${lang}/privacy-policy`)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                                         {t('machines.privacypolicy')}
                                     </span>
                                 </span>

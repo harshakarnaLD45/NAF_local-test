@@ -1,0 +1,16 @@
+
+.span-content{
+    display: flex;
+    color: #C2C2C4;
+    gap:5px
+}
+span{
+    display: contents !important;
+    text-wrap: nowrap !important;
+    font-weight: 600;
+    color: white;
+}
+
+.text-color{
+    color: #C2C2C4;
+}

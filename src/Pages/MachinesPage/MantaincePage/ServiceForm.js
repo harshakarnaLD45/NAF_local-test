@@ -14,9 +14,12 @@ import { UploadIcon } from '../../../Componenets/CustomIcons';
 import AnimateButton from '../../../Componenets/CommonComponents/AnimateButton';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function ServiceForm() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { lang } = useParams();
   const [formValues, setFormValues] = useState({
     machineLocation: '',
     machineId: '',
@@ -311,8 +314,8 @@ function ServiceForm() {
           className="bodyRegularText4"
           label={
             <span>
-              {t('Maintenance.uderstnadTest')}
-              <span style={{ textDecoration: 'underline', cursor: 'pointer' }}>
+              {t('Maintenance.uderstnadTest')} &nbsp;
+              <span onClick={() => navigate(`/${lang}/privacy-policy`)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
                 {t('Maintenance.privacy')}
               </span>
             </span>
