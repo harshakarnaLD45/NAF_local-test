@@ -177,7 +177,7 @@ const Header = () => {
               />
             </>
           )}
-          <span className="bodyRegularText3"> {t("Header.menu")}</span>
+          <span className="bodyRegularText3" style={{color: "#1A1A1A"}}> {t("Header.menu")}</span>
         </Box>
         <Box data-cursor="hover"
           className='menu-mobile-sec'
@@ -221,7 +221,7 @@ const Header = () => {
                   marginRight: { xs: '2px', sm: '4px', md: '18px' },
                 }}
               />
-              <span className="bodyRegularText3"> {t("Header.menu")}</span>
+              <span className="bodyRegularText3" style={{color: "#1A1A1A"}}> {t("Header.menu")}</span>
             </Box>
           )}
 
@@ -350,7 +350,7 @@ const Header = () => {
               {!isMobile && (
                 <Box className="custom-button" onClick={handleMenuClose}>
                   <CloseIcon sx={{ fontSize: '24px' }} />
-                  <span className="bodyRegularText3"> {t("Header.menu")}</span>
+                  <span  style={{color: "#1A1A1A"}} className="bodyRegularText3"> {t("Header.menu")}</span>
                 </Box>
               )}
             </Box>

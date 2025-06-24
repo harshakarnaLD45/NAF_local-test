@@ -60,7 +60,6 @@
         "naftext2": "and",
         "naftext3": "– with the vision of creating real alternatives to traditional Gastronomy. With roots in fine dining and a passion for technology, we combine culinary delight with digitalization. Our AI systems are developed in-house by an international team of IT talents and Gastronomy professionals, under the leadership of our CTO,",
         "naftext4": ", who spearheads innovation in AI-driven culinary solutions and technological advancements.",
-        "testmonialHeading": "What’s Our Partners are Saying",
         "testimonial1": {
             "text": "Today's eggplant and cherry pea curry was delicious. Yesterday's chicken meatball was also good.",
             "author": "Customer"
@@ -644,7 +643,7 @@
         "contactPhone": "0162 — 1638005 (Technischer Support 24/7)"
     },
     "footer": {
-        "Gotaproject": "Got a Project? ",
+        "Gotaproject": "Got a Project?",
         "Gotaproject1": " Want to",
         "Gotaproject2": " Collaborate?",
         "subscrptionText": "We deliver innovative Vending with seamless tech and design. Subscribe to learn how.",

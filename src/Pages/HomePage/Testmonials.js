@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next";
 import PersonIcon from "@mui/icons-material/Person";
 import React, { useRef, useState } from "react";
 import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import VolumeUpIcon from "@mui/icons-material/VolumeMute";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import Marquee from "react-fast-marquee";
 
 import Video1 from '../../assets/Home/Testimonials/Testimonial_video (1).mp4';
 import Video2 from '../../assets/Home/Testimonials/Testimonial_video (2).mp4';
@@ -31,9 +32,10 @@ const TestimonialCard = ({ text, author }) => (
       {text}
     </Typography>
     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "flex-end", mt: 2 }}>
-      <Avatar sx={{ width: 24, height: 24, bgcolor: "#424242", mr: 1 }}>
+      {/* <Avatar sx={{ width: 24, height: 24, bgcolor: "#424242", mr: 1 }}>
         <PersonIcon sx={{ fontSize: 16 }} />
-      </Avatar>
+      </Avatar> */}
+      -
       <Typography variant="body2" align="right">{author}</Typography>
     </Box>
   </Box>
@@ -92,7 +94,7 @@ const TestimonialCard = ({ text, author }) => (
 //   );
 // };
 
-const TestimonialVideoCard = ({ videoSrc,ariaLabel }) => {
+const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
 
@@ -119,6 +121,8 @@ const TestimonialVideoCard = ({ videoSrc,ariaLabel }) => {
     <Box
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={toggleMute}
+
       sx={{
         width: 300,
         height: 300,
@@ -143,7 +147,6 @@ const TestimonialVideoCard = ({ videoSrc,ariaLabel }) => {
         }}
       />
       <IconButton
-        onClick={toggleMute}
         sx={{
           position: "absolute",
           bottom: 8,
@@ -153,7 +156,7 @@ const TestimonialVideoCard = ({ videoSrc,ariaLabel }) => {
           cursor: "pointer",
         }}
       >
-        {muted ? <VolumeOffIcon /> : <VolumeUpIcon />}
+        {muted ? <VolumeOffIcon sx={{ color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ color: 'whitesmoke' }} />}
       </IconButton>
     </Box>
   );
@@ -185,15 +188,13 @@ const Testimonials = () => {
       </Box>
 
       <Box sx={{ overflow: "hidden", width: "100%", mt: "20px" }}>
-        <Box
-          className="slider-track"
-          sx={{
-            display: "flex",
-            gap: "16px",
-            animation: "scroll 30s linear infinite",
-          }}
+        <Marquee
+          gradient={false}
+          speed={180}
+          // pauseOnHover={true}
+          style={{ width: "100%", marginTop: "20px" }}
         >
-          {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+          {testimonials.map((item, index) => (
             <Box
               key={index}
               sx={{
@@ -201,6 +202,7 @@ const Testimonials = () => {
                 width: 300,
                 display: "flex",
                 justifyContent: "center",
+                marginRight: "16px",
               }}
             >
               {item.videoSrc ? (
@@ -210,7 +212,25 @@ const Testimonials = () => {
               )}
             </Box>
           ))}
-        </Box>
+          {testimonials.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                flexShrink: 0,
+                width: 300,
+                display: "flex",
+                justifyContent: "center",
+                marginRight: "16px",
+              }}
+            >
+              {item.videoSrc ? (
+                <TestimonialVideoCard videoSrc={item.videoSrc} ariaLabel={item.ariaLabel} />
+              ) : (
+                <TestimonialCard text={item.text} author={item.author} />
+              )}
+            </Box>
+          ))}
+        </Marquee>
       </Box>
 
       {/* Keyframes CSS */}

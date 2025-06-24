@@ -572,11 +572,9 @@
         "contactPhone": "0162 — 1638005 (Soporte técnico 24/7)"
     },
     "footer": {
-        "Gotaproject": "¿Un proyecto?",
-
-"Gotaproject1": "Quieres",
-
-"Gotaproject2": "colaborar?",
+        "Gotaproject": "¿Tienes un proyecto?",
+        "Gotaproject1": " ¿Quieres ",
+        "Gotaproject2": " colaborar?",
         "subscrptionText": "Ofrecemos venta automática innovadora con tecnología y diseño sin fisuras. Suscríbete para saber cómo.",
         "footerContact": "Contacto",
         "footergetIn": "PONTE EN",

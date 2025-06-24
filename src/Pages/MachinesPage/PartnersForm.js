@@ -306,32 +306,34 @@ function PartnersForm() {
                         <CustomTextField required label={t('machines.Email')} name="email" type="email" value={formTab0.email} onChange={(e) => handleChange(e, 0)} />
                         <CustomTextField label={t('machines.PhoneNumber')} name="phoneNumber" value={formTab0.phoneNumber} onChange={(e) => handleChange(e, 0)} />
 
-                        <FormControlLabel
-                            control={
-                                <Radio
-                                    name="agreement"
-                                    checked={formTab0.agreement}
-                                    onChange={(e) => handleCheckboxChange(e, 0)} // or 1 for second tab
-                                    required
-                                    sx={{
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
+                            <input
+                                type="radio"
+                                name="agreement"
+                                checked={formTab0.agreement}
+                                onChange={(e) => handleCheckboxChange(e, 0)} // or 1 for second tab
+                                required
+                                style={{
+                                    accentColor: '#7FEE64',   // green fill when selected
+                                    cursor: 'pointer',
+                                    marginTop: '4px',
+                                }}
+                            />
+                            <label className="bodyRegularText4" style={{ color: '#C2C2C4', cursor: 'default' }}>
+                                {t('machines.privacytext')}{' '}
+                                <a
+                                    onClick={() => navigate(`/${lang}/privacy-policy`)}
+                                    style={{
+                                        textDecoration: 'underline',
                                         color: '#C2C2C4',
-                                        '&.Mui-checked': {
-                                            color: '#7FEE64', // green when checked
-                                        },
+                                        cursor: 'pointer',
                                     }}
-                                />
-                            }
-                            className="bodyRegularText4"
-                            label={
-                                <span>
-                                    {t('machines.privacytext')}{' '}
-                                    <span onClick={() => navigate(`/${lang}/privacy-policy`)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-                                        {t('machines.privacypolicy')}
-                                    </span>
-                                </span>
-                            }
-                            sx={{ mt: 2, color: '#C2C2C4' }}
-                        />
+                                >
+                                    {t('machines.privacypolicy')}
+                                </a>
+                            </label>
+                        </div>
+
                     </Box>
                 ) : (
                     // Gastronomy Partner Form
@@ -385,7 +387,7 @@ function PartnersForm() {
                         <CustomTextField label={t('machines.PhoneNumber')} name="phoneNumber" value={formTab1.phoneNumber} onChange={(e) => handleChange(e, 1)} />
                         <CustomTextField label={t('machines.Specialization')} name="specialization" value={formTab1.specialization} onChange={(e) => handleChange(e, 1)} />
 
-                        <FormControlLabel
+                        {/* <FormControlLabel
                             control={
                                 <Radio
                                     name="agreement"
@@ -410,7 +412,36 @@ function PartnersForm() {
                                 </span>
                             }
                             sx={{ mt: 2, color: '#C2C2C4' }}
-                        />
+                        /> */}
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
+                            <input
+                                type="radio"
+                                name="agreement"
+                                checked={formTab1.agreement}
+                                onChange={(e) => handleCheckboxChange(e, 1)}
+                                required
+                                style={{
+                                    accentColor: '#7FEE64', // Green fill when selected
+                                    cursor: 'pointer',
+                                    marginTop: '4px',
+                                    width: '16px',
+                                    height: '16px',
+                                }}
+                            />
+                            <label htmlFor="agreement" className="bodyRegularText4" style={{ color: '#C2C2C4', cursor: 'default' }}>
+                                {t('machines.privacytext')}{' '}
+                                <a
+                                    onClick={() => navigate(`/${lang}/privacy-policy`)}
+                                    style={{
+                                        textDecoration: 'underline',
+                                        color: '#C2C2C4',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    {t('machines.privacypolicy')}
+                                </a>
+                            </label>
+                        </div>
                     </Box>
                 )}
                 <Snackbar

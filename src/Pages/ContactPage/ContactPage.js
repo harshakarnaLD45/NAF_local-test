@@ -53,14 +53,33 @@ function ContactPage() {
         });
     };
 
+    // const handleCategorySelect = (category) => {
+    //     setFormData((prev) => ({
+    //         ...prev,
+    //         inquiryType: prev.inquiryType === category ? '' : category,
+    //     }));
+    //     setSelectedItems(category)
+
+    //     if (category !== 'Others') {
+    //         setCustomCategory('');
+    //     }
+    // };
     const handleCategorySelect = (category) => {
+        let updatedSelection = [...selectedItems];
+
+        if (updatedSelection.includes(category)) {
+            updatedSelection = updatedSelection.filter((item) => item !== category);
+        } else {
+            updatedSelection.push(category);
+        }
+
+        setSelectedItems(updatedSelection);
         setFormData((prev) => ({
             ...prev,
-            inquiryType: prev.inquiryType === category ? '' : category,
+            inquiryType: updatedSelection.join(', '),
         }));
-        setSelectedItems(category)
 
-        if (category !== 'Others') {
+        if (!updatedSelection.includes('Others')) {
             setCustomCategory('');
         }
     };
@@ -79,20 +98,26 @@ function ContactPage() {
         if (!message.trim()) {
             return setSnackbar({ open: true, message: 'Message is required.', severity: 'error' });
         }
-        if (inquiryType === 'Others' && !customCategory.trim()) {
+        if (selectedItems.includes('Others') && !customCategory.trim()) {
             return setSnackbar({ open: true, message: 'Please specify your category.', severity: 'error' });
         }
+        if (!isConsentChecked) {
+            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
+        }
+        if (!isConsentChecked) {
+            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
+        }
 
-        if (!isConsentChecked) {
-            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
-        }
-        if (!isConsentChecked) {
-            return setSnackbar({ open: true, message: 'You must accept the privacy policy.', severity: 'error' });
-        }
+        const fullInquiryType = selectedItems.includes('Others')
+            ? [...selectedItems.filter(item => item !== 'Others'), customCategory].join(', ')
+            : selectedItems.join(', ');
 
         try {
             setIsSubmitting(true);
-            await axios.post('https://api.naf-cloudsystem.de/api/NAFWebsite/submitForm', formData);
+            await axios.post('https://api.naf-cloudsystem.de/api/NAFWebsite/submitForm', {
+                ...formData,
+                inquiryType: fullInquiryType,
+            });
             setSnackbar({ open: true, message: 'Support issue submitted successfully!', severity: 'success' });
 
             // Clear the form
@@ -574,7 +599,7 @@ function ContactPage() {
                                         );
                                     })}
                                 </Stack>
-                                {formData.inquiryType === 'Others' && (
+                                {formData.inquiryType.includes('Others') && (
                                     <TextField
                                         className='bodyRegularText3'
                                         label="Please specify"
@@ -633,7 +658,7 @@ function ContactPage() {
                                         },
                                     }}
                                 />
-                                <Box><FormControlLabel
+                                {/* <Box><FormControlLabel
                                     control={
                                         <Radio
                                             checked={isConsentChecked}
@@ -659,7 +684,38 @@ function ContactPage() {
                                         </Typography>
                                     }
                                 />
-                                </Box>
+                                </Box> */}
+
+                                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                                    <input
+                                        type="radio"
+                                        id="privacyConsent"
+                                        name="privacyConsent"
+                                        checked={isConsentChecked}
+                                        onChange={(e) => setIsConsentChecked(e.target.checked)}
+                                        style={{
+                                            marginTop: '4px',
+                                            accentColor: '#7FEE64', // green color for selected
+                                            width: '16px',
+                                            height: '16px',
+                                        }}
+                                    />
+                                    <label htmlFor="privacyConsent" className='bodyRegularText4' style={{ color: '#FCFCFC', fontSize: '14px' }}>
+                                        {t('contactus.privacypolicy1')}{' '}
+                                        <a
+                                            style={{
+                                                color: '#161616',
+                                                textDecoration: 'underline',
+                                                cursor: 'pointer'
+                                            }}
+                                            onClick={() => navigate(`/${lang}/privacy-policy`)}
+                                        >
+                                            {t('contactus.privacypolicy2')}
+                                        </a>
+
+                                    </label>
+                                </div>
+
                                 <Box sx={{
                                     display: "flex",
                                     flexDirection: "column",

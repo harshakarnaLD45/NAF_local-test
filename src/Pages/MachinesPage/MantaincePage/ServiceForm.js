@@ -290,38 +290,41 @@ function ServiceForm() {
             ))}
           </Box>
         )}
-
-        <FormControlLabel
-          control={
-            <Radio
-              name="agreement"
-              checked={formValues.agreement}
-              onChange={(e) =>
-                setFormValues({
-                  ...formValues,
-                  agreement: e.target.checked,
-                })
-              }
-              required
-              sx={{
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
+          <input
+            type="radio"
+            name="agreement"
+            checked={formValues.agreement}
+            onChange={(e) =>
+              setFormValues({
+                ...formValues,
+                agreement: e.target.checked,
+              })
+            }
+            required
+            style={{
+              accentColor: '#7FEE64',   // ✅ Green fill when selected
+              cursor: 'pointer',
+              marginTop: '4px',
+              width: '16px',
+              height: '16px',
+            }}
+          />
+          <label className="bodyRegularText4" style={{ color: '#C2C2C4', cursor: 'default' }}>
+            {t('Maintenance.uderstnadTest')}&nbsp;
+            <a
+              onClick={() => navigate(`/${lang}/privacy-policy`)}
+              style={{
+                textDecoration: 'underline',
                 color: '#C2C2C4',
-                '&.Mui-checked': {
-                  color: '#7FEE64', // green when checked
-                },
+                cursor: 'pointer',
               }}
-            />
-          }
-          className="bodyRegularText4"
-          label={
-            <span>
-              {t('Maintenance.uderstnadTest')} &nbsp;
-              <span onClick={() => navigate(`/${lang}/privacy-policy`)} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
-                {t('Maintenance.privacy')}
-              </span>
-            </span>
-          }
-          sx={{ mt: 2, color: '#C2C2C4' }}
-        />
+            >
+              {t('Maintenance.privacy')}
+            </a>
+          </label>
+        </div>
+
 
         <Box onClick={handleSubmit} sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
           <AnimateButton text1={t('contactus.SUBMIT')} text2={t('contactus.FORM')} />

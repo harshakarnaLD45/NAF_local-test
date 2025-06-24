@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import OdetteVideo from '../../assets/Home/Odette-lamkhizni.mp4'
 import AbdelilahVideo from '../../assets/Home/Abdelilah-lamkhizni.mp4'
 import SaiVideo from '../../assets/Home/Sri-satya-sai kanna-dhulipudi.mp4'
+import './HomePage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,13 +90,13 @@ const FadeInParagraph = () => {
     const renderWords = () => {
         return paragraphText.flatMap((item, idx) => {
             const isPerson = item.highlight && item.person;
-    
+
             if (isPerson) {
                 // Keep the full name as one underlined block
                 return (
-                    <span key={idx} style={{ display: "inline-block" }}>
+                    <span key={idx} style={{ display: "inline-block", width: "100%" }}>
                         <span
-                            className="fade-word headings-h2"
+                            className="fade-word headings-h2 naf-words"
                             style={{
                                 color: "#FA7854",
                                 textDecoration: "underline",
@@ -117,8 +118,8 @@ const FadeInParagraph = () => {
                 return item.text.split(" ").map((word, i) => {
                     const key = `${idx}-${i}`;
                     return (
-                        <span key={key} style={{ display: "inline-block" }}>
-                            <span className="fade-word headings-h2">{word}</span>
+                        <span key={key} style={{ display: "inline-block", width: "100%" }}>
+                            <span className="fade-word headings-h2 naf-words">{word}</span>
                             <span>&nbsp;</span>
                         </span>
                     );
@@ -126,7 +127,7 @@ const FadeInParagraph = () => {
             }
         });
     };
-    
+
     const getVideoForPerson = (person) => {
         switch (person) {
             case "odette":
@@ -142,22 +143,31 @@ const FadeInParagraph = () => {
 
     return (
         <Box
-            className="section-container"
+            className=""
             ref={ref}
             sx={{
                 mt: { xs: 3, sm: 4, md: 5 },
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
+                flexWrap: "wrap",
+                width: "100%",
+
+                // padding: { xs: "0 5px", sm: "0 24px", md: "0 32px" },
             }}
         >
             <Box
-                className="headings-h2"
+                className="headings-h2 naf-words"
                 sx={{
-                    width: { xs: "100%", sm: "100%", md: "1500px" },
+                    width: {   sm:'80%',  md: "90%", lg: "70%" },
+                    minWidth: "250px",
                     color: "#C2C2C4",
-                    textAlign: "center",
                     position: "relative",
+                    textAlign: "center",
+                    whiteSpace: "normal",           // Allow text to wrap
+                    wordBreak: "break-word",        // Break long words
+                    overflowWrap: "break-word",     // Ensure wrapping
+                    maxWidth: "100%",               // Prevent overflow
                 }}
             >
                 {renderWords()}
@@ -167,9 +177,9 @@ const FadeInParagraph = () => {
                     <Box
                         sx={{
                             position: "fixed",
-                            top: hoverPosition.y + 10,
-                            left: hoverPosition.x,
-                            transform: "translateX(-50%)",
+                            top: hoverPosition.y + -20,
+                            left: hoverPosition.x + 1000,
+                            transform: "translateY(50%)",
                             zIndex: 1000,
                             transition: "opacity 0.3s",
                             pointerEvents: "none",

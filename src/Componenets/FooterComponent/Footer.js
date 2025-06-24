@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import FooterVideo from '../../assets/naf-footer-video.mp4'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Marquee from "react-fast-marquee";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,10 +74,11 @@ const Footer = () => {
           />
           <Box className="footer-main-div"
             sx={{
-              display: "grid",
-              gridTemplateColumns: {
-                xs: "1fr",
-                md: "1fr 1fr 1fr"
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: {
+                xs: "column",
+                md: "row"
               },
               position: "relative",
               zIndex: 1,
@@ -86,11 +88,12 @@ const Footer = () => {
               gap: { xs: 4, md: 0 },
             }}
           >
-            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ xs: "center", md: "flex-start" }}>
+            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{  md: "flex-start" }}>
               <Typography
                 className="headings-h2 footerhead"
                 variant="h2"
                 sx={{
+                  width: { xs: "100%", md: "auto" },
                   color: "#FCFCFC",
                   position: "relative",
                   zIndex: 1,
@@ -98,15 +101,21 @@ const Footer = () => {
                   mb: 8,
                   display: "flex",
                   flexWrap: "wrap",
+                  
+                  // overflow: "hidden", // Add this line to hide scrollbars
+                  // alignItems: "center", // Optional: vertically center content
                 }}
               >
-                <Box component="span" className="headings-h2" sx={{ whiteSpace: "nowrap" }}>
+                <Box component="span" className="headings-h2 xl-heading-text ">
                   {t('footer.Gotaproject')}
                 </Box>
 
-                <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
+                <Box component="span" sx={{ mt: 0, pt: 0, ml:{sm: 2} , whiteSpace: "wrap" }} className="headings-h2 xl-heading-text  ">
                   {t('footer.Gotaproject1')}
                 </Box>
+                {/* <Box component="span" sx={{ mt: 0, pt: 0, ml:{sm: 2} , whiteSpace: "wrap" }} className="headings-h2">
+                  {t('footer.Gotaproject1')}
+                </Box> */}
 
                 <Box
                   component="video"
@@ -124,14 +133,16 @@ const Footer = () => {
                     ml: 2
                   }}
                 />
-                <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2">
+                <Box component="span" sx={{ mt: 0, pt: 0 }} className="headings-h2 xl-heading-text  ">
                   {t('footer.Gotaproject2')}
                 </Box>
               </Typography>
+              <Box sx={{display:'flex',justifyContent:'center', alignItems: {  sm: "center" } }}>
               <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
+              </Box>
 
               <Box className="social-icon-sec" sx={{
-                position: 'relative', mt: 4,
+                position: 'relative', pt: 5,
                 display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center'
               }}>
                 {socialIcons.map((social, index) => (
@@ -160,7 +171,7 @@ const Footer = () => {
               </Box>
             </Stack>
 
-            <Box className="btn-social-icon"
+            {/* <Box className="btn-social-icon"
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -169,9 +180,9 @@ const Footer = () => {
                 paddingBottom: '0rem',
               }}
             >
-            </Box>
+            </Box> */}
 
-            <Stack spacing={{ xs: 2, md: 2 }}>
+            <Stack className="footer-right" spacing={{ xs: 2, md: 2 }}>
               <Typography
                 className="footercontact bodyMediumText1"
                 sx={{ color: "#FCFCFC" }}
@@ -304,25 +315,27 @@ const Footer = () => {
           </Box>
 
 
+          {/* // ...existing code... */}
           <Typography
             variant="h1"
             className="footerBottomhead headings-h1"
-
             sx={{
               color: "#FCFCFC",
               position: "relative",
-              bottom: { xs: -20, sm: -40, md: -40, },
+              bottom: { xs: -20, sm: -40, md: -40 },
               textAlign: "center",
+              overflow: "hidden",
               zIndex: 0,
-              // whiteSpace: "nowrap",
               width: "100%",
+              height: "Auto",
               textTransform: 'uppercase'
             }}
           >
-            <Box className="footer-scroll-text">
-              {t('footer.footerTitle')} &nbsp;  &nbsp; {t('footer.footerTitle')} &nbsp;  &nbsp; {t('footer.footerTitle')}
-            </Box>
+            <Marquee gradient={false} speed={40} sx={{ height: "auto" }}>
+              {t('footer.footerTitle')} &nbsp; &nbsp; {t('footer.footerTitle')} &nbsp; &nbsp; {t('footer.footerTitle')}
+            </Marquee>
           </Typography>
+          {/* // ...existing code... */}
 
 
         </Box>

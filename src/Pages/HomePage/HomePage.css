@@ -483,6 +483,11 @@
   .whoweServe-right-sec2 {
     padding-top: 0% !important;
   }
+  .naf-words{
+    font-size:20px !important;
+    line-height: -50px !important; /* 40.4px */
+    letter-spacing: -0.67px !important;
+  }
 }
 
 /* Extra Small Screens (Very Small Devices) */
