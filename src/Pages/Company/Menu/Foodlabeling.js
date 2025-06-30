@@ -61,6 +61,7 @@ const Foodlabeling = () => {
                                 height: 'auto',
                                 borderRadius: 2,
                                 boxShadow: 2,
+                                cursor:'grab'
                             }}
                         />
                     </SwiperSlide>

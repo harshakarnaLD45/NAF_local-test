@@ -94,7 +94,7 @@ const Menu = () => {
         </Box>
       </Box>
 
-      <VMMenu />
+      {/* <VMMenu /> */}
       <MonthlyMenu />
       <Foodlabeling/>
       <Allergen />

@@ -17,7 +17,7 @@ import { useParams } from 'react-router-dom';
 const MachinesSection1 = ({ selectedMachine }) => {
     const { t } = useTranslation();
     const { lang } = useParams();
-    const [months, setMonths] = useState(72);
+    const [months, setMonths] = useState(60);
 
     const handleChange = (event) => {
         setMonths(event.target.value);
@@ -44,7 +44,6 @@ const MachinesSection1 = ({ selectedMachine }) => {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
-                72: 457.01
             },
         },
         {
@@ -68,7 +67,6 @@ const MachinesSection1 = ({ selectedMachine }) => {
                 36: 863.50,
                 48: 665.50,
                 60: 550.00,
-                72: 478.50
             },
         },
         {
@@ -89,10 +87,9 @@ const MachinesSection1 = ({ selectedMachine }) => {
             ],
             price: 45877,
             monthlyRates: {
-                36: 786.50,
-                48: 721.50,
+                36: 1020.50,
+                48: 786.50,
                 60: 650.00,
-                72: 565.50
             },
         },
         {
@@ -115,7 +112,6 @@ const MachinesSection1 = ({ selectedMachine }) => {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
-                72: 457.01
             },
         },
         {
@@ -136,10 +132,9 @@ const MachinesSection1 = ({ selectedMachine }) => {
             ],
             price: 13636,
             monthlyRates: {
-                36: 359.60,
-                48: 329.15,
+                36: 462.55,
+                48: 359.60,
                 60: 297.25,
-                72: 259.55
             },
         },
         {

@@ -24,7 +24,7 @@ const MachinesSection = ({ selectedMachine }) => {
     const theme = useTheme();
     const { lang } = useParams();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [months, setMonths] = useState(36);
+    const [months, setMonths] = useState(60);
 
     const handleChange = (event) => {
         setMonths(event.target.value);
@@ -97,7 +97,6 @@ const MachinesSection = ({ selectedMachine }) => {
                 36: 1020.50,
                 48: 786.50,
                 60: 650.00,
-              
             },
         },
         {
