@@ -17,10 +17,10 @@ function SoftwarePage() {
     }, []);
 
     return (
-        <div>
+        <div className='section-container'>
         <Helmet>
           <title>NAF Vending - Software</title>
-          <link rel="canonical" href="https://vendinaf.com/en/software" />
+          <link rel="canonical" href="https://vendinaf.com/en/software"/>
           <meta name='description'
             content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
           <meta name="keywords"
@@ -30,7 +30,7 @@ function SoftwarePage() {
           <html lang="en" />
         </Helmet>
             <Box className='softwarepage-main-container'>
-                <Box>
+                <Box className='software-herosection'>
                     <Typography variant='h1' className='headings-h1 maintext' sx={{ color: '#FCFCFC' }}>
                         {t('software.heroTitle')}
                     </Typography>
@@ -38,25 +38,25 @@ function SoftwarePage() {
                     {t('software.heroSubTitle')}
                     </Typography>
                 </Box>
-                <Box>
-                    <img className='software-hero-img' src={softwareHeroImg} alt="NAF : Streamline Vending Operations with Our Innovative Software." />
+                <Box className="laptop-img-sec">
+                    <img  className='software-hero-img' src={softwareHeroImg} alt="NAF : Streamline Vending Operations with Our Innovative Software." />
                 </Box>
             </Box>
 
-            <Box className='section-container'>
+            <Box className='soft-second-sec' sx={{width:'100%',margin:'200px 0'}}>
                 <Box className='software-intro-sec'>
                     <Typography className="herotitle headings-h2" variant="h2" sx={{ color: "#FCFCFC" }}>
                     {t('software.introducingcloud')}
                     </Typography>
-                    <Typography className="bodyRegularText3 bodyMediumText2" variant="body1" sx={{ color: "#C2C2C4" }} >
+                    <Typography className="bodyRegularText3 bodyMediumText2" variant="body1" sx={{ color: "#C2C2C4",width:'70%' }} >
                     {t('software.introducingcloudSubtitle')}
                     </Typography>
                 </Box>
-                <GridsSection />
+                <GridsSection/>
             </Box>
 
-            <Specifications />
-            <ExpertiseSection />
+            <Specifications/>
+            <ExpertiseSection/>
             {/* <ReadySection /> */}
         </div>
     )

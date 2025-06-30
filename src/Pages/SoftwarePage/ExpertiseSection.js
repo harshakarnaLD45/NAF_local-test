@@ -6,6 +6,7 @@ import CustomCloudSolutions from '../../assets/software/Custom-cloudSolutions.sv
 import CloudOptimization from '../../assets/software/Cloud-optimization.svg'
 import ManagedCloudServices from '../../assets/software/Managed-cloudServices.svg'
 import { useTranslation } from 'react-i18next';
+import './SoftwarePage.css';
 
 const ExpertiseSection = () => {
       const { t } = useTranslation();
@@ -22,7 +23,7 @@ const ExpertiseSection = () => {
                     marginBottom: { xs: '50px', sm: '50px', md: '100px' },
                 }}
             >
-                <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
+                <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-10px' }} variant="h4" align="center" gutterBottom>
                 {t('software.ourExpertise')}
                 </Typography>
             </Box>

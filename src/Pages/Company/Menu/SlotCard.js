@@ -68,9 +68,16 @@ const SlotCard = ({ slot, tags }) => {
                 </Box>
 
                 {/* Slot Details */}
-                <Box sx={{ padding: "5px 10px" }}>
+                <Box   sx={{ padding: "5px 10px" }}>
                     {/* Product Name */}
-                    <Typography className="bodyMediumText1" sx={{ color: '#FCFCFC' }}>{product.productName || 'N/A'}</Typography>
+                    <Typography className="bodyMediumText1" sx={{
+                        color: '#FCFCFC',
+                        width: '100%',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
+                        display: 'block',
+                    }}>{product.productName || 'N/A'}</Typography>
 
                     {/* Price */}
                     <Box sx={{

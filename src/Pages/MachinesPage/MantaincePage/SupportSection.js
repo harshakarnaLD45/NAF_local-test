@@ -17,7 +17,7 @@ const SupportSection = () => {
                     marginBottom: { xs: '50px', sm: '50px', md: '100px' },
                 }}
             >
-                <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
+                <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '0px' }} variant="h4" align="center" gutterBottom>
                 {t('Maintenance.OurSupportServices')} <br />{t('Maintenance.OurSupportServices1')}
                 </Typography>
             </Box>

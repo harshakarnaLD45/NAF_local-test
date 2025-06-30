@@ -24,7 +24,7 @@ const MachinesSection = ({ selectedMachine }) => {
     const theme = useTheme();
     const { lang } = useParams();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [months, setMonths] = useState(72);
+    const [months, setMonths] = useState(36);
 
     const handleChange = (event) => {
         setMonths(event.target.value);
@@ -51,7 +51,7 @@ const MachinesSection = ({ selectedMachine }) => {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
-                72: 457.01
+              
             },
         },
         {
@@ -75,7 +75,7 @@ const MachinesSection = ({ selectedMachine }) => {
                 36: 863.50,
                 48: 665.50,
                 60: 550.00,
-                72: 478.50
+               
             },
         },
         {
@@ -94,10 +94,10 @@ const MachinesSection = ({ selectedMachine }) => {
             ],
             price: 45877,
             monthlyRates: {
-                36: 786.50,
-                48: 721.50,
+                36: 1020.50,
+                48: 786.50,
                 60: 650.00,
-                72: 565.50
+              
             },
         },
         {
@@ -120,7 +120,7 @@ const MachinesSection = ({ selectedMachine }) => {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
-                72: 457.01
+              
             },
         },
         {
@@ -141,10 +141,10 @@ const MachinesSection = ({ selectedMachine }) => {
             ],
             price: 13636,
             monthlyRates: {
-                36: 359.60,
-                48: 329.15,
+                36: 462.55,
+                48: 359.60,
                 60: 297.25,
-                72: 259.55
+               
             },
         },
         {
@@ -155,8 +155,6 @@ const MachinesSection = ({ selectedMachine }) => {
             idealFor: [
                 { icon: <Festivals />, label: t('machines.Festivals') },
                 { icon: <Villagefairs />, label: t('machines.VillageFairs') },
-                // { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                // { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
             ],
             features: [
                 { text: t('machines.AIageverification'), icon: <MachineSmallIcon5 /> },
@@ -251,7 +249,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Acquisitioncosts')}</Typography>
                                 {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
                                     <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
-                                        Demnächst verfügbar
+                                       {t('machines.availablesoon')}
                                     </Typography>
                                 ) : (
                                     <>
@@ -267,7 +265,7 @@ const MachinesSection = ({ selectedMachine }) => {
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Installment')}</Typography>
                                 {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
                                     <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
-                                        Demnächst verfügbar
+                                       {t('machines.availablesoon')}
                                     </Typography>
                                 ) : (
                                     <>
@@ -307,10 +305,10 @@ const MachinesSection = ({ selectedMachine }) => {
                                                 }}
                                                 className='bodyRegularText5'
                                             >
-                                                <MenuItem value={36}>36 Months</MenuItem>
-                                                <MenuItem value={48}>48 Months</MenuItem>
-                                                <MenuItem value={60}>60 Months</MenuItem>
-                                                <MenuItem value={72}>72 Months</MenuItem>
+                                                <MenuItem value={36}>36  {t('machines.Months')}</MenuItem>
+                                                <MenuItem value={48}>48  {t('machines.Months')}</MenuItem>
+                                                <MenuItem value={60}>60  {t('machines.Months')}</MenuItem>
+                                                
                                             </Select>
                                             {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
                                             <Typography color="#FA7854" className='bodyMediumText2'>

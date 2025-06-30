@@ -8,6 +8,7 @@ import Allergen from "./Allergen";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import MonthlyMenu from "./MonthlyMenu";
+import Foodlabeling from "./Foodlabeling";
 
 const Menu = () => {
   const { t } = useTranslation();
@@ -47,6 +48,7 @@ const Menu = () => {
           >
             <Typography
               variant="h1"
+              id="menu-orange-heading"
               className="headings-h1"
               sx={{
                 color: "#fcfcfc",
@@ -94,6 +96,7 @@ const Menu = () => {
 
       <VMMenu />
       <MonthlyMenu />
+      <Foodlabeling/>
       <Allergen />
       <Unlock />
     </Box>

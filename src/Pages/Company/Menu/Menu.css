@@ -6,8 +6,63 @@
     height: 250px;
 }
 
-@media (max-width: 480px) {
+.menu-btn-section {
+    margin-right: 3%;
+    white-space: nowrap;
+}
+
+.css-1qiat4j>.css-z8nmqa-MuiSvgIcon-root {
+    position: absolute !important;
+    left: 5px !important;
+}
+
+.radio-label {
+    /* position: absolute ; */
+
+    margin-left: 5px !important;
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+    .slot-container-sec {
+        margin-top: 30px !important;
+    }
+    .foodlabeling-container{
+        padding-left: 30px !important ;
+        margin-top: 50px  !important;
+    }
+}
+
+@media (max-width: 500px) {
     .menucontainer {
         margin-top: 100px !important;
     }
+
+    .radio-label {
+        max-width: 250px;
+    }
+
+    .slot-menu-container {
+        margin-top: 50px !important;
+    }
+      .foodlabeling-container{
+        padding-left: 20px  !important;
+      
+    }
+
+
+}
+
+@media (max-width: 350px) {
+    #menu-orange-heading {
+        font-size: 30px !important;
+    }
+      .foodlabeling-container{
+        padding-left: 15px  !important;
+    }
+
 }

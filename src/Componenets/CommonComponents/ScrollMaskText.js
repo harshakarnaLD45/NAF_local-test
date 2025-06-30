@@ -36,7 +36,7 @@ const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
   const lines = text.split("\n"); // Split by line breaks
 
   return (
-    <div ref={containerRef} style={{ overflow: "hidden" }}>
+    <div ref={containerRef} style={{  }}>
       <Typography
         variant="body1"
         sx={{
@@ -52,7 +52,7 @@ const ScrollMaskText = ({ text, textColor, textAlignment, textDisplay }) => {
           <div
             key={index}
             className='custom-line bodyRegularText3'
-            style={{ display: "block", overflow: "hidden" }}
+            style={{ display: "block", }}
           >
             {line}
           </div>

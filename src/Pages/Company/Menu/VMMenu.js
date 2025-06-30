@@ -81,8 +81,8 @@ function VMMenu() {
     // Handle loading/error states
     if (loading) {
         return (
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '300px' }}>
-                <CircularProgress color="inherit" />
+            <Box sx={{ display: 'flex', justifySelf: 'center', alignItems: 'center', height: '50px !important',width:'100px !important ' }}>
+                <CircularProgress color="inherit"  sx={{width:'100px'}}/>
             </Box>
         );
     }
@@ -90,14 +90,14 @@ function VMMenu() {
     if (error) return <div>{error}</div>;
 
     return (
-        <Box className='section-container'>
+        <Box className='section-container slot-menu-container'>
             {/* Intro Text */}
-            <Typography className='bodyRegularText3' sx={{ color: '#C2C2C4' }}>
+            <Typography  className='bodyRegularText3 ' sx={{ color: '#C2C2C4' }}>
             {t('menu.menuheroSubtitle2')}
             </Typography>
 
             {/* Location and Dietary Buttons */}
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, justifyContent: 'space-between', gap: 2, alignItems: { xs: 'left', md: 'center' }, my: { xs: 2, md: 4 } }}>
+            <Box className='slot-container-sec' sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row', md: 'row' }, justifyContent: 'space-between', gap: 2, alignItems: { xs: 'left', md: 'center' }, my: { xs: 2, md: 4 } }}>
                 <Button
                     variant="contained"
                     onClick={() => setLocationModalOpen(true)}
@@ -139,7 +139,7 @@ function VMMenu() {
             </Box>
 
             {/* Slot Data */}
-            <Grid container spacing={3}>
+            <Grid className='slot-container-sec' container spacing={3}>
                 {visibleSlots.map((slot) => (
                     <Grid item xs={12} sm={6} md={3} key={slot.slotId}>
                         <SlotCard slot={slot} tags={tags} />

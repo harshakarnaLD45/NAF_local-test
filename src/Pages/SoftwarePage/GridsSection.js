@@ -2,7 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography,useMediaQuery } from '@mui/material';
 import SoftwareSystemIcon1 from '../../assets/software/Real-time-sales-analytics.svg';
 import SoftwareSystemIcon2 from '../../assets/software/Intelligent-inventory-management.svg';
 import SoftwareSystemIcon3 from '../../assets/software/Targeted-advertising-capabilities.svg';
@@ -11,10 +11,14 @@ import SoftwareSystemIcon5 from '../../assets/software/Customer-relationship-man
 import SoftwareSystemIcon6 from '../../assets/software/Automated-tax-reporting.svg';
 import SoftwareSystemIcon7 from '../../assets/software/Secure-insfrastructure.svg';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@mui/material/styles';
+
+
 
 const GridsSection = () => {
     const { t } = useTranslation();
     const [openImage, setOpenImage] = React.useState(null); // to track clicked image
+    const theme = useTheme();
 
     const handleImageClick = (src) => {
         setOpenImage(src);
@@ -24,19 +28,28 @@ const GridsSection = () => {
         setOpenImage(null);
     };
 
-    const Item = styled(Paper)(({ theme }) => ({
-        backgroundColor: '#1A2027',
-        color: '#fff',
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        borderRadius: '8px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-    }));
 
+    
+
+    const Item = styled(Paper)(({ theme }) => ({
+        backgroundColor: '#262626',
+        color: '#fff',
+       padding: "31px 31.77px 32px 30.77px",
+        textAlign: 'center',
+        borderRadius: '24px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        height: '100%', // Make each card fill the grid item height
+        display: 'flex',
+        gap:'50px',
+        
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    }));
+    
     const renderGridItem = (icon, titleKey, subTitleKey, altText) => (
-        <Item className='bentogrid-item'>
+        <Item sx={{flexGrow:1,}} className='bentogrid-item'>
             <Box className="bentogrid-image-sec" onClick={() => handleImageClick(icon)} style={{ cursor: 'pointer' }}>
-                <img src={icon} className='soft-ware-icon' alt={altText} />
+                <img src={icon} className='soft-ware-icon' alt={altText}/>
             </Box>
             <Box className="bentogrid-text-sec">
                 <Typography className='headings-h4' sx={{ textAlign: 'left' }}>{t(titleKey)}</Typography>
@@ -46,10 +59,11 @@ const GridsSection = () => {
             </Box>
         </Item>
     );
+    const isXs = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div className="bentogrid-container" style={{ padding: '0px' }}>
-            <Grid container spacing={1} sx={{ width: '100%' }}>
+            <Grid container  spacing={ 1 }  sx={{ width: '100%' }}>
                 <Grid item xs={12} sm={6} lg={4}>
                     {renderGridItem(SoftwareSystemIcon1, 'software.bentoTitle1', 'software.bentoSubTitle1', 'Real-Time Vending Machine Sales Analytics')}
                 </Grid>

@@ -25,7 +25,7 @@ function MantaincePage() {
                             {t('Maintenance.ReliableMaintenanceSubtitle')}
                         </Typography>
                         <Box data-cursor="hover" className="button-container">
-                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/machine`} />
+                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')}   route={`/${lang}/contact`} />
                         </Box>
                     </Box>
                 </Box>

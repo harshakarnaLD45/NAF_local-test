@@ -9,6 +9,7 @@ import {
     IconButton,
     Box,
 } from "@mui/material";
+
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -98,15 +99,15 @@ const DietaryModal = ({ open, onClose, selected = [], onApply, tags }) => {
             </DialogContent>
 
             <DialogActions sx={{ justifyContent: "center", pb: 2 }}>
-                <Button onClick={resetTags} variant="contained" className="bodyRegularText5" sx={{
+                <Button onClick={resetTags} variant="contained" className="bodyRegularText5 diet-btn" sx={{
                     backgroundColor: "#FCFCFC", textTransform: 'none', color: "#1A1A1A", borderRadius: "24px", px: 4, py: 2
                 }}>
-                    Reset
+                    {t('menu.Reset')}
                 </Button>
-                <Button onClick={handleApply} variant="contained" className="bodyRegularText5" sx={{
+                <Button onClick={handleApply} variant="contained" className="bodyRegularText5 diet-btn" sx={{
                     backgroundColor: "#7FEE64", textTransform: 'none', color: "#1A1A1A", borderRadius: "24px", px: 4, py: 2
                 }}>
-                    Apply
+                    {t('menu.Apply')}
                 </Button>
             </DialogActions>
         </Dialog>

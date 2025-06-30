@@ -6,7 +6,7 @@ function Specifications() {
       const { t } = useTranslation();
     
     return (
-        <Box className="section-container">
+        <Box className="">
             <Typography className='headings-h2'
                 variant="h4"
                 sx={{ color: '#FCFCFC', marginBottom: '20px', textAlign: 'left' }}
@@ -14,8 +14,8 @@ function Specifications() {
                 {t('software.Specifications')}
             </Typography>
             <hr className='software-hr' style={{ margin: '50px 0', width: '100%' }} />
-            <Box className='software-specifications-items' >
-                <Box sx={{ display: 'flex' }}>
+            < Box className='software-specifications-items' sx={{ display: 'flex' }}>
+
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
                         {t('software.SalesPerformance')}
@@ -35,11 +35,11 @@ function Specifications() {
                         {t('software.salespoints4')}
                         </Typography>
                     </Box>
-                </Box>
+            
             </Box>
             <hr className='software-hr' style={{ margin: '50px 0' }} />
-            <Box className='software-specifications-items' >
-                <Box sx={{ display: 'flex' }}>
+            <Box className='software-specifications-items'sx={{ display: 'flex' }} >
+                
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
                         {t('software.Machines')}
@@ -68,11 +68,11 @@ function Specifications() {
                         {t('software.machinepoints7')}
                         </Typography>
                     </Box>
-                </Box>
+                
             </Box>
             <hr className='software-hr' style={{ margin: '50px 0' }} />
-            <Box className='software-specifications-items'>
-                <Box sx={{ display: 'flex' }}>
+            <Box className='software-specifications-items' sx={{ display: 'flex' }}>
+              
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
                         {t('software.Products')}
@@ -104,11 +104,11 @@ function Specifications() {
                         {t('software.Productspoints8')}
                         </Typography>
                     </Box>
-                </Box>
+               
             </Box>
             <hr className='software-hr' style={{ margin: '50px 0' }} />
-            <Box className='software-specifications-items' >
-                <Box sx={{ display: 'flex' }}>
+            <Box className='software-specifications-items' sx={{ display: 'flex' }}>
+                
                     <Box className="spec-title-sec">
                         <Typography className='headings-h4' variant="h6" sx={{ color: '#FCFCFC', marginBottom: '10px' }}>
                         {t('software.user')}
@@ -125,7 +125,7 @@ function Specifications() {
                         {t('software.userpoints3')}
                         </Typography>
                     </Box>
-                </Box>
+                
             </Box>
         </Box>
     )

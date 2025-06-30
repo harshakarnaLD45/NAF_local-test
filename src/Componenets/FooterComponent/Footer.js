@@ -1,5 +1,5 @@
-import { Box, Stack, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import React, { useState,useEffect, useRef } from "react";
 import "./Footer.css";
 import Facebook from '../../assets/facebook.svg';
 import Instagram from '../../assets/Instagram.svg';
@@ -13,19 +13,88 @@ import FooterVideo from '../../assets/naf-footer-video.mp4'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "react-fast-marquee";
-
+import { East } from "@mui/icons-material";
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const { t } = useTranslation();
   const { lang } = useParams();
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'error' });
+
+
+
+ const hubspotFormRef = useRef(null);
+
+  useEffect(() => {
+    // Only load script if not already loaded
+    if (!window.hbspt) {
+      const script = document.createElement("script");
+      script.src = "//js-eu1.hsforms.net/forms/embed/v2.js";
+      script.type = "text/javascript";
+      script.charset = "utf-8";
+      script.onload = () => {
+        if (window.hbspt) {
+          window.hbspt.forms.create({
+            portalId: "145027405",
+            formId: "707bb44a-4705-4866-9197-009af38be15b",
+            region: "eu1",
+            target: "#hubspot-footer-form"
+          });
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      window.hbspt.forms.create({
+        portalId: "145027405",
+        formId: "707bb44a-4705-4866-9197-009af38be15b",
+        region: "eu1",
+        target: "#hubspot-footer-form"
+      });
+    }
+  }, []);
+
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEmail(value);
+    setEmail(e.target.value);
+    setEmailError('');
   };
+
+  const validateEmail = (mail) => {
+    // Simple email regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+  };
+
+  const handleMailSubmit = () => {
+    if (!email) {
+      setEmailError('Please enter your email address.');
+      setSnackbar({ open: true, message: 'Please enter your email address.', severity: 'error' });
+      return;
+    }
+    if (!validateEmail(email)) {
+      setEmailError('Invalid email address.');
+      setSnackbar({ open: true, message: 'Invalid email address.', severity: 'error' });
+      return;
+    }
+    // Success: you can add your submit logic here
+    setSnackbar({ open: true, message: 'Mailed successfully!', severity: 'success' });
+    setEmail('');
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbar({ ...snackbar, open: false });
+  };
+
+
+
+
+
+
+
 
   const socialIcons = [
     { src: Facebook, name: "NAF Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },
@@ -88,7 +157,7 @@ const Footer = () => {
               gap: { xs: 4, md: 0 },
             }}
           >
-            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{  md: "flex-start" }}>
+            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ md: "flex-start" }}>
               <Typography
                 className="headings-h2 footerhead"
                 variant="h2"
@@ -101,7 +170,7 @@ const Footer = () => {
                   mb: 8,
                   display: "flex",
                   flexWrap: "wrap",
-                  
+
                   // overflow: "hidden", // Add this line to hide scrollbars
                   // alignItems: "center", // Optional: vertically center content
                 }}
@@ -110,7 +179,7 @@ const Footer = () => {
                   {t('footer.Gotaproject')}
                 </Box>
 
-                <Box component="span" sx={{ mt: 0, pt: 0, ml:{sm: 2} , whiteSpace: "wrap" }} className="headings-h2 xl-heading-text  ">
+                <Box component="span" sx={{ mt: 0, pt: 0, ml: { sm: 2 }, whiteSpace: "wrap" }} className="headings-h2 xl-heading-text  ">
                   {t('footer.Gotaproject1')}
                 </Box>
                 {/* <Box component="span" sx={{ mt: 0, pt: 0, ml:{sm: 2} , whiteSpace: "wrap" }} className="headings-h2">
@@ -137,8 +206,8 @@ const Footer = () => {
                   {t('footer.Gotaproject2')}
                 </Box>
               </Typography>
-              <Box sx={{display:'flex',justifyContent:'center', alignItems: {  sm: "center" } }}>
-              <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { sm: "center" } }}>
+                <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
               </Box>
 
               <Box className="social-icon-sec" sx={{
@@ -189,35 +258,55 @@ const Footer = () => {
               >
                 {t('footer.subscrptionText')}
               </Typography>
-              <TextField
-                className='bodyRegularText3'
-                label={t('contactus.Email')}
-                variant="standard"
-                required
-                fullWidth
-                name="email"
-                value={email}
-                onChange={handleInputChange}
-                InputLabelProps={{
-                  style: {
-                    color: '#C2C2C4',
-                    fontSize: {
-                      md: '10px',
-                      lg: '20px',
+
+              <Box sx={{ display: "flex", alignItems: "end" }}>
+                {/* <TextField
+                  className='bodyRegularText3'
+                  label={t('contactus.Email')}
+                  variant="standard"
+                  required
+                  fullWidth
+                  name="email"
+                  value={email}
+                  onChange={handleInputChange}
+                  error={!!emailError}
+                  helperText={emailError}
+                  InputLabelProps={{
+                    style: {
+                      color: '#C2C2C4',
+                      fontSize: {
+                        md: '10px',
+                        lg: '20px',
+                      },
                     },
-                  },
-                }}
-                InputProps={{
-                  disableUnderline: false,
-                  sx: {
-                    color: '#C2C2C4',
-                    paddingTop: "28px",
-                    '&:before': { borderBottomColor: '#C2C2C4' },
-                    '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#C2C2C4' },
-                    '&:after': { borderBottomColor: '#C2C2C4' },
-                  },
-                }}
-              />
+                  }}
+                  InputProps={{
+                    disableUnderline: false,
+                    sx: {
+                      color: '#FCFCFC',
+                      paddingTop: "28px",
+                      '&:before': { borderBottomColor: '#C2C2C4' },
+                      '&:hover:not(.Mui-disabled):before': { borderBottomColor: '#C2C2C4' },
+                      '&:after': { borderBottomColor: '#C2C2C4' },
+                    },
+                  }}
+                />
+                <Button className='mail-btn' sx={{pointer:"Cursor"}} onClick={handleMailSubmit}>
+                  <East sx={{ color: '#35B814',
+                   }} />
+                </Button>
+                <Snackbar
+                  open={snackbar.open}
+                  autoHideDuration={3000}
+                  onClose={handleSnackbarClose}
+                  anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                >
+                  <Alert onClose={handleSnackbarClose} severity={snackbar.severity} sx={{ width: '100%' }}>
+                    {snackbar.message}
+                  </Alert>
+                </Snackbar> */}
+                 <div id="hubspot-footer-form" className="bodyRegularText5" ref={hubspotFormRef} style={{ width: "100%" }} />
+              </Box>
 
               <Typography
                 className="footercontact bodyRegularText5"
@@ -331,7 +420,7 @@ const Footer = () => {
               textTransform: 'uppercase'
             }}
           >
-            <Marquee gradient={false} speed={40} sx={{ height: "auto" }}>
+            <Marquee gradient={false} speed={80} sx={{ height: "auto" }}>
               {t('footer.footerTitle')} &nbsp; &nbsp; {t('footer.footerTitle')} &nbsp; &nbsp; {t('footer.footerTitle')}
             </Marquee>
           </Typography>
