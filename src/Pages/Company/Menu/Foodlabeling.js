@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import foodlabel1 from '../../../assets/About/Menu/foodlabels/label1.svg';
-import foodlabel2 from '../../../assets/About/Menu/foodlabels/label2.svg';
-import foodlabel3 from '../../../assets/About/Menu/foodlabels/label3.svg';
-import foodlabel4 from '../../../assets/About/Menu/foodlabels/label4.svg';
-import foodlabel5 from '../../../assets/About/Menu/foodlabels/label5.svg';
-import foodlabel6 from '../../../assets/About/Menu/foodlabels/label6.svg';
+import foodlabel1 from '../../../assets/About/Menu/foodlabels/169.png';
+import foodlabel2 from '../../../assets/About/Menu/foodlabels/170.png';
+import foodlabel3 from '../../../assets/About/Menu/foodlabels/171.png';
+import foodlabel4 from '../../../assets/About/Menu/foodlabels/172.png';
+import foodlabel5 from '../../../assets/About/Menu/foodlabels/173.png';
+import foodlabel6 from '../../../assets/About/Menu/foodlabels/174.png';
 import './Menu.css';
 
 
@@ -23,7 +23,6 @@ const Foodlabeling = () => {
     const foodlabels = [foodlabel1, foodlabel2, foodlabel3, foodlabel4, foodlabel5, foodlabel6];
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-    const isMobileScreen = useMediaQuery(theme.breakpoints.down('xs'));
     return (
         <Box className='foodlabeling-container' sx={{ mt: '200px', pl: '50px' }}>
             <Typography variant="h4" className='headings-h2' sx={{ color: '#FCFCFC', mb: isSmallScreen? '20px ': '50px' }}>
@@ -37,17 +36,13 @@ const Foodlabeling = () => {
                     isSmallScreen ? 1.2 : isTablet ? 3.5 :
                                 4.5
                 }
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false, // ✅ ensures autoplay resumes after swipe
-                }}
-                loop={true}
+               
+              
             >
                 {foodlabels.map((foodlabel, index) => (
                     <SwiperSlide
                         key={index}
                         style={{
-                            // width: '95%',
                             flexShrink: 0,
                             position: 'relative',
                         }}
@@ -60,8 +55,8 @@ const Foodlabeling = () => {
                                 width: '100%',
                                 height: 'auto',
                                 borderRadius: 2,
-                                boxShadow: 2,
-                                cursor:'grab'
+                                boxShadow: 2, 
+                                cursor: 'grab !important',
                             }}
                         />
                     </SwiperSlide>

@@ -4,7 +4,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Box, Typography, IconButton , useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import Allergen1 from '../../../assets/About/Menu/Allergen1.svg'
 import Allergen2 from '../../../assets/About/Menu/Allergen2.svg'
 import Allergen3 from '../../../assets/About/Menu/Allergen3.svg'
@@ -18,15 +18,11 @@ import { useTranslation } from 'react-i18next';
 const allergenImages = [Allergen1, Allergen2, Allergen3, Allergen4, Allergen5, Allergen6, Allergen7];
 
 export default function Allergen() {
-
-    
-        const theme = useTheme();
-    
+    const theme = useTheme();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const { t } = useTranslation();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-    const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Box sx={{ position: 'relative', pr: 0 }} className='section-container' >
@@ -38,10 +34,10 @@ export default function Allergen() {
                 {/* Arrows at the Top-Right */}
                 <Box className="menu-btn-section" >
                     <IconButton ref={prevRef} sx={{ mr: 1, color: '#FCFCFC' }}>
-                        <EastIcon sx={{ rotate: '180deg' }} fontSize="small" />
+                        <EastIcon sx={{ rotate: '180deg', cursor: 'pointer' }} fontSize="small" />
                     </IconButton>
-                    <IconButton ref={nextRef} sx={{ color: '#FCFCFC' }}>
-                        <EastIcon fontSize="small" />
+                    <IconButton ref={nextRef} sx={{  color: '#FCFCFC' }}>
+                        <EastIcon fontSize="small" sx={{ cursor: 'pointer' }} />
                     </IconButton>
                 </Box>
             </Box>
@@ -49,7 +45,7 @@ export default function Allergen() {
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={30}
-                slidesPerView={isSmallScreen? 1.2 :1.8}
+                slidesPerView={isSmallScreen ? 1.2 : 1.8}
                 navigation={{
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
@@ -59,8 +55,6 @@ export default function Allergen() {
                     swiper.params.navigation.nextEl = nextRef.current;
                 }}
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 6000 }}
-                loop
             >
                 {allergenImages.map((src, index) => (
                     <SwiperSlide className=''
@@ -75,6 +69,7 @@ export default function Allergen() {
                                 height: '100%',
                                 borderRadius: 2,
                                 boxShadow: 2,
+                                cursor: 'grab',
                             }}
                         />
                     </SwiperSlide>
