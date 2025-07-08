@@ -16,7 +16,8 @@ const Header = () => {
   const location = useLocation();
   const menuRef = useRef(null);
   const menuTriggerRef = useRef(null); // for the menu button  
-  const { lang } = useParams(); // 👈 get language from URL
+  const { lang } = useParams();
+  const currentLang = lang || i18n.language;
 
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -33,6 +34,10 @@ const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hoveredPath, setHoveredPath] = useState(null);
+
+  useEffect(() => {
+    setLanguage(i18n.language);
+  }, [i18n.language]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,24 +121,24 @@ const Header = () => {
     const newLanguage = event.target.value;
     const pathParts = location.pathname.split('/').filter(Boolean);
 
-    // Replace the first part (language) with newLanguage
-    if (pathParts.length > 0) {
+    if (pathParts.length > 0 && /^[a-z]{2}$/.test(pathParts[0])) {
       pathParts[0] = newLanguage;
     } else {
       pathParts.unshift(newLanguage);
     }
 
     const newPath = `/${pathParts.join('/')}`;
-
-    setLanguage(newLanguage);
+    localStorage.setItem("i18nextLng", newLanguage);
     i18n.changeLanguage(newLanguage);
+    setLanguage(newLanguage); // ✅ update local state
     navigate(newPath);
   };
+
   const strippedPath = location.pathname.replace(/^\/[a-z]{2}\//, '/');
 
   return (
     <>
-      <Box onClick={() => navigate('/')} sx={{ cursor: 'pointer' }} className="main-logo">
+      <Box onClick={() => navigate(`/${currentLang}`)} sx={{ cursor: 'pointer' }} className="main-logo">
         <Lottie
           animationData={NafLogoGif}
           className="w-full h-full"
@@ -177,7 +182,7 @@ const Header = () => {
               />
             </>
           )}
-          <span className="bodyRegularText3" style={{color: "#1A1A1A"}}> {t("Header.menu")}</span>
+          <span className="bodyRegularText3" style={{ color: "#1A1A1A" }}> {t("Header.menu")}</span>
         </Box>
         <Box data-cursor="hover"
           className='menu-mobile-sec'
@@ -221,7 +226,7 @@ const Header = () => {
                   marginRight: { xs: '2px', sm: '4px', md: '18px' },
                 }}
               />
-              <span className="bodyRegularText3" style={{color: "#1A1A1A"}}> {t("Header.menu")}</span>
+              <span className="bodyRegularText3" style={{ color: "#1A1A1A" }}> {t("Header.menu")}</span>
             </Box>
           )}
 
@@ -253,16 +258,16 @@ const Header = () => {
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 }, transition: 'transform 1s ease-in-out' }}>
                 {[
-                  { label: t("Header.menuHome"), path: `/${lang}` },
-                  { label: t("Header.menuMachines"), path: `/${lang}/machine` },
-                  { label: t("Header.menuSoftware"), path: `/${lang}/software` },
-                  { label: t("Header.menuInsights"), path: `/${lang}/insights` },
-                  { label: t("Header.CompanyDiscover"), path: `/${lang}/company/about` },
-                  { label: t("Header.foodMenu"), path: `/${lang}/company/menu` },
+                  { label: t("Header.menuHome"), path: `/${currentLang}` },
+                  { label: t("Header.menuMachines"), path: `/${currentLang}/machine` },
+                  { label: t("Header.menuSoftware"), path: `/${currentLang}/software` },
+                  { label: t("Header.menuInsights"), path: `/${currentLang}/Insights` },
+                  { label: t("Header.CompanyDiscover"), path: `/${currentLang}/company/about` },
+                  { label: t("Header.foodMenu"), path: `/${currentLang}/company/menu` },
                 ].map(({ label, path }) => (
                   <Box
                     key={path}
-                    className={`menu-item ${(strippedPath === path.replace(`/${lang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
+                    className={`menu-item ${(strippedPath === path.replace(`/${currentLang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
@@ -336,7 +341,7 @@ const Header = () => {
                         color: (strippedPath === '/contact') ? '#1A1A1A' : '#FCFCFC',
                         gap: '10px',
                       }}
-                      onClick={() => handleNavigation(`/${lang}/contact`)}
+                      onClick={() => handleNavigation(`/${currentLang}/contact`)}
                     >
                       {(strippedPath === '/contact') && <span className="arrow-icon"><ArrowIcon1 /></span>}
                       <span>{t("Header.BookaDemo")}</span>
@@ -350,7 +355,7 @@ const Header = () => {
               {!isMobile && (
                 <Box className="custom-button" onClick={handleMenuClose}>
                   <CloseIcon sx={{ fontSize: '24px' }} />
-                  <span  style={{color: "#1A1A1A"}} className="bodyRegularText3"> {t("Header.menu")}</span>
+                  <span style={{ color: "#1A1A1A" }} className="bodyRegularText3"> {t("Header.menu")}</span>
                 </Box>
               )}
             </Box>
@@ -415,7 +420,7 @@ const Header = () => {
 
               <button
                 data-cursor="hover"
-                onClick={() => navigate(`/${lang}/contact`)}
+                onClick={() => navigate(`/${currentLang}/contact`)}
                 className="book-demo-btn bodyRegularText4"
               >
                 {t("Header.BookaDemo")}

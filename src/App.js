@@ -25,11 +25,8 @@ const LanguageWrapper = () => {
   const { i18n, t } = useTranslation();
 
   useEffect(() => {
-    if (lang && ['de', 'en'].includes(lang)) {
-      i18n.changeLanguage(lang);
-    } else {
-      i18n.changeLanguage('de'); // fallback to English if unknown lang
-    }
+    const supportedLangs = ['de', 'en', 'fr', 'es', 'pl'];
+    i18n.changeLanguage(supportedLangs.includes(lang) ? lang : 'de');
   }, [lang, i18n]);
 
   return (

@@ -3,17 +3,21 @@ import { initReactI18next } from 'react-i18next';
 import HttpApi from 'i18next-http-backend';
 
 i18n
-  .use(HttpApi) // Load translations using HTTP
-  .use(initReactI18next) // Passes i18n instance to react-i18next
+  .use(HttpApi)
+  .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json', // Path to translation files in public folder
+      loadPath: '/locales/{{lng}}/translation.json',
     },
-    lng: 'de', // Default language
-    fallbackLng: 'en', // Fallback language if the chosen language translation is missing
+    lng: localStorage.getItem("i18nextLng") || 'de',
+    fallbackLng: 'en',
     interpolation: {
-      escapeValue: false, // React already escapes by default
+      escapeValue: false,
     },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    }
   });
 
 export default i18n;
