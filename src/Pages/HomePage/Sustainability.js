@@ -95,7 +95,7 @@ const Sustainability = () => {
                                 height: '6px',
                                 borderRadius: '50%',
                                 backgroundColor: '#444',
-                                mr: 1.5, // Spacing between dot and text
+                                mr: 1.5,
                             }}
                             className='bodyRegularText4'
                         />
@@ -106,15 +106,8 @@ const Sustainability = () => {
                     </ListItem>
                 </List>
 
-                {/* <Typography variant="h3" className='headings-h2' color='#1A1A1A' gutterBottom>
-                    Sustainability & Technology
-                </Typography> */}
                 <ScrollMaskHeadings text={t('Home.sustainabilityHeading')} textColor='#1A1A1A' />
-                {/* <Typography variant="body1" className='bodyRegularText3' sx={{ mb: 2 }}>
-                    NAF Germany is committed to providing innovative and ecological vending solutions that
-                    benefit both our customers and the environment. We leverage cutting-edge technology and
-                    sustainable practices to create a better future.
-                </Typography> */}
+                
                 <Box sx={{ mb: 2, mt: { xs: '8px', sm: '8px', md: '16px' } }}>
                     <ScrollMaskText text={t('Home.sustainabilityText')} textColor='#444'
                     />

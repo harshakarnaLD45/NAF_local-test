@@ -22,6 +22,7 @@ import CustomSelect from './MantaincePage/CustomSelect';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
+import './MachinesPage.css';
 
 function PartnersForm() {
     const navigate = useNavigate();
@@ -210,29 +211,61 @@ function PartnersForm() {
                     value={tab}
                     onChange={handleTabChange}
                     centered
-                    className='bodyMediumText1'
+                    className='bodyMediumText1 tabs-container'
                     TabIndicatorProps={{
                         style: {
-                            backgroundColor: "#7FEE64", // ✅ Green underline
-                            height: 1,
-                            textTransform: 'none'
+                            backgroundColor: "transparent", // Hide default indicator
+                            height: 0,
+                            display:'flex',
+                            gap:'10px',
+                        
                         },
                     }}
                     sx={{
                         '& .MuiTab-root': {
-                            color: '#C2C2C4 !important', // ❌ Inactive tab text color
+                            color: '#C2C2C4 !important',
                             fontWeight: 500,
                             fontSize: { xs: '12px', sm: '15px', md: '18px' },
                             textTransform: 'none',
+                            whiteSpace: 'wrap',
+                            
+                            
+                             // Allow text to wrap
+                            position: 'relative',
+                            minWidth: 0,
+                        //    / <-- Optional: limit width for wrapping
+                            p:0,
+                            // minWidth: 0,
+                          
+                            transition: 'color 0.3s',
+                            '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                
+                                left: 0,
+                                bottom: 0,
+                                height: '2px', // Thicker underline for visibility
+                                width: 0,
+                                backgroundColor: '#7FEE64',
+                                borderRadius: '2px',
+                                transition: 'width 0.4s cubic-bezier(.4,0,.2,1)',
+                            },
                         },
                         '& .Mui-selected': {
-                            color: '#FCFCFC !important', // ✅ Active tab text color
-                            textTransform: 'none'
+                            color: '#FCFCFC !important',
+                                width: 'auto',
+
+                            '&::before': {
+                                width: '100%',
+                               
+                               
+
+                            },
                         },
                     }}
                 >
-                    <Tab label="Unternehmen & Installationsstandorte" />
-                    <Tab label="Gastronomische Partner" />
+                    <Tab className='tab-buttons'  label={t('machines.CompaniesInstallationLocations')} />
+                    <Tab className='tab-buttons' label={t('machines.GastronomyPartners')} />
                 </Tabs>
 
                 {tab === 0 ? (
@@ -255,10 +288,11 @@ function PartnersForm() {
                             }}
                         >
                             {[Service1, Service2, Service3].map((img, index) => (
-                                <Box
+                                <Box className="work-benefit-img-sec"
                                     key={index}
                                     sx={{
                                         flex: { xs: '1 1 100%', sm: '1 1 calc(33.333% - 16px)' }, // ✅ 3 per row on sm+, full width on xs
+                                       
                                     }}
                                 >
                                     <img src={img} alt={altTextHowItWorks[index]} style={{ maxWidth: '100%', height: 'auto' }} />
@@ -306,10 +340,11 @@ function PartnersForm() {
                         <CustomTextField required label={t('machines.Email')} name="email" type="email" value={formTab0.email} onChange={(e) => handleChange(e, 0)} />
                         <CustomTextField label={t('machines.PhoneNumber')} name="phoneNumber" value={formTab0.phoneNumber} onChange={(e) => handleChange(e, 0)} />
 
-                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
+                        <Box  className="policy-div"  style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
                             <input
                                 type="radio"
                                 name="agreement"
+                                 id="policy-radio" 
                                 checked={formTab0.agreement}
                                 onChange={(e) => handleCheckboxChange(e, 0)} // or 1 for second tab
                                 required
@@ -332,7 +367,7 @@ function PartnersForm() {
                                     {t('machines.privacypolicy')}
                                 </a>
                             </label>
-                        </div>
+                        </Box>
 
                     </Box>
                 ) : (
@@ -413,17 +448,19 @@ function PartnersForm() {
                             }
                             sx={{ mt: 2, color: '#C2C2C4' }}
                         /> */}
-                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
-                            <input
+                        <Box className="policy-div"  sx={{ display: 'flex', gap: '8px',alignItems:'center', marginTop: '16px' }}>
+                            <input   
                                 type="radio"
                                 name="agreement"
+                                id="policy-radio" 
                                 checked={formTab1.agreement}
                                 onChange={(e) => handleCheckboxChange(e, 1)}
                                 required
+                                
                                 style={{
                                     accentColor: '#7FEE64', // Green fill when selected
                                     cursor: 'pointer',
-                                    marginTop: '4px',
+                                   mt:"8px !important",
                                     width: '16px',
                                     height: '16px',
                                 }}
@@ -441,7 +478,7 @@ function PartnersForm() {
                                     {t('machines.privacypolicy')}
                                 </a>
                             </label>
-                        </div>
+                        </Box>
                     </Box>
                 )}
                 <Snackbar

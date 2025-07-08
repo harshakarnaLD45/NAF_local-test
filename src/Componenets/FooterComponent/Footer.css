@@ -105,6 +105,11 @@ Large Screens (Desktops)
     display: none;
 }
 
+
+.footer-mobile-contact{
+    display: none;
+}
+
 @keyframes scroll-left {
     0% {
         transform: translateX(-100%);
@@ -252,7 +257,12 @@ Large Screens (Desktops)
         max-height: none !important;
         height: fit-content !important;
     }
-
+.footer-website-contact{
+    display: none;
+}
+.footer-mobile-contact{
+    display: block;
+}
     .footercontact {
         position: relative;
         bottom: -10px;

@@ -105,8 +105,8 @@ const WhatsNew = () => {
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}
-        <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
-        <Box>
+        <ScrollManualLinesHeadings text={t('Home.WhatsNew')}/>
+        <Box className="animate-div">
           <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route={`/${lang}/Insights`} />
         </Box>
       </Box>
@@ -131,6 +131,8 @@ const WhatsNew = () => {
               gap: 1
             }}
           >
+{/* images sections */}
+
             <Box className="imagestaticwhatssmallscreen"
               sx={{
                 marginRight: 1
@@ -150,6 +152,7 @@ const WhatsNew = () => {
             <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
               {post.date}
             </Typography>
+
 
             <Box className="imagestaticwhats bigimage"
               sx={{
@@ -198,7 +201,7 @@ const WhatsNew = () => {
                 className="blog-image bigimage"
               />
             </Box>
-
+{/* images sections */}
 
             <Typography
               className="bodyMediumText1 whatsmiddletext bigtitle"
@@ -280,7 +283,12 @@ const WhatsNew = () => {
             </Box>
 
             {/* Arrow */}
-            <Box
+            {/* <Box sx={{
+                width: "25%",
+                
+              }}> */}
+
+            <Box 
               component="img"
               src={whatarrow}
               onClick={() => handleBlogClick(index)}
@@ -290,8 +298,9 @@ const WhatsNew = () => {
                 width: 28,
                 height: 28,
               }}
-            />
-          </Box>
+              />
+              </Box>
+          {/* </Box> */}
         </Box>
       ))}
     </Box>

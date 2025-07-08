@@ -48,7 +48,7 @@ function SoftwarePage() {
                     <Typography className="herotitle headings-h2" variant="h2" sx={{ color: "#FCFCFC" }}>
                     {t('software.introducingcloud')}
                     </Typography>
-                    <Typography className="bodyRegularText3 bodyMediumText2" variant="body1" sx={{ color: "#C2C2C4",width:'70%' }} >
+                    <Typography className="bodyRegularText3 bodyMediumText2 "  variant="body1" sx={{ color: "#C2C2C4",width:'70%' }} >
                     {t('software.introducingcloudSubtitle')}
                     </Typography>
                 </Box>

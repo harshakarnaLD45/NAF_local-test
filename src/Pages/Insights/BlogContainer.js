@@ -9,6 +9,7 @@ import dateImage from "../../assets/star.svg";
 import BlogPage from "./BlogDetailPage";
 import { Box, Button, Stack } from "@mui/material";
 import { Helmet } from "react-helmet";
+import { useTranslation } from 'react-i18next';
 
 // Define all 7 blogs here
 // const blogData = [
@@ -305,7 +306,7 @@ const BlogContainer = () => {
     const { lang } = useParams();
     const initialIndex = location.state?.blogIndex ?? 0;
     const [currentBlogIndex, setCurrentBlogIndex] = useState(initialIndex);
-
+const { t } = useTranslation();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -354,7 +355,7 @@ const BlogContainer = () => {
                         className="bodyRegularText2"
                     >
                         <img src={arrowBack} alt="Back Arrow" style={{ width: 18, height: 15, marginRight: 8 }} />
-                        Zurück
+                       {t('blogPost.Back')}
                     </Button>
 
                     {currentBlogIndex < blogData.length - 1 && (
@@ -363,7 +364,7 @@ const BlogContainer = () => {
                             sx={{ color: "#FCFCFC", padding: 0, textTransform: "none", "&:hover": { backgroundColor: "transparent" } }}
                             className="bodyRegularText2"
                         >
-                            Weiter
+                             {t('blogPost.Next')}
                             <img src={arrowForward} alt="Next Arrow" style={{ width: 18, height: 15, marginLeft: 8, aspectRatio: "3/4" }} />
                         </Button>
                     )}

@@ -1,5 +1,5 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Footer.css";
 import Facebook from '../../assets/facebook.svg';
 import Instagram from '../../assets/Instagram.svg';
@@ -28,7 +28,7 @@ const Footer = () => {
 
 
 
- const hubspotFormRef = useRef(null);
+  const hubspotFormRef = useRef(null);
 
   useEffect(() => {
     // Only load script if not already loaded
@@ -238,6 +238,50 @@ const Footer = () => {
                   </a>
                 ))}
               </Box>
+              <Box className=" footer-website-contact" >
+
+
+
+                <Typography
+                  className="footercontact bodyRegularText5"
+                  sx={{ color: "#C2C2C4", pt: 3 }}
+                >
+                  {t('footer.footerContact')}
+                </Typography>
+                <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >
+                    info@naf-halsbach.de
+                  </Typography>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >0152 – 28387141 (Odette Lamkhizni)
+
+                  </Typography>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >
+                    0162 – 1638005  (Technischer Support 24/7)
+                  </Typography>
+                </Stack>
+
+              </Box>
             </Stack>
 
             {/* <Box className="btn-social-icon"
@@ -305,47 +349,51 @@ const Footer = () => {
                     {snackbar.message}
                   </Alert>
                 </Snackbar> */}
-                 <div id="hubspot-footer-form" className="bodyRegularText5" ref={hubspotFormRef} style={{ width: "100%" }} />
+                <div id="hubspot-footer-form" className="bodyRegularText5" ref={hubspotFormRef} style={{ width: "100%" }} />
+              </Box>
+              <Box className="footer-mobile-contact">
+
+
+                <Typography
+                  className="footercontact bodyRegularText5"
+                  sx={{ color: "#C2C2C4", pt: 1, mb: 2 }}
+                >
+                  {t('footer.footerContact')}
+                </Typography>
+                <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >
+                    info@naf-halsbach.de
+                  </Typography>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >0152 – 28387141 (Odette Lamkhizni)
+
+                  </Typography>
+                  <Typography
+                    className="footercontactdown footerpadding bodyRegularText4"
+                    sx={{
+                      color: "#FCFCFC",
+                      fontSize: { xs: "18px", md: "22px" },
+                      textAlign: { xs: "center", md: "left" }
+                    }}
+                  >
+                    0162 – 1638005  (Technischer Support 24/7)
+                  </Typography>
+                </Stack>
               </Box>
 
-              <Typography
-                className="footercontact bodyRegularText5"
-                sx={{ color: "#C2C2C4", pt: 3 }}
-              >
-                {t('footer.footerContact')}
-              </Typography>
-              <Stack spacing={1} alignItems={{ xs: "center", md: "flex-start" }}>
-                <Typography
-                  className="footercontactdown footerpadding bodyRegularText4"
-                  sx={{
-                    color: "#FCFCFC",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >
-                  info@naf-halsbach.de
-                </Typography>
-                <Typography
-                  className="footercontactdown footerpadding bodyRegularText4"
-                  sx={{
-                    color: "#FCFCFC",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >0152 – 28387141 (Odette Lamkhizni)
-
-                </Typography>
-                <Typography
-                  className="footercontactdown footerpadding bodyRegularText4"
-                  sx={{
-                    color: "#FCFCFC",
-                    fontSize: { xs: "18px", md: "22px" },
-                    textAlign: { xs: "center", md: "left" }
-                  }}
-                >
-                  0162 – 1638005  (Technischer Support 24/7)
-                </Typography>
-              </Stack>
               <Typography
                 className="footercontact bodyRegularText5"
                 sx={{ color: "#C2C2C4", pt: 3 }}

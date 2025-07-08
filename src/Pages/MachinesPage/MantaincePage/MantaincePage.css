@@ -19,13 +19,20 @@
     }
 
     .maintaince-sub-container1 {
-        width: 100%;
+        width: 100% !important;
     }
 }
 
 @media (max-width: 768px) {
     .maintaince-container {
         padding: 0px 20px;
+    }
+    .maintaine-section2{
+        justify-content: flex-start !important;
+    }
+    .maintaine-section2-div{
+        width: 100% !important;
+        padding: 0 20px !important;
     }
 }
 

@@ -272,7 +272,7 @@ function ServiceForm() {
                   {file.type.startsWith('image') ? (
                     <img src={URL.createObjectURL(file)} alt={file.name} width="60" height="60" />
                   ) : (
-                    <Typography sx={{ fontSize: '12px' }}>{t('Maintenance.media')}</Typography>
+                    <Typography  sx={{ color: '#C2C2C4', fontSize: '12px'  }}>{t('Maintenance.media')}</Typography>
                   )}
                 </Box>
                 <CloseIcon

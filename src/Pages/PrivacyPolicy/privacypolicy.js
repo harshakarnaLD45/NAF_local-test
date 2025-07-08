@@ -72,10 +72,10 @@ const PrivacyPolicyPage = () => {
           {t('privacypolicy.legalBasis')}
         </Typography>
         <ul className='bodyRegularText3'>
-          <li><Typography className='bodyRegularText3' variant="body1">{t('privacypolicy.legalBasisList1')}</Typography></li>
-          <li><Typography className='bodyRegularText3' variant="body1">{t('privacypolicy.legalBasisList2')}</Typography></li>
-          <li><Typography className='bodyRegularText3' variant="body1">{t('privacypolicy.legalBasisList3')}</Typography></li>
-          <li><Typography className='bodyRegularText3' variant="body1">{t('privacypolicy.legalBasisList4')}</Typography></li>
+          <li><Typography className='bodyRegularText3 shantellSansFont' variant="body1">{t('privacypolicy.legalBasisList1')}</Typography></li>
+          <li><Typography className='bodyRegularText3 shantellSansFont' variant="body1">{t('privacypolicy.legalBasisList2')}</Typography></li>
+          <li><Typography className='bodyRegularText3 shantellSansFont' variant="body1">{t('privacypolicy.legalBasisList3')}</Typography></li>
+          <li><Typography className='bodyRegularText3 shantellSansFont' variant="body1">{t('privacypolicy.legalBasisList4')}</Typography></li>
         </ul>
       </Box>
 

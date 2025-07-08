@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -95,11 +95,11 @@ const FadeInParagraph = () => {
                 // Keep the full name as one underlined block
                 return (
                     <span key={idx} style={{ display: "inline-block", width: "100%" }}>
-                        <span
-                            className="fade-word headings-h2 naf-words"
+                        <span 
+                            className="fade-word headings-h2  naf-words"
                             style={{
                                 color: "#FA7854",
-                                textDecoration: "underline",
+                               textDecoration:"undeline",
                                 fontWeight: 600,
                                 textUnderlineOffset: "4px",
                                 cursor: "pointer",
@@ -107,8 +107,19 @@ const FadeInParagraph = () => {
                             }}
                             onMouseEnter={(e) => handleMouseEnter(item.person, e)}
                             onMouseLeave={handleMouseLeave}
-                        >
-                            {item.text}
+                            >
+                                <Link 
+                            className="fade-word headings-h2  naf-words "
+                            sx={{
+                               textDecoration:"undeline",
+                               textDecorationColor:"#FA7854",
+                               color: "#FA7854",
+
+                            }}
+                                >
+                                {item.text}
+
+                                </Link>
                         </span>
                         <span>&nbsp;</span>
                     </span>
@@ -177,9 +188,9 @@ const FadeInParagraph = () => {
                     <Box
                         sx={{
                             position: "fixed",
-                            top: hoverPosition.y + -20,
-                            left: hoverPosition.x + 1000,
-                            transform: "translateY(50%)",
+                            top: hoverPosition.y + 10,
+                            left: hoverPosition.x,
+                            transform: "translateX(-50%)",
                             zIndex: 1000,
                             transition: "opacity 0.3s",
                             pointerEvents: "none",

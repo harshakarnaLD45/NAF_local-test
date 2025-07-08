@@ -199,108 +199,68 @@ function ContactPage() {
         t('contactus.General'),
         t('contactus.DemoRequest'),
         t('contactus.PartnershipInquiry'),
-        // t('contactus.SalesInquiry'),
+        t('contactus.SalesInquiry'),
         t('contactus.TechnicalSupport'),
-        'Kaufanfragen',
+        // 'Kaufanfragen',
         // t('contactus.FranchiseEnquiry'),
         t('contactus.Others'),
     ];
 
     const faqs = {
-        'Allgemeines über NAF': [
-            {
-                question: 'Was ist NAF?',
-                answer: 'NAF steht für „New Age of Food“ – ein innovatives Food- und Versorgungskonzept, das Verkaufsautomaten, nachhaltige Mehrwegverpackungen, smarte Softwarelösungen und intelligente Vertriebsstrategien kombiniert.'
-            },
-            {
-                question: 'Was ist das Ziel von NAF?',
-                answer: 'Unser Ziel ist es, Gastronomie neu zu denken: 24/7-Verpflegung ohne Personalmangel, innovative Automatenlösungen, gesunde Mahlzeiten und eine finanziell attraktive Option für Unternehmen, Hotels, öffentliche Einrichtungen und mehr.'
-            },
-            {
-                question: 'Wer steckt hinter NAF?',
-                answer: 'NAF wurde von Abdelilah Lamkhizni gegründet – mit langjähriger Erfahrung in Gastronomie, Hotellerie und Technologie. Das Unternehmen vereint kulinarisches Know-how mit digitalen Lösungen.'
-            }
+        [t('faqs.faqs1title')]: [
+            { question: t('faqs.question1'), answer: t('faqs.answer1') },
+            { question: t('faqs.question2'), answer: t('faqs.answer2') },
+            { question: t('faqs.question3'), answer: t('faqs.answer3') }
         ],
-
-        'NAF Automaten – FAQs': [
+        [t('faqs.faqs2title')]: [
             {
-                question: 'Was ist NAF und welche Automaten bietet ihr an?',
-                answer: 'NAF steht für „New Age of Food“ und bietet eine digitale, innovative Lösung für die Gastronomie. Unsere Verkaufsautomaten servieren rund um die Uhr frische, hochwertige Mahlzeiten – ganz ohne Personal. Wir bieten:',
+                question: t('faqs.question4'),
+                answer: t('faqs.answer4'),
                 list: [
-                    "Gourmet-Automat („3-Minuten-Restaurant“)",
-                    "Rückgabeautomat",
-                    "Pizza-Automat",
-                    "Softeis-Automat",
-                    "Zuckerwatte-Automat",
-                    "Popcorn-Automat",
-                    "Pommes-Automat",
-                    "Bier-Automat (in Kürze)",
-                    "Verpflegungsautomaten für Hotels, Fabriken, Tankstellen, Schulen usw.",
+                    t('faqs.list1'),
+                    t('faqs.list2'),
+                    t('faqs.list3'),
+                    t('faqs.list4'),
+                    t('faqs.list5'),
+                    t('faqs.list6'),
+                    t('faqs.list7'),
+                    t('faqs.list8'),
+                    t('faqs.list9')
                 ],
-                answerSecond: 'Jeder Automat ist mit modernster Technik ausgestattet und individuell anpassbar.'
+                answerSecond: t('faqs.answer4_2')
             },
-            {
-                question: 'Wie funktionieren die NAF-Automaten?',
-                answer: 'Unsere Automaten verfügen über smarte Steuersysteme und lassen sich kontaktlos per Karte, App oder Gutschein bedienen. Je nach Gerätetyp werden Speisen frisch serviert, tiefgekühlt gelagert und aufgewärmt oder frisch zubereitet.'
-            },
-            {
-                question: 'Können Automaten individuell gestaltet werden?',
-                answer: 'Ja! Wir bieten individuelle Gestaltungsmöglichkeiten.'
-            }
+            { question: t('faqs.question5'), answer: t('faqs.answer5') },
+            { question: t('faqs.question6'), answer: t('faqs.answer6') }
         ],
-
-        'Design & Individualisierung': [
+        [t('faqs.faqs3title')]: [
             {
-                question: 'Kann der Automat individuell gestaltet werden?',
-                answer: 'Ja:',
+                question: t('faqs.question7'),
+                answer: t('faqs.answer7'),
+                list: [t('faqs.list10'), t('faqs.list11')]
+            },
+            { question: t('faqs.question8'), answer: t('faqs.answer8') }
+        ],
+        [t('faqs.faqs4title')]: [
+            { question: t('faqs.question9'), answer: t('faqs.answer9') },
+            { question: t('faqs.question10'), answer: t('faqs.answer10') },
+            { question: t('faqs.question11'), answer: t('faqs.answer11') }
+        ],
+        [t('faqs.faqs5title')]: [
+            {
+                question: t('faqs.question12'),
+                answer: t('faqs.answer12'),
                 list: [
-                    "Standard: Mit NAF-Logo, kostenlos",
-                    "Individuelles Design: 2.000 € Aufpreis"
-                ]
-            },
-            {
-                question: 'Ist eine digitale Menüanzeige möglich?',
-                answer: 'Ja.'
-            }
-        ],
-
-        'Mehrwegsystem & Rückgabeautomaten': [
-            {
-                question: 'Welche Mehrweglösungen bietet NAF?',
-                answer: 'Wir setzen auf ein nachhaltiges System mit Mehrwegbehältern und Rückgabeautomaten.'
-            },
-            {
-                question: 'Wie funktioniert der Rückgabeautomat?',
-                answer: 'Kunden scannen einen QR-Code und geben den Behälter zurück. Die Pfandrückgabe erfolgt automatisch über Kundenkarte oder App.'
-            },
-            {
-                question: 'Gibt es Förderungen für Rückgabeautomaten?',
-                answer: 'Ja.'
-            }
-        ],
-
-        'Software & Cloud-System': [
-            {
-                question: 'Was bietet das NAF-Cloud-System?',
-                answer: '',
-                list: [
-                    "Telemetrie & Live-Daten",
-                    "Verkaufsanalysen",
-                    "Temperaturkontrolle",
-                    "Produktverwaltung",
-                    "Coupon- & Rabattsystem",
-                    "Benutzerverwaltung & Mitgliedskarten"
+                    t('faqs.list12'),
+                    t('faqs.list13'),
+                    t('faqs.list14'),
+                    t('faqs.list15'),
+                    t('faqs.list16'),
+                    t('faqs.list17')
                 ],
-                answerSecond: ''
+                answerSecond: t('faqs.answer12_2')
             },
-            {
-                question: 'Gibt es eine Mobile App?',
-                answer: 'Noch nicht – aber eine App ist in Entwicklung, um Käufe, Coupons, Feedback, Rückgaben und Zahlungen zu ermöglichen.'
-            },
-            {
-                question: 'Welche Sprachen werden unterstützt?',
-                answer: 'Mehrsprachigkeit ist integriert – ideal für Hotels, Tankstellen oder internationale Kunden.'
-            }
+            { question: t('faqs.question13'), answer: t('faqs.answer13') },
+            { question: t('faqs.question14'), answer: t('faqs.answer14') }
         ]
     };
 
@@ -310,18 +270,22 @@ function ContactPage() {
             name: 'Odette Lamkhizni',
             image: Picture1,
             alt: 'Odette Lamkhizni, NAF Owner - Driving Vending Innovation and Quality.',
+            links: "info@naf-halsbach.de"
         },
         {
             title: t('contactus.personrole2'),
             name: 'Abdelilah Lamkhizni',
             image: Picture2,
             alt: 'Abdelilah Lamkhizni, NAF Owner - Passionate about Customer Experience.',
+            links: "Abdelilah.Lamkhizni@naf-halsbach.de"
+
         },
         {
             title: t('contactus.personrole3'),
             name: 'Sri Satya Sai Kanna Dhulipudi',
             image: Picture3,
             alt: 'Sri Satya Sai Kanna Dhulipudi, CTO at NAF - Technical Expertise.',
+            links: "saikanna.dhulipudi@naf-halsbach.de",
         },
     ];
 
@@ -347,6 +311,9 @@ function ContactPage() {
         { alt: "NAF  YouTube ", src: YouTube, name: "YouTube", url: "https://www.youtube.com/@NAFbyGasthofHalsbach" },
     ];
 
+    useEffect(() => {
+        setActiveCategory(Object.keys(faqs)[0]);
+    }, [t]);
 
     return (
         <Box>
@@ -368,26 +335,35 @@ function ContactPage() {
                     <Box sx={{ mt: { xs: 3, sm: 4, md: 6 } }}>
                         <Typography sx={{ color: '#C2C2C4', mb: 2 }} className='bodyRegularText3'>{t('contactus.heroSubTitle2')}</Typography>
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '12px', sm: '18px', md: '40px' } }}>
-                            <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
-                                <Box
-                                    sx={{
-                                        backgroundColor: '#7FEE64', // vibrant green similar to the image
-                                        borderRadius: '50%',
-                                        width: "56px",
-                                        height: "56px",
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    <Contactmail />
+                            {/* contact deteils */}
+                            <a
+                                href="mailto:info@naf-halsbach.de"
+                                style={{ textDecoration: 'none', cursor: 'pointer' }}
+
+                            >
+                                <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
+                                    <Box  className="contact-icons"
+                                        sx={{
+                                            backgroundColor: '#7FEE64',
+                                            borderRadius: '50%',
+                                            width: "56px",
+                                            height: "56px",
+                                            display: 'flex',
+                                            justifyContent: 'center',cursor: 'pointer',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <Contactmail />
+                                    </Box>
+                                    <Typography className="bodyRegularText2" sx={{ color: '#FCFCFC',cursor: 'pointer'}} >
+                                        info@naf-halsbach.de
+                                    </Typography>
                                 </Box>
-                                <Typography sx={{ color: '#FCFCFC' }} className='bodyRegularText2'>info@naf-halsbach.de</Typography>
-                            </Box>
+                            </a>
                             <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
-                                <Box
+                                <Box className="contact-icons"
                                     sx={{
-                                        backgroundColor: '#7FEE64', // vibrant green similar to the image
+                                        backgroundColor: '#7FEE64',
                                         borderRadius: '50%',
                                         width: "56px",
                                         height: "56px",
@@ -398,12 +374,20 @@ function ContactPage() {
                                 >
                                     <Contactphone />
                                 </Box>
-                                <Typography sx={{ color: '#FCFCFC' }} className='bodyRegularText2'>0152 – 28387141 (Odette Lamkhizni)</Typography>
+                                <a
+                                    href="tel:015228387141"
+                                    style={{ color: '#FCFCFC', textDecoration: 'none' }}
+                                    className="bodyRegularText2"
+                                >
+                                    <Typography sx={{ color: '#FCFCFC', cursor: 'pointer' }} className='bodyRegularText2'>
+                                        0152 – 28387141 (Odette Lamkhizni)
+                                    </Typography>
+                                </a>
                             </Box>
                             <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
-                                <Box
+                                <Box  className="contact-icons"
                                     sx={{
-                                        backgroundColor: '#7FEE64', // vibrant green similar to the image
+                                        backgroundColor: '#7FEE64',
                                         borderRadius: '50%',
                                         width: "56px",
                                         height: "56px",
@@ -414,7 +398,15 @@ function ContactPage() {
                                 >
                                     <Contactphone />
                                 </Box>
-                                <Typography sx={{ color: '#FCFCFC' }} className='bodyRegularText2'>0162 – 1638005  (Technischer Support 24/7)</Typography>
+                                <a
+                                    href="tel:01621638005"
+                                    style={{ color: '#FCFCFC', textDecoration: 'none' }}
+                                    className="bodyRegularText2"
+                                >
+                                    <Typography sx={{ color: '#FCFCFC', cursor: 'pointer' }} className='bodyRegularText2'>
+                                        0162 – 1638005  (Technischer Support 24/7)
+                                    </Typography>
+                                </a>
                             </Box>
                         </Box>
                         <Box sx={{ mt: { xs: 3, sm: 4, md: 6 } }}>
@@ -455,7 +447,7 @@ function ContactPage() {
                     <Box sx={{ display: 'flex', gap: '50px', width: '100%', justifyContent: 'center', marginBottom: '20px' }}>
                         <Typography
                             variant="body1"
-                            className='bodyMediumText1'
+                            className='bodyMediumText1 form-title-btn'
                             onClick={() => toggleForm('submit')}
                             sx={{
                                 cursor: 'pointer',
@@ -478,7 +470,7 @@ function ContactPage() {
                         </Typography>
                         <Typography
                             variant="body1"
-                            className='bodyMediumText1'
+                            className='bodyMediumText1 form-title-btn'
                             onClick={() => toggleForm('schedule')}
                             sx={{
                                 cursor: 'pointer',
@@ -599,10 +591,10 @@ function ContactPage() {
                                         );
                                     })}
                                 </Stack>
-                                {formData.inquiryType.includes('Others') && (
+                                {formData.inquiryType.includes(t('contactus.Others')) && (
                                     <TextField
                                         className='bodyRegularText3'
-                                        label="Please specify"
+                                        label={t('contactus.Pleasespecify')}
                                         variant="standard"
                                         required
                                         fullWidth
@@ -610,7 +602,7 @@ function ContactPage() {
                                         value={customCategory}
                                         onChange={(e) => setCustomCategory(e.target.value)}
                                         InputLabelProps={{
-                                            style: { color: '#FCFCFC' },
+                                            style: { color: '#FCFCFC',} ,
                                         }}
                                         InputProps={{
                                             disableUnderline: false,
@@ -622,6 +614,7 @@ function ContactPage() {
                                                 '&:after': { borderBottomColor: '#C6C6C6' },
                                             },
                                         }}
+                                        sx={{marginTop:'10px'}}
                                     />
                                 )}
                             </Box>
@@ -776,18 +769,22 @@ function ContactPage() {
                             <Typography className='bodyRegularText3' color='#FCFCFC'>
                                 {contact.name}
                             </Typography>
-                            <Box
-                                sx={{
-                                    backgroundColor: '#F4F4F4',
-                                    borderRadius: '50%',
-                                    p: '14px 12px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <Contactmail color='#FA7854' />
-                            </Box>
+                            <a href={`mailto:${contact.links}`}  >
+                                <Box
+                                    sx={{
+                                        backgroundColor: '#F4F4F4',
+                                        borderRadius: '50%',
+                                        p: '14px 12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+
+                                    <Contactmail color='#FA7854' sx={{  }} />
+                                </Box>
+                            </a>
                         </Box>
                     </Box>
                 ))}
@@ -926,9 +923,11 @@ function ContactPage() {
 
                 {/* Right Column - FAQs */}
                 <Box sx={{ width: { xs: '95%', sm: '50%', md: '50%' } }}>
-                    {faqs[activeCategory].map((faq, idx) => (
+                    {Array.isArray(faqs[activeCategory]) && faqs[activeCategory].map((faq, idx) => (
                         <Accordion
                             key={idx}
+                            aria-controls="panel2-content"
+                            id="panel2-header"
                             expanded={expandedIndex === idx}
                             onChange={() => setExpandedIndex(expandedIndex === idx ? null : idx)}
                             sx={{
@@ -937,13 +936,20 @@ function ContactPage() {
                                 color: '#C2C2C4',
                                 borderRadius: '12px',
                                 boxShadow: 'none',
+
                                 mb: 2,
                                 p: 2,
                                 '&::before': { display: 'none' },
                             }}
                         >
-                            <AccordionSummary expandIcon={<ArrowDropDownIcon sx={{ color: '#C2C2C4' }} />}>
-                                <Typography className="bodyRegularText3" sx={{ color: '#C2C2C4' }}>
+                            <AccordionSummary aria-controls="panel1-content"
+
+                                id="panel1-header"
+                                expandIcon={<ArrowDropDownIcon sx={{
+                                    color: '#C2C2C4', transform: expandedIndex === idx ? 'rotate(180deg)' : 'rotate(0deg)',
+                                    transition: 'transform 0.3s',
+                                }} />}>
+                                <Typography className="bodyRegularText3" sx={{ color: '#C2C2C4', flexGrow: '1' }}>
                                     {faq.question}
                                 </Typography>
                             </AccordionSummary>

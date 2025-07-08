@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom'
 
 function MantaincePage() {
     const { t } = useTranslation();
-    const { lang } = useParams(); 
+    const { lang } = useParams();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -17,7 +17,7 @@ function MantaincePage() {
         <Box>
             <Box className='maintaince-container'>
                 <Box>
-                    <Typography data-cursor="hover" variant='h1' className='headings-h1 maintaince-sub-container1  maintext' sx={{ color: '#FCFCFC' }}>
+                    <Typography  data-cursor="hover" variant='h1' className='headings-h1 maintaince-sub-container1  maintext' sx={{ color: '#FCFCFC' ,width:'60%'}}>
                         {t('Maintenance.ReliableMaintenance')}
                     </Typography>
                     <Box className='maintextcontainer'>
@@ -25,19 +25,36 @@ function MantaincePage() {
                             {t('Maintenance.ReliableMaintenanceSubtitle')}
                         </Typography>
                         <Box data-cursor="hover" className="button-container">
-                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')}   route={`/${lang}/contact`} />
+                            <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
                         </Box>
                     </Box>
                 </Box>
 
-                <Box></Box>
+               
             </Box>
+             <Box className="maintaine-section2" sx={{display:'flex',width:'100%',justifyContent:'flex-end'}}>
+                <Box className="maintaine-section2-div" sx={{width:"50%",pr:2}}>
+
+                    <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: 3 }}>
+                       {t('Maintenance.hospitalitySupport1')}
+                    </Typography>
+                    <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: 3 }}>
+                       {t('Maintenance.hospitalitySupport2')}
+                    </Typography>
+                    <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: 3 }}>
+                       {t('Maintenance.hospitalitySupport3')}
+                    </Typography>
+
+
+
+                </Box>
+                </Box>
 
             <SupportSection />
 
             <Box className="section-container">
                 <Typography className='expertise-title headings-h2' sx={{ position: 'relative', bottom: '-50px' }} variant="h4" align="center" gutterBottom>
-                {t('Maintenance.RequestServiceForm')}
+                    {t('Maintenance.RequestServiceForm')}
                 </Typography>
                 <ServiceForm />
             </Box>
