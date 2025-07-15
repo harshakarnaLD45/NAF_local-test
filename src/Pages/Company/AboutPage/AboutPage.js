@@ -20,6 +20,8 @@ function AboutPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+            // document.title = `NAF Vending -${t('titles.about')}`; // Set tab title
+        
     }, []);
 
     return (

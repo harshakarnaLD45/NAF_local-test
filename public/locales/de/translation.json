@@ -220,6 +220,8 @@
         "ContactName": "Name der Kontaktperson",
         "FormfooterText": "Wir senden Ihnen kostenlos und unverbindlich detaillierte Informationen zur NAF-Partnerschaft zu.",
         "NAFMaintenanceTitle": "NAF Wartung & Support",
+        "yes": "Ja",
+    "no": "Nein","submitting": "Wird übermittelt...",
         "NAFMaintenanceSubTitle": "Persönlich, zuverlässig und immer für Sie da"
     },
     "Maintenance": {

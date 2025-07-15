@@ -1,127 +1,94 @@
 import { Box, Divider, Typography } from "@mui/material";
-import React, { useEffect, useRef } from "react";
-import whatarrow from "../../assets/star.svg";
-import gsap from "gsap";
-import blogimage1 from '../../assets/Home/blog1.jpg';
-import blogimage2 from '../../assets/Home/blog2.jpg';
-import blogimage3 from '../../assets/Home/blog3.jpg';
+import React, { useEffect, useRef, useState } from "react";
+import whatarrow from "../../assets/Arrow 2.svg";
 import "../../Pages/HomePage/HomePage.css";
-import { useNavigate, useParams } from "react-router-dom";
 
 const BlogHover = () => {
-  
-  const blogPosts = [
-    {
-      id: 1,
-      date: "28. April 2025",
-      title: "VERGLEICH VON VERKAUFSSOFTWARE – DIE UNSICHTBARE KRAFT HINTER DEM ERFOLG",
-      image: blogimage3,
-    },
-    {
-      id: 2,
-      date: "21. April 2025",
-      title: "WER BIN ICH – UND WARUM DREHT SICH MEIN LEBEN NUR UM VERKAUFSAUTOMATEN?",
-      image: blogimage2,
-    },
-    {
-      id: 3,
-      date: "14. April 2025",
-      title: "DIE EVOLUTION DER GASTRONOMIE – VON HERD & SEELE ZU HIGH-TECH & VERKAUFSAUTOMATEN",
-      image: blogimage1,
-    },
-  ];
-
+  const [blogPosts, setBlogPosts] = useState([]);
   const blogRefs = useRef([]);
-  const navigate = useNavigate(); // Initialize useNavigate
-  const { lang } = useParams();
 
   useEffect(() => {
-    blogRefs.current.forEach((blog, index) => {
-      if (!blog) return;
+    const fetchRSS = async () => {
+      try {
+        const response = await fetch('https://blog.vendinaf.com/de/rss.xml');
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+        const items = Array.from(xml.querySelectorAll('item'));
 
-      const date = blog.querySelector(".date");
-      const arrow = blog.querySelector(".arrowbig");
-      const image = blog.querySelector(".blog-image");
-
-      // Apply hover animation only for screens >= 1024px
-      if (window.innerWidth >= 1024) {
-        gsap.set(image, {
-          display: "none",
-          opacity: 0,
-          immediateRender: true
+        const blogs = items.slice(0, 3).map((item, i) => {
+          const title = item.querySelector('title')?.textContent.trim() || '';
+          const pubDate = item.querySelector('pubDate')?.textContent || '';
+          const date = pubDate ? new Date(pubDate).toLocaleDateString('de-DE') : '';
+          const contentEncoded = item.getElementsByTagName('content:encoded')[0]?.textContent || '';
+          const doc = new DOMParser().parseFromString(contentEncoded, 'text/html');
+          const imgEl = doc.querySelector('img');
+          const imageUrl = imgEl?.src || '';
+          const link = item.querySelector('link')?.textContent.trim() || '';
+          return { id: i + 1, title, date, imageUrl, link };
         });
-        gsap.set(arrow, { x: 0 });
-        gsap.set(date, { x: 0 });
 
-        const tl = gsap.timeline({ paused: true })
-          .to(date, {
-            x: 20,
-            duration: 0.3,
-            ease: "power2.out"
-          })
-          .to(arrow, {
-            x: -30, // Arrow moves back (to the left) on hover
-            duration: 0.3,
-            ease: "power2.out"
-          }, 0)
-          .to(image, {
-            display: "block",
-            opacity: 1,
-            duration: 0.3,
-            ease: "power2.out"
-          }, 0);
-
-        const handleMouseEnter = () => tl.play();
-        const handleMouseLeave = () => {
-          tl.reverse().then(() => {
-            gsap.set(image, { display: "none", opacity: 0 });
-          });
-        };
-
-        blog.addEventListener("mouseenter", handleMouseEnter);
-        blog.addEventListener("mouseleave", handleMouseLeave);
-
-        return () => {
-          blog.removeEventListener("mouseenter", handleMouseEnter);
-          blog.removeEventListener("mouseleave", handleMouseLeave);
-          tl.kill();
-        };
+        setBlogPosts(blogs);
+      } catch (error) {
+        console.error('Error fetching RSS feed:', error);
       }
-    });
+    };
+
+    fetchRSS();
   }, []);
 
-  const handleBlogClick = (index) => {
-    navigate(`blog`, { state: { blogIndex: index } });
+  const handleBlogClick = (link) => {
+    window.open(link, "_blank");
   };
 
   return (
-    <Box sx={{ position: "relative" }} className='section-container bloghoverContainer'>
-      {/* Title Section */}
-
-
+    <>
       {/* Blog Posts Mapping */}
       {blogPosts.map((post, index) => (
         <Box
           key={post.id}
           ref={el => blogRefs.current[index] = el}
-          sx={{ position: "relative", width: '100%', cursor: 'pointer', }}
-          onClick={() => handleBlogClick(index)}
+          sx={{
+            position: "relative",
+            mb: 4,
+            cursor: "pointer",
+            // By default (all sizes): show image
+            "& .hoverImg": {
+              display: "block",
+              opacity: 1,
+              transition: "opacity 0.3s ease",
+            },
+            // On desktop only, hide it until hover
+            "@media (min-width:1024px)": {
+              "& .hoverImg": {
+                display: "none",
+                opacity: 0,
+              },
+              "&:hover .hoverImg": {
+                display: "block",
+                opacity: 1,
+              },
+            },
+          }}
+          onClick={() => handleBlogClick(post.link)}
         >
           <Divider sx={{ borderColor: "#6F6F6F" }} />
 
           <Box
             sx={{
-              py: 5,
+              py: { xs: 3, sm: 3, md: 5 },
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               position: "relative",
+              gap: 1,
+              width: '100%'
             }}
           >
+            {/* images sections */}
             <Box className="imagestaticwhatssmallscreen"
               sx={{
-                // mx: 2, 
-                marginRight: 2
+                marginRight: 1
               }}
             >
               <img
@@ -131,18 +98,14 @@ const BlogHover = () => {
                   height: "77px",
                   alignItems: 'center',
                 }}
-                src={post.image}
+                src={post.imageUrl}
                 alt={post.title}
               />
             </Box>
-            {/* <Box 
-              className="blog-containerss"
-              sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}
-            > */}
+
             <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
               {post.date}
             </Typography>
-
 
             <Box className="imagestaticwhats bigimage"
               sx={{
@@ -156,43 +119,45 @@ const BlogHover = () => {
                   height: "140px",
                   alignItems: 'center',
                 }}
-                src={post.image}
+                src={post.imageUrl}
                 alt={post.title}
               />
             </Box>
 
-
+            {/* images sections */}
             <Box
-              className="Whatimage-container bigimagecontaiter imageshover"
+              className="Whatimage-container bigimagecontaiter hoverImg"
               sx={{
+                display: "none", // default hidden
                 position: "absolute",
                 left: "11%",
-                "@media (min-width: 2000px)": {
-                  left: `25%`,
-                },
-                "@media (min-width: 1320px)": {
-                  left: `14%`,
-                },
                 bottom: "-50px",
-
                 zIndex: 10,
                 borderRadius: '10px',
-                // overflow: "hidden",
+                "@media (min-width: 1024px)": {
+                  display: "none", // still hidden unless hover
+                },
+                ".MuiBox-root:hover &": {
+                  display: "block",
+                },
+                "@media (min-width: 1024px)": {
+                  ".MuiBox-root:hover &": {
+                    display: "block", // show only on hover above 1024px
+                  },
+                }
               }}
             >
               <img
-
                 style={{
                   borderRadius: '10px',
                   width: "450px",
                   height: "100%",
                 }}
-                src={post.image}
+                src={post.imageUrl}
                 alt={post.title}
                 className="blog-image bigimage"
               />
             </Box>
-
 
             <Typography
               className="bodyMediumText1 whatsmiddletext bigtitle"
@@ -207,28 +172,22 @@ const BlogHover = () => {
                 Blog
               </Typography>
             </Typography>
-
-
             <Box
               component="img"
               src={whatarrow}
+              onClick={() => handleBlogClick(post.link)}
               alt="Arrow Icon"
               className="arrow arrowtabscreen arrowbigscreen"
               sx={{
                 width: 28,
                 height: 28,
+                cursor: 'pointer'
               }}
             />
 
-
-            {/* </Box> */}
-
-
-
-
             <Box
               className="blog-containerss"
-              sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}
+              sx={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}
             >
               <Typography className="bodyRegularText4 date" sx={{ color: "#C2C2C4" }}>
                 {post.date}
@@ -247,13 +206,12 @@ const BlogHover = () => {
                     height: "140px",
                     alignItems: 'center',
                   }}
-                  src={post.image}
+                  src={post.imageUrl}
                   alt={post.title}
                 />
               </Box>
 
-              {/* Image - Hover effect for 1024px and above */}
-
+              {/* Image - Hover effect for above 1024px */}
 
               {/* Title */}
               <Typography
@@ -265,38 +223,37 @@ const BlogHover = () => {
                 }}
               >
                 {post.title}
-                <Typography className="bodyRegularText4" sx={{ color: '#444444' }}>
-                  Blog
-                </Typography>
               </Typography>
               <Box
                 component="img"
                 src={whatarrow}
+                onClick={() => handleBlogClick(post.link)}
                 alt="Arrow Icon"
                 className="arrow arrowtabscreen"
                 sx={{
                   width: 28,
                   height: 28,
+                  cursor: 'pointer'
                 }}
               />
-
             </Box>
 
-            {/* Arrow */}
             <Box
               component="img"
               src={whatarrow}
+              onClick={() => handleBlogClick(post.link)}
               alt="Arrow Icon"
               className="arrow arrowbig"
               sx={{
                 width: 28,
                 height: 28,
+                cursor: 'pointer'
               }}
             />
           </Box>
         </Box>
       ))}
-    </Box>
+    </>
   );
 };
 

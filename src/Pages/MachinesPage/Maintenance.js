@@ -31,7 +31,7 @@ const Maintenance = () => {
           backgroundColor: '#262626',
           borderRadius: '24px',
           display: 'flex',
-          flexDirection: { xs: 'column', lg: 'row' },
+          flexDirection: { xs: 'column-reverse', lg: 'row' },
           alignItems: 'center',
           gap: { xs: 3, md: 5 },
           px: { xs: 2, md: 6 },

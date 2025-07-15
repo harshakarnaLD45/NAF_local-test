@@ -11,8 +11,14 @@
     .blogdetailedcontainer {
         margin-top: 40px !important;
     }
-
+    
     .tablecontentsection {
         height: 60px !important;
+    }
+}
+@media (max-width: 600px) {
+    .arrowbig{
+        display: flex;
+        align-self: flex-start;
     }
 }

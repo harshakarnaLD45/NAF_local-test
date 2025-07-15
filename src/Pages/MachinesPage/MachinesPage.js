@@ -23,7 +23,10 @@ const MachinesPage = () => {
   const theme = useTheme();
   const isMobileOrTablet = useMediaQuery(theme.breakpoints.down("md")); // lg = 1200, you can use "md" for 1024px
 
+
   useEffect(() => {
+    document.title = `NAF Vending -${t('titles.Machines')}`; // Set tab title
+
     window.scrollTo(0, 0);
   }, []);
 

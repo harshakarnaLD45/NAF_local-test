@@ -117,9 +117,9 @@ const Homepagereel = () => {
           }}
         >
           {isMuted ? (
-            <MuteIcon sx={{ color: "#fff" }} />
+            <MuteIcon className="custom-icons" sx={{ color: "#fff" }} />
           ) : (
-            <UnmuteIcon sx={{ color: "#fff" }} />
+            <UnmuteIcon className="custom-icons"  sx={{ color: "#fff" }} />
           )}
         </Box>
 

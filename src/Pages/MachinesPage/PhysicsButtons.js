@@ -4,7 +4,9 @@ import styles from './MachinesPage.css';
 import { useTranslation } from 'react-i18next';
 
 function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    
+    
     const getResponsiveMachineData = () => {
         const width = window.innerWidth;
 
@@ -19,24 +21,24 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
 
         const configs = {
             xl: [
-                [-200, 0.05],
+                [-20, 0],
                 [100, 0],
-                [50, 0.6],
-                [-180, 0.25],
+                [100, -0.6],
+                [-220, 0],
                 [150, 0.5],
-                [180, -0.3],
-                [-310, 0.1],
-                [-120, -0.03],
+                [70, -0.4],
+                [230, 0],
+                [0, -0.4],
             ],
             lg: [
                 [-140, 0.05],
                 [60, 0],
-                [30, 0.6],
+                [20, -0.6],
                 [-120, 0.25],
                 [90, 0.5],
-                [100, -0.3],
-                [-200, 0.1],
-                [-70, -0.03],
+                [150, -0.1],
+                [-250, -0.4],
+                [-30, -0.03],
             ],
             md: [
                 [-100, 0.05],
@@ -47,26 +49,28 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
                 [50, -0.3],
                 [-200, -0.1],
                 [-40, -0.03],
+                // 
             ],
             sm: [
-                [-80, 0.05],
-                [-30, 0],
-                [0, 0.6],
-                [-80, 0.25],
-                [40, 0.5],
-                [-50, -0.3],
-                [-80, -0.3],
-                [-20, -0.03],
+                [15, -0],
+                [-100, 0],
+                [-60, -0.6],
+                [-10, -0.2],
+                [60, 0],
+                [-50, -0.4],
+                [-20, -0.3],
+                [-65, 0.1],
             ],
+            // 
             xs: [
-                [0, 2],
+                [0, 0],
                 [1, 0.5],
-                [0, 2],
-                [3, 1.5],
-                [0, 2],
-                [2, 2],
-                [0, 2],
-                [1, 1.5],
+                [0, -0.3],
+                [3, -0.5],
+                [0, -0.6],
+                [1, 0.3],
+                [-21, -0.6],
+                [1, -0.6],
             ],
             xxs: [
                 [-40, 0.05],
@@ -96,7 +100,28 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
             initialXOffset: configs[breakpoint][index][0],
             initialAngle: configs[breakpoint][index][1],
         }));
+        
     };
+    
+  // Update on mount, resize, and language change
+  useEffect(() => {
+    const updateData = () => {
+      const updatedData = getResponsiveMachineData();
+      setMachineData(updatedData);
+
+      // Sync selection
+      const index = updatedData.findIndex(m => m.label === selectedMachine);
+      if (index !== -1) setSelectedIndex(index);
+    };
+
+    updateData();
+    window.addEventListener('resize', updateData);
+    return () => window.removeEventListener('resize', updateData);
+  }, [i18n.language]);
+
+
+
+    
     const [machineData, setMachineData] = useState(getResponsiveMachineData());
     const sceneRef = useRef(null);
     const buttonsRef = useRef([]);
@@ -119,7 +144,7 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
         if (index !== -1) {
             setSelectedIndex(index);
         }
-    }, [selectedMachine]);
+    }, [selectedMachine ]);
 
     useEffect(() => {
         let timeoutId; // To store the timeout ID
@@ -263,7 +288,7 @@ function PhysicsButtons({ selectedMachine, setSelectedMachine }) {
                 <div
                     key={machine.id}
                     ref={(el) => (buttonsRef.current[index] = el)}
-                    className='bodyRegularText3'
+                    className='bodyRegularText3 filter-objects'
                     style={{
                         position: 'absolute',
                         left: `calc(0% + ${machine.initialXOffset}px)`,

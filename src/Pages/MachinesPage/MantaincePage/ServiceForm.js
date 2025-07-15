@@ -154,10 +154,10 @@ function ServiceForm() {
           value={formValues.problemCategory}
           onChange={handleChange}
           options={[
-            { value: 'hardware', label: 'Hardware' },
-            { value: 'software', label: 'Software' },
-            { value: 'network', label: 'Network' },
-            { value: 'payment', label: 'Payment' },
+            { value: 'hardware', label: t('Maintenance.Hardware') },
+            { value: 'software', label: t('Maintenance.Software') },
+            { value: 'network', label: t('Maintenance.Network') },
+            { value: 'payment', label: t('Maintenance.Payment') },
           ]}
         />
 
@@ -168,10 +168,10 @@ function ServiceForm() {
           value={formValues.problemType}
           onChange={handleChange}
           options={[
-            { value: 'screen', label: 'Screen Issue' },
-            { value: 'power', label: 'Power Failure' },
-            { value: 'card', label: 'Card Reader Issue' },
-            { value: 'software', label: 'Software Crash' },
+            { value: 'screen', label: t('Maintenance.ScreenIssue') },
+            { value: 'power', label: t('Maintenance.PowerFailure') },
+            { value: 'card', label: t('Maintenance.CardReaderIssue') },
+            { value: 'software', label: t('Maintenance.SoftwareCrash') },
           ]}
         />
 
@@ -290,10 +290,11 @@ function ServiceForm() {
             ))}
           </Box>
         )}
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginTop: '16px' }}>
+        <Box  className="policy-div" sx={{ display: 'flex', alignItems: 'center',  gap: '8px', marginTop: '26px' }}>
           <input
             type="radio"
             name="agreement"
+            id="policy-radio" 
             checked={formValues.agreement}
             onChange={(e) =>
               setFormValues({
@@ -305,7 +306,6 @@ function ServiceForm() {
             style={{
               accentColor: '#7FEE64',   // ✅ Green fill when selected
               cursor: 'pointer',
-              marginTop: '4px',
               width: '16px',
               height: '16px',
             }}
@@ -323,7 +323,7 @@ function ServiceForm() {
               {t('Maintenance.privacy')}
             </a>
           </label>
-        </div>
+        </Box>
 
 
         <Box onClick={handleSubmit} sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>

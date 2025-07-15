@@ -13,7 +13,9 @@ import Foodlabeling from "./Foodlabeling";
 const Menu = () => {
   const { t } = useTranslation();
 
+
   useEffect(() => {
+    document.title = `NAF Vending -${t('titles.Menu')}`; // Set tab title
     window.scrollTo(0, 0);
   }, []);
 

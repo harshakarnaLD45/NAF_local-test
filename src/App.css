@@ -232,6 +232,11 @@ body {
   }
 }
 
+@media (min-width: 1920px) {
+.btn-spac-left,.btn-spac-right{
+  font-size: 15px !important;
+}
+}
 @media (max-width: 1640px) {
   .headings-h1 {
     font-size: 62px !important;

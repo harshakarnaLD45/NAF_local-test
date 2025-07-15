@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import foodlabel1 from '../../../assets/About/Menu/foodlabels/176.png';
-import foodlabel2 from '../../../assets/About/Menu/foodlabels/177.png';
-import foodlabel3 from '../../../assets/About/Menu/foodlabels/178.png';
-import foodlabel4 from '../../../assets/About/Menu/foodlabels/179.png';
-import foodlabel5 from '../../../assets/About/Menu/foodlabels/180.png';
-import foodlabel6 from '../../../assets/About/Menu/foodlabels/181.png';
+import foodlabel1 from '../../../assets/About/Menu/foodlabels/foodlabel1.png';
+import foodlabel2 from '../../../assets/About/Menu/foodlabels/foodlabel2.png';
+import foodlabel3 from '../../../assets/About/Menu/foodlabels/foodlabel3.png';
+import foodlabel4 from '../../../assets/About/Menu/foodlabels/foodlabel4.png';
+import foodlabel5 from '../../../assets/About/Menu/foodlabels/foodlabel5.png';
+import foodlabel6 from '../../../assets/About/Menu/foodlabels/foodlabel6.png';
 import './Menu.css';
 
 

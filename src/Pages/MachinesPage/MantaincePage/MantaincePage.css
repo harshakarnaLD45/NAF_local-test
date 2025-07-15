@@ -9,6 +9,10 @@
 .maintaince-sub-container1 {
     width: 50%;
 }
+.maintextcontainer{
+    width: 70%;
+    
+}
 
 @media (max-width: 1024px) {
     .maintaince-container {
@@ -40,4 +44,8 @@
     .maintaince-container {
         padding: 0px 15px;
     }
+    .maintextcontainer{
+    width: 100%;
+    
+}
 }

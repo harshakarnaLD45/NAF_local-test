@@ -1,4 +1,16 @@
 {
+    "titles": {
+        "menu": "Menu",
+        "Home": "Home",
+        "Machines": "Machines",
+        "maintenance": "Maintenance",
+        "Software": "Software",
+        "Insights": "Insights",
+        "Blogs": "Blogs",
+        "about": "About",
+        "Menu": "Menu",
+        "Contact": "Contact"
+    },
     "Header": {
         "menu": "Menu",
         "menuHome": "Home",
@@ -157,7 +169,7 @@
         "Months18": "18 Months",
         "Months24": "24 Months",
         "Months36": "36 Months",
-        "Months":"Months",
+        "Months": "Months",
         "Installmentsmonths": "month",
         "availablesoon": "Available soon",
         "PricesannouncedText": "*Prices announced after market launch based on the prototypes shown",
@@ -218,6 +230,9 @@
         "Areyouinterested": "Are you interested in vending solutions?",
         "Doyouoffer": "Do you offer food or beverages?",
         "ContactName": "Contact Name",
+        "yes":"yes",
+        "No":"No", 
+        "submitting": "Submitting...",
         "FormfooterText": "We’ll send you detailed information on how to become a NAF partner – free and without obligation",
         "NAFMaintenanceTitle": "NAF Maintenance & Support",
         "NAFMaintenanceSubTitle": "We ensure your vending machines run smoothly with reliable maintenance and support that minimize downtime and maximize ROI."
@@ -248,7 +263,7 @@
         "ContactPersonFName": "Contact Person Full Name",
         "Email": "Email",
         "PhoneNumber": "Phone Number",
-         "Hardware": "Hardware",
+        "Hardware": "Hardware",
         "Software": "Software",
         "Network": "Network",
         "Payment": "Payment",
@@ -256,8 +271,8 @@
         "PowerFailure": "Power Failure",
         "CardReaderIssue": "Card Reader Issue",
         "SoftwareCrash": "Software Crash",
-         "hospitalitySupport1": "As a company with deep roots in the hospitality industry, we know how important reliability, personal support and rapid assistance are. We also live up to this claim when it comes to the maintenance and support of our vending machines. For us, service is not just about technology - it's about genuine hospitality.",
-         "hospitalitySupport2": "Whether you are a restaurateur or a vending machine operator: We are at your side. Our support is individually tailored to your needs, because no two locations are the same. Whether it's regular maintenance, quick problem solving or software adjustments - we're there for you.",
+        "hospitalitySupport1": "As a company with deep roots in the hospitality industry, we know how important reliability, personal support and rapid assistance are. We also live up to this claim when it comes to the maintenance and support of our vending machines. For us, service is not just about technology - it's about genuine hospitality.",
+        "hospitalitySupport2": "Whether you are a restaurateur or a vending machine operator: We are at your side. Our support is individually tailored to your needs, because no two locations are the same. Whether it's regular maintenance, quick problem solving or software adjustments - we're there for you.",
         "hospitalitySupport3": "Direct, uncomplicated, personal: if you wish, we can visit you on site to discuss any questions in peace and quiet. Our team will take the time to listen to your requirements - and ensure that your vending machine is ready for use at all times.",
         "uderstnadTest": "I Understand that NAF Germany will securely hold my data in accordance with their",
         "privacy": "privacy policy"
@@ -337,7 +352,7 @@
         "blogsfilter2": "Blogs",
         "blogsfilter3": "Events",
         "blogsfilter4": "News",
-         "blogsTitle1": "How UI/UX Design Can Boost Your Vending Machine Sales",
+        "blogsTitle1": "How UI/UX Design Can Boost Your Vending Machine Sales",
         "blogsTitle2": "The Ultimate Guide to Choosing the Right Vending Machine for Your Business",
         "blogsTitle3": "The Power of UI/UX Design: Creating Engaging Vending Machine Experiences",
         "blogsTitle4": "Cloud-Based Vending Management: Streamline Your Operations and Maximize Efficiency",
@@ -448,7 +463,7 @@
         "SelectMachineLocation": "Select Machine Location",
         "DietaryPreferences": "Dietary Preferences",
         "Berlin": "Berlin",
-        "FoodLabeling":" Food Labeling" ,
+        "FoodLabeling": " Food Labeling",
         "ViewMore": "View More",
         "Viewless": "View Less",
         "BerlinCheckpoint1": "Alexanderplatz Station",
@@ -466,7 +481,7 @@
         "LactoseFree": "Lactose-Free",
         "HighProtein": "High Protein",
         "vegan": "Vegan",
-        "location":"Location",
+        "location": "Location",
         "Apply": "Apply",
         "Reset": "Reset",
         "MonthlyMenu": "Monthly Menu",
@@ -528,7 +543,8 @@
         "Curious": "Curious to Know More?",
         "SUBMIT": "SUBMIT",
         "FORM": "FORM",
-        "NOW": "NOW", "Pleasespecify": "Please specify",
+        "NOW": "NOW",
+        "Pleasespecify": "Please specify",
         "contactend": "end"
     },
     "memebersLogin": {
@@ -702,7 +718,6 @@
         "specifyCategory": "Please specify your category.",
         "selectCategory": "Please select at least one category.",
         "acceptPrivacy": "You must accept the privacy policy.",
-        
         "supportIssueSubmitted": "Support issue submitted successfully!"
     },
     "faqs": {

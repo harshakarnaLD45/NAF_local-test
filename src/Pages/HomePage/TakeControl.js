@@ -18,7 +18,7 @@ const TakeControl = () => {
           position: 'relative',
         
           display: 'flex',
-          flexDirection: { xs: 'column', lg: 'row' },
+          flexDirection: { xs: 'column-reverse', lg: 'row' },
           alignItems: 'center',
           gap: { xs: 3, md: 5 },
           px: { xs: 1, md: 6 },

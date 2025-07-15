@@ -10,7 +10,11 @@ import { useParams } from 'react-router-dom'
 function MantaincePage() {
     const { t } = useTranslation();
     const { lang } = useParams();
+
+
     useEffect(() => {
+            document.title = `NAF Vending -${t('titles.maintenance')}`; // Set tab title
+
         window.scrollTo(0, 0);
     }, []);
     return (

@@ -10,9 +10,18 @@ import MachineImage6 from '../../assets/Home/Return-machine.png';
 import MachineImage7 from '../../assets/Home/Gourmet-machine.png';
 
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
-import { DownloadIcon, MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
+import {
+    DownloadIcon, SnackBar, CampingSite, Companies,
+    Pizzarias, Festivals, OfficaCenters, Festivals2, Villagefairs
+    , Zoos, AnimalParks, Events, Hotels, Clubs, RoofTop, Fullhygienic, Kidsfriendly, AgeVerification, Chilledbeer, FullyMinimalStaff,
+
+
+    MachineSmallIcon1, Ecofriendly, SortLogging, Rewardsloyaltypoint, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7, Nostaffingrequired
+} from '../../Componenets/CustomIcons';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+
+
 
 const MachinesSection1 = ({ selectedMachine }) => {
     const { t } = useTranslation();
@@ -29,21 +38,22 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AImenu'),
             description: t('machines.GourmetMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: SnackBar , label: t('machines.SnackBars') },
+                { icon: CampingSite , label: t('machines.CampingSites') },
+                { icon: OfficaCenters , label: t('machines.Officecenters') },
+                { icon: Companies , label: t('machines.Companies') },
             ],
             features: [
-                { text: t('machines.Automatedheating'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.AImenulogic'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.Sustainablepackaging'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Automatedheating'), icon: MachineSmallIcon5  },
+                { text: t('machines.AImenulogic'), icon: MachineSmallIcon6  },
+                { text: t('machines.Sustainablepackaging'), icon: MachineSmallIcon7  },
             ],
             price: 23982,
             monthlyRates: {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
+
             },
         },
         {
@@ -52,21 +62,22 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIBaking'),
             description: t('machines.PizzaMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: SnackBar , label: t('machines.SnackBars') },
+                { icon: CampingSite , label: t('machines.CampingSites') },
+                { icon: Companies , label: t('machines.Companies') },
+                { icon: Pizzarias , label: t('machines.Pizzerias') },
             ],
             features: [
-                { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.aIenhancedbaking'), icon: MachineSmallIcon5 },
+                { text: t('machines.fullyautomated'), icon: MachineSmallIcon6 },
+                { text: t('machines.selfservice'), icon: MachineSmallIcon7 },
             ],
             price: 29425,
             monthlyRates: {
                 36: 863.50,
                 48: 665.50,
                 60: 550.00,
+
             },
         },
         {
@@ -75,15 +86,13 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIOil'),
             description: t('machines.PizzaMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: SnackBar , label: t('machines.SnackBars') },
+                { icon: CampingSite , label: t('machines.CampingSites') },
             ],
             features: [
-                { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.aIenhancedbaking'), icon: MachineSmallIcon5 },
+                { text: t('machines.fullyautomated'), icon: MachineSmallIcon6 },
+                { text: t('machines.selfservice'), icon: MachineSmallIcon7 },
             ],
             price: 45877,
             monthlyRates: {
@@ -98,20 +107,21 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIMonitoring'),
             description: t('machines.IceMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: SnackBar, label: t('machines.SnackBars') },
+                { icon: CampingSite , label: t('machines.CampingSites') },
+                { icon: AnimalParks , label: t('machines.AnimalParks') },
+                { icon: Zoos , label: t('machines.Zoos') },
             ],
             features: [
-                { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Selfservemodel'), icon: MachineSmallIcon7 },
+                { text: t('machines.Nostaffingrequired'), icon: Nostaffingrequired },
             ],
             price: 23982,
             monthlyRates: {
                 36: 824.72,
                 48: 635.61,
                 60: 525.30,
+
             },
         },
         {
@@ -120,21 +130,22 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIMonitoring'),
             description: t('machines.CandyMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: SnackBar , label: t('machines.SnackBars') },
+                { icon: CampingSite , label: t('machines.CampingSites') },
+                { icon: AnimalParks , label: t('machines.AnimalParks') },
+                { icon: Zoos , label: t('machines.Zoos') },
             ],
             features: [
-                { text: t('machines.hygienic'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Kidfriendlyattraction'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.hygienic'), icon: Fullhygienic },
+                { text: t('machines.Kidfriendlyattraction'), icon: Kidsfriendly },
+                { text: t('machines.Nostaffingrequired'), icon: Nostaffingrequired },
             ],
             price: 13636,
             monthlyRates: {
                 36: 462.55,
                 48: 359.60,
                 60: 297.25,
+
             },
         },
         {
@@ -143,15 +154,13 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIAgeVerification'),
             description: t('machines.beerMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: Festivals , label: t('machines.Festivals') },
+                { icon: Villagefairs , label: t('machines.VillageFairs') },
             ],
             features: [
-                { text: t('machines.AIageverification'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Chilledbeerseconds'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.fullyMinimalStaff'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.AIageverification'), icon: AgeVerification },
+                { text: t('machines.Chilledbeerseconds'), icon: Chilledbeer },
+                { text: t('machines.fullyMinimalStaff'), icon: FullyMinimalStaff },
             ],
             price: 14500,
             monthly: 500,
@@ -162,15 +171,17 @@ const MachinesSection1 = ({ selectedMachine }) => {
             subtitle: t('machines.AIContainerRecognition'),
             description: t('machines.returnMachinesubtitle'),
             idealFor: [
-                { icon: <MachineSmallIcon1 />, label: t('machines.Hotel') },
-                { icon: <MachineSmallIcon2 />, label: t('machines.GasStation') },
-                { icon: <MachineSmallIcon3 />, label: t('machines.Cinemas') },
-                { icon: <MachineSmallIcon4 />, label: t('machines.ThemeParks') },
+                { icon: Events , label: t('machines.Events') },
+                { icon: Hotels , label: t('machines.Hotel') },
+                { icon: Festivals2 , label: t('machines.Festivals') },
+                { icon: Clubs , label: t('machines.Clubs') },
+                { icon: RoofTop, label: t('machines.Rooftopbars') },
+
             ],
             features: [
-                { text: t('machines.Ecofriendly'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Automaticsortinglogging'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.Rewardsloyaltypoint'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Ecofriendly'), icon: Ecofriendly },
+                { text: t('machines.Automaticsortinglogging'), icon: SortLogging },
+                { text: t('machines.Rewardsloyaltypoint'), icon: Rewardsloyaltypoint },
             ],
             price: 14500,
             monthly: 450,
@@ -195,28 +206,28 @@ const MachinesSection1 = ({ selectedMachine }) => {
 
                             <Box sx={{ flex: 1, display: 'flex', gap: 3, flexDirection: 'column', alignItems: 'center' }}>
                                 <img src={machine.image} alt={machine.title} className='max-mac-img' />
-
                             </Box>
                             <Typography variant="h6" color="#C2C2C4" className='bodyRegularText4'>Ideal for:</Typography>
-                            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', gap: { xs: 1, sm: 2, md: 4 } }}>
+                            <Box sx={{ display: 'flex', flexWrap:'wrap', alignItems: 'center', textAlign: 'center', gap: { xs: 1, sm: 2, md: 4 } }}>
                                 {machine.idealFor.map((item, idx) => (
                                     <Box key={idx}>
-                                        {item.icon}
+                                        <item.icon className='custom-icons' />
                                         <Typography variant="body2" color='#C2C2C4' className='bodyRegularText5'>{item.label}</Typography>
                                     </Box>
                                 ))}
                             </Box>
 
-                            {machine.features.map((feature, i) => (
-                                <Box key={i} sx={{
-                                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                    py: 2, px: { xs: 1.5, sm: 2.5, md: 2.5 }, borderRadius: '8px', border: '1px solid #525252', mt: 1
-                                }}>
-                                    <Typography color="#C2C2C4" className='bodyRegularText3'>{feature.text}</Typography>
-                                    {feature.icon}
-                                </Box>
-                            ))}
-
+                            {machine.features.map((feature, i) => {
+                                return (
+                                    <Box className="feature-div" key={i} sx={{
+                                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                        py: 2, px: { xs: 1.5, sm: 2.5, md: 2.5 }, borderRadius: '8px', border: '1px solid #525252', mt: 1
+                                    }}>
+                                        <Typography color="#C2C2C4" className='bodyRegularText3'>{feature.text}</Typography>
+                                        <feature.icon className='custom-icons' />
+                                    </Box>
+                                );
+                            })}
                             <Box sx={{
                                 display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#262626',
                                 py: 3, px: { xs: 1.5, sm: 2.5, md: 2.5 }, borderRadius: '8px', border: '1px solid #525252', mt: 1
@@ -224,7 +235,7 @@ const MachinesSection1 = ({ selectedMachine }) => {
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Acquisitioncosts')}</Typography>
                                 {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
                                     <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
-                                        Demnächst verfügbar
+                                        {t('machines.availablesoon')}
                                     </Typography>
                                 ) : (
                                     <>
@@ -240,11 +251,11 @@ const MachinesSection1 = ({ selectedMachine }) => {
                                 <Typography color="#C2C2C4" className='bodyRegularText3'>{t('machines.Installment')}</Typography>
                                 {(machine.title === t('machines.BeerMachine') || machine.title === t('machines.ReturnMachine')) ? (
                                     <Typography variant="h6" color="#FA7854" className='bodyRegularText4'>
-                                        Demnächst verfügbar
+                                        {t('machines.availablesoon')}
                                     </Typography>
                                 ) : (
                                     <>
-                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2.5, md: 3 } }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '3px', gap: { xs: "4px", sm: 2.5, md: 3 } }}>
                                             <Select
                                                 value={months}
                                                 onChange={handleChange}
@@ -278,12 +289,12 @@ const MachinesSection1 = ({ selectedMachine }) => {
                                                         boxShadow: 'none',
                                                     },
                                                 }}
-                                                className='bodyRegularText5'
+                                                className='bodyRegularText5 Mmonths-select'
                                             >
-                                                <MenuItem value={36}>36 Months</MenuItem>
-                                                <MenuItem value={48}>48 Months</MenuItem>
-                                                <MenuItem value={60}>60 Months</MenuItem>
-                                                <MenuItem value={72}>72 Months</MenuItem>
+                                                <MenuItem value={36}>36   {t('machines.Months')}</MenuItem>
+                                                <MenuItem value={48}>48   {t('machines.Months')}</MenuItem>
+                                                <MenuItem value={60}>60   {t('machines.Months')}</MenuItem>
+
                                             </Select>
                                             {/* <Typography color="#FA7854" className='bodyMediumText2'>€{machine.monthly}* <span style={{ color: "#FA7854" }} className='bodyMediumText3'>/ month</span></Typography> */}
                                             <Typography color="#FA7854" className='bodyMediumText2'>

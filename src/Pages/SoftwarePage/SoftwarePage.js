@@ -13,13 +13,15 @@ function SoftwarePage() {
   const { t } = useTranslation();
 
     useEffect(() => {
+        document.title = `NAF Vending -${t('titles.Software')}`; // Set tab title
+
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <div className='section-container'>
         <Helmet>
-          <title>NAF Vending - Software</title>
+          {/* <title>NAF Vending - Software</title> */}
           <link rel="canonical" href="https://vendinaf.com/en/software"/>
           <meta name='description'
             content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />

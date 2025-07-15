@@ -13,7 +13,6 @@ import AboutPage from './Pages/Company/AboutPage/AboutPage';
 import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import MantaincePage from './Pages/MachinesPage/MantaincePage/MantaincePage';
-import BlogContainer from './Pages/Insights/BlogContainer';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import CookieConsent from "react-cookie-consent";
@@ -56,9 +55,6 @@ const LanguageWrapper = () => {
         </div>
       </CookieConsent>
 
-
-
-
       <NoiseEffect />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -66,7 +62,6 @@ const LanguageWrapper = () => {
         <Route path="maintaince" element={<MantaincePage />} />
         <Route path="software" element={<SoftwarePage />} />
         <Route path="Insights" element={<Insights />} />
-        <Route path="Insights/blog" element={<BlogContainer />} />
         <Route path="company/about" element={<AboutPage />} />
         <Route path="company/menu" element={<Menu />} />
         <Route path="contact" element={<ContactPage />} />

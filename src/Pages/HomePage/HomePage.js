@@ -24,6 +24,7 @@ const HomePage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+//  document.title = `NAF Vending -${t('titles.Home')}`; // Set tab title
   }, []);
 
   return (
@@ -47,7 +48,7 @@ const HomePage = () => {
             <Typography data-cursor="hover" className='bodyRegularText3 maintext maintext1' sx={{ color: '#C2C2C4', py: { xs: '8px', sm: '8px', md: '16px' } }}>
               {t('Home.mainParagraph')}
             </Typography>
-            <Box data-cursor="hover" className="button-container">
+            <Box data-cursor="hover" className="button-container" >
               <AnimateButton route={`/${lang}/machine`} />
             </Box>
           </Box>

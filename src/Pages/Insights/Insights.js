@@ -1,21 +1,22 @@
 import { Box, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import './Insights.css'
-import Blogfilter from './Blogfilter'
 import BlogHover from './BlogHover'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next';
 
 const Insights = () => {
- const { t } = useTranslation();
+  const { t } = useTranslation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = `NAF Vending -${t('titles.Insights')}`; // Set tab title
+
   }, []);
 
   return (
     <Box>
       <Helmet>
-        <title>NAF Vending - Insights</title>
+        {/* <title>NAF Vending - Insights</title> */}
         <link rel="canonical" href="https://vendinaf.com/en/Insights" />
         <meta name='description'
           content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
@@ -27,11 +28,13 @@ const Insights = () => {
       </Helmet>
       <Box className='section-container' sx={{ py: { xs: 3, sm: 5, md: 7 } }}>
         <Typography variant='h1' className='headings-h1'>
-        {t('insights.heroTitle')}
+          {t('insights.heroTitle')}
         </Typography>
       </Box>
       {/* <Blogfilter /> */}
-      <BlogHover />
+      <Box sx={{ position: "relative" }} className='section-container bloghoverContainer'>
+        <BlogHover />
+      </Box>
     </Box>
   )
 }

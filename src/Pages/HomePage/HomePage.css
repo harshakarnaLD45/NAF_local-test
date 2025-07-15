@@ -13,12 +13,19 @@
 .main-sub-container1 {
   width: 50%;
 }
+.button-container{
+  width: 35% !important;
+}
 
 .main-sub-container2 {
   display: flex;
   gap: 32px;
   align-items: center;
   width: 50%;
+}
+.fade-word {
+  display: inline-block;
+  opacity: 0; /* will fade in via GSAP */
 }
 
 .explore-container,
@@ -588,6 +595,10 @@ aspect-ratio: 1/1;
   }
   .animate-div{
     width: auto !important;
+  }
+  .css-10q1psb{
+    height: 30px !important;
+    width: 30px !important ;
   }
 }
 

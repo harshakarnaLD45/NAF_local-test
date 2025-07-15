@@ -12,10 +12,10 @@ import MachineImage7 from '../../assets/Home/Gourmet-machine.png';
 import AnimateButton from '../../Componenets/CommonComponents/AnimateButton';
 import { DownloadIcon,SnackBar,CampingSite,Companies,
     Pizzarias,Festivals,OfficaCenters,Festivals2,Villagefairs
-    ,Zoos,AnimalParks,Events,Hotels,Clubs,RoofTop,
+    ,Zoos,AnimalParks,Events,Hotels,Clubs,RoofTop,Fullhygienic,Kidsfriendly,AgeVerification,Chilledbeer,FullyMinimalStaff,
     
     
-    MachineSmallIcon1, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7 } from '../../Componenets/CustomIcons';
+    MachineSmallIcon1,Ecofriendly,SortLogging,Rewardsloyaltypoint, MachineSmallIcon2, MachineSmallIcon3, MachineSmallIcon4, MachineSmallIcon5, MachineSmallIcon6, MachineSmallIcon7, Nostaffingrequired} from '../../Componenets/CustomIcons';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
@@ -68,7 +68,7 @@ const MachinesSection = ({ selectedMachine }) => {
             features: [
                 { text: t('machines.aIenhancedbaking'), icon: <MachineSmallIcon5 /> },
                 { text: t('machines.fullyautomated'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.selfservice'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.selfservice'), icon: <MachineSmallIcon7  /> },
             ],
             price: 29425,
             monthlyRates: {
@@ -111,8 +111,8 @@ const MachinesSection = ({ selectedMachine }) => {
                 { icon: <Zoos />, label: t('machines.Zoos') },
             ],
             features: [
-                { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon6 /> },
+                { text: t('machines.Selfservemodel'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Nostaffingrequired'), icon: <Nostaffingrequired /> },
             ],
             price: 23982,
             monthlyRates: {
@@ -134,9 +134,9 @@ const MachinesSection = ({ selectedMachine }) => {
                 { icon: <Zoos />, label: t('machines.Zoos') },
             ],
             features: [
-                { text: t('machines.hygienic'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Kidfriendlyattraction'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.Nostaffingrequired'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.hygienic'), icon: <Fullhygienic /> },
+                { text: t('machines.Kidfriendlyattraction'), icon: <Kidsfriendly /> },
+                { text: t('machines.Nostaffingrequired'), icon: <Nostaffingrequired /> },
             ],
             price: 13636,
             monthlyRates: {
@@ -156,9 +156,9 @@ const MachinesSection = ({ selectedMachine }) => {
                 { icon: <Villagefairs />, label: t('machines.VillageFairs') },
             ],
             features: [
-                { text: t('machines.AIageverification'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Chilledbeerseconds'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.fullyMinimalStaff'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.AIageverification'), icon: <AgeVerification /> },
+                { text: t('machines.Chilledbeerseconds'), icon: <Chilledbeer /> },
+                { text: t('machines.fullyMinimalStaff'), icon: <FullyMinimalStaff /> },
             ],
             price: 14500,
             monthly: 500,
@@ -177,9 +177,9 @@ const MachinesSection = ({ selectedMachine }) => {
                  
             ],
             features: [
-                { text: t('machines.Ecofriendly'), icon: <MachineSmallIcon5 /> },
-                { text: t('machines.Automaticsortinglogging'), icon: <MachineSmallIcon6 /> },
-                { text: t('machines.Rewardsloyaltypoint'), icon: <MachineSmallIcon7 /> },
+                { text: t('machines.Ecofriendly'), icon: <Ecofriendly /> },
+                { text: t('machines.Automaticsortinglogging'), icon: <SortLogging /> },
+                { text: t('machines.Rewardsloyaltypoint'), icon: <Rewardsloyaltypoint /> },
             ],
             price: 14500,
             monthly: 450,

@@ -320,8 +320,8 @@ function PartnersForm() {
                             value={formTab0.willingToPurchaseMachine}
                             onChange={(e) => handleChange(e, 0)}
                             options={[
-                                { value: 'yes', label: 'Ja' },
-                                { value: 'no', label: 'Nein' },
+                                { value: 'yes', label:t('machines.yes') },
+                                { value: 'no', label: t('machines.No')  },
                             ]}
                         />
                         <CustomSelect
@@ -331,8 +331,8 @@ function PartnersForm() {
                             value={formTab0.provideCateringPermit}
                             onChange={(e) => handleChange(e, 0)}
                             options={[
-                                { value: 'yes', label: 'Ja' },
-                                { value: 'no', label: 'Nein' },
+                                 { value: 'yes', label:t('machines.yes') },
+                                { value: 'no', label: t('machines.No')  },
                             ]}
                         />
                         {/* Contact info */}
@@ -351,7 +351,6 @@ function PartnersForm() {
                                 style={{
                                     accentColor: '#7FEE64',   // green fill when selected
                                     cursor: 'pointer',
-                                    marginTop: '4px',
                                 }}
                             />
                             <label className="bodyRegularText4" style={{ color: '#C2C2C4', cursor: 'default' }}>
@@ -499,7 +498,7 @@ function PartnersForm() {
                 <Box sx={{ my: 5, display: 'flex', justifyContent: 'center' }}>
                     {isSubmitting ? (
                         <Button disabled variant="contained" sx={{ borderRadius: '50px', px: 5, py: 1.5 }}>
-                            Submitting...
+                                {t('machines.submitting')}
                         </Button>
                     ) : (
                         <div onClick={handleSubmit} style={{ cursor: 'pointer' }}>

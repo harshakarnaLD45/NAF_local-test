@@ -87,6 +87,8 @@
         "machineSubTitle": "Augmentez vos revenus et optimisez vos opérations avec notre gamme de distributeurs personnalisables.",
         "EXPLOREOURVENDINGMACHINES": "DÉCOUVREZ NOS DISTRIBUTEURS",
         "All": "Tous",
+        "yes": "Oui",
+    "no": "Non", "submitting": "Soumission...",
         "PizzaMachine": "Distributeur de pizzas",
         "FriesMachine": "Distributeur de frites",
         "IceCreamMachine": "Distributeur de glaces",
