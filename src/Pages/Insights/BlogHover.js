@@ -16,7 +16,7 @@ const BlogHover = () => {
         const xml = parser.parseFromString(text, 'application/xml');
         const items = Array.from(xml.querySelectorAll('item'));
 
-        const blogs = items.slice(0, 3).map((item, i) => {
+        const blogs = items.slice(0, 5).map((item, i) => {
           const title = item.querySelector('title')?.textContent.trim() || '';
           const pubDate = item.querySelector('pubDate')?.textContent || '';
           const date = pubDate ? new Date(pubDate).toLocaleDateString('de-DE') : '';
@@ -50,7 +50,7 @@ const BlogHover = () => {
           ref={el => blogRefs.current[index] = el}
           sx={{
             position: "relative",
-            mb: 4,
+            mb: { xs: 0, sm: 0, md: 0, lg: 4 },
             cursor: "pointer",
             // By default (all sizes): show image
             "& .hoverImg": {
@@ -131,7 +131,6 @@ const BlogHover = () => {
                 display: "none", // default hidden
                 position: "absolute",
                 left: "11%",
-                bottom: "-50px",
                 zIndex: 10,
                 borderRadius: '10px',
                 "@media (min-width: 1024px)": {
@@ -151,7 +150,6 @@ const BlogHover = () => {
                 style={{
                   borderRadius: '10px',
                   width: "450px",
-                  height: "100%",
                 }}
                 src={post.imageUrl}
                 alt={post.title}

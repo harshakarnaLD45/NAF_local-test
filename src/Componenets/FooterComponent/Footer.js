@@ -31,32 +31,37 @@ const Footer = () => {
   const hubspotFormRef = useRef(null);
 
   useEffect(() => {
-    // Only load script if not already loaded
-    if (!window.hbspt) {
+    const loadHubspotForm = () => {
+      if (window.hbspt && hubspotFormRef.current) {
+        window.hbspt.forms.create({
+          portalId: "145027405",
+          formId: "707bb44a-4705-4866-9197-009af38be15b",
+          region: "eu1",
+          target: "#hubspot-footer-form",
+        });
+      }
+    };
+
+    const scriptAlreadyPresent = document.querySelector('script[src="//js-eu1.hsforms.net/forms/embed/v2.js"]');
+
+    if (!window.hbspt && !scriptAlreadyPresent) {
       const script = document.createElement("script");
       script.src = "//js-eu1.hsforms.net/forms/embed/v2.js";
       script.type = "text/javascript";
       script.charset = "utf-8";
-      script.onload = () => {
-        if (window.hbspt) {
-          window.hbspt.forms.create({
-            portalId: "145027405",
-            formId: "707bb44a-4705-4866-9197-009af38be15b",
-            region: "eu1",
-            target: "#hubspot-footer-form"
-          });
-        }
-      };
+      script.onload = loadHubspotForm;
       document.body.appendChild(script);
     } else {
-      window.hbspt.forms.create({
-        portalId: "145027405",
-        formId: "707bb44a-4705-4866-9197-009af38be15b",
-        region: "eu1",
-        target: "#hubspot-footer-form"
-      });
+      // Wait until the ref is available before calling hbspt
+      const interval = setInterval(() => {
+        if (hubspotFormRef.current && window.hbspt) {
+          loadHubspotForm();
+          clearInterval(interval);
+        }
+      }, 100);
     }
   }, []);
+
 
 
   const handleInputChange = (e) => {

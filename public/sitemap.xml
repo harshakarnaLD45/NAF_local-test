@@ -29,18 +29,18 @@
   <url><loc>https://vendinaf.com/es/software</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Insights Page -->
-  <url><loc>https://vendinaf.com/en/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <!-- <url><loc>https://vendinaf.com/en/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://vendinaf.com/de/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://vendinaf.com/fr/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://vendinaf.com/pl/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://vendinaf.com/es/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vendinaf.com/es/Insights</loc><changefreq>weekly</changefreq><priority>0.6</priority></url> -->
 
   <!-- Blog Container -->
-  <url><loc>https://vendinaf.com/en/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <!-- <url><loc>https://vendinaf.com/en/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://vendinaf.com/de/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://vendinaf.com/fr/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://vendinaf.com/pl/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://vendinaf.com/es/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://vendinaf.com/es/Insights/blog</loc><changefreq>weekly</changefreq><priority>0.5</priority></url> -->
 
   <!-- About Page -->
   <url><loc>https://vendinaf.com/en/company/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>

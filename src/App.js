@@ -6,7 +6,7 @@ import Footer from './Componenets/FooterComponent/Footer';
 import NoiseEffect from './Componenets/NoiseEffect/NoiseEffect';
 import './i18n';
 import MachinesPage from './Pages/MachinesPage/MachinesPage';
-import Insights from './Pages/Insights/Insights';
+// import Insights from './Pages/Insights/Insights';
 import Menu from './Pages/Company/Menu/Menu';
 import SoftwarePage from './Pages/SoftwarePage/SoftwarePage';
 import AboutPage from './Pages/Company/AboutPage/AboutPage';
@@ -61,7 +61,7 @@ const LanguageWrapper = () => {
         <Route path="machine" element={<MachinesPage />} />
         <Route path="maintaince" element={<MantaincePage />} />
         <Route path="software" element={<SoftwarePage />} />
-        <Route path="Insights" element={<Insights />} />
+        {/* <Route path="Insights" element={<Insights />} /> */}
         <Route path="company/about" element={<AboutPage />} />
         <Route path="company/menu" element={<Menu />} />
         <Route path="contact" element={<ContactPage />} />

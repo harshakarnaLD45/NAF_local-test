@@ -29,11 +29,16 @@ export default function MonthlyMenu() {
 
         const link = document.createElement('a');
         link.href = currentImage;
-        link.download = `menu_${currentIndex + 1}.svg`;
+        link.download = `menu_${currentIndex + 1}.jpg`;
         document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+           // Delay the click to ensure it's registered properly in all browsers
+        setTimeout(() => {
+            link.click();
+            // Cleanup
+            document.body.removeChild(link);
+    }, 0);
+};
+
  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
@@ -114,6 +119,7 @@ export default function MonthlyMenu() {
                                     width: '58px',
                                     backgroundColor: 'rgba(0, 0, 0, 0.6)',
                                     color: '#fff',
+                                    cursor: 'pointer',
                                     '&:hover': {
                                         backgroundColor: 'rgba(0, 0, 0, 0.8)',
                                     },
@@ -126,6 +132,8 @@ export default function MonthlyMenu() {
                                     sx={{
                                         width: '55%',
                                         height: '100%',
+                                        cursor: 'pointer',
+                                        
                                     }}
                                 />
                             </IconButton>

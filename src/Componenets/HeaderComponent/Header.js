@@ -261,10 +261,10 @@ const Header = () => {
                   { label: t("Header.menuHome"), path: `/${currentLang}` },
                   { label: t("Header.menuMachines"), path: `/${currentLang}/machine` },
                   { label: t("Header.menuSoftware"), path: `/${currentLang}/software` },
-                  { label: t("Header.menuInsights"), path: `/${currentLang}/Insights` },
+                  { label: t("Header.menuInsights"), path: "https://blog.vendinaf.com/de", external: true },
                   { label: t("Header.CompanyDiscover"), path: `/${currentLang}/company/about` },
                   { label: t("Header.foodMenu"), path: `/${currentLang}/company/menu` },
-                ].map(({ label, path }) => (
+                ].map(({ label, path, external }) => (
                   <Box
                     key={path}
                     className={`menu-item ${(strippedPath === path.replace(`/${currentLang}`, '')) ? 'bodyMediumText1' : 'bodyRegularText2'}`}
@@ -273,7 +273,13 @@ const Header = () => {
                       alignItems: 'center',
                       color: (location.pathname === path || hoveredPath === path) ? '#1A1A1A' : '#FCFCFC'
                     }}
-                    onClick={() => handleNavigation(path)}
+                    onClick={() => {
+                      if (external) {
+                        window.open(path, "_blank"); // Opens in new tab
+                      } else {
+                        handleNavigation(path);
+                      }
+                    }}
                     onMouseEnter={() => setHoveredPath(path)}
                     onMouseLeave={() => setHoveredPath(null)}
                   >
@@ -428,7 +434,7 @@ const Header = () => {
             </Box>
           )
         }
-      </Box>
+      </Box >
     </>
   );
 };

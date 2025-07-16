@@ -4,23 +4,25 @@ import "../../Pages/HomePage/HomePage.css";
 import AnimateButton from "../../Componenets/CommonComponents/AnimateButton";
 import ScrollManualLinesHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
 import BlogHover from "../Insights/BlogHover";
 
 const WhatsNew = () => {
   const { t } = useTranslation();
-  const { lang } = useParams();
 
+  const handleBlogClick = () => {
+    window.open("https://blog.vendinaf.com/de", "_blank");
+  };
+   
   return (
     <Box sx={{ position: "relative" }} className='section-container'>
       {/* Title Section */}
-      <Box className='whatsnewcontainer' sx={{ mb: 6 }}>
+      <Box className='whatsnewcontainer' sx={{ mb: 8 }}>
         {/* <Typography variant='h2' className='headings-h2' sx={{ color: '#FCFCFC' }}>
           What's New
         </Typography> */}
         <ScrollManualLinesHeadings text={t('Home.WhatsNew')} />
-        <Box className="animate-div">
-          <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} route={`/${lang}/Insights`} />
+        <Box className="animate-div" onClick={() => handleBlogClick()}>
+          <AnimateButton text1={t('Home.VIEW')} text2={t('Home.MORE')} />
         </Box>
       </Box>
       <BlogHover />
