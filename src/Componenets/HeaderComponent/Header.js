@@ -9,6 +9,7 @@ import { ArrowIcon1, DropDownIcon, ProfileIcon } from '../CustomIcons';
 import EastIcon from '@mui/icons-material/East';
 import NafLogoGif from '../../assets/naf-logo-json.json'
 import Lottie from "lottie-react";
+import { useNavigation } from '../../Preload/NavigationProvider';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -18,7 +19,7 @@ const Header = () => {
   const menuTriggerRef = useRef(null); // for the menu button  
   const { lang } = useParams();
   const currentLang = lang || i18n.language;
-
+  const { setLoading } = useNavigation();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [profileAnchorEl, setProfileAnchorEl] = useState(null);
@@ -72,6 +73,7 @@ const Header = () => {
   }, [profileAnchorEl]);
 
   const handleNavigation = (path) => {
+    setLoading(true); // Show preloader 
     navigate(path);
     setAnchorEl(null);
     setHoveredPath(null);
@@ -275,6 +277,7 @@ const Header = () => {
                     }}
                     onClick={() => {
                       if (external) {
+                        setLoading(true); // show preloader
                         window.open(path, "_blank"); // Opens in new tab
                       } else {
                         handleNavigation(path);

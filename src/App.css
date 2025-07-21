@@ -24,7 +24,7 @@
   font-size: 16px !important;
   border-radius: 24px !important;
   padding: 15px 45px 18px 20px !important;
-  max-width: 700px;
+  max-width: 500px;
   position: fixed !important;
   bottom: 20px !important;
   right: 20px !important;
@@ -445,5 +445,8 @@ body {
   .bodyRegularText4,
   .bodyMediumText3 {
     font-size: 10px !important;
+  }
+  .cookie-accept-button, .cookie-decline-button{
+    padding: 10px 20px !important;
   }
 }

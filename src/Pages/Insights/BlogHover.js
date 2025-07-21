@@ -1,11 +1,60 @@
 import { Box, Divider, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import whatarrow from "../../assets/Arrow 2.svg";
-import "../../Pages/HomePage/HomePage.css";
+import "./Insights.css";
+import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 const BlogHover = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const blogRefs = useRef([]);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    if (!blogPosts.length) return;
+
+    const cleanupFns = [];
+
+    blogRefs.current.forEach((blog, index) => {
+      if (!blog) return;
+
+      const date = blog.querySelector(".date");
+      const arrow = blog.querySelector(".arrowbig");
+      const image = blog.querySelector(".blog-image");
+
+      if (window.innerWidth >= 1024) {
+        gsap.set(image, { opacity: 0, scale: 1, immediateRender: true });
+        gsap.set(arrow, { x: 0 });
+        gsap.set(date, { x: 0 });
+
+        const tl = gsap.timeline({ paused: true })
+          .to(date, { x: 20, duration: 0.3, ease: "power2.out" })
+          .to(arrow, { x: -30, duration: 0.3, ease: "power2.out" }, 0)
+          .to(image, { opacity: 1, scale: 1.2, duration: 0.3, ease: "power2.out" }, 0);
+
+        const handleMouseEnter = () => tl.play();
+        const handleMouseLeave = () => {
+          tl.reverse().then(() => {
+            gsap.set(image, { opacity: 0, scale: 1 });
+          });
+        };
+
+        blog.addEventListener("mouseenter", handleMouseEnter);
+        blog.addEventListener("mouseleave", handleMouseLeave);
+
+        cleanupFns.push(() => {
+          blog.removeEventListener("mouseenter", handleMouseEnter);
+          blog.removeEventListener("mouseleave", handleMouseLeave);
+          tl.kill();
+        });
+      }
+    });
+
+    return () => {
+      cleanupFns.forEach(fn => fn());
+    };
+  }, [blogPosts]);
+
 
   useEffect(() => {
     const fetchRSS = async () => {
@@ -16,7 +65,7 @@ const BlogHover = () => {
         const xml = parser.parseFromString(text, 'application/xml');
         const items = Array.from(xml.querySelectorAll('item'));
 
-        const blogs = items.slice(0, 5).map((item, i) => {
+        const blogs = items.slice(0, 3).map((item, i) => {
           const title = item.querySelector('title')?.textContent.trim() || '';
           const pubDate = item.querySelector('pubDate')?.textContent || '';
           const date = pubDate ? new Date(pubDate).toLocaleDateString('de-DE') : '';
@@ -48,108 +97,45 @@ const BlogHover = () => {
         <Box
           key={post.id}
           ref={el => blogRefs.current[index] = el}
+
           sx={{
+            width: '100%',
             position: "relative",
-            mb: { xs: 0, sm: 0, md: 0, lg: 4 },
-            cursor: "pointer",
-            // By default (all sizes): show image
-            "& .hoverImg": {
-              display: "block",
-              opacity: 1,
-              transition: "opacity 0.3s ease",
-            },
-            // On desktop only, hide it until hover
-            "@media (min-width:1024px)": {
-              "& .hoverImg": {
-                display: "none",
-                opacity: 0,
-              },
-              "&:hover .hoverImg": {
-                display: "block",
-                opacity: 1,
-              },
-            },
           }}
           onClick={() => handleBlogClick(post.link)}
         >
-          <Divider sx={{ borderColor: "#6F6F6F" }} />
-
-          <Box
+          <Divider sx={{ borderColor: "#6F6F6F", zIndex: '-100' }} />
+          <Box className="blog-main-container"
             sx={{
-              py: { xs: 3, sm: 3, md: 5 },
+              py: 1.5,
               display: "flex",
+              flexGrow: 1,
               justifyContent: "space-between",
-              alignItems: "center",
+              alignItems: "flex-start",
               position: "relative",
-              gap: 1,
-              width: '100%'
+              minHeight: '250px',
+              cursor: 'pointer',
+              gap: 3
             }}
           >
-            {/* images sections */}
-            <Box className="imagestaticwhatssmallscreen"
-              sx={{
-                marginRight: 1
-              }}
-            >
-              <img
-                style={{
-                  borderRadius: '1.608px',
-                  width: "110px",
-                  height: "77px",
-                  alignItems: 'center',
-                }}
-                src={post.imageUrl}
-                alt={post.title}
-              />
+            {/* date */}
+            <Box className="blog-items blog-date" sx={{ marginRight: '30px' }}>
+              <Typography className="bodyRegularText4 date" sx={{ color: "#C2C2C4", whiteSpace: 'nowrap' }}>
+                {post.date}
+              </Typography>
             </Box>
-
-            <Typography className="bodyRegularText4 date  datebig" sx={{ color: "#C2C2C4" }}>
-              {post.date}
-            </Typography>
-
-            <Box className="imagestaticwhats bigimage"
-              sx={{
-                mx: 2,
-              }}
-            >
-              <img
-                style={{
-                  borderRadius: '1.608px',
-                  width: "201px",
-                  height: "140px",
-                  alignItems: 'center',
-                }}
-                src={post.imageUrl}
-                alt={post.title}
-              />
-            </Box>
-
-            {/* images sections */}
-            <Box
-              className="Whatimage-container bigimagecontaiter hoverImg"
-              sx={{
-                display: "none", // default hidden
-                position: "absolute",
-                left: "11%",
-                zIndex: 10,
-                borderRadius: '10px',
-                "@media (min-width: 1024px)": {
-                  display: "none", // still hidden unless hover
-                },
-                ".MuiBox-root:hover &": {
-                  display: "block",
-                },
-                "@media (min-width: 1024px)": {
-                  ".MuiBox-root:hover &": {
-                    display: "block", // show only on hover above 1024px
-                  },
-                }
-              }}
-            >
+            {/* image */}
+            <Box className="blog-img-sec" sx={{
+              margin: "0 60px", position: 'relative', minWidth: "20%", height: "100%", display: 'flex',
+              alignItems: 'center', justifyContent: 'center'
+            }}>
               <img
                 style={{
                   borderRadius: '10px',
-                  width: "450px",
+                  width: '100%',
+                  height: '270px',
+                  objectFit: 'cover',
+                  zIndex: "100",
                 }}
                 src={post.imageUrl}
                 alt={post.title}
@@ -157,97 +143,40 @@ const BlogHover = () => {
               />
             </Box>
 
-            <Typography
-              className="bodyMediumText1 whatsmiddletext bigtitle"
-              sx={{
-                color: "#FCFCFC",
-                width: "35%",
-                marginLeft: { xs: 0, lg: '20%' },
-              }}
-            >
-              {post.title}
-              <Typography className="bodyRegularText4" sx={{ color: '#444444' }}>
-                Blog
-              </Typography>
-            </Typography>
-            <Box
-              component="img"
-              src={whatarrow}
-              onClick={() => handleBlogClick(post.link)}
-              alt="Arrow Icon"
-              className="arrow arrowtabscreen arrowbigscreen"
-              sx={{
-                width: 28,
-                height: 28,
-                cursor: 'pointer'
-              }}
-            />
-
-            <Box
-              className="blog-containerss"
-              sx={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}
-            >
-              <Typography className="bodyRegularText4 date" sx={{ color: "#C2C2C4" }}>
+            <Box className="blog-items blog-title-sec" sx={{ ml: 3, width: "60%", }}>
+              <Typography className="bodyRegularText4 blog-mobile-date" sx={{ color: "#C2C2C4", display: 'none' }}>
                 {post.date}
               </Typography>
-
-              {/* Image - Static below 1024px */}
-              <Box className="imagestaticwhats"
-                sx={{
-                  mx: 2,
-                }}
-              >
-                <img
-                  style={{
-                    borderRadius: '1.608px',
-                    width: "201px",
-                    height: "140px",
-                    alignItems: 'center',
-                  }}
-                  src={post.imageUrl}
-                  alt={post.title}
-                />
-              </Box>
-
-              {/* Image - Hover effect for above 1024px */}
-
-              {/* Title */}
               <Typography
-                className="bodyMediumText1 whatsmiddletext"
+                className="bodyMediumText1 whatsmiddletext bigtitle"
                 sx={{
-                  color: "#FCFCFC",
-                  width: "35%",
-                  marginLeft: { xs: 0, lg: '20%' },
+                  color: "#FCFCFC", cursor: 'pointer !important'
                 }}
               >
                 {post.title}
               </Typography>
+              <Typography className="bodyRegularText4" sx={{ color: '#444444' }}>
+                {t('insights.Blog')}
+
+              </Typography>
+
+            </Box>
+            <Box className="blog-items blog-green-arrow" sx={{ ml: '30px', width: "8%" }}>
               <Box
                 component="img"
                 src={whatarrow}
-                onClick={() => handleBlogClick(post.link)}
+                onClick={() => handleBlogClick(index)}
                 alt="Arrow Icon"
-                className="arrow arrowtabscreen"
+                className="arrow arrowbig title-arrow"
                 sx={{
-                  width: 28,
+                  display: 'flex',
+                  justifySelf: 'flex-end',
+                  width: '28px',
                   height: 28,
-                  cursor: 'pointer'
+                  borderRadius: '6px',
                 }}
               />
             </Box>
-
-            <Box
-              component="img"
-              src={whatarrow}
-              onClick={() => handleBlogClick(post.link)}
-              alt="Arrow Icon"
-              className="arrow arrowbig"
-              sx={{
-                width: 28,
-                height: 28,
-                cursor: 'pointer'
-              }}
-            />
           </Box>
         </Box>
       ))}

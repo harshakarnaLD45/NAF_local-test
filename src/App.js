@@ -13,15 +13,45 @@ import AboutPage from './Pages/Company/AboutPage/AboutPage';
 import CustomCursor from './Componenets/NoiseEffect/CustomCursor';
 import ContactPage from './Pages/ContactPage/ContactPage';
 import MantaincePage from './Pages/MachinesPage/MantaincePage/MantaincePage';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import CookieConsent from "react-cookie-consent";
 import PrivacyPolicyPage from './Pages/PrivacyPolicy/privacypolicy';
+import gsap from "gsap";
+import Preloader from './Preload/preload';
+import { useLocation } from 'react-router-dom';
+import { NavigationProvider, useNavigation } from './Preload/NavigationProvider';
+import PreloadLinkHandler from './Preload/PreloadLinkHandler';
 
 const LanguageWrapper = () => {
   const navigate = useNavigate();
   const { lang } = useParams();
   const { i18n, t } = useTranslation();
+  const location = useLocation();
+  const {loading, setLoading} = useNavigation();
+  const preloaderRef = useRef();
+
+
+
+  // Show preloader on route change
+  useEffect(() => {
+    if (preloaderRef.current) {
+      gsap.set(preloaderRef.current, { opacity: 1, pointerEvents: "all" });
+    }
+    const timer = setTimeout(() => {
+      if (preloaderRef.current) {
+        gsap.to(preloaderRef.current, {
+          opacity: 0,
+          duration: 0.6,
+          onComplete: () => setLoading(false),
+        });
+      } else {
+        setLoading(false);
+      }
+    }, 600); // Adjust as needed
+    return () => clearTimeout(timer);
+  }, [location, setLoading]);
+
 
   useEffect(() => {
     const supportedLangs = ['de', 'en', 'fr', 'es', 'pl'];
@@ -30,6 +60,10 @@ const LanguageWrapper = () => {
 
   return (
     <>
+      <div ref={preloaderRef}>
+        <Preloader  />
+      </div>
+
       <Header />
       <CookieConsent
         location="bottom"
@@ -76,13 +110,17 @@ const LanguageWrapper = () => {
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <CustomCursor />
-        <Routes>
-          <Route path="/" element={<Navigate to="/de" />} />
-          <Route path="/:lang/*" element={<LanguageWrapper />} />
-        </Routes>
-      </BrowserRouter>
+      <NavigationProvider>
+        <BrowserRouter>
+          <CustomCursor/>
+          <PreloadLinkHandler>
+            <Routes>
+              <Route path="/" element={<Navigate to="/de" />} />
+              <Route path="/:lang/*" element={<LanguageWrapper />} />
+            </Routes>
+          </PreloadLinkHandler>
+        </BrowserRouter>
+      </NavigationProvider>
     </>
   );
 }
