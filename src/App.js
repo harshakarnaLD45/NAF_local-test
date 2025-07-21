@@ -28,7 +28,7 @@ const LanguageWrapper = () => {
   const { lang } = useParams();
   const { i18n, t } = useTranslation();
   const location = useLocation();
-  const {loading, setLoading} = useNavigation();
+  const { loading, setLoading } = useNavigation();
   const preloaderRef = useRef();
 
 
@@ -54,6 +54,10 @@ const LanguageWrapper = () => {
 
 
   useEffect(() => {
+    setLoading(true); // Show preloader on initial load
+  }, [setLoading]);
+  
+  useEffect(() => {
     const supportedLangs = ['de', 'en', 'fr', 'es', 'pl'];
     i18n.changeLanguage(supportedLangs.includes(lang) ? lang : 'de');
   }, [lang, i18n]);
@@ -61,7 +65,7 @@ const LanguageWrapper = () => {
   return (
     <>
       <div ref={preloaderRef}>
-        <Preloader  />
+        <Preloader />
       </div>
 
       <Header />
@@ -108,11 +112,13 @@ const LanguageWrapper = () => {
 };
 
 function App() {
+
+
   return (
     <>
       <NavigationProvider>
         <BrowserRouter>
-          <CustomCursor/>
+          <CustomCursor />
           <PreloadLinkHandler>
             <Routes>
               <Route path="/" element={<Navigate to="/de" />} />

@@ -10,10 +10,12 @@ export default function PreloadLinkHandler({ children }) {
       if (
         a &&
         a.href &&
-        !a.target &&
-        // !a.href.startsWith("mailto:") &&
-        // !a.href.startsWith("tel:") &&
-        !a.href.startsWith("javascript:")
+        a.origin === window.location.origin && // same-origin only
+        !a.getAttribute("target") && // not target="_blank"
+        !a.href.startsWith("mailto:") &&
+        !a.href.startsWith("tel:") &&
+        !a.href.startsWith("javascript:") &&
+        !a.hasAttribute("download") // not a download link
       ) {
         setLoading(true);
       }

@@ -429,7 +429,10 @@ const Header = () => {
 
               <button
                 data-cursor="hover"
-                onClick={() => navigate(`/${currentLang}/contact`)}
+                onClick={() => {
+                  setLoading(true); // Show preloader instantly
+                  navigate(`/${currentLang}/contact`);
+                }}
                 className="book-demo-btn bodyRegularText4"
               >
                 {t("Header.BookaDemo")}

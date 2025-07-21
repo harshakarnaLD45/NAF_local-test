@@ -1,8 +1,8 @@
 import React from "react";
 import loaderGif from '../assets/naf-logo-loading.gif'; // adjust path if needed
+import { useNavigation } from "./NavigationProvider";
 
-
-const preloaderStyle = {
+const preloaderStyle = (visible) => ({
   position: "fixed",
   top: 0,
   left: 0,
@@ -13,25 +13,16 @@ const preloaderStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  pointerEvents: "all",
+  pointerEvents: visible ? "all" : "none",
+  opacity: visible ? 1 : 0,
   transition: "opacity 0.5s",
-  // border: "5px solid red" // TEMP: for visibility
-};
-
-// const loaderStyle = {
-//   width: "60px",
-//   height: "60px",
-//   border: "6px solid #fff",
-//   borderTop: "6px solid #3498db",
-//   borderRadius: "50%",
-//   animation: "spin 1s linear infinite",
-// };
-
+});
 
 export default function Preloader() {
+  const { loading } = useNavigation();
   return (
-    <div id="preloader" style={preloaderStyle}>
-       <img style={{ width: "160px", height: "160px" }} src={loaderGif} alt="Loading..." className="preloader-gif" />
+    <div id="preloader" style={preloaderStyle(loading)}>
+      <img style={{ width: "160px", height: "160px" }} src={loaderGif} alt="Loading..." className="preloader-gif" />
     </div>
   );
 }
