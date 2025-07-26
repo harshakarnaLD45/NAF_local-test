@@ -21,6 +21,7 @@ import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import { useNavigate, useParams } from 'react-router-dom';
+import logoUrl from '../../assets/NAF-logo.png'; // Replace with actual logo URL
 
 function ContactPage() {
     const { t } = useTranslation();
@@ -318,15 +319,109 @@ function ContactPage() {
     return (
         <Box>
             <Helmet>
-                <title>NAF Vending - Contact</title>
+                {/* Optimized Title with Primary Keywords */}
+                <title>Contact NAF Germany: AI Vending Machine Solutions</title>
+
+                {/* Canonical URL */}
                 <link rel="canonical" href="https://vendinaf.com/en/contact" />
-                <meta name='description'
-                    content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
-                <meta name="keywords"
-                    content="Pizza vending machine, Fries vending machine, NAF food vending, NAF sustainable vending, Soft ice cream vending, Cotton candy vending, Beer vending machine, Return vending system, Gourmet vending machine, Vending maintenance support, NAF cloud system, Real-time vending analytics, Inventory management vending, Targeted vending ads, Remote machine monitoring, Vending machine leasing, Vending machine partnerships, Germany vending solutions, Innovative vending technology, Food waste reduction vending, Reusable packaging vending, Vending for hotels/universities, Fresh food vending machine, Local food vending, AI vending machines, Smart vending solutions, Automated vending systems, Sustainable vending, Cloud-based vending, Custom vending machines, High-performance vending, Vending machine management, Eco-friendly vending, AI gastronomy, NAF AI vending, NAF vending machines, Near food vending machine, Food vending near me" />
+
+                {/* Optimized Meta Description */}
+                <meta
+                    name="description"
+                    content="Get in touch with NAF Germany for AI-powered vending machines and sustainable solutions. Contact us for partnerships, leasing, or support in Freiberg and beyond. Reach out today!"
+                />
+
+                {/* Meta Author and Robots */}
                 <meta name="author" content="NAF Vending" />
                 <meta name="robots" content="index, follow" />
+
+                {/* HTML Lang */}
                 <html lang="en" />
+
+                {/* Open Graph Tags for Social Sharing */}
+                <meta property="og:title" content="Contact NAF Germany: AI Vending Machine Solutions" />
+                <meta
+                    property="og:description"
+                    content="Reach NAF Germany for innovative AI vending machines and eco-friendly solutions. Contact us for inquiries, demos, or partnerships in sustainable vending."
+                />
+                <meta property="og:image" content={Picture1} /> {/* Replace with actual image URL */}
+                <meta property="og:url" content="https://vendinaf.com/en/contact" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Contact NAF Germany: AI Vending Machine Solutions" />
+                <meta
+                    name="twitter:description"
+                    content="Reach NAF Germany for innovative AI vending machines and eco-friendly solutions. Contact us for inquiries, demos, or partnerships in sustainable vending."
+                />
+                <meta name="twitter:image" content={Picture1} /> {/* Replace with actual image URL */}
+
+                {/* Structured Data (JSON-LD) for Rich Snippets – LocalBusiness for Local SEO */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "LocalBusiness",
+                        "name": "NAF Germany",
+                        "description": "NAF Germany offers AI-powered vending machines and sustainable food solutions. Contact us for partnerships, leasing, or technical support.",
+                        "url": "https://vendinaf.com/en/contact",
+                        "telephone": "+49-152-28387141",
+                        "email": "info@naf-halsbach.de",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Obere Straße 3",
+                            "addressLocality": "Freiberg, OT Halsbach",
+                            "postalCode": "09599",
+                            "addressCountry": "Germany"
+                        },
+
+                        "contactPoint": [
+                            {
+                                "@type": "ContactPoint",
+                                "telephone": "+49-152-28387141",
+                                "contactType": "Customer Service",
+                                "contactOption": "TollFree",
+                                "areaServed": "DE",
+                                "availableLanguage": "English, German"
+                            },
+                            {
+                                "@type": "ContactPoint",
+                                "telephone": "+49-162-1638005",
+                                "contactType": "Technical Support",
+                                "contactOption": "TollFree",
+                                "areaServed": "DE",
+                                "availableLanguage": "English, German"
+                            }
+                        ],
+                        "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                            "opens": "09:00",
+                            "closes": "17:00"
+                        },
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": { logoUrl }
+                        }
+                    })}
+                </script>
+                {/* Add Person Schema for Each Member */}
+                <script type="application/ld+json">
+                    {JSON.stringify(contacts.map((contact, index) => ({
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": contact.name,
+                        "jobTitle": contact.roleDescription,
+                        "worksFor": {
+                            "@type": "Organization",
+                            "name": "NAF Germany"
+                        },
+                        "description": contact.description,
+                        "image": contact.image,
+                        "url": `https://vendinaf.com/en/contact#${contact.name.replace(/\s/g, '-')}`, // Anchor link for internal navigation
+                        "sameAs": contact.linkedin ? [contact.linkedin] : []
+                    })))}
+                </script>
             </Helmet>
             <Box className='section-container contactus-sec' sx={{ pr: 0 }}>
                 <Box className='contactus-subsec'>
@@ -342,20 +437,20 @@ function ContactPage() {
 
                             >
                                 <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
-                                    <Box  className="contact-icons"
+                                    <Box className="contact-icons"
                                         sx={{
                                             backgroundColor: '#7FEE64',
                                             borderRadius: '50%',
                                             width: "56px",
                                             height: "56px",
                                             display: 'flex',
-                                            justifyContent: 'center',cursor: 'pointer',
+                                            justifyContent: 'center', cursor: 'pointer',
                                             alignItems: 'center',
                                         }}
                                     >
-                                        <Contactmail />
+                                        <Contactmail className="contact-icon" sx={{ cursor: 'pointer !important' }} />
                                     </Box>
-                                    <Typography className="bodyRegularText2" sx={{ color: '#FCFCFC',cursor: 'pointer'}} >
+                                    <Typography className="bodyRegularText2" sx={{ color: '#FCFCFC', cursor: 'pointer' }} >
                                         info@naf-halsbach.de
                                     </Typography>
                                 </Box>
@@ -384,8 +479,8 @@ function ContactPage() {
                                     </Typography>
                                 </a>
                             </Box>
-                            <Box sx={{ display: 'flex', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
-                                <Box  className="contact-icons"
+                            <Box sx={{ display: 'flex', cursor: 'pointer', gap: { xs: '12px', sm: '18px', md: '32px' }, alignItems: 'center' }}>
+                                <Box className="contact-icons"
                                     sx={{
                                         backgroundColor: '#7FEE64',
                                         borderRadius: '50%',
@@ -394,6 +489,7 @@ function ContactPage() {
                                         display: 'flex',
                                         justifyContent: 'center',
                                         alignItems: 'center',
+
                                     }}
                                 >
                                     <Contactphone />
@@ -602,7 +698,7 @@ function ContactPage() {
                                         value={customCategory}
                                         onChange={(e) => setCustomCategory(e.target.value)}
                                         InputLabelProps={{
-                                            style: { color: '#FCFCFC',} ,
+                                            style: { color: '#FCFCFC', },
                                         }}
                                         InputProps={{
                                             disableUnderline: false,
@@ -614,7 +710,7 @@ function ContactPage() {
                                                 '&:after': { borderBottomColor: '#C6C6C6' },
                                             },
                                         }}
-                                        sx={{marginTop:'10px'}}
+                                        sx={{ marginTop: '10px' }}
                                     />
                                 )}
                             </Box>
@@ -623,7 +719,7 @@ function ContactPage() {
                             <Box sx={{ width: '100%', marginTop: { xs: '10px', sm: '30px', md: '60px' }, display: 'flex', flexDirection: 'column', gap: { xs: '10px', sm: '30px', md: '60px' } }}>
                                 <TextField
                                     className='bodyRegularText3'
-                                    label="Nachricht"
+                                    label={t('contactus.Message')}
                                     variant="standard"
                                     required
                                     fullWidth
@@ -782,7 +878,7 @@ function ContactPage() {
                                     }}
                                 >
 
-                                    <Contactmail color='#FA7854' sx={{  }} />
+                                    <Contactmail color='#FA7854' sx={{}} />
                                 </Box>
                             </a>
                         </Box>
@@ -934,7 +1030,7 @@ function ContactPage() {
                                 border: '1px solid #393939',
                                 backgroundColor: 'transparent',
                                 color: '#C2C2C4',
-                                borderRadius: '12px',
+                                borderRadius: '12px !important',
                                 boxShadow: 'none',
 
                                 mb: 2,

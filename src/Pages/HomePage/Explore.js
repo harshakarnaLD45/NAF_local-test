@@ -468,8 +468,10 @@ function Explore() {
                     zIndex: 2,
                   }}
                 >
-                  <Box className='bodyMediumText2' sx={{ color: '#fff' }}>
-                    {machine.name}
+                  <Box>
+                    <h2 className='bodyMediumText2' style={{ color: '#fff' }}>
+                      {machine.name}
+                    </h2>
                   </Box>
                   <ArrowButton onClick={() => handleMachineClick(machine.name)} />
                 </Box>

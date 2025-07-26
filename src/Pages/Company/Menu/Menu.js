@@ -22,15 +22,91 @@ const Menu = () => {
   return (
     <Box>
       <Helmet>
-        <title>NAF Vending - Menu</title>
+        {/* Optimized Title with Primary Keywords */}
+        <title>NAF Germany: Vending Machine Menu</title>
+
+        {/* Canonical URL */}
         <link rel="canonical" href="https://vendinaf.com/en/company/menu" />
-        <meta name='description'
-          content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
-        <meta name="keywords"
-          content="Pizza vending machine, Fries vending machine, NAF food vending, NAF sustainable vending, Soft ice cream vending, Cotton candy vending, Beer vending machine, Return vending system, Gourmet vending machine, Vending maintenance support, NAF cloud system, Real-time vending analytics, Inventory management vending, Targeted vending ads, Remote machine monitoring, Vending machine leasing, Vending machine partnerships, Germany vending solutions, Innovative vending technology, Food waste reduction vending, Reusable packaging vending, Vending for hotels/universities, Fresh food vending machine, Local food vending, AI vending machines, Smart vending solutions, Automated vending systems, Sustainable vending, Cloud-based vending, Custom vending machines, High-performance vending, Vending machine management, Eco-friendly vending, AI gastronomy, NAF AI vending, NAF vending machines, Near food vending machine, Food vending near me" />
+
+        {/* Optimized Meta Description */}
+        <meta
+          name="description"
+          content="Explore NAF Germany's vending machine menu featuring fresh, AI-optimized food options like pizza, fries, and ice cream. Discover sustainable, allergen-friendly choices with monthly updates and food labeling details."
+        />
+
+        {/* Meta Author and Robots */}
         <meta name="author" content="NAF Vending" />
         <meta name="robots" content="index, follow" />
+
+        {/* HTML Lang */}
         <html lang="en" />
+
+        {/* Open Graph Tags for Social Sharing */}
+        <meta property="og:title" content="NAF Germany: Vending Machine Menu & Fresh Food Options" />
+        <meta
+          property="og:description"
+          content="Browse NAF's diverse menu for AI-powered vending machines, including sustainable and allergen-aware selections for hotels, events, and more."
+        />
+        <meta property="og:image" content="https://vendinaf.com/path-to-menu-hero-image.jpg" /> {/* Replace with actual image URL */}
+        <meta property="og:url" content="https://vendinaf.com/en/company/menu" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NAF Germany: Vending Machine Menu & Fresh Food Options" />
+        <meta
+          name="twitter:description"
+          content="Browse NAF's diverse menu for AI-powered vending machines, including sustainable and allergen-aware selections for hotels, events, and more."
+        />
+        <meta name="twitter:image" content="https://vendinaf.com/path-to-menu-hero-image.jpg" /> {/* Replace with actual image URL */}
+
+        {/* Structured Data (JSON-LD) for Rich Snippets – ItemList for Menu Items */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "NAF Vending Machine Menu",
+            "description": "A selection of fresh, sustainable food options from NAF Germany's AI-powered vending machines, including monthly menus, allergen info, and food labeling.",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Product", // Or use "MenuItem" if more food-focused
+                  "name": "Pizza Menu Option",
+                  "description": "Fresh pizza from NAF vending machines with AI-optimized preparation and sustainable ingredients."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Product",
+                  "name": "French Fries Menu Option",
+                  "description": "Crispy fries with allergen labeling and eco-friendly packaging in NAF's smart vending systems."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Product",
+                  "name": "Ice Cream Menu Option",
+                  "description": "Creamy soft ice cream options, updated monthly with food waste reduction features."
+                }
+              },
+              // Add more based on your actual menu items (e.g., Beer, Cotton Candy)
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "NAF Germany",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://vendinaf.com/path-to-logo.png" // Replace with actual logo URL
+              }
+            }
+          })}
+        </script>
       </Helmet>
       <Box className="section-container menucontainer">
         <Box sx={{
@@ -98,7 +174,7 @@ const Menu = () => {
 
       {/* <VMMenu /> */}
       <MonthlyMenu />
-      <Foodlabeling/>
+      <Foodlabeling />
       <Allergen />
       <Unlock />
     </Box>

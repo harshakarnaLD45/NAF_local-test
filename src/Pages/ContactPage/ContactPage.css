@@ -48,9 +48,6 @@
 }
 
 /* Accordian */
-.css-1so7s86-MuiPaper-root-MuiAccordion-root{
-    border-radius: 12px !important;
-}
 .css-1f1pi2l-MuiButtonBase-root-MuiAccordionSummary-root{
     display: flex !important;
     justify-content: space-between !important;
@@ -59,9 +56,23 @@
     left: -32px !important;
 }
 #privacyConsent{
-display: flex !important;
+    display: flex !important;
     align-self: center !important;
+    
+}
 
+
+
+#panel2-header{
+    border-radius: 12px !important;
+
+}
+
+.contact-icons:hover{
+    cursor: pointer !important;
+}
+.contact-icon{
+    cursor: pointer !important;
 }
 @media (min-width: 2083px) {
 

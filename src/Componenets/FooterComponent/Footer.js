@@ -8,7 +8,7 @@ import YouTube from '../../assets/Youtube.svg';
 import AnimateButton from "../CommonComponents/AnimateButton";
 import FooterLogo from '../../assets/Foote-logo.svg'
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import FooterVideo from '../../assets/naf-footer-video.mp4'
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -452,7 +452,9 @@ const Footer = () => {
                 textAlign: { xs: "center", md: "right" }
               }}
             >
-              {t('footer.footerTermsConditions')}
+              <Link to={`/${lang}/privacy-policy`} style={{ color: "#FCFCFC", cursor: "pointer" }}>
+                {t('Header.privacyPolicy')}
+              </Link>
             </Typography>
           </Box>
 

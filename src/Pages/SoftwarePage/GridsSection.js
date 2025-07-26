@@ -49,7 +49,7 @@ const GridsSection = () => {
     const renderGridItem = (icon, titleKey, subTitleKey, altText) => (
         <Item sx={{flexGrow:1,}} className='bentogrid-item'>
             <Box className="bentogrid-image-sec" onClick={() => handleImageClick(icon)} style={{ cursor: 'pointer' }}>
-                <img src={icon} className='soft-ware-icon' alt={altText}/>
+                <img src={icon} className='soft-ware-icon' loading="lazy" alt={altText}/>
             </Box>
             <Box className="bentogrid-text-sec">
                 <Typography className='headings-h4' sx={{ textAlign: 'left' }}>{t(titleKey)}</Typography>
@@ -125,6 +125,7 @@ const GridsSection = () => {
                     <img
                         src={openImage}
                         alt="Enlarged Preview"
+                        loading="lazy"
                         style={{
                             height: '75%',
                             width: '75%',

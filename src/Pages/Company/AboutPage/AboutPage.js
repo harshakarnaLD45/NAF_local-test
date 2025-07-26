@@ -20,23 +20,91 @@ function AboutPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-            // document.title = `NAF Vending -${t('titles.about')}`; // Set tab title
-        
+        // document.title = `NAF Vending -${t('titles.about')}`; // Set tab title
+
     }, []);
 
     return (
         <Box>
             <Helmet>
-                <title>NAF Vending - About</title>
+                {/* Shorter, SEO-Optimized Title (targets "about NAF vending Germany" queries) */}
+                <title>NAF Germany: About AI Vending Innovations</title>
+
+                {/* Canonical URL */}
                 <link rel="canonical" href="https://vendinaf.com/en/company/about" />
-                <meta name='description'
-                    content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
-                <meta name="keywords"
-                    content="Pizza vending machine, Fries vending machine, NAF food vending, NAF sustainable vending, Soft ice cream vending, Cotton candy vending, Beer vending machine, Return vending system, Gourmet vending machine, Vending maintenance support, NAF cloud system, Real-time vending analytics, Inventory management vending, Targeted vending ads, Remote machine monitoring, Vending machine leasing, Vending machine partnerships, Germany vending solutions, Innovative vending technology, Food waste reduction vending, Reusable packaging vending, Vending for hotels/universities, Fresh food vending machine, Local food vending, AI vending machines, Smart vending solutions, Automated vending systems, Sustainable vending, Cloud-based vending, Custom vending machines, High-performance vending, Vending machine management, Eco-friendly vending, AI gastronomy, NAF AI vending, NAF vending machines, Near food vending machine, Food vending near me" />
+
+                {/* Optimized Meta Description */}
+                <meta
+                    name="description"
+                    content="Learn about NAF Germany – pioneers in AI-powered vending machines and sustainable food solutions. Discover our story, team, and commitment to innovation in gastronomy. Partner with us today!"
+                />
+
+                {/* Meta Author and Robots */}
                 <meta name="author" content="NAF Vending" />
                 <meta name="robots" content="index, follow" />
+
+                {/* HTML Lang */}
                 <html lang="en" />
+
+                {/* Open Graph Tags for Social Sharing */}
+                <meta property="og:title" content="NAF Germany: About AI Vending Innovations" />
+                <meta
+                    property="og:description"
+                    content="Explore the story behind NAF Germany, from fine dining roots to cutting-edge AI vending technology and eco-friendly solutions."
+                />
+                <meta property="og:image" content="https://vendinaf.com/path-to-about-hero-image.jpg" /> {/* Replace with actual image URL */}
+                <meta property="og:url" content="https://vendinaf.com/en/company/about" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="NAF Germany: About AI Vending Innovations" />
+                <meta
+                    name="twitter:description"
+                    content="Explore the story behind NAF Germany, from fine dining roots to cutting-edge AI vending technology and eco-friendly solutions."
+                />
+                <meta name="twitter:image" content="https://vendinaf.com/path-to-about-hero-image.jpg" /> {/* Replace with actual image URL */}
+
+                {/* Structured Data (JSON-LD) for Rich Snippets – AboutPage with Organization Details */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "AboutPage",
+                        "name": "About NAF Germany",
+                        "description": "NAF Germany is a leader in AI-powered vending machines, combining culinary expertise with sustainable technology for innovative food solutions.",
+                        "mainEntity": {
+                            "@type": "Organization",
+                            "name": "NAF Germany",
+                            "url": "https://vendinaf.com",
+                            "logo": "https://vendinaf.com/path-to-logo.png", // Replace with actual logo URL
+                            "founder": [
+                                {
+                                    "@type": "Person",
+                                    "name": "Odette Lamkhizni"
+                                },
+                                {
+                                    "@type": "Person",
+                                    "name": "Abdelilah Lamkhizni"
+                                }
+                            ],
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Obere Straße 3",
+                                "addressLocality": "Freiberg, OT Halsbach",
+                                "postalCode": "09599",
+                                "addressCountry": "Germany"
+                            },
+                            "contactPoint": {
+                                "@type": "ContactPoint",
+                                "telephone": "+49-152-28387141",
+                                "contactType": "customer service",
+                                "email": "info@naf-halsbach.de"
+                            }
+                        }
+                    })}
+                </script>
             </Helmet>
+
 
             {/* Hero section */}
             <Box className="about-page-container">{/* Letter Images Section */}

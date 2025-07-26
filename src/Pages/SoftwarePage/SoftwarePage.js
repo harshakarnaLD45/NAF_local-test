@@ -8,9 +8,11 @@ import ExpertiseSection from './ExpertiseSection';
 import ReadySection from './ReadySection';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import logoUrl from '../../assets/NAF-logo.png'; // Replace with actual logo URL
+import SoftwareHeroImg from '../../assets/software/Real-time-sales-analytics.svg'; // Replace with actual logo URL
 
 function SoftwarePage() {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         document.title = `NAF Vending -${t('titles.Software')}`; // Set tab title
@@ -20,45 +22,116 @@ function SoftwarePage() {
 
     return (
         <div className='section-container'>
-        <Helmet>
-          {/* <title>NAF Vending - Software</title> */}
-          <link rel="canonical" href="https://vendinaf.com/en/software"/>
-          <meta name='description'
-            content="Discover NAF’s AI-powered food vending machines near you. Enjoy fresh, sustainable NAF solutions with smart technology and cloud management. Partner today!" />
-          <meta name="keywords"
-            content="Pizza vending machine, Fries vending machine, NAF food vending, NAF sustainable vending, Soft ice cream vending, Cotton candy vending, Beer vending machine, Return vending system, Gourmet vending machine, Vending maintenance support, NAF cloud system, Real-time vending analytics, Inventory management vending, Targeted vending ads, Remote machine monitoring, Vending machine leasing, Vending machine partnerships, Germany vending solutions, Innovative vending technology, Food waste reduction vending, Reusable packaging vending, Vending for hotels/universities, Fresh food vending machine, Local food vending, AI vending machines, Smart vending solutions, Automated vending systems, Sustainable vending, Cloud-based vending, Custom vending machines, High-performance vending, Vending machine management, Eco-friendly vending, AI gastronomy, NAF AI vending, NAF vending machines, Near food vending machine, Food vending near me" />
-          <meta name="author" content="NAF Vending" />
-          <meta name="robots" content="index, follow" />
-          <html lang="en" />
-        </Helmet>
+            <Helmet>
+                {/* Optimized Title with Primary Keywords */}
+                {/* <title>NAF Germany: AI Vending Software & Cloud Management</title> */}
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://vendinaf.com/en/software" />
+
+                {/* Optimized Meta Description */}
+                <meta
+                    name="description"
+                    content="Unlock NAF Germany's AI vending software for real-time analytics, cloud management with AWS and NAYAX, RFID integration, and energy-efficient telemetry. Optimize your vending network sustainably – explore now!"
+                />
+
+                {/* Meta Author and Robots */}
+                <meta name="author" content="NAF Vending" />
+                <meta name="robots" content="index, follow" />
+
+                {/* HTML Lang */}
+                <html lang="en" />
+
+                {/* Open Graph Tags for Social Sharing */}
+                <meta property="og:title" content="NAF Germany: AI Vending Software & Cloud Management" />
+                <meta
+                    property="og:description"
+                    content="Discover advanced vending software from NAF – AI-powered for inventory tracking, remote monitoring, and eco-friendly optimizations tailored for businesses."
+                />
+                <meta property="og:image" content={SoftwareHeroImg} />
+                <meta property="og:url" content="https://vendinaf.com/en/software" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="NAF Germany: AI Vending Software & Cloud Management" />
+                <meta
+                    name="twitter:description"
+                    content="Discover advanced vending software from NAF – AI-powered for inventory tracking, remote monitoring, and eco-friendly optimizations tailored for businesses."
+                />
+                <meta name="twitter:image" content={SoftwareHeroImg} />
+
+                {/* Structured Data (JSON-LD) for Rich Snippets – SoftwareApplication with Breadcrumb */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "SoftwareApplication",
+                        "name": "NAF Vending Software",
+                        "applicationCategory": "BusinessApplication",
+                        "operatingSystem": "Android, AWS, NAYAX",
+                        "description": "AI-powered vending software for cloud-based management, real-time analytics,  telemetry, and energy efficiency. Optimize inventory, reduce waste, and monitor remotely for sustainable operations.",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "Contact for Pricing",
+                            "priceCurrency": "EUR"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "NAF Germany",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": { logoUrl } // logo url
+                            }
+                        },
+                        "breadcrumb": {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://vendinaf.com/en"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Software",
+                                    "item": "https://vendinaf.com/en/software"
+                                }
+                            ]
+                        },
+                        "keywords": "AI vending software, cloud vending management, real-time vending analytics, sustainable vending telemetry"
+                    })}
+                </script>
+            </Helmet>
             <Box className='softwarepage-main-container'>
                 <Box className='software-herosection'>
                     <Typography variant='h1' className='headings-h1 maintext' sx={{ color: '#FCFCFC' }}>
                         {t('software.heroTitle')}
                     </Typography>
                     <Typography className='bodyRegularText3 maintext   maintext1' sx={{ color: '#C2C2C4' }}>
-                    {t('software.heroSubTitle')}
+                        {t('software.heroSubTitle')}
                     </Typography>
                 </Box>
                 <Box className="laptop-img-sec">
-                    <img  className='software-hero-img' src={softwareHeroImg} alt="NAF : Streamline Vending Operations with Our Innovative Software." />
+                    <img className='software-hero-img' src={softwareHeroImg} alt="NAF : Streamline Vending Operations with Our Innovative Software." />
                 </Box>
             </Box>
 
-            <Box className='soft-second-sec' sx={{width:'100%',margin:'200px 0'}}>
+            <Box className='soft-second-sec' sx={{ width: '100%', margin: '200px 0' }}>
                 <Box className='software-intro-sec'>
                     <Typography className="herotitle headings-h2" variant="h2" sx={{ color: "#FCFCFC" }}>
-                    {t('software.introducingcloud')}
+                        {t('software.introducingcloud')}
                     </Typography>
-                    <Typography className="bodyRegularText3 bodyMediumText2 "  variant="body1" sx={{ color: "#C2C2C4",width:'70%' }} >
-                    {t('software.introducingcloudSubtitle')}
+                    <Typography className="bodyRegularText3 bodyMediumText2 " variant="body1" sx={{ color: "#C2C2C4", width: '70%' }} >
+                        {t('software.introducingcloudSubtitle')}
                     </Typography>
                 </Box>
-                <GridsSection/>
+                <GridsSection />
             </Box>
 
-            <Specifications/>
-            <ExpertiseSection/>
+            <Specifications />
+            <ExpertiseSection />
             {/* <ReadySection /> */}
         </div>
     )
