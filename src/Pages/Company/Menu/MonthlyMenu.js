@@ -5,39 +5,37 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Box, Typography, IconButton, useMediaQuery, useTheme } from '@mui/material';
-import Menu1 from '../../../assets/About/Menu/Juni 2025.svg';
 import Menu2 from '../../../assets/About/Menu/JulyMenu.jpg';
+import Menu3 from '../../../assets/About/Menu/Agus-menu.png';
+import Menu4  from '../../../assets/About/Menu/sept-menu.png';
 import downLoadicon from '../../../assets/About/Menu/downLoad-icon.svg';
 import EastIcon from '@mui/icons-material/East';
-// import DownloadIcon from '@mui/icons-material/Download';
 import { useTranslation } from 'react-i18next';
 import './Menu.css';
 
-const allergenImages = [Menu2, Menu2,];
+const allergenImages = [ Menu2, Menu3, Menu4]; 
 
-export default function MonthlyMenu() {
+export   default function MonthlyMenu() {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const swiperRef = useRef(null);
     const { t } = useTranslation();
 
     const theme = useTheme();
-    const handleDownload = () => {
-        const swiper = swiperRef.current;
-        const currentIndex = swiper?.realIndex || 0;
-        const currentImage = allergenImages[currentIndex];
+   const handleDownload = (index) => {
+    const currentImage = allergenImages[index];
 
-        const link = document.createElement('a');
-        link.href = currentImage;
-        link.download = `menu_${currentIndex + 1}.jpg`;
-        document.body.appendChild(link);
-           // Delay the click to ensure it's registered properly in all browsers
-        setTimeout(() => {
-            link.click();
-            // Cleanup
-            document.body.removeChild(link);
+    const link = document.createElement('a');
+    link.href = currentImage;
+    link.download = `menu${index + 1}.jpg`;
+    document.body.appendChild(link);
+
+    setTimeout(() => {
+        link.click();
+        document.body.removeChild(link);
     }, 0);
 };
+
 
  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -110,7 +108,7 @@ export default function MonthlyMenu() {
 
                             {/* Download Button */}
                             <IconButton
-                                onClick={handleDownload}
+                                onClick={() => handleDownload(index)}
                                 sx={{
                                     position: 'absolute',
                                     top: 20,
