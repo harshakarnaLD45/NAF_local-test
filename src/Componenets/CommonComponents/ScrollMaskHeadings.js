@@ -45,7 +45,7 @@ const ScrollMaskHeadings = ({ text, textColor, textAlignment, textDisplay }) => 
           display: textDisplay || "inline-block",
           lineHeight: 1.2,
           wordWrap: "break-word",
-          whiteSpace: "pre-wrap"
+          whiteSpace: "pre-wrap",
         }}
       >
         {lines.map((line, index) => (

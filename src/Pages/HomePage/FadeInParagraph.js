@@ -94,16 +94,16 @@ const FadeInParagraph = () => {
             if (isPerson) {
                 // Keep the full name as one underlined block
                 return (
-                    <span key={idx} style={{ display: "inline-block", width: "100%" }}>
+                    <span key={idx} style={{ display: "inline" }}>
                         <span 
                             className="fade-word headings-h2  naf-words"
                             style={{
                                 color: "#FA7854",
-                               textDecoration:"undeline",
+                                textDecoration:"underline",
                                 fontWeight: 600,
                                 textUnderlineOffset: "4px",
                                 cursor: "pointer",
-                                whiteSpace: "nowrap",
+                                display: "inline",
                             }}
                             onMouseEnter={(e) => handleMouseEnter(item.person, e)}
                             onMouseLeave={handleMouseLeave}
@@ -111,17 +111,17 @@ const FadeInParagraph = () => {
                                 <Link 
                             className="fade-word headings-h2  naf-words "
                             sx={{
-                               textDecoration:"undeline",
+                               textDecoration:"underline",
                                textDecorationColor:"#FA7854",
                                color: "#FA7854",
-
+                               display: "inline",
                             }}
                                 >
                                 {item.text}
 
                                 </Link>
                         </span>
-                        <span>&nbsp;</span>
+                        <span style={{ display: "inline" }}>&nbsp;</span>
                     </span>
                 );
             } else {
@@ -129,9 +129,9 @@ const FadeInParagraph = () => {
                 return item.text.split(" ").map((word, i) => {
                     const key = `${idx}-${i}`;
                     return (
-                        <span key={key} style={{ display: "inline-block", width: "100%" }}>
-                            <span className="fade-word headings-h2 naf-words">{word}</span>
-                            <span>&nbsp;</span>
+                        <span key={key} style={{ display: "inline" }}>
+                            <span className="fade-word headings-h2 naf-words" style={{ display: "inline" }}>{word}</span>
+                            <span style={{ display: "inline" }}>&nbsp;</span>
                         </span>
                     );
                 });
@@ -179,6 +179,12 @@ const FadeInParagraph = () => {
                     wordBreak: "break-word",        // Break long words
                     overflowWrap: "break-word",     // Ensure wrapping
                     maxWidth: "100%",               // Prevent overflow
+                    display: "block",               // Ensure block-level behavior
+                    lineHeight: 1.2,                // Better line spacing
+                    // iOS Safari specific fixes
+                    WebkitHyphens: "auto",          // Enable hyphenation on iOS
+                    hyphens: "auto",                // Enable hyphenation
+                    WebkitTextSizeAdjust: "100%",   // Prevent iOS text scaling issues
                 }}
             >
                 {renderWords()}

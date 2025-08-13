@@ -6,7 +6,7 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo 192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
   <!-- Optimized Title with Primary Keywords -->
@@ -73,6 +73,35 @@
         l.head.appendChild(t);
       }
     })(window, document, "clarity", "script", "sdl0f0u4l6");
+  </script>
+
+  <!-- Suppress ResizeObserver loop errors -->
+   <script>
+    // Suppress ResizeObserver errors that don't impact functionality
+    const origError = console.error;
+    console.error = function(...args) {
+      if (args.length && typeof args[0] === 'string' && 
+          args[0].indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+        return; // Suppress ResizeObserver loop warnings
+      }
+      origError.apply(console, args);
+    };
+
+    // Also suppress via window error handler
+    window.addEventListener('error', function(e) {
+      if (e.message && e.message.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+    });
+
+    // Suppress unhandled promise rejections related to ResizeObserver
+    window.addEventListener('unhandledrejection', function(e) {
+      if (e.reason && e.reason.message && 
+          e.reason.message.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+        e.preventDefault();
+      }
+    });
   </script>
 </head>
 

@@ -692,13 +692,13 @@
 @media (max-width: 340px) {
   .whatsnewcontainer {
     display: block;
-    flex-direction: column;
+    flex-direction: row !important;
     gap: 24px;
+    margin-bottom: 0 !important;
   }
 
   .whatsmiddletext {
     font-size: 10px !important;
-
   }
 
   .title-date {

@@ -394,7 +394,7 @@ function Explore() {
                   background: '#262626',
                   p: { xs: 1, sm: 2, md: 4 },
                   cursor: 'grab',
-                  overflow: 'hidden',
+                  // overflow: 'hidden',
                 }}
               >
                 <Box sx={{
@@ -473,7 +473,7 @@ function Explore() {
                       {machine.name}
                     </h2>
                   </Box>
-                  <ArrowButton onClick={() => handleMachineClick(machine.name)} />
+                  <ArrowButton  onClick={() => handleMachineClick(machine.name)} />
                 </Box>
               </Box>
             </SwiperSlide>

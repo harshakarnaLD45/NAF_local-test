@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import PersonIcon from "@mui/icons-material/Person";
 import React, { useRef, useState } from "react";
 import ScrollMaskHeadings from "../../Componenets/CommonComponents/ScrollMaskHeadings";
-import VolumeUpIcon from "@mui/icons-material/VolumeMute";
+import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Marquee from "react-fast-marquee";
 
@@ -97,23 +97,59 @@ const TestimonialCard = ({ text, author }) => (
 const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
 
-  const toggleMute = () => {
+  // Detect iOS on component mount
+  React.useEffect(() => {
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    setIsIOS(iOS);
+  }, []);
+
+  const toggleMute = (e) => {
+    e.stopPropagation(); // Prevent event bubbling
     if (videoRef.current) {
       videoRef.current.muted = !muted;
       setMuted(!muted);
     }
   };
 
-  const handleMouseEnter = () => {
+  const handleVideoInteraction = async () => {
     if (videoRef.current) {
-      videoRef.current.play();
+      try {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        } else {
+          // Ensure video is muted for autoplay compliance on iOS
+          videoRef.current.muted = true;
+          setMuted(true);
+          await videoRef.current.play();
+          setIsPlaying(true);
+        }
+      } catch (error) {
+        console.log('Video play failed:', error);
+      }
+    }
+  };
+
+  const handleMouseEnter = () => {
+    // Only use hover events on non-iOS devices
+    if (!isIOS && videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {
+        // Autoplay failed, user interaction required
+      });
     }
   };
 
   const handleMouseLeave = () => {
-    if (videoRef.current) {
+    // Only use hover events on non-iOS devices
+    if (!isIOS && videoRef.current) {
       videoRef.current.pause();
+      setIsPlaying(false);
     }
   };
 
@@ -121,8 +157,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
     <Box
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={toggleMute}
-
+      onClick={isIOS ? handleVideoInteraction : undefined}
       sx={{
         width: 300,
         height: 300,
@@ -130,6 +165,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         borderRadius: 4,
         overflow: "hidden",
         position: "relative",
+        cursor: "pointer",
       }}
     >
       <video
@@ -137,27 +173,95 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         aria-label={ariaLabel}
         src={videoSrc}
         loop
-        muted={muted}
+        muted={true} // Always start muted for iOS compatibility
         playsInline
+        preload="metadata" // Better for mobile performance
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           display: "block",
         }}
+        onLoadedMetadata={() => {
+          // Ensure muted state is set after load
+          if (videoRef.current) {
+            videoRef.current.muted = muted;
+          }
+        }}
       />
+      
+      {/* Always visible control button with better iOS styling */}
       <IconButton
+        onClick={toggleMute}
         sx={{
           position: "absolute",
-          bottom: 8,
-          right: 8,
-          color: "#000",
-          zIndex: 1,
-          cursor: "pointer",
+          bottom: { xs: 4, sm: 8 }, // Smaller margin on mobile
+          right: { xs: 4, sm: 8 },
+          // backgroundColor: "rgba(85, 83, 83, 0.6)", // Semi-transparent background
+          color: "whitesmoke",
+          zIndex: 10, // Higher z-index
+          minWidth: { xs: "32px", sm: "40px" }, // Larger touch target on mobile
+          minHeight: { xs: "32px", sm: "40px" },
+          padding: { xs: "4px", sm: "8px" },
+          "&:hover": {
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
+          },
+          // Ensure visibility on iOS
+          WebkitTapHighlightColor: "transparent",
+          WebkitAppearance: "none",
         }}
+        aria-label={muted ? "Unmute video" : "Mute video"}
       >
-        {muted ? <VolumeOffIcon sx={{ color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ color: 'whitesmoke' }} />}
+        {muted ? 
+          <VolumeOffIcon sx={{ 
+            color: 'whitesmoke', 
+            fontSize: { xs: "20px", sm: "20px" } 
+          }} /> : 
+          <VolumeUpIcon sx={{ 
+            color: 'whitesmoke', 
+            fontSize: { xs: "20px", sm: "20px" } 
+          }} />
+        }
       </IconButton>
+
+      {/* iOS-specific play/pause overlay */}
+      {isIOS && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 5,
+            pointerEvents: "none", // Let clicks pass through to the container
+          }}
+        >
+          {!isPlaying && (
+            <Box
+              sx={{
+                width: 60,
+                height: 60,
+                borderRadius: "50%",
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Box
+                sx={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: "20px solid #000",
+                  borderTop: "12px solid transparent",
+                  borderBottom: "12px solid transparent",
+                  marginLeft: "4px",
+                }}
+              />
+            </Box>
+          )}
+        </Box>
+      )}
     </Box>
   );
 };
