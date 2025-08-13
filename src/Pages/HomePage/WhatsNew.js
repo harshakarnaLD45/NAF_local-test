@@ -31,8 +31,8 @@ const WhatsNew = () => {
           sx={{
             flexGrow: 1,
             minWidth: 0, // Important for flexbox ellipsis
-            color: '#FCFCFC', 
-            maxWidth: '200px',
+            color: '#FCFCFC',
+            maxWidth: { xs: '200px', sm: '100%' },
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap'
