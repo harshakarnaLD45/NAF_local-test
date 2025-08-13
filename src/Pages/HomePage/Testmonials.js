@@ -224,7 +224,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         }
       </IconButton>
 
-      {/* iOS-specific play/pause overlay */}
+      {/* iOS-specific play/pause overlay
       {isIOS && (
         <Box
           sx={{
@@ -261,7 +261,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
             </Box>
           )}
         </Box>
-      )}
+      )} */}
     </Box>
   );
 };
