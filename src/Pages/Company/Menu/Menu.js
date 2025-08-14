@@ -173,10 +173,10 @@ const Menu = () => {
       </Box>
 
       {/* <VMMenu /> */}
-      <MonthlyMenu />
+      {/* <MonthlyMenu />
       <Foodlabeling />
       <Allergen />
-      <Unlock />
+      <Unlock /> */}
     </Box>
   );
 };

@@ -208,11 +208,11 @@ function AboutPage() {
                 </Typography>
             </Box>
 
-            <AboutGrid />
+            {/* <AboutGrid />
             <TextSection />
             <TeamSection />
             <AwardsSection />
-            <ValuesSection />
+            <ValuesSection /> */}
         </Box>
     );
 }

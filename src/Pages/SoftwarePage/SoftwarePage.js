@@ -130,8 +130,8 @@ function SoftwarePage() {
                 <GridsSection />
             </Box>
 
-            <Specifications />
-            <ExpertiseSection />
+            {/* <Specifications />
+            <ExpertiseSection /> */}
             {/* <ReadySection /> */}
         </div>
     )

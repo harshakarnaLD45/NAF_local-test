@@ -167,9 +167,9 @@ const MachinesPage = () => {
       ) : (
         <MachinesSection selectedMachine={selectedMachine} />
       )}
-      <CatalogueDownloadSection />
+      {/* <CatalogueDownloadSection />
       <Solutions />
-      <PaymentOptions />
+      <PaymentOptions /> */}
 
       <Box className="section-container" sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', px: 0 }}>
         <h2 className='expertise-title headings-h2' sx={{
@@ -184,7 +184,7 @@ const MachinesPage = () => {
         <PartnersForm />
       </Box>
 
-      <Maintenance />
+      {/* <Maintenance /> */}
     </Box>
   );
 };
