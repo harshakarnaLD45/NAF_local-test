@@ -94,34 +94,25 @@ const FadeInParagraph = () => {
             if (isPerson) {
                 // Keep the full name as one underlined block
                 return (
-                    <span key={idx} style={{ display: "inline" }}>
-                        <span 
-                            className="fade-word headings-h2  naf-words"
-                            style={{
+                    <span key={idx} style={{ display: "inline-block", width: "100%" }}>
+                        <Link
+                            className="fade-word headings-h2 naf-words"
+                            sx={{
+                                textDecoration: "underline",
+                                textDecorationColor: "#FA7854",
                                 color: "#FA7854",
-                                textDecoration:"underline",
                                 fontWeight: 600,
                                 textUnderlineOffset: "4px",
                                 cursor: "pointer",
-                                display: "inline",
+                                overflowWrap: "anywhere",wordBreak: "break-word",
+                                whiteSpace: { xs: "normal", sm: "nowrap" }, // avoid overflow on iPhones
                             }}
                             onMouseEnter={(e) => handleMouseEnter(item.person, e)}
                             onMouseLeave={handleMouseLeave}
-                            >
-                                <Link 
-                            className="fade-word headings-h2  naf-words "
-                            sx={{
-                               textDecoration:"underline",
-                               textDecorationColor:"#FA7854",
-                               color: "#FA7854",
-                               display: "inline",
-                            }}
-                                >
-                                {item.text}
-
-                                </Link>
-                        </span>
-                        <span style={{ display: "inline" }}>&nbsp;</span>
+                        >
+                            {item.text}
+                        </Link>
+                        <span>&nbsp;</span>
                     </span>
                 );
             } else {
@@ -129,9 +120,9 @@ const FadeInParagraph = () => {
                 return item.text.split(" ").map((word, i) => {
                     const key = `${idx}-${i}`;
                     return (
-                        <span key={key} style={{ display: "inline" }}>
-                            <span className="fade-word headings-h2 naf-words" style={{ display: "inline" }}>{word}</span>
-                            <span style={{ display: "inline" }}>&nbsp;</span>
+                        <span key={key} style={{ display: "inline-block", width: "100%" }}>
+                            <span className="fade-word headings-h2 naf-words">{word}</span>
+                            <span>&nbsp;</span>
                         </span>
                     );
                 });
@@ -170,21 +161,17 @@ const FadeInParagraph = () => {
             <Box
                 className="headings-h2 naf-words"
                 sx={{
-                    width: {   sm:'80%',  md: "90%", lg: "70%" },
-                    minWidth: "250px",
+                    width: { sm: '80%', md: "90%", lg: "70%" },
+                    minWidth: 0,                 // fixes Safari flex-wrap bug
+                    maxWidth: "100%",
+                    boxSizing: "border-box",
                     color: "#C2C2C4",
                     position: "relative",
                     textAlign: "center",
-                    whiteSpace: "normal",           // Allow text to wrap
-                    wordBreak: "break-word",        // Break long words
-                    overflowWrap: "break-word",     // Ensure wrapping
-                    maxWidth: "100%",               // Prevent overflow
-                    display: "block",               // Ensure block-level behavior
-                    lineHeight: 1.2,                // Better line spacing
-                    // iOS Safari specific fixes
-                    WebkitHyphens: "auto",          // Enable hyphenation on iOS
-                    hyphens: "auto",                // Enable hyphenation
-                    WebkitTextSizeAdjust: "100%",   // Prevent iOS text scaling issues
+                    whiteSpace: "normal",
+                    wordBreak: "break-word",
+                    overflowWrap: "break-word",
+                    overflowWrap: "anywhere",    // Safari 13+ long word fix          // Prevent overflow
                 }}
             >
                 {renderWords()}
@@ -202,6 +189,7 @@ const FadeInParagraph = () => {
                             pointerEvents: "none",
                             opacity: hoveredPerson ? 1 : 0,
                             borderRadius: '12px',
+                            WebkitTransform: "translateZ(0)",
                             overflow: "hidden",
                             width: { xs: "120px", sm: "140px", md: "400px" },
                             height: { xs: "120px", sm: "140px", md: "400px" },
