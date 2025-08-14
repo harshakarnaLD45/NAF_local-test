@@ -35,7 +35,7 @@ const Sustainability = () => {
             
             // Only update if there's a significant difference (avoid micro-changes)
             if (newHeight > 0) {
-                // Update the right section height directly via CSS (no state update)
+                // Update the right section height directly via CSS (no state update.)
                 rightSectionRef.current.style.height = `${newHeight}px`;
                 if (scrollContainerRef.current) {
                     scrollContainerRef.current.style.height = `${newHeight}px`;

@@ -92,7 +92,7 @@ const FadeInParagraph = () => {
             const isPerson = item.highlight && item.person;
 
             if (isPerson) {
-                // Keep the full name as one underlined block
+                // Keep the full name as one underlined 
                 return (
                     <span key={idx} style={{ display: "inline-block", width: "100%" }}>
                         <Link
