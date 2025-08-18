@@ -2,20 +2,20 @@ import React from 'react';
 
 const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
   // Detect iOS
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
   const buttonStyle = {
     display: 'flex',
     width: '70px',
     height: '70px',
-    // padding: '25.664px',
+    padding: '25.664px',
     justifyContent: 'center',
     alignItems: 'center',
     gap: '8.645px',
     flexShrink: 0,
     aspectRatio: '1 / 1',
-     borderRadius: '50%',
+    borderRadius: '27.664px',
     background: colorBg,
     border: 'none',
     cursor: 'pointer',
@@ -46,8 +46,8 @@ const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
           transform: isHovered ? 'rotate(45deg)' : 'rotate(0deg)',
           transition: 'transform 0.2s ease',
           zIndex: 100,
-          width: isIOS ? '13px' : '18px',
-          height: isIOS ? '13px' : '18px',
+          // width: isIOS ? '13px' : '18px',
+          // height: isIOS ? '13px' : '18px',
           display: 'block',
           flexShrink: 0,
         }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
