@@ -32,13 +32,18 @@ const Footer = () => {
 
   useEffect(() => {
     const loadHubspotForm = () => {
-      if (window.hbspt && hubspotFormRef.current) {
-        window.hbspt.forms.create({
-          portalId: "145027405",
-          formId: "707bb44a-4705-4866-9197-009af38be15b",
-          region: "eu1",
-          target: "#hubspot-footer-form",
-        });
+      try {
+        if (window.hbspt && hubspotFormRef.current) {
+          window.hbspt.forms.create({
+            portalId: "145027405",
+            formId: "707bb44a-4705-4866-9197-009af38be15b",
+            region: "eu1",
+            target: "#hubspot-footer-form",
+          });
+        }
+      } catch (error) {
+        console.warn('HubSpot form failed to load:', error.message);
+        // Optionally show fallback form or hide the section
       }
     };
 
@@ -50,6 +55,10 @@ const Footer = () => {
       script.type = "text/javascript";
       script.charset = "utf-8";
       script.onload = loadHubspotForm;
+      script.onerror = () => {
+        console.warn('Failed to load HubSpot script');
+        // Handle fallback behavior if needed
+      };
       document.body.appendChild(script);
     } else {
       // Wait until the ref is available before calling hbspt
@@ -59,6 +68,9 @@ const Footer = () => {
           clearInterval(interval);
         }
       }, 100);
+      
+      // Clear interval after 10 seconds to avoid infinite waiting
+      setTimeout(() => clearInterval(interval), 10000);
     }
   }, []);
 
@@ -93,13 +105,6 @@ const Footer = () => {
   const handleSnackbarClose = () => {
     setSnackbar({ ...snackbar, open: false });
   };
-
-
-
-
-
-
-
 
   const socialIcons = [
     { src: Facebook, name: "NAF Facebook", url: "https://www.facebook.com/p/NAF-New-Age-of-Food-by-Gasthof-Halsbach-61551546894852/" },

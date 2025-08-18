@@ -75,31 +75,78 @@
     })(window, document, "clarity", "script", "sdl0f0u4l6");
   </script>
 
-  <!-- Suppress ResizeObserver loop errors -->
+  <!-- Suppress ResizeObserver loop errors and third-party script errors -->
    <script>
     // Suppress ResizeObserver errors that don't impact functionality
     const origError = console.error;
     console.error = function(...args) {
-      if (args.length && typeof args[0] === 'string' && 
-          args[0].indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
-        return; // Suppress ResizeObserver loop warnings
+      if (args.length && typeof args[0] === 'string') {
+        const errorMsg = args[0];
+        // Suppress ResizeObserver errors
+        if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+          return;
+        }
+        // Suppress HubSpot errors
+        if (errorMsg.indexOf('hubspot') !== -1 || errorMsg.indexOf('hsforms') !== -1 || errorMsg.indexOf('hbspt') !== -1) {
+          return;
+        }
+        // Suppress Clarity errors
+        if (errorMsg.indexOf('clarity') !== -1 || errorMsg.indexOf('clarity.ms') !== -1) {
+          return;
+        }
+        // Suppress common third-party errors
+        if (errorMsg.indexOf('literal not terminated') !== -1 ||
+            errorMsg.indexOf('insertBefore') !== -1 ||
+            errorMsg.indexOf('Script error') !== -1) {
+          return;
+        }
       }
       origError.apply(console, args);
     };
 
-    // Also suppress via window error handler
+    // Global error handler for third-party scripts
     window.addEventListener('error', function(e) {
-      if (e.message && e.message.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+      const errorMsg = e.message || '';
+      const source = e.filename || '';
+      
+      // Suppress ResizeObserver errors
+      if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+      
+      // Suppress HubSpot script errors
+      if (source.indexOf('hsforms') !== -1 || source.indexOf('hubspot') !== -1 || 
+          errorMsg.indexOf('hbspt') !== -1) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+      
+      // Suppress Clarity script errors
+      if (source.indexOf('clarity.ms') !== -1 || errorMsg.indexOf('clarity') !== -1) {
+        e.stopImmediatePropagation();
+        return false;
+      }
+      
+      // Suppress common third-party errors
+      if (errorMsg.indexOf('literal not terminated') !== -1 || 
+          errorMsg.indexOf('insertBefore') !== -1 ||
+          errorMsg.indexOf('Script error') !== -1) {
         e.stopImmediatePropagation();
         return false;
       }
     });
 
-    // Suppress unhandled promise rejections related to ResizeObserver
+    // Suppress unhandled promise rejections from third-party scripts
     window.addEventListener('unhandledrejection', function(e) {
-      if (e.reason && e.reason.message && 
-          e.reason.message.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
-        e.preventDefault();
+      if (e.reason && e.reason.message) {
+        const errorMsg = e.reason.message;
+        
+        if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1 ||
+            errorMsg.indexOf('hubspot') !== -1 || errorMsg.indexOf('clarity') !== -1 ||
+            errorMsg.indexOf('hsforms') !== -1 || errorMsg.indexOf('hbspt') !== -1) {
+          e.preventDefault();
+        }
       }
     });
   </script>

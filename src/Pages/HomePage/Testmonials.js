@@ -147,40 +147,16 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         }}
       />
       <IconButton
-        onClick={toggleMute}
         sx={{
           position: "absolute",
-          bottom: { xs: 8, sm: 12 },
-          right: { xs: 8, sm: 12 },
-          // backgroundColor: "rgba(0, 0, 0, 0.7)",
-          // border: "1px solid rgba(255, 255, 255, 0.3)",
-          color: "whitesmoke",
+          bottom: 8,
+          right: 8,
           zIndex: 1000,
+          // color: "#000",
           cursor: "pointer",
-          minWidth: { xs: "44px", sm: "48px" },
-          minHeight: { xs: "44px", sm: "48px" },
-          padding: { xs: "8px", sm: "10px" },
-          // iOS-specific fixes
-          WebkitAppearance: "none",
-          WebkitTapHighlightColor: "transparent",
-          touchAction: "manipulation",
-          // "&:hover": {
-          //   backgroundColor: "rgba(0, 0, 0, 0.9)",
-          // },
         }}
-        aria-label={muted ? "Unmute video" : "Mute video"}
       >
-        {muted ? (
-          <VolumeOffIcon sx={{ 
-            color: 'whitesmoke',
-            fontSize: { xs: "20px", sm: "24px" }
-          }} />
-        ) : (
-          <VolumeUpIcon sx={{ 
-            color: 'whitesmoke',
-            fontSize: { xs: "20px", sm: "24px" }
-          }} />
-        )}
+        {muted ? <VolumeOffIcon sx={{ color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ color: 'whitesmoke' }} />}
       </IconButton>
     </Box>
   );
@@ -226,7 +202,6 @@ const Testimonials = () => {
                 width: 300,
                 display: "flex",
                 justifyContent: "center",
-                
                 marginRight: "16px",
               }}
             >

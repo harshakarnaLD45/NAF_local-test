@@ -154,8 +154,6 @@ const FadeInParagraph = () => {
                 position: "relative",
                 flexWrap: "wrap",
                 width: "100%",
-
-                // padding: { xs: "0 5px", sm: "0 24px", md: "0 32px" },
             }}
         >
             <Box
