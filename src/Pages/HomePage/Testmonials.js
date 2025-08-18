@@ -151,8 +151,8 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
           position: "absolute",
           bottom: 8,
           right: 8,
+          color: "#000",
           zIndex: 1000,
-          // color: "#000",
           cursor: "pointer",
         }}
       >
