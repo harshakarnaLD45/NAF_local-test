@@ -174,7 +174,6 @@ const FadeInParagraph = () => {
                     overflowWrap: "break-word",
                     hyphens: "auto",
                     WebkitHyphens: "auto",
-                    // iPhone 13+ specific fixes
                     display: "block",
                     lineHeight: { xs: 1.4, sm: 1.5 },
                     padding: { xs: "0 16px", sm: "0" },

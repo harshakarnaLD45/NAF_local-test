@@ -567,6 +567,9 @@
   .naf-words {
     font-size: 20px !important;
     line-height: -50px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
     /* 40.4px */
     letter-spacing: -0.67px !important;
   }
