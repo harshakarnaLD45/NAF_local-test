@@ -116,6 +116,9 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
 
   // Programmatically trigger play on mount
   React.useEffect(() => {
+    // iOS detection
+    const isIOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (!isIOS) return;
     const video = videoRef.current;
     if (video) {
       video.muted = true;
@@ -150,7 +153,6 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={toggleMute}
-
       sx={{
         width: 300,
         height: 300,
@@ -158,6 +160,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         borderRadius: 4,
         overflow: "hidden",
         position: "relative",
+        zIndex: 1,
       }}
     >
       <video
@@ -167,12 +170,13 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         loop
         muted={muted}
         playsInline
-        autoPlay
+        // autoPlay
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
           display: "block",
+          zIndex: 0,
         }}
       />
       <IconButton
@@ -180,12 +184,14 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
           position: "absolute",
           bottom: 8,
           right: 8,
-          width:'auto',
-          zIndex: 1000,
+          width: 'auto',
+          zIndex: 9999,
           cursor: "pointer",
+          pointerEvents: 'auto',
+          // background: 'rgba(38,38,38,0.7)',
         }}
       >
-        {muted ? <VolumeOffIcon sx={{ zIndex: 1000,color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{zIndex: 1000, color: 'whitesmoke' }} />}
+        {muted ? <VolumeOffIcon sx={{ zIndex: 9999, color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ zIndex: 9999, color: 'whitesmoke' }} />}
       </IconButton>
     </Box>
   );
