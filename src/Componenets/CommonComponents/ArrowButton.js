@@ -17,17 +17,22 @@ const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
     aspectRatio: '1 / 1',
     borderRadius: '27.664px',
     background: colorBg,
-    border: 'none',
+    border: isIOS ? '2px solid rgba(170, 231, 75, 0.3)' : 'none',
     cursor: 'pointer',
-    transition: 'background-color 0.5s ease',
+    transition: 'all 0.3s ease',
     // iOS-specific fixes
     WebkitAppearance: 'none',
     WebkitTapHighlightColor: 'transparent',
+    WebkitTransform: 'translateZ(0)',
     position: 'relative',
     zIndex: 10,
-    // minWidth: '70px',
-    // minHeight: '70px',
+    minWidth: '70px',
+    minHeight: '70px',
     touchAction: 'manipulation',
+    isolation: 'isolate',
+    // Enhanced visibility for iOS
+    boxShadow: isIOS ? '0 4px 12px rgba(0,0,0,0.3)' : 'none',
+    backdropFilter: isIOS ? 'blur(4px)' : 'none',
   };
 
   // Use state to handle hover
@@ -46,13 +51,11 @@ const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
           transform: isHovered ? 'rotate(45deg)' : 'rotate(0deg)',
           transition: 'transform 0.2s ease',
           zIndex: 1000,
-          // width: isIOS ? '13px' : '18px',
-          // height: isIOS ? '13px' : '18px',
-          // display: 'block',
-          // flexShrink: 0,
-          fontSize: { xs: '0.5rem', sm: '0.5rem', md: '2rem' },
-
-
+          width: '18px',
+          height: '18px',
+          display: 'block',
+          flexShrink: 0,
+          WebkitTransform: isHovered ? 'rotate(45deg) translateZ(0)' : 'rotate(0deg) translateZ(0)',
         }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
         <path d="M16.6854 1.4142C16.6854 0.936743 16.2984 0.549688 15.8209 0.549689L8.0403 0.549689C7.56285 0.549689 7.17579 0.936744 7.17579 1.4142C7.17579 1.89166 7.56285 2.27871 8.0403 2.27871L14.9564 2.27871L14.9564 9.19481C14.9564 9.67226 15.3435 10.0593 15.8209 10.0593C16.2984 10.0593 16.6854 9.67226 16.6854 9.1948L16.6854 1.4142ZM1.76096 16.6968L16.4322 2.0255L15.2096 0.802898L0.538356 15.4741L1.76096 16.6968Z" fill="#AAE74B" />
       </svg>

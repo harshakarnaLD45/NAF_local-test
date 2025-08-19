@@ -94,7 +94,7 @@ const FadeInParagraph = () => {
             if (isPerson) {
                 // Keep the full name as one underlined 
                 return (
-                    <span key={idx} style={{ display: "inline-block", width: "100%" }}>
+                    <span key={idx} style={{ display: "inline", whiteSpace: "normal" }}>
                         <Link
                             className="fade-word headings-h2 naf-words"
                             sx={{
@@ -104,8 +104,10 @@ const FadeInParagraph = () => {
                                 fontWeight: 600,
                                 textUnderlineOffset: "4px",
                                 cursor: "pointer",
-                                overflowWrap: "anywhere",wordBreak: "break-word",
-                                whiteSpace: { xs: "normal", sm: "nowrap" }, // avoid overflow on iPhones
+                                overflowWrap: "break-word",
+                                wordBreak: "break-word",
+                                whiteSpace: "normal",
+                                display: "inline",
                             }}
                             onMouseEnter={(e) => handleMouseEnter(item.person, e)}
                             onMouseLeave={handleMouseLeave}
@@ -120,7 +122,7 @@ const FadeInParagraph = () => {
                 return item.text.split(" ").map((word, i) => {
                     const key = `${idx}-${i}`;
                     return (
-                        <span key={key} style={{ display: "inline-block", width: "100%" }}>
+                        <span key={key} style={{ display: "inline", whiteSpace: "normal" }}>
                             <span className="fade-word headings-h2 naf-words">{word}</span>
                             <span>&nbsp;</span>
                         </span>
@@ -152,15 +154,16 @@ const FadeInParagraph = () => {
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                flexWrap: "wrap",
                 width: "100%",
+                minWidth: 0,
+                overflowWrap: "break-word",
             }}
         >
             <Box
                 className="headings-h2 naf-words"
                 sx={{
-                    width: { sm: '80%', md: "90%", lg: "70%" },
-                    minWidth: 0,                 // fixes Safari flex-wrap bug
+                    width: { xs: "100%", sm: '80%', md: "90%", lg: "70%" },
+                    minWidth: 0,
                     maxWidth: "100%",
                     boxSizing: "border-box",
                     color: "#C2C2C4",
@@ -169,7 +172,12 @@ const FadeInParagraph = () => {
                     whiteSpace: "normal",
                     wordBreak: "break-word",
                     overflowWrap: "break-word",
-                    overflowWrap: "anywhere",    // Safari 13+ long word fix          // Prevent overflow
+                    hyphens: "auto",
+                    WebkitHyphens: "auto",
+                    // iPhone 13+ specific fixes
+                    display: "block",
+                    lineHeight: { xs: 1.4, sm: 1.5 },
+                    padding: { xs: "0 16px", sm: "0" },
                 }}
             >
                 {renderWords()}
