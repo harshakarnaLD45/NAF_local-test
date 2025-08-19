@@ -113,11 +113,11 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
 
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
+  // iOS detection
+  const isIOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   // Programmatically trigger play on mount
   React.useEffect(() => {
-    // iOS detection
-    const isIOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
     if (!isIOS) return;
     const video = videoRef.current;
     if (video) {
@@ -195,16 +195,16 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
           zIndex: 9999,
           cursor: "pointer",
           pointerEvents: 'auto',
-          backgroundColor: 'rgba(0,0,0,0.6)',
+          backgroundColor: isIOS ? 'rgba(0,0,0,0.6)' : 'transparent',
           // border: '2px solid rgba(255,255,255,0.3)',
           borderRadius: '50%',
-          backdropFilter: 'blur(4px)',
+          backdropFilter:  isIOS ? 'blur(10px)' : 'none',
           '&:hover': {
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            backgroundColor:  isIOS ?  'rgba(0,0,0,0.7)': 'transparent',
           },
           '&:active': {
-            backgroundColor: 'rgba(0,0,0,0.9)',
-            transform: 'scale(0.95)',
+            backgroundColor:  isIOS ?   'rgba(0,0,0,0.9)': 'transparent',
+            transform:  isIOS ?  'scale(0.95)' : 'none',
           }
         }}
       >
