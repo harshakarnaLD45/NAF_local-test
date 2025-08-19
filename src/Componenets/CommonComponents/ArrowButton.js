@@ -17,7 +17,7 @@ const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
     aspectRatio: '1 / 1',
     borderRadius: '27.664px',
     background: colorBg,
-    // border: isIOS ? '2px solid rgba(170, 231, 75, 0.3)' : 'none',
+    border:  'none',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     // iOS-specific fixes
