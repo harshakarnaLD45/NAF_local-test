@@ -152,7 +152,6 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
     <Box
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={toggleMute}
       sx={{
         width: 300,
         height: 300,
@@ -161,6 +160,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         overflow: "hidden",
         position: "relative",
         zIndex: 1,
+        isolation: 'isolate', // Creates new stacking context
       }}
     >
       <video
@@ -176,22 +176,39 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
           height: "100%",
           objectFit: "cover",
           display: "block",
-          zIndex: 0,
+          position: "relative",
+          zIndex: 1,
         }}
       />
       <IconButton
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleMute();
+        }}
         sx={{
           position: "absolute",
           bottom: 8,
           right: 8,
-          width: 'auto',
+          width: 40,
+          height: 40,
+          minWidth: 40,
           zIndex: 9999,
           cursor: "pointer",
           pointerEvents: 'auto',
-          // background: 'rgba(38,38,38,0.7)',
+          backgroundColor: 'rgba(0,0,0,0.6)',
+          border: '2px solid rgba(255,255,255,0.3)',
+          borderRadius: '50%',
+          backdropFilter: 'blur(4px)',
+          '&:hover': {
+            backgroundColor: 'rgba(0,0,0,0.8)',
+          },
+          '&:active': {
+            backgroundColor: 'rgba(0,0,0,0.9)',
+            transform: 'scale(0.95)',
+          }
         }}
       >
-        {muted ? <VolumeOffIcon sx={{ zIndex: 9999, color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ zIndex: 9999, color: 'whitesmoke' }} />}
+        {muted ? <VolumeOffIcon sx={{ color: 'white', fontSize: 20 }} /> : <VolumeUpIcon sx={{ color: 'white', fontSize: 20 }} />}
       </IconButton>
     </Box>
   );
