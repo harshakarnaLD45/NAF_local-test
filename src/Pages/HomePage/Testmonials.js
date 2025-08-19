@@ -95,8 +95,36 @@ const TestimonialCard = ({ text, author }) => (
 // };
 
 const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
+  // const videoRef = useRef(null);
+  // const [muted, setMuted] = useState(true);
+
+  // const toggleMute = () => {
+  //   if (videoRef.current) {
+  //     videoRef.current.muted = !muted;
+  //     setMuted(!muted);
+  //   }
+  // };
+
+  // const handleMouseEnter = () => {
+  //   if (videoRef.current) {
+  //     videoRef.current.play();
+  //   }
+  // };
+
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
+
+  // Programmatically trigger play on mount
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      // Try to play programmatically
+      video.play().catch(() => {});
+    }
+  }, [videoSrc]);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -139,6 +167,7 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
         loop
         muted={muted}
         playsInline
+        autoPlay
         style={{
           width: "100%",
           height: "100%",
@@ -151,12 +180,12 @@ const TestimonialVideoCard = ({ videoSrc, ariaLabel }) => {
           position: "absolute",
           bottom: 8,
           right: 8,
-          // color: "#000",
+          width:'auto',
           zIndex: 1000,
           cursor: "pointer",
         }}
       >
-        {muted ? <VolumeOffIcon sx={{ color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{ color: 'whitesmoke' }} />}
+        {muted ? <VolumeOffIcon sx={{ zIndex: 1000,color: 'whitesmoke' }} /> : <VolumeUpIcon sx={{zIndex: 1000, color: 'whitesmoke' }} />}
       </IconButton>
     </Box>
   );
@@ -184,9 +213,8 @@ const Testimonials = () => {
   return (
     <Box>
       <Box className="section-container">
-        <ScrollMaskHeadings text={t("Home.testmonialHeading")} />
+        <ScrollMaskHeadings text={t("Home.testmonialHeading")}/>
       </Box>
-
       <Box sx={{ overflow: "hidden", width: "100%", mt: "20px" }}>
         <Marquee
           gradient={false}
@@ -208,7 +236,7 @@ const Testimonials = () => {
               {item.videoSrc ? (
                 <TestimonialVideoCard videoSrc={item.videoSrc} ariaLabel={item.ariaLabel} />
               ) : (
-                <TestimonialCard text={item.text} author={item.author} />
+                <TestimonialCard text={item.text} author={item.author}/>
               )}
             </Box>
           ))}
