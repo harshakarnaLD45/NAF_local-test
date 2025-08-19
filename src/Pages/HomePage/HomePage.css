@@ -390,7 +390,9 @@
   .arrowbutton {
     width: 60px !important;
     height: 60px !important;
-    padding: 23.712px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    padding: 20.712px !important;
     gap: 7.41px !important;
     border-radius: 23.712px !important;
   }
@@ -541,6 +543,8 @@
   .arrowbutton {
     width: 40px !important;
     height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
     padding: 13px !important;
     gap: 7.41px !important;
     border-radius: 14px !important;
