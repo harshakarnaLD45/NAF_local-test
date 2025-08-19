@@ -30,7 +30,7 @@ const ArrowButton = ({ onClick, colorBg = '#161616' }) => {
     isolation: 'isolate',
     // Enhanced visibility for iOS
     // boxShadow: isIOS ? '0 4px 12px rgba(0,0,0,0.3)' : 'none',
-    backdropFilter: isIOS ? 'blur(4px)' : 'none',
+    // backdropFilter: isIOS ? 'blur(4px)' : 'none',
   };
 
   // Use state to handle hover
