@@ -1,3 +1,4 @@
+
 .machines-container1 {
   display: flex;
   flex-direction: column;
@@ -76,6 +77,9 @@ input[type="radio" i] {
   margin-top: 3px !important;
   /* width: 23px !important;
     height: 23px !important; */
+}
+.tab-buttons:nth-of-type(1) {
+  margin-right: 40px;
 }
 
 @media (min-width: 2000px) {
@@ -252,7 +256,9 @@ input[type="radio" i] {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
   }
-
+.tab-buttons:nth-of-type(1) {
+  margin-right: 0px;
+}
   .paymenticons {
     width: 50px;
     height: 50px;

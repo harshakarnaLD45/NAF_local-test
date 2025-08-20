@@ -214,11 +214,10 @@ function PartnersForm() {
                     className='bodyMediumText1 tabs-container'
                     TabIndicatorProps={{
                         style: {
-                            backgroundColor: "transparent", // Hide default indicator
+                            backgroundColor: "transparent", 
                             height: 0,
                             display:'flex',
-                            gap:'10px',
-                        
+                            
                         },
                     }}
                     sx={{
