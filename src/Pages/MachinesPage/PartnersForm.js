@@ -211,6 +211,7 @@ function PartnersForm() {
                     value={tab}
                     onChange={handleTabChange}
                     centered
+                    id="partner-tabs-sec"
                     className='bodyMediumText1 tabs-container'
                     TabIndicatorProps={{
                         style: {
