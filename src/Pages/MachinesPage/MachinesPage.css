@@ -275,11 +275,11 @@ input[type="radio" i] {
 }
 
 @media (max-width: 426px) {
-  .css-1hqdth1-MuiTabs-list {
+  /* .css-1hqdth1-MuiTabs-list {
     gap: 0px !important;
     flex-direction: column !important;
     justify-content: center !important;
-  }
+  } */
 
   .tab-buttons {
     width: max-content !important;
