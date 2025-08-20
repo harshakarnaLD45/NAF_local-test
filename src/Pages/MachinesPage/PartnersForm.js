@@ -227,20 +227,13 @@ function PartnersForm() {
                             fontSize: { xs: '12px', sm: '15px', md: '18px' },
                             textTransform: 'none',
                             whiteSpace: 'wrap',
-                            
-                            
-                             // Allow text to wrap
                             position: 'relative',
                             minWidth: 0,
-                        //    / <-- Optional: limit width for wrapping
                             p:0,
-                            // minWidth: 0,
-                          
                             transition: 'color 0.3s',
                             '&::before': {
                                 content: '""',
                                 position: 'absolute',
-                                
                                 left: 0,
                                 bottom: 0,
                                 height: '2px', // Thicker underline for visibility
@@ -253,12 +246,8 @@ function PartnersForm() {
                         '& .Mui-selected': {
                             color: '#FCFCFC !important',
                                 width: 'auto',
-
                             '&::before': {
                                 width: '100%',
-                               
-                               
-
                             },
                         },
                     }}

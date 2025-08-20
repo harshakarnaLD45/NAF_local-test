@@ -259,8 +259,9 @@ input[type="radio" i] {
 .tab-buttons:nth-of-type(1) {
   margin-right: 0px;
 }
-.tabs-container{
-  flex-direction: column  !important;
+.tabs-container {
+  display: flex !important;
+  flex-direction: column !important;
 }
   .paymenticons {
     width: 50px;
@@ -275,19 +276,11 @@ input[type="radio" i] {
 }
 
 @media (max-width: 426px) {
-  /* .css-1hqdth1-MuiTabs-list {
-    gap: 0px !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-  } */
-
   .tab-buttons {
     width: max-content !important;
     display: flex !important;
     align-self: center !important;
   }
-
-
 }
 
 @media (min-width: 340px) {
