@@ -2,40 +2,45 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo 192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo 192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!-- Optimized Title with Primary Keywords -->
-  <title>NAF Germany: AI-Powered Sustainable Vending Machines</title>
+    <!-- Optimized Title with Primary Keywords -->
+    <title>NAF Germany: AI-Powered Sustainable Vending Machines</title>
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://vendinaf.com/en" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vendinaf.com/en" />
 
-  <!-- Optimized Meta Description -->
-  <meta name="description" content="Explore NAF Germany's AI-powered vending machines for fresh, sustainable food solutions. From pizza to beer, our smart systems optimize efficiency for hotels, events, and more. Book a demo today!" />
+    <!-- Optimized Meta Description -->
+    <meta name="description"
+        content="Explore NAF Germany's AI-powered vending machines for fresh, sustainable food solutions. From pizza to beer, our smart systems optimize efficiency for hotels, events, and more. Book a demo today!" />
 
-  <!-- Robots Meta for Crawlability -->
-  <meta name="robots" content="index, follow" />
+    <!-- Robots Meta for Crawlability -->
+    <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph Tags for Social Sharing -->
-  <meta property="og:title" content="NAF Germany: AI-Powered Sustainable Vending Machines" />
-  <meta property="og:description" content="Discover innovative AI vending solutions from NAF Germany – automated, eco-friendly, and tailored for your business needs." />
-  <meta property="og:image" content="https://vendinaf.com/path-to-hero-image.jpg" /> <!-- Replace with actual image URL -->
-  <meta property="og:url" content="https://vendinaf.com/en" />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="NAF Germany: AI-Powered Sustainable Vending Machines" />
+    <meta property="og:description"
+        content="Discover innovative AI vending solutions from NAF Germany – automated, eco-friendly, and tailored for your business needs." />
+    <meta property="og:image" content="https://vendinaf.com/path-to-hero-image.jpg" />
+    <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://vendinaf.com/en" />
+    <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NAF Germany: AI-Powered Sustainable Vending Machines" />
-  <meta name="twitter:description" content="Discover innovative AI vending solutions from NAF Germany – automated, eco-friendly, and tailored for your business needs." />
-  <meta name="twitter:image" content="https://vendinaf.com/path-to-hero-image.jpg" /> <!-- Replace with actual image URL -->
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NAF Germany: AI-Powered Sustainable Vending Machines" />
+    <meta name="twitter:description"
+        content="Discover innovative AI vending solutions from NAF Germany – automated, eco-friendly, and tailored for your business needs." />
+    <meta name="twitter:image" content="https://vendinaf.com/path-to-hero-image.jpg" />
+    <!-- Replace with actual image URL -->
 
-  <!-- Structured Data (JSON-LD) for Rich Snippets -->
-  <script type="application/ld+json">
+    <!-- Structured Data (JSON-LD) for Rich Snippets -->
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -59,103 +64,104 @@
   }
   </script>
 
-  <!-- Scripts (Kept with async/defer for performance) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/YOUR-HUBSPOT-ID.js"></script>
-  <script type="text/javascript" defer>
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      if (y && y.parentNode) {
-        y.parentNode.insertBefore(t, y);
-      } else {
-        l.head.appendChild(t);
-      }
-    })(window, document, "clarity", "script", "sdl0f0u4l6");
-  </script>
+    <!-- Critical resource hints for performance -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//js.hs-scripts.com">
+    <link rel="dns-prefetch" href="//clarity.ms">
+    <link rel="dns-prefetch" href="//cdn.n8nchatui.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://clarity.ms" crossorigin>
+    
+    <!-- CRITICAL: Priority preload for LCP candidate - NAF1 image -->
+    <link rel="preload" href="%PUBLIC_URL%/static/media/NAF1.svg" as="image" fetchpriority="high" crossorigin>
+    <link rel="preload" href="%PUBLIC_URL%/src/assets/About/NAF1.svg" as="image" fetchpriority="high" crossorigin>
+    
+    <!-- Secondary NAF images with lower priority -->
+    <link rel="preload" href="%PUBLIC_URL%/static/media/NAF2.svg" as="image" fetchpriority="low">
+    <link rel="preload" href="%PUBLIC_URL%/static/media/NAF3.svg" as="image" fetchpriority="low">
+    <link rel="preload" href="%PUBLIC_URL%/static/media/Vector.svg" as="image">
+    
+    <!-- Preload critical assets that might be in build output -->
+    <link rel="modulepreload" href="%PUBLIC_URL%/static/js/main.js">
+    <link rel="preload" href="%PUBLIC_URL%/static/css/main.css" as="style">
+    
+    <!-- Early resource hints for faster discovery -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-  <!-- Suppress ResizeObserver loop errors and third-party script errors -->
-   <script>
-    // Suppress ResizeObserver errors that don't impact functionality
-    const origError = console.error;
-    console.error = function(...args) {
-      if (args.length && typeof args[0] === 'string') {
-        const errorMsg = args[0];
-        // Suppress ResizeObserver errors
-        if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
-          return;
-        }
-        // Suppress HubSpot errors
-        if (errorMsg.indexOf('hubspot') !== -1 || errorMsg.indexOf('hsforms') !== -1 || errorMsg.indexOf('hbspt') !== -1) {
-          return;
-        }
-        // Suppress Clarity errors
-        if (errorMsg.indexOf('clarity') !== -1 || errorMsg.indexOf('clarity.ms') !== -1) {
-          return;
-        }
-        // Suppress common third-party errors
-        if (errorMsg.indexOf('literal not terminated') !== -1 ||
-            errorMsg.indexOf('insertBefore') !== -1 ||
-            errorMsg.indexOf('Script error') !== -1) {
-          return;
-        }
-      }
-      origError.apply(console, args);
-    };
+    <!-- Critical CSS loading -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css"></noscript>
 
-    // Global error handler for third-party scripts
-    window.addEventListener('error', function(e) {
-      const errorMsg = e.message || '';
-      const source = e.filename || '';
-      
-      // Suppress ResizeObserver errors
-      if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-      
-      // Suppress HubSpot script errors
-      if (source.indexOf('hsforms') !== -1 || source.indexOf('hubspot') !== -1 || 
-          errorMsg.indexOf('hbspt') !== -1) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-      
-      // Suppress Clarity script errors
-      if (source.indexOf('clarity.ms') !== -1 || errorMsg.indexOf('clarity') !== -1) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-      
-      // Suppress common third-party errors
-      if (errorMsg.indexOf('literal not terminated') !== -1 || 
-          errorMsg.indexOf('insertBefore') !== -1 ||
-          errorMsg.indexOf('Script error') !== -1) {
-        e.stopImmediatePropagation();
-        return false;
-      }
-    });
+    <!-- Performance optimized error suppression -->
+    <script>
+        // Optimized error suppression for better performance
+        (function() {
+            const suppressedPatterns = [
+                'ResizeObserver loop completed',
+                'hubspot', 'hsforms', 'hbspt',
+                'clarity', 'clarity.ms',
+                'literal not terminated',
+                'insertBefore', 'Script error'
+            ];
+            
+            const origError = console.error;
+            console.error = function(...args) {
+                if (args[0] && typeof args[0] === 'string') {
+                    if (suppressedPatterns.some(pattern => args[0].includes(pattern))) return;
+                }
+                origError.apply(console, args);
+            };
+            
+            ['error', 'unhandledrejection'].forEach(event => {
+                window.addEventListener(event, function(e) {
+                    const msg = e.message || (e.reason && e.reason.message) || '';
+                    if (suppressedPatterns.some(pattern => msg.includes(pattern))) {
+                        e.preventDefault && e.preventDefault();
+                        e.stopImmediatePropagation && e.stopImmediatePropagation();
+                        return false;
+                    }
+                });
+            });
+        })();
+    </script>
 
-    // Suppress unhandled promise rejections from third-party scripts
-    window.addEventListener('unhandledrejection', function(e) {
-      if (e.reason && e.reason.message) {
-        const errorMsg = e.reason.message;
-        
-        if (errorMsg.indexOf('ResizeObserver loop completed with undelivered notifications') !== -1 ||
-            errorMsg.indexOf('hubspot') !== -1 || errorMsg.indexOf('clarity') !== -1 ||
-            errorMsg.indexOf('hsforms') !== -1 || errorMsg.indexOf('hbspt') !== -1) {
-          e.preventDefault();
+
+    <!-- Optimized font loading with display swap -->
+    <style>
+        /* Font face declarations with display: swap for better performance */
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('/Satoshi-Regular.woff2') format('woff2');
+            font-display: swap;
         }
-      }
-    });
-  </script>
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('/Satoshi-Medium.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PowerGrotesk';
+            src: url('/PowerGrotesk-Bold.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'ShantellSans';
+            src: url('/ShantellSans-Regular.woff2') format('woff2');
+            font-display: swap;
+        }
+    </style>
+    <!-- Font preloading with adjusted priorities to prioritize NAF image -->
+    <link rel="preload" as="font" href="/PowerGrotesk-Bold.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/Satoshi-Regular.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="/Satoshi-Medium.woff2" type="font/woff2" crossorigin> 
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+    </div>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -165,6 +171,542 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-</body>
 
+    <!-- Load non-critical third-party scripts after page load with better prioritization -->
+    <script>
+        // Improved script loading strategy for better LCP
+        let scriptsLoaded = false;
+        
+        function loadNonCriticalScripts() {
+            if (scriptsLoaded) return;
+            scriptsLoaded = true;
+            
+            // Load Three.js only if needed
+            if (window.THREE === undefined && document.querySelector('[data-needs-threejs]')) {
+                const threeScript = document.createElement('script');
+                threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
+                threeScript.async = true;
+                document.head.appendChild(threeScript);
+            }
+            
+            // Load Clarity script with reduced delay for better analytics
+            setTimeout(() => {
+                if (window.clarity === undefined) {
+                    (function(c,l,a,r,i,t,y){
+                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                        y=l.getElementsByTagName(r)[0];
+                        if(y&&y.parentNode){y.parentNode.insertBefore(t,y);}
+                        else{l.head.appendChild(t);}
+                    })(window,document,"clarity","script","sdl0f0u4l6");
+                }
+            }, 1500);
+        }
+        
+        // Load scripts after LCP or after a reasonable delay
+        window.addEventListener('load', () => {
+            // Delay to prioritize LCP
+            setTimeout(loadNonCriticalScripts, 100);
+        });
+        
+        // Fallback: load after user interaction or timeout
+        ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
+            document.addEventListener(event, loadNonCriticalScripts, { once: true, passive: true });
+        });
+        setTimeout(loadNonCriticalScripts, 3000);
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .website-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #7ED321, #50E3C2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+            color: #FF6B35;
+            font-weight: 500;
+        }
+
+        /* Custom n8n Chat Styling - NAF Germany Theme */
+        :root {
+            /* Primary Colors - Green Theme */
+            --chat--color-primary: #7ED321;
+            --chat--color-primary-shade-50: #6BC018;
+            --chat--color-primary-shade-100: #5AAD15;
+
+            /* Secondary Colors - Orange Theme */
+            --chat--color-secondary: #FF6B35;
+            --chat--color-secondary-shade-50: #FF5722;
+            --chat--color-secondary-shade-100: #E64A19;
+
+            /* Base Colors */
+            --chat--color-white: #FFFFFF;
+            --chat--color-light: #F8F9FA;
+            --chat--color-light-shade-50: #F1F3F4;
+            --chat--color-light-shade-100: #E8EAED;
+            --chat--color-medium: #9AA0A6;
+            --chat--color-dark: #1A1A1A;
+            --chat--color-disabled: #5F6368;
+            --chat--color-typing: #34A853;
+
+            /* Layout */
+            --chat--spacing: 1.2rem;
+            --chat--border-radius: 16px;
+            --chat--transition-duration: 0.3s;
+
+            /* Window Dimensions */
+            --chat--window--width: 420px;
+            --chat--window--height: 650px;
+
+            /* Header Styling */
+            --chat--header-height: auto;
+            --chat--header--padding: 1.5rem;
+            --chat--header--background: linear-gradient(135deg, #7ED321 0%, #50E3C2 100%);
+            --chat--header--color: #FFFFFF;
+            --chat--header--border-top: none;
+            --chat--header--border-bottom: 2px solid #FF6B35;
+
+            /* Typography */
+            --chat--heading--font-size: 1.5rem;
+            --chat--heading--font-weight: 600;
+            --chat--subtitle--font-size: 0.9rem;
+            --chat--subtitle--line-height: 1.6;
+
+            /* Input Field - Reduced height by 30% */
+            --chat--textarea--height: 39px;
+            /* Reduced from 56px by ~30% */
+            --chat--input--border-radius: 20px;
+            /* Reduced border radius */
+            --chat--input--border: 2px solid #7ED321;
+            --chat--input--focus-border: 2px solid #FF6B35;
+
+            /* Messages - Reduced padding */
+            --chat--message--font-size: 1rem;
+            --chat--message--padding: 0.6rem 0.8rem;
+            /* Reduced from 1rem 1.2rem */
+            --chat--message--border-radius: 16px;
+            /* Slightly reduced */
+            --chat--message-line-height: 1.5;
+            /* Reduced line height */
+
+            /* Bot Messages */
+            --chat--message--bot--background: #FFFFFF;
+            --chat--message--bot--color: #1A1A1A;
+            --chat--message--bot--border: 1px solid #E8EAED;
+            --chat--message--bot--shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            /* User Messages */
+            --chat--message--user--background: linear-gradient(135deg, #7ED321 0%, #50E3C2 100%);
+            --chat--message--user--color: #1a1818;
+            --chat--message--user--border: none;
+            --chat--message--user--shadow: 0 2px 8px rgba(126, 211, 33, 0.3);
+
+            /* Code blocks */
+            --chat--message--pre--background: rgba(255, 107, 53, 0.1);
+            --chat--message--pre--border: 1px solid #FF6B35;
+
+            /* Toggle Button */
+            --chat--toggle--background: linear-gradient(135deg, #7ED321 0%, #50E3C2 100%);
+            --chat--toggle--hover--background: linear-gradient(135deg, #6BC018 0%, #45D1B8 100%);
+            --chat--toggle--active--background: linear-gradient(135deg, #5AAD15 0%, #3BC2A5 100%);
+            --chat--toggle--color: #FFFFFF;
+            --chat--toggle--size: 72px;
+            --chat--toggle--shadow: 0 4px 16px rgba(126, 211, 33, 0.4);
+        }
+
+        /* Additional Custom Styling */
+        [data-chat-widget] {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
+        /* Chat Header Customization with Restart Button */
+        [data-chat-widget] .chat-header {
+            background: linear-gradient(135deg, #7ED321 0%, #50E3C2 100%) !important;
+            border-bottom: 3px solid #FF6B35 !important;
+            box-shadow: 0 4px 12px rgba(126, 211, 33, 0.2) !important;
+            position: relative !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 1rem 1.5rem !important;
+        }
+
+        /* Restart Chat Button */
+        .restart-chat-btn {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: white !important;
+            padding: 6px 12px !important;
+            border-radius: 20px !important;
+            font-size: 0.8rem !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+        }
+
+        .restart-chat-btn:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            border-color: rgba(255, 255, 255, 0.5) !important;
+            transform: scale(1.05) !important;
+        }
+
+        .restart-chat-btn:active {
+            transform: scale(0.95) !important;
+        }
+
+        /* Chat Title */
+        [data-chat-widget] .chat-title {
+            font-weight: 600 !important;
+            font-size: 1.5rem !important;
+            color: white !important;
+        }
+
+        /* Chat Subtitle */
+        [data-chat-widget] .chat-subtitle {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 0.9rem !important;
+        }
+
+        /* Input Field Enhancement - Reduced height and padding */
+        [data-chat-widget] .chat-input,
+        [data-chat-widget] textarea,
+        [data-chat-widget] input[type="text"] {
+            border: 2px solid #7ED321 !important;
+            border-radius: 20px !important;
+            padding: 8px 16px !important;
+            /* Reduced padding */
+            font-size: 0.9rem !important;
+            /* Slightly smaller font */
+            height: 39px !important;
+            /* 30% reduced height */
+            min-height: 39px !important;
+            max-height: 39px !important;
+            transition: all 0.3s ease !important;
+            resize: none !important;
+        }
+
+        [data-chat-widget] .chat-input:focus,
+        [data-chat-widget] textarea:focus,
+        [data-chat-widget] input[type="text"]:focus {
+            border-color: #FF6B35 !important;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
+            outline: none !important;
+        }
+
+        /* Send Button */
+        [data-chat-widget] .send-button,
+        [data-chat-widget] button[type="submit"] {
+            background: linear-gradient(135deg, #FF6B35 0%, #E64A19 100%) !important;
+            border: none !important;
+            border-radius: 50% !important;
+            width: 44px !important;
+            height: 44px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        [data-chat-widget] .send-button:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4) !important;
+        }
+
+        /* Message Bubbles */
+        [data-chat-widget] .message-bot {
+            background: white !important;
+            color: #1A1A1A !important;
+            border: 1px solid #E8EAED !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+            border-radius: 20px 20px 20px 6px !important;
+        }
+
+        [data-chat-widget] .message-user {
+            background: linear-gradient(135deg, #7ED321 0%, #50E3C2 100%) !important;
+            color: white !important;
+            border-radius: 20px 20px 6px 20px !important;
+            box-shadow: 0 2px 8px rgba(126, 211, 33, 0.2) !important;
+        }
+
+        /* Typing Indicator */
+        [data-chat-widget] .typing-indicator {
+            color: #7ED321 !important;
+        }
+
+        /* Scrollbar */
+        [data-chat-widget] .chat-messages::-webkit-scrollbar {
+            width: 6px !important;
+        }
+
+        [data-chat-widget] .chat-messages::-webkit-scrollbar-track {
+            background: #F1F3F4 !important;
+            border-radius: 3px !important;
+        }
+
+        [data-chat-widget] .chat-messages::-webkit-scrollbar-thumb {
+            background: #7ED321 !important;
+            border-radius: 3px !important;
+        }
+
+        [data-chat-widget] .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #6BC018 !important;
+        }
+
+        /* Footer */
+        [data-chat-widget] .chat-footer {
+            color: #9AA0A6 !important;
+            font-size: 0.8rem !important;
+        }
+
+        /* Toggle Button Animation */
+        [data-chat-widget] .chat-toggle {
+            box-shadow: 0 6px 20px rgba(126, 211, 33, 0.4) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        [data-chat-widget] .chat-toggle:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(126, 211, 33, 0.5) !important;
+        }
+
+        /* Welcome Screen */
+        [data-chat-widget] .welcome-screen {
+            background: linear-gradient(135deg, rgba(126, 211, 33, 0.05) 0%, rgba(80, 227, 194, 0.05) 100%) !important;
+        }
+
+        /* Quick Action Buttons */
+        [data-chat-widget] .quick-action-button {
+            background: rgba(255, 107, 53, 0.1) !important;
+            border: 1px solid #FF6B35 !important;
+            color: #FF6B35 !important;
+            border-radius: 20px !important;
+            padding: 8px 16px !important;
+            font-size: 0.9rem !important;
+            transition: all 0.3s ease !important;
+        }
+
+        [data-chat-widget] .quick-action-button:hover {
+            background: #FF6B35 !important;
+            color: white !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --chat--window--width: 100vw;
+                --chat--window--height: 100vh;
+            }
+
+            .header-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style> 
+
+    <!-- Optimized n8n chat loading with better prioritization -->
+    <script>
+        // Load n8n chatbot after critical content and LCP is achieved
+        function loadChatbot() {
+            // Check if already loaded
+            if (window.chatbotLoaded) return;
+            window.chatbotLoaded = true;
+            
+            import('https://cdn.n8nchatui.com/v1/embed.js').then(module => {
+                const Chatbot = module.default;
+                Chatbot.init({
+                    "n8nChatUrl": "https://harsha45karna.app.n8n.cloud/webhook/4ac6408b-c884-40c4-b5db-81c580adbf80/chat",
+                    "metadata": {},
+                    "theme": {
+                        "button": {
+                            "backgroundColor": "#ffc8b8",
+                            "right": 20,
+                            "bottom": 20,
+                            "size": 60,
+                            "iconColor": "#373434",
+                            "customIconSrc": "https://www.svgrepo.com/show/339963/chat-bot.svg",
+                            "customIconSize": 50,
+                            "customIconBorderRadius": 14,
+                            "autoWindowOpen": {
+                                "autoOpen": false,
+                                "openDelay": 2
+                            },
+                            "borderRadius": "circle"
+                        },
+                        "tooltip": {
+                            "showTooltip": false,
+                            "tooltipMessage": "Hello 👋 customize & connect me to n8n",
+                            "tooltipBackgroundColor": "#fff9f6",
+                            "tooltipTextColor": "#1c1c1c",
+                            "tooltipFontSize": 15
+                        },
+                        "chatWindow": {
+                            "borderRadiusStyle": "rounded",
+                            "avatarBorderRadius": 25,
+                            "messageBorderRadius": 7,
+                            "showTitle": true,
+                            "title": "NAF ChatBot",
+                            "titleAvatarSrc": "https://www.svgrepo.com/show/339963/chat-bot.svg",
+                            "avatarSize": 27,
+                            "welcomeMessage": "Hello! welcome to NAF ChatBot",
+                            "errorMessage": "Error on Backend",
+                            "backgroundColor": "#ffffff",
+                            "height": 500,
+                            "width": 400,
+                            "fontSize": 16,
+                            "starterPrompts": [
+                                "Who we are ?",
+                                "What do you do?"
+                            ],
+                            "starterPromptFontSize": 15,
+                            "renderHTML": false,
+                            "clearChatOnReload": false,
+                            "showScrollbar": false,
+                            "botMessage": {
+                                "backgroundColor": "#f36539",
+                                "textColor": "#fafafa",
+                                "showAvatar": true,
+                                "avatarSrc": "https://www.svgrepo.com/show/334455/bot.svg"
+                            },
+                            "userMessage": {
+                                "backgroundColor": "#0d0d0d",
+                                "textColor": "#faf4f4",
+                                "showAvatar": true,
+                                "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
+                            },
+                            "textInput": {
+                                "placeholder": "Type your query",
+                                "backgroundColor": "#ffffff",
+                                "textColor": "#1e1e1f",
+                                "sendButtonColor": "#f36539",
+                                "maxChars": 200,
+                                "maxCharsWarningMessage": "You exceeded the characters limit. Please input less than 50 characters.",
+                                "autoFocus": false,
+                                "borderRadius": 8,
+                                "sendButtonBorderRadius": 50
+                            },
+                            "footer": {
+                                "show": false,
+                                "text": "",
+                                "showPoweredBy": false
+                            },
+                            "branding": {
+                                "show": false,
+                                "poweredBy": false,
+                                "attribution": false
+                            }
+                        }
+                    },
+                    "showAttribution": false,
+                    "showPoweredBy": false,
+                    "hideBranding": true,
+                    "removeFooter": true
+                });
+            }).catch(err => console.log('Chatbot loading deferred:', err));
+        }
+        
+        // Load chatbot after page load with improved prioritization
+        let chatbotLoadTriggered = false;
+        
+        function triggerChatbotLoad() {
+            if (chatbotLoadTriggered) return;
+            chatbotLoadTriggered = true;
+            setTimeout(loadChatbot, 2000);
+        }
+        
+        // Load after critical content with better timing
+        window.addEventListener('load', triggerChatbotLoad);
+        
+        // Also load on user interaction
+        ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
+            document.addEventListener(event, triggerChatbotLoad, { once: true, passive: true });
+        });
+        
+        // Fallback timeout
+        setTimeout(triggerChatbotLoad, 4000);
+    </script>
+<style>
+/* Complete n8n branding removal */
+[class*="n8n-chat"] .footer,
+[class*="n8n-chat"] [class*="footer"],
+[class*="n8n-chat"] [class*="powered"],
+[class*="n8n-chat"] [class*="branding"],
+[class*="n8n-chat"] [class*="attribution"],
+[id*="n8n"] .footer,
+[id*="n8n"] [class*="footer"],
+[id*="n8n"] [class*="powered"],
+[id*="n8n"] [class*="branding"],
+.n8n-chat-footer,
+.n8n-powered-by,
+.n8n-branding,
+.powered-by-n8n,
+[data-testid*="powered"],
+[data-testid*="footer"],
+[data-testid*="branding"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Hide any element containing n8n text */
+*:not(script):not(style) {
+  &:contains("Powered by n8n"),
+  &:contains("powered by n8n"),
+  &:contains("n8n.io"),
+  &:contains("Made with n8n") {
+    display: none !important;
+  }
+}
+
+/* Additional selectors for dynamic content */
+.chat-widget-footer,
+.chat-footer,
+.widget-footer,
+[role="contentinfo"]:has(*:contains("n8n")),
+[aria-label*="powered"]:contains("n8n") {
+  display: none !important;
+}
+
+/* Override any inline styles that might show branding */
+[style*="powered"]:contains("n8n"),
+[style*="footer"]:contains("n8n") {
+  display: none !important;
+}
+</style>
+
+</body>
 </html>
