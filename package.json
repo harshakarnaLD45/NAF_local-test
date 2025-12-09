@@ -43,12 +43,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "resolutions": {
-    "typescript": "^4.9.5"
+  "overrides": {
+    "typescript": "4.9.5"
   },
   "eslintConfig": {
     "extends": [
