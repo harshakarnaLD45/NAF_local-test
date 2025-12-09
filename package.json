@@ -47,6 +47,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "resolutions": {
+    "typescript": "^4.9.5"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
