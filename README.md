@@ -65,6 +65,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+#### Deployment Notes
+
+This project includes a `.npmrc` file with `legacy-peer-deps=true` to resolve peer dependency conflicts during installation. This is necessary because:
+- `react-scripts@5.0.1` requires TypeScript `^3.2.1 || ^4`
+- `i18next@^25.4.1` has a peer dependency on TypeScript `^5`
+
+Since this is a JavaScript-only project, the TypeScript version conflict can be safely ignored. The `.npmrc` configuration ensures smooth deployments on platforms like Render, Vercel, and Netlify.
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
