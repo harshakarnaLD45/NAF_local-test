@@ -23,5 +23,12 @@
     .Product_hero_img_sec{
         width: 15% !important;
     }
+    .machine_header{
+        margin-top: 30px !important;
+    }
+      .hero_sec{
+        min-height: 50vh !important;
+      }
     
+
 }

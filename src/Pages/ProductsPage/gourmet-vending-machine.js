@@ -390,10 +390,10 @@ export default function GourmetVendingMachinePage() {
   return (
     <div className="section-container main-container" style={{ height: '100%', display: 'block', flexDirection: ' column' }}>
 
-      <Box
+      <Box className="hero_sec"
         sx={{
           width: "100%",
-          minHeight: "80vh",
+          minHeight: "65vh",
 
           display: "flex",
           justifyContent: "space-between",
@@ -453,7 +453,7 @@ export default function GourmetVendingMachinePage() {
 
 
         {/* Navigation Tabs */}
-        <Paper sx={{ mb: 3, mt: 6, backgroundColor: '#444', color: '#9D9EA1' }}>
+        <Paper className='machine_header' sx={{ mb: 3, mt: 6, backgroundColor: '#444', color: '#9D9EA1' }}>
           <Tabs
             value={tabValue}
             onChange={handleTabChange}
