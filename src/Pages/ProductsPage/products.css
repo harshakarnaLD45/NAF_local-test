@@ -1,0 +1,27 @@
+
+.gourmate_Heading{
+  margin: 10px 0px !important;
+}
+.Tecnical-specification{
+  margin: 0px 0px 0px 10px  !important;
+}
+#card_content_sec{
+    padding:0px !important;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 2000px ) {
+    .Product_hero_img{
+        width: 100%     !important;
+        height: 650px !important;
+    }
+    .Product_hero_img_sec{
+        width: 15% !important;
+    }
+    
+}

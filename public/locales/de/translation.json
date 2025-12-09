@@ -1,0 +1,1535 @@
+{
+    "Header": {
+        "menu": "Menü",
+        "menuHome": "Startseite",
+        "menuMachines": "Verkaufautomaten",
+        "menuSoftware": "Software",
+        "menuInsights": "Blogs und Einblicke",
+        "CompanyDiscover": "NAF entdecken",
+        "foodMenu": "Speisekarte",
+        "menuCompany": "Unternehmen",
+        "profilemenbership": "Mitgliedschaft einloggen",
+        "profileSignIn": "Anmelden",
+        "profilelogin": "Einloggen / Registrieren",
+        "profileregister": "Kundenanmeldung",
+        "BookaDemo": "Eine Demo buchen",
+        "cookieMessage": "Wir verwenden Microsoft Clarity, um das Nutzerverhalten zu verstehen und unsere Produkte sowie Werbung zu verbessern. Durch die Nutzung dieser Website stimmen Sie der Erfassung und Verwendung Ihrer Daten durch uns und Microsoft gemäß unserer",
+        "privacyPolicy": "Datenschutzerklärung vertraut machen.",
+        "accept": "Akzeptieren",
+        "reject": "Ablehnen"
+    },
+    "Home": {
+        "mainHeading": "NAF – Die Zukunft des Verkaufsautomaten",
+        "mainParagraph": "Automatisiert. KI-gestützt. Nachhaltig.",
+        "viewMore": "Mehr anzeigen",
+        "VIEW": "ANSICHT",
+        "LEARN": "ERFAHREN",
+        "MORE": "MEHR",
+        "exploreTitle": "Intelligente, KI-gestützte Verkaufsautomaten für jeden Bedarf",
+        "exploreSubTitle": "Unsere Maschinen gehen über klassische Automaten hinaus – sie sind intelligente, KI-gestützte Lebensmittel-Lösungen. Von Pizza bis Bier analysiert jede Einheit Verkaufsdaten in Echtzeit, erkennt Trends und optimiert das Angebot. Die KI steuert Temperatur, Nachfüllungen und das Kundenerlebnis für maximale Effizienz bei minimalen Kosten.",
+        "ourClientsTitle": "Unsere Kunden",
+        "ourClientsSubTitle": "Partnerschaften mit Unternehmen jeder Größe. Wir bieten maßgeschneiderte Automatenlösungen für Ihre individuellen Anforderungen.",
+        "serveTitle": "Unsere Zielgruppen",
+        "serveSubTitle": "Unsere KI-gesteuerten Automaten passen sich individuell Ihren Anforderungen an. Ob Hotel, Universität oder Fabrik – die künstliche Intelligenz analysiert Verbrauchsmuster, passt das Sortiment automatisch an und minimiert Ausfallzeiten. Perfekt für stark frequentierte Orte oder dezentrale Standorte.",
+        "Gourmet": "Gourmet-Maschine",
+        "Pizza": "Pizza-Maschine",
+        "Fries": "Pommes-Maschine",
+        "Soft": "Softeis-Maschine",
+        "Cotton": "Zuckerwatte-Maschine",
+        "Beer": "Bier-Maschine",
+        "Return": "Rückgabe-Maschine",
+        "hotelsRestaurants": "Hotels und Gaststätten",
+        "gasRoadsideRestaurants": "Tankstellen & Raststätten",
+        "schoolsUniversities": "Schulen & Universitäten",
+        "companiesFactories": "Unternehmen & Fabriken",
+        "eventsFestivals": "Veranstaltungen und Festivals",
+        "municipalitiesPublic": "Gemeinden & Behörden",
+        "sustainability": "Nachhaltigkeit & Technologie",
+        "sustainabilityHeading": "Künstliche Intelligenz trifft Umweltschutz",
+        "sustainabilityText": "Mit KI optimieren wir nicht nur Verkaufsprozesse, sondern auch ökologische Kreisläufe. Unsere Rückgabeautomaten erkennen Behältertypen automatisch und digitalisieren Pfandprozesse. KI analysiert den Verbrauch, um Lebensmittelverschwendung zu vermeiden. Gleichzeitig arbeiten wir mit regionalen Partnern an innovativen Mehrwegsystemen – made in Sachsen.",
+        "sustainabilitybenifits1": "Rücknahmesystem & Mehrwegverpackungen",
+        "sustainabilitybenifits2": "Partnerschaften mit lokalen/regionalen Produzenten",
+        "sustainabilitybenifits3": "Inhouse-Entwicklung von Cloud & Apps",
+        "sustainabilitybenifits4": "RFID-Integration, Telemetrie & Energieeffizienz",
+        "sustainabilitybenifits5": "Innovationspreise & Förderprojekte",
+        "CloudSystem": "Cloud-System betrieben von Android, AWS, NAYAX",
+        "CloudSystemTitle": "Übernehmen Sie die Kontrolle über Ihr Vertriebsnetzwerk",
+        "CloudSystemSubTitle": "Verwalten Sie Ihre Verkaufsautomaten weltweit, passen Sie Preise flexibel an und verfolgen Sie wichtige Kennzahlen – alles über ein benutzerfreundliches Dashboard.",
+        "WhatsNew": "Neuigkeiten",
+        "naftext1": "NAF wurde von",
+        "naftext2": "und",
+        "naftext3": "gegründet – mit der Vision, echte Alternativen zur traditionellen Gastronomie zu schaffen. Mit Wurzeln in der Spitzengastronomie und einer Leidenschaft für Technologie verbinden wir kulinarischen Genuss mit Digitalisierung. Unsere KI-Systeme werden intern von einem internationalen Team aus IT-Talenten und Gastronomie-Profis entwickelt, unter der Leitung unseres CTO,",
+        "naftext4": ", der Innovationen in KI-gesteuerten kulinarischen Lösungen und technologischen Fortschritten vorantreibt.",
+        "testmonialHeading": "Was unsere Kunden sagen",
+        "testimonial1": {
+            "text": "Das Auberginen-Kichererbsen-Curry heute war köstlich. Die Hähnchenbällchen gestern waren ebenfalls gut.",
+            "author": "Kunde"
+        },
+        "testimonial2": {
+            "text": "Das Roastbeef war lecker 👍🏻 und der Preis auch super 🤩.",
+            "author": "Gerdi"
+        },
+        "testimonial3": {
+            "text": "Hallo NAF-Team 😎, ein kleines Feedback auch von mir. Ein tolles Konzept mit richtig tollen kulinarischen Ideen Woche für Woche 👍 Man schmeckt die Leidenschaft und Freude bei der Zubereitung 🫶 Für jeden Geschmack ist etwas dabei. Besonders mochte ich die Spinat-Ricotta-Knödel oder die Hanfschale etc... und die Desserts sowieso 😅 Weiter so 👌",
+            "author": "Kunde"
+        },
+        "testimonial4": {
+            "text": "Hallo liebes NAF-Team, hier ein kurzes Feedback zu euren leckeren Gerichten für eure Weiterentwicklung. Ich freue mich immer, wenn ich Essen aus dem NAF-Automaten kaufe. Das Angebot ist nicht nur abwechslungsreich, sondern auch dank der Gewürzvielfalt besonders lecker und gesund. Weiter so!",
+            "author": "Kunde"
+        },
+        "testimonial5": {
+            "text": "Das Auberginen-Kichererbsen-Curry heute war köstlich. Die Hähnchenbällchen gestern waren ebenfalls gut.",
+            "author": "Holm"
+        },
+        "comingSoon": "Demnächst verfügbar"
+    },
+    "machines": {
+        "machineTitle": "Hochleistungs-Automaten für jeden Bedarf",
+        "machineSubTitle": "Steigern Sie Ihren Umsatz und optimieren Sie Ihre Abläufe mit unserer Auswahl an individuell anpassbaren Verkaufsautomaten.",
+        "EXPLOREOURVENDINGMACHINES": "ENTDECKEN SIE UNSERE VERKAUFSAUTOMATEN",
+        "All": "Alle",
+        "PizzaMachine": "Pizza-Automat",
+        "FriesMachine": "Pommes-Automat",
+        "IceCreamMachine": "Soft-Eis-Automat",
+        "CandyMachine": "Zuckerwatte-Automat",
+        "BeerMachine": "Bier-Automat",
+        "ReturnMachine": "Rückgabeautomat",
+        "GourmetMachine": "Gourmet-Automat",
+        "SnackMachine": "Snack-Automat",
+        "PizzaMachinesubtitle": "Frische, knusprige Pizza in nur 3 Minuten – von Margherita bis Spezialvarianten.",
+        "IceMachinesubtitle": "Cremiges Softeis in 3 Geschmacksrichtungen, mit 3 Toppings und 3 Streuselsorten.",
+        "GourmetMachinesubtitle": "'Restaurant in 3 Minuten' / Gourmet-Automat.",
+        "CandyMachinesubtitle": "Frische Zuckerwatte in verschiedenen Farben, Geschmacksrichtungen und Formen – über 100 Varianten!",
+        "beerMachinesubtitle": "Gekühltes Bier rund um die Uhr mit intelligenter, KI-gesteuerter Altersverifikation.",
+        "returnMachinesubtitle": "KI-gestützte Erkennung und Sortierung von Mehrwegbehältern für geschlossene Kreislaufsysteme.",
+        "AIBaking": "KI-Backalgorithmus",
+        "AIOil": "Ölmanagement durch KI",
+        "AIMonitoring": "Selbstüberwachung durch KI",
+        "AIAgeVerification": "Intelligente Altersverifikation",
+        "AIContainerRecognition": "KI-Behältererkennung",
+        "AImenu": "KI-Menülogik mit Nährwertprofilen",
+        "hotVendingMachineTitle": "Heißautomaten",
+        "hotVendingMachineSubTitle": "Unser Hochleistungs-Heißautomat bietet eine große Auswahl individuell anpassbarer Speisenoptionen und stellt höchste Qualität bei optimaler Temperatur sicher.",
+        "aIenhancedbaking": "KI-unterstütztes Backen",
+        "fullyautomated": "Vollautomatisiert",
+        "selfservice": "Selbstbedienung",
+        "Selfservemodel": "Selbstbedienungsmodell",
+        "NowaitTimes": "Keine Wartezeiten",
+        "Nostaffingrequired": "Kein Personal erforderlich",
+        "Ecofriendly": "Umweltfreundlich",
+        "Sustainablepackaging": "Nachhaltige Verpackung",
+        "AImenulogic": "KI-basierte Menülogik",
+        "Automaticsortinglogging": "Automatisches Sortieren und Protokollieren",
+        "Rewardsloyaltypoint": "Belohnungs- & Treuepunkte",
+        "hygienic": "100 % hygienisch",
+        "Kidfriendlyattraction": "Kinderfreundliche Attraktion",
+        "AIageverification": "KI-gesteuerte Altersverifikation",
+        "Chilledbeerseconds": "Gekühltes Bier in Sekunden",
+        "fullyMinimalStaff": "Vollautomatisch bei minimalem Personalaufwand",
+        "Automatedheating": "Automatisiertes Heizen",
+        "Events": "Events",
+        "Fairs": "Messen",
+        "IndoorPlaygrounds": "Indoor-Spielplätze",
+        "Festivals": "Festivals",
+        "Clubs": "Clubs",
+        "Rooftopbars": "Dachterrassenbars",
+        "Hotel": "Hotels",
+        "Gym": "Fitnessstudios",
+        "GasStation": "Tankstellen",
+        "Cinemas": "Kinos",
+        "Mails": "Einkaufszentren",
+        "resorts": "Resorts",
+        "Supermarkets": "Supermärkte",
+        "Companies": "Unternehmen",
+        "ShoppingMalls": "Einkaufszentren",
+        "ThemeParks": "Themenparks",
+        "AmusementParks": "Freizeitparks",
+        "SnackBars": "Snackbar",
+        "CampingSites": "Campingplätze",
+        "Pizzerias": "Pizzerien",
+        "AnimalParks": "Tierparks",
+        "Zoos": "Zoos",
+        "VillageFairs": "Dorfmärkte",
+        "Officecenters": "Bürozentren",
+        "IdealFor": "Ideal für:",
+        "Acquisitioncosts": "Anschaffungskosten",
+        "Acquisitionnumbertext": "MwSt.",
+        "Installment": "Ratenzahlung",
+        "Months12": "12 Monate",
+        "Months18": "18 Monate",
+        "Months24": "24 Monate",
+        "Months36": "36 Monate",
+        "Installmentsmonths": "Monat",
+        "availablesoon": "bientôt disponible",
+        "Months": "Monate",
+        "PricesannouncedText": "*Preise werden nach der Markteinführung auf Basis der gezeigten Prototypen bekannt gegeben.",
+        "CustomVendingtitle": "Individuelle Automatenlösungen für jedes Unternehmen",
+        "CustomVendingsubtitle": "Benötigen Sie einen Automaten, der perfekt auf Ihre Produkte, Ihr Branding oder Ihren Standort zugeschnitten ist? NAF Germany ist auf die Herstellung maßgeschneiderter Automaten spezialisiert, die Ihre individuellen Anforderungen erfüllen.",
+        "CustomSizesLayouts": "Individuelle Größen & Layouts",
+        "BrandingGraphics": "Branding & Grafikdesign",
+        "SpecializedDispensing": "Spezialisierte Ausgabesysteme",
+        "UniqueStorage": "Einzigartige Lagerlösungen",
+        "SoftwareIntegration": "Software-Integration",
+        "CustomPayments": "Individuelle Zahlungsoptionen",
+        "FlexiblePaymentTitle": "Flexible Zahlungsoptionen für Ihre NAF-Automaten",
+        "FlexiblePaymentsubTitle": "Unsere Finanzierungsmodelle erleichtern den Einstieg in die automatisierte Verpflegung. Ob Leasing, Mietkauf oder Direktkauf – wir zeigen Ihnen die besten Optionen und berechnen Ihre Amortisationszeit. Sparen Sie ab dem ersten Monat Personal- und Betriebskosten.",
+        "LeasingTitle": "Leasing",
+        "Leasingtext": "Leasen Sie einen Automaten mit niedrigen Anfangskosten. Zahlen Sie monatlich und entscheiden Sie sich am Ende der Laufzeit für Kauf, Verlängerung oder Rückgabe.",
+        "Leasingpoints1": "Geringe Anfangskosten",
+        "Leasingpoints2": "Planbare monatliche Zahlungen",
+        "Leasingpoints3": "Möglichkeit zur Geräteaktualisierung",
+        "RentalPurchase": "Mietkauf",
+        "Rentaltext": "Beim Mietkauf erwerben Sie schrittweise Eigentum. Mit regelmäßigen Zahlungen gehört der Automat am Ende Ihnen.",
+        "Rentalpoints1": "Schrittweiser Eigentumserwerb",
+        "Rentalpoints2": "Am Ende vollständiges Eigentum am Automaten",
+        "Rentalpoints3": "Flexible Zahlungsmodelle",
+        "DirectPurchaseTitle": "Direktkauf",
+        "DirectPurchaseSubTitle": "Automaten direkt kaufen - sofortiges Eigentum vom ersten Tag an. Bei uns haben Sie die Möglichkeit, unsere Automaten direkt zu kaufen - ohne komplizierte Leasingverträge oder versteckte Kosten.",
+        "Directpoints1": "50% Anzahlung bei Unterzeichnung des Vertrages",
+        "Directpoints2": "50% Restzahlung bei Verladung der Maschine",
+        "PartnerNAFGermany": "Partner werden mit NAF Germany: Zwei Wege zur Teilnahme an der Automatenrevolution",
+        "CompaniesInstallationLocations": "Unternehmen & Installationsstandorte",
+        "GastronomyPartners": "Gastronomiepartner",
+        "CompaniesInstallationSubTitle": "Schlagen Sie jetzt Ihren Standort vor! Unsere innovativen Food-Automaten bieten rund um die Uhr frische Mahlzeiten – ideal für Unternehmen mit mehr als 200 Mitarbeitern.",
+        "HowitWork": "So funktioniert es",
+        "HowitWorktext1": "Sie wählen den für Sie besten Standort",
+        "HowitWorktext2": "Wir kümmern uns um den Automaten und helfen bei der Caterer-Auswahl",
+        "HowitWorktext3": "Oder kaufen Sie einen Automaten und nutzen Ihren eigenen Caterer",
+        "FillupForm": "Formular ausfüllen",
+        "CompanyName": "Firmenname",
+        "InstallationAddress": "Installationsadresse",
+        "NumberofEmployees": "Anzahl der Mitarbeiter",
+        "willingpurchase": "Sind Sie bereit, den Automaten zu kaufen?",
+        "likecatering": "Möchten Sie, dass wir einen Catering-Partner bereitstellen?",
+        "ContactPersonFName": "Name der Kontaktperson",
+        "Email": "E-Mail",
+        "PhoneNumber": "Telefonnummer",
+        "Restaurant": "Restaurant-/Firmenname",
+        "Position": "Position",
+        "Specialization": "Ihre Spezialisierung",
+        "privacytext": "Ich verstehe, dass NAF Germany meine Daten gemäß ihrer",
+        "privacypolicy": "Datenschutzerklärung",
+        "GastronomyPartnersSubTitle": "Werden Sie Gastronomie- oder Catering-Partner und steigern Sie Ihren Umsatz mit unseren intelligenten Vending-Lösungen! Wir bieten fachkundige Beratung und übernehmen auf Wunsch sogar die Standortsuche. Starten Sie noch heute!",
+        "Benefits": "Vorteile",
+        "WhatsInyoupoint1": "Erzielen Sie monatliches Einkommen durch Mietzahlungen von Unternehmen",
+        "WhatsInyoupoint2": "Steigern Sie die Sichtbarkeit Ihrer Marke und erreichen Sie mehr Kunden",
+        "WhatsInyoupoint3": "Erzielen Sie zusätzliche Einnahmen mit minimalem Aufwand und flexiblen Lieferoptionen",
+        "RestaurantCafé": "Name des Restaurants oder Cafés",
+        "LocationAddress": "Standortadresse",
+        "DailyFootfall": "Tägliche Besucherfrequenz",
+        "Areyouinterested": "Interessieren Sie sich für Automatenlösungen?",
+        "Doyouoffer": "Bieten Sie Speisen oder Getränke an?",
+        "ContactName": "Name der Kontaktperson",
+        "FormfooterText": "Wir senden Ihnen kostenlos und unverbindlich detaillierte Informationen zur NAF-Partnerschaft zu.",
+        "NAFMaintenanceTitle": "NAF Wartung & Support",
+        "yes": "Ja",
+        "no": "Nein",
+        "submitting": "Wird übermittelt...",
+        "NAFMaintenanceSubTitle": "Persönlich, zuverlässig und immer für Sie da"
+    },
+    "Maintenance": {
+        "ReliableMaintenance": "Zuverlässige Wartung & Support für Ihre Automateninvestition",
+        "ReliableMaintenanceSubtitle": "Maximale Betriebszeit und langfristige Zuverlässigkeit sichern",
+        "OurSupportServices": "Unser Support",
+        "OurSupportServices1": "Dienstleistungen",
+        "PreventativeMaintenance": "Vorbeugende",
+        "PreventativeMaintenance1": "Wartung",
+        "RemoteDiagnostics": "Fern",
+        "RemoteDiagnostics1": "Diagnose",
+        "PromptRepairs": "Schnelle",
+        "PromptRepairs1": "Reparaturen",
+        "DedicatedSupportTeam": "Engagiertes Support",
+        "DedicatedSupportTeam1": "Team",
+        "media": "Medien",
+        "FillupForm": "Formular ausfüllen",
+        "hospitalitySupport1": "Als ein Unternehmen mit tiefen Wurzeln in der Gastronomiebranche wissen wir, wie wichtig Zuverlässigkeit, persönliche Unterstützung und schnelle Hilfe sind. Diesem Anspruch werden wir auch bei der Wartung und Betreuung unserer Verkaufsautomaten gerecht. Für uns bedeutet Service nicht nur Technik – sondern echte Gastfreundschaft.",
+        "hospitalitySupport2": "Ob Sie Gastronom oder Betreiber von Verkaufsautomaten sind – wir stehen Ihnen zur Seite. Unsere Unterstützung ist individuell auf Ihre Bedürfnisse zugeschnitten, denn kein Standort ist wie der andere. Ob regelmäßige Wartung, schnelle Problemlösung oder Softwareanpassungen – wir sind für Sie da.",
+        "hospitalitySupport3": "Direkt, unkompliziert, persönlich: Auf Wunsch besuchen wir Sie vor Ort, um Ihre Fragen in aller Ruhe zu besprechen. Unser Team nimmt sich Zeit für Ihre Anliegen – und sorgt dafür, dass Ihr Automat jederzeit einsatzbereit ist.",
+        "UploadMedia": "Medien hochladen (Fotos, Videos oder Audio)",
+        "Requestformfooter": "Unser Team wird Ihre Anfrage prüfen und Sie in Kürze kontaktieren.",
+        "RequestServiceForm": "Serviceanfrage-Formular",
+        "MachineLocation": "Standort des Automaten",
+        "MachineID": "Automaten-ID",
+        "ProblemType": "Problemtyp",
+        "ProblemCategory": "Problemkategorie",
+        "Description": "Beschreibung",
+        "ContactPersonFName": "Vollständiger Name der Kontaktperson",
+        "Email": "E-Mail",
+        "PhoneNumber": "Telefonnummer",
+        "Hardware": "Hardware",
+        "Software": "Software",
+        "Network": "Netzwerk",
+        "Payment": "Zahlung",
+        "ScreenIssue": "Bildschirmproblem",
+        "PowerFailure": "Stromausfall",
+        "CardReaderIssue": "Kartenleserproblem",
+        "SoftwareCrash": "Software-Absturz",
+        "uderstnadTest": "Ich verstehe, dass NAF Germany meine Daten gemäß ihrer",
+        "privacy": "Datenschutzrichtlinie"
+    },
+    "software": {
+        "heroTitle": "Intelligentes Vending, betrieben durch das NAF Cloud-System",
+        "heroSubTitle": "Modernste Technologie für effiziente, skalierbare und sichere globale Verkaufsautomaten-Operationen.",
+        "introducingcloud": "Das NAF Cloud-System",
+        "introducingcloudSubtitle": "Das NAF Cloud-System ist ein umfassendes webbasiertes Dashboard, das Echtzeiteinblicke und vollständige Kontrolle über Ihre Verkaufsautomaten bietet. Diese zentrale Plattform optimiert das Management und steigert die Geschäftseffizienz.",
+        "bentoTitle1": "Echtzeit-Verkaufsanalysen",
+        "bentoTitle2": "Intelligente Bestandsverwaltung",
+        "bentoTitle3": "Gezielte Werbemöglichkeiten",
+        "bentoTitle4": "Fernüberwachung von Maschinen",
+        "bentoTitle5": "Verwaltung von Kundenbeziehungen (CRM)",
+        "bentoTitle6": "Automatisierte Steuerberichte",
+        "bentoTitle7": "Sichere Infrastruktur",
+        "bentoSubTitle1": "Verfolgen Sie Verkaufsleistungen nach Produkt, Standort und Zeitraum über intuitive Diagramme und Grafiken.",
+        "bentoSubTitle2": "Optimieren Sie Lagerbestände und minimieren Sie Ausfallzeiten mit Echtzeit-Bestandsüberwachung und automatischen Auffüllbenachrichtigungen.",
+        "bentoSubTitle3": "Erstellen und verbreiten Sie ansprechende Werbung auf den Bildschirmen Ihrer Automaten, um den Umsatz zu steigern.",
+        "bentoSubTitle4": "Überwachen Sie Maschinenstatus, planen Sie Wartungen und beheben Sie technische Probleme aus der Ferne.",
+        "bentoSubTitle5": "Verwalten Sie Kundenmitgliedschaften, Rabatte und Gutscheine zur Steigerung der Kundenbindung.",
+        "bentoSubTitle6": "Erstellen Sie genaue monatliche Steuerberichte für eine vereinfachte Einhaltung gesetzlicher Vorgaben.",
+        "bentoSubTitle7": "Profitieren Sie von einem sicheren und zuverlässigen AWS-gehosteten System für Datenschutz und Geschäftskontinuität.",
+        "Specifications": "Spezifikationen",
+        "SalesPerformance": "Verkäufe & Leistung",
+        "salespoints1": "Verkaufsberichte (täglich, wöchentlich, monatlich, jährlich)",
+        "salespoints2": "Leistungsanalysen (Produkt, Kategorie, Maschine)",
+        "salespoints3": "Fehlerbenachrichtigungen",
+        "salespoints4": "Benutzerrechte",
+        "Machines": "Maschinen",
+        "machinepoints1": "Echtzeit-Maschinenstatus",
+        "machinepoints2": "Bestellhistorie verfolgen",
+        "machinepoints3": "Werbekampagnen verwalten",
+        "machinepoints4": "Zugriff auf Berichte",
+        "machinepoints5": "Bestandsniveaus anzeigen",
+        "machinepoints6": "Verkaufsdaten analysieren",
+        "machinepoints7": "Maschinen organisieren",
+        "Products": "Produkte",
+        "Productspoints1": "Einfache Produkteinrichtung",
+        "Productspoints2": "Flexible Produktorganisation",
+        "Productspoints3": "Präzise Bestandskontrolle",
+        "Productspoints4": "Dynamische Preisgestaltung",
+        "Productspoints5": "Bestandsniveaus anzeigen",
+        "Productspoints6": "Gezielte Werbeaktionen",
+        "Productspoints7": "Verwaltung von Nährwertangaben",
+        "Productspoints8": "Präzise Temperaturkontrolle",
+        "user": "Benutzer",
+        "userpoints1": "Benutzerprofilverwaltung",
+        "userpoints2": "Rollenbasierte Zugriffskontrolle",
+        "userpoints3": "Anpassbare Unternehmenssegmentierung",
+        "ourExpertise": "Unsere Expertise",
+        "ExpCardTitile1": "Cloud-Migration",
+        "ExpCardTitile2": "Cloud-Sicherheit",
+        "ExpCardTitile3": "Individuelle Cloud-Lösungen",
+        "ExpCardTitile4": "Cloud-Optimierung",
+        "ExpCardTitile5": "Verwaltete Cloud-Dienste",
+        "ExpCardSubTitile1": "Migrieren Sie Ihre Infrastruktur nahtlos in die Cloud, um Ausfallzeiten zu minimieren und Effizienz zu maximieren.",
+        "ExpCardSubTitile2": "Schützen Sie Ihre sensiblen Daten mit robusten Sicherheitsmaßnahmen und sorgen Sie für Compliance und Sicherheit.",
+        "ExpCardSubTitile3": "Wir entwickeln und implementieren maßgeschneiderte Cloud-Lösungen, die Ihre individuellen Geschäftsanforderungen erfüllen.",
+        "ExpCardSubTitile4": "Wir optimieren Ihre Cloud-Umgebung für maximale Leistung und Kosteneffizienz.",
+        "ExpCardSubTitile5": "Wir bieten laufende Wartung und proaktive Unterstützung, damit sich Ihr IT-Team auf strategische Initiativen konzentrieren kann.",
+        "ReadyNAFCloud": "Bereit, das NAF Cloud-System in Aktion zu sehen?",
+        "readyBalls1": "Zeit sparen",
+        "readyBalls2": "Umsatz steigern",
+        "readyBalls3": "Kosten senken",
+        "readyBalls4": "Effizienz verbessern",
+        "readyBalls5": "Geschäft skalieren",
+        "readyBalls6": "Bessere Entscheidungen treffen",
+        "GETIN": "KONTAKTIEREN",
+        "TOUCH": "SIE UNS",
+        "softwareEnd": "SoftwareEnde"
+    },
+    "insights": {
+        "heroTitle": "Blogs & Einblicke",
+        "Blog": "Blog",
+        "blogsfilter1": "Alle",
+        "blogsfilter2": "Blogs",
+        "blogsfilter3": "Veranstaltungen",
+        "blogsfilter4": "Nachrichten",
+        "Blogs": "Blogs",
+        "All": "Alle",
+        "Events": "Veranstaltungen",
+        "News": "Nachrichten",
+        "back": "Zurück",
+        "next": "Weiter",
+        "tableContent": "Inhaltsverzeichnis"
+    },
+    "about": {
+        "heroTitleline1": "WIR SIND",
+        "heroSubTitleline": "Ein führender Anbieter von innovativen Automatenlösungen, der sich verpflichtet hat, moderne Produkte und Dienstleistungen anzubieten, die den sich wandelnden Bedürfnissen von Verbrauchern und Unternehmen gerecht werden.",
+        "heroTitleline2": "DIE NEUE ÄRA DER LEBENSMITTEL,",
+        "YOUR": "DEIN",
+        "heroTitleline3": "PARTNER FÜR INNOVATIVE",
+        "heroTitleline4": "VENDING-LÖSUNGEN",
+        "About": "Über uns",
+        "mission": "Mission",
+        "vision": "Vision",
+        "AboutText1": "NAF Germany wurde 2024 mit der Vision gegründet, das Automaten-Erlebnis zu revolutionieren. Wir sahen die Möglichkeit, innovative Technologie mit zuverlässiger Hardware zu kombinieren, um Lösungen zu schaffen, die den Bedürfnissen moderner Unternehmen gerecht werden.",
+        "AboutText2": "Seitdem sind wir bestrebt, die Grenzen der Automaten-Technologie zu verschieben und moderne Funktionen und Designs zu entwickeln, die uns von der Konkurrenz abheben.",
+        "AboutText3": "Von Anfang an haben wir Qualität, Zuverlässigkeit und Kundenzufriedenheit in den Vordergrund gestellt. Wir sind stolz darauf, mit Unternehmen aus verschiedenen Branchen zusammenzuarbeiten und ihnen zu helfen, ihre Abläufe zu optimieren und ihre Ergebnisse zu steigern.",
+        "missionText1": "Wir gestalten die Zukunft der Gastronomie – mit innovativen Lebensmittelautomaten, die Qualität, Nachhaltigkeit und Bequemlichkeit vereinen. Unser Ziel ist es, echte Alternativen anzubieten: gegen Personalmangel, steigende Kosten und starre Öffnungszeiten. Wir schaffen Lösungen, die den Menschen rund um die Uhr gute Lebensmittel bieten – flexibel, effizient und in höchster Qualität.",
+        "visionText1": "Wir stellen uns eine Welt vor, in der gesunde, hochwertige Lebensmittel jederzeit und überall verfügbar sind – digital vernetzt, nachhaltig produziert und intuitiv nutzbar. Mit unseren Automatenlösungen wollen wir führend in einer neuen Ära der Gastronomie sein, die Menschen, Technologie und Verantwortung vereint.",
+        "MeetTeam": "Lerne das Team kennen",
+        "AwardsRecognitions": "Auszeichnungen & Anerkennungen",
+        "award1": "Gründerpreis 'Lebendiges Stadtzentrum'",
+        "awards": {
+            "award1": {
+                "title": "Gründerwettbewerb 2023"
+            },
+            "award2": {
+                "title": "„Fresh Otto“ macht Appetit: Neuer Verkaufsautomat in Freiberg startet"
+            },
+            "award3": {
+                "title": "Kulinarischer Test in Freiberg: Wie schmeckt das Essen aus den New Age of Food Automaten?"
+            },
+            "award4": {
+                "title": "Moderne Mittagspause: Business Center Gizef in Freiberg setzt auf Automaten"
+            },
+            "award5": {
+                "title": "Innovationen im Gasthof Halsbach: Warum ein indischer Computer-Spezialist in die marokkanisch-deutsche Küche eingreift"
+            },
+            "award6": {
+                "title": "NAF – Den automatisierten Lebensmittellieferdienst neu denken"
+            },
+            "award7": {
+                "title": "New Age of Food: Freiberg zeigt, wie modern Verkaufsautomaten für Lebensmittel sein können"
+            },
+            "award8": {
+                "title": "Frische Lebensmittel aus dem Automaten"
+            }
+        },
+        "OurValues": "Unsere Werte",
+        "OurValuesubTilte": "Die Grundprinzipien, die unser Unternehmen vorantreiben",
+        "ValueTitle1": "Innovation",
+        "ValueTitle2": "Qualität",
+        "ValueTitle3": "Zuverlässigkeit",
+        "ValueTitle4": "Kundenzufriedenheit",
+        "ValuesubTitle1": "Wir innovieren, um zukunftsweisende Lösungen für die Bedürfnisse deines Unternehmens zu schaffen.",
+        "ValuesubTitle2": "Wir liefern hochwertige, zuverlässige Dienstleistungen, die auf langfristigen Erfolg ausgelegt sind.",
+        "ValuesubTitle3": "Wir garantieren zuverlässige Lösungen mit maximaler operativer Effizienz.",
+        "ValuesubTitle4": "Wir stellen die Bedürfnisse unserer Kunden in den Mittelpunkt und übertreffen ihre Erwartungen bei jeder Interaktion."
+    },
+    "menu": {
+        "menuherotitle": "Was gibt’s im Automaten? Entdecke unsere Live- und Monatsmenüs!",
+        "menuheroSubtitle1": "Finde frische Speisen an einem Automaten in deiner Nähe",
+        "menuheroSubtitle2": "Erkunde unser aktuelles Inventar und entdecke köstliche Speisen und Snacks, die in unseren Automaten in der Stadt verfügbar sind. Preise vergleichen, Angebote entdecken und deinen perfekten Snack finden.",
+        "SelectMachineLocation": "Automatenstandort auswählen",
+        "DietaryPreferences": "Ernährungspräferenzen",
+        "Berlin": "Berlin",
+        "ViewMore": "Mehr anzeigen",
+        "Viewless": "Weniger anzeigen",
+        "BerlinCheckpoint1": "Alexanderplatz Bahnhof",
+        "BerlinCheckpoint2": "Berlin Hauptbahnhof",
+        "munich": "München",
+        "FoodLabeling": "Kennzeichnung",
+        "munichCheckpoint1": "Marienplatz U-Bahn Station",
+        "munichCheckpoint2": "Flughafen München (MUC)",
+        "hamberg": "Hamburg",
+        "hambergCheckpoint1": "Hamburg Hauptbahnhof",
+        "hambergCheckpoint2": "St. Pauli Reeperbahn",
+        "FoodPreferences": "Essenspräferenzen",
+        "Vegetarian": "Vegetarisch",
+        "FishFree": "Fischfrei",
+        "GlutenFree": "Glutenfrei",
+        "LactoseFree": "Laktosefrei",
+        "HighProtein": "Proteinreich",
+        "vegan": "Vegan",
+        "Apply": "Anwenden",
+        "Reset": "Zurücksetzen",
+        "MonthlyMenu": "Monatsmenü",
+        "Vegetarisch": "Vegetarisch",
+        "Schwwein": "Schwein",
+        "Lamm": "Lamm",
+        "Rind": "Rind",
+        "location": "Standort",
+        "Huhnchen": "Hühnchen",
+        "Allergene": "Allergene",
+        "monthlyMenu": "Monatsspeiseplan",
+        "memberdhipTitle1": "Exklusive Vorteile freischalten",
+        "memberdhipTitle2": "mit einer NAF-Mitgliedskarte!",
+        "memberdhipSubTitle": "Genieße schnellere Bezahlung, exklusive Rabatte und bequemen Zugang zu deinen Lieblingsautomaten",
+        "APPLY": "ANWENDEN",
+        "NOW": "JETZT",
+        "manuend": "Ende"
+    },
+    "contactus": {
+        "heroTitle": "Gemeinsam können wir außergewöhnliche Dinge tun.",
+        "heroSubTitle1": "Kontaktieren Sie uns",
+        "heroSubTitle2": "Kontakt",
+        "heroSubTitle3": "Soziale Medien",
+        "mailId": "info@naf-halsbach.de",
+        "phonenumber1": "0152 – 28387141 (Odette Lamkhizni)",
+        "phonenumber2": "0162 – 1638005 (Technischer Support 24/7)",
+        "SubmitForm": "Formular absenden",
+        "ScheduleCall": "Anruf vereinbaren",
+        "Email": "E-Mail",
+        "FullName": "Vollständiger Name",
+        "typeofHelp": "Wie können wir helfen?*",
+        "General": "Allgemein",
+        "DemoRequest": "Demo-Anfrage",
+        "PartnershipInquiry": "Partnerschaftsanfrage",
+        "SalesInquiry": "Verkaufsanfrage",
+        "TechnicalSupport": "Technischer Support",
+        "FranchiseEnquiry": "Franchise-Anfrage",
+        "Others": "Sonstiges",
+        "Message": "Nachricht",
+        "privacypolicy1": "Ich verstehe, dass NAF Germany meine Daten gemäß ihrer",
+        "privacypolicy2": "Datenschutzrichtlinie",
+        "personrole1": "Für Marketinganfragen",
+        "personrole2": "Für Internationale Verkaufsanfragen",
+        "personrole3": "Für technische Anfragen",
+        "personName1": "Odette Lamkhizni",
+        "personName2": "Abdelilah Lamkhizni",
+        "personName3": "Sri Satya Sai Kanna Dhulipudi",
+        "reachDirectly": "Oder kontaktieren Sie uns direkt",
+        "location": "Standort",
+        "locationline1": "Obere Straße 3,",
+        "locationline2": "09599 Freiberg,",
+        "locationline3": "OT Halsbach",
+        "MachineLocation": "Automatenstandorte",
+        "MachineLocation1text1": "DBI Foyer Freiberg,",
+        "MachineLocation1text2": "Halsbrückerstraße 34, 09599",
+        "MachineLocation1text3": "Freiberg",
+        "MachineLocation2text1": "Landratsamt Mittweida Gebäude A,",
+        "MachineLocation2text2": "Am Landratsamt 3, 09648",
+        "MachineLocation2text3": "Mittweida",
+        "Curious": "Neugierig auf mehr?",
+        "SUBMIT": "ABSENDEN",
+        "FORM": "FORMULAR",
+        "NOW": "JETZT",
+        "Pleasespecify": "Bitte angeben",
+        "contactend": "ende"
+    },
+    "membership": {
+        "title_login_signup": "Anmelden/Registrieren",
+        "label_enter_email": "Geben Sie Ihre E-Mail ein",
+        "label_enter_mpin": "Geben Sie Ihre MPIN ein",
+        "Include_Wallet_balance": "Wallet-Guthaben einschließen",
+        "label_enter_details": "Geben Sie Ihre Daten ein",
+        "field_email": "E-Mail",
+        "field_mpin": "MPIN",
+        "field_confirm_mpin": "MPIN bestätigen",
+        "field_first_name": "Vorname",
+        "field_last_name": "Nachname",
+        "field_phone_number": "Telefonnummer",
+        "btn_submit": "ABSENDEN",
+        "btn_now": "JETZT",
+        "helper_mpin_digits": "MPIN muss genau 6 Ziffern haben",
+        "helper_mpin_match": "MPINs stimmen nicht überein",
+        "terms_conditions_text1": "Ich stimme zu ",
+        "terms_conditions_text2": " Ich stimme zu, Informationen über Ihre Waren, Vorteile, Aktionen und Prämien per E-Mail zu erhalten.*",
+        "terms_conditions_link": "Allgemeine Geschäftsbedingungen",
+        "msg_terms_required": "❌ Sie müssen den Allgemeinen Geschäftsbedingungen zustimmen",
+        "msg_enter_valid_email": "❌ Bitte geben Sie eine gültige E-Mail ein",
+        "msg_email_verified": "✅ E-Mail verifiziert. Bitte geben Sie Ihre MPIN ein.",
+        "msg_email_not_found": "ℹ️ E-Mail nicht gefunden. Bitte registrieren Sie sich.",
+        "msg_error_checking_email": "❌ Fehler beim Überprüfen der E-Mail",
+        "msg_mpin_six_digits": "❌ MPIN muss genau 6 Ziffern haben",
+        "msg_login_successful": "✅ Anmeldung erfolgreich",
+        "msg_invalid_mpin": "❌ Ungültige MPIN",
+        "msg_login_failed": "❌ Anmeldung fehlgeschlagen",
+        "msg_first_name_required": "❌ Vorname ist erforderlich",
+        "msg_last_name_required": "❌ Nachname ist erforderlich",
+        "msg_valid_phone_required": "❌ Bitte geben Sie eine gültige Telefonnummer ein (7–15 Ziffern)",
+        "msg_registration_successful": "✅ Registrierung erfolgreich. Sie werden eingeloggt...",
+        "msg_signup_auto_login_failed": "⚠️ Registrierung erfolgreich, aber automatisches Einloggen fehlgeschlagen. Bitte manuell anmelden.",
+        "msg_registration_failed": "❌ Registrierung fehlgeschlagen",
+        "msg_error_registration": "❌ Fehler bei der Registrierung",
+        "label_welcome": "Willkommen",
+        "label_membership": "Mitgliedschaft",
+        "btn_logout": "Abmelden",
+        "title_transaction_history": "Verlauf",
+        "btn_download": "Herunterladen",
+        "col_time": "Zeit",
+        "col_date": "Datum",
+        "col_location": "Standort",
+        "col_quantity": "Menge",
+        "col_type": "Typ",
+        "col_amount": "Betrag",
+        "type_credit": "Gutschrift",
+        "type_debit": "Lastschrift",
+        "msg_no_transactions": "Keine Transaktionen gefunden",
+        "label_available_balance": "Verfügbares Guthaben",
+        "btn_add_balance": "Guthaben +",
+        "dialog_top_up_balance": "Guthaben aufladen",
+        "field_amount_euro": "Betrag (€)",
+        "btn_cancel": "Abbrechen",
+        "btn_top_up": "Aufladen",
+        "msg_enter_valid_amount": "Bitte geben Sie einen gültigen Betrag ein",
+        "msg_redirecting_payment": "Weiterleitung zur Zahlung...",
+        "msg_payment_link_not_found": "Zahlungslink nicht gefunden. Bitte versuchen Sie es erneut.",
+        "msg_failed_payment_link": "Fehler beim Erstellen des Zahlungslinks. Bitte versuchen Sie es erneut.",
+        "msg_payment_canceled": "Zahlung abgebrochen.",
+        "label_view_edit_profile": "Profil ansehen/bearbeiten",
+        "field_first_name_profile": "Vorname",
+        "field_last_name_profile": "Nachname",
+        "field_email_profile": "E-Mail",
+        "field_phone_profile": "Telefon",
+        "field_address_line1": "Adresszeile 1",
+        "field_address_line2": "Adresszeile 2",
+        "field_city": "Stadt",
+        "field_state": "Bundesland",
+        "field_zip_postal": "PLZ",
+        "btn_save": "Speichern",
+        "btn_saving": "Speichert...",
+        "msg_profile_updated_success": "Profil erfolgreich aktualisiert ✅",
+        "msg_profile_update_failed": "Profilaktualisierung fehlgeschlagen ❌",
+        "msg_loading": "Lädt...",
+        "title_payment": "Zahlung",
+        "label_total_amount_to_be_paid": "Zu zahlender Gesamtbetrag",
+        "btn_pay_using_wallet": "Mit Brieftasche bezahlen",
+        "title_payment_successful": "Zahlung erfolgreich",
+        "label_successful": "Erfolgreich",
+        "link_back_to_main_page": "Zurück zur Hauptseite",
+        "title_payment_failed": "Zahlung fehlgeschlagen",
+        "btn_try_again": "Erneut versuchen",
+        "label_or": "oder",
+        "msg_pay_directly_machine": "Direkt am Automaten bezahlen",
+        "msg_using_credit_debit_card": "mit Kredit-/Debitkarte",
+        "msg_insufficient_balance": "Unzureichendes Guthaben",
+        "msg_processing": "Verarbeitung...",
+        "msg_mpin_must_be_6_digits": "Die MPIN muss genau 6 Ziffern enthalten",
+        "msg_mpin_not_match": "MPIN und Bestätigungs-MPIN stimmen nicht überein",
+        "msg_mpin_reset_sent": "Der MPIN-Zurücksetzlink wurde an Ihre E-Mail gesendet",
+        "msg_request_failed": "Anfrage fehlgeschlagen. Bitte versuchen Sie es erneut",
+        "msg_something_wrong": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut"
+    },
+    "memebersLogin": {
+        "MembershipTitle": "Mitgliedschafts-Login",
+        "MembershipSubTitle": "Melden Sie sich mit Ihren Mitgliedskartendaten an, um auf Ihr Konto zuzugreifen, Ihre Kaufhistorie einzusehen und exklusive Mitgliedervorteile zu genießen.",
+        "applyMembership": "Mitgliedschaft beantragen?",
+        "Login": "Anmelden",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "ForgotPassword": "Passwort vergessen?",
+        "ForgotMpin": "MPIN vergessen?",
+        "privacypolicy": "Ich verstehe, dass NAF Germany meine Daten gemäß ihrer Datenschutzerklärung sicher aufbewahrt",
+        "Membershipend": "ende"
+    },
+    "memebersSignup": {
+        "MembershipTitle": "Exklusive Vorteile mit unserer Mitgliedskarte freischalten",
+        "MembershipSubTitle": "Holen Sie sich Ihre NAF-Mitgliedskarte und erleben Sie ein neues Maß an Komfort und Ersparnissen an unseren Automaten.",
+        "Benefits": "Vorteile",
+        "FasterCheckout": "Schnellere Bezahlung",
+        "EasyPurchaseTracking": "Einfache Kaufverfolgung",
+        "ExclusiveDiscounts": "Exklusive Rabatte",
+        "ManageYourAccount": "Verwalten Sie Ihr Konto",
+        "GetYourMembership": "So erhalten Sie Ihre Mitgliedskarte",
+        "MembershipPoint1": "Füllen Sie das Anmeldeformular unten aus",
+        "MembershipPoint2": "Wir bereiten Ihre voraktivierte Karte vor und senden sie",
+        "MembershipPoint3": "Genießen Sie Mitgliedervorteile!",
+        "membershipformTitle": "Mitgliedskarte beantragen",
+        "Filltheform": "Formular ausfüllen",
+        "Choosetype": "Typ auswählen*",
+        "Contact": "Kontakt",
+        "FirstName": "Vorname*",
+        "LastName": "Nachname*",
+        "E-mail": "E-Mail*",
+        "Telephone number": "Telefonnummer*",
+        "Address": "Adresse",
+        "StreetAddress": "Straße und Hausnummer*",
+        "City": "Stadt*",
+        "PostalZipCode": "Postleitzahl*",
+        "General": "Allgemein",
+        "SelectGender": "Geschlecht auswählen*",
+        "Membershipstartdate": "Mitgliedschaftsbeginn*",
+        "TopupAmount": "Aufladebetrag",
+        "privacypolicy": "Ich verstehe, dass NAF Germany meine Daten gemäß ihrer Datenschutzerklärung sicher aufbewahrt",
+        "Membershipend": "ende"
+    },
+    "privacypolicy": {
+        "privacyPolicy": "Datenschutzerklärung",
+        "introductionTitle": "1. Einführung",
+        "introductionText": "New Age of Food („wir“, „uns“ oder „unser“) verpflichtet sich, Ihre Privatsphäre zu schützen. Diese Datenschutzerklärung beschreibt, wie wir Informationen erfassen, verwenden und weitergeben, wenn Sie unsere Website https://www.vendinaf.com nutzen.",
+        "infoCollectTitle": "2. Welche Informationen wir erfassen",
+        "personalInfoBold": "Personenbezogene Daten:",
+        "personalInfotext": " Informationen, die Sie identifizieren, wie Ihr Name, Ihre E-Mail-Adresse, Telefonnummer und Postanschrift. Wir erfassen diese Informationen, wenn Sie:",
+        "personalInfoList1": "Ein Konto auf unserer Website erstellen",
+        "personalInfoList2": "Ein Produkt oder eine Dienstleistung kaufen",
+        "personalInfoList3": "Unseren Newsletter abonnieren",
+        "personalInfoList4": "Uns über unsere Website kontaktieren",
+        "personalInfoList5": "Sich für eine Franchise-Möglichkeit bewerben",
+        "personalInfoList6": "Eine Serviceanfrage stellen",
+        "logDataBold": "Protokolldaten: ",
+        "logDatatext": "Informationen, die automatisch erfasst werden, wenn Sie unsere Website nutzen, wie Ihre IP-Adresse, Browsertyp, Betriebssystem, verweisende URLs, besuchte Seiten und Datum/Uhrzeit Ihrer Besuche.",
+        "cookiesTitle": "Cookies und ähnliche Technologien:",
+        "cookiesText": "Wir verwenden Cookies und ähnliche Technologien, um Informationen über Ihre Aktivitäten auf unserer Website zu sammeln. Cookies sind kleine Datendateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Wir verwenden Cookies, um:",
+        "cookiesList1": "Ihre Erfahrung zu personalisieren",
+        "cookiesList2": "Den Website-Verkehr zu analysieren",
+        "cookiesList3": "Gezielte Werbung anzuzeigen (falls zutreffend)",
+        "membershipCardBold": "Mitgliedskarteninformationen: ",
+        "membershipCardtext": "Für Inhaber einer Mitgliedskarte erfassen wir Informationen zu Ihrer Kartennummer und Ihrem Kaufverlauf.",
+        "clientAccountBold": "Kundenkontoinformationen: ",
+        "clientAccounttext": "Für unsere Geschäftskunden erfassen wir Informationen zu Benutzernamen, Passwörtern und Nutzungsdaten.",
+        "howWeUseTitle": "3. Wie wir Ihre Informationen verwenden",
+        "legalBasisBold": "Rechtsgrundlage für die Verarbeitung: ",
+        "legalBasistext": "Wir verarbeiten Ihre personenbezogenen Daten nur, wenn wir eine rechtliche Grundlage dafür haben. Dazu gehören:",
+        "legalBasisList1": "Ihre Einwilligung (z. B. für Marketingkommunikation)",
+        "legalBasisList2": "Die Erfüllung eines Vertrags mit Ihnen (z. B. zur Bearbeitung Ihrer Bestellungen)",
+        "legalBasisList3": "Einhaltung einer gesetzlichen Verpflichtung",
+        "legalBasisList4": "Unsere berechtigten Interessen (z. B. zur Verbesserung unserer Website und Dienstleistungen), sofern Ihre Interessen und Grundrechte diese nicht überwiegen.",
+        "shareInfoTitle": "4. Wie wir Ihre Informationen teilen",
+        "shareInfoText": "Wir können Ihre Informationen mit folgenden Dritten teilen:",
+        "shareInfoList1Bold": "Dienstleister: ",
+        "shareInfoList1text": " Wir teilen Informationen mit Drittanbietern, die uns beim Hosting der Website, der Zahlungsabwicklung, E-Mail-Marketing, Datenanalyse und anderen Dienstleistungen unterstützen. Wir haben Verträge mit diesen Dienstleistern, die sie zum Schutz Ihrer Daten verpflichten.",
+        "shareInfoList2Bold": "Geschäftspartner: ",
+        "shareInfoList2text": " Wir können Informationen mit unseren Geschäftspartnern teilen, um Ihnen Produkte oder Dienstleistungen anzubieten, die für Sie von Interesse sein könnten. (Dies erfolgt nur mit Ihrer Zustimmung.)",
+        "shareInfoList3Bold": "Behörden: ",
+        "shareInfoList3text": " Wir können Ihre Informationen an Behörden weitergeben, wenn dies gesetzlich vorgeschrieben ist.",
+        "choicesTitle": "5. Ihre Wahlmöglichkeiten",
+        "choicesText": "Sie haben folgende Wahlmöglichkeiten bezüglich Ihrer Informationen:",
+        "choicesList1Bold": "Zugang und Berichtigung: ",
+        "choicesList1text": " Sie haben das Recht, auf Ihre personenbezogenen Daten zuzugreifen und diese zu berichtigen.",
+        "choicesList2Bold": "Abmeldung von Marketingkommunikation:",
+        "choicesList2text": "Sie können sich jederzeit von Marketingkommunikation abmelden.",
+        "choicesList3Bold": "Cookies: ",
+        "choicesList3text": "Sie können Cookies über Ihre Browsereinstellungen steuern.",
+        "choicesList4Bold": "Recht auf Löschung („Recht auf Vergessenwerden“): ",
+        "choicesList4text": " Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten unter bestimmten Umständen zu verlangen.",
+        "choicesList5Bold": "Recht auf Einschränkung der Verarbeitung: ",
+        "choicesList5text": "Sie haben das Recht, die Verarbeitung Ihrer personenbezogenen Daten unter bestimmten Umständen einzuschränken.",
+        "choicesList6Bold": "Recht auf Datenübertragbarkeit: ",
+        "choicesList6text": " Sie haben das Recht, Ihre personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese an einen anderen Verantwortlichen zu übermitteln.",
+        "choicesList7Bold": "Widerspruchsrecht: ",
+        "choicesList7text": "Sie haben das Recht, der Verarbeitung Ihrer personenbezogenen Daten unter bestimmten Umständen zu widersprechen.",
+        "choicesList8Bold": "Recht auf Widerruf der Einwilligung: ",
+        "choicesList8text": "Wenn wir Ihre personenbezogenen Daten auf Grundlage Ihrer Einwilligung verarbeiten, haben Sie das Recht, diese Einwilligung jederzeit zu widerrufen.",
+        "securityTitle": "6. Datensicherheit",
+        "securityText": "Wir ergreifen angemessene Maßnahmen, um Ihre Informationen vor unbefugtem Zugriff, Nutzung oder Offenlegung zu schützen. Keine Methode der Übertragung über das Internet oder der elektronischen Speicherung ist jedoch 100 % sicher.",
+        "retentionTitle": "7. Aufbewahrung von Daten",
+        "retentionText": "Wir bewahren Ihre Informationen so lange auf, wie es zur Erfüllung der in dieser Datenschutzerklärung beschriebenen Zwecke erforderlich ist, es sei denn, eine längere Aufbewahrungsfrist ist gesetzlich vorgeschrieben oder zulässig.",
+        "childrenTitle": "8. Datenschutz für Kinder",
+        "childrenText": "Unsere Website richtet sich nicht an Kinder unter 13 Jahren. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Wenn Sie ein Elternteil oder Erziehungsberechtigter sind und glauben, dass Ihr Kind uns personenbezogene Daten bereitgestellt hat, kontaktieren Sie uns bitte.",
+        "linksTitle": "9. Links zu anderen Websites",
+        "linksText": "Unsere Website kann Links zu anderen Websites enthalten, die nicht von uns betrieben oder kontrolliert werden. Wir sind nicht für die Datenschutzpraktiken dieser anderen Websites verantwortlich. Wir empfehlen Ihnen, die Datenschutzrichtlinien jeder Website, die Sie besuchen, zu überprüfen.",
+        "transfersTitle": "10. Internationale Datenübertragungen",
+        "transfersText": "Wenn Sie auf unsere Website von außerhalb Deutschlands zugreifen, können Ihre Informationen nach Deutschland übertragen und dort gespeichert werden, wo sich unsere Server befinden. Um den Schutz Ihrer personenbezogenen Daten bei Übertragungen außerhalb des EWR zu gewährleisten, verwenden wir von der Europäischen Kommission genehmigte Standardvertragsklauseln mit unseren Dienstleistern.",
+        "gdprTitle": "11. Ihre Rechte nach der DSGVO",
+        "gdprText": "Wenn Sie im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte Rechte gemäß der Datenschutz-Grundverordnung (DSGVO). Diese Rechte umfassen:",
+        "gdprList1Bold": "Zugang und Berichtigung:",
+        "gdprList1text": "Sie haben das Recht, auf Ihre personenbezogenen Daten zuzugreifen und diese zu berichtigen. Sie können dies tun, indem Sie sich in Ihr Konto auf unserer Website einloggen oder uns direkt kontaktieren.",
+        "gdprList2Bold": "Abmeldung von Marketingkommunikation: ",
+        "gdprList2text": " Sie können sich von Marketingkommunikation abmelden, indem Sie auf den Link „Abmelden“ in unseren E-Mails klicken oder uns direkt kontaktieren.",
+        "gdprList3Bold": "Cookies: ",
+        "gdprList3text": "Sie können Cookies über Ihre Browsereinstellungen steuern.",
+        "gdprList4Bold": "Recht auf Löschung („Recht auf Vergessenwerden“):",
+        "gdprList4text": "Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten unter bestimmten Umständen zu verlangen.",
+        "gdprList5Bold": "Recht auf Einschränkung der Verarbeitung: ",
+        "gdprList5text": "Sie haben das Recht, die Verarbeitung Ihrer personenbezogenen Daten unter bestimmten Umständen einzuschränken.",
+        "gdprList6Bold": "Recht auf Datenübertragbarkeit:",
+        "gdprList6text": "Sie haben das Recht, Ihre personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese an einen anderen Verantwortlichen zu übermitteln.",
+        "gdprList7Bold": "Widerspruchsrecht:",
+        "gdprList7text": "Sie haben das Recht, der Verarbeitung Ihrer personenbezogenen Daten unter bestimmten Umständen zu widersprechen.",
+        "gdprList8Bold": "Recht auf Widerruf der Einwilligung:",
+        "gdprList8text": "Wenn wir Ihre personenbezogenen Daten auf Grundlage Ihrer Einwilligung verarbeiten, haben Sie das Recht, diese Einwilligung jederzeit zu widerrufen.",
+        "controllerTitle": "12. Verantwortlicher",
+        "controllerText": "New Age of Food ist der Verantwortliche für die Verarbeitung Ihrer personenbezogenen Daten.",
+        "changesTitle": "13. Änderungen dieser Datenschutzerklärung",
+        "changesText": "Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden alle Änderungen auf unserer Website veröffentlichen. Ihre fortgesetzte Nutzung unserer Website nach der Veröffentlichung der Änderungen gilt als Ihre Zustimmung zur überarbeiteten Datenschutzerklärung.",
+        "contactTitle": "14. Kontakt",
+        "contactText": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte unter:",
+        "contactAddress": "Obere Straße 3, 09599 Freiberg, OT Halsbach",
+        "contactEmail": "info@naf-halsbach.de",
+        "contactPhone": "0162 — 1638005 (Technischer Support 24/7)"
+    },
+    "footer": {
+        "Gotaproject": "Ein Projekt?",
+        "Gotaproject1": "Möchten Sie",
+        "Gotaproject2": "zusammenarbeiten?",
+        "subscrptionText": "Wir bieten innovatives Vending mit nahtloser Technologie und Design. Abonnieren Sie, um zu erfahren wie.",
+        "footerContact": "Kontakt",
+        "footergetIn": "KONTAKTIERE",
+        "footertouch": "UNS",
+        "footerCopyright": "© Urheberrecht ",
+        "footerCopyright2": ". Alle Rechte vorbehalten.",
+        "footerTermsConditions": "Allgemeine Geschäftsbedingungen",
+        "footerTitle": "Zusammenarbeiten",
+        "footerAddress": "Adresse"
+    },
+    "validation": {
+        "companyNameRequired": "Firmenname ist erforderlich.",
+        "installationAddressRequired": "Installationsadresse ist erforderlich.",
+        "numberOfEmployeesRequired": "Anzahl der Mitarbeiter ist erforderlich.",
+        "willingToPurchaseRequired": "Bitte wählen Sie die Kaufbereitschaft aus.",
+        "cateringPermitRequired": "Bitte wählen Sie eine Catering-Option.",
+        "contactPersonNameRequired": "Name der Kontaktperson ist erforderlich.",
+        "validEmailRequired": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "agreementRequired": "Sie müssen der Datenschutzrichtlinie zustimmen.",
+        "businessNameRequired": "Geschäftsname ist erforderlich.",
+        "submissionSuccess": "Formular erfolgreich übermittelt!",
+        "machineLocationRequired": "Standort der Maschine ist erforderlich.",
+        "problemCategoryRequired": "Problemkategorie ist erforderlich.",
+        "problemTypeRequired": "Problemtyp ist erforderlich.",
+        "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "fullNameRequired": "Der vollständige Name ist erforderlich.",
+        "messageRequired": "Die Nachricht ist erforderlich.",
+        "specifyCategory": "Bitte geben Sie Ihre Kategorie an.",
+        "acceptPrivacy": "Sie müssen die Datenschutzrichtlinie akzeptieren.",
+        "supportIssueSubmitted": "Support-Anfrage erfolgreich übermittelt!"
+    },
+    "faqs": {
+        "faqs1title": "Allgemeines über NAF",
+        "faqs2title": "NAF-Verkaufsautomaten – FAQs",
+        "faqs3title": "Design & Individualisierung",
+        "faqs4title": "Mehrwegsystem & Rückgabeautomaten",
+        "faqs5title": "Software & Cloud-System",
+        "question1": "Was ist NAF?",
+        "answer1": "NAF steht für „New Age of Food“ – ein innovatives Konzept für Gastronomie und Versorgung, das Verkaufsautomaten, nachhaltige Mehrwegverpackungen, intelligente Softwarelösungen und effiziente Vertriebsstrategien kombiniert.",
+        "question2": "Was ist das Ziel von NAF?",
+        "answer2": "Unser Ziel ist es, die Gastronomie neu zu denken: 24/7-Verpflegung ohne Personalknappheit, innovative Automatenlösungen, gesunde Mahlzeiten und eine finanziell attraktive Option für Unternehmen, Hotels, öffentliche Einrichtungen u. v. m.",
+        "question3": "Wer steckt hinter NAF?",
+        "answer3": "NAF wurde von Abdelilah Lamkhizni gegründet – mit langjähriger Erfahrung in Gastronomie, Hotellerie und Technologie. Das Unternehmen verbindet kulinarisches Know‑how mit digitalen Lösungen.",
+        "question4": "Was ist NAF und welche Automaten bietet ihr an?",
+        "answer4": "NAF steht für „New Age of Food“ und bietet eine digitale, innovative Lösung für die Gastronomie. Unsere Automaten servieren rund um die Uhr frische, hochwertige Mahlzeiten – ganz ohne Personal. Wir bieten:",
+        "list1": "Gourmet-Automat („3‑Minuten‑Restaurant“)",
+        "list2": "Rückgabeautomat",
+        "list3": "Pizza-Automat",
+        "list4": "Softeis-Automat",
+        "list5": "Zuckerwatte-Automat",
+        "list6": "Popcorn-Automat",
+        "list7": "Pommes-Automat",
+        "list8": "Bier-Automat (bald verfügbar)",
+        "list9": "Verpflegungsautomaten für Hotels, Fabriken, Tankstellen, Schulen etc.",
+        "answer4_2": "Jeder Automat ist mit modernster Technik ausgestattet und individuell anpassbar.",
+        "question5": "Wie funktionieren die NAF-Automaten?",
+        "answer5": "Unsere Automaten verfügen über smarte Steuersysteme und lassen sich kontaktlos per Karte, App oder Gutschein bedienen. Je nach Gerätetyp werden Speisen frisch serviert, tiefgekühlt gelagert und aufgewärmt oder frisch zubereitet.",
+        "question6": "Können die Automaten individuell gestaltet werden?",
+        "answer6": "Ja! Wir bieten Anpassungsmöglichkeiten.",
+        "question7": "Kann der Automat individuell gestaltet werden?",
+        "answer7": "Ja:",
+        "list10": "Standard: mit NAF‑Logo, kostenlos",
+        "list11": "Individuelles Design: 2.000 € Aufpreis",
+        "question8": "Ist eine digitale Menüanzeige möglich?",
+        "answer8": "Ja.",
+        "question9": "Welche Mehrweglösungen bietet NAF?",
+        "answer9": "Wir setzen auf ein nachhaltiges System mit Mehrwegbehältern und Rückgabeautomaten.",
+        "question10": "Wie funktioniert der Rückgabeautomat?",
+        "answer10": "Kunden scannen einen QR‑Code und geben den Behälter zurück. Die Pfandrückgabe erfolgt automatisch über Kundenkarte oder App.",
+        "question11": "Gibt es Förderungen für Rückgabeautomaten?",
+        "answer11": "Ja.",
+        "question12": "Was bietet das NAF‑Cloud‑System?",
+        "answer12": "",
+        "list12": "Telemetrie & Live‑Daten",
+        "list13": "Verkaufsanalysen",
+        "list14": "Temperaturkontrolle",
+        "list15": "Produktverwaltung",
+        "list16": "Coupon‑ & Rabattsystem",
+        "list17": "Benutzerverwaltung & Mitgliedskarten",
+        "answer12_2": "",
+        "question13": "Gibt es eine mobile App?",
+        "answer13": "Noch nicht – aber eine App ist in Entwicklung, um Käufe, Coupons, Feedback, Rückgaben und Zahlungen zu ermöglichen.",
+        "question14": "Welche Sprachen werden unterstützt?",
+        "answer14": "Mehrsprachigkeit ist integriert – ideal für Hotels, Tankstellen oder internationale Kunden."
+    },
+    "chatbot": {
+        "title": "NAF Assistent",
+        "welcomeMessage": "👋 Willkommen! Ich bin der NAF-Assistent — hier, um Ihnen bei unserem fortschrittlichen, nachhaltigen und KI-verstärkten Verkaufsautomaten-Ökosystem zu helfen.",
+        "inputPlaceholder": "Geben Sie hier Ihre Nachricht ein...",
+        "openChat": "Chat öffnen",
+        "closeChat": "Chat schließen",
+        "newConversation": "Neues Gespräch",
+        "sendMessage": "Nachricht senden",
+        "errorMessage": "Entschuldigung, ich konnte keine Antwort generieren.",
+        "connectionError": "Entschuldigung, es gab ein Verbindungsproblem. Bitte versuchen Sie es erneut.",
+        "infoBubble": "Hallo 👋 Ich bin NAF Chat-Assistent. Öffnen Sie den Chat für Ihre Anfragen"
+    },
+    "tradefairPopup": {
+        "title": "Erleben Sie die Zukunft der Gastronomie – Live auf der ISS GUT Leipzig",
+        "description": "Besuchen Sie NAF — New Age of Food am DEHOGA Sachsen Stand und entdecken Sie unsere intelligenten Verkaufsautomaten für warme Mahlzeiten, Pizzas und mehr.",
+        "offer": "Exklusive Messeangebote und Förderungsinformationen erwarten Sie!",
+        "learnMore": "Mehr erfahren"
+    },
+    "comingSoon": "Demnächst",
+    "imprints": {
+        "imprintTitle": "Impressum",
+        "companyNameTitle": "Firmenname: ",
+        "companyName": "NAF — New Age of Food UG (haftungsbeschränkt)",
+        "registeredAddressTitle": "Eingetragener Sitz: ",
+        "registeredAddressLine1": "Obere Straße 3, OT Halsbach",
+        "registeredAddressLine2": "09599 Freiberg, Sachsen, Deutschland",
+        "representedByTitle": "Vertreten durch: ",
+        "managingDirector": "Geschäftsführer: ",
+        "managingDirectorText": "Abdelilah Lamkhizni",
+        "ceo": "CEO: ",
+        "ceoText": "Odette Lamkhizni",
+        "contactTitle": "Kontakt: ",
+        "emailLabel": "E-Mail: ",
+        "emailAddress": "info@naf-halsbach.de",
+        "phoneLabel": "Telefon: ",
+        "phoneNumber": "0152 – 28387141",
+        "commercialRegisterTitle": "Handelsregistereintrag: ",
+        "registeredAtCourt": "Eingetragen beim Amtsgericht Chemnitz",
+        "registrationNumberLabel": "Registernummer",
+        "registrationNumber": "HRB 36768",
+        "vatIdTitle": "Umsatzsteuer-Identifikationsnummer (gemäß § 27a UStG): ",
+        "vatIdNumber": "DE369639178",
+        "responsibleForContentTitle": "Verantwortlich für den Inhalt (gemäß § 55 Abs. 2 RStV): ",
+        "responsiblePersonName": "Odette Lamkhizni",
+        "disputeResolutionTitle": "Streitschlichtung",
+        "disputeResolutionText1": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: ",
+        "odrLink": "https://ec.europa.eu/consumers/odr",
+        "disputeResolutionText2": "Unsere E-Mail-Adresse finden Sie oben im Impressum.",
+        "disputeResolutionText3": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+        "liabilityContentTitle": "Haftung für Inhalte",
+        "liabilityContentText": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.",
+        "liabilityContentText1": "Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+        "liabilityContentText2": "Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.",
+        "liabilityContentText3": "Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
+        "liabilityLinksTitle": "Haftung für Links",
+        "liabilityLinksText": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.",
+        "liabilityLinksText1": "Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.",
+        "liabilityLinksText2": "Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.",
+        "liabilityLinksText3": "Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
+        "copyrightTitle": "Urheberrecht",
+        "copyrightText": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.",
+        "copyrightText1": "Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.",
+        "copyrightText2": "Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet.",
+        "copyrightText3": "Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.",
+        "copyrightText4": "Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
+        "imageCreditsTitle": "Bild- und Medienquellen",
+        "imageCreditsText": "Einige auf dieser Website verwendete Bilder, Videos und Symbole stammen von:",
+        "unsplash": "Unsplash.com",
+        "pexels": "Pexels.com",
+        "freepik": "Freepik.com",
+        "nounProject": "The Noun Project",
+        "designImplementationTitle": "Design und Umsetzung",
+        "designImplementationText": "www.vendinaf.com"
+    },
+    "messelandingpage":{
+  "headline": "Die Zukunft der Gastronomie – Live auf der ISS GUT Leipzig",
+  "subheadline": "Erleben Sie die intelligenten Essensautomaten von NAF – New Age of Food am Stand der DEHOGA Sachsen. Von warmen Gerichten und Pizzen bis hin zu Desserts und smarten Rückgabestationen – wir verbinden Gastronomie, Technologie und Nachhaltigkeit.",
+  "buttonText": "Sichern Sie sich Ihr exklusives Messeangebot",
+  "translate": "Auf Englisch übersetzen",
+  "about": {
+    "title": "Über NAF – Innovation aus Sachsen",
+    "intro": "NAF – New Age of Food steht für die nächste Generation der Gastronomie. Unsere intelligenten Verkaufsautomaten verbinden Technologie mit Geschmack:",
+    "keyInnovations": "Hauptinnovationen",
+    "features": [
+      "24/7 frische Lebensmittel – ohne Personalbedarf",
+      "Nachhaltige Mehrwegsysteme – für einen grüneren Fußabdruck",
+      "Vollständige digitale Steuerung – über NAF Cloud System",
+      "Energieeffizient – Kühl- und Heizsysteme"
+    ],
+    "useCases": "Wir entwickeln maßgeschneiderte Lösungen für Hotels, Restaurants, Raststätten und öffentliche Einrichtungen."
+  },
+  "contact": {
+    "headline": "Kontakt aufnehmen & Messe-Vorteile sichern",
+    "fullName": "Vollständiger Name / Ansprechpartner",
+    "company": "Firma / Organisation",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "location": "Standort / Region",
+    "areasOfInterest": "Interessensbereiche (Alle zutreffenden auswählen)",
+    "interestsList": [
+      "Gourmet-Verkaufsautomat (warme Mahlzeiten)",
+      "Pizza-Verkaufsautomat",
+      "Softeis-Maschine",
+      "Snack-Automat",
+      "Getränkeautomat",
+      "Rückgabestation",
+      "NAF Cloud System & Softwarelösungen",
+      "Zuckerwatten Automat"
+    ],
+    "interestError": "Bitte wählen Sie mindestens einen Interessensbereich aus.",
+    "dehogaQuestion": "Sind Sie DEHOGA-Mitglied?",
+    "dehogaYes": "Ja, ich bin DEHOGA-Mitglied",
+    "dehogaNo": "Nein, noch nicht",
+    "dehogaAdvantage": "Perfekt! Sie qualifizieren sich automatisch für den DEHOGA-Mitgliedsvorteil von 500 €.",
+    "dehogaError": "Bitte wählen Sie Ihren DEHOGA-Mitgliedsstatus aus.",
+    "message": "Nachricht / Projektbeschreibung",
+    "gdprText": "Ich stimme der Speicherung und Verarbeitung meiner Daten zu Kontaktzwecken gemäß DSGVO zu.",
+    "gdprError": "Bitte akzeptieren Sie die Geschäftsbedingungen vor dem Absenden.",
+    "submitButton": "Absenden & Angebot sichern",
+    "thankYouTitle": "✅ Vielen Dank!",
+    "thankYouMessage": "Ihre Anfrage wurde erfolgreich übermittelt. Wir werden uns bald mit Ihnen in Verbindung setzen, um Ihre Messe-Vorteile zu besprechen!",
+    "closeButton": "Schließen"
+  },
+  "specials": {
+    "headline": "Exklusive Messe-Specials - ISS GUT Leipzig",
+    "earlyBird": {
+      "title": "Frühbucher-Rabatt",
+      "content": "Bestellen Sie vor dem 15. November 2025 und erhalten Sie einen Rabatt pro Maschine.",
+      "listItems": [
+        "Sparen Sie 1.000 € pro Maschine",
+        "Gültig für alle neuen Maschinenbestellungen",
+        "Angebot endet am 15. November 2025"
+      ]
+    },
+    "dehoga": {
+      "title": "DEHOGA-Mitgliedervorteil",
+      "content": "Als offizieller DEHOGA-Partner erhalten alle Mitglieder einen zusätzlichen Rabatt pro NAF-Verkaufsautomat.",
+      "listItems": [
+        "Zusätzlich 500 € Rabatt pro Maschine",
+        "Einfach Mitgliedschaft im Formular angeben",
+        "Rabatt wird automatisch angewendet"
+      ]
+    },
+    "prizeDraw": {
+      "title": "Gewinnspiel",
+      "content": "Alle Teilnehmer nehmen automatisch an unserer Verlosung für ein kostenloses digitales NAF Cloud System-Upgrade teil.",
+      "listItems": [
+        "Gewinnen Sie 6 Monate NAF Cloud System kostenlos!",
+        "Inklusive vollem Zugang und Support",
+        "Automatische Teilnahme für alle Besucher"
+      ]
+    },
+    "validityNote": "Angebote gültig bis 15. November 2025 – exklusiv für ISS GUT Leipzig Besucher.",
+    "ctaButton": "Sichern Sie sich Ihr exklusives Messeangebot"
+  },
+  "copyright": "© Urheberrecht 2025. Alle Rechte vorbehalten.",
+  "imprint": "Impressum",
+  "privacy": "Datenschutzerklärung",
+    "exploreTitle": "Erfahren Sie mehr über NAF & Fördermöglichkeiten",
+  "exploreSubtitle": "Erleben Sie, wie NAF die Zukunft der Gastronomie mit intelligenten Automaten, digitaler Innovation und Nachhaltigkeit gestaltet – und wie Sie von Förderprogrammen in Sachsen profitieren können.",
+  "downloadPdf": "NAF PDF herunterladen",
+  "downloadPdf1": "Förderung PDF herunterladen"
+},
+"products": {
+    "gourmetMachine": {
+        "title": "Gourmet-Verkaufsautomat",
+        "subtitle": "Verkaufsautomaten der nächsten Generation mit fortschrittlichem Heizsystem. Entwickelt für moderne Gastronomiebetriebe.",
+        "tabs": {
+            "overview": "Übersicht",
+            "specifications": "Spezifikationen",
+            "installation": "Installation",
+            "operation": "Bedienung",
+            "maintenance": "Wartung",
+            "troubleshooting": "Fehlerbehebung",
+            "errorCodes": "Fehlercodes",
+            "safety": "Sicherheit",
+            "serviceWarranty": "Service & Garantie"
+        },
+        "overview": {
+            "machineComponents": "Maschinenkomponenten",
+            "productRequirements": "Produktanforderungen",
+            "heatingSystemSafety": "Sicherheit des Heizsystems",
+            "features": {
+                "multiProductSupport": {
+                    "title": "Multi-Produkt-Unterstützung",
+                    "description": "Unterstützt wiederverwendbare Verpackungen einschließlich zubereiteter Speisen mit starker Kühlung zur Gewährleistung der Frische der Zutaten"
+                },
+                "highPerformanceHeating": {
+                    "title": "Hochleistungsheizung",
+                    "description": "Automatisches Hochleistungs-Heizsystem mit schneller Wärmeleitung, gleichmäßiger Erwärmung, einstellbarer Heizzeit und schnellem Heizmodus"
+                },
+                "safetyFeatures": {
+                    "title": "Sicherheitsmerkmale",
+                    "description": "Doppelte Förderabdeckungen, sanfte Produktausgabe, automatische Türen mit Quetschschutz und intelligenter Sensorsteuerung"
+                },
+                "transportMechanism": {
+                    "title": "Transportmechanismus",
+                    "description": "Produkte werden über einen Transportschlitten ohne Fallhöhe zur Ausgabestelle geliefert"
+                },
+                "cloudServicePlatform": {
+                    "title": "Cloud-Service-Plattform",
+                    "description": "Bietet jederzeit und überall Zugang zu Verkaufsinformationen, Maschinenstatus, Echtzeit-Datenanalyse, Berichterstattung und Verwaltung"
+                },
+                "backgroundControl": {
+                    "title": "Hintergrundsteuerung",
+                    "description": "Intelligente Temperaturregelung, Fernsteuerung ein/aus, Reset, Produktausgabe über Cloud-System"
+                }
+            }
+        },
+        "specifications": {
+            "title": "Vollständige technische Spezifikationen",
+            "height": "Höhe",
+            "heightValue": "2320 mm",
+            "width": "Breite",
+            "widthValue": "1700 mm",
+            "depth": "Tiefe",
+            "depthValue": "1028 mm",
+            "netWeight": "Nettogewicht",
+            "netWeightValue": "~640 kg",
+            "maxProductTypes": "Max. Produkttypen",
+            "maxProductTypesValue": "28",
+            "storageCapacity": "Lagerkapazität",
+            "storageCapacityValue": "110-168 Stück (abhängig von der Produktgröße)",
+            "temperatureRange": "Temperaturbereich",
+            "temperatureRangeValue": "Kühlung: 0℃-25℃, Gefrieren: -18℃-0℃",
+            "power": "Leistung",
+            "powerValue": "4200W, 50/60 Hz",
+            "screen": "Bildschirm",
+            "screenValue": "32-Zoll-LCD / 27-Zoll-Bildschirm",
+            "paymentMethods": "Zahlungsmethoden",
+            "paymentMethodsValue": "Kredit-/Debitkarte, Mobile Zahlung, Nayax-System",
+            "standardLevels": "Standardebenen",
+            "standardLevelsValue": "7 Ebenen mit je 4 Ausgabekanälen",
+            "expandableTo": "Erweiterbar auf",
+            "expandableToValue": "8 Ebenen mit je 8 Kanälen",
+            "machineColor": "Maschinenfarbe",
+            "machineColorValue": "Standard Orange",
+            "powerRequirements": "Stromanforderungen",
+            "powerRequirementsValue": "2 Schuko-Steckdosen / 2 Stromkreise erforderlich"
+        },
+        "installation": {
+            "title": "Vollständige technische Spezifikationen",
+            "installationProcedure": "Installationsverfahren",
+            "childSafetyGuidelines": "Kindersicherheitsrichtlinien",
+            "requirements": {
+                "floorRequirements": {
+                    "title": "Bodenanforderungen",
+                    "desc": "Muss eben und fest sein, ohne Gefälle oder Wasseransammlung. Die Basis muss auf einer geraden Linie stehen."
+                },
+                "location": {
+                    "title": "Standort",
+                    "desc": "Idealerweise innen. Bei Außenaufstellung schattigen Bereich abseits direkter Sonneneinstrahlung wählen. Die Vorderseite sollte niemals nach Osten oder Westen zeigen."
+                },
+                "weatherProtection": {
+                    "title": "Wetterschutz",
+                    "desc": "Außeninstallationen erfordern einen Regenschutz, der 40 cm über der Maschine, 35 cm an den Seiten/Rückseite, 100 cm vorne mit 40 cm Vorhängen reicht. Das Dach darf nicht transparent sein."
+                },
+                "simCardSelection": {
+                    "title": "SIM-Karten-Auswahl",
+                    "desc": "A: Wählen Sie einen Netzanbieter mit dem stärksten Signal im Bereich. Testen Sie das Signal vor Ort. B: Wenn die Maschine drinnen ist und das 4G-Signal schwach ist, verwenden Sie ein LAN-Kabel und WLAN."
+                },
+                "electricalRequirements": {
+                    "title": "Elektrische Anforderungen",
+                    "desc": "4200W Kapazität erfordert geeignete Kabel/Steckdosen zur Vermeidung von Überlastung. Alle externen Steckdosen müssen über ordnungsgemäße Erdung verfügen."
+                },
+                "ventilation": {
+                    "title": "Belüftung",
+                    "desc": "Die Maschine muss mindestens 50 cm Belüftungsabstand an den Kühlkammern haben für effektive Kühlung und niedrigen Energieverbrauch."
+                }
+            }
+        },
+        "operation": {
+            "title": "Bedienungsanleitung",
+            "adminSystemAccess": "Administrator-Systemzugriff",
+            "memberCardSystem": "Mitgliedskartensystem",
+            "purchaseFlow": {
+                "step1": {
+                    "title": "Produktauswahl",
+                    "description": "Durchsuchen Sie Produkte auf dem Bildschirm und wählen Sie Ihren gewünschten Artikel aus"
+                },
+                "step2": {
+                    "title": "Zahlung wählen",
+                    "description": "Wählen Sie Ihre bevorzugte Zahlungsmethode und klicken Sie auf \"Jetzt kaufen\""
+                },
+                "step3": {
+                    "title": "QR-Code scannen",
+                    "description": "Scannen Sie den QR-Code, um Ihre Zahlung sicher abzuschließen"
+                },
+                "step4": {
+                    "title": "Bestellbestätigung",
+                    "description": "Warten Sie auf die Zahlungsbestätigung und Bestellbestätigung"
+                },
+                "step5": {
+                    "title": "Produkt abholen",
+                    "description": "Holen Sie Ihr Produkt an der Ausgabestelle ab"
+                }
+            }
+        },
+        "maintenance": {
+            "title": "Wartungsplan",
+            "heatingSafetyNotes": "Sicherheitshinweise zum Heizsystem",
+            "heatingSafetyText": "Stellen Sie sicher, dass nur geeignete Materialien im Hochleistungs-Heizsystem erhitzt werden. Verwenden Sie keine Metallbehälter oder versiegelte Produkte, um Schäden und Sicherheitsrisiken zu vermeiden.",
+            "safetyPoints": {
+                "point1": "Verwenden Sie milde Reinigungsmittel, vermeiden Sie raue Schwämme oder scharfe Reiniger",
+                "point2": "Verwenden Sie keine Wasserstrahlen, um zu verhindern, dass Wasser in elektrische Komponenten eindringt",
+                "point3": "Stellen Sie sicher, dass keine Fremdkörper in Türspalten eindringen",
+                "point4": "Halten Sie die Belüftungsschlitze sauber und frei"
+            },
+            "sections": {
+                "productChannels": "Produktkanäle",
+                "liftingPlatform": "Hebeplattform",
+                "compressor": "Kompressor",
+                "heatingSystem": "Heizsystem",
+                "electrical": "Elektrik",
+                "sensors": "Sensoren",
+                "general": "Allgemein"
+            },
+            "frequency": "Häufigkeit"
+        },
+        "troubleshooting": {
+            "title": "Häufige Probleme & Lösungen",
+            "problem": "Problem",
+            "solution": "Lösung"
+        },
+        "errorCodes": {
+            "title": "Fehlercode-Referenz",
+            "code": "Code",
+            "status": "Status",
+            "statusError": "Fehler",
+            "statusNormal": "Normal"
+        },
+        "safety": {
+            "title": "Kindersicherheitsrichtlinien",
+            "generalSafetyTitle": "Allgemeine Sicherheitsvorkehrungen",
+            "generalSafetyText": "1. Beaufsichtigen Sie Kinder immer in der Nähe der Maschine\n2. Halten Sie alle elektrischen Verbindungen außer Reichweite\n3. Erlauben Sie kein Klettern auf der Maschine\n4. Bewahren Sie kleine Teile sicher auf\n5. Nur Erwachsene sollten das Heizsystem bedienen\n6. Befolgen Sie alle Warn hinweise und Anweisungen"
+        },
+        "serviceWarranty": {
+            "contactInformation": "Kontaktinformationen",
+            "serviceHours": "Servicezeiten"
+        },
+        "data": {
+            "machineComponents": [
+                "Entfernbare Werbepanel",
+                "LED-Lichtleiste",
+                "FRI Scher Bergmann (Display)",
+                "3 Min-Restaurant Branding",
+                "32-Zoll-LCD-Bildschirm",
+                "Nayax-Zahlungssystem",
+                "Lebensmittelausgabebereich",
+                "Hebeplattform",
+                "Handpalettenwagen"
+            ],
+            "productRequirements": [
+                "Maximale Größe: 210mm × 160mm × 160mm",
+                "Minimale Größe: 80mm × 80mm × 40mm",
+                "Vermeiden Sie unkonventionelle Verpackungen, um Ausgabefehler zu reduzieren",
+                "Verwenden Sie keine Metallbehälter zum Erhitzen",
+                "Verwenden Sie keine versiegelten Behälter - Dampf muss entweichen können",
+                "Keine flüssigen Produkte im Heizbereich",
+                "Nur hitzebeständige Verpackungen verwenden",
+                "Empfohlen: Keramik, hitzebeständiges Glas oder Kunststoffbehälter"
+            ],
+            "heatingSafety": [
+                "NICHT für andere Zwecke - nur für Verkaufsautomaten",
+                "Keine Metallbehälter im Heizsystem",
+                "Keine versiegelten Behälter - Dampf muss entweichen",
+                "Keine flüssigen Produkte im Heizbereich",
+                "Nur hitzebeständige Verpackungsmaterialien",
+                "Reparaturen nur von qualifizierten Technikern",
+                "Empfohlene Heizzeiten strikt einhalten",
+                "Nicht versuchen zu modifizieren oder anderweitig zu verwenden"
+            ],
+            "installationSteps": [
+                "Maschine zum Installationsort transportieren, Verpackung entfernen, auf äußere Schäden prüfen",
+                "Obere und untere Leuchtkästen und Kompressor installieren. Alle Kabelbinder im Inneren der Maschine durchtrennen",
+                "Hebeplattform manuell bewegen, um die Schienenfunktionalität zu überprüfen",
+                "Hauptstromkabel und Kompressorkabel anschließen",
+                "Schlüssel ist an der Rückseite der Maschine befestigt. Schlüssel finden, Maschinentür öffnen, Schalter im Schaltschrank einschalten"
+            ],
+            "childSafety": [
+                "Stellen Sie sicher, dass Kinder nicht in der Nähe spielen oder die Maschine unbeaufsichtigt bedienen",
+                "Kinder dürfen keinen Zugang zu Heizelementen oder Mikrowelle haben",
+                "Kinder unter 12 Jahren sollten nur unter Aufsicht von Erwachsenen verwenden",
+                "Alle elektrischen Verbindungen und Kabel müssen außerhalb der Reichweite von Kindern sein",
+                "Kinder sollten nicht auf die Maschine klettern oder damit spielen",
+                "Kleine lose Teile müssen außerhalb der Reichweite von Kindern aufbewahrt werden",
+                "Beaufsichtigen Sie Kinder bei der Verwendung von Türen und Ausgabekanälen",
+                "Maschine ist nur für den Betrieb durch Erwachsene bestimmt"
+            ],
+            "safetyGuidelines": {
+                "adminSystemAccess": {
+                    "title": "Administrator-Systemzugriff",
+                    "points": [
+                        "Maximal zulässige Größe: 250 mm × 160 mm × 160 mm",
+                        "Minimal zulässige Größe: 60 mm × 60 mm × 40 mm",
+                        "Verwenden Sie Standardverpackungen, um Ausgabeprobleme zu vermeiden",
+                        "Metallbehälter sind zum Erhitzen nicht erlaubt",
+                        "Verwenden Sie keine vollständig versiegelten Behälter — Dampf muss entweichen können",
+                        "Flüssigkeiten sind im Heizbereich nicht erlaubt",
+                        "Nur hitzebeständige Verpackungen verwenden",
+                        "Empfohlene Materialien: Keramik, hitzebeständiges Glas oder hitzebeständiger Kunststoff"
+                    ]
+                },
+                "memberCardSystem": {
+                    "title": "Mitgliedskartensystem",
+                    "points": [
+                        "Nur für Verkaufsautomatenzwecke verwenden — nicht für andere Verwendung",
+                        "Metallbehälter sind im Heizsystem nicht erlaubt",
+                        "Verwenden Sie keine vollständig versiegelten Behälter — Dampf muss entweichen können",
+                        "Flüssige Produkte sind im Heizbereich nicht erlaubt",
+                        "Nur hitzebeständige Verpackungsmaterialien erlaubt",
+                        "Reparaturen dürfen nur von qualifizierten Technikern durchgeführt werden",
+                        "Befolgen Sie immer die empfohlenen Heizzeiten",
+                        "Modifizieren Sie die Maschine nicht und versuchen Sie nicht, sie anderweitig zu verwenden"
+                    ]
+                }
+            },
+            "maintenanceTasks": [
+                {
+                    "task": "Produktkanäle reinigen",
+                    "frequency": "Regelmäßig - trocken und sauber halten",
+                    "section": "Product Channels"
+                },
+                {
+                    "task": "X/Y-Achsenschienen reinigen und mit Öl schmieren",
+                    "frequency": "Regelmäßig",
+                    "section": "Lifting Platform"
+                },
+                {
+                    "task": "Schrauben anziehen und Kabelverbindungen prüfen",
+                    "frequency": "Regelmäßig",
+                    "section": "Lifting Platform"
+                },
+                {
+                    "task": "Riemenzustand auf Schäden prüfen",
+                    "frequency": "Regelmäßig",
+                    "section": "Lifting Platform"
+                },
+                {
+                    "task": "Kompressor-Kühlkomponenten reinigen",
+                    "frequency": "Innen: 6 Monate, Außen: 3 Monate",
+                    "section": "Compressor"
+                },
+                {
+                    "task": "Kabel auf Schäden oder Kurzschlüsse prüfen",
+                    "frequency": "Regelmäßig",
+                    "section": "Compressor"
+                },
+                {
+                    "task": "Innenwände und Drehteiler des Heizsystems reinigen",
+                    "frequency": "Nach jedem Gebrauch",
+                    "section": "Heating System"
+                },
+                {
+                    "task": "Mit sauberem Tuch trocknen und Tür zur Belüftung offen lassen",
+                    "frequency": "Nach jedem Gebrauch",
+                    "section": "Heating System"
+                },
+                {
+                    "task": "Türecken und Scharnierbereiche reinigen",
+                    "frequency": "Regelmäßig",
+                    "section": "Heating System"
+                },
+                {
+                    "task": "Ofenaußenwände reinigen",
+                    "frequency": "Regelmäßig",
+                    "section": "Heating System"
+                },
+                {
+                    "task": "Gesamten Maschineninnenraum reinigen",
+                    "frequency": "Regelmäßig",
+                    "section": "General"
+                },
+                {
+                    "task": "Elektrisches System inspizieren und reinigen",
+                    "frequency": "Regelmäßig",
+                    "section": "Electrical"
+                },
+                {
+                    "task": "Sensoren und Produktkanäle auf Blockierungen prüfen",
+                    "frequency": "Regelmäßig",
+                    "section": "Sensors"
+                }
+            ],
+            "commonErrors": [
+                {
+                    "problem": "Einzelner Produktkanal dreht sich nicht",
+                    "solution": "Kabelstecker dieser Ebene prüfen. Wenn kein Kabelproblem vorliegt, könnte der Motor beschädigt sein. Verkabelung reparieren oder Motor ersetzen."
+                },
+                {
+                    "problem": "Alle Kanäle einer Ebene drehen sich nicht",
+                    "solution": "Hauptstecker dieser Ebene prüfen. Wenn richtig angeschlossen, könnte die Steuerplatine beschädigt sein und muss ersetzt werden."
+                },
+                {
+                    "problem": "Kontinuierliche Drehung der Kanäle in einer Spalte",
+                    "solution": "Defekte Steuerplatine. Steuerplatine ersetzen."
+                },
+                {
+                    "problem": "Kontinuierliche Drehung der Kanäle auf einer Ebene",
+                    "solution": "Mögliche Kurzschlüsse in benachbarten Kanälen. Verkabelung reparieren, Steuerplatine testen, bei Bedarf ersetzen."
+                },
+                {
+                    "problem": "Alle Preisschilder blinken",
+                    "solution": "Unterspannung in der Stromversorgung. Spannung prüfen (sollte 12V sein). Direkt an 12V-Stromquelle im Hauptschrank anschließen."
+                },
+                {
+                    "problem": "Falsche Preisanzeige auf Preisschildern",
+                    "solution": "Defektes Nixie-Röhrenmodul. Fehlerhaftes Modul ersetzen (von unten nach oben, von links nach rechts)."
+                },
+                {
+                    "problem": "Alle Preisschilder zeigen 0,00",
+                    "solution": "Kommunikationsfehler zwischen oberen und unteren Steuerungen. Obere Steuerungssoftware aktualisieren oder Hauptanzeigeplatine ersetzen."
+                },
+                {
+                    "problem": "Kompressor startet nicht",
+                    "solution": "Falsche Kabelverbindung oder defekte Kompressorsteuerung. Alle Verbindungen prüfen oder Steuerung ersetzen."
+                },
+                {
+                    "problem": "Frostbildung am Kompressor",
+                    "solution": "Falsche Temperaturregelung. Abtautaste drücken, Temperaturanzeige prüfen. Wenn 10°C niedriger als angezeigt, manuelle Abtauung durchführen."
+                },
+                {
+                    "problem": "Kühlungsverlust",
+                    "solution": "Tür oder Dichtung nicht richtig geschlossen. Türdichtungen prüfen, Schlossposition korrigieren oder Dichtungen ersetzen."
+                },
+                {
+                    "problem": "Fehler beim Hochladen von Produktkanälen",
+                    "solution": "Instabile WLAN-Verbindung. Stabiles WLAN-Signal sicherstellen, Netzwerk bei Bedarf reparieren."
+                },
+                {
+                    "problem": "Keine Netzwerkverbindung",
+                    "solution": "Defekte SIM-Karte oder schwaches Signal. SIM-Karte prüfen, bei Bedarf ersetzen oder stabile WLAN-Verbindung herstellen."
+                },
+                {
+                    "problem": "LCD-Bildschirm schwarz oder flackernd",
+                    "solution": "Defektes Netzteil oder fehlerhafte Kabelverbindung. Verbindungen und Spannung prüfen. Netzteil oder Android-Steuerplatine ersetzen."
+                },
+                {
+                    "problem": "Touchscreen reagiert nicht",
+                    "solution": "Schmutz im Infrarotbereich oder lose Kabelverbindung. Infrarotsensoren reinigen, Verbindungen prüfen. Touchscreen bei Bedarf ersetzen."
+                },
+                {
+                    "problem": "LED-Leuchten funktionieren nicht",
+                    "solution": "Lose Verbindung oder defekte Leuchtstreifen. Kabelverbindungen und Spannung prüfen. LED-Streifen bei Bedarf ersetzen."
+                },
+                {
+                    "problem": "Kondenswasser an Glastür",
+                    "solution": "Unzureichende Heizleistung. Heizdrähte prüfen, Spannung bei Bedarf um etwa 3V erhöhen."
+                }
+            ],
+            "errorCodes": [
+                {
+                    "code": "0",
+                    "meaning": "Selbsttest abgeschlossen - Maschine im Leerlauf",
+                    "status": "normal"
+                },
+                {
+                    "code": "1",
+                    "meaning": "Wagen hat Abholzielpunkt erreicht",
+                    "status": "normal"
+                },
+                {
+                    "code": "2",
+                    "meaning": "Wagen hat Produktausgabe abgeschlossen",
+                    "status": "normal"
+                },
+                {
+                    "code": "3",
+                    "meaning": "Wagen hat Ausgabeposition erreicht",
+                    "status": "normal"
+                },
+                {
+                    "code": "4",
+                    "meaning": "Produktausgabe abgeschlossen",
+                    "status": "normal"
+                },
+                {
+                    "code": "100",
+                    "meaning": "Wagen kehrt zum Startpunkt zurück",
+                    "status": "normal"
+                },
+                {
+                    "code": "6",
+                    "meaning": "Fremdkörper auf dem Wagen (IR-Sensoren funktionieren nicht während Auf-/Abstieg)",
+                    "status": "error"
+                },
+                {
+                    "code": "8",
+                    "meaning": "Kein Produkt im Kanal (leerer Kanal oder Wagensensoren defekt)",
+                    "status": "error"
+                },
+                {
+                    "code": "9",
+                    "meaning": "Produkt konnte nicht auf Wagen übertragen werden (Magnetposition oder Wagensensor prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "13",
+                    "meaning": "Kanalgröße überschreitet Maximum (Kanal zu groß oder Ebensensor konnte Daten nicht lesen)",
+                    "status": "error"
+                },
+                {
+                    "code": "20",
+                    "meaning": "Hauptsteuerung wartete zu lange auf Wagen am Ziel (Hauptsteuerung/untere Steuerung, Antrieb, Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "21",
+                    "meaning": "Hauptsteuerung wartete zu lange auf Wagenabholung (Hauptsteuerung/untere Steuerung prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "23",
+                    "meaning": "Hauptsteuerung wartete zu lange auf Wagen an Ausgabeposition (Hauptsteuerung/untere Steuerung prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "57",
+                    "meaning": "Fehler beim Öffnen der Isolationstür (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "58",
+                    "meaning": "Fehler beim Schließen der Isolationstür (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "59",
+                    "meaning": "Fehler beim Ausfahren des Wagenschubstabs (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "60",
+                    "meaning": "Fehler beim Einziehen des Wagenschubstabs (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "61",
+                    "meaning": "X-Achsen-Referenzpositionsfehler (X-Achsen-Referenz-Mikroschalter, Motor, Treiber, Kabel prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "62",
+                    "meaning": "X-Achsen-Grenzfehler (Endschalter, Motor, Treiber, Kabel prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "66",
+                    "meaning": "Y-Achsen-Referenzpositionsfehler (Y-Achsen-Referenz-Mikroschalter, Motor, Treiber, Kabel prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "67",
+                    "meaning": "Y-Achsen-Grenzfehler (Endschalter, Motor, Treiber, Kabel prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "68",
+                    "meaning": "Y-Achsen-Timeout (Ebenensignale, Y-Achsen-Motor, Treiber, Kabel prüfen; auf Hindernisse prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "69",
+                    "meaning": "Y-Achsen-Signalfehler (Signalstörung prüfen, mögliche Kabelprobleme oder Sonnenlichtinterferenz)",
+                    "status": "error"
+                },
+                {
+                    "code": "70",
+                    "meaning": "Fehler beim Schließen der Abholtür (Motor prüfen, sicherstellen, dass Tür richtig geschlossen ist)",
+                    "status": "error"
+                },
+                {
+                    "code": "71",
+                    "meaning": "Fehler beim Öffnen der Abholtür (Motor prüfen, sicherstellen, dass Tür richtig geöffnet ist)",
+                    "status": "error"
+                },
+                {
+                    "code": "80",
+                    "meaning": "Hochleistungs-Heizsystem-Schubstab konnte nicht einfahren (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "81",
+                    "meaning": "Hochleistungs-Heizsystem-Schubstab konnte nicht ausfahren (Motor und Endschalter prüfen)",
+                    "status": "error"
+                },
+                {
+                    "code": "82",
+                    "meaning": "Fehler beim Öffnen der Heizsystem-Produkteingangstür (Motor und Endschalter prüfen)",
+                    "status": "error"
+                }
+            ],
+            "supportDetails": {
+                "contactInformation": {
+                    "title": "Kontaktinformationen",
+                    "items": [
+                        "Telefon (Deutsch): 0162/3658005",
+                        "Telefon (Englisch): 0152/36580513",
+                        "E-Mail: info@naf-halsebach.de",
+                        "Service: info@naf-kundendienst.de",
+                        "WhatsApp: Gleich wie Telefonnummern"
+                    ]
+                },
+                "serviceHours": {
+                    "title": "Servicezeiten",
+                    "items": [
+                        "Mo–Sa 08:00–18:00 (außer an Feiertagen). Mobile Notfallunterstützung verfügbar",
+                        "Techniker werden entsandt, wenn Remote-Support nicht ausreicht. Kosten werden im Voraus vereinbart",
+                        "Garantie: 1-Jahr-Garantie (ausgenommen nicht-natürliche Schäden). Kostenlose Teile und Service während der Garantie (ausgenommen Verschleißteile)"
+                    ]
+                }
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,55 @@
+
+.chat_message_icons{
+  width:18px !important;
+  height:20px !important;
+                          
+}
+/* Animation for chat window opening */
+#n8n-chat [data-key="window"] {
+  animation: slideInUp 0.3s ease-out !important;
+}
+.chat_message_icons{
+  cursor:pointer !important;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #n8n-chat [data-key="window"] {
+    width: calc(100vw - 20px) !important;
+    height: calc(100vh - 20px) !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    left: 10px !important;
+    border-radius: 20px !important;
+  }
+  
+  #n8n-chat button[data-key="toggle"] {
+    width: 56px !important;
+    height: 56px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+}
+@media (max-width: 475px) {
+  .naf-chatbot-container{
+    width: 330px !important;
+    height: 500px !important;
+  }
+  .naf-chatbot-sec{
+     bottom: 0px !important ;
+     right:  0px !important;
+
+  }
+  .chat_toggle_icons{
+    width: 56px !important;
+    height: 56px !important;
+  }
+  
+}
+@media (max-width: 355px) {
+  .naf-chatbot-container{
+    width: 310px !important;
+  }
+}
+
