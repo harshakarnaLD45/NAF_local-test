@@ -461,6 +461,11 @@ body {
 
 @media (max-width: 375px) {
 
+ .headings-h1 {
+    font-size: 34px !important;
+  }
+
+
   .bodyRegularText2 {
     font-size: 12px !important;
   }
