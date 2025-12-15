@@ -1815,7 +1815,7 @@ export default function GourmetVendingMachinePage() {
           {t('products.financing.seasonalTitle')}
         </Typography>
 
-        <Grid container spacing={{ xs: 8, sm: 8 ,md:4}} sx={{ mb: { xs: 8, md: 10 } }}>
+        <Grid container spacing={{ xs: 8, sm: 8 ,md:3}} sx={{ mb: { xs: 8, md: 7 } }}>
           {/* Summer */}
           <Grid item xs={12} md={6}>
             <Box
