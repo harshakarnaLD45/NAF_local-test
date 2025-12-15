@@ -19,7 +19,7 @@ i18n
   .use(initReactI18next)
   .init({
     backend: {
-      loadPath: '/locales/{{lng}}/translation.json',
+      loadPath: '/locales/{{lng}}/translation.json?v=' + Date.now(),
     },
     lng: getSafeStorageItem("i18nextLng", 'de'),
     fallbackLng: 'en',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ArrowIcon = ({ color = '#F4F4F4' }) => (
+export const ArrowIcon = ({ color = '#1A1A1A' }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="19" viewBox="0 0 26 19" fill="none">
         <path d="M20.434 18.3205L24.0942 4.66026M24.0942 4.66026L10.434 0.999999M24.0942 4.66026L1.00023 17.9936" stroke={color} stroke-width="2" />
     </svg>

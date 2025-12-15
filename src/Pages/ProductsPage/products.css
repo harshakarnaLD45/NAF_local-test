@@ -16,6 +16,12 @@
 
 
 
+.accordian_tag{
+    padding: clamp( 5px , 2%, 10px) !important;
+}
+
+
+
 
 
 @media screen and (min-width: 2000px) {
@@ -59,6 +65,12 @@
     }
 }
 
+
+@media screen and (max-width: 750px) {
+    .product_accordian{
+    width: 100% !important;
+}
+}
 @media screen and (max-width: 550px) {
 
 
@@ -95,10 +107,10 @@
 
     .product_points_sec {
         padding: 0px !important;
+        padding-bottom: 10px !important;
     }
 
     .hero_sec {
-
         min-height: fit-content !important;
     }
 

@@ -39,7 +39,8 @@ import {
   Step,
   StepLabel,
   StepContent,
-  colors
+  colors,
+  Button
 } from '@mui/material';
 import {
   ExpandMore,
@@ -162,11 +163,12 @@ import '../../App.css';
 import './products.css';
 import { useTranslation } from 'react-i18next';
 import { Type } from 'lucide-react';
-
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 export default function GourmetVendingMachinePage() {
   const [tabValue, setTabValue] = useState(0);
-  const { t } = useTranslation();
-
+  const { t, i18n, ready } = useTranslation();
+  
+ 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
   };
@@ -189,17 +191,7 @@ export default function GourmetVendingMachinePage() {
     { label: t('products.gourmetMachine.specifications.powerRequirements'), value: t('products.gourmetMachine.specifications.powerRequirementsValue') }
   ];
 
-  // From PDF Page 3 - MISSING DATA
-  const productSideSpecs = {
-    front: ['30', '40', '50', '100', '150', '200', '250'],
-    back: ['240', 'CBD', '60', '80', '100', '150', '200', '250']
-  };
 
-  const productParameters = {
-    dimensions: '2320mm × 1700mm × 1028mm',
-    brand: '3 MIN RESTAURANT',
-    otherParams: '10:28MM 2320MM 2320MM 2320MM'
-  };
 
   // From PDF Page 3
   const machineComponents = t('products.gourmetMachine.data.machineComponents', { returnObjects: true });
@@ -222,7 +214,7 @@ export default function GourmetVendingMachinePage() {
       description: t('products.gourmetMachine.overview.features.safetyFeatures.description')
     },
     {
-      icon: <img  className="feature_icon" src={TransportVehical} style={{ height: '60px' }} />,
+      icon: <img className="feature_icon" src={TransportVehical} style={{ height: '60px' }} />,
       title: t('products.gourmetMachine.overview.features.transportMechanism.title'),
       description: t('products.gourmetMachine.overview.features.transportMechanism.description')
     },
@@ -294,17 +286,7 @@ export default function GourmetVendingMachinePage() {
   // From PDF Page 9 - Installation Steps
   const installationSteps = t('products.gourmetMachine.data.installationSteps', { returnObjects: true });
 
-  // From PDF Page 10 - Background System Operation
-  const adminOperations = [
-    'Open NAF sales interface, tap upper right corner of screen multiple times',
-    'Enter password (Administrator password: 123456) to access background system',
-    'Set up terminal network connection',
-    'Add product catalog',
-    'Add advertisements',
-    'Set temperature control',
-    'Test product dispensing channels functionality',
-    'Open machine door with key and place products in designated compartments'
-  ];
+ 
 
   // From PDF Page 11 - App Purchase Instructions
 
@@ -371,27 +353,65 @@ export default function GourmetVendingMachinePage() {
     onSiteService: 'Technicians dispatched when remote support insufficient. Costs agreed in advance'
   };
 
-  const warrantyCard = {
-    productName: '---',
-    modelNumber: '---',
-    serialNumber: '---',
-    purchaseDate: '---',
-    installationDate: '---',
-    installationLocation: '---',
-    customerName: '---',
-    customerAddress: '---',
-    customerPhone: '---',
-    customerEmail: '---',
-    terms: '1 year warranty against material and manufacturing defects under normal use. Damage from improper use/maintenance excluded.',
-    note: 'Keep warranty card safe for claims. Inform us of address changes promptly.'
-  };
+ 
   const safetyPoints = [
     t("products.gourmetMachine.maintenance.safetyPoints.point1"),
     t("products.gourmetMachine.maintenance.safetyPoints.point2"),
     t("products.gourmetMachine.maintenance.safetyPoints.point3"),
     t("products.gourmetMachine.maintenance.safetyPoints.point4"),
+
+  ];
+  const faqData = [
+    {
+      question: t('products.financing.faq1Question'),
+      answer: t('products.financing.faq1Answer')
+    },
+    {
+      question: t('products.financing.faq2Question'),
+      answer: t('products.financing.faq2Answer')
+    },
+    {
+      question: t('products.financing.faq3Question'),
+      answer: t('products.financing.faq3Answer')
+    },
+    {
+      question: t('products.financing.faq4Question'),
+      answer: t('products.financing.faq4Answer')
+    },
+    {
+      question: t('products.financing.faq5Question'),
+      answer: t('products.financing.faq5Answer')
+    },
+    {
+      question: t('products.financing.faq6Question'),
+      answer: t('products.financing.faq6Answer')
+    },
+    {
+      question: t('products.financing.faq7Question'),
+      answer: t('products.financing.faq7Answer')
+    },
+    {
+      question: t('products.financing.faq8Question'),
+      answer: t('products.financing.faq8Answer')
+    },
+    {
+      question: t('products.financing.faq9Question'),
+      answer: t('products.financing.faq9Answer')
+    },
+    {
+      question: t('products.financing.faq10Question'),
+      answer: t('products.financing.faq10Answer')
+    }
   ];
 
+
+  const TickIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
+      <path d="M17.5 1.41L5.5 13.41L0 7.91L1.41 6.5L5.5 10.58L16.09 0L17.5 1.41Z" fill="#7FEE64" />
+    </svg>
+  );
+
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   return (
     <div className="section-container main-container" style={{ height: '100%', display: 'block', flexDirection: ' column' }}>
@@ -420,7 +440,7 @@ export default function GourmetVendingMachinePage() {
 
               fontSize: "16px",
               color: "#C2C2C4",
-              width: {md:'75%',sm:'90%'},
+              width: { md: '75%', sm: '90%' },
 
               lineHeight: 1.6,
             }} className='bodyRegularText3 '
@@ -513,7 +533,7 @@ export default function GourmetVendingMachinePage() {
                     justifyContent: 'space-between',
                     padding: '32px'
                   }}>
-                  <Box className="feature_icon_sec" sx={{height:'60px '}}>
+                  <Box className="feature_icon_sec" sx={{ height: '60px ' }}>
                     {feature.icon}
                   </Box>
                   <Box sx={{ minHeight: { sx: 'none', md: '120px' } }}>
@@ -539,8 +559,8 @@ export default function GourmetVendingMachinePage() {
           </Grid>
 
           {/* Machine Components - PDF Page 3 */}
-          <Card sx={{ mb: 4, mt: 12, background: '#1D1D1F', border: 'none', boxShadow: 'none' }}>
-            <CardContent>
+          <Card sx={{ mb: 4, mt: 12, background: 'none', border: 'none', boxShadow: 'none' }}>
+            <Box>
               <Typography variant="h5" className='headings-h2' fontWeight="bold" gutterBottom sx={{ color: "#fcfcfc" }}>
                 {t('products.gourmetMachine.overview.machineComponents')}
               </Typography>
@@ -575,7 +595,7 @@ export default function GourmetVendingMachinePage() {
                 ))}
               </Box>
 
-            </CardContent>
+            </Box>
           </Card>
 
           {/* Product Requirements - PDF Page 7 */}
@@ -752,7 +772,7 @@ export default function GourmetVendingMachinePage() {
                       }}
                     >
                       {/* Icon */}
-                      <Box sx={{ fontSize: "40px",  color: "#ff6f3c" }}>
+                      <Box sx={{ fontSize: "40px", color: "#ff6f3c" }}>
                         {req.icon} {/* Replace with your SVG */}
                       </Box>
                       <Box >
@@ -1181,7 +1201,7 @@ export default function GourmetVendingMachinePage() {
                         px: 0,
                       }}
                     >
-                      <Typography sx={{ color: "#fcfcfc",  }} className='bodyRegularText4'>
+                      <Typography sx={{ color: "#fcfcfc", }} className='bodyRegularText4'>
                         {point}
                       </Typography>
                     </ListItem>
@@ -1222,7 +1242,7 @@ export default function GourmetVendingMachinePage() {
                         padding: "22px",
                         border: "1px solid #2d2d2f",
                         display: "flex",
-                        width : "100%",
+                        width: "100%",
                         flexDirection: "column",
                         gap: "10px !important",
                         justifyContent: "space-between",
@@ -1339,8 +1359,8 @@ export default function GourmetVendingMachinePage() {
       {
         tabValue === 7 && (<>
 
-           {/* Service Hours */}
-           {/* Contact Information */}
+          {/* Service Hours */}
+          {/* Contact Information */}
 
           {/* <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', gap: 4, mt: 8 }}>
 
@@ -1442,7 +1462,7 @@ export default function GourmetVendingMachinePage() {
                   <List
                     component="ul"
                     sx={{ pl: 4, listStyleType: 'disc', }}>
-                   {supportDetails.contactInformation.items.map((item, index) =>(
+                    {supportDetails.contactInformation.items.map((item, index) => (
                       <ListItem key={index} component="li" sx={{ display: 'list-item', color: '#c2c2c4', py: 1, pl: 1, }} className="bodyRegularText4">
                         <Typography
 
@@ -1518,10 +1538,486 @@ export default function GourmetVendingMachinePage() {
         )
       }
 
+      {/* Finance & pricing */}
+      <Box sx={{ mt: { xs: 8, md: 16 }, px: { xs: 2, md: 0 } }}>
+        {/* Header */}
+        <Box sx={{ mb: { xs: 3, md: 4 }, textAlign: 'center' }}>
+          <Typography
+            sx={{
+              fontWeight: 700,
+              mb: 1,
+              color: '#fcfcfc',
+              textAlign: 'center',
+            }}
+            className="headings-h2"
+          >
+            {t('products.financing.title')}
+          </Typography>
+          <Typography
+            sx={{
+              color: '#c2c2c4',
+              mb: 1,
+              textAlign: 'center',
+            }}
+            className="bodyRegularText3"
+          >
+            {t('products.financing.subtitle')}
+          </Typography>
+        </Box>
+
+        {/* Pricing Cards */}
+        <Grid container spacing={{ xs: 8, sm: 8 }} justifyContent="center">
+          {/* Purchase */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              elevation={0}
+              sx={{
+                bgcolor: '#161616',
+                border: '1px solid #393939',
+                borderRadius: '24px',
+                p: { xs: 3, md: 3 },
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#c2c2c4' }} className="bodyRegularText2">
+                {t('products.financing.purchaseTitle')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#FA7854' }} className="headings-h4">
+                {t('products.financing.purchasePrice')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', color: '#c2c2c4', mb: 1 }}>
+                {t('products.financing.purchasePeriod')}
+              </Typography>
+
+              <List dense sx={{ p: 0, mt: { xs: 4, md: 6 }, flexGrow: 1 }}>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.purchaseBenefit1')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.purchaseBenefit2')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.purchaseBenefit3')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.purchaseBenefit4')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: { xs: 4, md: 6 } }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.purchaseBenefit5')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+              </List>
+
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 'auto', pt: { xs: 4, md: 6 } }}>
+                <Button
+                  sx={{
+                    padding: '20px 32px',
+                    backgroundColor: '#fcfcfc',
+                    color: '#1A1A1A',
+                    borderRadius: '32px',
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#E56A47' },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {t('products.financing.button')}
+                </Button>
+              </Box>
+            </Paper>
+          </Grid>
+
+          {/* Leasing */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              elevation={0}
+              sx={{
+                bgcolor: '#161616',
+                border: '1px solid #393939',
+                borderRadius: '24px',
+                p: { xs: 3, md: 3 },
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#c2c2c4' }} className="bodyRegularText2">
+                {t('products.financing.leasingTitle')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#FA7854' }} className="headings-h4">
+                {t('products.financing.leasingPrice')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', color: '#c2c2c4', mb: 1 }}>
+                {t('products.financing.leasingPeriod')}
+              </Typography>
+
+              <List dense sx={{ p: 0, mt: { xs: 4, md: 6 }, flexGrow: 1 }}>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit1')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit2')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit3')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit4')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon sx={{ fontSize: 16 }} />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit5')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.leasingBenefit6')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+              </List>
+
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 'auto', pt: { xs: 4, md: 6 } }}>
+                <Button
+                  sx={{
+                    padding: '20px 32px',
+                    backgroundColor: '#fcfcfc',
+                    color: '#1A1A1A',
+                    borderRadius: '32px',
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#E56A47' },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {t('products.financing.button')}
+                </Button>
+              </Box>
+            </Paper>
+          </Grid>
+
+          {/* Hire-Purchase */}
+          <Grid item xs={12} md={4}>
+            <Paper
+              elevation={0}
+              sx={{
+                bgcolor: '#161616',
+                border: '1px solid #393939',
+                borderRadius: '24px',
+                p: { xs: 3, md: 3 },
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#c2c2c4' }} className="bodyRegularText3">
+                {t('products.financing.hirePurchaseTitle')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', mb: 2, color: '#FA7854' }} className="headings-h4">
+                {t('products.financing.hirePurchasePrice')}
+              </Typography>
+              <Typography sx={{ textAlign: 'center', color: '#c2c2c4', mb: 1 }} className="bodyRegularText3">
+                {t('products.financing.hirePurchasePeriod')}
+              </Typography>
+
+              <List dense sx={{ p: 0, mt: { xs: 4, md: 6 }, flexGrow: 1 }}>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.hirePurchaseBenefit1')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.hirePurchaseBenefit2')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.hirePurchaseBenefit3')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: 1 }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.hirePurchaseBenefit4')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+                <ListItem sx={{ p: 0, mb: { xs: 4, md: 6 } }}>
+                  <ListItemIcon sx={{ minWidth: 30 }}>
+                    <TickIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={t('products.financing.hirePurchaseBenefit5')} primaryTypographyProps={{ sx: { color: '#c2c2c4' } }} className="bodyRegularText3" />
+                </ListItem>
+              </List>
+
+              <Box sx={{ display: 'flex', justifyContent: 'center', mt: 'auto', pt: { xs: 4, md: 6 } }}>
+                <Button
+                  sx={{
+                    padding: '20px 32px',
+                    backgroundColor: '#fcfcfc',
+                    color: '#1A1A1A',
+                    borderRadius: '32px',
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#E56A47' },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {t('products.financing.button')}
+                </Button>
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Seasonal, CTA & FAQ */}
+      <Container maxWidth="md" sx={{ mt: { xs: 12, md: 18 } ,p: { xs: 0, md: 2 } }}>
+        <Typography
+          sx={{
+            textAlign: 'center',
+            color: '#FCFCFC',
+            fontWeight: 700,
+            fontSize: '40px',
+            mb: 4,
+          }}
+          className="headings-h4"
+        >
+          {t('products.financing.seasonalTitle')}
+        </Typography>
+
+        <Grid container spacing={{ xs: 8, sm: 8 ,md:4}} sx={{ mb: { xs: 8, md: 10 } }}>
+          {/* Summer */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                backgroundColor: '#161616',
+                border: '1px solid #393939',
+                borderRadius: '24px',
+                p: { xs: 3, md: 2 },
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Typography sx={{ color: '#FCFCFC' }} className="bodyRegularText3">
+                  {t('products.financing.summerTitle')}
+                </Typography>
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                  <path d="M2 22H4.22222M22 2V4.22222M39.7778 22H42M22 39.7778V42M7.77778 7.77778L9.33333 9.33333M36.2222 7.77778L34.6667 9.33333M34.6667 34.6667L36.2222 36.2222M9.33333 34.6667L7.77778 36.2222M13.1111 22C13.1111 24.3575 14.0476 26.6184 15.7146 28.2854C17.3816 29.9524 19.6425 30.8889 22 30.8889C24.3575 30.8889 26.6184 29.9524 28.2854 28.2854C29.9524 26.6184 30.8889 24.3575 30.8889 22C30.8889 19.6425 29.9524 17.3816 28.2854 15.7146C26.6184 14.0476 24.3575 13.1111 22 13.1111C19.6425 13.1111 17.3816 14.0476 15.7146 15.7146C14.0476 17.3816 13.1111 19.6425 13.1111 22Z" stroke="#F4F4F4" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Box>
+
+              <Box sx={{ mb: 2 }}>
+                <Typography sx={{ color: '#C2C2C4', mb: 4 }} className="bodyRegularText4">
+                  {t('products.financing.summerPeriod')}
+                </Typography>
+                <Typography sx={{ color: '#FA7854' }} className="bodyRegularText2">
+                  {t('products.financing.summerPrice')}
+                </Typography>
+              </Box>
+
+              <Typography sx={{ color: '#C2C2C4', flexGrow: 1 }} className="bodyRegularText4">
+                {t('products.financing.summerDescription')}
+              </Typography>
+
+              <Box sx={{ mt: { xs: 3, md: 2 } }}>
+                <Button
+                  sx={{
+                    backgroundColor: '#fcfcfc',
+                    color: '#1A1A1A',
+                    borderRadius: '32px',
+                    padding: '20px 32px',
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#E56A47' },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {t('products.financing.button')}
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Winter */}
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                backgroundColor: '#161616',
+                border: '1px solid #393939',
+                borderRadius: '24px',
+                p: { xs: 3, md: 2 },
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Typography sx={{ color: '#FCFCFC' }} className="bodyRegularText3">
+                  {t('products.financing.winterTitle')}
+                </Typography>
+                <Box sx={{ width: '44px', height: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43" fill="none">
+                    <path d="M21.5 12.6111V8.16667M21.5 8.16667V1.5M21.5 8.16667L14.8333 3.72222M21.5 8.16667L28.1667 3.72222M30.3889 21.5H34.8333M34.8333 21.5H41.5M34.8333 21.5L39.2778 14.8333M34.8333 21.5L39.2778 28.1667M21.5 30.3889V34.8333M21.5 34.8333V41.5M21.5 34.8333L14.8333 39.2778M21.5 34.8333L28.1667 39.2778M12.6111 21.5H8.16667M8.16667 21.5H1.5M8.16667 21.5L3.72222 14.8333M8.16667 21.5L3.72222 28.1667M28.1667 21.5C28.1667 25.1819 25.1819 28.1667 21.5 28.1667C17.8181 28.1667 14.8333 25.1819 14.8333 21.5C14.8333 17.8181 17.8181 14.8333 21.5 14.8333C25.1819 14.8333 28.1667 17.8181 28.1667 21.5Z" stroke="#F4F4F4" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                </Box>
+              </Box>
+
+              <Box sx={{  mb: 2 }}>
+                <Typography sx={{ color: '#C2C2C4', mb: 4 }} className="bodyRegularText4">
+                  {t('products.financing.winterPeriod')}
+                </Typography>
+                <Typography sx={{ color: '#E56A47' }} className="bodyRegularText2">
+                  {t('products.financing.winterPrice')}
+                </Typography>
+              </Box>
+
+              <Typography sx={{ color: '#C2C2C4', flexGrow: 1 }} className="bodyRegularText4">
+                {t('products.financing.winterDescription')}
+              </Typography>
+
+              <Box sx={{ mt: { xs: 4, md: 5 } }}>
+                <Button
+                  sx={{
+                    backgroundColor: '#fcfcfc',
+                    color: '#1A1A1A',
+                    borderRadius: '34px',
+                    padding: '20px 32px',
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#E56A47' },
+                  }}
+                  className="bodyRegularText4"
+                >
+                  {t('products.financing.button')}
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+
+        {/* Custom Quote CTA */}
+        <Box
+          sx={{
+            backgroundColor: '#161616',
+            border: '1px solid #393939',
+            borderRadius: '16px',
+            p: { xs: 3, md: 4 },
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { xs: 'center', md: 'center' },
+            justifyContent: 'space-between',
+            maxWidth: '800px',
+            mx: 'auto',
+            gap: { xs: 3, md: 4 },
+            textAlign: { xs: 'center', md: 'left' },
+          }}
+        >
+          <Typography sx={{ color: '#FCFCFC', flex: 1 }} className="bodyRegularText3">
+            {t('products.financing.ctaText')}
+          </Typography>
+          <Button
+            sx={{
+              backgroundColor: '#fcfcfc',
+              color: '#1a1a1a',
+              borderRadius: '32px',
+              padding: '20px 32px',
+              textTransform: 'none',
+              whiteSpace: 'nowrap',
+            }}
+            className="bodyRegularText4"
+          >
+            {t('products.financing.ctaButton')}
+          </Button>
+        </Box>
+
+        {/* FAQ Section */}
+        <Box sx={{ mt: { xs: 10, md: 12 }, py: { xs: 6, md: 8 },  width: '100%' }}>
+          <Box sx={{ mb: { xs: 5, md: 7 }, textAlign: 'center' }}>
+            <Typography className="headings-h2" sx={{ color: '#fcfcfc' }}>
+              {t('products.financing.faqTitle')}
+            </Typography>
+            <Typography className="bodyMediumText2" sx={{ color: '#C2C2C4' }}>
+              {t('products.financing.faqSubtitle')}
+            </Typography>
+          </Box>
+
+          <Box sx={{ width: { xs: '100%', sm: '80%', md: '60%' }, mx: 'auto' }}>
+            {faqData.map((faq, index) => (
+              <Accordion
+                key={index}
+                expanded={expandedIndex === index}
+                onChange={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                sx={{
+                  border: '1px solid #393939',
+                  backgroundColor: 'transparent',
+                  color: '#C2C2C4',
+                  borderRadius: '12px !important',
+                  boxShadow: 'none',
+                  p:1,
+                  mb: 2,
+                  '&::before': { display: 'none' },
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ArrowDropDownIcon sx={{ color: '#C2C2C4' }} />}
+                >
+                  <Typography className="bodyRegularText4">
+                    {faq.question}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography className="bodyRegularText4">
+                    {faq.answer}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
+
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Typography className="bodyMediumText2" sx={{ color: '#fcfcfc' }}>
+              {t('products.financing.faqContactText')}
+            </Typography>
+            <Typography className="bodyRegularText3" sx={{ color: '#7FEE64' }}>
+              {t('products.financing.faqContactLink')}
+            </Typography>
+          </Box>
+        </Box>
+      </Container>
 
 
 
-    </div>
+    </div >
     // </div>
   );
 }

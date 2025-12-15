@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { ArrowIcon } from '../CustomIcons';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { color } from 'framer-motion';
 
 function AnimateButton({ text1, text2, route, getBtnColor }) {
     const { t } = useTranslation();
@@ -87,14 +88,14 @@ function AnimateButton({ text1, text2, route, getBtnColor }) {
                 className="animate-button"
                 style={{
                     ...styles.button,
-                    backgroundColor: position.active ? '#161616' : getBtnColor ? getBtnColor : 'transparent',
+                    backgroundColor: position.active ? '#1' : getBtnColor ? getBtnColor : '#7FEE64',
                     transform: `translate(${position.x}px, ${position.y}px)`,
                     transition: 'transform 0.3s ease-out',
                 }}
             >
                 <div style={styles.defaultContent}>
                     {position.active ? (
-                        <ArrowIcon />
+                        <ArrowIcon  />
                     ) : (
                         <div style={styles.splitText}>
                             <div className="bodyRegularText1 btn-spac-left" style={styles.leftText}>
@@ -129,7 +130,7 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: '#fff',
+        color: '#1A1A1A',
         cursor: 'pointer',
         zIndex: 2,
     },
@@ -149,13 +150,13 @@ const styles = {
     leftText: {
         // textAlign: 'left',
         // paddingLeft: '10px',
-        color: '#FCFCFC',
+        color: '#1A1A1A',
     },
     rightText: {
         // textAlign: 'right',
         // paddingRight: '10px',
         marginTop: '4px',
-        color: '#FCFCFC',
+        color: '#1A1A1A',
     },
     outerCircle: {
         position: 'absolute',
