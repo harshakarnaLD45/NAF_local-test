@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -3;
+  z-index: -300;
   pointer-events: none;
   mix-blend-mode: overlay;
   mix-blend-mode: screen;
