@@ -1566,7 +1566,7 @@ export default function GourmetVendingMachinePage() {
         </Box>
 
         {/* Pricing Cards */}
-        <Grid container spacing={{ xs: 8, sm: 8 }} justifyContent="center">
+        <Grid container spacing={{ xs: 8, sm: 8  ,md:3}} justifyContent="center">
           {/* Purchase */}
           <Grid item xs={12} md={4}>
             <Paper
@@ -1801,7 +1801,7 @@ export default function GourmetVendingMachinePage() {
       </Box>
 
       {/* Seasonal, CTA & FAQ */}
-      <Container maxWidth="md" sx={{ mt: { xs: 12, md: 18 } ,p: { xs: 0, md: 2 } }}>
+      <Container className="seasonal_container" maxWidth="md" sx={{ mt: { xs: 12, md: 18 } ,p: { xs: 0, md: 2 } ,zIndex:1}}>
         <Typography
           sx={{
             textAlign: 'center',
@@ -1971,7 +1971,7 @@ export default function GourmetVendingMachinePage() {
             </Typography>
           </Box>
 
-          <Box sx={{ width: { xs: '100%', sm: '80%', md: '60%' }, mx: 'auto' }}>
+          <Box sx={{ width: { xs: '100%', sm: '80%', md: '70%' }, mx: 'auto' }}>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}
