@@ -409,12 +409,16 @@ const Footer = () => {
                 textAlign: { xs: "center", md: "right" }
               }}
             >
-              <Link to={`/${lang}/imprint`} style={{ color: "#FCFCFC", cursor: "pointer" }}>
-                {t('imprints.imprintTitle')}
-              </Link>
-              {" | "}
               <Link to={`/${lang}/privacy-policy`} style={{ color: "#FCFCFC", cursor: "pointer" }}>
                 {t('Header.privacyPolicy')}
+              </Link>
+              {" | "}
+              <Link to={`/${lang}/terms-of-use`} style={{ color: "#FCFCFC", cursor: "pointer" }}>
+                {t('Header.termsofuse')}
+              </Link>
+              {" | "}
+              <Link to={`/${lang}/imprint`} style={{ color: "#FCFCFC", cursor: "pointer" }}>
+                {t('imprints.imprintTitle')}
               </Link>
             </Typography>
           </Box>

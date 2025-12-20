@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import VendImg from '../../assets/Home/Gourmet-machine.webp';
 import Vector from '../../assets/Machines/Vector.svg';
 
@@ -167,7 +168,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 export default function GourmetVendingMachinePage() {
   const [tabValue, setTabValue] = useState(0);
   const { t, i18n, ready } = useTranslation();
-  
+  const navigate = useNavigate();
  
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -1961,6 +1962,9 @@ export default function GourmetVendingMachinePage() {
         </Box>
 
         {/* FAQ Section */}
+      </Container>
+       
+       
         <Box sx={{ mt: { xs: 10, md: 12 }, py: { xs: 6, md: 8 },  width: '100%' }}>
           <Box sx={{ mb: { xs: 5, md: 7 }, textAlign: 'center' }}>
             <Typography className="headings-h2" sx={{ color: '#fcfcfc' }}>
@@ -1971,7 +1975,7 @@ export default function GourmetVendingMachinePage() {
             </Typography>
           </Box>
 
-          <Box sx={{ width: { xs: '100%', sm: '80%', md: '70%' }, mx: 'auto' }}>
+          <Box sx={{ width: { xs: '100%', sm: '80%', md: '60%',lg: '40%' }, mx: 'auto' }}>
             {faqData.map((faq, index) => (
               <Accordion
                 key={index}
@@ -1983,19 +1987,28 @@ export default function GourmetVendingMachinePage() {
                   color: '#C2C2C4',
                   borderRadius: '12px !important',
                   boxShadow: 'none',
+                 
                   p:1,
                   mb: 2,
                   '&::before': { display: 'none' },
                 }}
               >
-                <AccordionSummary
-                  expandIcon={<ArrowDropDownIcon sx={{ color: '#C2C2C4' }} />}
+                <AccordionSummary sx={{ flex: 1, justifyContent: 'space-between', alignItems: 'center', p:{ xs: '5px',md: '10px'}, }}
+                  expandIcon={
+                    <ArrowDropDownIcon 
+                      sx={{ 
+                        color: '#C2C2C4',
+                        transform: expandedIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.3s ease'
+                      }} 
+                    />
+                  }
                 >
-                  <Typography className="bodyRegularText4">
+                  <Typography className="bodyRegularText4" sx={{ color: '#C2C2C4', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                     {faq.question}
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={{ p:{ xs: '5px',md: '10px'}, }}>
                   <Typography className="bodyRegularText4">
                     {faq.answer}
                   </Typography>
@@ -2005,15 +2018,23 @@ export default function GourmetVendingMachinePage() {
           </Box>
 
           <Box sx={{ textAlign: 'center', mt: 4 }}>
-            <Typography className="bodyMediumText2" sx={{ color: '#fcfcfc' }}>
+            <Typography className="bodyMediumText2 " sx={{ color: '#fcfcfc', fontSize:{lg:"16px !important"}  }}>
               {t('products.financing.faqContactText')}
             </Typography>
-            <Typography className="bodyRegularText3" sx={{ color: '#7FEE64' }}>
+            <Typography 
+              className="bodyRegularText3" 
+              sx={{ 
+                color: '#7FEE64',
+                fontSize:{lg:"16px !important"},
+                cursor: 'pointer',
+                '&:hover': { textDecoration: 'underline' }
+              }}
+              onClick={() => navigate(`/${i18n.language}/contact`)}
+            >
               {t('products.financing.faqContactLink')}
             </Typography>
           </Box>
         </Box>
-      </Container>
 
 
 

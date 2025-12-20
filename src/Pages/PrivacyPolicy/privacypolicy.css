@@ -3,6 +3,10 @@
     color: #C2C2C4;
     gap: 5px
 }
+  .terms-of-use-page{
+     box-sizing: border-box !important;
+    /* margin: 0 20px !important; */
+    }
 
 span {
     display: contents !important;
@@ -20,6 +24,9 @@ span {
     flex-direction: column !important;
     gap: 16px !important;
 }
+.policy_heading{
+    margin-bottom: 30px !important;
+}
 
 @media screen and (max-width: 768px) {
     .imprints-container {
@@ -32,6 +39,9 @@ span {
     .imprints-container {
         margin-left: 10px !important;
         margin-right: 10px !important;
+    }
+    .terms-of-use-page{
+        margin: 0 20px !important;
     }
 }
 

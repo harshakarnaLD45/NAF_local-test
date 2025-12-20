@@ -37,6 +37,7 @@ const Membership = React.lazy(() => import('./Pages/Membership/Membership'));
 const Dashboard = React.lazy(() => import('./Pages/Membership/Dashboard'));
 const PaymentPage = React.lazy(() => import('./Pages/Membership/PaymentPage'));
 const ImprintsPage = React.lazy(() => import('./Pages/PrivacyPolicy/imprints'));
+const TermsOfUsePage = React.lazy(() => import('./Pages/PrivacyPolicy/terms&policy'));
 
 const preloadHeavyPages = () => {
   import('./Pages/MachinesPage/MachinesPage');      // Vending Machine
@@ -129,6 +130,7 @@ const LanguageWrapper = React.memo(() => {
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/payment/:machineNumber/:amount" element={<PaymentPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="terms-of-use" element={<TermsOfUsePage />} />
           <Route path="imprint" element={<ImprintsPage />} />
           
           <Route path="*" element={<HomePage />} />
