@@ -33,9 +33,10 @@ const ThirdPartyPage = () => {
         <Box>
           <Typography className='bodyRegularText3 shantellSansFont' variant="body1" paragraph>
             {t('privacypolicy.thirdparty1Text1')}{' '}
-            <Typography component="span" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
+            <Typography className='bodyRegularText3 shantellSansFont' component="span" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
               {t('privacypolicy.thirdparty1CompanyName')}
-            </Typography>{' '}
+            </Typography>
+            {' '}
             {t('privacypolicy.thirdparty1Text2')}
           </Typography>
 
@@ -207,7 +208,7 @@ const ThirdPartyPage = () => {
             {t('privacypolicy.thirdparty2_3LegalLabel')}
           </Typography>
           <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2 }}>
-            {t('privacypolicy.thirdparty2_3Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+            {t('privacypolicy.thirdparty2_3Legal').split('\n').map((line, i) => (<span className='bodyRegularText3 shantellSansFont' key={i}>{line}<br /></span>))}
           </Typography>
         </Box>
       </Box>
@@ -318,7 +319,7 @@ const ThirdPartyPage = () => {
             {t('privacypolicy.thirdparty3_1LegalLabel')}
           </Typography>
           <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2 }}>
-            {t('privacypolicy.thirdparty3_1Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+            {t('privacypolicy.thirdparty3_1Legal').split('\n').map((line, i) => (<span className='bodyRegularText3 shantellSansFont' key={i}>{line}<br /></span>))}
           </Typography>
         </Box>
       </Box>
@@ -420,7 +421,7 @@ const ThirdPartyPage = () => {
             {t('privacypolicy.thirdparty4_1LegalLabel')}
           </Typography>
           <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2 }}>
-            {t('privacypolicy.thirdparty4_1Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+            {t('privacypolicy.thirdparty4_1Legal').split('\n').map((line, i) => (<span className='bodyRegularText3 shantellSansFont' key={i}>{line}<br /></span>))}
           </Typography>
         </Box>
       </Box>
@@ -518,7 +519,7 @@ const ThirdPartyPage = () => {
             {t('privacypolicy.thirdparty5_1LegalLabel')}
           </Typography>
           <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2 }}>
-            {t('privacypolicy.thirdparty5_1Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+            {t('privacypolicy.thirdparty5_1Legal').split('\n').map((line, i) => (<span className='bodyRegularText3 shantellSansFont' key={i}>{line}<br /></span>))}
           </Typography>
         </Box>
       </Box>
@@ -2313,34 +2314,34 @@ const ThirdPartyPage = () => {
               }
             }}>
               <Box component="li" >
-                <Typography className='bodyRegularText3 shantellSansFont' component="div" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
+                <Typography className='bodyRegularText3 shantellSansFont' component="div" sx={{ fontWeight: 700, color: '#fcfcfc', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermInternetLabel')}
                 </Typography>
-                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5 }}>
+                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5, overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermInternetDesc')}
                 </Typography>
               </Box>
               <Box component="li" className='bodyRegularText3 shantellSansFont'>
-                <Typography component="div" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
+                <Typography  className='bodyRegularText3 shantellSansFont' component="div" sx={{ fontWeight: 700, color: '#fcfcfc', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermFineLabel')}
                 </Typography>
-                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5 }}>
+                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5, overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermFineDesc')}
                 </Typography>
               </Box>
               <Box component="li" className='bodyRegularText3 shantellSansFont'>
-                <Typography component="div" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
+                <Typography  className='bodyRegularText3 shantellSansFont' component="div" sx={{ fontWeight: 700, color: '#fcfcfc', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermCoarseLabel')}
                 </Typography>
-                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5 }}>
+                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5, overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermCoarseDesc')}
                 </Typography>
               </Box>
               <Box component="li" className='bodyRegularText3 shantellSansFont'>
-                <Typography component="div" sx={{ fontWeight: 700, color: '#fcfcfc' }}>
+                <Typography  className='bodyRegularText3 shantellSansFont' component="div" sx={{ fontWeight: 700, color: '#fcfcfc', overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermCameraLabel')}
                 </Typography>
-                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5 }}>
+                <Typography className='bodyRegularText3 shantellSansFont' variant="body2" sx={{ mt: 0.5, overflowWrap: 'break-word', wordBreak: 'break-word', whiteSpace: 'normal' }}>
                   {t('privacypolicy.thirdparty17_4_3PermCameraDesc')}
                 </Typography>
               </Box>

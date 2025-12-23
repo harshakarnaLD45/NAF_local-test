@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import "./privacypolicy.css";
 
 import ThirdPartyPage from './thirdparty'
+import { TextWrap } from 'lucide-react';
 
 
 const PrivacyPolicyPage = () => {
@@ -21,7 +22,7 @@ const PrivacyPolicyPage = () => {
 
   }, []);
   return (
-    <Box  className='terms-of-use-page'  sx={{ color: '#FCFCFC', marginLeft: "50px", marginRight: "50px", paddingTop: "150px" }}>
+    <Box className='terms-of-use-page' sx={{ color: '#FCFCFC', marginLeft: "50px", marginRight: "50px", paddingTop: "150px" }}>
       {/* Header */}
       <Typography className='headings-h1' variant="h3" gutterBottom sx={{ color: '#FCFCFC', fontSize: { xs: '30px', }, }}>
         {t('Header.privacyPolicy')}
@@ -761,7 +762,7 @@ const PrivacyPolicyPage = () => {
           </Box>
 
           {/* Second Paragraph */}
-          <Typography className='bodyRegularText3 shantellSansFont' variant="body1" paragraph sx={{  }}>
+          <Typography className='bodyRegularText3 shantellSansFont' variant="body1" paragraph sx={{}}>
             {t('privacypolicy.section7_2Text2')}
           </Typography>
 
@@ -934,7 +935,7 @@ const PrivacyPolicyPage = () => {
               {t('privacypolicy.section8_1Rule1')}
             </Typography>
             <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
-             {t('privacypolicy.section8_1Rule2')}
+              {t('privacypolicy.section8_1Rule2')}
             </Typography>
             <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
               {t('privacypolicy.section8_1Rule3')} <Box component="span" sx={{ fontWeight: 600 }}>{t('privacypolicy.section8_1Rule3Bold')}</Box> {t('privacypolicy.section8_1Rule3End')}
@@ -1265,13 +1266,13 @@ const PrivacyPolicyPage = () => {
             {t('privacypolicy.privacy_retention_contact_inquiries')}
           </Typography>
           <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
-           {t('privacypolicy.privacy_retention_account_data')}
+            {t('privacypolicy.privacy_retention_account_data')}
           </Typography>
           <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
-          {t('privacypolicy.privacy_retention_billing_invoices')}
+            {t('privacypolicy.privacy_retention_billing_invoices')}
           </Typography>
           <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
-           {t('privacypolicy.privacy_retention_analytics_logs')}
+            {t('privacypolicy.privacy_retention_analytics_logs')}
           </Typography>
         </Box>
 
@@ -1526,6 +1527,7 @@ const PrivacyPolicyPage = () => {
                 marginBottom: 0.5
               }
             }}>
+
               <Typography component="li" className='bodyRegularText3 shantellSansFont' variant="body1">
                 {t('privacypolicy.section18_1_1Purpose1')}
               </Typography>
@@ -1541,9 +1543,22 @@ const PrivacyPolicyPage = () => {
             <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ fontWeight: 600, color: '#fcfcfc' }}>
               {t('privacypolicy.section18_1_1LegalLabel')}
             </Typography>
-            <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2, mb: 4 }}>
-              {t('privacypolicy.section18_1_1Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+            <Typography
+              className="bodyRegularText3 shantellSansFont"
+              variant="body1"
+              sx={{ ml: 2, mb: 1 }}
+            >
+              {t('privacypolicy.section18_1_1LegalLine1')}
             </Typography>
+
+            <Typography
+              className="bodyRegularText3 shantellSansFont"
+              variant="body1"
+              sx={{ ml: 2, mb: 4 }}
+            >
+              {t('privacypolicy.section18_1_1LegalLine2')}
+            </Typography>
+
 
 
           </Box>
@@ -1602,7 +1617,7 @@ const PrivacyPolicyPage = () => {
               {t('privacypolicy.section18_1_2LegalLabel')}
             </Typography>
             <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ ml: 2 }}>
-              {t('privacypolicy.section18_1_2Legal').split('\n').map((line, i) => (<span key={i}>{line}<br /></span>))}
+              {t('privacypolicy.section18_1_2Legal').split('\n').map((line, i) => (<span className='bodyRegularText3 shantellSansFont' key={i}>{line}<br /></span>))}
             </Typography>
           </Box>
         </Box>
@@ -1869,10 +1884,10 @@ const PrivacyPolicyPage = () => {
           </Typography>
         </Box>
         <Typography className='bodyRegularText3 shantellSansFont' variant="body1" paragraph >
-          {t('privacypolicy.section20_1Text2')} <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc',fontWeight:'600'}}>{t('privacypolicy.section20_1Text2Bold')}</span>{t('privacypolicy.section20_1Text2End')}
+          {t('privacypolicy.section20_1Text2')} <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc', fontWeight: '600' }}>{t('privacypolicy.section20_1Text2Bold')}</span>{t('privacypolicy.section20_1Text2End')}
         </Typography>
         <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ fontStyle: 'italic' }}>
-          <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc',fontWeight:'600'}}>{t('privacypolicy.section20_1LegalLabel')}</span><br />
+          <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc', fontWeight: '600' }}>{t('privacypolicy.section20_1LegalLabel')}</span><br />
           {t('privacypolicy.section20_1Legal')}
         </Typography>
       </Box>
@@ -1961,7 +1976,7 @@ const PrivacyPolicyPage = () => {
           {t('privacypolicy.section21_1Text2')}
         </Typography>
         <Typography className='bodyRegularText3 shantellSansFont' variant="body1" sx={{ fontStyle: 'italic' }}>
-         <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc',fontWeight:'600'}}>{t('privacypolicy.section21_1LegalLabel')}</span><br />
+          <span className='bodyRegularText3 shantellSansFont' style={{ color: '#fcfcfc', fontWeight: '600' }}>{t('privacypolicy.section21_1LegalLabel')}</span><br />
           {t('privacypolicy.section21_1Legal')}
         </Typography>
       </Box>
@@ -2283,7 +2298,7 @@ const PrivacyPolicyPage = () => {
       {/*  27. Final Provisions */}
       <Box my={5}>
         {/* Main Heading with Number */}
-        <Box sx={{  alignItems: 'baseline', mb: 2 }}>
+        <Box sx={{ alignItems: 'baseline', mb: 2 }}>
 
           <Typography
             className='headings-h4 policy_heading'
@@ -2296,9 +2311,9 @@ const PrivacyPolicyPage = () => {
             {t('privacypolicy.section27Title')}
           </Typography>
           <Typography
-             className='bodyRegularText3 shantellSansFont'
+            className='bodyRegularText3 shantellSansFont'
             variant="body1"
-          
+
           >
             {t('privacypolicy.section27Text')}
           </Typography>
@@ -2307,7 +2322,7 @@ const PrivacyPolicyPage = () => {
 
       {/* 28. Data Categories and Retention Matrix */}
       <Box my={5}>
-        
+
         <Box sx={{ display: 'flex', alignItems: 'baseline', mb: 3 }}>
 
           <Typography
@@ -2322,14 +2337,14 @@ const PrivacyPolicyPage = () => {
           </Typography>
         </Box>
 
-       
+
         <Typography className='bodyRegularText3 shantellSansFont' variant="body1" paragraph>
           {t('privacypolicy.section28Intro')}
         </Typography>
 
         {/*  28.1 Core Account and Identity Data  */}
         <Box sx={{ mb: 6, mt: 4 }}>
-      
+
           <Typography
             className='headings-h5'
             variant="h6"
@@ -2343,7 +2358,7 @@ const PrivacyPolicyPage = () => {
             {t('privacypolicy.section28_1Title')}
           </Typography>
 
-         
+
           <Box sx={{ overflowX: 'auto' }}>
             <Table sx={{
               minWidth: 800,
@@ -2396,7 +2411,7 @@ const PrivacyPolicyPage = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2436,7 +2451,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-               
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2476,7 +2491,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-               
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2522,7 +2537,7 @@ const PrivacyPolicyPage = () => {
 
         {/*  28.2 Transaction, Wallet, and Reservation Data  */}
         <Box sx={{ mb: 6 }}>
-         
+
           <Typography
             className='headings-h5'
             variant="h6"
@@ -2589,7 +2604,7 @@ const PrivacyPolicyPage = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2629,7 +2644,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-               
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2669,7 +2684,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-                
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2782,7 +2797,7 @@ const PrivacyPolicyPage = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2822,7 +2837,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-               
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2862,7 +2877,7 @@ const PrivacyPolicyPage = () => {
                   </TableCell>
                 </TableRow>
 
-               
+
                 <TableRow sx={{ '&:hover': { backgroundColor: '#333' } }}>
                   <TableCell sx={{
                     color: '#fcfcfc',
@@ -2908,7 +2923,7 @@ const PrivacyPolicyPage = () => {
       </Box>
 
       {/*  29. Consent Management and User Controls */}
-      
+
       <Box my={5}>
         {/* Main Heading with Number */}
         <Box sx={{ display: 'flex', alignItems: 'baseline', mb: 2 }}>

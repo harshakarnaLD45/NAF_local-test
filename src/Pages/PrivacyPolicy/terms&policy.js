@@ -1466,7 +1466,7 @@ const TermsOfUsePage = () => {
                     border: '1px solid #444',
                     textAlign: 'center'
                   }}>
-                    ✓ (Admin view)
+                    ✓ {t('privacypolicy.terms_Adminview')}
                   </TableCell>
                 </TableRow>
                 
@@ -1619,7 +1619,7 @@ const TermsOfUsePage = () => {
                     border: '1px solid #444',
                     textAlign: 'center'
                   }}>
-                    ✓ (Restricted)
+                    ✓ ({t('privacypolicy.terms_Restricted')})
                   </TableCell>
                 </TableRow>
                 
@@ -1650,7 +1650,7 @@ const TermsOfUsePage = () => {
                     border: '1px solid #444',
                     textAlign: 'center'
                   }}>
-                    ✓ (Restricted)
+                    ✓ ({t('privacypolicy.terms_Restricted')})
                   </TableCell>
                 </TableRow>
               </TableBody>
@@ -1922,7 +1922,7 @@ const TermsOfUsePage = () => {
                     border: '1px solid #444',
                     textAlign: 'center'
                   }}>
-                    ✓ (Limited)
+                    ✓ ({t('privacypolicy.terms_Limited')})
                   </TableCell>
                 </TableRow>
                 
@@ -1946,7 +1946,7 @@ const TermsOfUsePage = () => {
                     border: '1px solid #444',
                     textAlign: 'center'
                   }}>
-                    ✓ (Limited)
+                    ✓ ({t('privacypolicy.terms_Limited')})
                   </TableCell>
                   <TableCell sx={{ 
                     color: '#fcfcfc',

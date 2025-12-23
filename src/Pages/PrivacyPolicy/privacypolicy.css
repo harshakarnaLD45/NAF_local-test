@@ -43,6 +43,9 @@ span {
     .terms-of-use-page{
         margin: 0 20px !important;
     }
+    .font_force{
+        font-size: 14px !important;
+    }
 }
 
 @media screen and (max-width: 320px) {
